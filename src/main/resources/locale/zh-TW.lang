@@ -1,0 +1,343 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> 耐力屬性
+speedattrflat=<mod> 速度屬性
+strengthattrflat=<mod> 力量屬性
+intelligenceattrflat=<mod> 智力屬性
+graceattrflat=<mod> 優雅屬性
+
+dodgechance=<mod>% 閃避機率
+rangedweaponszoom=<mod> 遠程武器變焦
+rangedweaponsrange=<mod>% 遠程武器射程
+mobdetectionrange=<mod> 生物探測範圍
+focusdamage=<mod>% 專注傷害
+focuschance=<mod>% 專注機率
+
+
+[enchantment]
+evasive=閃避
+stalking=潛行
+regenerative=再生
+energetic=精力充沛
+depleted=枯竭
+
+
+[buff]
+overlevelclassbuff=超等級職業
+markedbuff=已標記
+darkcursebuff=黑暗詛咒
+
+
+[buffdesc]
+overlevelclassbuff1=§9你的一個職業超過了點數限制
+overlevelclassbuff2=§6在修復之前你將無法繼續
+darkcursebuff1=+25% 受到傷害
+darkcursebuff2=所有傷害也會降低最大生命值
+
+
+[mob]
+rpgmobname=[<class>] <name> 等級 <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9等級 <level>§0
+
+
+[mobclass]
+boss=首領
+warrior=戰士
+tank=坦克
+runner=奔跑者
+healer=治療者
+explosive=爆炸性
+glacial=冰川
+electric=電
+flash=閃光
+dark=黑暗
+legend=傳奇
+
+
+[attributes]
+endurance=耐力
+strength=力量
+speed=速度
+intelligence=智力
+grace=優雅
+
+
+[classes]
+warrior=戰士
+ranger=遊俠
+wizard=巫師
+necromancer=死靈法師
+cleric=牧師
+rogue=盜賊
+warlock=術士
+paladin=聖騎士
+druid=德魯伊
+
+
+[passives]
+passives=被動
+
+// 戰士
+regeneration=再生
+muscles=肌肉
+legs=腿
+force=力量
+unstoppable=不可阻擋
+vigor=活力
+ironskin=鐵皮
+unleashingrage=釋放怒火
+unleashinghaste=釋放急速
+unyielding=不屈
+lastbreath=最後一口氣
+
+// 遊俠
+aim=瞄準
+agility=敏捷
+criticalshots=暴擊
+energy=能量
+recovery=恢復
+eagleeye=鷹眼
+focus=專注
+erradication=根除
+predatorsense=捕食者感知
+plasmagrenade=等離子手榴彈
+wolfcompanion=狼夥伴
+
+
+[passivesdesc]
+
+// 戰士
+unleashingrage=每級提供：
+
+每損失 10% 生命值，所有傷害 +1%
+unleashinghaste=每級提供：
+
+每損失 10% 生命值，移動速度 +1%
+unyielding=每級提供：
+
+生命值低於 20% 時，攻擊速度 +5%，受到傷害 -5%
+lastbreath= вместо смерти, станьте неуязвимым на §a[[3 x уровень умения]] секунд§0
+Когда время истечет, вы умрете
+
+// 遊俠
+plasmagrenade=每 8 次遠程攻擊，發射一枚制導爆炸射彈，造成武器傷害的 §i[[30 x 技能等級]]%§0
+wolfcompanion=狼夥伴會攻擊被標記的敵人，造成 §i[[玩家等級 x 技能等級 + 智力 x 技能等級]] 的召喚師傷害§0
+
+
+[activeskills]
+empty=空
+
+// 戰士
+fury=狂怒
+recovery=恢復
+provocation=挑釁
+berserkercharge=狂戰士衝鋒
+
+groundslam=地面猛擊
+grounddestruction=地面毀滅
+parry=格擋
+battlecry=戰吼
+
+ironguard=鐵衛
+thornedguard=荊棘衛士
+intimidation=恐嚇
+
+objectthrowing=投擲物體
+
+// 遊俠
+shortdash=短衝刺
+longdash=長衝刺
+lethalshot=致命射擊
+venomshot=劇毒射擊
+explosivearrow=爆炸箭
+
+shotsrampage=射擊狂暴
+huntersmark=獵人印記
+beartrap=捕熊夾
+
+huntersinstinct=獵人直覺
+arrowstorm=箭雨
+
+
+[activeskillsdesc]
+
+// 戰士
+fury=在接下來的 6 秒內，你的近戰傷害和攻擊速度提高 §a[[20 x 技能等級]]%
+recovery=在接下來的 10 秒內，大幅提升戰鬥生命恢復，在持續時間內恢復 §a[[20 + 耐力 x 技能等級]] 生命值§0
+provocation=在接下來的 §a[[2 x 技能等級]] 秒內§0，強迫附近的敵人將攻擊集中在你身上
+berserkercharge=向前衝一小段距離，對所有經過的敵人造成 §i[[10 x 玩家等級 + 2 x 力量 x 技能等級 + 2 x 速度 x 技能等級]] 傷害§0
+消耗 50% 耐力
+groundslam=區域攻擊，造成 §i[[5 x 力量]] 近戰傷害§0 並 §9眩暈§0 §a[[1 x 技能等級]] 秒§0
+grounddestruction=區域攻擊，造成 §i[[5 x 力量 x 技能等級 + 5 x 玩家等級 x 技能等級]] 近戰傷害§0 並 §9眩暈§0 2 秒
+parry=在 0.5 秒內變得無敵，並返還 500% 的原始傷害
+消耗 100% 耐力
+battlecry=在接下來的 10 秒內，你和附近盟友的所有傷害和移動速度提高 §a[[10 x 技能等級]]%
+
+ironguard=在 §a[[4 x 技能等級]] 秒內§0，受到傷害 -50%
+thornedguard=在 12 秒內，受到傷害 -50%
+此外，返還 §a[[100 x 技能等級]]%§0 的原始傷害
+intimidation=在接下來的 §a[[技能等級]] 秒內§0，讓附近的敵人逃跑
+
+objectthrowing=第 1 步：抓住你面前的一個物體
+第 2 步：向前投擲，造成 §i[[20 x 玩家等級 + 5 x 力量 x 技能等級]] 近戰傷害§0
+兩個步驟都會消耗你所有的耐力（至少 100%）
+
+// 遊俠
+shortdash=進行一次 100 力量的衝刺
+消耗 15% 耐力
+longdash=進行一次 150 力量的衝刺
+消耗 25% 耐力
+lethalshot=向最近的敵人發射一支 §h致命箭§0，造成 §i[[5 x 玩家等級 + 5 x 力量 x 技能等級]] 遊俠傷害§0
+venomshot=向最近的敵人發射一支 §b劇毒箭§0，造成 §i[[4 x 玩家等級 + 2 x 力量 x 技能等級 + 2 x 智力 x 技能等級]] 遊俠傷害§0
+explosiveshot=向最近的敵人發射一支 §i爆炸箭§0，造成 §i[[4 x 玩家等級 + 2 x 力量 x 技能等級 + 2 x 智力 x 技能等級]] 遊俠傷害§0
+
+shotsrampage=當你至少有 1 層射擊狂暴時，用遠程攻擊擊中敵人會在 5 秒內額外獲得 1 層
+每層射擊狂暴會使攻擊速度提高 5%，最多 30 層
+huntersmark=§h標記§0 附近生命值最高的敵人 10 秒
+如果你殺死一個被標記的目標，則在 5 秒內獲得 §a+[[20 x 技能等級]]%§0 的遠程攻擊速度和移動速度
+beartrap=在地上放置一個捕熊夾，如果被觸發或 20 秒後會消失
+如果敵人觸發它，他們將受到 §i[[10 x 玩家等級]] 傷害§0 並被困住 5 秒
+
+huntersinstinct=在接下來的 12 秒內，你的 §7閃避機率§0 提高 §a[[10 x 技能等級]]%
+§h標記§0 你閃避的敵人 5 秒
+arrowstorm=向每個附近的敵人發射一支基本箭，每支箭造成 §i[[2 x 玩家等級 + 力量 x 技能等級 + 速度 x 技能等級]] 遊俠傷害§0
+
+[skillsdesckeys]
+x=x
+skilllevel=技能等級
+playerlevel=玩家等級
+endurance=耐力
+speed=速度
+strength=力量
+intelligence=智力
+grace=優雅
+
+
+[extraskilldesc]
+// 增益
+marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率
+所有制導和/或射向最近敵人的射彈將優先攻擊被標記的敵人
+
+// 機率修正
+dodgechance=§7閃避機率：§0 閃避來襲攻擊的機率。不能超過 80%
+focuschance=§h專注機率：§0 當受到非召喚師傷害攻擊時，有機率 §h標記§0 生物 5 秒
+
+// 固定修正
+mobdetection=§9生物探測：§0 在地圖上顯示附近的生物。更高的探測範圍會顯示更遠的生物
+
+// 射彈
+lethalarrow=§h致命箭：§0 保證暴擊的制導箭
+venomarrow=§b劇毒箭：§0 使敵人中毒的制導箭，在 30 秒內每秒重複其原始傷害的 10%
+explosivearrow=§i爆炸箭：§0 造成同等傷害的魔法爆炸的制導箭
+
+
+[item]
+scrollofoblivion=遺忘卷軸
+ringsbox=戒指盒
+
+// 屬性戒指
+endurancewoodring=耐力木戒指
+endurancecopperring=耐力銅戒指
+enduranceironring=耐力鐵戒指
+endurancegoldring=耐力金戒指
+
+speedwoodring=速度木戒指
+speedcopperring=速度銅戒指
+speedgoldring=速度金戒指
+speedironring=速度鐵戒指
+
+strengthwoodring=力量木戒指
+strengthcopperring=力量銅戒指
+strengthgoldring=力量金戒指
+strengthironring=力量鐵戒指
+
+intelligencewoodring=智力木戒指
+intelligencecopperring=智力銅戒指
+intelligencegoldring=智力金戒指
+intelligenceironring=智力鐵戒指
+
+gracewoodring=優雅木戒指
+gracecopperring=優雅銅戒指
+graceironring=優雅鐵戒指
+gracegoldring=優雅金戒指
+
+
+[itemtooltip]
+scrollofoblivion=授予 2 個重置點
+ringsboxtip=可以存放屬性戒指
+
+
+[message]
+xp=經驗值
+levelup=升級！
+dodge=閃避！
+
+newmobkill=你第一次殺死 <mob> 獲得了 <exp> 經驗值
+newlevel=恭喜！你已達到 <level> 級。按 [input=openrpgmenu] 打開 RPG 菜單
+
+noupdatesincombat=你在戰鬥中不能修改你的屬性、職業或技能
+noactiveskill=你不再擁有該主動技能，如果你想使用它，請重新升級
+
+equipfirst=你首先需要在此插槽中裝備一個主動技能
+activeskillinuse=此技能已在使用中
+anotheractiveskillinuse=你已經有另一個技能在使用中
+incooldown=冷卻中
+notenoughstamina=耐力不足
+nograbbableobject=你面前沒有可抓取的物體
+
+[ui]
+menutitle=Save 的 RPG 模組
+attributes=屬性
+activeskills=主動技能
+classes=職業
+
+level=等級 <level>
+classlevel=<class> 等級 <level>
+lvl=等級 <level>
+eachlevel=每級提供：
+experience=經驗值：<exp> / <nextexp>
+totalexperience=總經驗值：<exp>
+
+resetpoints=重置點：<points>
+attrpoints=屬性點：<points>
+classpoints=職業點：<points>
+passivepoints=被動點：<points>
+activeskillpoints=主動技能點：<points>
+
+activeskillsuse=此模組將表情輪盤（默認為 T 鍵）變成主動技能輪盤
+activeskillsusetip1=建議將表情輪盤的控制更改為一個易於訪問的鍵
+activeskillsusetip2=你也可以為每個主動技能插槽分配一個鍵（非常適合冷卻時間短的技能）
+activeskillsequipinstructions=點擊一個插槽來裝備一個主動技能。你不能卸下正在冷卻的主動技能
+noactiveskills=你沒有主動技能。通過職業解鎖它們
+
+activeskillcooldown=§9冷卻時間：<seconds>秒
+activeskillcooldownmod=§9冷卻時間：[[<seconds> <sign> <mod> x 技能等級]]秒
+requiredclasslevel=§b需要職業等級 <level>
+requiredactiveskill=§b需要“<skill>”等級 <level>
+maxlevel=§a最高等級：<level>
+
+clicktoseebase=[input=mouse1] 查看基礎
+clicktoseelevel=[input=mouse1] 查看等級 <level>
+
+classlevelseparation=- 職業等級 <level> -
+
+inuse=使用中
+
+upcomingclass=§6即將推出的職業
+§9此職業目前正在開發中
+並將在未來的更新中提供
+
+addcolumn=添加列
+removecolumn=刪除列
+
+
+[controls]
+openrpgmenu=打開 RPG 菜單
+activeskillslot1=主動技能槽 1
+activeskillslot2=主動技能槽 2
+activeskillslot3=主動技能槽 3
+activeskillslot4=主動技能槽 4

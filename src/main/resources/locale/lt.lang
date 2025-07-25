@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> ištvermės atributas
+speedattrflat=<mod> greičio atributas
+strengthattrflat=<mod> jėgos atributas
+intelligenceattrflat=<mod> intelekto atributas
+graceattrflat=<mod> gracingumo atributas
+
+dodgechance=<mod>% išsisukimo tikimybė
+rangedweaponszoom=<mod> nuotolinių ginklų priartinimas
+rangedweaponsrange=<mod>% nuotolinių ginklų nuotolis
+mobdetectionrange=<mod> mobų aptikimo nuotolis
+focusdamage=<mod>% fokusavimo žala
+focuschance=<mod>% fokusavimo tikimybė
+
+
+[enchantment]
+evasive=Išsisukantis
+stalking=Persekiojimas
+regenerative=Regeneruojantis
+energetic=Energingas
+depleted=Išeikvotas
+
+
+[buff]
+overlevelclassbuff=Per aukšto lygio klasė
+markedbuff=Pažymėtas
+darkcursebuff=Tamsus prakeiksmas
+
+
+[buffdesc]
+overlevelclassbuff1=§9Viena iš jūsų klasių viršija taškų limitą
+overlevelclassbuff2=§6Negalėsite tęsti, kol tai nebus ištaisyta
+darkcursebuff1=+25% gaunamos žalos
+darkcursebuff2=Visa žala taip pat sumažina maksimalią sveikatą
+
+
+[mob]
+rpgmobname=[<class>] <name> <level> lygis
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9<level> lygis§0
+
+
+[mobclass]
+boss=Bosas
+warrior=Karys
+tank=Tankas
+runner=Bėgikas
+healer=Gydytojas
+explosive=Sprogstamasis
+glacial=Ledinis
+electric=Elektrinis
+flash=Blyksnis
+dark=Tamsus
+legend=Legenda
+
+
+[attributes]
+endurance=Ištvermė
+strength=Jėga
+speed=Greitis
+intelligence=Intelektas
+grace=Gracingumas
+
+
+[classes]
+warrior=Karys
+ranger=Lankininkas
+wizard=Burtininkas
+necromancer=Nekromantas
+cleric=Klerikas
+rogue=Sukčius
+warlock=Raganius
+paladin=Paladinas
+druid=Druidas
+
+
+[passives]
+passives=Pasyvūs
+
+// Karys
+regeneration=Regeneracija
+muscles=Raumenys
+legs=Kojos
+force=Jėga
+unstoppable=Nesustabdomas
+vigor=Gyvybingumas
+ironskin=Geležinė oda
+unleashingrage=Išlaisvinantis įniršis
+unleashinghaste=Išlaisvinantis skubėjimas
+unyielding=Nepalenkiamas
+lastbreath=Paskutinis atodūsis
+
+// Lankininkas
+aim=Taikymasis
+agility=Vikrumas
+criticalshots=Kritiniai šūviai
+energy=Energija
+recovery=Atsigavimas
+eagleeye=Erelio akis
+focus=Fokusavimas
+erradication=Išnaikinimas
+predatorsense=Plėšrūno pojūtis
+plasmagrenade=Plazminė granata
+wolfcompanion=Vilkas kompanionas
+
+
+[passivesdesc]
+
+// Karys
+unleashingrage=Kiekvienas lygis suteikia:\n\n+1% visos žalos už kiekvieną 10% trūkstamos sveikatos
+unleashinghaste=Kiekvienas lygis suteikia:\n\n+1% judėjimo greičio už kiekvieną 10% trūkstamos sveikatos
+unyielding=Kiekvienas lygis suteikia:\n\n+5% atakos greičio ir -5% gaunamos žalos, kai sveikata yra mažesnė nei 20%
+lastbreath=Užuot mirę, tapsite nepažeidžiami §a[[3 x įgūdžių lygis]] sekundėms§0\nPasibaigus laikui, mirsite
+
+// Lankininkas
+plasmagrenade=Kas 8 nuotolines atakas iššauna valdomą sprogstamąjį sviedinį, kuris padaro §i[[30 x įgūdžių lygis]]%§0 ginklo žalos
+wolfcompanion=Vilkas kompanionas atakuos pažymėtus priešus, padarydamas §i[[žaidėjo lygis x įgūdžių lygis + intelektas x įgūdžių lygis]] šauklio žalos§0
+
+
+[activeskills]
+empty=Tuščia
+
+// Karys
+fury=Įniršis
+recovery=Atsigavimas
+provocation=Provokacija
+berserkercharge=Berserkerio puolimas
+
+groundslam=Žemės smūgis
+grounddestruction=Žemės sunaikinimas
+parry=Pariravimas
+battlecry=Kovos šūkis
+
+ironguard=Geležinė apsauga
+thornedguard=Spygliuota apsauga
+intimidation=Bauginimas
+
+objectthrowing=Objektų mėtymas
+
+// Lankininkas
+shortdash=Trumpas brūkšnys
+longdash=Ilgas brūkšnys
+lethalshot=Mirtinas šūvis
+venomshot=Nuodingas šūvis
+explosivearrow=Sprogstamoji strėlė
+
+shotsrampage=Šūvių siautulys
+huntersmark=Medžiotojo ženklas
+beartrap=Meškos spąstai
+
+huntersinstinct=Medžiotojo instinktas
+arrowstorm=Strėlių audra
+
+
+[activeskillsdesc]
+
+// Karys
+fury=Kitoms 6 sekundėms padidinkite savo artimos kovos žalą ir atakos greitį §a[[20 x įgūdžių lygis]]%
+recovery=Kitoms 10 sekundžių labai padidina kovos sveikatos regeneraciją, per visą trukmę atstatydama §a[[20 + ištvermė x įgūdžių lygis]] sveikatos§0
+provocation=Kitoms §a[[2 x įgūdžių lygis]] sekundėms§0 priverskite netoliese esančius priešus sutelkti savo atakas į jus
+berserkercharge=Puola į priekį trumpą atstumą, padarydamas §i[[10 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x greitis x įgūdžių lygis]] žalos§0 visiems praėjusiems priešams\nSunaudoja 50% ištvermės
+groundslam=Srities ataka, kuri padaro §i[[5 x jėga]] artimos kovos žalos§0 ir §9apsvaigina§0 §a[[1 x įgūdžių lygis]] sekundėms§0
+grounddestruction=Srities ataka, kuri padaro §i[[5 x jėga x įgūdžių lygis + 5 x žaidėjo lygis x įgūdžių lygis]] artimos kovos žalos§0 ir §9apsvaigina§0 2 sekundėms
+parry=Tapsite nepažeidžiami 0,5 sekundės ir grąžinsite 500% gautos pradinės žalos\nSunaudoja 100% ištvermės
+battlecry=Kitoms 10 sekundžių padidinkite savo ir netoliese esančių sąjungininkų visą žalą ir judėjimo greitį §a[[10 x įgūdžių lygis]]%
+
+ironguard=-50% gaunamos žalos §a[[4 x įgūdžių lygis]] sekundėms
+thornedguard=-50% gaunamos žalos 12 sekundžių\nBe to, grąžina §a[[100 x įgūdžių lygis]]%§0 gautos pradinės žalos
+intimidation=Kitoms §a[[įgūdžių lygis]] sekundėms§0 priverskite netoliese esančius priešus bėgti
+
+objectthrowing=1 žingsnis: paimkite objektą priešais save\n2 žingsnis: meskite jį į priekį, padarydami §i[[20 x žaidėjo lygis + 5 x jėga x įgūdžių lygis]] artimos kovos žalos§0\nAbu žingsniai sunaudoja visą jūsų ištvermę (mažiausiai 100%)
+
+// Lankininkas
+shortdash=Atlikite 100 jėgos brūkšnį\nSunaudoja 15% ištvermės
+longdash=Atlikite 150 jėgos brūkšnį\nSunaudoja 25% ištvermės
+lethalshot=Iššaukite §hmirtiną strėlę§0 į artimiausią priešą, padarydami §i[[5 x žaidėjo lygis + 5 x jėga x įgūdžių lygis]] lankininko žalos§0
+venomshot=Iššaukite §bnuodingą strėlę§0 į artimiausią priešą, padarydami §i[[4 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x intelektas x įgūdžių lygis]] lankininko žalos§0
+explosiveshot=Iššaukite §isprogstamąją strėlę§0 į artimiausią priešą, padarydami §i[[4 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x intelektas x įgūdžių lygis]] lankininko žalos§0
+
+shotsrampage=Kol turite bent 1 Šūvių siautulio kaupimą, pataikę į priešą nuotoline ataka suteikia 1 papildomą kaupimą 5 sekundėms\nKiekvienas Šūvių siautulio kaupimas padidina atakos greitį 5%, iki daugiausiai 30 kaupimų
+huntersmark=§hPažymėkite§0 artimiausią priešą su didžiausia sveikata 10 sekundžių\nJei nužudysite pažymėtą taikinį, 5 sekundėms gausite §a+[[20 x įgūdžių lygis]]%§0 nuotolinės atakos greičio ir judėjimo greičio
+beartrap=Padėkite ant žemės meškos spąstus, kurie išnyks, jei bus suaktyvinti arba po 20 sekundžių\nJei priešas juos suaktyvins, jis patirs §i[[10 x žaidėjo lygis]] žalos§0 ir bus įstrigęs 5 sekundes
+
+huntersinstinct=Kitoms 12 sekundžių padidinkite savo §7išsisukimo tikimybę§0 §a[[10 x įgūdžių lygis]]%\n§hPažymėkite§0 5 sekundėms priešus, kurių išvengiate
+arrowstorm=Iššaukite paprastą strėlę į kiekvieną artimą priešą, padarydami §i[[2 x žaidėjo lygis + jėga x įgūdžių lygis + greitis x įgūdžių lygis]] lankininko žalos§0 kiekviena strėle
+
+[skillsdesckeys]
+x=x
+skilllevel=Įgūdžių lygis
+playerlevel=Žaidėjo lygis
+endurance=Ištvermė
+speed=Greitis
+strength=Jėga
+intelligence=Intelektas
+grace=Gracingumas
+
+
+[extraskilldesc]
+// Stiprinimai
+marked=§hPažymėtas:§0 Padarykite +20% žalos (+ §hfokusavimo žalos§0) ir +10% kritinės tikimybės mobams, kuriuos pažymite\nVisi valdomi ir/arba į artimiausią priešą iššauti sviediniai teiks pirmenybę pažymėtiems priešams
+
+// Tikimybės modifikatoriai
+dodgechance=§7Išsisukimo tikimybė:§0 Tikimybė išsisukti nuo artėjančių atakų. Negali viršyti 80%
+focuschance=§hFokusavimo tikimybė:§0 Tikimybė §hpažymėti§0 mobą 5 sekundėms, kai jis atakuojamas ne šauklio žala
+
+// Plokštieji modifikatoriai
+mobdetection=§9Mobų aptikimas:§0 Rodo netoliese esančius mobus žemėlapyje. Didesnis aptikimo nuotolis atskleidžia mobus iš toliau
+
+// Sviediniai
+lethalarrow=§hMirtina strėlė:§0 Valdoma strėlė, kuri suteikia kritinį smūgį
+venomarrow=§bNuodinga strėlė:§0 Valdoma strėlė, kuri nuodija priešus, 30 sekundžių per sekundę kartodama 10% savo pradinės žalos
+explosivearrow=§iSprogstamoji strėlė:§0 Valdoma strėlė, kuri sukelia magišką sprogimą su lygia žala
+
+
+[item]
+scrollofoblivion=Užmaršties ritinys
+ringsbox=Žiedų dėžutė
+
+// Atributų žiedai
+endurancewoodring=Ištvermės medinis žiedas
+endurancecopperring=Ištvermės varinis žiedas
+enduranceironring=Ištvermės geležinis žiedas
+endurancegoldring=Ištvermės auksinis žiedas
+
+speedwoodring=Greičio medinis žiedas
+speedcopperring=Greičio varinis žiedas
+speedgoldring=Greičio auksinis žiedas
+speedironring=Greičio geležinis žiedas
+
+strengthwoodring=Jėgos medinis žiedas
+strengthcopperring=Jėgos varinis žiedas
+strengthgoldring=Jėgos auksinis žiedas
+strengthironring=Jėgos geležinis žiedas
+
+intelligencewoodring=Intelekto medinis žiedas
+intelligencecopperring=Intelekto varinis žiedas
+intelligencegoldring=Intelekto auksinis žiedas
+intelligenceironring=Intelekto geležinis žiedas
+
+gracewoodring=Gracingumo medinis žiedas
+gracecopperring=Gracingumo varinis žiedas
+graceironring=Gracingumo geležinis žiedas
+gracegoldring=Gracingumo auksinis žiedas
+
+
+[itemtooltip]
+scrollofoblivion=Suteikia 2 atstatymo taškus
+ringsboxtip=Gali saugoti atributų žiedus
+
+
+[message]
+xp=Patirtis
+levelup=Pakeltas lygis!
+dodge=Išsisukimas!
+
+newmobkill=Jūs gavote <exp> patirties už pirmą kartą nužudytą <mob>
+newlevel=Sveikiname! Pasiekėte <level> lygį. Paspauskite [input=openrpgmenu], kad atidarytumėte RPG meniu
+
+noupdatesincombat=Kovos metu negalite keisti savo atributų, klasių ar įgūdžių
+noactiveskill=Jūs nebeturite to aktyvaus įgūdžio, jei norite jį naudoti, vėl jį patobulinkite
+
+equipfirst=Pirmiausia turite aprūpinti aktyvų įgūdį šioje vietoje
+activeskillinuse=Šis įgūdis jau naudojamas
+anotheractiveskillinuse=Jūs jau naudojate kitą įgūdį
+incooldown=Atsistatymas
+notenoughstamina=Nepakanka ištvermės
+nograbbableobject=Priešais jus nėra paimamo objekto
+
+[ui]
+menutitle=RPG MODAS, autorius Save
+attributes=Atributai
+activeskills=Aktyvūs įgūdžiai
+classes=Klasės
+
+level=Lygis <level>
+classlevel=<class> <level> lygis
+lvl=Lygis <level>
+eachlevel=Kiekvienas lygis suteikia:
+experience=Patirtis: <exp> / <nextexp>
+totalexperience=Bendra patirtis: <exp>
+
+resetpoints=Atstatymo taškai: <points>
+attrpoints=Atributų taškai: <points>
+classpoints=Klasės taškai: <points>
+passivepoints=Pasyvių taškai: <points>
+activeskillpoints=Aktyvių įgūdžių taškai: <points>
+
+activeskillsuse=Šis modas paverčia išraiškų ratą (pagal nutylėjimą T klavišas) į aktyvių įgūdžių ratą
+activeskillsusetip1=Rekomenduojama pakeisti išraiškų rato valdymą į lengvai pasiekiamą klavišą
+activeskillsusetip2=Taip pat galite priskirti klavišą kiekvienai aktyvaus įgūdžio vietai (idealiai tinka įgūdžiams su trumpu atsistatymu)
+activeskillsequipinstructions=Spustelėkite vietą, kad aprūpintumėte aktyvų įgūdį. Negalite nuimti aktyvaus įgūdžio, kol jis atsistato
+noactiveskills=Jūs neturite aktyvių įgūdžių. Atrakinkite juos per klases
+
+activeskillcooldown=§9Atsistatymas: <seconds>s
+activeskillcooldownmod=§9Atsistatymas: [[<seconds> <sign> <mod> x įgūdžių lygis]]s
+requiredclasslevel=§bReikalingas <level> klasės lygis
+requiredactiveskill=§bReikalingas '<skill>' <level> lygis
+maxlevel=§aMaksimalus lygis: <level>
+
+clicktoseebase=[input=mouse1], kad pamatytumėte bazę
+clicktoseelevel=[input=mouse1], kad pamatytumėte <level> lygį
+
+classlevelseparation=- <level> klasės lygis -
+
+inuse=Naudojamas
+
+upcomingclass=§6Būsimoji klasė\n§9Ši klasė šiuo metu kuriama\nir bus pasiekiama būsimame atnaujinime
+
+addcolumn=Pridėti stulpelį
+removecolumn=Pašalinti stulpelį
+
+
+[controls]
+openrpgmenu=Atidaryti RPG meniu
+activeskillslot1=Aktyvaus įgūdžio vieta 1
+activeskillslot2=Aktyvaus įgūdžio vieta 2
+activeskillslot3=Aktyvaus įgūdžio vieta 3
+activeskillslot4=Aktyvaus įgūdžio vieta 4

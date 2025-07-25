@@ -1,0 +1,321 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> kestävyysominaisuus
+speedattrflat=<mod> nopeusominaisuus
+strengthattrflat=<mod> voimakkuusominaisuus
+intelligenceattrflat=<mod> älykkyysominaisuus
+graceattrflat=<mod> sulo-ominaisuus
+
+dodgechance=<mod>% väistömahdollisuus
+rangedweaponszoom=<mod> etäaseiden zoomaus
+rangedweaponsrange=<mod>% etäaseiden kantama
+mobdetectionrange=<mod> mobien havaitsemisalue
+focusdamage=<mod>% keskittymisvaurio
+focuschance=<mod>% keskittymismahdollisuus
+
+
+[enchantment]
+evasive=Väistelevä
+stalking=Vaaniminen
+regenerative=Uudistuva
+energetic=Energinen
+depleted=Ehtynyt
+
+
+[buff]
+overlevelclassbuff=Ylitasoluokka
+markedbuff=Merkitty
+darkcursebuff=Pimeä kirous
+
+
+[buffdesc]
+overlevelclassbuff1=§9Yksi luokistasi ylittää pisterajan
+overlevelclassbuff2=§6Et voi jatkaa, ennen kuin se on korjattu
+darkcursebuff1=+25% saapuvaa vahinkoa
+darkcursebuff2=Kaikki vahinko vähentää myös enimmäisterveyttä
+
+
+[mob]
+rpgmobname=[<class>] <name> taso <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9taso <level>§0
+
+
+[mobclass]
+boss=Pomo
+warrior=Soturi
+tank=Tankki
+runner=Juoksija
+healer=Parantaja
+explosive=Räjähtävä
+glacial=Jäinen
+electric=Sähköinen
+flash=Välähdys
+dark=Pimeä
+legend=Legenda
+
+
+[attributes]
+endurance=Kestävyys
+strength=Voimakkuus
+speed=Nopeus
+intelligence=Älykkyys
+grace=Sulo
+
+
+[classes]
+warrior=Soturi
+ranger=Metsänvartija
+wizard=Velho
+necromancer=Nekromantikko
+cleric=Pappi
+rogue=Rosvo
+warlock=Warlock
+paladin=Paladiini
+druid=Druidi
+
+
+[passives]
+passives=Passiiviset
+
+// Soturi
+regeneration=Uudistuminen
+muscles=Lihakset
+legs=Jalat
+force=Voima
+unstoppable=Pysäyttämätön
+vigor=Vigori
+ironskin=Rautaiho
+unleashingrage=Vapauttava raivo
+unleashinghaste=Vapauttava kiire
+unyielding=Periksiantamaton
+lastbreath=Viimeinen hengenveto
+
+// Metsänvartija
+aim=Tähtäys
+agility=Ketterys
+criticalshots=Kriittiset laukaukset
+energy=Energia
+recovery=Palautuminen
+eagleeye=Kotkansilmä
+focus=Keskittyminen
+erradication=Hävitys
+predatorsense=Saalistajan aisti
+plasmagrenade=Plasmakranaatti
+wolfcompanion=Susi-kumppani
+
+
+[passivesdesc]
+
+// Soturi
+unleashingrage=Jokainen taso antaa:\n\n+1% kaikkea vahinkoa jokaista 10% puuttuvaa terveyttä kohden
+unleashinghaste=Jokainen taso antaa:\n\n+1% liikkumisnopeutta jokaista 10% puuttuvaa terveyttä kohden
+unyielding=Jokainen taso antaa:\n\n+5% hyökkäysnopeutta ja -5% saapuvaa vahinkoa alle 20% terveydellä
+lastbreath=Sen sijaan, että kuolisit, tulet haavoittumattomaksi §a[[3 x taitotaso]] sekunniksi§0\nKun aika loppuu, kuolet
+
+// Metsänvartija
+plasmagrenade=Joka 8. etähyökkäys ampuu ohjatun räjähtävän ammuksen, joka tekee §i[[30 x taitotaso]]%§0 aseen vahingosta\nwolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden §i[[pelaajan taso x taitotaso + älykkyys x taitotaso]] kutsujan vahinkoa§0
+
+
+[activeskills]
+empty=Tyhjä
+
+// Soturi
+fury=Raivo
+recovery=Palautuminen
+provocation=Provokaatio
+berserkercharge=Berserker-ryntäys
+
+groundslam=Maanisku
+grounddestruction=Maan tuho
+parry=Torjunta
+battlecry=Sotahuuto
+
+ironguard=Rautavartio
+thornedguard=Piikkivartio
+intimidation=Pelottelu
+
+objectthrowing=Esineen heittäminen
+
+// Metsänvartija
+shortdash=Lyhyt syöksy
+longdash=Pitkä syöksy
+lethalshot=Tappava laukaus
+venomshot=Myrkkylaukaus
+explosivearrow=Räjähtävä nuoli
+
+shotsrampage=Laukausten riehunta
+huntersmark=Metsästäjän merkki
+beartrap=Karhunrauta
+
+huntersinstinct=Metsästäjän vaisto
+arrowstorm=Nuolimyrsky
+
+
+[activeskillsdesc]
+
+// Soturi
+fury=Seuraavien 6 sekunnin ajan lisää lähitaisteluvahinkoasi ja hyökkäysnopeuttaasi §a[[20 x taitotaso]]%§0
+recovery=Seuraavien 10 sekunnin ajan tehostaa huomattavasti taisteluterveyden palautumista ja palauttaa §a[[20 + kestävyys x taitotaso]] terveyttä§0 keston aikana
+provocation=Pakota seuraavien §a[[2 x taitotaso]] sekunnin§0 ajan lähellä olevat viholliset keskittämään hyökkäyksensä sinuun
+berserkercharge=Ryntää eteenpäin lyhyen matkan ja tee §i[[10 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x nopeus x taitotaso]] vahinkoa§0 kaikille ohittamillesi vihollisille\nKuluttaa 50% kestävyydestä
+groundslam=Aluehyökkäys, joka tekee §i[[5 x voimakkuus]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 §a[[1 x taitotaso]] sekunniksi§0
+grounddestruction=Aluehyökkäys, joka tekee §i[[5 x voimakkuus x taitotaso + 5 x pelaajan taso x taitotaso]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 2 sekunniksi
+parry=Tule haavoittumattomaksi 0,5 sekunniksi ja palauta 500% alkuperäisestä saadusta vahingosta\nKuluttaa 100% kestävyydestä
+battlecry=Seuraavien 10 sekunnin ajan lisää sinun ja lähellä olevien liittolaisten kaikkea vahinkoa ja liikkumisnopeutta §a[[10 x taitotaso]]%§0
+
+ironguard=-50% saapuvaa vahinkoa §a[[4 x taitotaso]] sekunnin ajan
+thornedguard=-50% saapuvaa vahinkoa 12 sekunnin ajan\nLisäksi palauttaa §a[[100 x taitotaso]]%§0 alkuperäisestä saadusta vahingosta
+intimidation=Seuraavien §a[[taitotaso]] sekunnin§0 ajan saa lähellä olevat viholliset pakenemaan
+
+objectthrowing=Vaihe 1: Tartu edessäsi olevaan esineeseen\nVaihe 2: Heitä se eteenpäin tehden §i[[20 x pelaajan taso + 5 x voimakkuus x taitotaso]] lähitaisteluvahinkoa§0\nMolemmat vaiheet kuluttavat kaiken kestävyytesi (vähintään 100%)
+
+// Metsänvartija
+shortdash=Suorita 100 voimakkuuden syöksy\nKuluttaa 15% kestävyydestä
+longdash=Suorita 150 voimakkuuden syöksy\nKuluttaa 25% kestävyydestä
+lethalshot=Ammu §htappava nuoli§0 lähimpään viholliseen tehden §i[[5 x pelaajan taso + 5 x voimakkuus x taitotaso]] metsänvartijan vahinkoa§0
+venomshot=Ammu §bmyrkkynuoli§0 lähimpään viholliseen tehden §i[[4 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x älykkyys x taitotaso]] metsänvartijan vahinkoa§0
+explosiveshot=Ammu §iräjähtävä nuoli§0 lähimpään viholliseen tehden §i[[4 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x älykkyys x taitotaso]] metsänvartijan vahinkoa§0
+
+shotsrampage=Kun sinulla on vähintään 1 pino Laukausten riehuntaa, vihollisen osuminen etähyökkäyksellä antaa 1 lisäpinon 5 sekunniksi\nJokainen Laukausten riehunnan pino lisää hyökkäysnopeutta 5%, enintään 30 pinoon asti
+huntersmark=§hMerkitse§0 lähin vihollinen, jolla on eniten terveyttä, 10 sekunniksi\nJos tapat merkityn kohteen, saat §a+[[20 x taitotaso]]%§0 etähyökkäysnopeutta ja liikkumisnopeutta 5 sekunniksi
+beartrap=Aseta maahan karhunrauta, joka katoaa, jos se laukeaa tai 20 sekunnin kuluttua\nJos vihollinen laukaisee sen, hän saa §i[[10 x pelaajan taso]] vahinkoa§0 ja jää ansaan 5 sekunniksi
+
+huntersinstinct=Seuraavien 12 sekunnin ajan lisää §7väistömahdollisuuttasi§0 §a[[10 x taitotaso]]%§0\n§hMerkitse§0 5 sekunniksi viholliset, jotka väistät
+arrowstorm=Ammu perusnuoli jokaiseen lähellä olevaan viholliseen tehden §i[[2 x pelaajan taso + voimakkuus x taitotaso + nopeus x taitotaso]] metsänvartijan vahinkoa§0 kullakin nuolella
+
+[skillsdesckeys]
+x=x
+skilllevel=Taitotaso
+playerlevel=Pelaajan taso
+endurance=Kestävyys
+speed=Nopeus
+strength=Voimakkuus
+intelligence=Älykkyys
+grace=Sulo
+
+
+[extraskilldesc]
+// Buffit
+marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\nKaikki ohjatut ja/tai lähimpään viholliseen ammutut ammukset priorisoivat merkittyjä vihollisia
+
+// Mahdollisuusmuuntimet
+dodgechance=§7Väistömahdollisuus:§0 Mahdollisuus väistää saapuvia hyökkäyksiä. Ei voi ylittää 80%
+focuschance=§hKeskittymismahdollisuus:§0 Mahdollisuus §hmerkitä§0 mobi 5 sekunniksi, kun sitä vastaan hyökätään muulla kuin kutsujan vahingolla
+
+// Tasaiset muuntimet
+mobdetection=§9Mobien havaitseminen:§0 Näyttää lähellä olevat mobit kartalla. Suurempi havaitsemisalue paljastaa mobit kauempaa
+
+// Ammukset
+lethalarrow=§hTappava nuoli:§0 Ohjattu nuoli, joka antaa kriittisen osuman
+venomarrow=§bMyrkkynuoli:§0 Ohjattu nuoli, joka myrkyttää vihollisia ja toistaa 10% alkuperäisestä vahingostaan sekunnissa 30 sekunnin ajan
+explosivearrow=§iRäjähtävä nuoli:§0 Ohjattu nuoli, joka aiheuttaa samanvahinkoisen maagisen räjähdyksen
+
+
+[item]
+scrollofoblivion=Unohduksen käärö
+ringsbox=Sormuslaatikko
+
+// Ominaisuussormukset
+endurancewoodring=Kestävyyspuusormus
+endurancecopperring=Kestävyyskuparisormus
+enduranceironring=Kestävyysrautasormus
+endurancegoldring=Kestävyyskultasormus
+
+speedwoodring=Nopeuspuusormus
+speedcopperring=Nopeuskuparisormus
+speedgoldring=Nopeuskultasormus
+speedironring=Nopeusrautasormus
+
+strengthwoodring=Voimakkuuspuusormus
+strengthcopperring=Voimakkuuskuparisormus
+strengthgoldring=Voimakkuuskultasormus
+strengthironring=Voimakkuusrautasormus
+
+intelligencewoodring=Älykkyyspuusormus
+intelligencecopperring=Älykkyyskuparisormus
+intelligencegoldring=Älykkyyskultasormus
+intelligenceironring=Älykkyysrautasormus
+
+gracewoodring=Sulopuusormus
+gracecopperring=Sulokuparisormus
+graceironring=Sulorautasormus
+gracegoldring=Sulokultasormus
+
+
+[itemtooltip]
+scrollofoblivion=Antaa 2 nollauspistettä
+ringsboxtip=Voi säilyttää ominaisuussormuksia
+
+
+[message]
+xp=XP
+levelup=Taso ylös!
+dodge=Väistö!
+
+newmobkill=Sait <exp> kokemusta tapettuasi <mob> ensimmäistä kertaa
+newlevel=Onnittelut! Saavutit tason <level>. Avaa RPG-valikko painamalla [input=openrpgmenu]
+
+noupdatesincombat=Et voi muokata ominaisuuksiasi, luokkiasi tai taitojasi taistelun aikana
+noactiveskill=Sinulla ei ole enää sitä aktiivista taitoa, nosta sen tasoa uudelleen, jos haluat käyttää sitä
+
+equipfirst=Sinun on ensin varustettava aktiivinen taito tähän paikkaan
+activeskillinuse=Tämä taito on jo käytössä
+anotheractiveskillinuse=Sinulla on jo toinen taito käytössä
+incooldown=Jäähtymässä
+notenoughstamina=Ei tarpeeksi kestävyyttä
+nograbbableobject=Edessäsi ei ole tartuttavaa esinettä
+
+[ui]
+menutitle=RPG-MOD, tekijä Save
+attributes=Ominaisuudet
+activeskills=Aktiiviset taidot
+classes=Luokat
+
+level=Taso <level>
+classlevel=<class> taso <level>
+lvl=Taso <level>
+eachlevel=Jokainen taso antaa:
+experience=XP: <exp> / <nextexp>
+totalexperience=Kokonais-XP: <exp>
+
+resetpoints=Nollauspisteet: <points>
+attrpoints=Ominaisuuspisteet: <points>
+classpoints=Luokkapisteet: <points>
+passivepoints=Passiiviset pisteet: <points>
+activeskillpoints=Aktiiviset taitopisteet: <points>
+
+activeskillsuse=Tämä modi muuttaa ilmaisupyörän (oletuksena T-näppäin) aktiivisten taitojen pyöräksi
+activeskillsusetip1=On suositeltavaa vaihtaa ilmaisupyörän ohjaus helposti saavutettavaan näppäimeen
+activeskillsusetip2=Voit myös määrittää näppäimen jokaiselle aktiivisen taidon paikalle (ihanteellinen matalan jäähtymisajan taidoille)
+activeskillsequipinstructions=Napsauta paikkaa varustaaksesi aktiivisen taidon. Et voi poistaa aktiivista taitoa, joka on jäähtymässä
+noactiveskills=Sinulla ei ole aktiivisia taitoja. Avaa ne luokkien kautta
+
+activeskillcooldown=§9Jäähtymisaika: <seconds>s
+activeskillcooldownmod=§9Jäähtymisaika: [[<seconds> <sign> <mod> x taitotaso]]s
+requiredclasslevel=§bLuokkataso <level> vaaditaan
+requiredactiveskill=§bVaatii '<skill>' tason <level>
+maxlevel=§aMaksimitaso: <level>
+
+clicktoseebase=[input=mouse1] nähdäksesi perustan
+clicktoseelevel=[input=mouse1] nähdäksesi tason <level>
+
+classlevelseparation=- Luokkataso <level> -
+
+inuse=Käytössä
+
+upcomingclass=§6Tuleva luokka\n§9Tämä luokka on parhaillaan kehitteillä\nja se on saatavilla tulevassa päivityksessä
+
+addcolumn=Lisää sarake
+removecolumn=Poista sarake
+
+
+[controls]
+openrpgmenu=Avaa RPG-valikko
+activeskillslot1=Aktiivisen taidon paikka 1
+activeskillslot2=Aktiivisen taidon paikka 2
+activeskillslot3=Aktiivisen taidon paikka 3
+activeskillslot4=Aktiivisen taidon paikka 4

@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> Ausdauerattribut
+speedattrflat=<mod> Geschwindigkeitsattribut
+strengthattrflat=<mod> Stärkeattribut
+intelligenceattrflat=<mod> Intelligenzattribut
+graceattrflat=<mod> Anmutsattribut
+
+dodgechance=<mod>% Ausweichchance
+rangedweaponszoom=<mod> Zoom für Fernkampfwaffen
+rangedweaponsrange=<mod>% Reichweite für Fernkampfwaffen
+mobdetectionrange=<mod> Mob-Erkennungsreichweite
+focusdamage=<mod>% Fokusschaden
+focuschance=<mod>% Fokus-Chance
+
+
+[enchantment]
+evasive=Ausweichend
+stalking=Anschleichen
+regenerative=Regenerativ
+energetic=Energetisch
+depleted=Erschöpft
+
+
+[buff]
+overlevelclassbuff=Überlevel-Klasse
+markedbuff=Markiert
+darkcursebuff=Dunkler Fluch
+
+
+[buffdesc]
+overlevelclassbuff1=§9Eine deiner Klassen überschreitet ein Punktelimit
+overlevelclassbuff2=§6Du kannst nicht fortfahren, bis das Problem behoben ist
+darkcursebuff1=+25% eingehender Schaden
+darkcursebuff2=Jeder Schaden reduziert auch die maximale Gesundheit
+
+
+[mob]
+rpgmobname=[<class>] <name> Lvl <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9Lvl <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Krieger
+tank=Tank
+runner=Läufer
+healer=Heiler
+explosive=Explosiv
+glacial=Gletscher
+electric=Elektrisch
+flash=Blitz
+dark=Dunkel
+legend=Legende
+
+
+[attributes]
+endurance=Ausdauer
+strength=Stärke
+speed=Geschwindigkeit
+intelligence=Intelligenz
+grace=Anmut
+
+
+[classes]
+warrior=Krieger
+ranger=Waldläufer
+wizard=Zauberer
+necromancer=Nekromant
+cleric=Kleriker
+rogue=Schurke
+warlock=Hexenmeister
+paladin=Paladin
+druid=Druide
+
+
+[passives]
+passives=Passive Fähigkeiten
+
+// Krieger
+regeneration=Regeneration
+muscles=Muskeln
+legs=Beine
+force=Macht
+unstoppable=Unaufhaltsam
+vigor=Kraft
+ironskin=Eisenhaut
+unleashingrage=Entfesselter Zorn
+unleashinghaste=Entfesselte Eile
+unyielding=Unnachgiebig
+lastbreath=Letzter Atemzug
+
+// Waldläufer
+aim=Zielen
+agility=Beweglichkeit
+criticalshots=Kritische Schüsse
+energy=Energie
+recovery=Erholung
+eagleeye=Adlerauge
+focus=Fokus
+erradication=Ausrottung
+predatorsense=Raubtiersinn
+plasmagrenade=Plasmagranate
+wolfcompanion=Wolfsgefährte
+
+
+[passivesdesc]
+
+// Krieger
+unleashingrage=Jede Stufe gewährt:\n\n+1% Gesamtschaden für jede 10% fehlende Gesundheit
+unleashinghaste=Jede Stufe gewährt:\n\n+1% Bewegungsgeschwindigkeit für jede 10% fehlende Gesundheit
+unyielding=Jede Stufe gewährt:\n\n+5% Angriffsgeschwindigkeit und -5% eingehender Schaden bei unter 20% Gesundheit
+lastbreath=Anstatt zu sterben, wirst du für §a[[3 x Fähigkeitslevel]] Sekunden§0 unverwundbar\nSobald die Zeit abgelaufen ist, stirbst du
+
+// Waldläufer
+plasmagrenade=Alle 8 Fernkampfangriffe wird ein gelenktes explosives Projektil abgefeuert, das §i[[30 x Fähigkeitslevel]]%§0 des Waffenschadens verursacht
+wolfcompanion=Ein Wolfsgefährte greift markierte Gegner an und verursacht §i[[Spielerlevel x Fähigkeitslevel + Intelligenz x Fähigkeitslevel]] Beschwörerschaden§0
+
+
+[activeskills]
+empty=Leer
+
+// Krieger
+fury=Wut
+recovery=Erholung
+provocation=Provokation
+berserkercharge=Berserker-Ansturm
+
+groundslam=Bodenschlag
+grounddestruction=Bodenzerstörung
+parry=Parade
+battlecry=Schlachtruf
+
+ironguard=Eiserne Wache
+thornedguard=Dornenwache
+intimidation=Einschüchterung
+
+objectthrowing=Objektwerfen
+
+// Waldläufer
+shortdash=Kurzer Sprint
+longdash=Langer Sprint
+lethalshot=Tödlicher Schuss
+venomshot=Giftschuss
+explosivearrow=Explosiver Pfeil
+
+shotsrampage=Schuss-Amoklauf
+huntersmark=Jägermal
+beartrap=Bärenfalle
+
+huntersinstinct=Jägerinstinkt
+arrowstorm=Pfeilsturm
+
+
+[activeskillsdesc]
+
+// Krieger
+fury=Für die nächsten 6 Sekunden werden dein Nahkampfschaden und deine Angriffsgeschwindigkeit um §a[[20 x Fähigkeitslevel]]%§0 erhöht
+recovery=Für die nächsten 10 Sekunden wird die Kampf-Gesundheitsregeneration stark erhöht und stellt über die Dauer §a[[20 + Ausdauer x Fähigkeitslevel]] Gesundheit§0 wieder her
+provocation=Für die nächsten §a[[2 x Fähigkeitslevel]] Sekunden§0 zwingst du nahe Gegner, ihre Angriffe auf dich zu konzentrieren
+berserkercharge=Stürme eine kurze Distanz nach vorne und verursache bei allen durchquerten Gegnern §i[[10 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Geschwindigkeit x Fähigkeitslevel]] Schaden§0\nVerbraucht 50% Ausdauer
+groundslam=Flächenangriff, der §i[[5 x Stärke]] Nahkampfschaden§0 verursacht und für §a[[1 x Fähigkeitslevel]] Sekunden§0 §9betäubt§0
+grounddestruction=Flächenangriff, der §i[[5 x Stärke x Fähigkeitslevel + 5 x Spielerlevel x Fähigkeitslevel]] Nahkampfschaden§0 verursacht und für 2 Sekunden §9betäubt§0
+parry=Werde für 0,5 Sekunden unverwundbar und gib 500% des ursprünglich erhaltenen Schadens zurück\nVerbraucht 100% Ausdauer
+battlecry=Für die nächsten 10 Sekunden werden dein und der Gesamtschaden und die Bewegungsgeschwindigkeit naher Verbündeter um §a[[10 x Fähigkeitslevel]]%§0 erhöht
+
+ironguard=-50% eingehender Schaden für §a[[4 x Fähigkeitslevel]] Sekunden
+thornedguard=-50% eingehender Schaden für 12 Sekunden\nZusätzlich werden §a[[100 x Fähigkeitslevel]]%§0 des ursprünglich erhaltenen Schadens zurückgegeben
+intimidation=Für die nächsten §a[[Fähigkeitslevel]] Sekunden§0 lässt du nahe Gegner weglaufen
+
+objectthrowing=Schritt 1: Greife ein Objekt vor dir\nSchritt 2: Wirf es nach vorne und verursache §i[[20 x Spielerlevel + 5 x Stärke x Fähigkeitslevel]] Nahkampfschaden§0\nBeide Schritte verbrauchen deine gesamte Ausdauer (mindestens 100%)
+
+// Waldläufer
+shortdash=Führe einen Sprint mit 100 Stärke aus\nVerbraucht 15% Ausdauer
+longdash=Führe einen Sprint mit 150 Stärke aus\nVerbraucht 25% Ausdauer
+lethalshot=Schieße einen §htödlichen Pfeil§0 auf den nächsten Gegner und verursache §i[[5 x Spielerlevel + 5 x Stärke x Fähigkeitslevel]] Waldläuferschaden§0
+venomshot=Schieße einen §bgiftigen Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Intelligenz x Fähigkeitslevel]] Waldläuferschaden§0
+explosiveshot=Schieße einen §iexplosiven Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Intelligenz x Fähigkeitslevel]] Waldläuferschaden§0
+
+shotsrampage=Solange du mindestens 1 Stapel Schuss-Amoklauf hast, gewährt das Treffen eines Gegners mit einem Fernkampfangriff 1 zusätzlichen Stapel für 5 Sekunden\nJeder Stapel Schuss-Amoklauf erhöht die Angriffsgeschwindigkeit um 5%, bis zu einem Maximum von 30 Stapeln
+huntersmark=§hMarkiere§0 den nächsten Gegner mit der höchsten Gesundheit für 10 Sekunden\nWenn du ein markiertes Ziel tötest, erhältst du für 5 Sekunden §a+[[20 x Fähigkeitslevel]]%§0 Fernkampfangriffsgeschwindigkeit und Bewegungsgeschwindigkeit
+beartrap=Platziere eine Bärenfalle auf dem Boden, die verschwindet, wenn sie ausgelöst wird oder nach 20 Sekunden\nWenn ein Gegner sie auslöst, erleidet er §i[[10 x Spielerlevel]] Schaden§0 und ist für 5 Sekunden gefangen
+
+huntersinstinct=Für die nächsten 12 Sekunden wird deine §7Ausweichchance§0 um §a[[10 x Fähigkeitslevel]]%§0 erhöht\n§hMarkiere§0 für 5 Sekunden die Gegner, denen du ausweichst
+arrowstorm=Schieße einen einfachen Pfeil auf jeden nahen Gegner und verursache mit jedem Pfeil §i[[2 x Spielerlevel + Stärke x Fähigkeitslevel + Geschwindigkeit x Fähigkeitslevel]] Waldläuferschaden§0
+
+[skillsdesckeys]
+x=x
+skilllevel=Fähigkeitslevel
+playerlevel=Spielerlevel
+endurance=Ausdauer
+speed=Geschwindigkeit
+strength=Stärke
+intelligence=Intelligenz
+grace=Anmut
+
+
+[extraskilldesc]
+// Buffs
+marked=§hMarkiert:§0 Verursache +20% Schaden (+ §hFokusschaden§0) und +10% kritische Trefferchance bei Mobs, die du markierst\nAlle gelenkten und/oder auf den nächsten Gegner abgefeuerten Projektile priorisieren markierte Gegner
+
+// Chancenmodifikatoren
+dodgechance=§7Ausweichchance:§0 Chance, eingehenden Angriffen auszuweichen. Kann 80% nicht überschreiten
+focuschance=§hFokus-Chance:§0 Chance, einen Mob für 5 Sekunden zu §hmarkieren§0, wenn er mit Nicht-Beschwörerschaden angegriffen wird
+
+// Flache Modifikatoren
+mobdetection=§9Mob-Erkennung:§0 Zeigt nahe Mobs auf der Karte an. Eine höhere Erkennungsreichweite deckt Mobs aus größerer Entfernung auf
+
+// Projektile
+lethalarrow=§hTödlicher Pfeil:§0 Gelenkter Pfeil, der einen kritischen Treffer gewährt
+venomarrow=§bGiftpfeil:§0 Gelenkter Pfeil, der Gegner vergiftet und 30 Sekunden lang 10% seines ursprünglichen Schadens pro Sekunde wiederholt
+explosivearrow=§iExplosiver Pfeil:§0 Gelenkter Pfeil, der eine magische Explosion mit gleichem Schaden verursacht
+
+
+[item]
+scrollofoblivion=Schriftrolle des Vergessens
+ringsbox=Ringkiste
+
+// Attributringe
+endurancewoodring=Ausdauer-Holzring
+endurancecopperring=Ausdauer-Kupferring
+enduranceironring=Ausdauer-Eisenring
+endurancegoldring=Ausdauer-Goldring
+
+speedwoodring=Geschwindigkeits-Holzring
+speedcopperring=Geschwindigkeits-Kupferring
+speedgoldring=Geschwindigkeits-Goldring
+speedironring=Geschwindigkeits-Eisenring
+
+strengthwoodring=Stärke-Holzring
+strengthcopperring=Stärke-Kupferring
+strengthgoldring=Stärke-Goldring
+strengthironring=Stärke-Eisenring
+
+intelligencewoodring=Intelligenz-Holzring
+intelligencecopperring=Intelligenz-Kupferring
+intelligencegoldring=Intelligenz-Goldring
+intelligenceironring=Intelligenz-Eisenring
+
+gracewoodring=Anmut-Holzring
+gracecopperring=Anmut-Kupferring
+graceironring=Anmut-Eisenring
+gracegoldring=Anmut-Goldring
+
+
+[itemtooltip]
+scrollofoblivion=Gewährt 2 Rücksetzpunkte
+ringsboxtip=Kann Attributringe aufbewahren
+
+
+[message]
+xp=EP
+levelup=Level auf!
+dodge=Ausweichen!
+
+newmobkill=Du hast <exp> Erfahrung für das erstmalige Töten von <mob> erhalten
+newlevel=Herzlichen Glückwunsch! Du hast Level <level> erreicht. Drücke [input=openrpgmenu], um das RPG-Menü zu öffnen
+
+noupdatesincombat=Du kannst deine Attribute, Klassen oder Fähigkeiten während des Kampfes nicht ändern
+noactiveskill=Du hast diese aktive Fähigkeit nicht mehr, verbessere sie erneut, wenn du sie verwenden möchtest
+
+equipfirst=Zuerst musst du eine aktive Fähigkeit in diesem Slot ausrüsten
+activeskillinuse=Diese Fähigkeit wird bereits verwendet
+anotheractiveskillinuse=Du hast bereits eine andere Fähigkeit in Verwendung
+incooldown=Abklingzeit
+notenoughstamina=Nicht genügend Ausdauer
+nograbbableobject=Es befindet sich kein greifbares Objekt vor dir
+
+[ui]
+menutitle=RPG-MOD von Save
+attributes=Attribute
+activeskills=Aktive Fähigkeiten
+classes=Klassen
+
+level=Level <level>
+classlevel=<class> Level <level>
+lvl=Lvl <level>
+eachlevel=Jede Stufe gewährt:
+experience=EP: <exp> / <nextexp>
+totalexperience=Gesamt-EP: <exp>
+
+resetpoints=Rücksetzpunkte: <points>
+attrpoints=Attributpunkte: <points>
+classpoints=Klassenpunkte: <points>
+passivepoints=Passive Punkte: <points>
+activeskillpoints=Aktive Fähigkeitspunkte: <points>
+
+activeskillsuse=Dieser Mod verwandelt das Ausdrucksrad (standardmäßig T-Taste) in das Rad für aktive Fähigkeiten
+activeskillsusetip1=Es wird empfohlen, die Steuerung des Ausdrucksrads auf eine leicht zugängliche Taste zu ändern
+activeskillsusetip2=Du kannst auch jedem Slot für aktive Fähigkeiten eine Taste zuweisen (ideal für Fähigkeiten mit geringer Abklingzeit)
+activeskillsequipinstructions=Klicke auf einen Slot, um eine aktive Fähigkeit auszurüsten. Du kannst eine aktive Fähigkeit während der Abklingzeit nicht ablegen
+noactiveskills=Du hast keine aktiven Fähigkeiten. Schalte sie durch die Klassen frei
+
+activeskillcooldown=§9Abklingzeit: <seconds>s
+activeskillcooldownmod=§9Abklingzeit: [[<seconds> <sign> <mod> x Fähigkeitslevel]]s
+requiredclasslevel=§bKlassenlevel <level> erforderlich
+requiredactiveskill=§bBenötigt '<skill>' Level <level>
+maxlevel=§aMaximales Level: <level>
+
+clicktoseebase=[input=mouse1] um Basis anzuzeigen
+clicktoseelevel=[input=mouse1] um Level <level> anzuzeigen
+
+classlevelseparation=- Klassenlevel <level> -
+
+inuse=In Benutzung
+
+upcomingclass=§6Kommende Klasse\n§9Diese Klasse befindet sich derzeit in der Entwicklung\nund wird in einem zukünftigen Update verfügbar sein
+
+addcolumn=Spalte hinzufügen
+removecolumn=Spalte entfernen
+
+
+[controls]
+openrpgmenu=RPG-Menü öffnen
+activeskillslot1=Aktiver Fähigkeitsslot 1
+activeskillslot2=Aktiver Fähigkeitsslot 2
+activeskillslot3=Aktiver Fähigkeitsslot 3
+activeskillslot4=Aktiver Fähigkeitsslot 4

@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atribut daya tahan
+speedattrflat=<mod> atribut kecepatan
+strengthattrflat=<mod> atribut kekuatan
+intelligenceattrflat=<mod> atribut kecerdasan
+graceattrflat=<mod> atribut keanggunan
+
+dodgechance=<mod>% peluang menghindar
+rangedweaponszoom=<mod> zoom senjata jarak jauh
+rangedweaponsrange=<mod>% jangkauan senjata jarak jauh
+mobdetectionrange=<mod> jangkauan deteksi monster
+focusdamage=<mod>% kerusakan fokus
+focuschance=<mod>% peluang fokus
+
+
+[enchantment]
+evasive=Menghindar
+stalking=Mengintai
+regenerative=Regeneratif
+energetic=Energik
+depleted=Habis
+
+
+[buff]
+overlevelclassbuff=Kelas Level Berlebih
+markedbuff=Ditandai
+darkcursebuff=Kutukan Kegelapan
+
+
+[buffdesc]
+overlevelclassbuff1=§9Salah satu kelas Anda melebihi batas poin
+overlevelclassbuff2=§6Anda tidak akan dapat melanjutkan sampai diperbaiki
+darkcursebuff1=+25% Kerusakan Masuk
+darkcursebuff2=Semua kerusakan juga mengurangi Kesehatan Maks
+
+
+[mob]
+rpgmobname=[<class>] <name> lvl <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+
+[mobclass]
+boss=Bos
+warrior=Prajurit
+tank=Tank
+runner=Pelari
+healer=Penyembuh
+explosive=Peledak
+glacial=Glasial
+electric=Listrik
+flash=Kilat
+dark=Gelap
+legend=Legenda
+
+
+[attributes]
+endurance=Daya Tahan
+strength=Kekuatan
+speed=Kecepatan
+intelligence=Kecerdasan
+grace=Keanggunan
+
+
+[classes]
+warrior=Prajurit
+ranger=Penjaga
+wizard=Penyihir
+necromancer=Ahli Nujum
+cleric=Ulama
+rogue=Bajingan
+warlock=Penyihir
+paladin=Paladin
+druid=Druid
+
+
+[passives]
+passives=Pasif
+
+// Prajurit
+regeneration=Regenerasi
+muscles=Otot
+legs=Kaki
+force=Kekuatan
+unstoppable=Tak Terhentikan
+vigor=Semangat
+ironskin=Kulit Besi
+unleashingrage=Melepaskan Amarah
+unleashinghaste=Melepaskan Kecepatan
+unyielding=Gigih
+lastbreath=Napas Terakhir
+
+// Penjaga
+aim=Membidik
+agility=Kelincahan
+criticalshots=Tembakan Kritis
+energy=Energi
+recovery=Pemulihan
+eagleeye=Mata Elang
+focus=Fokus
+erradication=Pemberantasan
+predatorsense=Indra Predator
+plasmagrenade=Granat Plasma
+wolfcompanion=Rekan Serigala
+
+
+[passivesdesc]
+
+// Prajurit
+unleashingrage=Setiap level memberikan:\n\n+1% Semua Kerusakan untuk setiap 10% Kesehatan yang hilang
+unleashinghaste=Setiap level memberikan:\n\n+1% Kecepatan Gerakan untuk setiap 10% Kesehatan yang hilang
+unyielding=Setiap level memberikan:\n\n+5% Kecepatan Serangan dan -5% Kerusakan Masuk saat di bawah 20% Kesehatan
+lastbreath=Alih-alih mati, menjadi kebal selama §a[[3 x Level Keterampilan]] detik§0\nSetelah waktu habis, Anda akan mati
+
+// Penjaga
+plasmagrenade=Setiap 8 serangan Jarak Jauh, tembakkan proyektil peledak terpandu yang menghasilkan §i[[30 x Level Keterampilan]]%§0 dari kerusakan senjata
+wolfcompanion=Rekan serigala akan menyerang musuh yang ditandai yang menghasilkan §i[[Level Pemain x Level Keterampilan + Kecerdasan x Level Keterampilan]] Kerusakan Pemanggil§0
+
+
+[activeskills]
+empty=Kosong
+
+// Prajurit
+fury=Amarah
+recovery=Pemulihan
+provocation=Provokasi
+berserkercharge=Serangan Ganas
+
+groundslam=Hantaman Tanah
+grounddestruction=Penghancuran Tanah
+parry=Menangkis
+battlecry=Teriakan Perang
+
+ironguard=Penjaga Besi
+thornedguard=Penjaga Berduri
+intimidation=Intimidasi
+
+objectthrowing=Melempar Benda
+
+// Penjaga
+shortdash=Lari Cepat
+longdash=Lari Jauh
+lethalshot=Tembakan Mematikan
+venomshot=Tembakan Racun
+explosivearrow=Panah Peledak
+
+shotsrampage=Amukan Tembakan
+huntersmark=Tanda Pemburu
+beartrap=Perangkap Beruang
+
+huntersinstinct=Naluri Pemburu
+arrowstorm=Badai Panah
+
+
+[activeskillsdesc]
+
+// Prajurit
+fury=Selama 6 detik berikutnya, tingkatkan Kerusakan Jarak Dekat dan Kecepatan Serangan Anda sebesar §a[[20 x Level Keterampilan]]%
+recovery=Selama 10 detik berikutnya, sangat meningkatkan Regenerasi Kesehatan Tempur, memulihkan §a[[20 + Daya Tahan x Level Keterampilan]] kesehatan§0 selama durasi
+provocation=Selama §a[[2 x Level Keterampilan]] detik§0 berikutnya, paksa musuh terdekat untuk memfokuskan serangan mereka pada Anda
+berserkercharge=Melesat ke depan jarak pendek, menghasilkan §i[[10 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecepatan x Level Keterampilan]] Kerusakan§0 ke semua musuh yang dilewati\nMengkonsumsi 50% Stamina
+groundslam=Serangan area yang menghasilkan §i[[5 x Kekuatan]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama §a[[1 x Level Keterampilan]] detik§0
+grounddestruction=Serangan area yang menghasilkan §i[[5 x Kekuatan x Level Keterampilan + 5 x Level Pemain x Level Keterampilan]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama 2 detik
+parry=Menjadi kebal selama 0,5 detik dan mengembalikan 500% dari Kerusakan asli yang diterima\nMengkonsumsi 100% Stamina
+battlecry=Selama 10 detik berikutnya, tingkatkan Semua Kerusakan dan Kecepatan Gerakan Anda dan sekutu terdekat sebesar §a[[10 x Level Keterampilan]]%
+
+ironguard=-50% Kerusakan Masuk selama §a[[4 x Level Keterampilan]] detik
+thornedguard=-50% Kerusakan Masuk selama 12 detik\nSelain itu, mengembalikan §a[[100 x Level Keterampilan]]%§0 dari Kerusakan asli yang diterima
+intimidation=Selama §a[[Level Keterampilan]] detik§0 berikutnya, buat musuh terdekat lari
+
+objectthrowing=Langkah 1: Ambil objek di depan Anda\nLangkah 2: Lemparkan ke depan menghasilkan §i[[20 x Level Pemain + 5 x Kekuatan x Level Keterampilan]] Kerusakan Jarak Dekat§0\nKedua langkah mengkonsumsi semua Stamina Anda (setidaknya 100%)
+
+// Penjaga
+shortdash=Lakukan lari cepat 100-Kekuatan\nMengkonsumsi 15% Stamina
+longdash=Lakukan lari cepat 150-Kekuatan\nMengkonsumsi 25% Stamina
+lethalshot=Tembak §hPanah Mematikan§0 ke musuh terdekat, menghasilkan §i[[5 x Level Pemain + 5 x Kekuatan x Level Keterampilan]] Kerusakan Penjaga§0
+venomshot=Tembak §bPanah Racun§0 ke musuh terdekat, menghasilkan §i[[4 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecerdasan x Level Keterampilan]] Kerusakan Penjaga§0
+explosiveshot=Tembak §iPanah Peledak§0 ke musuh terdekat, menghasilkan §i[[4 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecerdasan x Level Keterampilan]] Kerusakan Penjaga§0
+
+shotsrampage=Saat Anda memiliki setidaknya 1 tumpukan Amukan Tembakan, mengenai musuh dengan serangan jarak jauh memberikan 1 tumpukan tambahan selama 5 detik\nSetiap tumpukan Amukan Tembakan meningkatkan Kecepatan Serangan sebesar 5%, hingga maksimum 30 tumpukan
+huntersmark=§hTandai§0 musuh terdekat dengan kesehatan tertinggi selama 10 detik\nJika Anda membunuh target yang ditandai, dapatkan §a+[[20 x Level Keterampilan]]%§0 Kecepatan Serangan Jarak Jauh dan Kecepatan Gerakan selama 5 detik
+beartrap=Tempatkan perangkap beruang di tanah yang akan hilang jika dipicu atau setelah 20 detik\nJika musuh memicunya, mereka akan menerima §i[[10 x Level Pemain]] Kerusakan§0 dan terperangkap selama 5 detik
+
+huntersinstinct=Selama 12 detik berikutnya, tingkatkan §7Peluang Menghindar§0 Anda sebesar §a[[10 x Level Keterampilan]]%\n§hTandai§0 selama 5 detik musuh yang Anda hindari
+arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x Level Pemain + Kekuatan x Level Keterampilan + Kecepatan x Level Keterampilan]] Kerusakan Penjaga§0 setiap panah
+
+[skillsdesckeys]
+x=x
+skilllevel=Level Keterampilan
+playerlevel=Level Pemain
+endurance=Daya Tahan
+speed=Kecepatan
+strength=Kekuatan
+intelligence=Kecerdasan
+grace=Keanggunan
+
+
+[extraskilldesc]
+// Buff
+marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\nSemua proyektil yang dipandu dan/atau ditembakkan ke musuh terdekat akan memprioritaskan musuh yang ditandai
+
+// Pengubah Peluang
+dodgechance=§7Peluang Menghindar:§0 Peluang untuk menghindari serangan yang masuk. Tidak dapat melebihi 80%
+focuschance=§hPeluang Fokus:§0 Peluang untuk §hMenandai§0 monster selama 5 detik saat diserang dengan kerusakan non-Pemanggil
+
+// Pengubah Datar
+mobdetection=§9Deteksi Monster:§0 Menampilkan monster terdekat di peta. Jangkauan deteksi yang lebih tinggi mengungkapkan monster dari jarak yang lebih jauh
+
+// Proyektil
+lethalarrow=§hPanah Mematikan:§0 Panah terpandu yang memberikan serangan Kritis
+venomarrow=§bPanah Racun:§0 Panah terpandu yang meracuni musuh, mengulangi 10% dari kerusakan aslinya per detik selama 30 detik
+explosivearrow=§iPanah Peledak:§0 Panah terpandu yang menyebabkan ledakan sihir dengan kerusakan yang sama
+
+
+[item]
+scrollofoblivion=Gulungan Pelupaan
+ringsbox=Kotak Cincin
+
+// Cincin Atribut
+endurancewoodring=Cincin Kayu Daya Tahan
+endurancecopperring=Cincin Tembaga Daya Tahan
+enduranceironring=Cincin Besi Daya Tahan
+endurancegoldring=Cincin Emas Daya Tahan
+
+speedwoodring=Cincin Kayu Kecepatan
+speedcopperring=Cincin Tembaga Kecepatan
+speedgoldring=Cincin Emas Kecepatan
+speedironring=Cincin Besi Kecepatan
+
+strengthwoodring=Cincin Kayu Kekuatan
+strengthcopperring=Cincin Tembaga Kekuatan
+strengthgoldring=Cincin Emas Kekuatan
+strengthironring=Cincin Besi Kekuatan
+
+intelligencewoodring=Cincin Kayu Kecerdasan
+intelligencecopperring=Cincin Tembaga Kecerdasan
+intelligencegoldring=Cincin Emas Kecerdasan
+intelligenceironring=Cincin Besi Kecerdasan
+
+gracetwoodring=Cincin Kayu Keanggunan
+gracecopperring=Cincin Tembaga Keanggunan
+graceironring=Cincin Besi Keanggunan
+gracegoldring=Cincin Emas Keanggunan
+
+
+[itemtooltip]
+scrollofoblivion=Memberikan 2 Poin Reset
+ringsboxtip=Dapat menyimpan Cincin Atribut
+
+
+[message]
+xp=XP
+levelup=Naik Level!
+dodge=Menghindar!
+
+newmobkill=Anda memperoleh <exp> pengalaman karena membunuh <mob> untuk pertama kalinya
+newlevel=Selamat! Anda telah mencapai level <level>. Tekan [input=openrpgmenu] untuk membuka Menu RPG
+
+noupdatesincombat=Anda tidak dapat mengubah atribut, kelas, atau keterampilan Anda selama pertempuran
+noactiveskill=Anda tidak lagi memiliki Keterampilan Aktif itu, tingkatkan lagi jika Anda ingin menggunakannya
+
+equipfirst=Pertama, Anda perlu melengkapi Keterampilan Aktif di slot ini
+activeskillinuse=Keterampilan ini sudah Digunakan
+anotheractiveskillinuse=Anda sudah memiliki keterampilan lain yang Digunakan
+incooldown=Dalam Cooldown
+notenoughstamina=Stamina Tidak Cukup
+nograbbableobject=Tidak ada objek yang dapat diambil di depan Anda
+
+[ui]
+menutitle=MOD RPG oleh Save
+attributes=Atribut
+activeskills=Keterampilan Aktif
+classes=Kelas
+
+level=Level <level>
+classlevel=<class> level <level>
+lvl=Lvl <level>
+eachlevel=Setiap level memberikan:
+experience=XP: <exp> / <nextexp>
+totalexperience=Total XP: <exp>
+
+resetpoints=Poin Reset: <points>
+attrpoints=Poin Atribut: <points>
+classpoints=Poin Kelas: <points>
+passivepoints=Poin Pasif: <points>
+activeskillpoints=Poin Keterampilan Aktif: <points>
+
+activeskillsuse=Mod ini mengubah Roda Ekspresi (tombol T secara default) menjadi Roda Keterampilan Aktif
+activeskillsusetip1=Disarankan untuk mengubah kontrol Roda Ekspresi ke tombol yang mudah diakses
+activeskillsusetip2=Anda juga dapat menetapkan tombol untuk setiap slot Keterampilan Aktif (ideal untuk keterampilan dengan cooldown rendah)
+activeskillsequipinstructions=Klik pada slot untuk melengkapi Keterampilan Aktif. Anda tidak dapat melepas Keterampilan Aktif saat cooldown
+noactiveskills=Anda tidak memiliki Keterampilan Aktif. Buka kuncinya melalui kelas
+
+activeskillcooldown=§9Cooldown: <seconds>d
+activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x Level Keterampilan]]d
+requiredclasslevel=§bLevel kelas <level> diperlukan
+requiredactiveskill=§bMembutuhkan '<skill>' level <level>
+maxlevel=§aLevel Maks: <level>
+
+clicktoseebase=[input=mouse1] untuk melihat Basis
+clicktoseelevel=[input=mouse1] untuk melihat Level <level>
+
+classlevelseparation=- Level kelas <level> -
+
+inuse=Digunakan
+
+upcomingclass=§6Kelas Mendatang\n§9Kelas ini saat ini sedang dalam pengembangan\ndan akan tersedia di pembaruan mendatang
+
+addcolumn=Tambahkan kolom
+removecolumn=Hapus kolom
+
+
+[controls]
+openrpgmenu=Buka Menu RPG
+activeskillslot1=Slot Keterampilan Aktif 1
+activeskillslot2=Slot Keterampilan Aktif 2
+activeskillslot3=Slot Keterampilan Aktif 3
+activeskillslot4=Slot Keterampilan Aktif 4

@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> utholdenhetsattributt
+speedattrflat=<mod> hastighetsattributt
+strengthattrflat=<mod> styrkeattributt
+intelligenceattrflat=<mod> intelligensattributt
+graceattrflat=<mod> nådeattributt
+
+dodgechance=<mod>% unnvikelsessjanse
+rangedweaponszoom=<mod> zoom for avstandsvåpen
+rangedweaponsrange=<mod>% rekkevidde for avstandsvåpen
+mobdetectionrange=<mod> mob-deteksjonsrekkevidde
+focusdamage=<mod>% fokusskade
+focuschance=<mod>% fokussjanse
+
+
+[enchantment]
+evasive=Unnvikende
+stalking=Forfølgelse
+regenerative=Regenerativ
+energetic=Energisk
+depleted=Utarmet
+
+
+[buff]
+overlevelclassbuff=Overnivåklasse
+markedbuff=Merket
+darkcursebuff=Mørk forbannelse
+
+
+[buffdesc]
+overlevelclassbuff1=§9En av klassene dine overskrider en poenggrense
+overlevelclassbuff2=§6Du kan ikke fortsette før det er fikset
+darkcursebuff1=+25% innkommende skade
+darkcursebuff2=All skade reduserer også maks helse
+
+
+[mob]
+rpgmobname=[<class>] <name> nivå <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivå <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Kriger
+tank=Tank
+runner=Løper
+healer=Helbreder
+explosive=Eksplosiv
+glacial=Isbre
+electric=Elektrisk
+flash=Blits
+dark=Mørk
+legend=Legende
+
+
+[attributes]
+endurance=Utholdenhet
+strength=Styrke
+speed=Hastighet
+intelligence=Intelligens
+grace=Nåde
+
+
+[classes]
+warrior=Kriger
+ranger=Ranger
+wizard=Trollmann
+necromancer=Nekromantiker
+cleric=Prest
+rogue=Slyngel
+warlock=Heksemester
+paladin=Paladin
+druid=Druide
+
+
+[passives]
+passives=Passive
+
+// Kriger
+regeneration=Regenerering
+muscles=Muskler
+legs=Bein
+force=Kraft
+unstoppable=Ustoppelig
+vigor=Vigor
+ironskin=Jernhud
+unleashingrage=Frigjørende raseri
+unleashinghaste=Frigjørende hast
+unyielding=Urokkelig
+lastbreath=Siste åndedrag
+
+// Ranger
+aim=Sikte
+agility=Smidighet
+criticalshots=Kritiske skudd
+energy=Energi
+recovery=Gjenoppretting
+eagleeye=Ørneøye
+focus=Fokus
+erradication=Utryddelse
+predatorsense=Rovdyrsans
+plasmagrenade=Plasmagranat
+wolfcompanion=Ulvefølgesvenn
+
+
+[passivesdesc]
+
+// Kriger
+unleashingrage=Hvert nivå gir:\n\n+1% all skade for hver 10% manglende helse
+unleashinghaste=Hvert nivå gir:\n\n+1% bevegelseshastighet for hver 10% manglende helse
+unyielding=Hvert nivå gir:\n\n+5% angrepshastighet og -5% innkommende skade under 20% helse
+lastbreath=I stedet for å dø, bli usårbar i §a[[3 x ferdighetsnivå]] sekunder§0\nNår tiden er ute, dør du
+
+// Ranger
+plasmagrenade=Hver 8. avstandsangrep, avfyr et styrt eksplosivt prosjektil som gir §i[[30 x ferdighetsnivå]]%§0 av våpenets skade
+wolfcompanion=En ulvefølgesvenn vil angripe merkede fiender og gi §i[[spillernivå x ferdighetsnivå + intelligens x ferdighetsnivå]] tilkallerskade§0
+
+
+[activeskills]
+empty=Tom
+
+// Kriger
+fury=Raseri
+recovery=Gjenoppretting
+provocation=Provokasjon
+berserkercharge=Berserkerangrep
+
+groundslam=Jordslag
+grounddestruction=Jordødeleggelse
+parry=Parering
+battlecry=Kamprop
+
+ironguard=Jernvakt
+thornedguard=Tornevakt
+intimidation=Trussel
+
+objectthrowing=Objektkasting
+
+// Ranger
+shortdash=Kort spurt
+longdash=Lang spurt
+lethalshot=Dødelig skudd
+venomshot=Giftskudd
+explosivearrow=Eksplosiv pil
+
+shotsrampage=Skuddraseri
+huntersmark=Jegerens merke
+beartrap=Bjørnefelle
+
+huntersinstinct=Jegerinstinkt
+arrowstorm=Pilregn
+
+
+[activeskillsdesc]
+
+// Kriger
+fury=I de neste 6 sekundene, øk nærkampsskaden og angrepshastigheten din med §a[[20 x ferdighetsnivå]]%
+recovery=I de neste 10 sekundene, øk kamphelbredregenereringen kraftig, og gjenopprett §a[[20 + utholdenhet x ferdighetsnivå]] helse§0 over varigheten
+provocation=I de neste §a[[2 x ferdighetsnivå]] sekundene§0, tving nærliggende fiender til å fokusere angrepene sine på deg
+berserkercharge=Storm fremover en kort avstand, og gi §i[[10 x spillernivå + 2 x styrke x ferdighetsnivå + 2 x hastighet x ferdighetsnivå]] skade§0 til alle fiender du passerer\nForbruker 50% utholdenhet
+groundslam=Områdeangrep som gir §i[[5 x styrke]] nærkampsskade§0 og §9lammer§0 i §a[[1 x ferdighetsnivå]] sekunder§0
+grounddestruction=Områdeangrep som gir §i[[5 x styrke x ferdighetsnivå + 5 x spillernivå x ferdighetsnivå]] nærkampsskade§0 og §9lammer§0 i 2 sekunder
+parry=Bli usårbar i 0,5 sekunder og returner 500% av den opprinnelige mottatte skaden\nForbruker 100% utholdenhet
+battlecry=I de neste 10 sekundene, øk din og nærliggende alliertes all skade og bevegelseshastighet med §a[[10 x ferdighetsnivå]]%
+
+ironguard=-50% innkommende skade i §a[[4 x ferdighetsnivå]] sekunder
+thornedguard=-50% innkommende skade i 12 sekunder\nReturnerer i tillegg §a[[100 x ferdighetsnivå]]%§0 av den opprinnelige mottatte skaden
+intimidation=I de neste §a[[ferdighetsnivå]] sekundene§0, få nærliggende fiender til å flykte
+
+objectthrowing=Trinn 1: Grip en gjenstand foran deg\nTrinn 2: Kast den fremover og gi §i[[20 x spillernivå + 5 x styrke x ferdighetsnivå]] nærkampsskade§0\nBegge trinnene bruker all utholdenheten din (minst 100%)
+
+// Ranger
+shortdash=Utfør en spurt med 100 styrke\nForbruker 15% utholdenhet
+longdash=Utfør en spurt med 150 styrke\nForbruker 25% utholdenhet
+lethalshot=Skyt en §hdødelig pil§0 mot nærmeste fiende, og gi §i[[5 x spillernivå + 5 x styrke x ferdighetsnivå]] rangerskade§0
+venomshot=Skyt en §bgiftpil§0 mot nærmeste fiende, og gi §i[[4 x spillernivå + 2 x styrke x ferdighetsnivå + 2 x intelligens x ferdighetsnivå]] rangerskade§0
+explosiveshot=Skyt en §ieksplosiv pil§0 mot nærmeste fiende, og gi §i[[4 x spillernivå + 2 x styrke x ferdighetsnivå + 2 x intelligens x ferdighetsnivå]] rangerskade§0
+
+shotsrampage=Mens du har minst 1 stabel med skuddraseri, gir det å treffe en fiende med et avstandsangrep 1 ekstra stabel i 5 sekunder\nHver stabel med skuddraseri øker angrepshastigheten med 5%, opptil maksimalt 30 stabler
+huntersmark=§hMerk§0 nærmeste fiende med høyest helse i 10 sekunder\nHvis du dreper et merket mål, får du §a+[[20 x ferdighetsnivå]]%§0 avstandsangrepshastighet og bevegelseshastighet i 5 sekunder
+beartrap=Plasser en bjørnefelle på bakken som forsvinner hvis den utløses eller etter 20 sekunder\nHvis en fiende utløser den, vil de ta §i[[10 x spillernivå]] skade§0 og bli fanget i 5 sekunder
+
+huntersinstinct=I de neste 12 sekundene, øk §7unnvikelsessjansen§0 din med §a[[10 x ferdighetsnivå]]%\n§hMerk§0 i 5 sekunder fiendene du unnviker
+arrowstorm=Skyt en basispil mot hver nære fiende, og gi §i[[2 x spillernivå + styrke x ferdighetsnivå + hastighet x ferdighetsnivå]] rangerskade§0 per pil
+
+[skillsdesckeys]
+x=x
+skilllevel=Ferdighetsnivå
+playerlevel=Spillernivå
+endurance=Utholdenhet
+speed=Hastighet
+strength=Styrke
+intelligence=Intelligens
+grace=Nåde
+
+
+[extraskilldesc]
+// Buffs
+marked=§hMerket:§0 Gi +20% skade (+ §hfokusskade§0) og +10% kritisk sjanse til mobs du merker\nAlle prosjektiler som styres og/eller avfyres mot nærmeste fiende, vil prioritere merkede fiender
+
+// Sjanse-modifikatorer
+dodgechance=§7Unnvikelsessjanse:§0 Sjanse til å unnvike innkommende angrep. Kan ikke overstige 80%
+focuschance=§hFokussjanse:§0 Sjanse til å §hmerke§0 en mob i 5 sekunder når den angripes med ikke-tilkallerskade
+
+// Flate modifikatorer
+mobdetection=§9Mob-deteksjon:§0 Viser nærliggende mobs på kartet. En høyere deteksjonsrekkevidde avslører mobs fra lenger unna
+
+// Prosjektiler
+lethalarrow=§hDødelig pil:§0 Styrt pil som gir et kritisk treff
+venomarrow=§bGiftpil:§0 Styrt pil som forgifter fiender, og gjentar 10% av den opprinnelige skaden per sekund i 30 sekunder
+explosivearrow=§iEksplosiv pil:§0 Styrt pil som forårsaker en magisk eksplosjon med lik skade
+
+
+[item]
+scrollofoblivion=Glemselsrull
+ringsbox=Ringboks
+
+// Attributtringer
+endurancewoodring=Utholdenhetstrering
+endurancecopperring=Utholdenhetskobberring
+enduranceironring=Utholdenhetsjernring
+endurancegoldring=Utholdenhetsgullring
+
+speedwoodring=Hastighetstrering
+speedcopperring=Hastighetskobberring
+speedgoldring=Hastighetsgullring
+speedironring=Hastighetsjernring
+
+strengthwoodring=Styrketrering
+strengthcopperring=Styrkekobberring
+strengthgoldring=Styrkegullring
+strengthironring=Styrkejernring
+
+intelligencewoodring=Intelligenstrering
+intelligencecopperring=Intelligenskobberring
+intelligencegoldring=Intelligensgullring
+intelligenceironring=Intelligensjernring
+
+gracetrering=Nådetrering
+gracecopperring=Nådekobberring
+graceironring=Nådejernring
+gracegoldring=Nådegullring
+
+
+[itemtooltip]
+scrollofoblivion=Gir 2 tilbakestillingspoeng
+ringsboxtip=Kan lagre attributtringer
+
+
+[message]
+xp=XP
+levelup=Nivå opp!
+dodge=Unnvik!
+
+newmobkill=Du fikk <exp> erfaring for å drepe <mob> for første gang
+newlevel=Gratulerer! Du har nådd nivå <level>. Trykk [input=openrpgmenu] for å åpne RPG-menyen
+
+noupdatesincombat=Du kan ikke endre attributter, klasser eller ferdigheter under kamp
+noactiveskill=Du har ikke lenger den aktive ferdigheten, nivå den opp igjen hvis du vil bruke den
+
+equipfirst=Du må først utstyre en aktiv ferdighet i dette sporet
+activeskillinuse=Denne ferdigheten er allerede i bruk
+anotheractiveskillinuse=Du har allerede en annen ferdighet i bruk
+incooldown=På nedkjøling
+notenoughstamina=Ikke nok utholdenhet
+nograbbableobject=Det er ingen gripbar gjenstand foran deg
+
+[ui]
+menutitle=RPG-MOD av Save
+attributes=Attributter
+activeskills=Aktive ferdigheter
+classes=Klasser
+
+level=Nivå <level>
+classlevel=<class> nivå <level>
+lvl=Nivå <level>
+eachlevel=Hvert nivå gir:
+experience=XP: <exp> / <nextexp>
+totalexperience=Total XP: <exp>
+
+resetpoints=Tilbakestillingspoeng: <points>
+attrpoints=Attributtpoeng: <points>
+classpoints=Klassepoeng: <points>
+passivepoints=Passive poeng: <points>
+activeskillpoints=Aktive ferdighetspoeng: <points>
+
+activeskillsuse=Denne moden gjør uttrykkshjulet (T-tasten som standard) om til hjulet for aktive ferdigheter
+activeskillsusetip1=Det anbefales å endre kontrollen for uttrykkshjulet til en lett tilgjengelig tast
+activeskillsusetip2=Du kan også tilordne en tast til hvert aktive ferdighetsspor (ideelt for ferdigheter med lav nedkjøling)
+activeskillsequipinstructions=Klikk på et spor for å utstyre en aktiv ferdighet. Du kan ikke fjerne en aktiv ferdighet som er på nedkjøling
+noactiveskills=Du har ingen aktive ferdigheter. Lås dem opp gjennom klassene
+
+activeskillcooldown=§9Nedkjøling: <seconds>s
+activeskillcooldownmod=§9Nedkjøling: [[<seconds> <sign> <mod> x ferdighetsnivå]]s
+requiredclasslevel=§bKlassenivå <level> kreves
+requiredactiveskill=§bKrever '<skill>' nivå <level>
+maxlevel=§aMaks nivå: <level>
+
+clicktoseebase=[input=mouse1] for å se base
+clicktoseelevel=[input=mouse1] for å se nivå <level>
+
+classlevelseparation=- Klassenivå <level> -
+
+inuse=I bruk
+
+upcomingclass=§6Kommende klasse\n§9Denne klassen er for øyeblikket under utvikling\og vil være tilgjengelig i en fremtidig oppdatering
+
+addcolumn=Legg til kolonne
+removecolumn=Fjern kolonne
+
+
+[controls]
+openrpgmenu=Åpne RPG-meny
+activeskillslot1=Aktiv ferdighetsplass 1
+activeskillslot2=Aktiv ferdighetsplass 2
+activeskillslot3=Aktiv ferdighetsplass 3
+activeskillslot4=Aktiv ferdighetsplass 4

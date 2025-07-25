@@ -1,0 +1,343 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> attribut d'endurance
+speedattrflat=<mod> attribut de vitesse
+strengthattrflat=<mod> attribut de force
+intelligenceattrflat=<mod> attribut d'intelligence
+graceattrflat=<mod> attribut de grâce
+
+dodgechance=<mod>% de chance d'esquive
+rangedweaponszoom=<mod> zoom des armes à distance
+rangedweaponsrange=<mod>% de portée des armes à distance
+mobdetectionrange=<mod> portée de détection des monstres
+focusdamage=<mod>% de dégâts de focalisation
+focuschance=<mod>% de chance de focalisation
+
+
+[enchantment]
+evasive=Évasif
+stalking=Traque
+regenerative=Régénérateur
+energetic=Énergique
+depleted=Epuisé
+
+
+[buff]
+overlevelclassbuff=Classe de sur-niveau
+markedbuff=Marqué
+darkcursebuff=Malédiction des ténèbres
+
+
+[buffdesc]
+overlevelclassbuff1=§9Une de vos classes dépasse une limite de points
+overlevelclassbuff2=§6Vous ne pourrez pas continuer tant que ce ne sera pas corrigé
+darkcursebuff1=+25% de dégâts entrants
+darkcursebuff2=Tous les dégâts réduisent également la santé maximale
+
+
+[mob]
+rpgmobname=[<class>] <name> niv <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9niv <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Guerrier
+tank=Tank
+runner=Coureur
+healer=Guérisseur
+explosive=Explosif
+glacial=Glacial
+electric=Électrique
+flash=Flash
+dark=Sombre
+legend=Légende
+
+
+[attributes]
+endurance=Endurance
+strength=Force
+speed=Vitesse
+intelligence=Intelligence
+grace=Grâce
+
+
+[classes]
+warrior=Guerrier
+ranger=Rôdeur
+wizard=Sorcier
+necromancer=Nécromancien
+cleric=Clerc
+rogue=Voleur
+warlock=Démoniste
+paladin=Paladin
+druid=Druide
+
+
+[passives]
+passives=Passifs
+
+// Guerrier
+regeneration=Régénération
+muscles=Muscles
+legs=Jambes
+force=Force
+unstoppable=Inarrêtable
+vigor=Vigueur
+ironskin=Peau de fer
+unleashingrage=Rage déchaînée
+unleashinghaste=Hâte déchaînée
+unyielding=Implacable
+lastbreath=Dernier souffle
+
+// Rôdeur
+aim=Visée
+agility=Agilité
+criticalshots=Tirs critiques
+energy=Énergie
+recovery=Récupération
+eagleeye=Œil d'aigle
+focus=Focalisation
+erradication=Éradication
+predatorsense=Sens du prédateur
+plasmagrenade=Grenade à plasma
+wolfcompanion=Compagnon loup
+
+
+[passivesdesc]
+
+// Guerrier
+unleashingrage=Chaque niveau fournit :
+
++1% de tous les dégâts pour chaque 10% de santé manquante
+unleashinghaste=Chaque niveau fournit :
+
++1% de vitesse de déplacement pour chaque 10% de santé manquante
+unyielding=Chaque niveau fournit :
+
++5% de vitesse d'attaque et -5% de dégâts entrants en dessous de 20% de santé
+lastbreath=Au lieu de mourir, devenez invulnérable pendant §a[[3 x niveau de compétence]] secondes§0
+Une fois le temps écoulé, vous mourrez
+
+// Rôdeur
+plasmagrenade=Toutes les 8 attaques à distance, tire un projectile explosif guidé qui inflige §i[[30 x niveau de compétence]]%§0 des dégâts de l'arme
+wolfcompanion=Un compagnon loup attaquera les ennemis marqués en infligeant §i[[niveau du joueur x niveau de compétence + intelligence x niveau de compétence]] de dégâts d'invocateur§0
+
+
+[activeskills]
+empty=Vide
+
+// Guerrier
+fury=Furie
+recovery=Récupération
+provocation=Provocation
+berserkercharge=Charge de berserker
+
+groundslam=Frappe au sol
+grounddestruction=Destruction du sol
+parry=Parade
+battlecry=Cri de guerre
+
+ironguard=Garde de fer
+thornedguard=Garde épineuse
+intimidation=Intimidation
+
+objectthrowing=Lancer d'objet
+
+// Rôdeur
+shortdash=Roulade courte
+longdash=Roulade longue
+lethalshot=Tir mortel
+venomshot=Tir de venin
+explosivearrow=Flèche explosive
+
+shotsrampage=Carnage de tirs
+huntersmark=Marque du chasseur
+beartrap=Piège à ours
+
+huntersinstinct=Instinct de chasseur
+arrowstorm=Tempête de flèches
+
+
+[activeskillsdesc]
+
+// Guerrier
+fury=Pendant les 6 prochaines secondes, augmentez vos dégâts de mêlée et votre vitesse d'attaque de §a[[20 x niveau de compétence]]%
+recovery=Pendant les 10 prochaines secondes, augmente considérablement la régénération de santé en combat, restaurant §a[[20 + endurance x niveau de compétence]] de santé§0 sur la durée
+provocation=Pendant les §a[[2 x niveau de compétence]] prochaines secondes§0, forcez les ennemis proches à concentrer leurs attaques sur vous
+berserkercharge=Foncez sur une courte distance, infligeant §i[[10 x niveau du joueur + 2 x force x niveau de compétence + 2 x vitesse x niveau de compétence]] de dégâts§0 à tous les ennemis traversés
+Consomme 50% de l'endurance
+groundslam=Attaque de zone qui inflige §i[[5 x force]] de dégâts de mêlée§0 et §9étourdit§0 pendant §a[[1 x niveau de compétence]] secondes§0
+grounddestruction=Attaque de zone qui inflige §i[[5 x force x niveau de compétence + 5 x niveau du joueur x niveau de compétence]] de dégâts de mêlée§0 et §9étourdit§0 pendant 2 secondes
+parry=Devenez invulnérable pendant 0,5 seconde et renvoyez 500% des dégâts d'origine reçus
+Consomme 100% de l'endurance
+battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de vos alliés proches, ainsi que leur vitesse de déplacement de §a[[10 x niveau de compétence]]%
+
+ironguard=-50% de dégâts entrants pendant §a[[4 x niveau de compétence]] secondes
+thornedguard=-50% de dégâts entrants pendant 12 secondes
+De plus, renvoie §a[[100 x niveau de compétence]]%§0 des dégâts d'origine reçus
+intimidation=Pendant les §a[[niveau de compétence]] prochaines secondes§0, faites fuir les ennemis proches
+
+objectthrowing=Étape 1 : Saisissez un objet devant vous
+Étape 2 : Lancez-le vers l'avant en infligeant §i[[20 x niveau du joueur + 5 x force x niveau de compétence]] de dégâts de mêlée§0
+Les deux étapes consomment toute votre endurance (au moins 100%)
+
+// Rôdeur
+shortdash=Effectuez une roulade de 100 de force
+Consomme 15% de l'endurance
+longdash=Effectuez une roulade de 150 de force
+Consomme 25% de l'endurance
+lethalshot=Tirez une §hflèche mortelle§0 sur l'ennemi le plus proche, infligeant §i[[5 x niveau du joueur + 5 x force x niveau de compétence]] de dégâts de rôdeur§0
+venomshot=Tirez une §bflèche de venin§0 sur l'ennemi le plus proche, infligeant §i[[4 x niveau du joueur + 2 x force x niveau de compétence + 2 x intelligence x niveau de compétence]] de dégâts de rôdeur§0
+explosiveshot=Tirez une §iflèche explosive§0 sur l'ennemi le plus proche, infligeant §i[[4 x niveau du joueur + 2 x force x niveau de compétence + 2 x intelligence x niveau de compétence]] de dégâts de rôdeur§0
+
+shotsrampage=Tant que vous avez au moins 1 cumul de Carnage de tirs, toucher un ennemi avec une attaque à distance vous accorde 1 cumul supplémentaire pendant 5 secondes
+Chaque cumul de Carnage de tirs augmente la vitesse d'attaque de 5%, jusqu'à un maximum de 30 cumuls
+huntersmark=§hMarquez§0 l'ennemi proche avec la santé la plus élevée pendant 10 secondes
+Si vous tuez une cible marquée, gagnez §a+[[20 x niveau de compétence]]%§0 de vitesse d'attaque à distance et de vitesse de déplacement pendant 5 secondes
+beartrap=Placez un piège à ours sur le sol qui disparaît s'il est déclenché ou après 20 secondes
+Si un ennemi le déclenche, il subira §i[[10 x niveau du joueur]] de dégâts§0 et sera piégé pendant 5 secondes
+
+huntersinstinct=Pendant les 12 prochaines secondes, augmentez votre §7chance d'esquive§0 de §a[[10 x niveau de compétence]]%
+§hMarquez§0 pendant 5 secondes les ennemis que vous esquivez
+arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2 x niveau du joueur + force x niveau de compétence + vitesse x niveau de compétence]] de dégâts de rôdeur§0 par flèche
+
+[skillsdesckeys]
+x=x
+skilllevel=Niveau de compétence
+playerlevel=Niveau du joueur
+endurance=Endurance
+speed=Vitesse
+strength=Force
+intelligence=Intelligence
+grace=Grâce
+
+
+[extraskilldesc]
+// Améliorations
+marked=§hMarqué :§0 Infligez +20% de dégâts (+ §hdégâts de focalisation§0) et +10% de chance de coup critique aux monstres que vous marquez
+Tous les projectiles guidés et/ou tirés sur l'ennemi le plus proche donneront la priorité aux ennemis marqués
+
+// Modificateurs de chance
+dodgechance=§7Chance d'esquive :§0 Chance d'esquiver les attaques entrantes. Ne peut pas dépasser 80%
+focuschance=§hChance de focalisation :§0 Chance de §hmarquer§0 un monstre pendant 5 secondes lorsqu'il est attaqué avec des dégâts autres que ceux d'invocateur
+
+// Modificateurs fixes
+mobdetection=§9Détection de monstres :§0 Affiche les monstres proches sur la carte. Une portée de détection plus élevée révèle les monstres de plus loin
+
+// Projectiles
+lethalarrow=§hFlèche mortelle :§0 Flèche guidée qui garantit un coup critique
+venomarrow=§bFlèche de venin :§0 Flèche guidée qui empoisonne les ennemis, répétant 10% de ses dégâts d'origine par seconde pendant 30 secondes
+explosivearrow=§iFlèche explosive :§0 Flèche guidée qui provoque une explosion magique de dégâts égaux
+
+
+[item]
+scrollofoblivion=Parchemin d'oubli
+ringsbox=Boîte à bagues
+
+// Bagues d'attributs
+endurancewoodring=Bague en bois d'endurance
+endurancecopperring=Bague en cuivre d'endurance
+enduranceironring=Bague en fer d'endurance
+endurancegoldring=Bague en or d'endurance
+
+speedwoodring=Bague en bois de vitesse
+speedcopperring=Bague en cuivre de vitesse
+speedgoldring=Bague en or de vitesse
+speedironring=Bague en fer de vitesse
+
+strengthwoodring=Bague en bois de force
+strengthcopperring=Bague en cuivre de force
+strengthgoldring=Bague en or de force
+strengthironring=Bague en fer de force
+
+intelligencewoodring=Bague en bois d'intelligence
+intelligencecopperring=Bague en cuivre d'intelligence
+intelligencegoldring=Bague en or d'intelligence
+intelligenceironring=Bague en fer d'intelligence
+
+grancwoodring=Bague en bois de grâce
+gracecopperring=Bague en cuivre de grâce
+graceironring=Bague en fer de grâce
+gracegoldring=Bague en or de grâce
+
+
+[itemtooltip]
+scrollofoblivion=Donne 2 points de réinitialisation
+ringsboxtip=Peut stocker des bagues d'attributs
+
+
+[message]
+xp=EXP
+levelup=Niveau supérieur !
+dodge=Esquive !
+
+newmobkill=Vous avez gagné <exp> d'expérience en tuant <mob> pour la première fois
+newlevel=Félicitations ! Vous avez atteint le niveau <level>. Appuyez sur [input=openrpgmenu] pour ouvrir le menu RPG
+
+noupdatesincombat=Vous ne pouvez pas modifier vos attributs, classes ou compétences pendant le combat
+noactiveskill=Vous n'avez plus cette compétence active, améliorez-la à nouveau si vous voulez l'utiliser
+
+equipfirst=Vous devez d'abord équiper une compétence active dans cet emplacement
+activeskillinuse=Cette compétence est déjà en cours d'utilisation
+anotheractiveskillinuse=Vous avez déjà une autre compétence en cours d'utilisation
+incooldown=En recharge
+notenoughstamina=Pas assez d'endurance
+nograbbableobject=Il n'y a aucun objet saisissable devant vous
+
+[ui]
+menutitle=MOD RPG par Save
+attributes=Attributs
+activeskills=Compétences actives
+classes=Classes
+
+level=Niveau <level>
+classlevel=<class> niveau <level>
+lvl=Niv <level>
+eachlevel=Chaque niveau fournit :
+experience=EXP : <exp> / <nextexp>
+totalexperience=EXP totale : <exp>
+
+resetpoints=Points de réinitialisation : <points>
+attrpoints=Points d'attribut : <points>
+classpoints=Points de classe : <points>
+passivepoints=Points de passif : <points>
+activeskillpoints=Points de compétence active : <points>
+
+activeskillsuse=Ce mod transforme la roue d'expression (touche T par défaut) en roue de compétences actives
+activeskillsusetip1=Il est recommandé de changer la commande de la roue d'expression en une touche facilement accessible
+activeskillsusetip2=Vous pouvez également attribuer une touche à chaque emplacement de compétence active (idéal pour les compétences à faible temps de recharge)
+activeskillsequipinstructions=Cliquez sur un emplacement pour équiper une compétence active. Vous ne pouvez pas déséquiper une compétence active en recharge
+noactiveskills=Vous n'avez aucune compétence active. Débloquez-les via les classes
+
+activeskillcooldown=§9Recharge : <seconds>s
+activeskillcooldownmod=§9Recharge : [[<seconds> <sign> <mod> x niveau de compétence]]s
+requiredclasslevel=§bNiveau de classe <level> requis
+requiredactiveskill=§bNécessite '<skill>' niveau <level>
+maxlevel=§aNiveau maximum : <level>
+
+clicktoseebase=[input=mouse1] pour voir la base
+clicktoseelevel=[input=mouse1] pour voir le niveau <level>
+
+classlevelseparation=- Niveau de classe <level> -
+
+inuse=En cours d'utilisation
+
+upcomingclass=§6Classe à venir
+§9Cette classe est actuellement en développement
+et sera disponible dans une future mise à jour
+
+addcolumn=Ajouter une colonne
+removecolumn=Supprimer la colonne
+
+
+[controls]
+openrpgmenu=Ouvrir le menu RPG
+activeskillslot1=Emplacement de compétence active 1
+activeskillslot2=Emplacement de compétence active 2
+activeskillslot3=Emplacement de compétence active 3
+activeskillslot4=Emplacement de compétence active 4

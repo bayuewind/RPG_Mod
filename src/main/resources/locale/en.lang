@@ -1,0 +1,324 @@
+# Translation made by Save (https://steamcommunity.com/id/Aiz_Save/)
+
+[global]
+rpgmod=§!RPG Mod
+
+
+[buffmodifiers]
+enduranceattrflat=<mod> endurance attribute
+speedattrflat=<mod> speed attribute
+strengthattrflat=<mod> strength attribute
+intelligenceattrflat=<mod> intelligence attribute
+graceattrflat=<mod> grace attribute
+
+dodgechance=<mod>% dodge chance
+rangedweaponszoom=<mod> ranged weapons zoom
+rangedweaponsrange=<mod>% ranged weapons range
+mobdetectionrange=<mod> mob detection range
+focusdamage=<mod>% focus damage
+focuschance=<mod>% focus chance
+
+
+[enchantment]
+evasive=Evasive
+stalking=Stalking
+regenerative=Regenerative
+energetic=Energetic
+depleted=Depleted
+
+
+[buff]
+overlevelclassbuff=Overlevel Class
+markedbuff=Marked
+darkcursebuff=Dark Curse
+
+
+[buffdesc]
+overlevelclassbuff1=§9One of your classes exceeds some points limit
+overlevelclassbuff2=§6You won't be able to proceed until it's fixed
+darkcursebuff1=+25% Incoming Damage
+darkcursebuff2=All damage also reduces Max Health
+
+
+[mob]
+rpgmobname=[<class>] <name> lvl <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Warrior
+tank=Tank
+runner=Runner
+healer=Healer
+explosive=Explosive
+glacial=Glacial
+electric=Electric
+flash=Flash
+dark=Dark
+legend=Legend
+
+
+[attributes]
+endurance=Endurance
+strength=Strength
+speed=Speed
+intelligence=Intelligence
+grace=Grace
+
+
+[classes]
+warrior=Warrior
+ranger=Ranger
+wizard=Wizard
+necromancer=Necromancer
+cleric=Cleric
+rogue=Rogue
+warlock=Warlock
+paladin=Paladin
+druid=Druid
+
+
+[passives]
+passives=Passives
+
+// Warrior
+regeneration=Regeneration
+muscles=Muscles
+legs=Legs
+force=Force
+unstoppable=Unstoppable
+vigor=Vigor
+ironskin=Iron Skin
+unleashingrage=Unleashing Rage
+unleashinghaste=Unleashing Haste
+unyielding=Unyielding
+lastbreath=Last Breath
+
+// Ranger
+aim=Aim
+agility=Agility
+criticalshots=Critical Shots
+energy=Energy
+recovery=Recovery
+eagleeye=Eagle Eye
+focus=Focus
+erradication=Erradication
+predatorsense=Predator Sense
+plasmagrenade=Plasma Grenade
+wolfcompanion=Wolf Companion
+
+
+[passivesdesc]
+
+// Warrior
+unleashingrage=Each level provides:\n\n+1% All Damage for every 10% of Health missing
+unleashinghaste=Each level provides:\n\n+1% Movement Speed for every 10% of Health missing
+unyielding=Each level provides:\n\n+5% Attack Speed and -5% Incoming Damage while below 20% Health
+lastbreath=Instead of dying, become invulnerable for §a[[3 x Skill Level]] seconds§0\nOnce the time is up, you will die
+
+// Ranger
+plasmagrenade=Every 8 Range attacks, fire a guided explosive projectile that deals §i[[30 x Skill Level]]%§0 of the weapon's damage
+wolfcompanion=A wolf companion will attack marked enemies dealing §i[[Player Level x Skill Level + Intelligence x Skill Level]] Summoner Damage§0
+
+
+[activeskills]
+empty=Empty
+
+// Warrior
+fury=Fury
+recovery=Recovery
+provocation=Provocation
+berserkercharge=Berserker Charge
+
+groundslam=Ground Slam
+grounddestruction=Ground Destruction
+parry=Parry
+battlecry=Battle Cry
+
+ironguard=Iron Guard
+thornedguard=Thorned Guard
+intimidation=Intimidation
+
+objectthrowing=Object Throwing
+
+// Ranger
+shortdash=Short Dash
+longdash=Long Dash
+lethalshot=Lethal Shot
+venomshot=Venom Shot
+explosivearrow=Explosive Arrow
+
+shotsrampage=Shots Rampage
+huntersmark=Hunter's Mark
+beartrap=Bear Trap
+
+huntersinstinct=Hunter's Instinct
+arrowstorm=Arrow Storm
+
+
+[activeskillsdesc]
+
+// Warrior
+fury=For the next 6 seconds, increase your Melee Damage and Attack Speed by §a[[20 x Skill Level]]%
+recovery=For the next 10 seconds greatly boosts Combat Health Regeneration, restoring §a[[20 + Endurance x Skill Level]] health§0 over the duration
+provocation=For the next §a[[2 x Skill Level]] seconds§0, force nearby enemies to focus their attacks on you
+berserkercharge=Rush forward a short distance, dealing §i[[10 x Player Level + 2 x Strength x Skill Level + 2 x Speed x Skill Level]] Damage§0 to all enemies passed by\nConsumes 50% Stamina
+
+groundslam=Area attack that deals §i[[5 x Strength]] Melee Damage§0 and §9Stuns§0 for §a[[1 x Skill Level]] seconds§0
+grounddestruction=Area attack that deals §i[[5 x Strength x Skill Level + 5 x Player Level x Skill Level]] Melee Damage§0 and §9Stuns§0 for 2 seconds
+parry=Become invulnerable for 0.5 seconds and return 500% of the original Damage received\nConsumes 100% Stamina
+battlecry=For the next 10 seconds, increase your and nearby allies' All Damage and Movement Speed by §a[[10 x Skill Level]]%
+
+ironguard=-50% Incoming Damage for §a[[4 x Skill Level]] seconds
+thornedguard=-50% Incoming Damage for 12 seconds\nAdditionally, returns §a[[100 x Skill Level]]%§0 of the original Damage received
+intimidation=For the next §a[[Skill Level]] seconds§0, make nearby enemies run away
+
+objectthrowing=Step 1: Grab an object in front of you\nStep 2: Throw it forwards dealing §i[[20 x Player Level + 5 x Strength x Skill Level]] Melee Damage§0\nBoth steps consume all your Stamina (at least 100%)
+
+// Ranger
+shortdash=Perfom a 100-Strength dash\nConsumes 15% Stamina
+longdash=Perfom a 150-Strength dash\nConsumes 25% Stamina
+lethalshot=Shoot an §hLethal Arrow§0 at the closest enemy, dealing §i[[5 x Player Level + 5 x Strength x Skill Level]] Ranger Damage§0
+venomshot=Shoot an §bVenom Arrow§0 at the closest enemy, dealing §i[[4 x Player Level + 2 x Strength x Skill Level + 2 x Intelligence x Skill Level]] Ranger Damage§0
+explosiveshot=Shoot an §iExplosive Arrow§0 at the closest enemy, dealing §i[[4 x Player Level + 2 x Strength x Skill Level + 2 x Intelligence x Skill Level]] Ranger Damage§0
+
+shotsrampage=While you have at least 1 stack of Shots Rampage, hitting an enemy with a ranged attack grants 1 additional stack for 5 seconds\nEach stack of Shots Rampage increases Attack Speed by 5%, up to a maximum of 30 stacks
+huntersmark=§hMark§0 the nearby enemy with the highest health for 10 seconds\nIf you kill a marked target, gain §a+[[20 x Skill Level]]%§0 Ranged Attack Speed and Movement Speed for 5 seconds
+beartrap=Place a bear trap on the ground that disappears if triggered or after 20 seconds\nIf an enemy triggers it, they will take §i[[10 x Player Level]] Damage§0 and be trapped for 5 seconds
+
+huntersinstinct=For the next 12 seconds, increase your §7Dodge Chance§0 by §a[[10 x Skill Level]]%\n§hMark§0 for 5 seconds the enemies you dodge
+arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x Player Level + Strength x Skill Level + Speed x Skill Level]] Ranger Damage§0 each arrow
+
+[skillsdesckeys]
+x=x
+skilllevel=Skill Level
+playerlevel=Player Level
+endurance=Endurance
+speed=Speed
+strength=Strength
+intelligence=Intelligence
+grace=Grace
+
+
+[extraskilldesc]
+// Buffs
+marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\nAll projectiles guided and/or fired at the closest enemy will prioritize marked enemies
+
+// Chance Modifiers
+dodgechance=§7Dodge Chance:§0 Chance to dodge incoming attacks. Cannot exceed 80%
+focuschance=§hFocus Chance:§0 Chance to §hMark§0 5 seconds a mob when attacked with non-Summoner damage
+
+// Flat Modifiers
+mobdetection=§9Mob Detection:§0 Displays nearby mobs on the map. A higher detection range reveals mobs from farther away
+
+// Projectiles
+lethalarrow=§hLethal Arrow:§0 Guided arrow that grants a Critical hit
+venomarrow=§bVenom Arrow:§0 Guided arrow that poisons enemies, repeating 10% of its original damage per second for 30 seconds
+explosivearrow=§iExplosive Arrow:§0 Guided arrow that causes a magic explosion with equal damage
+
+
+[item]
+scrollofoblivion=Scroll of Oblivion
+ringsbox=Rings Box
+
+// Attribute Rings
+endurancewoodring=Endurance Wood Ring// Attribute Rings
+endurancecopperring=Endurance Copper Ring
+enduranceironring=Endurance Iron Ring
+endurancegoldring=Endurance Gold Ring
+
+speedwoodring=Speed Wood Ring
+speedcopperring=Speed Copper Ring
+speedgoldring=Speed Gold Ring
+speedironring=Speed Iron Ring
+
+strengthwoodring=Strength Wood Ring
+strengthcopperring=Strength Copper Ring
+strengthgoldring=Strength Gold Ring
+strengthironring=Strength Iron Ring
+
+intelligencewoodring=Intelligence Wood Ring
+intelligencecopperring=Intelligence Copper Ring
+intelligencegoldring=Intelligence Gold Ring
+intelligenceironring=Intelligence Iron Ring
+
+gracewoodring=Grace Wood Ring
+gracecopperring=Grace Copper Ring
+graceironring=Grace Iron Ring
+gracegoldring=Grace Gold Ring
+
+
+[itemtooltip]
+scrollofoblivion=Grants 2 Reset Points
+ringsboxtip=Can store Attribute Rings
+
+
+[message]
+xp=XP
+levelup=Lvl up!
+dodge=Dodge!
+
+newmobkill=You gained <exp> experience for killing <mob> for the first time
+newlevel=Congratulations! You've reached level <level>. Press [input=openrpgmenu] to open the RPG Menu
+
+noupdatesincombat=You cannot modify your attributes, classes or skills during combat
+noactiveskill=You no longer have that Active Skill, level it up again if you want to use it
+
+equipfirst=First you need to equip an Active Skill in this slot
+activeskillinuse=This skill is already In Use
+anotheractiveskillinuse=You have already another skill In Use
+incooldown=In Cooldown
+notenoughstamina=Not Enough Stamina
+nograbbableobject=There is no grabbable object in front of you
+
+[ui]
+menutitle=RPG MOD by Save
+attributes=Attributes
+activeskills=Active Skills
+classes=Classes
+
+level=Level <level>
+classlevel=<class> level <level>
+lvl=Lvl <level>
+eachlevel=Each level provides:
+experience=EXP: <exp> / <nextexp>
+totalexperience=Total EXP: <exp>
+
+resetpoints=Reset Points: <points>
+attrpoints=Attribute Points: <points>
+classpoints=Class Points: <points>
+passivepoints=Passive Points: <points>
+activeskillpoints=Active Skill Points: <points>
+
+activeskillsuse=This mod turns the Expression Wheel (T key by default) into the Active Skills Wheel
+activeskillsusetip1=It is recommended to change the Expression Wheel control to an easily accessible key
+activeskillsusetip2=You can also assign a key to each Active Skill slot (ideal for low-cooldown skills)
+activeskillsequipinstructions=Click on a slot to equip an Active Skill. You cannot unequip an Active Skill on cooldown
+noactiveskills=You have no Active Skills. Unlock them through the classes
+
+activeskillcooldown=§9Cooldown: <seconds>s
+activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x Skill Level]]s
+requiredclasslevel=§bClass lvl <level> required
+requiredactiveskill=§bRequires '<skill>' level <level>
+maxlevel=§aMax Level: <level>
+
+clicktoseebase=[input=mouse1] to see Base
+clicktoseelevel=[input=mouse1] to see Level <level>
+
+classlevelseparation=- Class level <level> -
+
+inuse=In Use
+
+upcomingclass=§6Upcoming Class\n§9This class is currently in development\nand will be available in a future update
+
+addcolumn=Add column
+removecolumn=Remove column
+
+
+[controls]
+openrpgmenu=Open RPG Menu
+activeskillslot1=Active Skill Slot 1
+activeskillslot2=Active Skill Slot 2
+activeskillslot3=Active Skill Slot 3
+activeskillslot4=Active Skill Slot 4

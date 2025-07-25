@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atributo de aguante
+speedattrflat=<mod> atributo de velocidad
+strengthattrflat=<mod> atributo de fuerza
+intelligenceattrflat=<mod> atributo de inteligencia
+graceattrflat=<mod> atributo de gracia
+
+dodgechance=<mod>% de probabilidad de esquivar
+rangedweaponszoom=<mod> zoom de armas a distancia
+rangedweaponsrange=<mod>% de alcance de armas a distancia
+mobdetectionrange=<mod> rango de detección de monstruos
+focusdamage=<mod>% de daño de enfoque
+focuschance=<mod>% de probabilidad de enfoque
+
+
+[enchantment]
+evasive=Evasivo
+stalking=Acecho
+regenerative=Regenerativo
+energetic=Energético
+depleted=Agotado
+
+
+[buff]
+overlevelclassbuff=Clase de sobrenivel
+markedbuff=Marcado
+darkcursebuff=Maldición Oscura
+
+
+[buffdesc]
+overlevelclassbuff1=§9Una de tus clases excede el límite de puntos
+overlevelclassbuff2=§6No podrás continuar hasta que se solucione
+darkcursebuff1=+25% de Daño Recibido
+darkcursebuff2=Todo el daño también reduce la Salud Máxima
+
+
+[mob]
+rpgmobname=[<class>] <name> nivel <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivel <level>§0
+
+
+[mobclass]
+boss=Jefe
+warrior=Guerrero
+tank=Tanque
+runner=Corredor
+healer=Sanador
+explosive=Explosivo
+glacial=Glacial
+electric=Eléctrico
+flash=Destello
+dark=Oscuro
+legend=Leyenda
+
+
+[attributes]
+endurance=Aguante
+strength=Fuerza
+speed=Velocidad
+intelligence=Inteligencia
+grace=Gracia
+
+
+[classes]
+warrior=Guerrero
+ranger=Explorador
+wizard=Mago
+necromancer=Nigromante
+cleric=Clérigo
+rogue=Pícaro
+warlock=Brujo
+paladin=Paladín
+druid=Druida
+
+
+[passives]
+passives=Pasivas
+
+// Guerrero
+regeneration=Regeneración
+muscles=Músculos
+legs=Piernas
+force=Fuerza
+unstoppable=Imparable
+vigor=Vigor
+ironskin=Piel de Hierro
+unleashingrage=Furia Desatada
+unleashinghaste=Prisa Desatada
+unyielding=Inflexible
+lastbreath=Último Aliento
+
+// Explorador
+aim=Puntería
+agility=Agilidad
+criticalshots=Disparos Críticos
+energy=Energía
+recovery=Recuperación
+eagleeye=Ojo de Águila
+focus=Enfoque
+erradication=Erradicación
+predatorsense=Sentido Depredador
+plasmagrenade=Granada de Plasma
+wolfcompanion=Lobo Compañero
+
+
+[passivesdesc]
+
+// Guerrero
+unleashingrage=Cada nivel proporciona:\n\n+1% de Daño Total por cada 10% de Salud perdida
+unleashinghaste=Cada nivel proporciona:\n\n+1% de Velocidad de Movimiento por cada 10% de Salud perdida
+unyielding=Cada nivel proporciona:\n\n+5% de Velocidad de Ataque y -5% de Daño Recibido mientras estés por debajo del 20% de Salud
+lastbreath=En lugar de morir, te vuelves invulnerable durante §a[[3 x Nivel de Habilidad]] segundos§0\nUna vez que se acabe el tiempo, morirás
+
+// Explorador
+plasmagrenade=Cada 8 ataques a distancia, dispara un proyectil explosivo guiado que inflige un §i[[30 x Nivel de Habilidad]]%§0 del daño del arma
+wolfcompanion=Un lobo compañero atacará a los enemigos marcados infligiendo §i[[Nivel del Jugador x Nivel de Habilidad + Inteligencia x Nivel de Habilidad]] de Daño de invocador§0
+
+
+[activeskills]
+empty=Vacío
+
+// Guerrero
+fury=Furia
+recovery=Recuperación
+provocation=Provocación
+berserkercharge=Carga Berserker
+
+groundslam=Golpe al Suelo
+grounddestruction=Destrucción del Suelo
+parry=Parada
+battlecry=Grito de Batalla
+
+ironguard=Guardia de Hierro
+thornedguard=Guardia Espinosa
+intimidation=Intimidación
+
+objectthrowing=Lanzamiento de Objetos
+
+// Explorador
+shortdash=Carrera Corta
+longdash=Carrera Larga
+lethalshot=Disparo Letal
+venomshot=Disparo de Veneno
+explosivearrow=Flecha Explosiva
+
+shotsrampage=Ráfaga de Disparos
+huntersmark=Marca del Cazador
+beartrap=Trampa para Osos
+
+huntersinstinct=Instinto de Cazador
+arrowstorm=Tormenta de Flechas
+
+
+[activeskillsdesc]
+
+// Guerrero
+fury=Durante los próximos 6 segundos, aumenta tu Daño Cuerpo a Cuerpo y Velocidad de Ataque en un §a[[20 x Nivel de Habilidad]]%
+recovery=Durante los próximos 10 segundos, aumenta enormemente la Regeneración de Salud en Combate, restaurando §a[[20 + Aguante x Nivel de Habilidad]] de salud§0 durante el tiempo
+provocation=Durante los próximos §a[[2 x Nivel de Habilidad]] segundos§0, obliga a los enemigos cercanos a centrar sus ataques en ti
+berserkercharge=Avanza rápidamente una corta distancia, infligiendo §i[[10 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Velocidad x Nivel de Habilidad]] de Daño§0 a todos los enemigos que atravieses\nConsume el 50% de la Resistencia
+groundslam=Ataque de área que inflige §i[[5 x Fuerza]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante §a[[1 x Nivel de Habilidad]] segundos§0
+grounddestruction=Ataque de área que inflige §i[[5 x Fuerza x Nivel de Habilidad + 5 x Nivel del Jugador x Nivel de Habilidad]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante 2 segundos
+parry=Te vuelves invulnerable durante 0.5 segundos y devuelves el 500% del Daño original recibido\nConsume el 100% de la Resistencia
+battlecry=Durante los próximos 10 segundos, aumenta tu Daño Total y el de los aliados cercanos y la Velocidad de Movimiento en un §a[[10 x Nivel de Habilidad]]%
+
+ironguard=-50% de Daño Recibido durante §a[[4 x Nivel de Habilidad]] segundos
+thornedguard=-50% de Daño Recibido durante 12 segundos\nAdemás, devuelve un §a[[100 x Nivel de Habilidad]]%§0 del Daño original recibido
+intimidation=Durante los próximos §a[[Nivel de Habilidad]] segundos§0, haz que los enemigos cercanos huyan
+
+objectthrowing=Paso 1: Agarra un objeto frente a ti\nPaso 2: Lánzalo hacia adelante infligiendo §i[[20 x Nivel del Jugador + 5 x Fuerza x Nivel de Habilidad]] de Daño Cuerpo a Cuerpo§0\nAmbos pasos consumen toda tu Resistencia (al menos el 100%)
+
+// Explorador
+shortdash=Realiza una carrera de 100 de Fuerza\nConsume el 15% de la Resistencia
+longdash=Realiza una carrera de 150 de Fuerza\nConsume el 25% de la Resistencia
+lethalshot=Dispara una §hFlecha Letal§0 al enemigo más cercano, infligiendo §i[[5 x Nivel del Jugador + 5 x Fuerza x Nivel de Habilidad]] de Daño de Explorador§0
+venomshot=Dispara una §bFlecha de Veneno§0 al enemigo más cercano, infligiendo §i[[4 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Inteligencia x Nivel de Habilidad]] de Daño de Explorador§0
+explosiveshot=Dispara una §iFlecha Explosiva§0 al enemigo más cercano, infligiendo §i[[4 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Inteligencia x Nivel de Habilidad]] de Daño de Explorador§0
+
+shotsrampage=Mientras tengas al menos 1 acumulación de Ráfaga de Disparos, golpear a un enemigo con un ataque a distancia otorga 1 acumulación adicional durante 5 segundos\nCada acumulación de Ráfaga de Disparos aumenta la Velocidad de Ataque en un 5%, hasta un máximo de 30 acumulaciones
+huntersmark=§hMarca§0 al enemigo cercano con la salud más alta durante 10 segundos\nSi matas a un objetivo marcado, obtienes un §a+[[20 x Nivel de Habilidad]]%§0 de Velocidad de Ataque a Distancia y Velocidad de Movimiento durante 5 segundos
+beartrap=Coloca una trampa para osos en el suelo que desaparece si se activa o después de 20 segundos\nSi un enemigo la activa, recibirá §i[[10 x Nivel del Jugador]] de Daño§0 y quedará atrapado durante 5 segundos
+
+huntersinstinct=Durante los próximos 12 segundos, aumenta tu §7Probabilidad de Esquivar§0 en un §a[[10 x Nivel de Habilidad]]%\n§hMarca§0 durante 5 segundos a los enemigos que esquives
+arrowstorm=Dispara una flecha básica a cada enemigo cercano, infligiendo §i[[2 x Nivel del Jugador + Fuerza x Nivel de Habilidad + Velocidad x Nivel de Habilidad]] de Daño de Explorador§0 por cada flecha
+
+[skillsdesckeys]
+x=x
+skilllevel=Nivel de Habilidad
+playerlevel=Nivel del Jugador
+endurance=Aguante
+speed=Velocidad
+strength=Fuerza
+intelligence=Inteligencia
+grace=Gracia
+
+
+[extraskilldesc]
+// Mejoras
+marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\nTodos los proyectiles guiados y/o disparados al enemigo más cercano priorizarán a los enemigos marcados
+
+// Modificadores de probabilidad
+dodgechance=§7Probabilidad de Esquivar:§0 Probabilidad de esquivar los ataques entrantes. No puede exceder el 80%
+focuschance=§hProbabilidad de Enfoque:§0 Probabilidad de §hMarcar§0 durante 5 segundos a un monstruo cuando es atacado con daño que no sea de Invocador
+
+// Modificadores planos
+mobdetection=§9Detección de Monstruos:§0 Muestra los monstruos cercanos en el mapa. Un rango de detección más alto revela monstruos desde más lejos
+
+// Proyectiles
+lethalarrow=§hFlecha Letal:§0 Flecha guiada que otorga un golpe Crítico
+venomarrow=§bFlecha de Veneno:§0 Flecha guiada que envenena a los enemigos, repitiendo el 10% de su daño original por segundo durante 30 segundos
+explosivearrow=§iFlecha Explosiva:§0 Flecha guiada que causa una explosión mágica con el mismo daño
+
+
+[item]
+scrollofoblivion=Pergamino del Olvido
+ringsbox=Caja de Anillos
+
+// Anillos de Atributos
+endurancewoodring=Anillo de Madera de Aguante
+endurancecopperring=Anillo de Cobre de Aguante
+enduranceironring=Anillo de Hierro de Aguante
+endurancegoldring=Anillo de Oro de Aguante
+
+speedwoodring=Anillo de Madera de Velocidad
+speedcopperring=Anillo de Cobre de Velocidad
+speedgoldring=Anillo de Oro de Velocidad
+speedironring=Anillo de Hierro de Velocidad
+
+strengthwoodring=Anillo de Madera de Fuerza
+strengthcopperring=Anillo de Cobre de Fuerza
+strengthgoldring=Anillo de Oro de Fuerza
+strengthironring=Anillo de Hierro de Fuerza
+
+intelligencewoodring=Anillo de Madera de Inteligencia
+intelligencecopperring=Anillo de Cobre de Inteligencia
+intelligencegoldring=Anillo de Oro de Inteligencia
+intelligenceironring=Anillo de Hierro de Inteligencia
+
+gracewoodring=Anillo de Madera de Gracia
+gracecopperring=Anillo de Cobre de Gracia
+graceironring=Anillo de Hierro de Gracia
+gracegoldring=Anillo de Oro de Gracia
+
+
+[itemtooltip]
+scrollofoblivion=Otorga 2 Puntos de Restablecimiento
+ringsboxtip=Puede almacenar Anillos de Atributos
+
+
+[message]
+xp=EXP
+levelup=¡Subida de nivel!
+dodge=¡Esquivar!
+
+newmobkill=Has ganado <exp> de experiencia por matar a <mob> por primera vez
+newlevel=¡Felicidades! Has alcanzado el nivel <level>. Presiona [input=openrpgmenu] para abrir el Menú RPG
+
+noupdatesincombat=No puedes modificar tus atributos, clases o habilidades durante el combate
+noactiveskill=Ya no tienes esa Habilidad Activa, súbela de nivel de nuevo si quieres usarla
+
+equipfirst=Primero necesitas equipar una Habilidad Activa en esta ranura
+activeskillinuse=Esta habilidad ya está En Uso
+anotheractiveskillinuse=Ya tienes otra habilidad En Uso
+incooldown=En Enfriamiento
+notenoughstamina=No hay Suficiente Resistencia
+nograbbableobject=No hay ningún objeto agarrable frente a ti
+
+[ui]
+menutitle=MOD RPG por Save
+attributes=Atributos
+activeskills=Habilidades Activas
+classes=Clases
+
+level=Nivel <level>
+classlevel=<class> nivel <level>
+lvl=Nivel <level>
+eachlevel=Cada nivel proporciona:
+experience=EXP: <exp> / <nextexp>
+totalexperience=EXP Total: <exp>
+
+resetpoints=Puntos de Restablecimiento: <points>
+attrpoints=Puntos de Atributo: <points>
+classpoints=Puntos de Clase: <points>
+passivepoints=Puntos de Pasiva: <points>
+activeskillpoints=Puntos de Habilidad Activa: <points>
+
+activeskillsuse=Este mod convierte la Rueda de Expresiones (tecla T por defecto) en la Rueda de Habilidades Activas
+activeskillsusetip1=Se recomienda cambiar el control de la Rueda de Expresiones a una tecla de fácil acceso
+activeskillsusetip2=También puedes asignar una tecla a cada ranura de Habilidad Activa (ideal para habilidades de bajo enfriamiento)
+activeskillsequipinstructions=Haz clic en una ranura para equipar una Habilidad Activa. No puedes desequipar una Habilidad Activa en enfriamiento
+noactiveskills=No tienes Habilidades Activas. Desbloquéalas a través de las clases
+
+activeskillcooldown=§9Enfriamiento: <seconds>s
+activeskillcooldownmod=§9Enfriamiento: [[<seconds> <sign> <mod> x Nivel de Habilidad]]s
+requiredclasslevel=§bNivel de clase <level> requerido
+requiredactiveskill=§bRequiere '<skill>' nivel <level>
+maxlevel=§aNivel Máximo: <level>
+
+clicktoseebase=[input=mouse1] para ver la Base
+clicktoseelevel=[input=mouse1] para ver el Nivel <level>
+
+classlevelseparation=- Nivel de clase <level> -
+
+inuse=En Uso
+
+upcomingclass=§6Próxima Clase\n§9Esta clase está actualmente en desarrollo\ny estará disponible en una futura actualización
+
+addcolumn=Añadir columna
+removecolumn=Eliminar columna
+
+
+[controls]
+openrpgmenu=Abrir Menú RPG
+activeskillslot1=Ranura de Habilidad Activa 1
+activeskillslot2=Ranura de Habilidad Activa 2
+activeskillslot3=Ranura de Habilidad Activa 3
+activeskillslot4=Ranura de Habilidad Activa 4

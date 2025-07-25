@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atribut de resistència
+speedattrflat=<mod> atribut de velocitat
+strengthattrflat=<mod> atribut de força
+intelligenceattrflat=<mod> atribut d'intel·ligència
+graceattrflat=<mod> atribut de gràcia
+
+dodgechance=<mod>% de probabilitat d'esquivar
+rangedweaponszoom=<mod> zoom d'armes a distància
+rangedweaponsrange=<mod>% de rang d'armes a distància
+mobdetectionrange=<mod> rang de detecció de monstres
+focusdamage=<mod>% de dany d'enfocament
+focuschance=<mod>% de probabilitat d'enfocament
+
+
+[enchantment]
+evasive=Evasiu
+stalking=Assetjament
+regenerative=Regeneratiu
+energetic=Energètic
+depleted=Esgotat
+
+
+[buff]
+overlevelclassbuff=Classe de supernivell
+markedbuff=Marcat
+darkcursebuff=Maledicció Fosca
+
+
+[buffdesc]
+overlevelclassbuff1=§9Una de les teves classes supera el límit de punts
+overlevelclassbuff2=§6No podràs continuar fins que no s'arregli
+darkcursebuff1=+25% de dany rebut
+darkcursebuff2=Tot el dany també redueix la salut màxima
+
+
+[mob]
+rpgmobname=[<class>] <name> nivell <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivell <level>§0
+
+
+[mobclass]
+boss=Cap
+warrior=Guerrer
+tank=Tanc
+runner=Corredor
+healer=Sanador
+explosive=Explosiu
+glacial=Glacial
+electric=Elèctric
+flash=Llamp
+dark=Fosc
+legend=Llegenda
+
+
+[attributes]
+endurance=Resistència
+strength=Força
+speed=Velocitat
+intelligence=Intel·ligència
+grace=Gràcia
+
+
+[classes]
+warrior=Guerrer
+ranger=Explorador
+wizard=Mag
+necromancer=Nigromant
+cleric=Clergue
+rogue=Murri
+warlock=Bruixot
+paladin=Paladí
+druid=Druida
+
+
+[passives]
+passives=Passives
+
+// Guerrer
+regeneration=Regeneració
+muscles=Músculs
+legs=Cames
+force=Força
+unstoppable=Imparable
+vigor=Vigor
+ironskin=Pell de Ferro
+unleashingrage=Fúria Desfermada
+unleashinghaste=Precipita Desfermada
+unyielding=Inflexible
+lastbreath=Últim Alè
+
+// Explorador
+aim=Punteria
+agility=Agilitat
+criticalshots=Trets Crítics
+energy=Energia
+recovery=Recuperació
+eagleeye=Ull d'Àguila
+focus=Enfocament
+erradication=Erradicació
+predatorsense=Sentit de Depredador
+plasmagrenade=Granada de Plasma
+wolfcompanion=Llop Company
+
+
+[passivesdesc]
+
+// Guerrer
+unleashingrage=Cada nivell proporciona:\n\n+1% de tot el dany per cada 10% de salut perduda
+unleashinghaste=Cada nivell proporciona:\n\n+1% de velocitat de moviment per cada 10% de salut perduda
+unyielding=Cada nivell proporciona:\n\n+5% de velocitat d'atac i -5% de dany rebut per sota del 20% de salut
+lastbreath=En lloc de morir, torna't invulnerable durant §a[[3 x nivell d'habilitat]] segons§0\nUn cop s'acabi el temps, moriràs
+
+// Explorador
+plasmagrenade=Cada 8 atacs a distància, dispara un projectil explosiu guiat que infligeix un §i[[30 x nivell d'habilitat]]%§0 del dany de l'arma
+wolfcompanion=Un llop company atacarà els enemics marcats infligint §i[[nivell del jugador x nivell d'habilitat + intel·ligència x nivell d'habilitat]] de dany d'invocador§0
+
+
+[activeskills]
+empty=Buit
+
+// Guerrer
+fury=Fúria
+recovery=Recuperació
+provocation=Provocació
+berserkercharge=Càrrega de Berserker
+
+groundslam=Cop a Terra
+grounddestruction=Destrucció de Terra
+parry=Parada
+battlecry=Crit de Batalla
+
+ironguard=Guàrdia de Ferro
+thornedguard=Guàrdia d'Espines
+intimidation=Intimidació
+
+objectthrowing=Llançament d'Objectes
+
+// Explorador
+shortdash=Esprint Curt
+longdash=Esprint Llarg
+lethalshot=Tret Letal
+venomshot=Tret de Verí
+explosivearrow=Fletxa Explosiva
+
+shotsrampage=Ràfega de Trets
+huntersmark=Marca del Caçador
+beartrap=Parany per a Óssos
+
+huntersinstinct=Instint de Caçador
+arrowstorm=Tempesta de Fletxes
+
+
+[activeskillsdesc]
+
+// Guerrer
+fury=Durant els propers 6 segons, augmenta el teu dany cos a cos i la teva velocitat d'atac en un §a[[20 x nivell d'habilitat]]%
+recovery=Durant els propers 10 segons, augmenta considerablement la regeneració de salut en combat, restaurant §a[[20 + resistència x nivell d'habilitat]] de salut§0 durant el temps
+provocation=Durant els propers §a[[2 x nivell d'habilitat]] segons§0, obliga els enemics propers a centrar els seus atacs en tu
+berserkercharge=Avança ràpidament una curta distància, infligint §i[[10 x nivell del jugador + 2 x força x nivell d'habilitat + 2 x velocitat x nivell d'habilitat]] de dany§0 a tots els enemics que passis\nConsumeix el 50% de la resistència
+groundslam=Atac d'àrea que infligeix §i[[5 x força]] de dany cos a cos§0 i §9atordeix§0 durant §a[[1 x nivell d'habilitat]] segons§0
+grounddestruction=Atac d'àrea que infligeix §i[[5 x força x nivell d'habilitat + 5 x nivell del jugador x nivell d'habilitat]] de dany cos a cos§0 i §9atordeix§0 durant 2 segons
+parry=Torna't invulnerable durant 0,5 segons i retorna el 500% del dany original rebut\nConsumeix el 100% de la resistència
+battlecry=Durant els propers 10 segons, augmenta el teu dany total i el dels aliats propers i la velocitat de moviment en un §a[[10 x nivell d'habilitat]]%
+
+ironguard=-50% de dany rebut durant §a[[4 x nivell d'habilitat]] segons
+thornedguard=-50% de dany rebut durant 12 segons\nA més, retorna un §a[[100 x nivell d'habilitat]]%§0 del dany original rebut
+intimidation=Durant els propers §a[[nivell d'habilitat]] segons§0, fes que els enemics propers fugin
+
+objectthrowing=Pas 1: Agafa un objecte davant teu\nPas 2: Llença'l cap endavant infligint §i[[20 x nivell del jugador + 5 x força x nivell d'habilitat]] de dany cos a cos§0\nTots dos passos consumeixen tota la teva resistència (almenys el 100%)
+
+// Explorador
+shortdash=Fes un esprint de 100 de força\nConsumeix el 15% de la resistència
+longdash=Fes un esprint de 150 de força\nConsumeix el 25% de la resistència
+lethalshot=Dispara una §hfletxa letal§0 a l'enemic més proper, infligint §i[[5 x nivell del jugador + 5 x força x nivell d'habilitat]] de dany d'explorador§0
+venomshot=Dispara una §bfletxa de verí§0 a l'enemic més proper, infligint §i[[4 x nivell del jugador + 2 x força x nivell d'habilitat + 2 x intel·ligència x nivell d'habilitat]] de dany d'explorador§0
+explosiveshot=Dispara una §ifletxa explosiva§0 a l'enemic més proper, infligint §i[[4 x nivell del jugador + 2 x força x nivell d'habilitat + 2 x intel·ligència x nivell d'habilitat]] de dany d'explorador§0
+
+shotsrampage=Mentre tinguis almenys 1 acumulació de ràfega de trets, colpejar un enemic amb un atac a distància atorga 1 acumulació addicional durant 5 segons\nCada acumulació de ràfega de trets augmenta la velocitat d'atac en un 5%, fins a un màxim de 30 acumulacions
+huntersmark=§hMarca§0 l'enemic proper amb la salut més alta durant 10 segons\nSi mates un objectiu marcat, guanyes un §a+[[20 x nivell d'habilitat]]%§0 de velocitat d'atac a distància i velocitat de moviment durant 5 segons
+beartrap=Col·loca un parany per a óssos a terra que desapareix si s'activa o després de 20 segons\nSi un enemic l'activa, rebrà §i[[10 x nivell del jugador]] de dany§0 i quedarà atrapat durant 5 segons
+
+huntersinstinct=Durant els propers 12 segons, augmenta la teva §7probabilitat d'esquivar§0 en un §a[[10 x nivell d'habilitat]]%\n§hMarca§0 durant 5 segons els enemics que esquivis
+arrowstorm=Dispara una fletxa bàsica a cada enemic proper, infligint §i[[2 x nivell del jugador + força x nivell d'habilitat + velocitat x nivell d'habilitat]] de dany d'explorador§0 cada fletxa
+
+[skillsdesckeys]
+x=x
+skilllevel=Nivell d'habilitat
+playerlevel=Nivell del jugador
+endurance=Resistència
+speed=Velocitat
+strength=Força
+intelligence=Intel·ligència
+grace=Gràcia
+
+
+[extraskilldesc]
+// Millores
+marked=§hMarcat:§0 Infligeix +20% de dany (+ §hdany d'enfocament§0) i +10% de probabilitat de crític als monstres que marquis\nTots els projectils guiats i/o disparats a l'enemic més proper prioritzaran els enemics marcats
+
+// Modificadors de probabilitat
+dodgechance=§7Probabilitat d'esquivar:§0 Probabilitat d'esquivar els atacs entrants. No pot superar el 80%
+focuschance=§hProbabilitat d'enfocament:§0 Probabilitat de §hmarcar§0 durant 5 segons un monstre quan és atacat amb dany que no sigui d'invocador
+
+// Modificadors plans
+mobdetection=§9Detecció de monstres:§0 Mostra els monstres propers al mapa. Un rang de detecció més alt revela monstres des de més lluny
+
+// Projectils
+lethalarrow=§hFletxa letal:§0 Fletxa guiada que atorga un cop crític
+venomarrow=§bFletxa de verí:§0 Fletxa guiada que enverina els enemics, repetint el 10% del seu dany original per segon durant 30 segons
+explosivearrow=§iFletxa explosiva:§0 Fletxa guiada que causa una explosió màgica amb el mateix dany
+
+
+[item]
+scrollofoblivion=Pergamí de l'Oblit
+ringsbox=Caixa d'Anells
+
+// Anells d'atributs
+endurancewoodring=Anell de Fusta de Resistència
+endurancecopperring=Anell de Coure de Resistència
+enduranceironring=Anell de Ferro de Resistència
+endurancegoldring=Anell d'Or de Resistència
+
+speedwoodring=Anell de Fusta de Velocitat
+speedcopperring=Anell de Coure de Velocitat
+speedgoldring=Anell d'Or de Velocitat
+speedironring=Anell de Ferro de Velocitat
+
+strengthwoodring=Anell de Fusta de Força
+strengthcopperring=Anell de Coure de Força
+strengthgoldring=Anell d'Or de Força
+strengthironring=Anell de Ferro de Força
+
+intelligencewoodring=Anell de Fusta d'Intel·ligència
+intelligencecopperring=Anell de Coure d'Intel·ligència
+intelligencegoldring=Anell d'Or d'Intel·ligència
+intelligenceironring=Anell de Ferro d'Intel·ligència
+
+gracedwoodring=Anell de Fusta de Gràcia
+gracecopperring=Anell de Coure de Gràcia
+graceironring=Anell de Ferro de Gràcia
+gracegoldring=Anell d'Or de Gràcia
+
+
+[itemtooltip]
+scrollofoblivion=Atorga 2 punts de restabliment
+ringsboxtip=Pot emmagatzemar anells d'atributs
+
+
+[message]
+xp=EXP
+levelup=Pujada de nivell!
+dodge=Esquivar!
+
+newmobkill=Has guanyat <exp> d'experiència per matar <mob> per primera vegada
+newlevel=Felicitats! Has arribat al nivell <level>. Prem [input=openrpgmenu] per obrir el menú de rol
+
+noupdatesincombat=No pots modificar els teus atributs, classes o habilitats durant el combat
+noactiveskill=Ja no tens aquesta habilitat activa, puja-la de nivell de nou si la vols utilitzar
+
+equipfirst=Primer has d'equipar una habilitat activa en aquesta ranura
+activeskillinuse=Aquesta habilitat ja està en ús
+anotheractiveskillinuse=Ja tens una altra habilitat en ús
+incooldown=En refredament
+notenoughstamina=No hi ha prou resistència
+nograbbableobject=No hi ha cap objecte que es pugui agafar davant teu
+
+[ui]
+menutitle=MOD RPG per Save
+attributes=Atributs
+activeskills=Habilitats Actives
+classes=Classes
+
+level=Nivell <level>
+classlevel=<class> nivell <level>
+lvl=Nivell <level>
+eachlevel=Cada nivell proporciona:
+experience=EXP: <exp> / <nextexp>
+totalexperience=EXP total: <exp>
+
+resetpoints=Punts de restabliment: <points>
+attrpoints=Punts d'atribut: <points>
+classpoints=Punts de classe: <points>
+passivepoints=Punts de passiva: <points>
+activeskillpoints=Punts d'habilitat activa: <points>
+
+activeskillsuse=Aquest mod converteix la roda d'expressions (tecla T per defecte) en la roda d'habilitats actives
+activeskillsusetip1=Es recomana canviar el control de la roda d'expressions a una tecla de fàcil accés
+activeskillsusetip2=També pots assignar una tecla a cada ranura d'habilitat activa (ideal for low-cooldown skills)
+activeskillsequipinstructions=Fes clic a una ranura per equipar una habilitat activa. No pots desequipar una habilitat activa en refredament
+noactiveskills=No tens habilitats actives. Desbloqueja-les a través de les classes
+
+activeskillcooldown=§9Refredament: <seconds>s
+activeskillcooldownmod=§9Refredament: [[<seconds> <sign> <mod> x nivell d'habilitat]]s
+requiredclasslevel=§bNivell de classe <level> requerit
+requiredactiveskill=§bRequereix '<skill>' nivell <level>
+maxlevel=§aNivell màxim: <level>
+
+clicktoseebase=[input=mouse1] per veure la base
+clicktoseelevel=[input=mouse1] per veure el nivell <level>
+
+classlevelseparation=- Nivell de classe <level> -
+
+inuse=En ús
+
+upcomingclass=§6Pròxima classe\n§9Aquesta classe està actualment en desenvolupament\ni estarà disponible en una futura actualització
+
+addcolumn=Afegeix una columna
+removecolumn=Elimina la columna
+
+
+[controls]
+openrpgmenu=Obre el menú de rol
+activeskillslot1=Ranura d'habilitat activa 1
+activeskillslot2=Ranura d'habilitat activa 2
+activeskillslot3=Ranura d'habilitat activa 3
+activeskillslot4=Ranura d'habilitat activa 4

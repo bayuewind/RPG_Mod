@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> uthållighetsattribut
+speedattrflat=<mod> hastighetsattribut
+strengthattrflat=<mod> styrkeattribut
+intelligenceattrflat=<mod> intelligensattribut
+graceattrflat=<mod> nådattribut
+
+dodgechance=<mod>% undvikandeschans
+rangedweaponszoom=<mod> zoom för avståndsvapen
+rangedweaponsrange=<mod>% räckvidd för avståndsvapen
+mobdetectionrange=<mod> mobbdetekteringsräckvidd
+fokusdamage=<mod>% fokusskada
+focuschance=<mod>% fokuschans
+
+
+[enchantment]
+evasive=Undvikande
+stalking=Förföljelse
+regenerative=Regenerativ
+energetic=Energisk
+depleted=Utarmad
+
+
+[buff]
+overlevelclassbuff=Övernivåklass
+markedbuff=Märkt
+darkcursebuff=Mörk förbannelse
+
+
+[buffdesc]
+overlevelclassbuff1=§9En av dina klasser överskrider en poänggräns
+overlevelclassbuff2=§6Du kan inte fortsätta förrän det är åtgärdat
+darkcursebuff1=+25% inkommande skada
+darkcursebuff2=All skada minskar också maxhälsa
+
+
+[mob]
+rpgmobname=[<class>] <name> nivå <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivå <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Krigare
+tank=Tank
+runner=Löpare
+healer=Helare
+explosive=Explosiv
+glacial=Glaciär
+electric=Elektrisk
+flash=Blixt
+dark=Mörk
+legend=Legend
+
+
+[attributes]
+endurance=Uthållighet
+strength=Styrka
+speed=Hastighet
+intelligence=Intelligens
+grace=Nåd
+
+
+[classes]
+warrior=Krigare
+ranger=Jägare
+wizard=Trollkarl
+necromancer=Nekromantiker
+cleric=Präst
+rogue=Skurk
+warlock=Häxmästare
+paladin=Paladin
+druid=Druid
+
+
+[passives]
+passives=Passiva
+
+// Krigare
+regeneration=Regeneration
+muscles=Muskler
+legs=Ben
+force=Kraft
+unstoppable=Ostoppbar
+vigor=Vigor
+ironskin=Järnhud
+unleashingrage=Frigörande raseri
+unleashinghaste=Frigörande brådska
+unyielding=Orubblig
+lastbreath=Sista andetaget
+
+// Jägare
+aim=Sikte
+agility=Smidighet
+criticalshots=Kritiska skott
+energy=Energi
+recovery=Återhämtning
+eagleeye=Örnöga
+focus=Fokus
+erradication=Utrotning
+predatorsense=Rovdjurssinne
+plasmagrenade=Plasmagranat
+wolfcompanion=Vargkompanjon
+
+
+[passivesdesc]
+
+// Krigare
+unleashingrage=Varje nivå ger:\n\n+1% all skada för varje 10% saknad hälsa
+unleashinghaste=Varje nivå ger:\n\n+1% rörelsehastighet för varje 10% saknad hälsa
+unyielding=Varje nivå ger:\n\n+5% attackhastighet och -5% inkommande skada under 20% hälsa
+lastbreath=Istället för att dö, bli osårbar i §a[[3 x färdighetsnivå]] sekunder§0\nNär tiden är ute dör du
+
+// Jägare
+plasmagrenade=Var 8:e avståndsattack, avfyra en styrd explosiv projektil som ger §i[[30 x färdighetsnivå]]%§0 av vapnets skada
+wolfcompanion=En vargkompanjon kommer att attackera märkta fiender och ge §i[[spelarnivå x färdighetsnivå + intelligens x färdighetsnivå]] framkallarskada§0
+
+
+[activeskills]
+empty=Tom
+
+// Krigare
+fury=Raseri
+recovery=Återhämtning
+provocation=Provokation
+berserkercharge=Berserkeranfall
+
+groundslam=Markslag
+grounddestruction=Markförstörelse
+parry=Parering
+battlecry=Stridsrop
+
+ironguard=Järnvakt
+thornedguard=Törnevakt
+intimidation=Skrämsel
+
+objectthrowing=Objektkastning
+
+// Jägare
+shortdash=Kort rusning
+longdash=Lång rusning
+lethalshot=Dödligt skott
+venomshot=Giftskott
+explosivearrow=Explosiv pil
+
+shotsrampage=Skottrampage
+huntersmark=Jägarmärke
+beartrap=Björnfälla
+
+huntersinstinct=Jägarinstinkt
+arrowstorm=Pilregn
+
+
+[activeskillsdesc]
+
+// Krigare
+fury=Under de kommande 6 sekunderna, öka din närstridsskada och attackhastighet med §a[[20 x färdighetsnivå]]%
+recovery=Under de kommande 10 sekunderna, öka stridshälsoregenereringen kraftigt och återställ §a[[20 + uthållighet x färdighetsnivå]] hälsa§0 under varaktigheten
+provocation=Under de kommande §a[[2 x färdighetsnivå]] sekunderna§0, tvinga närliggande fiender att fokusera sina attacker på dig
+berserkercharge=Rusa framåt en kort sträcka och ge §i[[10 x spelarnivå + 2 x styrka x färdighetsnivå + 2 x hastighet x färdighetsnivå]] skada§0 till alla fiender du passerar\nFörbrukar 50% uthållighet
+groundslam=Områdesattack som ger §i[[5 x styrka]] närstridsskada§0 och §9bedövar§0 i §a[[1 x färdighetsnivå]] sekunder§0
+grounddestruction=Områdesattack som ger §i[[5 x styrka x färdighetsnivå + 5 x spelarnivå x färdighetsnivå]] närstridsskada§0 och §9bedövar§0 i 2 sekunder
+parry=Bli osårbar i 0,5 sekunder och returnera 500% av den ursprungliga mottagna skadan\nFörbrukar 100% uthållighet
+battlecry=Under de kommande 10 sekunderna, öka din och närliggande allierades all skada och rörelsehastighet med §a[[10 x färdighetsnivå]]%
+
+ironguard=-50% inkommande skada i §a[[4 x färdighetsnivå]] sekunder
+thornedguard=-50% inkommande skada i 12 sekunder\nReturnerar dessutom §a[[100 x färdighetsnivå]]%§0 av den ursprungliga mottagna skadan
+intimidation=Under de kommande §a[[färdighetsnivå]] sekunderna§0, få närliggande fiender att fly
+
+objectthrowing=Steg 1: Grip ett föremål framför dig\nSteg 2: Kasta det framåt och ge §i[[20 x spelarnivå + 5 x styrka x färdighetsnivå]] närstridsskada§0\nBåda stegen förbrukar all din uthållighet (minst 100%)
+
+// Jägare
+shortdash=Utför en rusning med 100 styrka\nFörbrukar 15% uthållighet
+longdash=Utför en rusning med 150 styrka\nFörbrukar 25% uthållighet
+lethalshot=Skjut en §hdödlig pil§0 mot närmaste fiende och ge §i[[5 x spelarnivå + 5 x styrka x färdighetsnivå]] jägarskada§0
+venomshot=Skjut en §bgiftpil§0 mot närmaste fiende och ge §i[[4 x spelarnivå + 2 x styrka x färdighetsnivå + 2 x intelligens x färdighetsnivå]] jägarskada§0
+explosiveshot=Skjut en §iexplosiv pil§0 mot närmaste fiende och ge §i[[4 x spelarnivå + 2 x styrka x färdighetsnivå + 2 x intelligens x färdighetsnivå]] jägarskada§0
+
+shotsrampage=Medan du har minst 1 stack skottrampage, ger träff av en fiende med en avståndsattack 1 extra stack i 5 sekunder\nVarje stack skottrampage ökar attackhastigheten med 5%, upp till maximalt 30 stackar
+huntersmark=§hMärk§0 närmaste fiende med högst hälsa i 10 sekunder\nOm du dödar ett märkt mål, får du §a+[[20 x färdighetsnivå]]%§0 avståndsattackhastighet och rörelsehastighet i 5 sekunder
+beartrap=Placera en björnfälla på marken som försvinner om den utlöses eller efter 20 sekunder\nOm en fiende utlöser den, tar de §i[[10 x spelarnivå]] skada§0 och fastnar i 5 sekunder
+
+huntersinstinct=Under de kommande 12 sekunderna, öka din §7undvikandeschans§0 med §a[[10 x färdighetsnivå]]%\n§hMärk§0 i 5 sekunder de fiender du undviker
+arrowstorm=Skjut en grundläggande pil mot varje nära fiende och ge §i[[2 x spelarnivå + styrka x färdighetsnivå + hastighet x färdighetsnivå]] jägarskada§0 per pil
+
+[skillsdesckeys]
+x=x
+skilllevel=Färdighetsnivå
+playerlevel=Spelarnivå
+endurance=Uthållighet
+speed=Hastighet
+strength=Styrka
+intelligence=Intelligens
+grace=Nåd
+
+
+[extraskilldesc]
+// Buffar
+marked=§hMärkt:§0 Ge +20% skada (+ §hfokusskada§0) och +10% kritisk chans till mobbar du märker\nAlla projektiler som styrs och/eller avfyras mot närmaste fiende kommer att prioritera märkta fiender
+
+// Chansmodifierare
+dodgechance=§7Undvikandeschans:§0 Chans att undvika inkommande attacker. Kan inte överstiga 80%
+focuschance=§hFokuschans:§0 Chans att §hmärka§0 en mobb i 5 sekunder när den attackeras med icke-framkallarskada
+
+// Platta modifierare
+mobdetection=§9Mobbdetektering:§0 Visar närliggande mobbar på kartan. En högre detekteringsräckvidd avslöjar mobbar från längre bort
+
+// Projektiler
+lethalarrow=§hDödlig pil:§0 Styrd pil som ger en kritisk träff
+venomarrow=§bGiftpil:§0 Styrd pil som förgiftar fiender och upprepar 10% av sin ursprungliga skada per sekund i 30 sekunder
+explosivearrow=§iExplosiv pil:§0 Styrd pil som orsakar en magisk explosion med lika stor skada
+
+
+[item]
+scrollofoblivion=Glömskans rulle
+ringsbox=Ringlåda
+
+// Attributringar
+endurancewoodring=Uthållighetsträring
+endurancecopperring=Uthållighetskopparring
+enduranceironring=Uthållighetsjärnring
+endurancegoldring=Uthållighetsguldring
+
+speedwoodring=Hastighetsträring
+speedcopperring=Hastighetskopparring
+speedgoldring=Hastighetsguldring
+speedironring=Hastighetsjärnring
+
+strengthwoodring=Styrketräring
+strengthcopperring=Styrkekopparring
+strengthgoldring=Styrkeguldring
+strengthironring=Styrkejärnring
+
+intelligencewoodring=Intelligensträring
+intelligencecopperring=Intelligenskopparring
+intelligencegoldring=Intelligensguldring
+intelligenceironring=Intelligensjärnring
+
+gracewoodring=Nådträring
+gracecopperring=Nådkopparring
+graceironring=Nådjärnring
+gracegoldring=Nådguldring
+
+
+[itemtooltip]
+scrollofoblivion=Ger 2 återställningspoäng
+ringsboxtip=Kan lagra attributringar
+
+
+[message]
+xp=XP
+levelup=Nivå upp!
+dodge=Undvik!
+
+newmobkill=Du fick <exp> erfarenhet för att ha dödat <mob> för första gången
+newlevel=Grattis! Du har nått nivå <level>. Tryck på [input=openrpgmenu] för att öppna RPG-menyn
+
+noupdatesincombat=Du kan inte ändra dina attribut, klasser eller färdigheter under strid
+noactiveskill=Du har inte längre den aktiva färdigheten, levla upp den igen om du vill använda den
+
+equipfirst=Du måste först utrusta en aktiv färdighet i den här platsen
+activeskillinuse=Denna färdighet används redan
+anotheractiveskillinuse=Du har redan en annan färdighet i bruk
+incooldown=På nedkylning
+notenoughstamina=Inte tillräckligt med uthållighet
+nograbbableobject=Det finns inget gripbart föremål framför dig
+
+[ui]
+menutitle=RPG-MOD av Save
+attributes=Attribut
+activeskills=Aktiva färdigheter
+classes=Klasser
+
+level=Nivå <level>
+classlevel=<class> nivå <level>
+lvl=Nivå <level>
+eachlevel=Varje nivå ger:
+experience=XP: <exp> / <nextexp>
+totalexperience=Total XP: <exp>
+
+resetpoints=Återställningspoäng: <points>
+attrpoints=Attributpoäng: <points>
+classpoints=Klasspoäng: <points>
+passivepoints=Passiva poäng: <points>
+activeskillpoints=Aktiva färdighetspoäng: <points>
+
+activeskillsuse=Denna mod förvandlar uttryckshjulet (T-tangenten som standard) till hjulet för aktiva färdigheter
+activeskillsusetip1=Det rekommenderas att ändra kontrollen för uttryckshjulet till en lättillgänglig tangent
+activeskillsusetip2=Du kan också tilldela en tangent till varje aktiv färdighetsplats (perfekt för färdigheter med låg nedkylning)
+activeskillsequipinstructions=Klicka på en plats för att utrusta en aktiv färdighet. Du kan inte ta bort en aktiv färdighet på nedkylning
+noactiveskills=Du har inga aktiva färdigheter. Lås upp dem genom klasserna
+
+activeskillcooldown=§9Nedkylning: <seconds>s
+activeskillcooldownmod=§9Nedkylning: [[<seconds> <sign> <mod> x färdighetsnivå]]s
+requiredclasslevel=§bKlassnivå <level> krävs
+requiredactiveskill=§bKräver '<skill>' nivå <level>
+maxlevel=§aMaxnivå: <level>
+
+clicktoseebase=[input=mouse1] för att se bas
+clicktoseelevel=[input=mouse1] för att se nivå <level>
+
+classlevelseparation=- Klassnivå <level> -
+
+inuse=I bruk
+
+upcomingclass=§6Kommande klass\n§9Denna klass är för närvarande under utveckling\noch kommer att finnas tillgänglig i en framtida uppdatering
+
+addcolumn=Lägg till kolumn
+removecolumn=Ta bort kolumn
+
+
+[controls]
+openrpgmenu=Öppna RPG-meny
+activeskillslot1=Aktiv färdighetsplats 1
+activeskillslot2=Aktiv färdighetsplats 2
+activeskillslot3=Aktiv färdighetsplats 3
+activeskillslot4=Aktiv färdighetsplats 4

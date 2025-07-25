@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> سمة التحمل
+speedattrflat=<mod> سمة السرعة
+strengthattrflat=<mod> سمة القوة
+intelligenceattrflat=<mod> سمة الذكاء
+graceattrflat=<mod> سمة الرشاقة
+
+dodgechance=<mod>% فرصة المراوغة
+rangedweaponszoom=<mod> تكبير الأسلحة بعيدة المدى
+rangedweaponsrange=<mod>% مدى الأسلحة بعيدة المدى
+mobdetectionrange=<mod> نطاق كشف الوحوش
+focusdamage=<mod>% ضرر التركيز
+focuschance=<mod>% فرصة التركيز
+
+
+[enchantment]
+evasive=مراوغ
+stalking=متربص
+regenerative=متجدد
+energetic=نشيط
+depleted=مستنفد
+
+
+[buff]
+overlevelclassbuff=فئة ذات مستوى زائد
+markedbuff=معلم
+darkcursebuff=لعنة الظلام
+
+
+[buffdesc]
+overlevelclassbuff1=§9إحدى فئاتك تتجاوز حد النقاط
+overlevelclassbuff2=§6لن تتمكن من المتابعة حتى يتم إصلاحها
+darkcursebuff1=+25% ضرر وارد
+darkcursebuff2=كل الضرر يقلل أيضًا من الصحة القصوى
+
+
+[mob]
+rpgmobname=[<class>] <name> المستوى <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9المستوى <level>§0
+
+
+[mobclass]
+boss=زعيم
+warrior=محارب
+tank=دبابة
+runner=عداء
+healer=معالج
+explosive=متفجر
+glacial=جليدي
+electric=كهربائي
+flash=وميض
+dark=مظلم
+legend=أسطورة
+
+
+[attributes]
+endurance=التحمل
+strength=القوة
+speed=السرعة
+intelligence=الذكاء
+grace=الرشاقة
+
+
+[classes]
+warrior=محارب
+ranger=حارس
+wizard=ساحر
+necromancer=مستحضر الأرواح
+cleric=رجل دين
+rogue=لص
+warlock=ساحر
+paladin=بالادين
+druid=درويد
+
+
+[passives]
+passives=سلبيات
+
+// محارب
+regeneration=تجديد
+muscles=عضلات
+legs=أرجل
+force=قوة
+unstoppable=لا يمكن إيقافه
+vigor=قوة
+ironskin=جلد حديدي
+unleashingrage=إطلاق العنان للغضب
+unleashinghaste=إطلاق العنان للسرعة
+unyielding=صامد
+lastbreath=النفس الأخير
+
+// حارس
+aim=تصويب
+agility=رشاقة
+criticalshots=طلقات حرجة
+energy=طاقة
+recovery=استرداد
+eagleeye=عين الصقر
+focus=تركيز
+erradication=استئصال
+predatorsense=حاسة المفترس
+plasmagrenade=قنبلة بلازما
+wolfcompanion=رفيق الذئب
+
+
+[passivesdesc]
+
+// محارب
+unleashingrage=كل مستوى يوفر:\n\n+1% كل الضرر لكل 10% من الصحة المفقودة
+unleashinghaste=كل مستوى يوفر:\n\n+1% سرعة الحركة لكل 10% من الصحة المفقودة
+unyielding=كل مستوى يوفر:\n\n+5% سرعة الهجوم و -5% ضرر وارد عندما تكون الصحة أقل من 20%
+lastbreath=بدلاً من الموت ، تصبح منيعًا لمدة §a[[3 x مستوى المهارة]] ثانية§0\nبمجرد انتهاء الوقت ، ستموت
+
+// حارس
+plasmagrenade=كل 8 هجمات بعيدة المدى ، أطلق قذيفة متفجرة موجهة تسبب §i[[30 x مستوى المهارة]]%§0 من ضرر السلاح
+wolfcompanion=سيهاجم رفيق الذئب الأعداء المعلمين مسببًا §i[[مستوى اللاعب x مستوى المهارة + الذكاء x مستوى المهارة]] ضرر المستدعي§0
+
+
+[activeskills]
+empty=فارغ
+
+// محارب
+fury=غضب
+recovery=استرداد
+provocation=استفزاز
+berserkercharge=هجوم البر서كر
+
+groundslam=ضربة أرضية
+grounddestruction=تدمير أرضي
+parry=صد
+battlecry=صرخة معركة
+
+ironguard=حارس حديدي
+thornedguard=حارس شائك
+intimidation=ترهيب
+
+objectthrowing=رمي الأشياء
+
+// حارس
+shortdash=اندفاعة قصيرة
+longdash=اندفاعة طويلة
+lethalshot=طلقة قاتلة
+venomshot=طلقة سامة
+explosivearrow=سهم متفجر
+
+shotsrampage=هيجان الطلقات
+huntersmark=علامة الصياد
+beartrap=فخ الدببة
+
+huntersinstinct=غريزة الصياد
+arrowstorm=عاصفة السهام
+
+
+[activeskillsdesc]
+
+// محارب
+fury=للثواني الست القادمة ، قم بزيادة ضرر المشاجرة وسرعة الهجوم بنسبة §a[[20 x مستوى المهارة]]%
+recovery=للثواني العشر القادمة ، عزز بشكل كبير تجديد الصحة في القتال ، واستعادة §a[[20 + التحمل x مستوى المهارة]] صحة§0 على مدار المدة
+provocation=للثواني §a[[2 x مستوى المهارة]] القادمة§0 ، أجبر الأعداء القريبين على تركيز هجماتهم عليك
+berserkercharge=اندفع للأمام مسافة قصيرة ، مسببًا §i[[10 x مستوى اللاعب + 2 x القوة x مستوى المهارة + 2 x السرعة x مستوى المهارة]] ضرر§0 لجميع الأعداء الذين مررت بهم\nيستهلك 50% من القدرة على التحمل
+groundslam=هجوم منطقة يسبب §i[[5 x القوة]] ضرر المشاجرة§0 و §9يصعق§0 لمدة §a[[1 x مستوى المهارة]] ثانية§0
+grounddestruction=هجوم منطقة يسبب §i[[5 x القوة x مستوى المهارة + 5 x مستوى اللاعب x مستوى المهارة]] ضرر المشاجرة§0 و §9يصعق§0 لمدة ثانيتين
+parry=تصبح منيعًا لمدة 0.5 ثانية وتعيد 500% من الضرر الأصلي المستلم\nيستهلك 100% من القدرة على التحمل
+battlecry=للثواني العشر القادمة ، قم بزيادة كل الضرر وسرعة الحركة لك وللحلفاء القريبين بنسبة §a[[10 x مستوى المهارة]]%
+
+ironguard=-50% ضرر وارد لمدة §a[[4 x مستوى المهارة]] ثانية
+thornedguard=-50% ضرر وارد لمدة 12 ثانية\nبالإضافة إلى ذلك ، يعيد §a[[100 x مستوى المهارة]]%§0 من الضرر الأصلي المستلم
+intimidation=للثواني §a[[مستوى المهارة]] القادمة§0 ، اجعل الأعداء القريبين يهربون
+
+objectthrowing=الخطوة 1: أمسك شيئًا أمامك\nالخطوة 2: ارمه للأمام مسببًا §i[[20 x مستوى اللاعب + 5 x القوة x مستوى المهارة]] ضرر المشاجرة§0\nتستهلك كلتا الخطوتين كل قدرتك على التحمل (100% على الأقل)
+
+// حارس
+shortdash=قم باندفاعة بقوة 100\nتستهلك 15% من القدرة على التحمل
+longdash=قم باندفاعة بقوة 150\nتستهلك 25% من القدرة على التحمل
+lethalshot=أطلق §hسهمًا قاتلاً§0 على أقرب عدو ، مسببًا §i[[5 x مستوى اللاعب + 5 x القوة x مستوى المهارة]] ضرر الحارس§0
+venomshot=أطلق §bسهمًا سامًا§0 على أقرب عدو ، مسببًا §i[[4 x مستوى اللاعب + 2 x القوة x مستوى المهارة + 2 x الذكاء x مستوى المهارة]] ضرر الحارس§0
+explosiveshot=أطلق §iسهمًا متفجرًا§0 على أقرب عدو ، مسببًا §i[[4 x مستوى اللاعب + 2 x القوة x مستوى المهارة + 2 x الذكاء x مستوى المهارة]] ضرر الحارس§0
+
+shotsrampage=بينما لديك كومة واحدة على الأقل من هيجان الطلقات ، فإن إصابة عدو بهجوم بعيد المدى تمنح كومة إضافية واحدة لمدة 5 ثوانٍ\nتزيد كل كومة من هيجان الطلقات من سرعة الهجوم بنسبة 5% ، بحد أقصى 30 كومة
+huntersmark=§hعلم§0 أقرب عدو بأعلى صحة لمدة 10 ثوانٍ\nإذا قتلت هدفًا معلمًا ، فستحصل على §a+[[20 x مستوى المهارة]]%§0 سرعة هجوم بعيدة المدى وسرعة حركة لمدة 5 ثوانٍ
+beartrap=ضع فخ دببة على الأرض يختفي إذا تم تشغيله أو بعد 20 ثانية\nإذا قام عدو بتشغيله ، فسوف يتلقى §i[[10 x مستوى اللاعب]] ضرر§0 ويتم احتجازه لمدة 5 ثوانٍ
+
+huntersinstinct=للثواني الـ 12 القادمة ، قم بزيادة §7فرصة المراوغة§0 بنسبة §a[[10 x مستوى المهارة]]%\n§hعلم§0 لمدة 5 ثوانٍ الأعداء الذين تراوغهم
+arrowstorm=أطلق سهمًا أساسيًا على كل عدو قريب ، مسببًا §i[[2 x مستوى اللاعب + القوة x مستوى المهارة + السرعة x مستوى المهارة]] ضرر الحارس§0 لكل سهم
+
+[skillsdesckeys]
+x=x
+skilllevel=مستوى المهارة
+playerlevel=مستوى اللاعب
+endurance=التحمل
+speed=السرعة
+strength=القوة
+intelligence=الذكاء
+grace=الرشاقة
+
+
+[extraskilldesc]
+// التعزيزات
+marked=§hمعلم:§0 تسبب +20% ضرر (+ §hضرر التركيز§0) و +10% فرصة حرجة للوحوش التي تعلمها\nستعطي جميع المقذوفات الموجهة و / أو التي يتم إطلاقها على أقرب عدو الأولوية للأعداء المعلمين
+
+// معدلات الفرصة
+dodgechance=§7فرصة المراوغة:§0 فرصة لمراوغة الهجمات الواردة. لا يمكن أن تتجاوز 80%
+focuschance=§hفرصة التركيز:§0 فرصة §hلتعليم§0 وحش لمدة 5 ثوانٍ عند مهاجمته بضرر غير المستدعي
+
+// معدلات ثابتة
+mobdetection=§9كشف الوحوش:§0 يعرض الوحوش القريبة على الخريطة. يكشف نطاق الكشف الأعلى عن الوحوش من مسافة أبعد
+
+// المقذوفات
+lethalarrow=§hالسهم القاتل:§0 سهم موجه يمنح ضربة حرجة
+venomarrow=§bالسهم السام:§0 سهم موجه يسمم الأعداء ، ويكرر 10% من ضرره الأصلي في الثانية لمدة 30 ثانية
+explosivearrow=§iالسهم المتفجر:§0 سهم موجه يسبب انفجارًا سحريًا بنفس الضرر
+
+
+[item]
+scrollofoblivion=مخطوطة النسيان
+ringsbox=صندوق الخواتم
+
+// خواتم السمات
+endurancewoodring=خاتم خشبي للتحمل
+endurancecopperring=خاتم نحاسي للتحمل
+enduranceironring=خاتم حديدي للتحمل
+endurancegoldring=خاتم ذهبي للتحمل
+
+speedwoodring=خاتم خشبي للسرعة
+speedcopperring=خاتم نحاسي للسرعة
+speedgoldring=خاتم ذهبي للسرعة
+speedironring=خاتم حديدي للسرعة
+
+strengthwoodring=خاتم خشبي للقوة
+strengthcopperring=خاتم نحاسي للقوة
+strengthgoldring=خاتم ذهبي للقوة
+strengthironring=خاتم حديدي للقوة
+
+intelligencewoodring=خاتم خشبي للذكاء
+intelligencecopperring=خاتم نحاسي للذكاء
+intelligencegoldring=خاتم ذهبي للذكاء
+intelligenceironring=خاتم حديدي للذكاء
+
+gracewoodring=خاتم خشبي للرشاقة
+gracecopperring=خاتم نحاسي للرشاقة
+graceironring=خاتم حديدي للرشاقة
+gracegoldring=خاتم ذهبي للرشاقة
+
+
+[itemtooltip]
+scrollofoblivion=يمنح نقطتي إعادة تعيين
+ringsboxtip=يمكن تخزين خواتم السمات
+
+
+[message]
+xp=خبرة
+levelup=ارتقاء المستوى!
+dodge=مراوغة!
+
+newmobkill=لقد اكتسبت <exp> خبرة لقتلك <mob> لأول مرة
+newlevel=تهانينا! لقد وصلت إلى المستوى <level>. اضغط على [input=openrpgmenu] لفتح قائمة RPG
+
+noupdatesincombat=لا يمكنك تعديل سماتك أو فئاتك أو مهاراتك أثناء القتال
+noactiveskill=لم تعد لديك تلك المهارة النشطة ، ارفع مستواها مرة أخرى إذا كنت تريد استخدامها
+
+equipfirst=تحتاج أولاً إلى تجهيز مهارة نشطة في هذه الخانة
+activeskillinuse=هذه المهارة قيد الاستخدام بالفعل
+anotheractiveskillinuse=لديك بالفعل مهارة أخرى قيد الاستخدام
+incooldown=في فترة التهدئة
+notenoughstamina=لا توجد قدرة على التحمل كافية
+nograbbableobject=لا يوجد شيء يمكن الإمساك به أمامك
+
+[ui]
+menutitle=تعديل RPG بواسطة Save
+attributes=السمات
+activeskills=المهارات النشطة
+classes=الفئات
+
+level=المستوى <level>
+classlevel=<class> المستوى <level>
+lvl=المستوى <level>
+eachlevel=كل مستوى يوفر:
+experience=الخبرة: <exp> / <nextexp>
+totalexperience=إجمالي الخبرة: <exp>
+
+resetpoints=نقاط إعادة التعيين: <points>
+attrpoints=نقاط السمة: <points>
+classpoints=نقاط الفئة: <points>
+passivepoints=نقاط السلبية: <points>
+activeskillpoints=نقاط المهارة النشطة: <points>
+
+activeskillsuse=يحول هذا التعديل عجلة التعبير (مفتاح T افتراضيًا) إلى عجلة المهارات النشطة
+activeskillsusetip1=يوصى بتغيير التحكم في عجلة التعبير إلى مفتاح يسهل الوصول إليه
+activeskillsusetip2=يمكنك أيضًا تعيين مفتاح لكل خانة مهارة نشطة (مثالي للمهارات ذات فترة التهدئة المنخفضة)
+activeskillsequipinstructions=انقر فوق خانة لتجهيز مهارة نشطة. لا يمكنك إلغاء تجهيز مهارة نشطة في فترة التهدئة
+noactiveskills=ليس لديك مهارات نشطة. افتحها من خلال الفئات
+
+activeskillcooldown=§9فترة التهدئة: <seconds> ثانية
+activeskillcooldownmod=§9فترة التهدئة: [[<seconds> <sign> <mod> x مستوى المهارة]] ثانية
+requiredclasslevel=§bالمستوى المطلوب للفئة <level>
+requiredactiveskill=§bيتطلب '<skill>' المستوى <level>
+maxlevel=§aالمستوى الأقصى: <level>
+
+clicktoseebase=[input=mouse1] لرؤية القاعدة
+clicktoseelevel=[input=mouse1] لرؤية المستوى <level>
+
+classlevelseparation=- مستوى الفئة <level> -
+
+inuse=قيد الاستخدام
+
+upcomingclass=§6الفئة القادمة\n§9هذه الفئة قيد التطوير حاليًا\nوستكون متاحة في تحديث مستقبلي
+
+addcolumn=إضافة عمود
+removecolumn=إزالة عمود
+
+
+[controls]
+openrpgmenu=فتح قائمة RPG
+activeskillslot1=خانة المهارة النشطة 1
+activeskillslot2=خانة المهارة النشطة 2
+activeskillslot3=خانة المهارة النشطة 3
+activeskillslot4=خانة المهارة النشطة 4

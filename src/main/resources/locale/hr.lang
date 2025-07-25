@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atribut izdržljivosti
+speedattrflat=<mod> atribut brzine
+strengthattrflat=<mod> atribut snage
+intelligenceattrflat=<mod> atribut inteligencije
+graceattrflat=<mod> atribut gracioznosti
+
+dodgechance=<mod>% šansa za izbjegavanje
+rangedweaponszoom=<mod> zumiranje dalekometnog oružja
+rangedweaponsrange=<mod>% domet dalekometnog oružja
+mobdetectionrange=<mod> domet detekcije mobova
+focusdamage=<mod>% šteta od fokusa
+focuschance=<mod>% šansa za fokus
+
+
+[enchantment]
+evasive=Izbjegavajući
+stalking=Vrebajući
+regenerative=Regenerativni
+energetic=Energičan
+depleted=Istrošen
+
+
+[buff]
+overlevelclassbuff=Klasa s prekomjernom razinom
+markedbuff=Označen
+darkcursebuff=Mračna kletva
+
+
+[buffdesc]
+overlevelclassbuff1=§9Jedna od vaših klasa premašuje ograničenje bodova
+overlevelclassbuff2=§6Nećete moći nastaviti dok se to ne popravi
+darkcursebuff1=+25% dolazne štete
+darkcursebuff2=Sva šteta također smanjuje maksimalno zdravlje
+
+
+[mob]
+rpgmobname=[<class>] <name> razina <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9razina <level>§0
+
+
+[mobclass]
+boss=Šef
+warrior=Ratnik
+tank=Tenk
+runner=Trkač
+healer=Iscjelitelj
+explosive=Eksplozivni
+glacial=Ledeni
+electric=Električni
+flash=Bljesak
+dark=Mračni
+legend=Legenda
+
+
+[attributes]
+endurance=Izdržljivost
+strength=Snaga
+speed=Brzina
+intelligence=Inteligencija
+grace=Gracioznost
+
+
+[classes]
+warrior=Ratnik
+ranger=Rendžer
+wizard=Čarobnjak
+necromancer=Nekromant
+cleric=Klerik
+rogue=Lupež
+warlock=Vještac
+paladin=Paladin
+druid=Druid
+
+
+[passives]
+passives=Pasivne vještine
+
+// Ratnik
+regeneration=Regeneracija
+muscles=Mišići
+legs=Noge
+force=Sila
+unstoppable=Nezaustavljiv
+vigor=Snaga
+ironskin=Željezna koža
+unleashingrage=Oslobađanje bijesa
+unleashinghaste=Oslobađanje žurbe
+unyielding=Nepokolebljiv
+lastbreath=Posljednji dah
+
+// Rendžer
+aim=Ciljanje
+agility=Agilnost
+criticalshots=Kritični udarci
+energy=Energija
+recovery=Oporavak
+eagleeye=Oko sokolovo
+focus=Fokus
+erradication=Iskorjenjivanje
+predatorsense=Predatorski osjet
+plasmagrenade=Plazma granata
+wolfcompanion=Vuk pratilac
+
+
+[passivesdesc]
+
+// Ratnik
+unleashingrage=Svaka razina pruža:\n\n+1% sve štete za svakih 10% nedostajućeg zdravlja
+unleashinghaste=Svaka razina pruža:\n\n+1% brzine kretanja za svakih 10% nedostajućeg zdravlja
+unyielding=Svaka razina pruža:\n\n+5% brzine napada i -5% dolazne štete dok je zdravlje ispod 20%
+lastbreath=Umjesto da umrete, postanite neranjivi na §a[[3 x razina vještine]] sekundi§0\nKada vrijeme istekne, umrijet ćete
+
+// Rendžer
+plasmagrenade=Svakih 8 napada iz daljine, ispalite navođeni eksplozivni projektil koji nanosi §i[[30 x razina vještine]]%§0 štete oružja
+wolfcompanion=Vuk pratilac će napadati označene neprijatelje nanoseći §i[[razina igrača x razina vještine + inteligencija x razina vještine]] štete prizivača§0
+
+
+[activeskills]
+empty=Prazno
+
+// Ratnik
+fury=Bijes
+recovery=Oporavak
+provocation=Provokacija
+berserkercharge=Juriš berserkera
+
+groundslam=Udarac o tlo
+grounddestruction=Uništenje tla
+parry=Pariranje
+battlecry=Bojni poklič
+
+ironguard=Željezni stražar
+thornedguard=Trnoviti stražar
+intimidation=Zastrašivanje
+
+objectthrowing=Bacanje predmeta
+
+// Rendžer
+shortdash=Kratki juriš
+longdash=Dugi juriš
+lethalshot=Smrtonosni hitac
+venomshot=Otrovni hitac
+explosivearrow=Eksplozivna strijela
+
+shotsrampage=Pomama hitaca
+huntersmark=Lovački znak
+beartrap=Medvjeđa zamka
+
+huntersinstinct=Lovački instinkt
+arrowstorm=Oluja strijela
+
+
+[activeskillsdesc]
+
+// Ratnik
+fury=Sljedećih 6 sekundi povećajte svoju štetu u bliskoj borbi i brzinu napada za §a[[20 x razina vještine]]%
+recovery=Sljedećih 10 sekundi uvelike pojačava regeneraciju zdravlja u borbi, obnavljajući §a[[20 + izdržljivost x razina vještine]] zdravlja§0 tijekom trajanja
+provocation=Sljedećih §a[[2 x razina vještine]] sekundi§0, prisilite obližnje neprijatelje da usredotoče svoje napade na vas
+berserkercharge=Jurišajte naprijed na kratku udaljenost, nanoseći §i[[10 x razina igrača + 2 x snaga x razina vještine + 2 x brzina x razina vještine]] štete§0 svim neprijateljima pored kojih prođete\nTroši 50% izdržljivosti
+groundslam=Područni napad koji nanosi §i[[5 x snaga]] štete u bliskoj borbi§0 i §9omamljuje§0 na §a[[1 x razina vještine]] sekundi§0
+grounddestruction=Područni napad koji nanosi §i[[5 x snaga x razina vještine + 5 x razina igrača x razina vještine]] štete u bliskoj borbi§0 i §9omamljuje§0 na 2 sekunde
+parry=Postanite neranjivi na 0,5 sekundi i vratite 500% izvorne primljene štete\nTroši 100% izdržljivosti
+battlecry=Sljedećih 10 sekundi povećajte svoju i štetu obližnjih saveznika te brzinu kretanja za §a[[10 x razina vještine]]%
+
+ironguard=-50% dolazne štete na §a[[4 x razina vještine]] sekundi
+thornedguard=-50% dolazne štete na 12 sekundi\nDodatno, vraća §a[[100 x razina vještine]]%§0 izvorne primljene štete
+intimidation=Sljedećih §a[[razina vještine]] sekundi§0, natjerajte obližnje neprijatelje da pobjegnu
+
+objectthrowing=Korak 1: Zgrabite predmet ispred sebe\nKorak 2: Bacite ga naprijed nanoseći §i[[20 x razina igrača + 5 x snaga x razina vještine]] štete u bliskoj borbi§0\nOba koraka troše svu vašu izdržljivost (najmanje 100%)
+
+// Rendžer
+shortdash=Izvedite juriš snage 100\nTroši 15% izdržljivosti
+longdash=Izvedite juriš snage 150\nTroši 25% izdržljivosti
+lethalshot=Ispalite §hsmrtonosnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[5 x razina igrača + 5 x snaga x razina vještine]] štete rendžera§0
+venomshot=Ispalite §botrovnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x razina igrača + 2 x snaga x razina vještine + 2 x inteligencija x razina vještine]] štete rendžera§0
+explosiveshot=Ispalite §ieksplozivnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x razina igrača + 2 x snaga x razina vještine + 2 x inteligencija x razina vještine]] štete rendžera§0
+
+shotsrampage=Dok imate barem 1 hrpu Pomame hitaca, pogađanje neprijatelja napadom iz daljine daje 1 dodatnu hrpu na 5 sekundi\nSvaka hrpa Pomame hitaca povećava brzinu napada za 5%, do najviše 30 hrpa
+huntersmark=§hOznačite§0 najbližeg neprijatelja s najviše zdravlja na 10 sekundi\nAko ubijete označenu metu, dobivate §a+[[20 x razina vještine]]%§0 brzine napada iz daljine i brzine kretanja na 5 sekundi
+beartrap=Postavite medvjeđu zamku na tlo koja nestaje ako se aktivira ili nakon 20 sekundi\nAko je neprijatelj aktivira, primit će §i[[10 x razina igrača]] štete§0 i bit će zarobljen 5 sekundi
+
+huntersinstinct=Sljedećih 12 sekundi povećajte svoju §7šansu za izbjegavanje§0 za §a[[10 x razina vještine]]%\n§hOznačite§0 na 5 sekundi neprijatelje koje izbjegnete
+arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći §i[[2 x razina igrača + snaga x razina vještine + brzina x razina vještine]] štete rendžera§0 svakom strijelom
+
+[skillsdesckeys]
+x=x
+skilllevel=Razina vještine
+playerlevel=Razina igrača
+endurance=Izdržljivost
+speed=Brzina
+strength=Snaga
+intelligence=Inteligencija
+grace=Gracioznost
+
+
+[extraskilldesc]
+// Pojačanja
+marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\nSvi navođeni i/ili ispaljeni projektili na najbližeg neprijatelja dat će prednost označenim neprijateljima
+
+// Modifikatori šanse
+dodgechance=§7Šansa za izbjegavanje:§0 Šansa za izbjegavanje dolaznih napada. Ne može premašiti 80%
+focuschance=§hŠansa za fokus:§0 Šansa za §hoznačavanje§0 moba na 5 sekundi kada je napadnut štetom koja nije od prizivača
+
+// Ravni modifikatori
+mobdetection=§9Detekcija mobova:§0 Prikazuje obližnje mobove na karti. Veći domet detekcije otkriva mobove s veće udaljenosti
+
+// Projektili
+lethalarrow=§hSmrtonosna strijela:§0 Navođena strijela koja daje kritični udarac
+venomarrow=§bOtrovna strijela:§0 Navođena strijela koja truje neprijatelje, ponavljajući 10% svoje izvorne štete u sekundi tijekom 30 sekundi
+explosivearrow=§iEksplozivna strijela:§0 Navođena strijela koja uzrokuje magičnu eksploziju s jednakom štetom
+
+
+[item]
+scrollofoblivion=Svitak zaborava
+ringsbox=Kutija s prstenovima
+
+// Prstenovi atributa
+endurancewoodring=Drveni prsten izdržljivosti
+endurancecopperring=Bakreni prsten izdržljivosti
+enduranceironring=Željezni prsten izdržljivosti
+endurancegoldring=Zlatni prsten izdržljivosti
+
+speedwoodring=Drveni prsten brzine
+speedcopperring=Bakreni prsten brzine
+speedgoldring=Zlatni prsten brzine
+speedironring=Željezni prsten brzine
+
+strengthwoodring=Drveni prsten snage
+strengthcopperring=Bakreni prsten snage
+strengthgoldring=Zlatni prsten snage
+strengthironring=Željezni prsten snage
+
+intelligencewoodring=Drveni prsten inteligencije
+intelligencecopperring=Bakreni prsten inteligencije
+intelligencegoldring=Zlatni prsten inteligencije
+intelligenceironring=Željezni prsten inteligencije
+
+gracewoodring=Drveni prsten gracioznosti
+gracecopperring=Bakreni prsten gracioznosti
+graceironring=Željezni prsten gracioznosti
+gracegoldring=Zlatni prsten gracioznosti
+
+
+[itemtooltip]
+scrollofoblivion=Daje 2 boda za resetiranje
+ringsboxtip=Može pohraniti prstenove atributa
+
+
+[message]
+xp=XP
+levelup=Podizanje razine!
+dodge=Izbjegavanje!
+
+newmobkill=Dobili ste <exp> iskustva za prvo ubijanje <mob>
+newlevel=Čestitamo! Dosegli ste razinu <level>. Pritisnite [input=openrpgmenu] da biste otvorili RPG izbornik
+
+noupdatesincombat=Ne možete mijenjati svoje atribute, klase ili vještine tijekom borbe
+noactiveskill=Više nemate tu aktivnu vještinu, ponovno je podignite na višu razinu ako je želite koristiti
+
+equipfirst=Prvo morate opremiti aktivnu vještinu u ovom utoru
+activeskillinuse=Ova vještina je već u upotrebi
+anotheractiveskillinuse=Već imate drugu vještinu u upotrebi
+incooldown=Na hlađenju
+notenoughstamina=Nema dovoljno izdržljivosti
+nograbbableobject=Ispred vas nema predmeta koji se može zgrabiti
+
+[ui]
+menutitle=RPG MOD autora Save
+attributes=Atributi
+activeskills=Aktivne vještine
+classes=Klase
+
+level=Razina <level>
+classlevel=<class> razina <level>
+lvl=Razina <level>
+eachlevel=Svaka razina pruža:
+experience=XP: <exp> / <nextexp>
+totalexperience=Ukupno XP: <exp>
+
+resetpoints=Bodovi za resetiranje: <points>
+attrpoints=Bodovi atributa: <points>
+classpoints=Bodovi klase: <points>
+passivepoints=Bodovi pasivnih vještina: <points>
+activeskillpoints=Bodovi aktivnih vještina: <points>
+
+activeskillsuse=Ovaj mod pretvara kotačić za izraze (prema zadanim postavkama tipka T) u kotačić za aktivne vještine
+activeskillsusetip1=Preporučuje se promijeniti kontrolu kotačića za izraze na lako dostupnu tipku
+activeskillsusetip2=Također možete dodijeliti tipku svakom utoru za aktivnu vještinu (idealno za vještine s kratkim vremenom hlađenja)
+activeskillsequipinstructions=Kliknite na utor da biste opremili aktivnu vještinu. Ne možete skinuti aktivnu vještinu koja se hladi
+noactiveskills=Nemate aktivnih vještina. Otključajte ih kroz klase
+
+activeskillcooldown=§9Hlađenje: <seconds>s
+activeskillcooldownmod=§9Hlađenje: [[<seconds> <sign> <mod> x razina vještine]]s
+requiredclasslevel=§bPotrebna je razina klase <level>
+requiredactiveskill=§bZahtijeva '<skill>' razinu <level>
+maxlevel=§aMaksimalna razina: <level>
+
+clicktoseebase=[input=mouse1] za prikaz baze
+clicktoseelevel=[input=mouse1] za prikaz razine <level>
+
+classlevelseparation=- Razina klase <level> -
+
+inuse=U upotrebi
+
+upcomingclass=§6Nadolazeća klasa\n§9Ova klasa je trenutno u razvoju\ni bit će dostupna u budućem ažuriranju
+
+addcolumn=Dodaj stupac
+removecolumn=Ukloni stupac
+
+
+[controls]
+openrpgmenu=Otvori RPG izbornik
+activeskillslot1=Utor za aktivnu vještinu 1
+activeskillslot2=Utor za aktivnu vještinu 2
+activeskillslot3=Utor za aktivnu vještinu 3
+activeskillslot4=Utor za aktivnu vještinu 4

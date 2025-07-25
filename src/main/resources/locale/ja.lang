@@ -1,0 +1,343 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> 持久力属性
+speedattrflat=<mod> 速度属性
+strengthattrflat=<mod> 筋力属性
+intelligenceattrflat=<mod> 知力属性
+graceattrflat=<mod> 優雅さ属性
+
+dodgechance=<mod>% 回避チャンス
+rangedweaponszoom=<mod> 遠距離武器ズーム
+rangedweaponsrange=<mod>% 遠距離武器射程
+mobdetectionrange=<mod> モブ検出範囲
+focusdamage=<mod>% フォーカスダメージ
+focuschance=<mod>% フォーカスチャンス
+
+
+[enchantment]
+evasive=回避
+stalking=ストーキング
+regenerative=再生
+energetic=エネルギッシュ
+depleted=枯渇
+
+
+[buff]
+overlevelclassbuff=オーバーレベルクラス
+markedbuff=マーク
+darkcursebuff=闇の呪い
+
+
+[buffdesc]
+overlevelclassbuff1=§9あなたのクラスの1つがポイント制限を超えています
+overlevelclassbuff2=§6修正されるまで続行できません
+darkcursebuff1=+25% 被ダメージ
+darkcursebuff2=すべてのダメージは最大体力も減少させます
+
+
+[mob]
+rpgmobname=[<class>] <name> レベル <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9レベル <level>§0
+
+
+[mobclass]
+boss=ボス
+warrior=戦士
+tank=タンク
+runner=ランナー
+healer=ヒーラー
+explosive=爆発
+glacial=氷河
+electric=電気
+flash=フラッシュ
+dark=闇
+legend=伝説
+
+
+[attributes]
+endurance=持久力
+strength=筋力
+speed=速度
+intelligence=知力
+grace=優雅さ
+
+
+[classes]
+warrior=戦士
+ranger=レンジャー
+wizard=ウィザード
+necromancer=ネクロマンサー
+cleric=クレリック
+rogue=ローグ
+warlock=ウォーロック
+paladin=パラディン
+druid=ドルイド
+
+
+[passives]
+passives=パッシブ
+
+// 戦士
+regeneration=再生
+muscles=筋肉
+legs=脚
+force=力
+unstoppable=止められない
+vigor=活力
+ironskin=鉄の肌
+unleashingrage=解き放たれる怒り
+unleashinghaste=解き放たれる速さ
+unyielding=不屈
+lastbreath=最後の息
+
+// レンジャー
+aim=狙い
+agility=敏捷性
+criticalshots=クリティカルショット
+energy=エネルギー
+recovery=回復
+eagleeye=イーグルアイ
+focus=フォーカス
+erradication=根絶
+predatorsense=捕食者の感覚
+plasmagrenade=プラズマグレネード
+wolfcompanion=狼の仲間
+
+
+[passivesdesc]
+
+// 戦士
+unleashingrage=各レベルで提供：
+
+失われた体力10%ごとに+1%の全ダメージ
+unleashinghaste=各レベルで提供：
+
+失われた体力10%ごとに+1%の移動速度
+unyielding=各レベルで提供：
+
+体力が20%未満の場合、攻撃速度+5%、被ダメージ-5%
+lastbreath=死ぬ代わりに、§a[[3 x スキルレベル]]秒間§0無敵になります
+時間が経過すると死にます
+
+// レンジャー
+plasmagrenade=8回の遠距離攻撃ごとに、武器のダメージの§i[[30 x スキルレベル]]%§0を与える誘導爆発物を発射します
+wolfcompanion=狼の仲間がマークされた敵を攻撃し、§i[[プレイヤーレベル x スキルレベル + 知力 x スキルレベル]]の召喚士ダメージ§0を与えます
+
+
+[activeskills]
+empty=空
+
+// 戦士
+fury=怒り
+recovery=回復
+provocation=挑発
+berserkercharge=バーサーカーチャージ
+
+groundslam=グラウンドスラム
+grounddestruction=グラウンドデストラクション
+parry=パリィ
+battlecry=バトルクライ
+
+ironguard=アイアンガード
+thornedguard=ソーンガード
+intimidation=威嚇
+
+objectthrowing=オブジェクト投げ
+
+// レンジャー
+shortdash=ショートダッシュ
+longdash=ロングダッシュ
+lethalshot=リーサルショット
+venomshot=ベノムショット
+explosivearrow=爆発矢
+
+shotsrampage=ショットランページ
+huntersmark=ハンターズマーク
+beartrap=ベアトラップ
+
+huntersinstinct=ハンターズインスティンクト
+arrowstorm=アローストーム
+
+
+[activeskillsdesc]
+
+// 戦士
+fury=次の6秒間、近接ダメージと攻撃速度が§a[[20 x スキルレベル]]%§0増加します
+recovery=次の10秒間、戦闘中の体力再生を大幅に向上させ、持続時間中に§a[[20 + 持久力 x スキルレベル]]の体力§0を回復します
+provocation=次の§a[[2 x スキルレベル]]秒間§0、近くの敵に攻撃を集中させます
+berserkercharge=短距離を突進し、通り過ぎたすべての敵に§i[[10 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 速度 x スキルレベル]]のダメージ§0を与えます
+スタミナを50%消費します
+groundslam=§i[[5 x 筋力]]の近接ダメージ§0を与え、§a[[1 x スキルレベル]]秒間§0§9スタン§0させる範囲攻撃
+grounddestruction=§i[[5 x 筋力 x スキルレベル + 5 x プレイヤーレベル x スキルレベル]]の近接ダメージ§0を与え、2秒間§9スタン§0させる範囲攻撃
+parry=0.5秒間無敵になり、受けた元のダメージの500%を返します
+スタミナを100%消費します
+battlecry=次の10秒間、あなたと近くの味方の全ダメージと移動速度が§a[[10 x スキルレベル]]%§0増加します
+
+ironguard=§a[[4 x スキルレベル]]秒間§0、被ダメージ-50%
+thornedguard=12秒間、被ダメージ-50%
+さらに、受けた元のダメージの§a[[100 x スキルレベル]]%§0を返します
+intimidation=次の§a[[スキルレベル]]秒間§0、近くの敵を逃げさせます
+
+objectthrowing=ステップ1：目の前のオブジェクトをつかむ
+ステップ2：前方に投げて、§i[[20 x プレイヤーレベル + 5 x 筋力 x スキルレベル]]の近接ダメージ§0を与える
+両方のステップでスタミナをすべて消費します（少なくとも100%）
+
+// レンジャー
+shortdash=100筋力のダッシュを実行します
+スタミナを15%消費します
+longdash=150筋力のダッシュを実行します
+スタミナを25%消費します
+lethalshot=最も近い敵に§hリーサルアロー§0を撃ち、§i[[5 x プレイヤーレベル + 5 x 筋力 x スキルレベル]]のレンジャーダメージ§0を与えます
+venomshot=最も近い敵に§bベノムアロー§0を撃ち、§i[[4 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 知力 x スキルレベル]]のレンジャーダメージ§0を与えます
+explosiveshot=最も近い敵に§i爆発矢§0を撃ち、§i[[4 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 知力 x スキルレベル]]のレンジャーダメージ§0を与えます
+
+shotsrampage=ショットランページのスタックが少なくとも1つある場合、遠距離攻撃で敵に命中すると、5秒間追加のスタックが1つ付与されます
+ショットランページの各スタックは攻撃速度を5%増加させ、最大30スタックまで
+huntersmark=最も体力の高い近くの敵を10秒間§hマーク§0します
+マークされたターゲットを倒すと、5秒間、遠距離攻撃速度と移動速度が§a+[[20 x スキルレベル]]%§0増加します
+beartrap=地面にベアトラップを設置します。トリガーされるか20秒後に消えます
+敵がトリガーすると、§i[[10 x プレイヤーレベル]]のダメージ§0を受け、5秒間閉じ込められます
+
+huntersinstinct=次の12秒間、§7回避チャンス§0が§a[[10 x スキルレベル]]%§0増加します
+回避した敵を5秒間§hマーク§0します
+arrowstorm=近くの各敵に基本的な矢を撃ち、各矢で§i[[2 x プレイヤーレベル + 筋力 x スキルレベル + 速度 x スキルレベル]]のレンジャーダメージ§0を与えます
+
+[skillsdesckeys]
+x=x
+skilllevel=スキルレベル
+playerlevel=プレイヤーレベル
+endurance=持久力
+speed=速度
+strength=筋力
+intelligence=知力
+grace=優雅さ
+
+
+[extraskilldesc]
+// バフ
+marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます
+最も近い敵に誘導および/または発射されたすべての発射物は、マークされた敵を優先します
+
+// チャンスモディファイア
+dodgechance=§7回避チャンス：§0飛来する攻撃を回避するチャンス。80%を超えることはできません
+focuschance=§hフォーカスチャンス：§0召喚士以外のダメージで攻撃されたときに、モブを5秒間§hマーク§0するチャンス
+
+// フラットモディファイア
+mobdetection=§9モブ検出：§0近くのモブをマップに表示します。検出範囲が広いほど、遠くのモブが明らかになります
+
+// 発射物
+lethalarrow=§hリーサルアロー：§0クリティカルヒットを与える誘導矢
+venomarrow=§bベノムアロー：§0敵を毒にし、30秒間、毎秒元のダメージの10%を繰り返す誘導矢
+explosivearrow=§i爆発矢：§0同等のダメージの魔法の爆発を引き起こす誘導矢
+
+
+[item]
+scrollofoblivion=忘却の巻物
+ringsbox=リングボックス
+
+// 属性リング
+endurancewoodring=持久力の木の指輪
+endurancecopperring=持久力の銅の指輪
+enduranceironring=持久力の鉄の指輪
+endurancegoldring=持久力の金の指輪
+
+speedwoodring=速度の木の指輪
+speedcopperring=速度の銅の指輪
+speedgoldring=速度の金の指輪
+speedironring=速度の鉄の指輪
+
+strengthwoodring=筋力の木の指輪
+strengthcopperring=筋力の銅の指輪
+strengthgoldring=筋力の金の指輪
+strengthironring=筋力の鉄の指輪
+
+intelligencewoodring=知力の木の指輪
+intelligencecopperring=知力の銅の指輪
+intelligencegoldring=知力の金の指輪
+intelligenceironring=知力の鉄の指輪
+
+gracewoodring=優雅さの木の指輪
+gracecopperring=優雅さの銅の指輪
+graceironring=優雅さの鉄の指輪
+gracegoldring=優雅さの金の指輪
+
+
+[itemtooltip]
+scrollofoblivion=2つのリセットポイントを付与します
+ringsboxtip=属性リングを保管できます
+
+
+[message]
+xp=経験値
+levelup=レベルアップ！
+dodge=回避！
+
+newmobkill=<mob>を初めて倒して<exp>の経験値を獲得しました
+newlevel=おめでとうございます！レベル<level>に到達しました。[input=openrpgmenu]を押してRPGメニューを開きます
+
+noupdatesincombat=戦闘中に属性、クラス、スキルを変更することはできません
+noactiveskill=そのアクティブスキルはもうありません。使用したい場合は、もう一度レベルを上げてください
+
+equipfirst=まず、このスロットにアクティブスキルを装備する必要があります
+activeskillinuse=このスキルはすでに使用中です
+anotheractiveskillinuse=すでに別のスキルを使用中です
+incooldown=クールダウン中
+notenoughstamina=スタミナが足りません
+nograbbableobject=目の前につかめるオブジェクトがありません
+
+[ui]
+menutitle=SaveによるRPG MOD
+attributes=属性
+activeskills=アクティブスキル
+classes=クラス
+
+level=レベル<level>
+classlevel=<class>レベル<level>
+lvl=レベル<level>
+eachlevel=各レベルで提供：
+experience=経験値：<exp> / <nextexp>
+totalexperience=合計経験値：<exp>
+
+resetpoints=リセットポイント：<points>
+attrpoints=属性ポイント：<points>
+classpoints=クラスポイント：<points>
+passivepoints=パッシブポイント：<points>
+activeskillpoints=アクティブスキルポイント：<points>
+
+activeskillsuse=このMODは、表現ホイール（デフォルトではTキー）をアクティブスキルホイールに変えます
+activeskillsusetip1=表現ホイールのコントロールを簡単にアクセスできるキーに変更することをお勧めします
+activeskillsusetip2=各アクティブスロットにキーを割り当てることもできます（クールダウンの短いスキルに最適）
+activeskillsequipinstructions=スロットをクリックしてアクティブスキルを装備します。クールダウン中のアクティブスキルは装備解除できません
+noactiveskills=アクティブスキルがありません。クラスを通じてロックを解除してください
+
+activeskillcooldown=§9クールダウン：<seconds>秒
+activeskillcooldownmod=§9クールダウン：[[<seconds> <sign> <mod> x スキルレベル]]秒
+requiredclasslevel=§bクラスレベル<level>が必要です
+requiredactiveskill=§b'<skill>'レベル<level>が必要です
+maxlevel=§a最大レベル：<level>
+
+clicktoseebase=[input=mouse1]でベースを表示
+clicktoseelevel=[input=mouse1]でレベル<level>を表示
+
+classlevelseparation=- クラスレベル<level> -
+
+inuse=使用中
+
+upcomingclass=§6今後のクラス
+§9このクラスは現在開発中です
+今後のアップデートで利用可能になります
+
+addcolumn=列を追加
+removecolumn=列を削除
+
+
+[controls]
+openrpgmenu=RPGメニューを開く
+activeskillslot1=アクティブスキルスロット1
+activeskillslot2=アクティブスキルスロット2
+activeskillslot3=アクティブスキルスロット3
+activeskillslot4=アクティブスキルスロット4

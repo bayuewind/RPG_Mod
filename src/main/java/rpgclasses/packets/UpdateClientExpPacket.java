@@ -1,0 +1,45 @@
+package rpgclasses.packets;
+
+import necesse.engine.network.NetworkPacket;
+import necesse.engine.network.Packet;
+import necesse.engine.network.PacketReader;
+import necesse.engine.network.PacketWriter;
+import necesse.engine.network.client.Client;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
+import rpgclasses.ui.CustomUIManager;
+
+import java.util.Objects;
+
+public class UpdateClientExpPacket extends Packet {
+
+    public final String name;
+    public final int exp;
+
+    public UpdateClientExpPacket(byte[] data) {
+        super(data);
+        PacketReader reader = new PacketReader(this);
+
+        name = reader.getNextString();
+        exp = reader.getNextInt();
+    }
+
+    public UpdateClientExpPacket(PlayerData playerData) {
+        this.name = playerData.playerName;
+        this.exp = playerData.getBaseExp();
+
+        PacketWriter writer = new PacketWriter(this);
+
+        writer.putNextString(name);
+        writer.putNextInt(exp);
+    }
+
+    @Override
+    public void processClient(NetworkPacket packet, Client client) {
+        PlayerData playerData = PlayerDataList.getPlayerData(name, false);
+        playerData.loadDataExp(exp);
+        if (Objects.equals(client.getPlayer().playerName, name)) {
+            CustomUIManager.expBar.updateExpBar(playerData);
+        }
+    }
+}

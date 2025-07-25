@@ -1,0 +1,321 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> állóképesség attribútum
+speedattrflat=<mod> sebesség attribútum
+strengthattrflat=<mod> erő attribútum
+intelligenceattrflat=<mod> intelligencia attribútum
+graceattrflat=<mod> kecsesség attribútum
+
+dodgechance=<mod>% kitérési esély
+rangedweaponszoom=<mod> távolsági fegyverek nagyítása
+rangedweaponsrange=<mod>% távolsági fegyverek hatótávolsága
+mobdetectionrange=<mod> mob érzékelési tartomány
+focusdamage=<mod>% fókusz sebzés
+focuschance=<mod>% fókusz esély
+
+
+[enchantment]
+evasive=Kikerülő
+stalking=Lopakodás
+regenerative=Regeneratív
+energetic=Energikus
+depleted=Kimerült
+
+
+[buff]
+overlevelclassbuff=Túlszintelt osztály
+markedbuff=Megjelölt
+darkcursebuff=Sötét átok
+
+
+[buffdesc]
+overlevelclassbuff1=§9Az egyik osztályod túllépett egy pontkorlátot
+overlevelclassbuff2=§6Nem tudsz továbblépni, amíg nem javítod ki
+darkcursebuff1=+25% bejövő sebzés
+darkcursebuff2=Minden sebzés csökkenti a maximális életerőt is
+
+
+[mob]
+rpgmobname=[<class>] <name> szint <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9szint <level>§0
+
+
+[mobclass]
+boss=Főnök
+warrior=Harcos
+tank=Tank
+runner=Futó
+healer=Gyógyító
+explosive=Robbanó
+glacial=Jeges
+electric=Elektromos
+flash=Villanás
+dark=Sötét
+legend=Legenda
+
+
+[attributes]
+endurance=Állóképesség
+strength=Erő
+speed=Sebesség
+intelligence=Intelligencia
+grace=Kecsesség
+
+
+[classes]
+warrior=Harcos
+ranger=Íjász
+wizard=Varázsló
+necromancer=Nekromanta
+cleric=Klerikus
+rogue=Zsivány
+warlock=Boszorkánymester
+paladin=Paladin
+druid=Druida
+
+
+[passives]
+passives=Passzívok
+
+// Harcos
+regeneration=Regeneráció
+muscles=Izmok
+legs=Lábak
+force=Erő
+unstoppable=Megállíthatatlan
+vigor=Életerő
+ironskin=Vaspáncél
+unleashingrage=Felszabaduló düh
+unleashinghaste=Felszabaduló sietség
+unyielding=Rugalmatlan
+lastbreath=Utolsó lélegzet
+
+// Íjász
+aim=Célzás
+agility=Fürgeség
+criticalshots=Kritikus lövések
+energy=Energia
+recovery=Felépülés
+eagleeye=Sasszem
+focus=Fókusz
+erradication=Kiirtás
+predatorsense=Ragadozó érzék
+plasmagrenade=Plazmagránát
+wolfcompanion=Farkas társ
+
+
+[passivesdesc]
+
+// Harcos
+unleashingrage=Minden szint biztosít:\n\n+1% minden sebzést minden 10% hiányzó életerő után
+unleashinghaste=Minden szint biztosít:\n\n+1% mozgási sebességet minden 10% hiányzó életerő után
+unyielding=Minden szint biztosít:\n\n+5% támadási sebességet és -5% bejövő sebzést 20% életerő alatt
+lastbreath=Ahelyett, hogy meghalnál, sebezhetetlenné válsz §a[[3 x képességszint]] másodpercre§0\nAmint lejár az idő, meghalsz
+
+// Íjász
+plasmagrenade=Minden 8. távolsági támadás után kilő egy irányított robbanó lövedéket, amely a fegyver sebzésének §i[[30 x képességszint]]%-át§0 okozza\nwolfcompanion=Egy farkas társ megtámadja a megjelölt ellenségeket, §i[[játékos szint x képességszint + intelligencia x képességszint]] idéző sebzést§0 okozva
+
+
+[activeskills]
+empty=Üres
+
+// Harcos
+fury=Düh
+recovery=Felépülés
+provocation=Provokáció
+berserkercharge=Berserker roham
+
+groundslam=Földcsapás
+grounddestruction=Földrombolás
+parry=Hárítás
+battlecry=Csatakiáltás
+
+ironguard=Vaspajzs
+thornedguard=Tövises pajzs
+intimidation=Megfélemlítés
+
+objectthrowing=Tárgydobás
+
+// Íjász
+shortdash=Rövid sprint
+longdash=Hosszú sprint
+lethalshot=Halálos lövés
+venomshot=Mérgező lövés
+explosivearrow=Robbanó nyíl
+
+shotsrampage=Lövésroham
+huntersmark=Vadász jele
+beartrap=Medvecsapda
+
+huntersinstinct=Vadász ösztön
+arrowstorm=Nyílzápor
+
+
+[activeskillsdesc]
+
+// Harcos
+fury=A következő 6 másodpercben növeld a közelharci sebzésedet és a támadási sebességedet §a[[20 x képességszint]]%-kal
+recovery=A következő 10 másodpercben jelentősen megnöveli a harci életerő-regenerációt, §a[[20 + állóképesség x képességszint]] életerőt§0 állítva vissza az időtartam alatt
+provocation=A következő §a[[2 x képességszint]] másodpercig§0 kényszerítsd a közeli ellenségeket, hogy rád koncentrálják a támadásaikat
+berserkercharge=Ronts előre egy rövid távolságra, §i[[10 x játékos szint + 2 x erő x képességszint + 2 x sebesség x képességszint]] sebzést§0 okozva minden elhaladt ellenségnek\n50% állóképességet fogyaszt
+groundslam=Területi támadás, amely §i[[5 x erő]] közelharci sebzést§0 okoz és §9elkábít§0 §a[[1 x képességszint]] másodpercre§0
+grounddestruction=Területi támadás, amely §i[[5 x erő x képességszint + 5 x játékos szint x képességszint]] közelharci sebzést§0 okoz és 2 másodpercre §9elkábít§0
+parry=Válj sebezhetetlenné 0,5 másodpercre, és add vissza az eredeti kapott sebzés 500%-át\n100% állóképességet fogyaszt
+battlecry=A következő 10 másodpercben növeld a saját és a közeli szövetségesek minden sebzését és mozgási sebességét §a[[10 x képességszint]]%-kal
+
+ironguard=-50% bejövő sebzés §a[[4 x képességszint]] másodpercig
+thornedguard=-50% bejövő sebzés 12 másodpercig\nTovábbá visszaadja az eredeti kapott sebzés §a[[100 x képességszint]]%-át§0
+intimidation=A következő §a[[képességszint]] másodpercig§0 menekülésre kényszeríted a közeli ellenségeket
+
+objectthrowing=1. lépés: Ragadj meg egy tárgyat magad előtt\n2. lépés: Dobd előre, §i[[20 x játékos szint + 5 x erő x képességszint]] közelharci sebzést§0 okozva\nMindkét lépés felemészti az összes állóképességedet (legalább 100%)
+
+// Íjász
+shortdash=Végezz egy 100-as erősségű sprintet\n15% állóképességet fogyaszt
+longdash=Végezz egy 150-es erősségű sprintet\n25% állóképességet fogyaszt
+lethalshot=Lőj egy §hhalálos nyilat§0 a legközelebbi ellenségre, §i[[5 x játékos szint + 5 x erő x képességszint]] íjász sebzést§0 okozva
+venomshot=Lőj egy §bmérgező nyilat§0 a legközelebbi ellenségre, §i[[4 x játékos szint + 2 x erő x képességszint + 2 x intelligencia x képességszint]] íjász sebzést§0 okozva
+explosiveshot=Lőj egy §irobbanó nyilat§0 a legközelebbi ellenségre, §i[[4 x játékos szint + 2 x erő x képességszint + 2 x intelligencia x képességszint]] íjász sebzést§0 okozva
+
+shotsrampage=Amíg legalább 1 halom Lövésrohamod van, egy ellenség eltalálása távolsági támadással 1 további halmot ad 5 másodpercre\nMinden halom Lövésroham 5%-kal növeli a támadási sebességet, legfeljebb 30 halomig
+huntersmark=§hJelöld meg§0 a legközelebbi, legmagasabb életerejű ellenséget 10 másodpercre\nHa megölsz egy megjelölt célpontot, §a+[[20 x képességszint]]%§0 távolsági támadási sebességet és mozgási sebességet kapsz 5 másodpercre
+beartrap=Helyezz egy medvecsapdát a földre, amely eltűnik, ha aktiválódik, vagy 20 másodperc után\nHa egy ellenség aktiválja, §i[[10 x játékos szint]] sebzést§0 szenved, és 5 másodpercre csapdába esik
+
+huntersinstinct=A következő 12 másodpercben növeld a §7kitérési esélyedet§0 §a[[10 x képességszint]]%-kal\n§hJelöld meg§0 5 másodpercre azokat az ellenségeket, akiket kikerülsz
+arrowstorm=Lőj egy alap nyilat minden közeli ellenségre, §i[[2 x játékos szint + erő x képességszint + sebesség x képességszint]] íjász sebzést§0 okozva minden nyíllal
+
+[skillsdesckeys]
+x=x
+skilllevel=Képességszint
+playerlevel=Játékos szint
+endurance=Állóképesség
+speed=Sebesség
+strength=Erő
+intelligence=Intelligencia
+grace=Kecsesség
+
+
+[extraskilldesc]
+// Buffok
+marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\nMinden irányított és/vagy a legközelebbi ellenségre kilőtt lövedék a megjelölt ellenségeket részesíti előnyben
+
+// Esély módosítók
+dodgechance=§7Kitérési esély:§0 Esély a bejövő támadások kikerülésére. Nem haladhatja meg a 80%-ot
+focuschance=§hFókusz esély:§0 Esély egy mob §hmegjelölésére§0 5 másodpercre, ha nem idéző sebzéssel támadják meg
+
+// Sík módosítók
+mobdetection=§9Mob érzékelés:§0 Megjeleníti a közeli mobokat a térképen. A nagyobb érzékelési tartomány távolabbról is felfedi a mobokat
+
+// Lövedékek
+lethalarrow=§hHalálos nyíl:§0 Irányított nyíl, amely kritikus találatot biztosít
+venomarrow=§bMérgező nyíl:§0 Irányított nyíl, amely megmérgezi az ellenséget, másodpercenként megismételve eredeti sebzésének 10%-át 30 másodpercig
+explosivearrow=§iRobbanó nyíl:§0 Irányított nyíl, amely egyenlő sebzésű mágikus robbanást okoz
+
+
+[item]
+scrollofoblivion=Felejtés tekercse
+ringsbox=Gyűrűs doboz
+
+// Attribútum gyűrűk
+endurancewoodring=Állóképesség fa gyűrű
+endurancecopperring=Állóképesség réz gyűrű
+enduranceironring=Állóképesség vas gyűrű
+endurancegoldring=Állóképesség arany gyűrű
+
+speedwoodring=Sebesség fa gyűrű
+speedcopperring=Sebesség réz gyűrű
+speedgoldring=Sebesség arany gyűrű
+speedironring=Sebesség vas gyűrű
+
+strengthwoodring=Erő fa gyűrű
+strengthcopperring=Erő réz gyűrű
+strengthgoldring=Erő arany gyűrű
+strengthironring=Erő vas gyűrű
+
+intelligencewoodring=Intelligencia fa gyűrű
+intelligencecopperring=Intelligencia réz gyűrű
+intelligencegoldring=Intelligencia arany gyűrű
+intelligenceironring=Intelligencia vas gyűrű
+
+gracewoodring=Kecsesség fa gyűrű
+gracecopperring=Kecsesség réz gyűrű
+graceironring=Kecsesség vas gyűrű
+gracegoldring=Kecsesség arany gyűrű
+
+
+[itemtooltip]
+scrollofoblivion=2 visszaállítási pontot ad
+ringsboxtip=Attribútum gyűrűket tárolhat
+
+
+[message]
+xp=TP
+levelup=Szintlépés!
+dodge=Kitérés!
+
+newmobkill=<exp> tapasztalatot szereztél <mob> első megöléséért
+newlevel=Gratulálok! Elérted a <level> szintet. Nyomd meg az [input=openrpgmenu] gombot az RPG menü megnyitásához
+
+noupdatesincombat=Harc közben nem módosíthatod az attribútumaidat, osztályaidat vagy képességeidet
+noactiveskill=Már nem rendelkezel ezzel az aktív képességgel, szinteld újra, ha használni akarod
+
+equipfirst=Először fel kell szerelned egy aktív képességet ebbe a helyre
+activeskillinuse=Ez a képesség már használatban van
+anotheractiveskillinuse=Már van egy másik képességed használatban
+incooldown=Hűlési idő
+notenoughstamina=Nincs elég állóképesség
+nograbbableobject=Nincs megragadható tárgy előtted
+
+[ui]
+menutitle=RPG MOD, készítette: Save
+attributes=Attribútumok
+activeskills=Aktív képességek
+classes=Osztályok
+
+level=Szint <level>
+classlevel=<class> szint <level>
+lvl=Szint <level>
+eachlevel=Minden szint biztosít:
+experience=TP: <exp> / <nextexp>
+totalexperience=Összes TP: <exp>
+
+resetpoints=Visszaállítási pontok: <points>
+attrpoints=Attribútum pontok: <points>
+classpoints=Osztály pontok: <points>
+passivepoints=Passzív pontok: <points>
+activeskillpoints=Aktív képesség pontok: <points>
+
+activeskillsuse=Ez a mod az érzelemkereket (alapértelmezés szerint T billentyű) aktív képességkerékké változtatja
+activeskillsusetip1=Javasoljuk, hogy az érzelemkerék vezérlését egy könnyen elérhető billentyűre változtassa
+activeskillsusetip2=Minden aktív képességhelyhez hozzárendelhet egy billentyűt is (ideális alacsony hűlési idejű képességekhez)
+activeskillsequipinstructions=Kattints egy helyre egy aktív képesség felszereléséhez. Hűlési idő alatt nem tudsz levenni egy aktív képességet
+noactiveskills=Nincsenek aktív képességeid. Oldd fel őket az osztályokon keresztül
+
+activeskillcooldown=§9Hűlési idő: <seconds>s
+activeskillcooldownmod=§9Hűlési idő: [[<seconds> <sign> <mod> x képességszint]]s
+requiredclasslevel=§b<level> osztályszint szükséges
+requiredactiveskill=§bSzükséges '<skill>' <level> szint
+maxlevel=§aMaximális szint: <level>
+
+clicktoseebase=[input=mouse1] az alap megtekintéséhez
+clicktoseelevel=[input=mouse1] a <level> szint megtekintéséhez
+
+classlevelseparation=- <level> osztályszint -
+
+inuse=Használatban
+
+upcomingclass=§6Közelgő osztály\n§9Ez az osztály jelenleg fejlesztés alatt áll\nés egy jövőbeli frissítésben lesz elérhető
+
+addcolumn=Oszlop hozzáadása
+removecolumn=Oszlop eltávolítása
+
+
+[controls]
+openrpgmenu=RPG menü megnyitása
+activeskillslot1=Aktív képességhely 1
+activeskillslot2=Aktív képességhely 2
+activeskillslot3=Aktív képességhely 3
+activeskillslot4=Aktív képességhely 4

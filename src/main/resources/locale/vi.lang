@@ -1,0 +1,341 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> thuộc tính sức bền
+speedattrflat=<mod> thuộc tính tốc độ
+strengthattrflat=<mod> thuộc tính sức mạnh
+intelligenceattrflat=<mod> thuộc tính trí tuệ
+graceattrflat=<mod> thuộc tính duyên dáng
+
+dodgechance=<mod>% cơ hội né tránh
+rangedweaponszoom=<mod> thu phóng vũ khí tầm xa
+rangedweaponsrange=<mod>% tầm bắn của vũ khí tầm xa
+mobdetectionrange=<mod> phạm vi phát hiện mob
+focusdamage=<mod>% sát thương tập trung
+focuschance=<mod>% cơ hội tập trung
+
+
+[enchantment]
+evasive=Né tránh
+stalking=Rình rập
+regenerative=Tái tạo
+energetic=Năng động
+depleted=Cạn kiệt
+
+
+[buff]
+overlevelclassbuff=Lớp vượt cấp
+markedbuff=Được đánh dấu
+darkcursebuff=Lời nguyền bóng tối
+
+
+[buffdesc]
+overlevelclassbuff1=§9Một trong các lớp của bạn vượt quá giới hạn điểm
+overlevelclassbuff2=§6Bạn sẽ không thể tiếp tục cho đến khi nó được sửa
+darkcursebuff1=+25% sát thương nhận vào
+darkcursebuff2=Tất cả sát thương cũng làm giảm Máu tối đa
+
+
+[mob]
+rpgmobname=[<class>] <name> cấp <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9cấp <level>§0
+
+
+[mobclass]
+boss=Trùm
+warrior=Chiến binh
+tank=Đỡ đòn
+runner=Người chạy
+healer=Người chữa lành
+explosive=Chất nổ
+glacial=Băng giá
+electric=Điện
+flash=Tia chớp
+dark=Bóng tối
+legend=Huyền thoại
+
+
+[attributes]
+endurance=Sức bền
+strength=Sức mạnh
+speed=Tốc độ
+intelligence=Trí tuệ
+grace=Duyên dáng
+
+
+[classes]
+warrior=Chiến binh
+ranger=Kiểm lâm
+wizard=Pháp sư
+necromancer=Thầy chiêu hồn
+cleric=Giáo sĩ
+rogue=Kẻ lừa đảo
+warlock=Pháp sư
+paladin=Hiệp sĩ
+druid=Druid
+
+
+[passives]
+passives=Bị động
+
+// Chiến binh
+regeneration=Tái tạo
+muscles=Cơ bắp
+legs=Chân
+force=Lực lượng
+unstoppable=Không thể ngăn cản
+vigor=Sức sống
+ironskin=Da sắt
+unleashingrage=Giải phóng cơn thịnh nộ
+unleashinghaste=Giải phóng sự vội vàng
+unyielding=Không khuất phục
+lastbreath=Hơi thở cuối cùng
+
+// Kiểm lâm
+aim=Mục tiêu
+agility=Nhanh nhẹn
+criticalshots=Phát bắn chí mạng
+energy=Năng lượng
+recovery=Phục hồi
+eagleeye=Mắt đại bàng
+focus=Tập trung
+erradication=Diệt trừ
+predatorsense=Giác quan của kẻ săn mồi
+plasmagrenade=Lựu đạn plasma
+wolfcompanion=Bạn đồng hành sói
+
+
+[passivesdesc]
+
+// Chiến binh
+unleashingrage=Mỗi cấp độ cung cấp:
+
++1% tất cả sát thương cho mỗi 10% Máu bị mất
+unleashinghaste=Mỗi cấp độ cung cấp:
+
++1% tốc độ di chuyển cho mỗi 10% Máu bị mất
+unyielding=Mỗi cấp độ cung cấp:
+
++5% tốc độ tấn công và -5% sát thương nhận vào khi dưới 20% Máu
+lastbreath=Thay vì chết, trở nên bất khả xâm phạm trong §a[[3 x Cấp độ kỹ năng]] giây§0
+Khi hết thời gian, bạn sẽ chết
+
+// Kiểm lâm
+plasmagrenade=Cứ sau 8 đòn tấn công tầm xa, bắn ra một quả đạn nổ có điều khiển gây §i[[30 x Cấp độ kỹ năng]]%§0 sát thương của vũ khí
+wolfcompanion=Một bạn đồng hành sói sẽ tấn công những kẻ thù được đánh dấu gây §i[[Cấp độ người chơi x Cấp độ kỹ năng + Trí tuệ x Cấp độ kỹ năng]] sát thương của người triệu hồi§0
+
+
+[activeskills]
+empty=Trống
+
+// Chiến binh
+fury=Thịnh nộ
+recovery=Phục hồi
+provocation=Khiêu khích
+berserkercharge=Cú húc của Berserker
+
+groundslam=Đập đất
+grounddestruction=Phá hủy mặt đất
+parry=Đỡ đòn
+battlecry=Tiếng hét xung trận
+
+ironguard=Vệ binh sắt
+thornedguard=Vệ binh gai
+intimidation=Dọa nạt
+
+objectthrowing=Ném đồ vật
+
+// Kiểm lâm
+shortdash=Lướt ngắn
+longdash=Lướt dài
+lethalshot=Phát bắn chí mạng
+venomshot=Phát bắn độc
+explosivearrow=Mũi tên nổ
+
+shotsrampage=Cơn thịnh nộ của những phát bắn
+huntersmark=Dấu ấn của thợ săn
+beartrap=Bẫy gấu
+
+huntersinstinct=Bản năng của thợ săn
+arrowstorm=Bão tên
+
+
+[activeskillsdesc]
+
+// Chiến binh
+fury=Trong 6 giây tiếp theo, tăng sát thương cận chiến và tốc độ tấn công của bạn lên §a[[20 x Cấp độ kỹ năng]]%
+recovery=Trong 10 giây tiếp theo, tăng cường đáng kể khả năng hồi máu khi chiến đấu, phục hồi §a[[20 + Sức bền x Cấp độ kỹ năng]] máu§0 trong suốt thời gian
+provocation=Trong §a[[2 x Cấp độ kỹ năng]] giây§0 tiếp theo, buộc kẻ thù gần đó tập trung các đòn tấn công của chúng vào bạn
+berserkercharge=Lao về phía trước một khoảng cách ngắn, gây §i[[10 x Cấp độ người chơi + 2 x Sức mạnh x Cấp độ kỹ năng + 2 x Tốc độ x Cấp độ kỹ năng]] sát thương§0 cho tất cả kẻ thù đi qua
+Tiêu tốn 50% thể lực
+groundslam=Đòn tấn công khu vực gây §i[[5 x Sức mạnh]] sát thương cận chiến§0 và §9làm choáng§0 trong §a[[1 x Cấp độ kỹ năng]] giây§0
+grounddestruction=Đòn tấn công khu vực gây §i[[5 x Sức mạnh x Cấp độ kỹ năng + 5 x Cấp độ người chơi x Cấp độ kỹ năng]] sát thương cận chiến§0 và §9làm choáng§0 trong 2 giây
+parry=Trở nên bất khả xâm phạm trong 0,5 giây và trả lại 500% sát thương ban đầu nhận được
+Tiêu tốn 100% thể lực
+battlecry=Trong 10 giây tiếp theo, tăng tất cả sát thương và tốc độ di chuyển của bạn và các đồng minh gần đó lên §a[[10 x Cấp độ kỹ năng]]%
+
+ironguard=-50% sát thương nhận vào trong §a[[4 x Cấp độ kỹ năng]] giây
+thornedguard=-50% sát thương nhận vào trong 12 giây
+Ngoài ra, trả lại §a[[100 x Cấp độ kỹ năng]]%§0 sát thương ban đầu nhận được
+intimidation=Trong §a[[Cấp độ kỹ năng]] giây§0 tiếp theo, khiến kẻ thù gần đó bỏ chạy
+
+objectthrowing=Bước 1: Nắm lấy một vật thể trước mặt bạn
+Bước 2: Ném nó về phía trước gây §i[[20 x Cấp độ người chơi + 5 x Sức mạnh x Cấp độ kỹ năng]] sát thương cận chiến§0
+Cả hai bước đều tiêu tốn toàn bộ thể lực của bạn (ít nhất 100%)
+
+// Kiểm lâm
+shortdash=Thực hiện một cú lướt 100 sức mạnh
+Tiêu tốn 15% thể lực
+longdash=Thực hiện một cú lướt 150 sức mạnh
+Tiêu tốn 25% thể lực
+lethalshot=Bắn một §hmũi tên chí mạng§0 vào kẻ thù gần nhất, gây §i[[5 x Cấp độ người chơi + 5 x Sức mạnh x Cấp độ kỹ năng]] sát thương của kiểm lâm§0
+venomshot=Bắn một §bmũi tên độc§0 vào kẻ thù gần nhất, gây §i[[4 x Cấp độ người chơi + 2 x Sức mạnh x Cấp độ kỹ năng + 2 x Trí tuệ x Cấp độ kỹ năng]] sát thương của kiểm lâm§0
+explosiveshot=Bắn một §imũi tên nổ§0 vào kẻ thù gần nhất, gây §i[[4 x Cấp độ người chơi + 2 x Sức mạnh x Cấp độ kỹ năng + 2 x Trí tuệ x Cấp độ kỹ năng]] sát thương của kiểm lâm§0
+
+shotsrampage=Khi bạn có ít nhất 1 điểm cộng dồn của Cơn thịnh nộ của những phát bắn, đánh trúng kẻ thù bằng đòn tấn công tầm xa sẽ cấp thêm 1 điểm cộng dồn trong 5 giây
+Mỗi điểm cộng dồn của Cơn thịnh nộ của những phát bắn sẽ tăng tốc độ tấn công thêm 5%, tối đa 30 điểm cộng dồn
+huntersmark=§hĐánh dấu§0 kẻ thù gần đó có lượng máu cao nhất trong 10 giây
+Nếu bạn giết một mục tiêu được đánh dấu, nhận §a+[[20 x Cấp độ kỹ năng]]%§0 tốc độ tấn công tầm xa và tốc độ di chuyển trong 5 giây
+beartrap=Đặt một cái bẫy gấu trên mặt đất sẽ biến mất nếu được kích hoạt hoặc sau 20 giây
+Nếu kẻ thù kích hoạt nó, chúng sẽ nhận §i[[10 x Cấp độ người chơi]] sát thương§0 và bị mắc kẹt trong 5 giây
+
+huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[10 x Cấp độ kỹ năng]]%
+§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
+arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây §i[[2 x Cấp độ người chơi + Sức mạnh x Cấp độ kỹ năng + Tốc độ x Cấp độ kỹ năng]] sát thương của kiểm lâm§0 cho mỗi mũi tên
+
+[skillsdesckeys]
+x=x
+skilllevel=Cấp độ kỹ năng
+playerlevel=Cấp độ người chơi
+endurance=Sức bền
+speed=Tốc độ
+strength=Sức mạnh
+intelligence=Trí tuệ
+grace=Duyên dáng
+
+
+[extraskilldesc]
+// Bùa lợi
+marked=§hĐược đánh dấu:§0 Gây thêm +20% sát thương (+ §hsát thương tập trung§0) và +10% cơ hội chí mạng cho các mob bạn đánh dấu
+Tất cả các quả đạn được điều khiển và/hoặc bắn vào kẻ thù gần nhất sẽ ưu tiên các kẻ thù được đánh dấu
+
+// Công cụ sửa đổi cơ hội
+dodgechance=§7Cơ hội né tránh:§0 Cơ hội né tránh các đòn tấn công sắp tới. Không thể vượt quá 80%
+focuschance=§hCơ hội tập trung:§0 Cơ hội §hđánh dấu§0 một mob trong 5 giây khi bị tấn công bằng sát thương không phải của người triệu hồi
+
+// Công cụ sửa đổi phẳng
+mobdetection=§9Phát hiện mob:§0 Hiển thị các mob gần đó trên bản đồ. Phạm vi phát hiện cao hơn sẽ tiết lộ các mob ở xa hơn
+
+// Đạn
+lethalarrow=§hMũi tên chí mạng:§0 Mũi tên có điều khiển đảm bảo một đòn chí mạng
+venomarrow=§bMũi tên độc:§0 Mũi tên có điều khiển gây độc cho kẻ thù, lặp lại 10% sát thương ban đầu mỗi giây trong 30 giây
+explosivearrow=§iMũi tên nổ:§0 Mũi tên có điều khiển gây ra một vụ nổ ma thuật có sát thương tương đương
+
+
+[item]
+scrollofoblivion=Cuộn giấy lãng quên
+ringsbox=Hộp nhẫn
+
+// Nhẫn thuộc tính
+endurancewoodring=Nhẫn gỗ sức bền
+endurancecopperring=Nhẫn đồng sức bền
+enduranceironring=Nhẫn sắt sức bền
+endurancegoldring=Nhẫn vàng sức bền
+
+speedwoodring=Nhẫn gỗ tốc độ
+speedcopperring=Nhẫn đồng tốc độ
+speedgoldring=Nhẫn vàng tốc độ
+speedironring=Nhẫn sắt tốc độ
+
+strengthwoodring=Nhẫn gỗ sức mạnh
+strengthcopperring=Nhẫn đồng sức mạnh
+strengthgoldring=Nhẫn vàng sức mạnh
+strengthironring=Nhẫn sắt sức mạnh
+
+intelligencewoodring=Nhẫn gỗ trí tuệ
+intelligencecopperring=Nhẫn đồng trí tuệ
+intelligencegoldring=Nhẫn vàng trí tuệ
+intelligenceironring=Nhẫn sắt trí tuệ
+
+gracewoodring=Nhẫn gỗ duyên dáng
+gracecopperring=Nhẫn đồng duyên dáng
+graceironring=Nhẫn sắt duyên dáng
+gracegoldring=Nhẫn vàng duyên dáng
+
+
+[itemtooltip]
+scrollofoblivion=Cấp 2 điểm đặt lại
+ringsboxtip=Có thể lưu trữ Nhẫn thuộc tính
+
+
+[message]
+xp=KN
+levelup=Lên cấp!
+dodge=Né tránh!
+
+newmobkill=Bạn đã nhận được <exp> kinh nghiệm khi giết <mob> lần đầu tiên
+newlevel=Chúc mừng! Bạn đã đạt đến cấp độ <level>. Nhấn [input=openrpgmenu] để mở Menu RPG
+
+noupdatesincombat=Bạn không thể sửa đổi các thuộc tính, lớp hoặc kỹ năng của mình trong khi chiến đấu
+noactiveskill=Bạn không còn Kỹ năng chủ động đó nữa, hãy nâng cấp lại nếu bạn muốn sử dụng nó
+
+equipfirst=Trước tiên, bạn cần trang bị một Kỹ năng chủ động trong ô này
+activeskillinuse=Kỹ năng này đã được sử dụng
+anotheractiveskillinuse=Bạn đã có một kỹ năng khác đang được sử dụng
+incooldown=Đang hồi chiêu
+notenoughstamina=Không đủ thể lực
+nograbbableobject=Không có vật thể nào có thể nắm được trước mặt bạn
+
+[ui]
+menutitle=MOD RPG của Save
+attributes=Thuộc tính
+activeskills=Kỹ năng chủ động
+classes=Lớp
+
+level=Cấp độ <level>
+classlevel=<class> cấp <level>
+lvl=Cấp <level>
+eachlevel=Mỗi cấp độ cung cấp:
+experience=KN: <exp> / <nextexp>
+totalexperience=Tổng KN: <exp>
+
+resetpoints=Điểm đặt lại: <points>
+attrpoints=Điểm thuộc tính: <points>
+classpoints=Điểm lớp: <points>
+passivepoints=Điểm bị động: <points>
+activeskillpoints=Điểm kỹ năng chủ động: <points>
+
+activeskillsuse=Bản mod này biến Bánh xe biểu cảm (phím T theo mặc định) thành Bánh xe kỹ năng chủ động
+activeskillsusetip1=Bạn nên thay đổi điều khiển Bánh xe biểu cảm thành một phím dễ truy cập
+activeskillsusetip2=Bạn cũng có thể gán một phím cho mỗi ô Kỹ năng chủ động (lý tưởng cho các kỹ năng có thời gian hồi chiêu thấp)
+activeskillsequipinstructions=Nhấp vào một ô để trang bị một Kỹ năng chủ động. Bạn không thể tháo trang bị một Kỹ năng chủ động đang trong thời gian hồi chiêu
+noactiveskills=Bạn không có Kỹ năng chủ động. Mở khóa chúng thông qua các lớp
+
+activeskillcooldown=§9Hồi chiêu: <seconds> giây
+activeskillcooldownmod=§9Hồi chiêu: [[<seconds> <sign> <mod> x Cấp độ kỹ năng]] giây
+requiredclasslevel=§bYêu cầu lớp cấp <level>
+requiredactiveskill=§bYêu cầu '<skill>' cấp <level>
+maxlevel=§aCấp độ tối đa: <level>
+
+clicktoseebase=[input=mouse1] để xem Cơ sở
+clicktoseelevel=[input=mouse1] để xem Cấp độ <level>
+
+classlevelseparation=- Lớp cấp <level> -
+
+inuse=Đang sử dụng
+
+upcomingclass=§6Lớp sắp ra mắt\n§9Lớp này hiện đang được phát triển\nvà sẽ có sẵn trong một bản cập nhật trong tương lai
+
+addcolumn=Thêm cột
+removecolumn=Xóa cột
+
+
+[controls]
+openrpgmenu=Mở Menu RPG
+activeskillslot1=Ô kỹ năng chủ động 1
+activeskillslot2=Ô kỹ năng chủ động 2
+activeskillslot3=Ô kỹ năng chủ động 3
+activeskillslot4=Ô kỹ năng chủ động 4

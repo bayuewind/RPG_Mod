@@ -1,0 +1,341 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atribut vytrvalosti
+speedattrflat=<mod> atribut rychlosti
+strengthattrflat=<mod> atribut síly
+intelligenceattrflat=<mod> atribut inteligence
+graceattrflat=<mod> atribut ladnosti
+
+dodgechance=<mod>% šance na uhnutí
+rangedweaponszoom=<mod> přiblížení zbraní na dálku
+rangedweaponsrange=<mod>% dosah zbraní na dálku
+mobdetectionrange=<mod> dosah detekce mobů
+focusdamage=<mod>% poškození zaměření
+focuschance=<mod>% šance na zaměření
+
+
+[enchantment]
+evasive=Vyhýbavý
+stalking=Stopování
+regenerative=Regenerační
+energetic=Energetický
+depleted=Vyčerpaný
+
+
+[buff]
+overlevelclassbuff=Třída s nadúrovní
+markedbuff=Označený
+darkcursebuff=Temná kletba
+
+
+[buffdesc]
+overlevelclassbuff1=§9Jedna z vašich tříd překračuje limit bodů
+overlevelclassbuff2=§6Nebudete moci pokračovat, dokud to nebude opraveno
+darkcursebuff1=+25% příchozího poškození
+darkcursebuff2=Všechno poškození také snižuje maximální zdraví
+
+
+[mob]
+rpgmobname=[<class>] <name> úroveň <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9úroveň <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Válečník
+tank=Tank
+runner=Běžec
+healer=Léčitel
+explosive=Výbušný
+glacial=Ledový
+electric=Elektrický
+flash=Záblesk
+dark=Temný
+legend=Legenda
+
+
+[attributes]
+endurance=Vytrvalost
+strength=Síla
+speed=Rychlost
+intelligence=Inteligence
+grace=Ladnost
+
+
+[classes]
+warrior=Válečník
+ranger=Hraničář
+wizard=Kouzelník
+necromancer=Nekromant
+cleric=Klerik
+rogue=Darebák
+warlock=Černokněžník
+paladin=Paladin
+druid=Druid
+
+
+[passives]
+passives=Pasivní schopnosti
+
+// Válečník
+regeneration=Regenerace
+muscles=Svaly
+legs=Nohy
+force=Síla
+unstoppable=Nezastavitelný
+vigor=Síla
+ironskin=Železná kůže
+unleashingrage=Uvolnění vzteku
+unleashinghaste=Uvolnění spěchu
+unyielding=Neústupný
+lastbreath=Poslední dech
+
+// Hraničář
+aim=Míření
+agility=Obratnost
+criticalshots=Kritické zásahy
+energy=Energie
+recovery=Zotavení
+eagleeye=Orlí oko
+focus=Zaměření
+erradication=Vyhlazení
+predatorsense=Smysl predátora
+plasmagrenade=Plazmový granát
+wolfcompanion=Vlčí společník
+
+
+[passivesdesc]
+
+// Válečník
+unleashingrage=Každá úroveň poskytuje:
+
++1% veškerého poškození za každých 10% chybějícího zdraví
+unleashinghaste=Každá úroveň poskytuje:
+
++1% rychlosti pohybu za každých 10% chybějícího zdraví
+unyielding=Každá úroveň poskytuje:
+
++5% rychlosti útoku a -5% příchozího poškození, když je zdraví pod 20%
+lastbreath=Místo smrti se stanete na §a[[3 x úroveň dovednosti]] sekund§0 nezranitelnými
+Jakmile čas vyprší, zemřete
+
+// Hraničář
+plasmagrenade=Každých 8 útoků na dálku vystřelí naváděnou výbušnou střelu, která způsobí §i[[30 x úroveň dovednosti]]%§0 poškození zbraně
+wolfcompanion=Vlčí společník bude útočit na označené nepřátele a způsobovat §i[[úroveň hráče x úroveň dovednosti + inteligence x úroveň dovednosti]] poškození vyvolávače§0
+
+
+[activeskills]
+empty=Prázdný
+
+// Válečník
+fury=Vztek
+recovery=Zotavení
+provocation=Provokace
+berserkercharge=Berserkerský náboj
+
+groundslam=Úder do země
+grounddestruction=Zničení země
+parry=Odražení
+battlecry=Bitevní pokřik
+
+ironguard=Železná stráž
+thornedguard=Trnitá stráž
+intimidation=Zastrašování
+
+objectthrowing=Házení předmětů
+
+// Hraničář
+shortdash=Krátký úprk
+longdash=Dlouhý úprk
+lethalshot=Smrtící střela
+venomshot=Jedovatá střela
+explosivearrow=Výbušný šíp
+
+shotsrampage=Zběsilost střel
+huntersmark=Značka lovce
+beartrap=Medvědí past
+
+huntersinstinct=Instinkt lovce
+arrowstorm=Šípová bouře
+
+
+[activeskillsdesc]
+
+// Válečník
+fury=Na dalších 6 sekund zvýšíte své poškození v boji zblízka a rychlost útoku o §a[[20 x úroveň dovednosti]]%
+recovery=Na dalších 10 sekund výrazně posílíte regeneraci zdraví v boji a obnovíte §a[[20 + vytrvalost x úroveň dovednosti]] zdraví§0 po dobu trvání
+provocation=Na dalších §a[[2 x úroveň dovednosti]] sekund§0 přinutíte blízké nepřátele, aby na vás zaměřili své útoky
+berserkercharge=Rychle se vrhněte vpřed na krátkou vzdálenost a způsobte §i[[10 x úroveň hráče + 2 x síla x úroveň dovednosti + 2 x rychlost x úroveň dovednosti]] poškození§0 všem nepřátelům, kterými projdete
+Spotřebuje 50% výdrže
+groundslam=Plošný útok, který způsobí §i[[5 x síla]] poškození v boji zblízka§0 a §9omráčí§0 na §a[[1 x úroveň dovednosti]] sekund§0
+grounddestruction=Plošný útok, který způsobí §i[[5 x síla x úroveň dovednosti + 5 x úroveň hráče x úroveň dovednosti]] poškození v boji zblízka§0 a §9omráčí§0 na 2 sekundy
+parry=Stanete se na 0,5 sekundy nezranitelnými a vrátíte 500% původního přijatého poškození
+Spotřebuje 100% výdrže
+battlecry=Na dalších 10 sekund zvýšíte své a blízkých spojenců veškeré poškození a rychlost pohybu o §a[[10 x úroveň dovednosti]]%
+
+ironguard=-50% příchozího poškození na §a[[4 x úroveň dovednosti]] sekund
+thornedguard=-50% příchozího poškození na 12 sekund
+Navíc vrátí §a[[100 x úroveň dovednosti]]%§0 původního přijatého poškození
+intimidation=Na dalších §a[[úroveň dovednosti]] sekund§0 přimějete blízké nepřátele k útěku
+
+objectthrowing=Krok 1: Popadněte předmět před sebou
+Krok 2: Hoďte ho dopředu a způsobte §i[[20 x úroveň hráče + 5 x síla x úroveň dovednosti]] poškození v boji zblízka§0
+Oba kroky spotřebují veškerou vaši výdrž (alespoň 100%)
+
+// Hraničář
+shortdash=Proveďte úprk o síle 100
+Spotřebuje 15% výdrže
+longdash=Proveďte úprk o síle 150
+Spotřebuje 25% výdrže
+lethalshot=Vystřelte §hsmrtící šíp§0 na nejbližšího nepřítele a způsobte §i[[5 x úroveň hráče + 5 x síla x úroveň dovednosti]] poškození hraničáře§0
+venomshot=Vystřelte §bjedovatý šíp§0 na nejbližšího nepřítele a způsobte §i[[4 x úroveň hráče + 2 x síla x úroveň dovednosti + 2 x inteligence x úroveň dovednosti]] poškození hraničáře§0
+explosiveshot=Vystřelte §ivýbušný šíp§0 na nejbližšího nepřítele a způsobte §i[[4 x úroveň hráče + 2 x síla x úroveň dovednosti + 2 x inteligence x úroveň dovednosti]] poškození hraničáře§0
+
+shotsrampage=Dokud máte alespoň 1 stack Zběsilosti střel, zasažení nepřítele útokem na dálku vám na 5 sekund poskytne 1 další stack
+Každý stack Zběsilosti střel zvyšuje rychlost útoku o 5%, maximálně však 30 stacků
+huntersmark=§hOznačte§0 nejbližšího nepřítele s nejvyšším zdravím na 10 sekund
+Pokud zabijete označený cíl, získáte na 5 sekund §a+[[20 x úroveň dovednosti]]%§0 rychlosti útoku na dálku a rychlosti pohybu
+beartrap=Položte na zem medvědí past, která zmizí, pokud se spustí nebo po 20 sekundách
+Pokud ji nepřítel spustí, utrpí §i[[10 x úroveň hráče]] poškození§0 a bude na 5 sekund chycen
+
+huntersinstinct=Na dalších 12 sekund zvýšíte svou §7šanci na uhnutí§0 o §a[[10 x úroveň dovednosti]]%
+§hOznačte§0 na 5 sekund nepřátele, kterým se vyhnete
+arrowstorm=Vystřelte základní šíp na každého blízkého nepřítele a způsobte §i[[2 x úroveň hráče + síla x úroveň dovednosti + rychlost x úroveň dovednosti]] poškození hraničáře§0 každým šípem
+
+[skillsdesckeys]
+x=x
+skilllevel=Úroveň dovednosti
+playerlevel=Úroveň hráče
+endurance=Vytrvalost
+speed=Rychlost
+strength=Síla
+intelligence=Inteligence
+grace=Ladnost
+
+
+[extraskilldesc]
+// Posílení
+marked=§hOznačený:§0 Způsobte +20% poškození (+ §hpoškození zaměření§0) a +10% šanci na kritický zásah mobům, které označíte
+Všechny naváděné a/nebo vystřelené střely na nejbližšího nepřítele budou upřednostňovat označené nepřátele
+
+// Modifikátory šance
+dodgechance=§7Šance na uhnutí:§0 Šance na uhnutí příchozím útokům. Nemůže překročit 80%
+focuschance=§hŠance na zaměření:§0 Šance na §hoznačení§0 moba na 5 sekund při útoku poškozením, které není od vyvolávače
+
+// Plošné modifikátory
+mobdetection=§9Detekce mobů:§0 Zobrazuje blízké moby na mapě. Vyšší dosah detekce odhaluje moby z větší dálky
+
+// Střely
+lethalarrow=§hSmrtící šíp:§0 Naváděný šíp, který zaručuje kritický zásah
+venomarrow=§bJedovatý šíp:§0 Naváděný šíp, který otráví nepřátele a opakuje 10% svého původního poškození za sekundu po dobu 30 sekund
+explosivearrow=§iVýbušný šíp:§0 Naváděný šíp, který způsobí magickou explozi se stejným poškozením
+
+
+[item]
+scrollofoblivion=Svitek zapomnění
+ringsbox=Krabice s prsteny
+
+// Prsteny atributů
+endurancewoodring=Dřevěný prsten vytrvalosti
+endurancecopperring=Měděný prsten vytrvalosti
+enduranceironring=Železný prsten vytrvalosti
+endurancegoldring=Zlatý prsten vytrvalosti
+
+speedwoodring=Dřevěný prsten rychlosti
+speedcopperring=Měděný prsten rychlosti
+speedgoldring=Zlatý prsten rychlosti
+speedironring=Železný prsten rychlosti
+
+strengthwoodring=Dřevěný prsten síly
+strengthcopperring=Měděný prsten síly
+strengthgoldring=Zlatý prsten síly
+strengthironring=Železný prsten síly
+
+intelligencewoodring=Dřevěný prsten inteligence
+intelligencecopperring=Měděný prsten inteligence
+intelligencegoldring=Zlatý prsten inteligence
+intelligenceironring=Železný prsten inteligence
+
+gracewoodring=Dřevěný prsten ladnosti
+gracecopperring=Měděný prsten ladnosti
+graceironring=Železný prsten ladnosti
+gracegoldring=Zlatý prsten ladnosti
+
+
+[itemtooltip]
+scrollofoblivion=Poskytuje 2 body resetu
+ringsboxtip=Může ukládat prsteny atributů
+
+
+[message]
+xp=Zk
+levelup=Postup na vyšší úroveň!
+dodge=Uhnutí!
+
+newmobkill=Získali jste <exp> zkušeností za první zabití <mob>
+newlevel=Gratulujeme! Dosáhli jste úrovně <level>. Stiskněte [input=openrpgmenu] pro otevření nabídky RPG
+
+noupdatesincombat=Během boje nemůžete upravovat své atributy, třídy ani dovednosti
+noactiveskill=Tuto aktivní dovednost již nemáte, pokud ji chcete znovu použít, zvyšte její úroveň
+
+equipfirst=Nejprve musíte do tohoto slotu vybavit aktivní dovednost
+activeskillinuse=Tato dovednost se již používá
+anotheractiveskillinuse=Již máte jinou dovednost v používání
+incooldown=Vychládá
+notenoughstamina=Nedostatek výdrže
+nograbbableobject=Před vámi není žádný uchopitelný předmět
+
+[ui]
+menutitle=RPG MOD od Save
+attributes=Atributy
+activeskills=Aktivní dovednosti
+classes=Třídy
+
+level=Úroveň <level>
+classlevel=<class> úroveň <level>
+lvl=Úroveň <level>
+eachlevel=Každá úroveň poskytuje:
+experience=Zk: <exp> / <nextexp>
+totalexperience=Celkem Zk: <exp>
+
+resetpoints=Body resetu: <points>
+attrpoints=Body atributů: <points>
+classpoints=Body třídy: <points>
+passivepoints=Body pasivních schopností: <points>
+activeskillpoints=Body aktivních dovedností: <points>
+
+activeskillsuse=Tento mod změní kolo výrazů (standardně klávesa T) na kolo aktivních dovedností
+activeskillsusetip1=Doporučuje se změnit ovládání kola výrazů na snadno dostupnou klávesu
+activeskillsusetip2=Můžete také přiřadit klávesu ke každému slotu aktivní dovednosti (ideální pro dovednosti s krátkou dobou vychladnutí)
+activeskillsequipinstructions=Kliknutím na slot vybavíte aktivní dovednost. Aktivní dovednost nelze odzbrojit, pokud vychládá
+noactiveskills=Nemáte žádné aktivní dovednosti. Odemkněte je prostřednictvím tříd
+
+activeskillcooldown=§9Vychladnutí: <seconds>s
+activeskillcooldownmod=§9Vychladnutí: [[<seconds> <sign> <mod> x úroveň dovednosti]]s
+requiredclasslevel=§bVyžaduje se úroveň třídy <level>
+requiredactiveskill=§bVyžaduje '<skill>' úroveň <level>
+maxlevel=§aMaximální úroveň: <level>
+
+clicktoseebase=[input=mouse1] pro zobrazení základny
+clicktoseelevel=[input=mouse1] pro zobrazení úrovně <level>
+
+classlevelseparation=- Úroveň třídy <level> -
+
+inuse=Používá se
+
+upcomingclass=§6Připravovaná třída\n§9Tato třída je v současné době ve vývoji\na bude k dispozici v budoucí aktualizaci
+
+addcolumn=Přidat sloupec
+removecolumn=Odebrat sloupec
+
+
+[controls]
+openrpgmenu=Otevřít nabídku RPG
+activeskillslot1=Slot aktivní dovednosti 1
+activeskillslot2=Slot aktivní dovednosti 2
+activeskillslot3=Slot aktivní dovednosti 3
+activeskillslot4=Slot aktivní dovednosti 4

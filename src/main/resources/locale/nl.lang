@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> uithoudingsvermogen attribuut
+speedattrflat=<mod> snelheid attribuut
+strengthattrflat=<mod> kracht attribuut
+intelligenceattrflat=<mod> intelligentie attribuut
+graceattrflat=<mod> gratie attribuut
+
+dodgechance=<mod>% ontwijkkans
+rangedweaponszoom=<mod> zoom van afstandswapens
+rangedweaponsrange=<mod>% bereik van afstandswapens
+mobdetectionrange=<mod> mob detectiebereik
+focusdamage=<mod>% focusschade
+focuschance=<mod>% focuskans
+
+
+[enchantment]
+evasive=Ontwijkend
+stalking=Besluipen
+regenerative=Regeneratief
+energetic=Energiek
+depleted=Uitgeput
+
+
+[buff]
+overlevelclassbuff=Overlevel klasse
+markedbuff=Gemarkeerd
+darkcursebuff=Donkere vloek
+
+
+[buffdesc]
+overlevelclassbuff1=§9Een van je klassen overschrijdt een puntenlimiet
+overlevelclassbuff2=§6Je kunt niet doorgaan totdat het is opgelost
+darkcursebuff1=+25% inkomende schade
+darkcursebuff2=Alle schade vermindert ook de maximale gezondheid
+
+
+[mob]
+rpgmobname=[<class>] <name> lvl <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+
+[mobclass]
+boss=Baas
+warrior=Krijger
+tank=Tank
+runner=Renner
+healer=Genezer
+explosive=Explosief
+glacial=Gletsjer
+electric=Elektrisch
+flash=Flits
+dark=Donker
+legend=Legende
+
+
+[attributes]
+endurance=Uithoudingsvermogen
+strength=Kracht
+speed=Snelheid
+intelligence=Intelligentie
+grace=Gratie
+
+
+[classes]
+warrior=Krijger
+ranger=Verkenner
+wizard=Tovenaar
+necromancer=Necromancer
+cleric=Geestelijke
+rogue=Schoft
+warlock=Heksenmeester
+paladin=Paladijn
+druid=Druïde
+
+
+[passives]
+passives=Passieven
+
+// Krijger
+regeneration=Regeneratie
+muscles=Spieren
+legs=Benen
+force=Kracht
+unstoppable=Niet te stoppen
+vigor=Kracht
+ironskin=IJzerhuid
+unleashingrage=Ontketenende woede
+unleashinghaste=Ontketenende haast
+unyielding=Onverzettelijk
+lastbreath=Laatste adem
+
+// Verkenner
+aim=Doel
+agility=Behendigheid
+criticalshots=Kritieke schoten
+energy=Energie
+recovery=Herstel
+eagleeye=Adelaars oog
+focus=Focus
+erradication=Uitroeiing
+predatorsense=Roofdierenzin
+plasmagrenade=Plasmagranaat
+wolfcompanion=Wolf metgezel
+
+
+[passivesdesc]
+
+// Krijger
+unleashingrage=Elk niveau biedt:\n\n+1% alle schade voor elke 10% ontbrekende gezondheid
+unleashinghaste=Elk niveau biedt:\n\n+1% bewegingssnelheid voor elke 10% ontbrekende gezondheid
+unyielding=Elk niveau biedt:\n\n+5% aanvalssnelheid en -5% inkomende schade bij minder dan 20% gezondheid
+lastbreath=In plaats van te sterven, word je §a[[3 x vaardigheidsniveau]] seconden§0 onkwetsbaar\nZodra de tijd om is, sterf je
+
+// Verkenner
+plasmagrenade=Elke 8 afstandsaanvallen, vuur een geleid explosief projectiel af dat §i[[30 x vaardigheidsniveau]]%§0 van de wapenschade aanricht
+wolfcompanion=Een wolf metgezel zal gemarkeerde vijanden aanvallen en §i[[spelersniveau x vaardigheidsniveau + intelligentie x vaardigheidsniveau]] oproeperschade§0 aanrichten
+
+
+[activeskills]
+empty=Leeg
+
+// Krijger
+fury=Woede
+recovery=Herstel
+provocation=Provocatie
+berserkercharge=Berserker aanval
+
+groundslam=Grondslag
+grounddestruction=Grondvernietiging
+parry=Pareren
+battlecry=Strijdkreet
+
+ironguard=IJzeren garde
+thornedguard=Gedoornikkelde garde
+intimidation=Intimidatie
+
+objectthrowing=Object gooien
+
+// Verkenner
+shortdash=Korte sprint
+longdash=Lange sprint
+lethalshot=Dodelijke schot
+venomshot=Gifschot
+explosivearrow=Explosieve pijl
+
+shotsrampage=Schoten razernij
+huntersmark=Jagersmerk
+beartrap=Berenval
+
+huntersinstinct=Jagersinstinct
+arrowstorm=Pijlenstorm
+
+
+[activeskillsdesc]
+
+// Krijger
+fury=Verhoog de komende 6 seconden je contactschade en aanvalssnelheid met §a[[20 x vaardigheidsniveau]]%
+recovery=Verhoogt de komende 10 seconden de gevechtsgezondheidsregeneratie aanzienlijk, waardoor §a[[20 + uithoudingsvermogen x vaardigheidsniveau]] gezondheid§0 gedurende de duur wordt hersteld
+provocation=Dwing de komende §a[[2 x vaardigheidsniveau]] seconden§0 nabije vijanden om hun aanvallen op jou te richten
+berserkercharge=Ren een korte afstand naar voren en richt §i[[10 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x snelheid x vaardigheidsniveau]] schade§0 aan alle gepasseerde vijanden\nVerbruikt 50% uithoudingsvermogen
+groundslam=Gebiedsaanval die §i[[5 x kracht]] contactschade§0 aanricht en §a[[1 x vaardigheidsniveau]] seconden§0 §9verdooft§0
+grounddestruction=Gebiedsaanval die §i[[5 x kracht x vaardigheidsniveau + 5 x spelersniveau x vaardigheidsniveau]] contactschade§0 aanricht en 2 seconden §9verdooft§0
+parry=Word 0,5 seconde onkwetsbaar en retourneer 500% van de oorspronkelijk ontvangen schade\nVerbruikt 100% uithoudingsvermogen
+battlecry=Verhoog de komende 10 seconden de alle schade en bewegingssnelheid van jou en nabije bondgenoten met §a[[10 x vaardigheidsniveau]]%
+
+ironguard=-50% inkomende schade gedurende §a[[4 x vaardigheidsniveau]] seconden
+thornedguard=-50% inkomende schade gedurende 12 seconden\nRetourneert bovendien §a[[100 x vaardigheidsniveau]]%§0 van de oorspronkelijk ontvangen schade
+intimidation=Laat de komende §a[[vaardigheidsniveau]] seconden§0 nabije vijanden wegrennen
+
+objectthrowing=Stap 1: Grijp een object voor je\nStap 2: Gooi het naar voren en richt §i[[20 x spelersniveau + 5 x kracht x vaardigheidsniveau]] contactschade§0 aan\nBeide stappen verbruiken al je uithoudingsvermogen (minstens 100%)
+
+// Verkenner
+shortdash=Voer een sprint van 100 kracht uit\nVerbruikt 15% uithoudingsvermogen
+longdash=Voer een sprint van 150 kracht uit\nVerbruikt 25% uithoudingsvermogen
+lethalshot=Schiet een §hdodelijke pijl§0 op de dichtstbijzijnde vijand en richt §i[[5 x spelersniveau + 5 x kracht x vaardigheidsniveau]] verkennersschade§0 aan
+venomshot=Schiet een §bgifpijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x intelligentie x vaardigheidsniveau]] verkennersschade§0 aan
+explosiveshot=Schiet een §iexplosieve pijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x intelligentie x vaardigheidsniveau]] verkennersschade§0 aan
+
+shotsrampage=Zolang je minstens 1 stapel schoten razernij hebt, levert het raken van een vijand met een afstandsaanval 1 extra stapel op gedurende 5 seconden\nElke stapel schoten razernij verhoogt de aanvalssnelheid met 5%, tot een maximum van 30 stapels
+huntersmark=§hMarkeer§0 de nabije vijand met de hoogste gezondheid gedurende 10 seconden\nAls je een gemarkeerd doelwit doodt, krijg je gedurende 5 seconden §a+[[20 x vaardigheidsniveau]]%§0 afstandsaanvalssnelheid en bewegingssnelheid
+beartrap=Plaats een berenval op de grond die verdwijnt als hij wordt geactiveerd of na 20 seconden\nAls een vijand hem activeert, loopt hij §i[[10 x spelersniveau]] schade§0 op en zit hij 5 seconden vast
+
+huntersinstinct=Verhoog de komende 12 seconden je §7ontwijkkans§0 met §a[[10 x vaardigheidsniveau]]%\n§hMarkeer§0 gedurende 5 seconden de vijanden die je ontwijkt
+arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i[[2 x spelersniveau + kracht x vaardigheidsniveau + snelheid x vaardigheidsniveau]] verkennersschade§0 aan
+
+[skillsdesckeys]
+x=x
+skilllevel=Vaardigheidsniveau
+playerlevel=Spelersniveau
+endurance=Uithoudingsvermogen
+speed=Snelheid
+strength=Kracht
+intelligence=Intelligentie
+grace=Gratie
+
+
+[extraskilldesc]
+// Buffs
+marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\nAlle geleide en/of op de dichtstbijzijnde vijand afgevuurde projectielen geven voorrang aan gemarkeerde vijanden
+
+// Kansenmodificatoren
+dodgechance=§7Ontwijkkans:§0 Kans om inkomende aanvallen te ontwijken. Kan niet hoger zijn dan 80%
+focuschance=§hFocuskans:§0 Kans om een mob 5 seconden te §hmarkeren§0 wanneer aangevallen met niet-oproeperschade
+
+// Vlakke modificatoren
+mobdetection=§9Mobdetectie:§0 Toont nabije mobs op de kaart. Een hoger detectiebereik onthult mobs van verder weg
+
+// Projectielen
+lethalarrow=§hDodelijke pijl:§0 Geleide pijl die een kritieke treffer garandeert
+venomarrow=§bGifpijl:§0 Geleide pijl die vijanden vergiftigt en gedurende 30 seconden 10% van de oorspronkelijke schade per seconde herhaalt
+explosivearrow=§iExplosieve pijl:§0 Geleide pijl die een magische explosie met gelijke schade veroorzaakt
+
+
+[item]
+scrollofoblivion=Rol van vergetelheid
+ringsbox=Ringendoos
+
+// Attribuutringen
+endurancewoodring=Houten ring van uithoudingsvermogen
+endurancecopperring=Koperen ring van uithoudingsvermogen
+enduranceironring=IJzeren ring van uithoudingsvermogen
+endurancegoldring=Gouden ring van uithoudingsvermogen
+
+speedwoodring=Houten ring van snelheid
+speedcopperring=Koperen ring van snelheid
+speedgoldring=Gouden ring van snelheid
+speedironring=IJzeren ring van snelheid
+
+strengthwoodring=Houten ring van kracht
+strengthcopperring=Koperen ring van kracht
+strengthgoldring=Gouden ring van kracht
+strengthironring=IJzeren ring van kracht
+
+intelligencewoodring=Houten ring van intelligentie
+intelligencecopperring=Koperen ring van intelligentie
+intelligencegoldring=Gouden ring van intelligentie
+intelligenceironring=IJzeren ring van intelligentie
+
+gracewoodring=Houten ring van gratie
+gracecopperring=Koperen ring van gratie
+graceironring=IJzeren ring van gratie
+gracegoldring=Gouden ring van gratie
+
+
+[itemtooltip]
+scrollofoblivion=Geeft 2 resetpunten
+ringsboxtip=Kan attribuutringen opslaan
+
+
+[message]
+xp=XP
+levelup=Niveau omhoog!
+dodge=Ontwijken!
+
+newmobkill=Je hebt <exp> ervaring gekregen voor het voor de eerste keer doden van <mob>
+newlevel=Gefeliciteerd! Je hebt niveau <level> bereikt. Druk op [input=openrpgmenu] om het RPG-menu te openen
+
+noupdatesincombat=Je kunt je attributen, klassen of vaardigheden niet wijzigen tijdens een gevecht
+noactiveskill=Je hebt die actieve vaardigheid niet meer, level hem opnieuw als je hem wilt gebruiken
+
+equipfirst=Je moet eerst een actieve vaardigheid in dit slot uitrusten
+activeskillinuse=Deze vaardigheid is al in gebruik
+anotheractiveskillinuse=Je hebt al een andere vaardigheid in gebruik
+incooldown=Afkoelen
+notenoughstamina=Niet genoeg uithoudingsvermogen
+nograbbableobject=Er is geen grijpbaar object voor je
+
+[ui]
+menutitle=RPG MOD door Save
+attributes=Attributen
+activeskills=Actieve vaardigheden
+classes=Klassen
+
+level=Niveau <level>
+classlevel=<class> niveau <level>
+lvl=Lvl <level>
+eachlevel=Elk niveau biedt:
+experience=XP: <exp> / <nextexp>
+totalexperience=Totaal XP: <exp>
+
+resetpoints=Resetpunten: <points>
+attrpoints=Attribuutpunten: <points>
+classpoints=Klassenpunten: <points>
+passivepoints=Passieve punten: <points>
+activeskillpoints=Actieve vaardigheidspunten: <points>
+
+activeskillsuse=Deze mod verandert het expressiewiel (standaard T-toets) in het actieve vaardighedenwiel
+activeskillsusetip1=Het wordt aanbevolen om de bediening van het expressiewiel te wijzigen in een gemakkelijk toegankelijke toets
+activeskillsusetip2=Je kunt ook een toets toewijzen aan elk actief vaardigheidsslot (ideaal voor vaardigheden met een lage afkoeltijd)
+activeskillsequipinstructions=Klik op een slot om een actieve vaardigheid uit te rusten. Je kunt een actieve vaardigheid niet uitrusten tijdens het afkoelen
+noactiveskills=Je hebt geen actieve vaardigheden. Ontgrendel ze via de klassen
+
+activeskillcooldown=§9Afkoeltijd: <seconds>s
+activeskillcooldownmod=§9Afkoeltijd: [[<seconds> <sign> <mod> x vaardigheidsniveau]]s
+requiredclasslevel=§bKlasseniveau <level> vereist
+requiredactiveskill=§bVereist '<skill>' niveau <level>
+maxlevel=§aMaximaal niveau: <level>
+
+clicktoseebase=[input=mouse1] om basis te zien
+clicktoseelevel=[input=mouse1] om niveau <level> te zien
+
+classlevelseparation=- Klasseniveau <level> -
+
+inuse=In gebruik
+
+upcomingclass=§6Aankomende klasse\n§9Deze klasse is momenteel in ontwikkeling\nen zal beschikbaar zijn in een toekomstige update
+
+addcolumn=Kolom toevoegen
+removecolumn=Kolom verwijderen
+
+
+[controls]
+openrpgmenu=Open RPG-menu
+activeskillslot1=Actief vaardigheidsslot 1
+activeskillslot2=Actief vaardigheidsslot 2
+activeskillslot3=Actief vaardigheidsslot 3
+activeskillslot4=Actief vaardigheidsslot 4

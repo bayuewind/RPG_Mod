@@ -1,0 +1,341 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> atrybut wytrzymałości
+speedattrflat=<mod> atrybut szybkości
+strengthattrflat=<mod> atrybut siły
+intelligenceattrflat=<mod> atrybut inteligencji
+graceattrflat=<mod> atrybut wdzięku
+
+dodgechance=<mod>% szansy na unik
+rangedweaponszoom=<mod> przybliżenie broni dystansowej
+rangedweaponsrange=<mod>% zasięg broni dystansowej
+mobdetectionrange=<mod> zasięg wykrywania mobów
+focusdamage=<mod>% obrażeń od skupienia
+focuschance=<mod>% szansy na skupienie
+
+
+[enchantment]
+evasive=Unikowy
+stalking=Skradanie się
+regenerative=Regeneracyjny
+energetic=Energetyczny
+depleted=Wyczerpany
+
+
+[buff]
+overlevelclassbuff=Klasa ponadpoziomowa
+markedbuff=Oznaczony
+darkcursebuff=Mroczna klątwa
+
+
+[buffdesc]
+overlevelclassbuff1=§9Jedna z twoich klas przekracza limit punktów
+overlevelclassbuff2=§6Nie będziesz mógł kontynuować, dopóki nie zostanie to naprawione
+darkcursebuff1=+25% otrzymywanych obrażeń
+darkcursebuff2=Wszystkie obrażenia zmniejszają również maksymalne zdrowie
+
+
+[mob]
+rpgmobname=[<class>] <name> poz. <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9poz. <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Wojownik
+tank=Tank
+runner=Biegacz
+healer=Uzdrowiciel
+explosive=Wybuchowy
+glacial=Lodowcowy
+electric=Elektryczny
+flash=Błysk
+dark=Mroczny
+legend=Legenda
+
+
+[attributes]
+endurance=Wytrzymałość
+strength=Siła
+speed=Szybkość
+intelligence=Inteligencja
+grace=Wdzięk
+
+
+[classes]
+warrior=Wojownik
+ranger=Łowca
+wizard=Czarodziej
+necromancer=Nekromanta
+cleric=Kleryk
+rogue=Łotrzyk
+warlock=Czarnoksiężnik
+paladin=Paladyn
+druid=Druid
+
+
+[passives]
+passives=Pasywne
+
+// Wojownik
+regeneration=Regeneracja
+muscles=Mięśnie
+legs=Nogi
+force=Siła
+unstoppable=Niepowstrzymany
+vigor=Wigor
+ironskin=Żelazna skóra
+unleashingrage=Uwolnienie wściekłości
+unleashinghaste=Uwolnienie pośpiechu
+unyielding=Niezłomny
+lastbreath=Ostatni oddech
+
+// Łowca
+aim=Cel
+agility=Zręczność
+criticalshots=Strzały krytyczne
+energy=Energia
+recovery=Odzyskiwanie
+eagleeye=Orle oko
+focus=Skupienie
+erradication=Wytępienie
+predatorsense=Zmysł drapieżnika
+plasmagrenade=Granat plazmowy
+wolfcompanion=Wilczy towarzysz
+
+
+[passivesdesc]
+
+// Wojownik
+unleashingrage=Każdy poziom zapewnia:
+
++1% wszystkich obrażeń za każde 10% brakującego zdrowia
+unleashinghaste=Każdy poziom zapewnia:
+
++1% prędkości ruchu za każde 10% brakującego zdrowia
+unyielding=Każdy poziom zapewnia:
+
++5% prędkości ataku i -5% otrzymywanych obrażeń poniżej 20% zdrowia
+lastbreath=Zamiast umierać, stajesz się niewrażliwy na §a[[3 x poziom umiejętności]] sekund§0
+Gdy czas minie, umrzesz
+
+// Łowca
+plasmagrenade=Co 8 ataków dystansowych wystrzeliwuje naprowadzany pocisk wybuchowy, który zadaje §i[[30 x poziom umiejętności]]%§0 obrażeń broni
+wolfcompanion=Wilczy towarzysz będzie atakował oznaczone wrogów, zadając §i[[poziom gracza x poziom umiejętności + inteligencja x poziom umiejętności]] obrażeń przywoływacza§0
+
+
+[activeskills]
+empty=Pusty
+
+// Wojownik
+fury=Furia
+recovery=Odzyskiwanie
+provocation=Prowokacja
+berserkercharge=Szarża berserkera
+
+groundslam=Uderzenie w ziemię
+grounddestruction=Zniszczenie ziemi
+parry=Parowanie
+battlecry=Okrzyk bojowy
+
+ironguard=Żelazna straż
+thornedguard=Ciernista straż
+intimidation=Zastraszenie
+
+objectthrowing=Rzucanie przedmiotami
+
+// Łowca
+shortdash=Krótki doskok
+longdash=Długi doskok
+lethalshot=Zabójczy strzał
+venomshot=Jadowity strzał
+explosivearrow=Wybuchowa strzała
+
+shotsrampage=Szał strzałów
+huntersmark=Znak łowcy
+beartrap=Niedźwiedzia pułapka
+
+huntersinstinct=Instynkt łowcy
+arrowstorm=Burza strzał
+
+
+[activeskillsdesc]
+
+// Wojownik
+fury=Przez następne 6 sekund zwiększ swoje obrażenia w walce wręcz i prędkość ataku o §a[[20 x poziom umiejętności]]%
+recovery=Przez następne 10 sekund znacznie zwiększa regenerację zdrowia w walce, przywracając §a[[20 + wytrzymałość x poziom umiejętności]] zdrowia§0 w czasie trwania
+provocation=Przez następne §a[[2 x poziom umiejętności]] sekund§0 zmuś pobliskich wrogów do skupienia na tobie swoich ataków
+berserkercharge=Szarżuj do przodu na niewielką odległość, zadając §i[[10 x poziom gracza + 2 x siła x poziom umiejętności + 2 x szybkość x poziom umiejętności]] obrażeń§0 wszystkim mijanym wrogom
+Zużywa 50% wytrzymałości
+groundslam=Atak obszarowy, który zadaje §i[[5 x siła]] obrażeń w walce wręcz§0 i §9ogłusza§0 na §a[[1 x poziom umiejętności]] sekund§0
+grounddestruction=Atak obszarowy, który zadaje §i[[5 x siła x poziom umiejętności + 5 x poziom gracza x poziom umiejętności]] obrażeń w walce wręcz§0 i §9ogłusza§0 na 2 sekundy
+parry=Stajesz się niewrażliwy na 0,5 sekundy i zwracasz 500% pierwotnych otrzymanych obrażeń
+Zużywa 100% wytrzymałości
+battlecry=Przez następne 10 sekund zwiększ swoje i pobliskich sojuszników wszystkie obrażenia i prędkość ruchu o §a[[10 x poziom umiejętności]]%
+
+ironguard=-50% otrzymywanych obrażeń przez §a[[4 x poziom umiejętności]] sekund
+thornedguard=-50% otrzymywanych obrażeń przez 12 sekund
+Dodatkowo zwraca §a[[100 x poziom umiejętności]]%§0 pierwotnych otrzymanych obrażeń
+intimidation=Przez następne §a[[poziom umiejętności]] sekund§0 spraw, by pobliscy wrogowie uciekli
+
+objectthrowing=Krok 1: Chwyć przedmiot przed sobą
+Krok 2: Rzuć go do przodu, zadając §i[[20 x poziom gracza + 5 x siła x poziom umiejętności]] obrażeń w walce wręcz§0
+Oba kroki zużywają całą twoją wytrzymałość (co najmniej 100%)
+
+// Łowca
+shortdash=Wykonaj doskok o sile 100
+Zużywa 15% wytrzymałości
+longdash=Wykonaj doskok o sile 150
+Zużywa 25% wytrzymałości
+lethalshot=Wystrzel §hzabójczą strzałę§0 w najbliższego wroga, zadając §i[[5 x poziom gracza + 5 x siła x poziom umiejętności]] obrażeń łowcy§0
+venomshot=Wystrzel §bjadowitą strzałę§0 w najbliższego wroga, zadając §i[[4 x poziom gracza + 2 x siła x poziom umiejętności + 2 x inteligencja x poziom umiejętności]] obrażeń łowcy§0
+explosiveshot=Wystrzel §iwybuchową strzałę§0 w najbliższego wroga, zadając §i[[4 x poziom gracza + 2 x siła x poziom umiejętności + 2 x inteligencja x poziom umiejętności]] obrażeń łowcy§0
+
+shotsrampage=Gdy masz co najmniej 1 stos szału strzałów, trafienie wroga atakiem dystansowym daje 1 dodatkowy stos na 5 sekund
+Każdy stos szału strzałów zwiększa prędkość ataku o 5%, do maksymalnie 30 stosów
+huntersmark=§hOznacz§0 najbliższego wroga o najwyższym zdrowiu na 10 sekund
+Jeśli zabijesz oznaczony cel, zyskasz §a+[[20 x poziom umiejętności]]%§0 prędkości ataku dystansowego i prędkości ruchu na 5 sekund
+beartrap=Umieść na ziemi niedźwiedzią pułapkę, która zniknie po uruchomieniu lub po 20 sekundach
+Jeśli wróg ją uruchomi, otrzyma §i[[10 x poziom gracza]] obrażeń§0 i zostanie uwięziony na 5 sekund
+
+huntersinstinct=Przez następne 12 sekund zwiększ swoją §7szansę na unik§0 o §a[[10 x poziom umiejętności]]%
+§hOznacz§0 na 5 sekund wrogów, których unikniesz
+arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając §i[[2 x poziom gracza + siła x poziom umiejętności + szybkość x poziom umiejętności]] obrażeń łowcy§0 każdą strzałą
+
+[skillsdesckeys]
+x=x
+skilllevel=Poziom umiejętności
+playerlevel=Poziom gracza
+endurance=Wytrzymałość
+speed=Szybkość
+strength=Siła
+intelligence=Inteligencja
+grace=Wdzięk
+
+
+[extraskilldesc]
+// Wzmocnienia
+marked=§hOznaczony:§0 Zadaj +20% obrażeń (+ §hobrażeń od skupienia§0) i +10% szansy na trafienie krytyczne mobom, które oznaczysz
+Wszystkie naprowadzane i/lub wystrzelone w najbliższego wroga pociski będą priorytetowo traktować oznaczone wrogów
+
+// Modyfikatory szans
+dodgechance=§7Szansa na unik:§0 Szansa na uniknięcie nadchodzących ataków. Nie może przekroczyć 80%
+focuschance=§hSzansa na skupienie:§0 Szansa na §hoznaczenie§0 moba na 5 sekund po zaatakowaniu obrażeniami innymi niż przywoływacza
+
+// Modyfikatory płaskie
+mobdetection=§9Wykrywanie mobów:§0 Wyświetla pobliskie moby na mapie. Większy zasięg wykrywania ujawnia moby z dalszej odległości
+
+// Pociski
+lethalarrow=§hZabójcza strzała:§0 Naprowadzana strzała, która gwarantuje trafienie krytyczne
+venomarrow=§bJadowita strzała:§0 Naprowadzana strzała, która zatruwa wrogów, powtarzając 10% swoich pierwotnych obrażeń na sekundę przez 30 sekund
+explosivearrow=§iWybuchowa strzała:§0 Naprowadzana strzała, która powoduje magiczną eksplozję o równych obrażeniach
+
+
+[item]
+scrollofoblivion=Zwój zapomnienia
+ringsbox=Pudełko na pierścienie
+
+// Pierścienie atrybutów
+endurancewoodring=Drewniany pierścień wytrzymałości
+endurancecopperring=Miedziany pierścień wytrzymałości
+enduranceironring=Żelazny pierścień wytrzymałości
+endurancegoldring=Złoty pierścień wytrzymałości
+
+speedwoodring=Drewniany pierścień szybkości
+speedcopperring=Miedziany pierścień szybkości
+speedgoldring=Złoty pierścień szybkości
+speedironring=Żelazny pierścień szybkości
+
+strengthwoodring=Drewniany pierścień siły
+strengthcopperring=Miedziany pierścień siły
+strengthgoldring=Złoty pierścień siły
+strengthironring=Żelazny pierścień siły
+
+intelligencewoodring=Drewniany pierścień inteligencji
+intelligencecopperring=Miedziany pierścień inteligencji
+intelligencegoldring=Złoty pierścień inteligencji
+intelligenceironring=Żelazny pierścień inteligencji
+
+gracewoodring=Drewniany pierścień wdzięku
+gracecopperring=Miedziany pierścień wdzięku
+graceironring=Żelazny pierścień wdzięku
+gracegoldring=Złoty pierścień wdzięku
+
+
+[itemtooltip]
+scrollofoblivion=Daje 2 punkty resetu
+ringsboxtip=Może przechowywać pierścienie atrybutów
+
+
+[message]
+xp=PD
+levelup=Awans!
+unik=Unik!
+
+newmobkill=Zdobyłeś <exp> doświadczenia za zabicie <mob> po raz pierwszy
+newlevel=Gratulacje! Osiągnąłeś poziom <level>. Naciśnij [input=openrpgmenu], aby otworzyć menu RPG
+
+noupdatesincombat=Nie możesz modyfikować swoich atrybutów, klas ani umiejętności podczas walki
+noactiveskill=Nie masz już tej aktywnej umiejętności, awansuj ją ponownie, jeśli chcesz jej użyć
+
+equipfirst=Najpierw musisz wyposażyć aktywną umiejętność w tym gnieździe
+activeskillinuse=Ta umiejętność jest już w użyciu
+anotheractiveskillinuse=Masz już inną umiejętność w użyciu
+incooldown=W trakcie odnawiania
+notenoughstamina=Za mało wytrzymałości
+nograbbableobject=Przed tobą nie ma żadnego przedmiotu do chwycenia
+
+[ui]
+menutitle=MOD RPG autorstwa Save
+attributes=Atrybuty
+activeskills=Umiejętności aktywne
+classes=Klasy
+
+level=Poziom <level>
+classlevel=<class> poziom <level>
+lvl=Poz. <level>
+eachlevel=Każdy poziom zapewnia:
+experience=PD: <exp> / <nextexp>
+totalexperience=Całkowite PD: <exp>
+
+resetpoints=Punkty resetu: <points>
+attrpoints=Punkty atrybutów: <points>
+classpoints=Punkty klasowe: <points>
+passivepoints=Punkty pasywne: <points>
+activeskillpoints=Punkty umiejętności aktywnych: <points>
+
+activeskillsuse=Ten mod zamienia koło ekspresji (domyślnie klawisz T) w koło umiejętności aktywnych
+activeskillsusetip1=Zaleca się zmianę sterowania kołem ekspresji na łatwo dostępny klawisz
+activeskillsusetip2=Możesz również przypisać klawisz do każdego gniazda umiejętności aktywnej (idealne dla umiejętności o krótkim czasie odnowienia)
+activeskillsequipinstructions=Kliknij gniazdo, aby wyposażyć aktywną umiejętność. Nie możesz zdjąć aktywnej umiejętności w trakcie odnawiania
+noactiveskills=Nie masz żadnych umiejętności aktywnych. Odblokuj je poprzez klasy
+
+activeskillcooldown=§9Czas odnowienia: <seconds>s
+activeskillcooldownmod=§9Czas odnowienia: [[<seconds> <sign> <mod> x poziom umiejętności]]s
+requiredclasslevel=§bWymagany poziom klasy <level>
+requiredactiveskill=§bWymaga '<skill>' poziomu <level>
+maxlevel=§aMaksymalny poziom: <level>
+
+clicktoseebase=[input=mouse1], aby zobaczyć bazę
+clicktoseelevel=[input=mouse1], aby zobaczyć poziom <level>
+
+classlevelseparation=- Poziom klasy <level> -
+
+inuse=W użyciu
+
+upcomingclass=§6Nadchodząca klasa\n§9Ta klasa jest obecnie w fazie rozwoju\ni będzie dostępna w przyszłej aktualizacji
+
+addcolumn=Dodaj kolumnę
+removecolumn=Usuń kolumnę
+
+
+[controls]
+openrpgmenu=Otwórz menu RPG
+activeskillslot1=Gniazdo umiejętności aktywnej 1
+activeskillslot2=Gniazdo umiejętności aktywnej 2
+activeskillslot3=Gniazdo umiejętności aktywnej 3
+activeskillslot4=Gniazdo umiejętności aktywnej 4

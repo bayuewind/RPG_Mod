@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> attributo di resistenza
+speedattrflat=<mod> attributo di velocità
+strengthattrflat=<mod> attributo di forza
+intelligenceattrflat=<mod> attributo di intelligenza
+graceattrflat=<mod> attributo di grazia
+
+dodgechance=<mod>% di probabilità di schivata
+rangedweaponszoom=<mod> zoom delle armi a distanza
+rangedweaponsrange=<mod>% di gittata delle armi a distanza
+mobdetectionrange=<mod> raggio di rilevamento dei mob
+focusdamage=<mod>% di danno da concentrazione
+focuschance=<mod>% di probabilità di concentrazione
+
+
+[enchantment]
+evasive=Evasivo
+stalking=Inseguimento
+regenerative=Rigenerativo
+energetic=Energetico
+depleted=Esaurito
+
+
+[buff]
+overlevelclassbuff=Classe di livello superiore
+markedbuff=Marcato
+darkcursebuff=Maledizione oscura
+
+
+[buffdesc]
+overlevelclassbuff1=§9Una delle tue classi supera un limite di punti
+overlevelclassbuff2=§6Non potrai procedere finché non sarà risolto
+darkcursebuff1=+25% di danni in arrivo
+darkcursebuff2=Tutti i danni riducono anche la salute massima
+
+
+[mob]
+rpgmobname=[<class>] <name> liv <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9liv <level>§0
+
+
+[mobclass]
+boss=Boss
+warrior=Guerriero
+tank=Tank
+runner=Corridore
+healer=Guaritore
+explosive=Esplosivo
+glacial=Glaciale
+electric=Elettrico
+flash=Lampo
+dark=Oscuro
+legend=Leggenda
+
+
+[attributes]
+endurance=Resistenza
+strength=Forza
+speed=Velocità
+intelligence=Intelligenza
+grace=Grazia
+
+
+[classes]
+warrior=Guerriero
+ranger=Ranger
+wizard=Mago
+necromancer=Negromante
+cleric=Chierico
+rogue=Ladro
+warlock=Stregone
+paladin=Paladino
+druid=Druido
+
+
+[passives]
+passives=Passive
+
+// Guerriero
+regeneration=Rigenerazione
+muscles=Muscoli
+legs=Gambe
+force=Forza
+unstoppable=Inarrestabile
+vigor=Vigore
+ironskin=Pelle di ferro
+unleashingrage=Rabbia scatenata
+unleashinghaste=Fretta scatenata
+unyielding=Inflessibile
+lastbreath=Ultimo respiro
+
+// Ranger
+aim=Mira
+agility=Agilità
+criticalshots=Colpi critici
+energy=Energia
+recovery=Recupero
+eagleeye=Occhio di falco
+focus=Concentrazione
+erradication=Sradicamento
+predatorsense=Senso del predatore
+plasmagrenade=Granata al plasma
+wolfcompanion=Compagno lupo
+
+
+[passivesdesc]
+
+// Guerriero
+unleashingrage=Ogni livello fornisce:\n\n+1% di tutti i danni per ogni 10% di salute mancante
+unleashinghaste=Ogni livello fornisce:\n\n+1% di velocità di movimento per ogni 10% di salute mancante
+unyielding=Ogni livello fornisce:\n\n+5% di velocità d'attacco e -5% di danni in arrivo al di sotto del 20% di salute
+lastbreath=Invece di morire, diventi invulnerabile per §a[[3 x livello abilità]] secondi§0\nUna volta scaduto il tempo, morirai
+
+// Ranger
+plasmagrenade=Ogni 8 attacchi a distanza, spara un proiettile esplosivo guidato che infligge il §i[[30 x livello abilità]]%§0 dei danni dell'arma
+wolfcompanion=Un compagno lupo attaccherà i nemici marchiati infliggendo §i[[livello giocatore x livello abilità + intelligenza x livello abilità]] danni da evocatore§0
+
+
+[activeskills]
+empty=Vuoto
+
+// Guerriero
+fury=Furia
+recovery=Recupero
+provocation=Provocazione
+berserkercharge=Carica del berserker
+
+groundslam=Schianto a terra
+grounddestruction=Distruzione del terreno
+parry=Parata
+battlecry=Grido di battaglia
+
+ironguard=Guardia di ferro
+thornedguard=Guardia spinata
+intimidation=Intimidazione
+
+objectthrowing=Lancio di oggetti
+
+// Ranger
+shortdash=Scatto breve
+longdash=Scatto lungo
+lethalshot=Colpo letale
+venomshot=Colpo velenoso
+explosivearrow=Freccia esplosiva
+
+shotsrampage=Furia di colpi
+huntersmark=Marchio del cacciatore
+beartrap=Trappola per orsi
+
+huntersinstinct=Istinto del cacciatore
+arrowstorm=Tempesta di frecce
+
+
+[activeskillsdesc]
+
+// Guerriero
+fury=Per i prossimi 6 secondi, aumenta i tuoi danni in mischia e la velocità d'attacco del §a[[20 x livello abilità]]%
+recovery=Per i prossimi 10 secondi, aumenta notevolmente la rigenerazione della salute in combattimento, ripristinando §a[[20 + resistenza x livello abilità]] salute§0 nel corso della durata
+provocation=Per i prossimi §a[[2 x livello abilità]] secondi§0, costringi i nemici vicini a concentrare i loro attacchi su di te
+berserkercharge=Scatta in avanti per una breve distanza, infliggendo §i[[10 x livello giocatore + 2 x forza x livello abilità + 2 x velocità x livello abilità]] danni§0 a tutti i nemici superati\nConsuma il 50% della resistenza
+groundslam=Attacco ad area che infligge §i[[5 x forza]] danni in mischia§0 e §9stordisce§0 per §a[[1 x livello abilità]] secondi§0
+grounddestruction=Attacco ad area che infligge §i[[5 x forza x livello abilità + 5 x livello giocatore x livello abilità]] danni in mischia§0 e §9stordisce§0 per 2 secondi
+parry=Diventa invulnerabile per 0,5 secondi e restituisci il 500% dei danni originali ricevuti\nConsuma il 100% della resistenza
+battlecry=Per i prossimi 10 secondi, aumenta i tuoi danni e quelli degli alleati vicini e la loro velocità di movimento del §a[[10 x livello abilità]]%
+
+ironguard=-50% di danni in arrivo per §a[[4 x livello abilità]] secondi
+thornedguard=-50% di danni in arrivo per 12 secondi\nInoltre, restituisce il §a[[100 x livello abilità]]%§0 dei danni originali ricevuti
+intimidation=Per i prossimi §a[[livello abilità]] secondi§0, fai fuggire i nemici vicini
+
+objectthrowing=Passaggio 1: afferra un oggetto di fronte a te\nPassaggio 2: lancialo in avanti infliggendo §i[[20 x livello giocatore + 5 x forza x livello abilità]] danni in mischia§0\nEntrambi i passaggi consumano tutta la tua resistenza (almeno il 100%)
+
+// Ranger
+shortdash=Esegui uno scatto da 100 di forza\nConsuma il 15% della resistenza
+longdash=Esegui uno scatto da 150 di forza\nConsuma il 25% della resistenza
+lethalshot=Spara una §hfreccia letale§0 al nemico più vicino, infliggendo §i[[5 x livello giocatore + 5 x forza x livello abilità]] danni da ranger§0
+venomshot=Spara una §bfreccia velenosa§0 al nemico più vicino, infliggendo §i[[4 x livello giocatore + 2 x forza x livello abilità + 2 x intelligenza x livello abilità]] danni da ranger§0
+explosiveshot=Spara una §ifreccia esplosiva§0 al nemico più vicino, infliggendo §i[[4 x livello giocatore + 2 x forza x livello abilità + 2 x intelligenza x livello abilità]] danni da ranger§0
+
+shotsrampage=Mentre hai almeno 1 pila di Furia di colpi, colpire un nemico con un attacco a distanza garantisce 1 pila aggiuntiva per 5 secondi\nOgni pila di Furia di colpi aumenta la velocità d'attacco del 5%, fino a un massimo di 30 pile
+huntersmark=§hMarchia§0 il nemico vicino con la salute più alta per 10 secondi\nSe uccidi un bersaglio marchiato, ottieni §a+[[20 x livello abilità]]%§0 di velocità d'attacco a distanza e velocità di movimento per 5 secondi
+beartrap=Piazza una trappola per orsi a terra che scompare se attivata o dopo 20 secondi\nSe un nemico la attiva, subirà §i[[10 x livello giocatore]] danni§0 e rimarrà intrappolato per 5 secondi
+
+huntersinstinct=Per i prossimi 12 secondi, aumenta la tua §7probabilità di schivata§0 del §a[[10 x livello abilità]]%\n§hMarchia§0 per 5 secondi i nemici che schivi
+arrowstorm=Spara una freccia base a ogni nemico vicino, infliggendo §i[[2 x livello giocatore + forza x livello abilità + velocità x livello abilità]] danni da ranger§0 per ogni freccia
+
+[skillsdesckeys]
+x=x
+skilllevel=Livello abilità
+playerlevel=Livello giocatore
+endurance=Resistenza
+speed=Velocità
+strength=Forza
+intelligence=Intelligenza
+grace=Grazia
+
+
+[extraskilldesc]
+// Buff
+marked=§hMarcato:§0 Infliggi +20% di danni (+ §hdanno da concentrazione§0) e +10% di probabilità di colpo critico ai mob che marchi\nTutti i proiettili guidati e/o sparati al nemico più vicino daranno la priorità ai nemici marchiati
+
+// Modificatori di probabilità
+dodgechance=§7Probabilità di schivata:§0 Probabilità di schivare gli attacchi in arrivo. Non può superare l'80%
+focuschance=§hProbabilità di concentrazione:§0 Probabilità di §hmarchiare§0 un mob per 5 secondi quando viene attaccato con danni non da evocatore
+
+// Modificatori fissi
+mobdetection=§9Rilevamento mob:§0 Mostra i mob vicini sulla mappa. Un raggio di rilevamento più elevato rivela i mob da più lontano
+
+// Proiettili
+lethalarrow=§hFreccia letale:§0 Freccia guidata che garantisce un colpo critico
+venomarrow=§bFreccia velenosa:§0 Freccia guidata che avvelena i nemici, ripetendo il 10% del suo danno originale al secondo per 30 secondi
+explosivearrow=§iFreccia esplosiva:§0 Freccia guidata che provoca un'esplosione magica di pari danno
+
+
+[item]
+scrollofoblivion=Pergamena dell'oblio
+ringsbox=Scatola degli anelli
+
+// Anelli degli attributi
+endurancewoodring=Anello di legno della resistenza
+endurancecopperring=Anello di rame della resistenza
+enduranceironring=Anello di ferro della resistenza
+endurancegoldring=Anello d'oro della resistenza
+
+speedwoodring=Anello di legno della velocità
+speedcopperring=Anello di rame della velocità
+speedgoldring=Anello d'oro della velocità
+speedironring=Anello di ferro della velocità
+
+strengthwoodring=Anello di legno della forza
+strengthcopperring=Anello di rame della forza
+strengthgoldring=Anello d'oro della forza
+strengthironring=Anello di ferro della forza
+
+intelligencewoodring=Anello di legno dell'intelligenza
+intelligencecopperring=Anello di rame dell'intelligenza
+intelligencegoldring=Anello d'oro dell'intelligenza
+intelligenceironring=Anello di ferro dell'intelligenza
+
+gracedwoodring=Anello di legno della grazia
+gracecopperring=Anello di rame della grazia
+graceironring=Anello di ferro della grazia
+gracegoldring=Anello d'oro della grazia
+
+
+[itemtooltip]
+scrollofoblivion=Conferisce 2 punti di ripristino
+ringsboxtip=Può contenere anelli degli attributi
+
+
+[message]
+xp=ESP
+levelup=Aumento di livello!
+dodge=Schivata!
+
+newmobkill=Hai guadagnato <exp> esperienza per aver ucciso <mob> per la prima volta
+newlevel=Congratulazioni! Hai raggiunto il livello <level>. Premi [input=openrpgmenu] per aprire il menu RPG
+
+noupdatesincombat=Non puoi modificare i tuoi attributi, classi o abilità durante il combattimento
+noactiveskill=Non hai più quell'abilità attiva, aumentala di livello di nuovo se vuoi usarla
+
+equipfirst=Devi prima equipaggiare un'abilità attiva in questo slot
+activeskillinuse=Questa abilità è già in uso
+anotheractiveskillinuse=Hai già un'altra abilità in uso
+incooldown=In ricarica
+notenoughstamina=Resistenza insufficiente
+nograbbableobject=Non c'è nessun oggetto afferrabile di fronte a te
+
+[ui]
+menutitle=MOD RPG di Save
+attributes=Attributi
+activeskills=Abilità attive
+classes=Classi
+
+level=Livello <level>
+classlevel=<class> livello <level>
+lvl=Liv <level>
+eachlevel=Ogni livello fornisce:
+experience=ESP: <exp> / <nextexp>
+totalexperience=ESP totale: <exp>
+
+resetpoints=Punti di ripristino: <points>
+attrpoints=Punti attributo: <points>
+classpoints=Punti classe: <points>
+passivepoints=Punti passivi: <points>
+activeskillpoints=Punti abilità attiva: <points>
+
+activeskillsuse=Questa mod trasforma la ruota delle espressioni (tasto T per impostazione predefinita) nella ruota delle abilità attive
+activeskillsusetip1=Si consiglia di cambiare il controllo della ruota delle espressioni con un tasto facilmente accessibile
+activeskillsusetip2=Puoi anche assegnare un tasto a ogni slot di abilità attiva (ideale per abilità a bassa ricarica)
+activeskillsequipinstructions=Fai clic su uno slot per equipaggiare un'abilità attiva. Non puoi disequipaggiare un'abilità attiva in ricarica
+noactiveskills=Non hai abilità attive. Sbloccale attraverso le classi
+
+activeskillcooldown=§9Ricarica: <seconds>s
+activeskillcooldownmod=§9Ricarica: [[<seconds> <sign> <mod> x livello abilità]]s
+requiredclasslevel=§bLivello classe <level> richiesto
+requiredactiveskill=§bRichiede '<skill>' livello <level>
+maxlevel=§aLivello massimo: <level>
+
+clicktoseebase=[input=mouse1] per vedere la base
+clicktoseelevel=[input=mouse1] per vedere il livello <level>
+
+classlevelseparation=- Livello classe <level> -
+
+inuse=In uso
+
+upcomingclass=§6Classe imminente\n§9Questa classe è attualmente in fase di sviluppo\ne sarà disponibile in un futuro aggiornamento
+
+addcolumn=Aggiungi colonna
+removecolumn=Rimuovi colonna
+
+
+[controls]
+openrpgmenu=Apri menu RPG
+activeskillslot1=Slot abilità attiva 1
+activeskillslot2=Slot abilità attiva 2
+activeskillslot3=Slot abilità attiva 3
+activeskillslot4=Slot abilità attiva 4

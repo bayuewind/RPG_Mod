@@ -1,0 +1,322 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> 인내 속성
+speedattrflat=<mod> 속도 속성
+strengthattrflat=<mod> 힘 속성
+intelligenceattrflat=<mod> 지능 속성
+graceattrflat=<mod> 우아함 속성
+
+dodgechance=<mod>% 회피 확률
+rangedweaponszoom=<mod> 원거리 무기 줌
+rangedweaponsrange=<mod>% 원거리 무기 사거리
+mobdetectionrange=<mod> 몹 감지 범위
+focusdamage=<mod>% 집중 피해
+focuschance=<mod>% 집중 확률
+
+
+[enchantment]
+evasive=회피
+stalking=잠행
+regenerative=재생
+energetic=활기찬
+depleted=고갈된
+
+
+[buff]
+overlevelclassbuff=오버레벨 클래스
+markedbuff=표식
+darkcursebuff=어둠의 저주
+
+
+[buffdesc]
+overlevelclassbuff1=§9클래스 중 하나가 포인트 제한을 초과했습니다.
+overlevelclassbuff2=§6수정될 때까지 진행할 수 없습니다.
+darkcursebuff1=+25% 받는 피해
+darkcursebuff2=모든 피해는 최대 체력도 감소시킵니다.
+
+
+[mob]
+rpgmobname=[<class>] <name> 레벨 <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9레벨 <level>§0
+
+
+[mobclass]
+boss=보스
+warrior=전사
+tank=탱커
+runner=러너
+healer=힐러
+explosive=폭발성
+glacial=빙하
+electric=전기
+flash=섬광
+dark=어둠
+legend=전설
+
+
+[attributes]
+endurance=인내
+strength=힘
+speed=속도
+intelligence=지능
+grace=우아함
+
+
+[classes]
+warrior=전사
+ranger=레인저
+wizard=마법사
+necromancer=강령술사
+cleric=성직자
+rogue=도적
+warlock=흑마법사
+paladin=성기사
+druid=드루이드
+
+
+[passives]
+passives=패시브
+
+// 전사
+regeneration=재생
+muscles=근육
+legs=다리
+force=힘
+unstoppable=막을 수 없는
+vigor=활력
+ironskin=철갑 피부
+unleashingrage=분노 폭발
+unleashinghaste=가속 폭발
+unyielding=불굴
+lastbreath=마지막 숨결
+
+// 레인저
+aim=조준
+agility=민첩
+criticalshots=치명타
+energy=에너지
+recovery=회복
+eagleeye=매의 눈
+focus=집중
+erradication=근절
+predatorsense=포식자의 감각
+plasmagrenade=플라즈마 수류탄
+wolfcompanion=늑대 동료
+
+
+[passivesdesc]
+
+// 전사
+unleashingrage=각 레벨은 다음을 제공합니다:\n\n잃은 체력 10%당 모든 피해 +1%
+unleashinghaste=각 레벨은 다음을 제공합니다:\n\n잃은 체력 10%당 이동 속도 +1%
+unyielding=각 레벨은 다음을 제공합니다:\n\n체력이 20% 미만일 때 공격 속도 +5% 및 받는 피해 -5%
+lastbreath=죽는 대신 §a[[3 x 스킬 레벨]]초§0 동안 무적이 됩니다.\n시간이 다 되면 죽습니다.
+
+// 레인저
+plasmagrenade=8번의 원거리 공격마다 무기 피해의 §i[[30 x 스킬 레벨]]%§0를 입히는 유도 폭발 발사체를 발사합니다.
+wolfcompanion=늑대 동료가 표식이 있는 적을 공격하여 §i[[플레이어 레벨 x 스킬 레벨 + 지능 x 스킬 레벨]]의 소환사 피해§0를 입힙니다.
+
+
+[activeskills]
+empty=비어 있음
+
+// 전사
+fury=분노
+recovery=회복
+provocation=도발
+berserkercharge=광전사의 돌진
+
+groundslam=지면 강타
+grounddestruction=지면 파괴
+parry=막기
+battlecry=전투의 함성
+
+ironguard=철의 방패
+thornedguard=가시 방패
+intimidation=위협
+
+objectthrowing=물건 던지기
+
+// 레인저
+shortdash=짧은 돌진
+longdash=긴 돌진
+lethalshot=치명적인 사격
+venomshot=독화살
+explosivearrow=폭발 화살
+
+shotsrampage=사격 난사
+huntersmark=사냥꾼의 표식
+beartrap=곰 덫
+
+huntersinstinct=사냥꾼의 본능
+arrowstorm=화살 폭풍
+
+
+[activeskillsdesc]
+
+// 전사
+fury=다음 6초 동안 근접 피해와 공격 속도가 §a[[20 x 스킬 레벨]]%§0 증가합니다.
+recovery=다음 10초 동안 전투 중 체력 재생을 크게 향상시켜 지속 시간 동안 §a[[20 + 인내 x 스킬 레벨]]의 체력§0을 회복합니다.
+provocation=다음 §a[[2 x 스킬 레벨]]초§0 동안 주변의 적들이 당신에게 공격을 집중하도록 강요합니다.
+berserkercharge=짧은 거리를 돌진하여 지나가는 모든 적에게 §i[[10 x 플레이어 레벨 + 2 x 힘 x 스킬 레벨 + 2 x 속도 x 스킬 레벨]]의 피해§0를 입힙니다.\n체력을 50% 소모합니다.
+groundslam=§i[[5 x 힘]]의 근접 피해§0를 입히고 §a[[1 x 스킬 레벨]]초§0 동안 §9기절§0시키는 지역 공격
+grounddestruction=§i[[5 x 힘 x 스킬 레벨 + 5 x 플레이어 레벨 x 스킬 레벨]]의 근접 피해§0를 입히고 2초 동안 §9기절§0시키는 지역 공격
+parry=0.5초 동안 무적이 되고 받은 원래 피해의 500%를 반환합니다.\n체력을 100% 소모합니다.
+battlecry=다음 10초 동안 당신과 주변 아군의 모든 피해와 이동 속도가 §a[[10 x 스킬 레벨]]%§0 증가합니다.
+
+ironguard=§a[[4 x 스킬 레벨]]초§0 동안 받는 피해 -50%
+thornedguard=12초 동안 받는 피해 -50%\n또한 받은 원래 피해의 §a[[100 x 스킬 레벨]]%§0를 반환합니다.
+intimidation=다음 §a[[스킬 레벨]]초§0 동안 주변의 적들을 도망치게 만듭니다.
+
+objectthrowing=1단계: 앞에 있는 물건을 잡습니다.\n2단계: 앞으로 던져 §i[[20 x 플레이어 레벨 + 5 x 힘 x 스킬 레벨]]의 근접 피해§0를 입힙니다.\n두 단계 모두 모든 체력을 소모합니다(최소 100%).
+
+// 레인저
+shortdash=100의 힘으로 돌진합니다.\n체력을 15% 소모합니다.
+longdash=150의 힘으로 돌진합니다.\n체력을 25% 소모합니다.
+lethalshot=가장 가까운 적에게 §h치명적인 화살§0을 발사하여 §i[[5 x 플레이어 레벨 + 5 x 힘 x 스킬 레벨]]의 레인저 피해§0를 입힙니다.
+venomshot=가장 가까운 적에게 §b독화살§0을 발사하여 §i[[4 x 플레이어 레벨 + 2 x 힘 x 스킬 레벨 + 2 x 지능 x 스킬 레벨]]의 레인저 피해§0를 입힙니다.
+explosiveshot=가장 가까운 적에게 §i폭발 화살§0을 발사하여 §i[[4 x 플레이어 레벨 + 2 x 힘 x 스킬 레벨 + 2 x 지능 x 스킬 레벨]]의 레인저 피해§0를 입힙니다.
+
+shotsrampage=사격 난사 스택이 1개 이상 있는 동안 원거리 공격으로 적을 맞추면 5초 동안 추가 스택이 1개 부여됩니다.\n사격 난사의 각 스택은 공격 속도를 5% 증가시키며 최대 30개까지 중첩됩니다.
+huntersmark=가장 체력이 높은 주변의 적을 10초 동안 §h표식§0합니다.\n표식이 있는 대상을 죽이면 5초 동안 원거리 공격 속도와 이동 속도가 §a+[[20 x 스킬 레벨]]%§0 증가합니다.
+beartrap=땅에 곰 덫을 설치합니다. 발동되거나 20초 후에 사라집니다.\n적이 발동하면 §i[[10 x 플레이어 레벨]]의 피해§0를 입고 5초 동안 덫에 걸립니다.
+
+huntersinstinct=다음 12초 동안 §7회피 확률§0이 §a[[10 x 스킬 레벨]]%§0 증가합니다.\n회피한 적을 5초 동안 §h표식§0합니다.
+arrowstorm=주변의 각 적에게 기본 화살을 발사하여 각 화살마다 §i[[2 x 플레이어 레벨 + 힘 x 스킬 레벨 + 속도 x 스킬 레벨]]의 레인저 피해§0를 입힙니다.
+
+[skillsdesckeys]
+x=x
+skilllevel=스킬 레벨
+playerlevel=플레이어 레벨
+endurance=인내
+speed=속도
+strength=힘
+intelligence=지능
+grace=우아함
+
+
+[extraskilldesc]
+// 버프
+marked=§h표식:§0 표식이 있는 몹에게 +20% 피해(+§h집중 피해§0) 및 +10% 치명타 확률을 부여합니다.\n가장 가까운 적에게 유도 및/또는 발사된 모든 발사체는 표식이 있는 적을 우선적으로 공격합니다.
+
+// 확률 수정자
+dodgechance=§7회피 확률:§0 들어오는 공격을 회피할 확률. 80%를 초과할 수 없습니다.
+focuschance=§h집중 확률:§0 소환사 피해가 아닌 피해로 공격받았을 때 5초 동안 몹을 §h표식§0할 확률
+
+// 고정 수정자
+mobdetection=§9몹 감지:§0 주변의 몹을 지도에 표시합니다. 감지 범위가 높을수록 더 멀리 있는 몹을 드러냅니다.
+
+// 발사체
+lethalarrow=§h치명적인 화살:§0 치명타를 보장하는 유도 화살
+venomarrow=§b독화살:§0 적을 중독시키고 30초 동안 초당 원래 피해의 10%를 반복하는 유도 화살
+explosivearrow=§i폭발 화살:§0 동일한 피해의 마법 폭발을 일으키는 유도 화살
+
+
+[item]
+scrollofoblivion=망각의 두루마리
+ringsbox=반지 상자
+
+// 속성 반지
+endurancewoodring=인내의 나무 반지
+endurancecopperring=인내의 구리 반지
+enduranceironring=인내의 철 반지
+endurancegoldring=인내의 금 반지
+
+speedwoodring=속도의 나무 반지
+speedcopperring=속도의 구리 반지
+speedgoldring=속도의 금 반지
+speedironring=속도의 철 반지
+
+strengthwoodring=힘의 나무 반지
+strengthcopperring=힘의 구리 반지
+strengthgoldring=힘의 금 반지
+strengthironring=힘의 철 반지
+
+intelligencewoodring=지능의 나무 반지
+intelligencecopperring=지능의 구리 반지
+intelligencegoldring=지능의 금 반지
+intelligenceironring=지능의 철 반지
+
+gracewoodring=우아함의 나무 반지
+gracecopperring=우아함의 구리 반지
+graceironring=우아함의 철 반지
+gracegoldring=우아함의 금 반지
+
+
+[itemtooltip]
+scrollofoblivion=2개의 초기화 포인트를 부여합니다.
+ringsboxtip=속성 반지를 보관할 수 있습니다.
+
+
+[message]
+xp=경험치
+levelup=레벨 업!
+dodge=회피!
+
+newmobkill=<mob>을 처음으로 처치하여 <exp>의 경험치를 얻었습니다.
+newlevel=축하합니다! 레벨 <level>에 도달했습니다. [input=openrpgmenu]를 눌러 RPG 메뉴를 엽니다.
+
+noupdatesincombat=전투 중에는 속성, 클래스 또는 스킬을 수정할 수 없습니다.
+noactiveskill=더 이상 해당 액티브 스킬이 없습니다. 사용하려면 다시 레벨을 올리세요.
+
+equipfirst=먼저 이 슬롯에 액티브 스킬을 장착해야 합니다.
+activeskillinuse=이 스킬은 이미 사용 중입니다.
+anotheractiveskillinuse=이미 다른 스킬을 사용 중입니다.
+incooldown=재사용 대기 중
+notenoughstamina=체력이 부족합니다.
+nograbbableobject=앞에 잡을 수 있는 물건이 없습니다.
+
+[ui]
+menutitle=Save의 RPG 모드
+attributes=속성
+activeskills=액티브 스킬
+classes=클래스
+
+level=레벨 <level>
+classlevel=<class> 레벨 <level>
+lvl=레벨 <level>
+eachlevel=각 레벨은 다음을 제공합니다:
+experience=경험치: <exp> / <nextexp>
+totalexperience=총 경험치: <exp>
+
+resetpoints=초기화 포인트: <points>
+attrpoints=속성 포인트: <points>
+classpoints=클래스 포인트: <points>
+passivepoints=패시브 포인트: <points>
+activeskillpoints=액티브 스킬 포인트: <points>
+
+activeskillsuse=이 모드는 표현 휠(기본값 T 키)을 액티브 스킬 휠로 바꿉니다.
+activeskillsusetip1=표현 휠 컨트롤을 쉽게 접근할 수 있는 키로 변경하는 것이 좋습니다.
+activeskillsusetip2=각 액티브 스킬 슬롯에 키를 할당할 수도 있습니다(재사용 대기 시간이 짧은 스킬에 이상적).
+activeskillsequipinstructions=슬롯을 클릭하여 액티브 스킬을 장착합니다. 재사용 대기 중인 액티브 스킬은 장착 해제할 수 없습니다.
+noactiveskills=액티브 스킬이 없습니다. 클래스를 통해 잠금 해제하세요.
+
+activeskillcooldown=§9재사용 대기 시간: <seconds>초
+activeskillcooldownmod=§9재사용 대기 시간: [[<seconds> <sign> <mod> x 스킬 레벨]]초
+requiredclasslevel=§b클래스 레벨 <level> 필요
+requiredactiveskill=§b'<skill>' 레벨 <level> 필요
+maxlevel=§a최대 레벨: <level>
+
+clicktoseebase=[input=mouse1]를 눌러 기본 보기
+clicktoseelevel=[input=mouse1]를 눌러 레벨 <level> 보기
+
+classlevelseparation=- 클래스 레벨 <level> -
+
+inuse=사용 중
+
+upcomingclass=§6출시 예정 클래스\n§9이 클래스는 현재 개발 중이며\n향후 업데이트에서 사용할 수 있습니다.
+
+addcolumn=열 추가
+removecolumn=열 제거
+
+
+[controls]
+openrpgmenu=RPG 메뉴 열기
+activeskillslot1=액티브 스킬 슬롯 1
+activeskillslot2=액티브 스킬 슬롯 2
+activeskillslot3=액티브 스킬 슬롯 3
+activeskillslot4=액티브 스킬 슬롯 4

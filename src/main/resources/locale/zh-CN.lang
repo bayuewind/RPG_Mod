@@ -1,0 +1,341 @@
+# Translation made by AI
+
+[global]
+rpgmod=§!RPG Mod
+
+[buffmodifiers]
+enduranceattrflat=<mod> 耐力属性
+speedattrflat=<mod> 速度属性
+strengthattrflat=<mod> 力量属性
+intelligenceattrflat=<mod> 智力属性
+graceattrflat=<mod> 优雅属性
+
+dodgechance=<mod>% 闪避几率
+rangedweaponszoom=<mod> 远程武器变焦
+rangedweaponsrange=<mod>% 远程武器射程
+mobdetectionrange=<mod> 生物探测范围
+focusdamage=<mod>% 专注伤害
+focuschance=<mod>% 专注几率
+
+
+[enchantment]
+evasive=闪避
+stalking=潜行
+regenerative=再生
+energetic=精力充沛
+depleted=枯竭
+
+
+[buff]
+overlevelclassbuff=超等级职业
+markedbuff=已标记
+darkcursebuff=黑暗诅咒
+
+
+[buffdesc]
+overlevelclassbuff1=§9你的一个职业超过了点数限制
+overlevelclassbuff2=§6在修复之前你将无法继续
+darkcursebuff1=+25% 受到伤害
+darkcursebuff2=所有伤害也会降低最大生命值
+
+
+[mob]
+rpgmobname=[<class>] <name> 等级 <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9等级 <level>§0
+
+
+[mobclass]
+boss=首领
+warrior=战士
+tank=坦克
+runner=奔跑者
+healer=治疗者
+explosive=爆炸性
+glacial=冰川
+electric=电
+flash=闪光
+dark=黑暗
+legend=传奇
+
+
+[attributes]
+endurance=耐力
+strength=力量
+speed=速度
+intelligence=智力
+grace=优雅
+
+
+[classes]
+warrior=战士
+ranger=游侠
+wizard=巫师
+necromancer=死灵法师
+cleric=牧师
+rogue=盗贼
+warlock=术士
+paladin=圣骑士
+druid=德鲁伊
+
+
+[passives]
+passives=被动
+
+// 战士
+regeneration=再生
+muscles=肌肉
+legs=腿
+force=力量
+unstoppable=不可阻挡
+vigor=活力
+ironskin=铁皮
+unleashingrage=释放怒火
+unleashinghaste=释放急速
+unyielding=不屈
+lastbreath=最后一口气
+
+// 游侠
+aim=瞄准
+agility=敏捷
+criticalshots=暴击
+energy=能量
+recovery=恢复
+eagleeye=鹰眼
+focus=专注
+erradication=根除
+predatorsense=捕食者感知
+plasmagrenade=等离子手榴弹
+wolfcompanion=狼伙伴
+
+
+[passivesdesc]
+
+// 战士
+unleashingrage=每级提供：
+
+每损失 10% 生命值，所有伤害 +1%
+unleashinghaste=每级提供：
+
+每损失 10% 生命值，移动速度 +1%
+unyielding=每级提供：
+
+生命值低于 20% 时，攻击速度 +5%，受到伤害 -5%
+lastbreath= вместо смерти, станьте неуязвимым на §a[[3 x уровень умения]] секунд§0
+Когда время истечет, вы умрете
+
+// 游侠
+plasmagrenade=每 8 次远程攻击，发射一枚制导爆炸射弹，造成武器伤害的 §i[[30 x 技能等级]]%§0
+wolfcompanion=狼伙伴会攻击被标记的敌人，造成 §i[[玩家等级 x 技能等级 + 智力 x 技能等级]] 的召唤师伤害§0
+
+
+[activeskills]
+empty=空
+
+// 战士
+fury=狂怒
+recovery=恢复
+provocation=挑衅
+berserkercharge=狂战士冲锋
+
+groundslam=地面猛击
+grounddestruction=地面毁灭
+parry=格挡
+battlecry=战吼
+
+ironguard=铁卫
+thornedguard=荆棘卫士
+intimidation=恐吓
+
+objectthrowing=投掷物体
+
+// 游侠
+shortdash=短冲刺
+longdash=长冲刺
+lethalshot=致命射击
+venomshot=剧毒射击
+explosivearrow=爆炸箭
+
+shotsrampage=射击狂暴
+huntersmark=猎人印记
+beartrap=捕熊夹
+
+huntersinstinct=猎人直觉
+arrowstorm=箭雨
+
+
+[activeskillsdesc]
+
+// 战士
+fury=在接下来的 6 秒内，你的近战伤害和攻击速度提高 §a[[20 x 技能等级]]%
+recovery=在接下来的 10 秒内，大幅提升战斗生命恢复，在持续时间内恢复 §a[[20 + 耐力 x 技能等级]] 生命值§0
+provocation=在接下来的 §a[[2 x 技能等级]] 秒内§0，强迫附近的敌人将攻击集中在你身上
+berserkercharge=向前冲一小段距离，对所有经过的敌人造成 §i[[10 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 速度 x 技能等级]] 伤害§0
+消耗 50% 耐力
+groundslam=区域攻击，造成 §i[[5 x 力量]] 近战伤害§0 并 §9眩晕§0 §a[[1 x 技能等级]] 秒§0
+grounddestruction=区域攻击，造成 §i[[5 x 力量 x 技能等级 + 5 x 玩家等级 x 技能等级]] 近战伤害§0 并 §9眩晕§0 2 秒
+parry=在 0.5 秒内变得无敌，并返还 500% 的原始伤害
+消耗 100% 耐力
+battlecry=在接下来的 10 秒内，你和附近盟友的所有伤害和移动速度提高 §a[[10 x 技能等级]]%
+
+ironguard=在 §a[[4 x 技能等级]] 秒内§0，受到伤害 -50%
+thornedguard=在 12 秒内，受到伤害 -50%
+此外，返还 §a[[100 x 技能等级]]%§0 的原始伤害
+intimidation=在接下来的 §a[[技能等级]] 秒内§0，让附近的敌人逃跑
+
+objectthrowing=第 1 步：抓住你面前的一个物体
+第 2 步：向前投掷，造成 §i[[20 x 玩家等级 + 5 x 力量 x 技能等级]] 近战伤害§0
+两个步骤都会消耗你所有的耐力（至少 100%）
+
+// 游侠
+shortdash=短冲刺
+longdash=长冲刺
+lethalshot=向最近的敌人发射一支 §h致命箭§0，造成 §i[[5 x 玩家等级 + 5 x 力量 x 技能等级]] 游侠伤害§0
+venomshot=向最近的敌人发射一支 §b剧毒箭§0，造成 §i[[4 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 智力 x 技能等级]] 游侠伤害§0
+explosiveshot=向最近的敌人发射一支 §i爆炸箭§0，造成 §i[[4 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 智力 x 技能等级]] 游侠伤害§0
+
+shotsrampage=当你至少有 1 层射击狂暴时，用远程攻击击中敌人会在 5 秒内额外获得 1 层
+每层射击狂暴会使攻击速度提高 5%，最多 30 层
+huntersmark=§h标记§0 附近生命值最高的敌人 10 秒
+如果你杀死一个被标记的目标，则在 5 秒内获得 §a+[[20 x 技能等级]]%§0 的远程攻击速度和移动速度
+beartrap=在地上放置一个捕熊夹，如果被触发或 20 秒后会消失
+如果敌人触发它，他们将受到 §i[[10 x 玩家等级]] 伤害§0 并被困住 5 秒
+
+huntersinstinct=在接下来的 12 秒内，你的 §7闪避几率§0 提高 §a[[10 x 技能等级]]%
+§h标记§0 你闪避的敌人 5 秒
+arrowstorm=向每个附近的敌人发射一支基本箭，每支箭造成 §i[[2 x 玩家等级 + 力量 x 技能等级 + 速度 x 技能等级]] 游侠伤害§0
+
+[skillsdesckeys]
+x=x
+skilllevel=技能等级
+playerlevel=玩家等级
+endurance=耐力
+speed=速度
+strength=力量
+intelligence=智力
+grace=优雅
+
+
+[extraskilldesc]
+// 增益
+marked=§h已标记：§0 对你标记的生物造成 +20% 伤害（+ §h专注伤害§0）和 +10% 暴击几率
+所有制导和/或射向最近敌人的射弹将优先攻击被标记的敌人
+
+// 几率修正
+dodgechance=§7闪避几率：§0 闪避来袭攻击的几率。不能超过 80%
+focuschance=§h专注几率：§0 当受到非召唤师伤害攻击时，有几率 §h标记§0 生物 5 秒
+
+// 固定修正
+mobdetection=§9生物探测：§0 在地图上显示附近的生物。更高的探测范围会显示更远的生物
+
+// 射弹
+lethalarrow=§h致命箭：§0 保证暴击的制导箭
+venomarrow=§b剧毒箭：§0 使敌人中毒的制导箭，在 30 秒内每秒重复其原始伤害的 10%
+explosivearrow=§i爆炸箭：§0 造成同等伤害的魔法爆炸的制导箭
+
+
+[item]
+scrollofoblivion=遗忘卷轴
+ringsbox=戒指盒
+
+// 属性戒指
+endurancewoodring=耐力木戒指
+endurancecopperring=耐力铜戒指
+enduranceironring=耐力铁戒指
+endurancegoldring=耐力金戒指
+
+speedwoodring=速度木戒指
+speedcopperring=速度铜戒指
+speedgoldring=速度金戒指
+speedironring=速度铁戒指
+
+strengthwoodring=力量木戒指
+strengthcopperring=力量铜戒指
+strengthgoldring=力量金戒指
+strengthironring=力量铁戒指
+
+intelligencewoodring=智力木戒指
+intelligencecopperring=智力铜戒指
+intelligencegoldring=智力金戒指
+intelligenceironring=智力铁戒指
+
+gracedwoodring=优雅木戒指
+gracecopperring=优雅铜戒指
+graceironring=优雅铁戒指
+gracegoldring=优雅金戒指
+
+
+[itemtooltip]
+scrollofoblivion=授予 2 个重置点
+ringsboxtip=可以存放属性戒指
+
+
+[message]
+xp=经验值
+levelup=升级！
+dodge=闪避！
+
+newmobkill=你第一次杀死 <mob> 获得了 <exp> 经验值
+newlevel=恭喜！你已达到 <level> 级。按 [input=openrpgmenu] 打开 RPG 菜单
+
+noupdatesincombat=你在战斗中不能修改你的属性、职业或技能
+noactiveskill=你不再拥有该主动技能，如果你想使用它，请重新升级
+
+equipfirst=你首先需要在此插槽中装备一个主动技能
+activeskillinuse=此技能已在使用中
+anotheractiveskillinuse=你已经有另一个技能在使用中
+incooldown=冷却中
+notenoughstamina=耐力不足
+nograbbableobject=你面前没有可抓取的物体
+
+[ui]
+menutitle=Save 的 RPG 模组
+attributes=属性
+activeskills=主动技能
+classes=职业
+
+level=等级 <level>
+classlevel=<class> 等级 <level>
+lvl=等级 <level>
+eachlevel=每级提供：
+experience=经验值：<exp> / <nextexp>
+totalexperience=总经验值：<exp>
+
+resetpoints=重置点：<points>
+attrpoints=属性点：<points>
+classpoints=职业点：<points>
+passivepoints=被动点：<points>
+activeskillpoints=主动技能点：<points>
+
+activeskillsuse=此模组将表情轮盘（默认为 T 键）变成主动技能轮盘
+activeskillsusetip1=建议将表情轮盘的控制更改为一个易于访问的键
+activeskillsusetip2=你也可以为每个主动技能插槽分配一个键（非常适合冷却时间短的技能）
+activeskillsequipinstructions=点击一个插槽来装备一个主动技能。你不能卸下正在冷却的主动技能
+noactiveskills=你没有主动技能。通过职业解锁它们
+
+activeskillcooldown=§9冷却时间：<seconds>秒
+activeskillcooldownmod=§9冷却时间：[[<seconds> <sign> <mod> x 技能等级]]秒
+requiredclasslevel=§b需要职业等级 <level>
+requiredactiveskill=§b需要“<skill>”等级 <level>
+maxlevel=§a最高等级：<level>
+
+clicktoseebase=[input=mouse1] 查看基础
+clicktoseelevel=[input=mouse1] 查看等级 <level>
+
+classlevelseparation=- 职业等级 <level> -
+
+inuse=使用中
+
+upcomingclass=§6即将推出的职业
+§9此职业目前正在开发中
+并将在未来的更新中提供
+
+addcolumn=添加列
+removecolumn=删除列
+
+
+[controls]
+openrpgmenu=打开 RPG 菜单
+activeskillslot1=主动技能槽 1
+activeskillslot2=主动技能槽 2
+activeskillslot3=主动技能槽 3
+activeskillslot4=主动技能槽 4
