@@ -1,322 +1,323 @@
-# Translation made by AI
+# Translation made by Save (https://steamcommunity.com/id/Aiz_Save/)
 
 [global]
-rpgmod=§!RPG Mod
+rpgmod=§!RPG Modu
 
 [buffmodifiers]
-dayanıklılıkattrflat=<mod> dayanıklılık özelliği
-hızattrflat=<mod> hız özelliği
-güçattrflat=<mod> güç özelliği
-zekâattrflat=<mod> zekâ özelliği
-nezaketattrflat=<mod> nezaket özelliği
+enduranceattrflat=<mod> dayanıklılık özelliği
+speedattrflat=<mod> hız özelliği
+strengthattrflat=<mod> güç özelliği
+intelligenceattrflat=<mod> zekâ özelliği
+graceattrflat=<mod> nezaket özelliği
 
-savunmaşansı=<mod>% savunma şansı
-menzilli silahlarzoom=<mod> menzilli silahlar yakınlaştırma
-menzilli silahlar menzili=<mod>% menzilli silahlar menzili
-mobtespitaralığı=<mod> mob tespit aralığı
-odaklanmahasarı=<mod>% odaklanma hasarı
-odaklanmaşansı=<mod>% odaklanma şansı
+dodgechance=<mod>% savunma şansı
+rangedweaponszoom=<mod> menzilli silahlar yakınlaştırma
+rangedweaponsrange=<mod>% menzilli silahlar menzili
+mobdetectionrange=<mod> mob tespit aralığı
+focusdamage=<mod>% odaklanma hasarı
+focuschance=<mod>% odaklanma şansı
 
 
 [enchantment]
-kaçınma=Kaçınma
-takipetme=Takip Etme
-yenileyici=Yenileyici
-enerjik=Enerjik
-tükenmiş=Tükenmiş
+evasive=Kaçınma
+stalking=Takip Etme
+regenerative=Yenileyici
+energetic=Enerjik
+depleted=Tükenmiş
 
 
 [buff]
-aşırıseviyesınıfı=Aşırı Seviye Sınıfı
-işaretlibuff=İşaretli
-karanlıklanetbuff=Karanlık Lanet
+overlevelclassbuff=Aşırı Seviye Sınıfı
+markedbuff=İşaretli
+darkcursebuff=Karanlık Lanet
 
 
 [buffdesc]
-aşırıseviyesınıfı1=§9Sınıflarınızdan biri puan sınırını aşıyor
-aşırıseviyesınıfı2=§6Düzeltilene kadar devam edemezsiniz
-karanlıklanetbuff1=+%25 Gelen Hasar
-karanlıklanetbuff2=Tüm hasarlar aynı zamanda Maksimum Canı da azaltır
+overlevelclassbuff1=§9Sınıflarınızdan biri puan sınırını aşıyor
+overlevelclassbuff2=§6Düzeltilene kadar devam edemezsiniz
+darkcursebuff1=+%25 Gelen Hasar
+darkcursebuff2=Tüm hasarlar aynı zamanda Maksimum Canı da azaltır
 
 
 [mob]
-rpgmobadı=[<sınıf>] <isim> svy <seviye>
-rpgmobadırenk=§<renk>[<sınıf>]§0 <isim> §9svy <seviye>§0
+rpgmobname=[<sınıf>] <isim> svy <seviye>
+rpgmobnamecolor=§<renk>[<sınıf>]§0 <isim> §9svy <seviye>§0
 
 
 [mobclass]
-patron=Patron
-savaşçı=Savaşçı
+boss=Patron
+warrior=Savaşçı
 tank=Tank
-koşucu=Koşucu
-iyileştirici=İyileştirici
-patlayıcı=Patlayıcı
-buzul=Buzul
-elektrik=Elektrik
-flaş=Flaş
-karanlık=Karanlık
-efsane=Efsane
+runner=Koşucu
+healer=İyileştirici
+explosive=Patlayıcı
+glacial=Buzul
+electric=Elektrik
+flash=Flaş
+dark=Karanlık
+legend=Efsane
 
 
 [attributes]
-dayanıklılık=Dayanıklılık
-güç=Güç
-hız=Hız
-zekâ=Zekâ
-nezaket=Nezaket
+endurance=Dayanıklılık
+strength=Güç
+speed=Hız
+intelligence=Zekâ
+grace=Nezaket
 
 
 [classes]
-savaşçı=Savaşçı
-menzilli=Menzilli
-büyücü=Büyücü
-nekromanser=Nekromanser
-rahip=Rahip
-hırsız=Hırsız
-büyücü=Büyücü
+warrior=Savaşçı
+ranger=Menzilli
+wizard=Büyücü
+necromancer=Nekromanser
+cleric=Rahip
+rogue=Hırsız
+warlock=Büyücü
 paladin=Paladin
 druid=Druid
 
 
 [passives]
-pasifler=Pasifler
+passives=Pasifler
 
 // Savaşçı
-rejenerasyon=Rejenerasyon
-kaslar=Kaslar
-bacaklar=Bacaklar
-kuvvet=Kuvvet
-durdurulamaz=Durdurulamaz
-canlılık=Canlılık
-demirderi=Demir Deri
-öfkeserbestbırakma=Öfke Serbest Bırakma
-aceleci serbest bırakma=Aceleci Serbest Bırakma
-boyuneğmez=Boyun Eğmez
-sonnefes=Son Nefes
+regeneration=Rejenerasyon
+muscles=Kaslar
+legs=Bacaklar
+force=Kuvvet
+unstoppable=Durdurulamaz
+vigor=Canlılık
+ironskin=Demir Deri
+unleashingrage=Öfke Serbest Bırakma
+unleashinghaste=Aceleci Serbest Bırakma
+unyielding=Boyun Eğmez
+lastbreath=Son Nefes
 
 // Menzilli
-nişan=Nişan
-çeviklik=Çeviklik
-kritikvuruşlar=Kritik Vuruşlar
-enerji=Enerji
-iyileşme=İyileşme
-kartalgözü=Kartal Gözü
-odaklanma=Odaklanma
-yoketme=Yok Etme
-yırtıcıduyusu=Yırtıcı Duyusu
-plazmabombası=Plazma Bombası
-kurtarkadaş=Kurt Arkadaş
+aim=Nişan
+agility=Çeviklik
+criticalshots=Kritik Vuruşlar
+energy=Enerji
+recovery=İyileşme
+eagleeye=Kartal Gözü
+focus=Odaklanma
+erradication=Yok Etme
+predatorsense=Yırtıcı Duyusu
+plasmagrenade=Plazma Bombası
+wolfcompanion=Kurt Arkadaş
 
 
 [passivesdesc]
 
 // Savaşçı
-öfkeserbestbırakma=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Tüm Hasar
-aceleci serbest bırakma=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Hareket Hızı
-boyuneğmez=Her seviye şunları sağlar:\n\nCan %20'nin altındayken +%5 Saldırı Hızı ve -%5 Gelen Hasar
-sonnefes=Ölmek yerine, §a[[3 x Beceri Seviyesi]] saniye§0 boyunca yenilmez olursunuz\nSüre dolduğunda ölürsünüz
+unleashingrage=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Tüm Hasar
+unleashinghaste=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Hareket Hızı
+unyielding=Her seviye şunları sağlar:\n\nCan %20'nin altındayken +%5 Saldırı Hızı ve -%5 Gelen Hasar
+lastbreath=Ölmek yerine, §a[[3 x Beceri Seviyesi]] saniye§0 boyunca yenilmez olursunuz\nSüre dolduğunda ölürsünüz
 
 // Menzilli
-plazmabombası=Her 8 Menzilli saldırıda, silahın hasarının §i[[30 x Beceri Seviyesi]]%§0 kadar hasar veren güdümlü bir patlayıcı mermi ateşler
-kurtarkadaş=Bir kurt arkadaş, işaretli düşmanlara saldırarak §i[[Oyuncu Seviyesi x Beceri Seviyesi + Zekâ x Beceri Seviyesi]] Çağırıcı Hasarı§0 verir
+plasmagrenade=Her 8 Menzilli saldırıda, silahın hasarının §i[[30 x Beceri Seviyesi]]%§0 kadar hasar veren güdümlü bir patlayıcı mermi ateşler
+wolfcompanion=Bir kurt arkadaş, işaretli düşmanlara saldırarak §i[[Oyuncu Seviyesi x Beceri Seviyesi + Zekâ x Beceri Seviyesi]] Çağırıcı Hasarı§0 verir
 
 
 [activeskills]
-boş=Boş
+empty=Boş
 
 // Savaşçı
-öfke=Öfke
-iyileşme=İyileşme
-provokasyon=Provokasyon
-öfkeli hücum=Öfkeli Hücum
+fury=Öfke
+recovery=İyileşme
+provocation=Provokasyon
+berserkercharge=Öfkeli Hücum
 
-yereserme=Yere Serme
-yeryıkımı=Yer Yıkımı
-savuşturma=Savuşturma
-savaşçığlığı=Savaş Çığlığı
+groundslam=Yere Serme
+grounddestruction=Yer Yıkımı
+parry=Savuşturma
+battlecry=Savaş Çığlığı
 
-demirkalkan=Demir Kalkan
-dikenlikalkan=Dikenli Kalkan
-gözdağı=Gözdağı
+ironguard=Demir Kalkan
+thornedguard=Dikenli Kalkan
+intimidation=Gözdağı
 
-nesnefırlatma=Nesne Fırlatma
+objectthrowing=Nesne Fırlatma
 
 // Menzilli
-kısakoşu=Kısa Koşu
-uzunkoşu=Uzun Koşu
-öldürücüvuruş=Öldürücü Vuruş
-zehirli vuruş=Zehirli Vuruş
-patlayıcıok=Patlayıcı Ok
+shortdash=Kısa Koşu
+longdash=Uzun Koşu
+lethalshot=Öldürücü Vuruş
+venomshot=Zehirli Vuruş
+explosiveshot=Patlayıcı Vuruş
 
 vuruşç rampage=Vuruş Çılgınlığı
-avcıişareti=Avcı İşareti
-ayıtuzağı=Ayı Tuzağı
+huntersmark=Avcı İşareti
+beartrap=Ayı Tuzağı
 
-avcıiçgüdüsü=Avcı İçgüdüsü
-okfırtınası=Ok Fırtınası
+huntersinstinct=Avcı İçgüdüsü
+arrowstorm=Ok Fırtınası
 
 
 [activeskillsdesc]
 
 // Savaşçı
-öfke=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızınızı §a[[20 x Beceri Seviyesi]]%§0 artırın
-iyileşme=Sonraki 10 saniye boyunca Savaş Canı Yenilenmesini büyük ölçüde artırır, süre boyunca §a[[20 + Dayanıklılık x Beceri Seviyesi]] can§0 yeniler
-provokasyon=Sonraki §a[[2 x Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
-öfkeli hücum=Kısa bir mesafe ileri atılarak, geçilen tüm düşmanlara §i[[10 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Hız x Beceri Seviyesi]] Hasar§0 verir\n%50 Dayanıklılık tüketir
-yereserme=§i[[5 x Güç]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x Beceri Seviyesi]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
-yeryıkımı=§i[[5 x Güç x Beceri Seviyesi + 5 x Oyuncu Seviyesi x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
-savuşturma=0,5 saniye boyunca yenilmez olun ve alınan orijinal Hasarın %500'ünü iade edin\n%100 Dayanıklılık tüketir
-savaşçığlığı=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerinizin Tüm Hasarını ve Hareket Hızını §a[[10 x Beceri Seviyesi]]%§0 artırın
+fury=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızınızı §a[[20 x Beceri Seviyesi]]%§0 artırın
+recovery=Sonraki 10 saniye boyunca Savaş Canı Yenilenmesini büyük ölçüde artırır, süre boyunca §a[[20 + Dayanıklılık x Beceri Seviyesi]] can§0 yeniler
+provocation=Sonraki §a[[2 x Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
+berserkercharge=Kısa bir mesafe ileri atılarak, geçilen tüm düşmanlara §i[[10 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Hız x Beceri Seviyesi]] Hasar§0 verir\n%50 Dayanıklılık tüketir
 
-demirkalkan=-%50 Gelen Hasar §a[[4 x Beceri Seviyesi]] saniye boyunca
-dikenlikalkan=-%50 Gelen Hasar 12 saniye boyunca\nAyrıca, alınan orijinal Hasarın §a[[100 x Beceri Seviyesi]]%§0 kadarını iade eder
-gözdağı=Sonraki §a[[Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları kaçırın
+groundslam=§i[[5 x Güç]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x Beceri Seviyesi]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
+grounddestruction=§i[[5 x Güç x Beceri Seviyesi + 5 x Oyuncu Seviyesi x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
+parry=0,5 saniye boyunca yenilmez olun ve alınan orijinal Hasarın %500'ünü iade edin\n%100 Dayanıklılık tüketir
+battlecry=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerinizin Tüm Hasarını ve Hareket Hızını §a[[10 x Beceri Seviyesi]]%§0 artırın
 
-nesnefırlatma=Adım 1: Önünüzdeki bir nesneyi alın\nAdım 2: İleriye fırlatarak §i[[20 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 verin\nHer iki adım da tüm Dayanıklılığınızı tüketir (en az %100)
+ironguard=-%50 Gelen Hasar §a[[4 x Beceri Seviyesi]] saniye boyunca
+thornedguard=-%50 Gelen Hasar 12 saniye boyunca\nAyrıca, alınan orijinal Hasarın §a[[100 x Beceri Seviyesi]]%§0 kadarını iade eder
+intimidation=Sonraki §a[[Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları kaçırın
+
+objectthrowing=Adım 1: Önünüzdeki bir nesneyi alın\nAdım 2: İleriye fırlatarak §i[[20 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 verin\nHer iki adım da tüm Dayanıklılığınızı tüketir (en az %100)
 
 // Menzilli
-kısakoşu=100 Güçlük bir koşu yapın\n%15 Dayanıklılık tüketir
-uzunkoşu=150 Güçlük bir koşu yapın\n%25 Dayanıklılık tüketir
-öldürücüvuruş=En yakın düşmana bir §höldürücü ok§0 atarak §i[[5 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Menzilli Hasarı§0 verir
-zehirli vuruş=En yakın düşmana bir §bzehirli ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
-patlayıcıvuruş=En yakın düşmana bir §ipatlayıcı ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+shortdash=100 Güçlük bir koşu yapın\n%15 Dayanıklılık tüketir
+longdash=150 Güçlük bir koşu yapın\n%25 Dayanıklılık tüketir
+lethalshot=En yakın düşmana bir §höldürücü ok§0 atarak §i[[5 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+venomshot=En yakın düşmana bir §bzehirli ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+explosiveshot=En yakın düşmana bir §ipatlayıcı ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
 
-vuruşç rampage=En az 1 Vuruş Çılgınlığı yığınına sahipken, bir düşmana menzilli bir saldırıyla vurmak 5 saniye boyunca 1 ek yığın kazandırır\nHer Vuruş Çılgınlığı yığını Saldırı Hızını %5 artırır, en fazla 30 yığına kadar
-avcıişareti=En yüksek cana sahip yakındaki düşmanı 10 saniye boyunca §hişaretleyin§0\nİşaretli bir hedefi öldürürseniz, 5 saniye boyunca §a+[[20 x Beceri Seviyesi]]%§0 Menzilli Saldırı Hızı ve Hareket Hızı kazanırsınız
-ayıtuzağı=Tetiklendiğinde veya 20 saniye sonra kaybolan bir ayı tuzağı yere yerleştirin\nBir düşman tetiklerse, §i[[10 x Oyuncu Seviyesi]] Hasar§0 alır ve 5 saniye boyunca tuzağa düşer
+shotsrampage=En az 1 Vuruş Çılgınlığı yığınına sahipken, bir düşmana menzilli bir saldırıyla vurmak 5 saniye boyunca 1 ek yığın kazandırır\nHer Vuruş Çılgınlığı yığını Saldırı Hızını %5 artırır, en fazla 30 yığına kadar
+huntersmark=En yüksek cana sahip yakındaki düşmanı 10 saniye boyunca §hişaretleyin§0\nİşaretli bir hedefi öldürürseniz, 5 saniye boyunca §a+[[20 x Beceri Seviyesi]]%§0 Menzilli Saldırı Hızı ve Hareket Hızı kazanırsınız
+beartrap=Tetiklendiğinde veya 20 saniye sonra kaybolan bir ayı tuzağı yere yerleştirin\nBir düşman tetiklerse, §i[[10 x Oyuncu Seviyesi]] Hasar§0 alır ve 5 saniye boyunca tuzağa düşer
 
-avcıiçgüdüsü=Sonraki 12 saniye boyunca, §7Savunma Şansınızı§0 §a[[10 x Beceri Seviyesi]]%§0 artırın\nSavunduğunuz düşmanları 5 saniye boyunca §hişaretleyin§0
-okfırtınası=Her yakın düşmana temel bir ok atarak, her ok için §i[[2 x Oyuncu Seviyesi + Güç x Beceri Seviyesi + Hız x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+huntersinstinct=Sonraki 12 saniye boyunca, §7Savunma Şansınızı§0 §a[[10 x Beceri Seviyesi]]%§0 artırın\nSavunduğunuz düşmanları 5 saniye boyunca §hişaretleyin§0
+arrowstorm=Her yakın düşmana temel bir ok atarak, her ok için §i[[2 x Oyuncu Seviyesi + Güç x Beceri Seviyesi + Hız x Beceri Seviyesi]] Menzilli Hasarı§0 verir
 
 [skillsdesckeys]
 x=x
-beceriseviyesi=Beceri Seviyesi
-oyuncuseviyesi=Oyuncu Seviyesi
-dayanıklılık=Dayanıklılık
-hız=Hız
-güç=Güç
-zekâ=Zekâ
-nezaket=Nezaket
+skilllevel=Beceri Seviyesi
+playerlevel=Oyuncu Seviyesi
+endurance=Dayanıklılık
+speed=Hız
+strength=Güç
+intelligence=Zekâ
+grace=Nezaket
 
 
 [extraskilldesc]
 // Güçlendirmeler
-işaretli=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\nTüm güdümlü ve/veya en yakın düşmana ateşlenen mermiler, işaretli düşmanlara öncelik verecektir
+marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\nTüm güdümlü ve/veya en yakın düşmana ateşlenen mermiler, işaretli düşmanlara öncelik verecektir
 
 // Şans Değiştiricileri
-savunmaşansı=§7Savunma Şansı:§0 Gelen saldırıları savunma şansı. %80'i geçemez
-odaklanmaşansı=§hOdaklanma Şansı:§0 Çağırıcı olmayan hasarla saldırıldığında bir mobu 5 saniye boyunca §hişaretleme§0 şansı
+dodgechance=§7Savunma Şansı:§0 Gelen saldırıları savunma şansı. %80'i geçemez
+focuschance=§hOdaklanma Şansı:§0 Çağırıcı olmayan hasarla saldırıldığında bir mobu 5 saniye boyunca §hişaretleme§0 şansı
 
 // Düz Değiştiriciler
-mobtespiti=§9Mob Tespiti:§0 Yakındaki mobları haritada gösterir. Daha yüksek bir tespit aralığı, mobları daha uzaktan ortaya çıkarır
+mobdetection=§9Mob Tespiti:§0 Yakındaki mobları haritada gösterir. Daha yüksek bir tespit aralığı, mobları daha uzaktan ortaya çıkarır
 
 // Mermiler
-öldürücüok=§hÖldürücü Ok:§0 Kritik bir vuruş sağlayan güdümlü ok
-zehirliok=§bZehirli Ok:§0 Düşmanları zehirleyen, 30 saniye boyunca saniyede orijinal hasarının %10'unu tekrarlayan güdümlü ok
-patlayıcıok=§iPatlayıcı Ok:§0 Eşit hasara sahip sihirli bir patlamaya neden olan güdümlü ok
+lethalarrow=§hÖldürücü Ok:§0 Kritik bir vuruş sağlayan güdümlü ok
+venomarrow=§bZehirli Ok:§0 Düşmanları zehirleyen, 30 saniye boyunca saniyede orijinal hasarının %10'unu tekrarlayan güdümlü ok
+explosivearrow=§iPatlayıcı Ok:§0 Eşit hasara sahip sihirli bir patlamaya neden olan güdümlü ok
 
 
 [item]
-unutulmuşparşömen=Unutulmuş Parşömen
-yüzükkutusu=Yüzük Kutusu
+scrollofoblivion=Unutulmuş Parşömen
+ringsbox=Yüzük Kutusu
 
 // Nitelik Yüzükleri
-dayanıklılıkağaçyüzük=Dayanıklılık Ağaç Yüzük
-dayanıklılıkbakıryüzük=Dayanıklılık Bakır Yüzük
-dayanıklılıkdemiryüzük=Dayanıklılık Demir Yüzük
-dayanıklılıkaltınyüzük=Dayanıklılık Altın Yüzük
+endurancewoodring=Dayanıklılık Ağaç Yüzük
+endurancecopperring=Dayanıklılık Bakır Yüzük
+enduranceironring=Dayanıklılık Demir Yüzük
+endurancegoldring=Dayanıklılık Altın Yüzük
 
-hızağaçyüzük=Hız Ağaç Yüzük
-hızbakıryüzük=Hız Bakır Yüzük
-hızaltınyüzük=Hız Altın Yüzük
-hızdemiryüzük=Hız Demir Yüzük
+speedwoodring=Hız Ağaç Yüzük
+speedcopperring=Hız Bakır Yüzük
+speedgoldring=Hız Altın Yüzük
+speedironring=Hız Demir Yüzük
 
-güçağaçyüzük=Güç Ağaç Yüzük
-güçbakıryüzük=Güç Bakır Yüzük
-güçaltınyüzük=Güç Altın Yüzük
-güçdemiryüzük=Güç Demir Yüzük
+strengthwoodring=Güç Ağaç Yüzük
+strengthcopperring=Güç Bakır Yüzük
+strengthgoldring=Güç Altın Yüzük
+strengthironring=Güç Demir Yüzük
 
-zekâağaçyüzük=Zekâ Ağaç Yüzük
-zekâbakıryüzük=Zekâ Bakır Yüzük
-zekâaltınyüzük=Zekâ Altın Yüzük
-zekâdemiryüzük=Zekâ Demir Yüzük
+intelligencewoodring=Zekâ Ağaç Yüzük
+intelligencecopperring=Zekâ Bakır Yüzük
+intelligencegoldring=Zekâ Altın Yüzük
+intelligenceironring=Zekâ Demir Yüzük
 
-nezaketağaçyüzük=Nezaket Ağaç Yüzük
-nezaketbakıryüzük=Nezaket Bakır Yüzük
-nezaketdemiryüzük=Nezaket Demir Yüzük
-nezaketaltınyüzük=Nezaket Altın Yüzük
+gracewoodring=Nezaket Ağaç Yüzük
+gracecopperring=Nezaket Bakır Yüzük
+graceironring=Nezaket Demir Yüzük
+gracegoldring=Nezaket Altın Yüzük
 
 
 [itemtooltip]
-unutulmuşparşömen=2 Sıfırlama Puanı verir
-yüzükkutusuipucu=Nitelik Yüzüklerini saklayabilir
+scrollofoblivion=2 Sıfırlama Puanı verir
+ringsboxtip=Nitelik Yüzüklerini saklayabilir
 
 
 [message]
 xp=TP
-seviyeatlama=Seviye atladın!
-savunma=Savunma!
+levelup=Seviye atladın!
+dodge=Savunma!
 
-yenimoböldürme=<mob> adlı mobu ilk kez öldürdüğünüz için <exp> deneyim kazandınız
-yeniseviye=Tebrikler! <seviye> seviyesine ulaştınız. RPG Menüsünü açmak için [input=openrpgmenu] tuşuna basın
+newmobkill=<mob> adlı mobu ilk kez öldürdüğünüz için <exp> deneyim kazandınız
+newlevel=Tebrikler! <seviye> seviyesine ulaştınız. RPG Menüsünü açmak için [input=openrpgmenu] tuşuna basın
 
-savaşsırasındagüncelleme yok=Savaş sırasında niteliklerinizi, sınıflarınızı veya becerilerinizi değiştiremezsiniz
-aktifbeceriyok=Artık o Aktif Beceriye sahip değilsiniz, kullanmak istiyorsanız tekrar seviye atlatın
+noupdatesincombat=Savaş sırasında niteliklerinizi, sınıflarınızı veya becerilerinizi değiştiremezsiniz
+noactiveskill=Artık o Aktif Beceriye sahip değilsiniz, kullanmak istiyorsanız tekrar seviye atlatın
 
-önceekipman=Önce bu yuvaya bir Aktif Beceri takmanız gerekir
-aktifbecerikullanımda=Bu beceri zaten Kullanımda
-başkaaktifbecerikullanımda=Zaten başka bir beceriniz Kullanımda
-beklemede=Beklemede
-yeterlidayanıklılıkyok=Yeterli Dayanıklılık Yok
-tutulabilirmesneyok=Önünüzde tutulabilir bir nesne yok
+equipfirst=Önce bu yuvaya bir Aktif Beceri takmanız gerekir
+activeskillinuse=Bu beceri zaten Kullanımda
+anotheractiveskillinuse=Zaten başka bir beceriniz Kullanımda
+incooldown=Beklemede
+notenoughstamina=Yeterli Dayanıklılık Yok
+nograbbableobject=Önünüzde tutulabilir bir nesne yok
 
 [ui]
-menübaşlığı=Save tarafından RPG MODU
-nitelikler=Nitelikler
-aktifbeceriler=Aktif Beceriler
-sınıflar=Sınıflar
+menutitle=Save tarafından RPG MODU
+attributes=Nitelikler
+activeskills=Aktif Beceriler
+classes=Sınıflar
 
-seviye=Seviye <seviye>
-sınıfseviyesi=<sınıf> seviye <seviye>
-svy=Svy <seviye>
-herseviye=Her seviye şunları sağlar:
-deneyim=TP: <exp> / <nextexp>
-toplamdeneyim=Toplam TP: <exp>
+level=Seviye <seviye>
+classlevel=<sınıf> seviye <seviye>
+lvl=Svy <seviye>
+eachlevel=Her seviye şunları sağlar:
+experience=TP: <exp> / <nextexp>
+totalexperience=Toplam TP: <exp>
 
-sıfırlamapuanları=Sıfırlama Puanları: <points>
-nitelikpuanları=Nitelik Puanları: <points>
-sınıfpuanları=Sınıf Puanları: <points>
-pasifpuanları=Pasif Puanları: <points>
-aktifbeceripuanları=Aktif Beceri Puanları: <points>
+resetpoints=Sıfırlama Puanları: <points>
+attrpoints=Nitelik Puanları: <points>
+classpoints=Sınıf Puanları: <points>
+passivepoints=Pasif Puanları: <points>
+activeskillpoints=Aktif Beceri Puanları: <points>
 
-aktifbecerikullanımı=Bu mod, İfade Tekerleğini (varsayılan olarak T tuşu) Aktif Beceriler Tekerleğine dönüştürür
-aktifbecerikullanımıipucu1=İfade Tekerleği kontrolünü kolayca erişilebilen bir tuşa değiştirmeniz önerilir
-aktifbecerikullanımıipucu2=Ayrıca her Aktif Beceri yuvasına bir tuş atayabilirsiniz (düşük bekleme süreli beceriler için idealdir)
-aktifbeceriekipman talimatları=Bir Aktif Beceri takmak için bir yuvaya tıklayın. Beklemedeki bir Aktif Beceriyi çıkaramazsınız
-aktifbeceriyok=Aktif Beceriniz yok. Sınıflar aracılığıyla kilidini açın
+activeskillsuse=Bu mod, İfade Tekerleğini (varsayılan olarak T tuşu) Aktif Beceriler Tekerleğine dönüştürür
+activeskillsusetip1=İfade Tekerleği kontrolünü kolayca erişilebilen bir tuşa değiştirmeniz önerilir
+activeskillsusetip2=Ayrıca her Aktif Beceri yuvasına bir tuş atayabilirsiniz (düşük bekleme süreli beceriler için idealdir)
+activeskillsequipinstructions=Bir Aktif Beceri takmak için bir yuvaya tıklayın. Beklemedeki bir Aktif Beceriyi çıkaramazsınız
+noactiveskills=Aktif Beceriniz yok. Sınıflar aracılığıyla kilidini açın
 
-aktifbeceribekleme=§9Bekleme: <saniye>s
-aktifbeceribeklemedüzenleme=§9Bekleme: [[<saniye> <işaret> <mod> x Beceri Seviyesi]]s
-gereklisınıfseviyesi=§bSınıf seviyesi <seviye> gerekli
-gerekliaktifbeceri=§b'<beceri>' seviye <seviye> gerektirir
-maksseviye=§aMaks Seviye: <seviye>
+activeskillcooldown=§9Bekleme: <saniye>s
+activeskillcooldownmod=§9Bekleme: [[<saniye> <işaret> <mod> x Beceri Seviyesi]]s
+requiredclasslevel=§bSınıf seviyesi <seviye> gerekli
+requiredactiveskill=§b'<beceri>' seviye <seviye> gerektirir
+maxlevel=§aMaks Seviye: <seviye>
 
-temelgörmekiçintıkla=[input=mouse1] Temel görmek için
-seviyegörmekiçintıkla=[input=mouse1] Seviye <seviye> görmek için
+clicktoseebase=[input=mouse1] Temel görmek için
+clicktoseelevel=[input=mouse1] Seviye <seviye> görmek için
 
-sınıfseviyesiayrımı=- Sınıf seviyesi <seviye> -
+classlevelseparation=- Sınıf seviyesi <seviye> -
 
-kullanımda=Kullanımda
+inuse=Kullanımda
 
-yakındasınıf=§6Yakında Sınıf\n§9Bu sınıf şu anda geliştirme aşamasındadır\nve gelecekteki bir güncellemede mevcut olacaktır
+upcomingclass=§6Yakında Sınıf\n§9Bu sınıf şu anda geliştirme aşamasındadır\nve gelecekteki bir güncellemede mevcut olacaktır
 
-sütunekle=Sütun ekle
-sütunkaldır=Sütun kaldır
+addcolumn=Sütun ekle
+removecolumn=Sütun kaldır
 
 
 [controls]
 openrpgmenu=RPG Menüsünü Aç
-aktifbeceriyuvası1=Aktif Beceri Yuvası 1
-aktifbeceriyuvası2=Aktif Beceri Yuvası 2
-aktifbeceriyuvası3=Aktif Beceri Yuvası 3
-aktifbeceriyuvası4=Aktif Beceri Yuvası 4
+activeskillslot1=Aktif Beceri Yuvası 1
+activeskillslot2=Aktif Beceri Yuvası 2
+activeskillslot3=Aktif Beceri Yuvası 3
+activeskillslot4=Aktif Beceri Yuvası 4
