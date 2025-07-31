@@ -1,4 +1,4 @@
-package rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Guard;
+package rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills;
 
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -17,8 +17,8 @@ import rpgclasses.data.PlayerData;
 
 public class IronGuard extends SimpleBuffActiveSkill {
 
-    public IronGuard(String familyID, int levelMax, int requiredClassLevel) {
-        super(familyID, "ironguard", RPGColors.HEX.iron, levelMax, requiredClassLevel);
+    public IronGuard(int levelMax, int requiredClassLevel) {
+        super("ironguard", RPGColors.HEX.iron, levelMax, requiredClassLevel);
     }
 
     @Override

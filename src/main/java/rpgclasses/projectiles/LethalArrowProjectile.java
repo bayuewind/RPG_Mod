@@ -1,6 +1,5 @@
 package rpgclasses.projectiles;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -17,16 +16,16 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.RPGUtils;
 
 import java.awt.*;
 import java.util.List;
 
-public class LethalArrow extends FollowingProjectile {
-    public LethalArrow() {
+public class LethalArrowProjectile extends FollowingProjectile {
+    public LethalArrowProjectile() {
     }
 
-    public LethalArrow(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+    public LethalArrowProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -51,14 +50,8 @@ public class LethalArrow extends FollowingProjectile {
     @Override
     public void updateTarget() {
         if (this.traveledDistance > 50F) {
-            target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance),
-                    m -> MarkedBuff.isMarked((PlayerMob) getOwner(), m)
-            );
-            if (target == null) target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance + 100),
-                    m -> m.canBeTargeted(getOwner(), ((PlayerMob) getOwner()).getNetworkClient())
-            );
+            target = RPGUtils.findBestTarget(getOwner(), 1000);
+
         }
     }
 

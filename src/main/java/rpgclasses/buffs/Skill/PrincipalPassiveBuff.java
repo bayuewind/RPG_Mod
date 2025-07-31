@@ -1,9 +1,9 @@
 package rpgclasses.buffs.Skill;
 
 import necesse.engine.localization.message.LocalMessage;
-import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.buffs.BuffEventSubscriber;
+import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTexture.GameTexture;
+import rpgclasses.data.PlayerDataList;
 
 import java.io.FileNotFoundException;
 
@@ -14,7 +14,7 @@ public class PrincipalPassiveBuff extends PassiveSkillBuff {
     @Override
     public void loadTextures() {
         try {
-            this.iconTexture = GameTexture.fromFileRaw("ui/passives/" + activeSkillID());
+            this.iconTexture = GameTexture.fromFileRaw("ui/passives/" + skillID());
         } catch (FileNotFoundException var2) {
             this.iconTexture = GameTexture.fromFile("buffs/positive");
         }
@@ -22,10 +22,36 @@ public class PrincipalPassiveBuff extends PassiveSkillBuff {
 
     @Override
     public void updateLocalDisplayName() {
-        this.displayName = new LocalMessage("passives", activeSkillID());
+        this.displayName = new LocalMessage("passives", skillID());
     }
 
-    public String activeSkillID() {
+    public String skillID() {
         return this.getStringID().replace("passivebuff", "");
     }
+
+
+    public int getPlayerLevel(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getLevel();
+    }
+
+    public int getEndurance(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getEndurance(player);
+    }
+
+    public int getSpeed(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getSpeed(player);
+    }
+
+    public int getStrength(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getStrength(player);
+    }
+
+    public int getIntelligence(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getIntelligence(player);
+    }
+
+    public int getGrace(PlayerMob player) {
+        return PlayerDataList.getPlayerData(player).getGrace(player);
+    }
+
 }

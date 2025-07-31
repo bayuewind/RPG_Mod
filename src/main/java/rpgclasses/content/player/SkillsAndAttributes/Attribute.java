@@ -12,7 +12,6 @@ import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.IntModifierBu
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.ModifierBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
 import rpgclasses.data.PlayerData;
-import rpgclasses.registry.RPGMobs;
 import rpgclasses.registry.RPGModifiers;
 
 import java.util.ArrayList;

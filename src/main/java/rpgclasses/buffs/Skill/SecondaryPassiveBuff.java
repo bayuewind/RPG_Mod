@@ -20,7 +20,7 @@ public class SecondaryPassiveBuff extends SkillBuff {
     @Override
     public void loadTextures() {
         try {
-            this.iconTexture = GameTexture.fromFileRaw("ui/passives/" + activeSkillID());
+            this.iconTexture = GameTexture.fromFileRaw("ui/passives/" + skillID());
         } catch (FileNotFoundException var2) {
             this.iconTexture = GameTexture.fromFile("buffs/positive");
         }
@@ -28,10 +28,10 @@ public class SecondaryPassiveBuff extends SkillBuff {
 
     @Override
     public void updateLocalDisplayName() {
-        this.displayName = new LocalMessage("passives", activeSkillID());
+        this.displayName = new LocalMessage("passives", skillID());
     }
 
-    public String activeSkillID() {
+    public String skillID() {
         return this.getStringID().replace("2passivebuff", "");
     }
 }

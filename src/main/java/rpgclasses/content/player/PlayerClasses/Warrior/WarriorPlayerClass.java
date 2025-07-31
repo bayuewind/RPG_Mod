@@ -6,8 +6,6 @@ import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground.GroundDestruction;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground.GroundSlam;
-import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Guard.IronGuard;
-import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Guard.ThornedGuard;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.LastBreath;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.UnleashingHaste;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.UnleashingRage;
@@ -29,8 +27,6 @@ public class WarriorPlayerClass extends PlayerClass {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
         String groundFamily = "warrior_ground";
-        String guardFamily = "warrior_guard";
-
 
         int requiredLevel = 0;
 
@@ -44,8 +40,8 @@ public class WarriorPlayerClass extends PlayerClass {
 
         requiredLevel = 5;
 
-        ActiveSkill groundS = skillsList.addSkill(new GroundSlam(groundFamily, 5, requiredLevel));
-        skillsList.addSkill(new GroundDestruction(groundFamily, 3, requiredLevel).addRequiredSkill(groundS, 2, this));
+        ActiveSkill groundS = skillsList.addSkill(new GroundSlam(5, requiredLevel).setFamily(groundFamily));
+        skillsList.addSkill(new GroundDestruction(3, requiredLevel).addRequiredSkill(groundS, 2, this).setFamily(groundFamily));
 
         skillsList.addSkill(new Parry(5, requiredLevel));
 
@@ -54,15 +50,14 @@ public class WarriorPlayerClass extends PlayerClass {
 
         requiredLevel = 10;
 
-        ActiveSkill iGuard = skillsList.addSkill(new IronGuard(guardFamily, 5, requiredLevel));
-        skillsList.addSkill(new ThornedGuard(guardFamily, 2, requiredLevel).addRequiredSkill(iGuard, 3, this));
+        skillsList.addSkill(new IronGuard(5, requiredLevel));
 
         skillsList.addSkill(new Intimidation(5, requiredLevel));
 
 
         requiredLevel = 15;
 
-        skillsList.addSkill(new ObjectThrowing(6, requiredLevel));
+        skillsList.addSkill(new ObjectThrowing(5, requiredLevel));
 
 
         return skillsList;
@@ -90,6 +85,7 @@ public class WarriorPlayerClass extends PlayerClass {
                 "force", "#ff6600", 10, 0,
                 new FloatPercentModifierBuff(BuffModifiers.KNOCKBACK_OUT, 0.2F)
         ));
+
         skillsList.addSkill(new BasicPassive(
                 "vigor", "#ff0000", 10, 5,
                 new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, 0.02F)
@@ -98,12 +94,15 @@ public class WarriorPlayerClass extends PlayerClass {
                 "unstoppable", RPGColors.HEX.iron, 5, 5,
                 new FloatPercentModifierBuff(BuffModifiers.KNOCKBACK_INCOMING_MOD, 0.2F, false)
         ));
+
         skillsList.addSkill(new BasicPassive(
                 "ironskin", RPGColors.HEX.iron, 5, 10,
                 new FloatPercentModifierBuff(BuffModifiers.INCOMING_DAMAGE_MOD, 0.04F, false)
         ));
+
         skillsList.addSkill(new UnleashingRage(10, 15));
         skillsList.addSkill(new UnleashingHaste(10, 15));
+
         skillsList.addSkill(new Unyielding(10, 20));
         skillsList.addSkill(new LastBreath(10, 20));
 

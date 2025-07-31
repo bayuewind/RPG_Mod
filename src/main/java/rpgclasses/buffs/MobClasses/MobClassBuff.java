@@ -1,6 +1,5 @@
 package rpgclasses.buffs.MobClasses;
 
-import necesse.entity.mobs.WormMobBody;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;

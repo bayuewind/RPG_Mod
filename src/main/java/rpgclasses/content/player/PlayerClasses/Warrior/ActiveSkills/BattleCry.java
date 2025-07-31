@@ -13,6 +13,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
+import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
@@ -34,11 +35,8 @@ public class BattleCry extends SimpleBuffActiveSkill {
                 super.giveBuff(player, targetPlayer.playerMob, playerData, activeSkillLevel);
         });
 
-        player.getLevel().entityManager.streamAreaMobsAndPlayers(player.getX(), player.getY(), 200)
-                .filter(target ->
-                        target.getDistance(player) <= 200 &&
-                                target.isSameTeam(player)
-                )
+        RPGUtils.streamMobsAndPlayers(player, 200)
+                .filter(m -> m.isSameTeam(player))
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );
@@ -50,7 +48,7 @@ public class BattleCry extends SimpleBuffActiveSkill {
         SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(200, new Color(255, 102, 0))
-        );
+        ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
 
@@ -64,6 +62,7 @@ public class BattleCry extends SimpleBuffActiveSkill {
                 activeBuff.setModifier(BuffModifiers.SPEED, level * 0.1F);
             }
 
+            @Override
             public void clientTick(ActiveBuff activeBuff) {
                 Mob owner = activeBuff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {

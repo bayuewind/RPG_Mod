@@ -1,4 +1,4 @@
-package rpgclasses.mobs.summons.pasive;
+package rpgclasses.mobs.summons.pasivesummon;
 
 import necesse.engine.network.NetworkClient;
 import necesse.engine.network.PacketReader;
@@ -17,44 +17,44 @@ abstract public class PassiveSummonedMob extends AttackingFollowingMob {
     public static String classDataName = prefixDataName + "class";
     public static String passiveDataName = prefixDataName + "passive";
 
-    public Passive passive;
+    public Passive skill;
     public PlayerClass playerClass;
 
     public PassiveSummonedMob(int health) {
         super(health);
     }
 
-    public void setPassive(Passive passive) {
-        this.passive = passive;
-        this.playerClass = passive.playerClass;
+    public void setPassive(Passive skill) {
+        this.skill = skill;
+        this.playerClass = skill.playerClass;
     }
 
     @Override
     public void applyLoadData(LoadData load) {
         super.applyLoadData(load);
         playerClass = PlayerClass.classesList.get(load.getInt(classDataName));
-        passive = playerClass.passivesList.get(load.getInt(passiveDataName));
+        skill = playerClass.passivesList.get(load.getInt(passiveDataName));
     }
 
     @Override
     public void addSaveData(SaveData save) {
         super.addSaveData(save);
         save.addInt(classDataName, playerClass.id);
-        save.addInt(passiveDataName, passive.id);
+        save.addInt(passiveDataName, skill.id);
     }
 
     @Override
     public void applySpawnPacket(PacketReader reader) {
         super.applySpawnPacket(reader);
         playerClass = PlayerClass.classesList.get(reader.getNextInt());
-        passive = playerClass.passivesList.get(reader.getNextInt());
+        skill = playerClass.passivesList.get(reader.getNextInt());
     }
 
     @Override
     public void setupSpawnPacket(PacketWriter writer) {
         super.setupSpawnPacket(writer);
         writer.putNextInt(playerClass.id);
-        writer.putNextInt(passive.id);
+        writer.putNextInt(skill.id);
     }
 
     public PlayerData getPlayerData() {
@@ -68,13 +68,13 @@ abstract public class PassiveSummonedMob extends AttackingFollowingMob {
         return playerData.getClassesData()[playerClass.id];
     }
 
-    public int getSkillLevel() {
-        return this.getSkillLevel(getPlayerData());
+    public int getPassiveLevel() {
+        return this.getPassiveLevel(getPlayerData());
     }
 
-    public int getSkillLevel(PlayerData playerData) {
+    public int getPassiveLevel(PlayerData playerData) {
         PlayerClassData classData = getClassData(playerData);
         if (classData == null) return 0;
-        return classData.getPassiveLevels()[passive.id];
+        return classData.getPassiveLevels()[skill.id];
     }
 }

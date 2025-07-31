@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% domet dalekometnog oružja
 mobdetectionrange=<mod> domet detekcije mobova
 focusdamage=<mod>% šteta od fokusa
 focuschance=<mod>% šansa za fokus
+ignitedamage=<mod>% šteta od zapaljenja
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Istrošen
 overlevelclassbuff=Klasa s prekomjernom razinom
 markedbuff=Označen
 darkcursebuff=Mračna kletva
+magicpoisonbuff=Magični otrov
+ignitedbuff=Zapaljen
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Sva šteta također smanjuje maksimalno zdravlje
 [mob]
 rpgmobname=[<class>] <name> razina <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9razina <level>§0
+
+rangerwolf=Vuk Rendžer
+dancingflame=Plešući plamen
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Predatorski osjet
 plasmagrenade=Plazma granata
 wolfcompanion=Vuk pratilac
 
+// Čarobnjak
+arcanepower=Arkanska moć
+manapower=Moć mane
+manaproficiency=Vještina s manom
+firepower=Vatrena moć
+arcaneshield=Arkanski štit
+fireshield=Vatreni štit
+iceshield=Ledeni štit
+flamingsteps=Plameni koraci
+stormbound=Okovan olujom
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Vuk pratilac
 unleashingrage=Svaka razina pruža:\n\n+1% sve štete za svakih 10% nedostajućeg zdravlja
 unleashinghaste=Svaka razina pruža:\n\n+1% brzine kretanja za svakih 10% nedostajućeg zdravlja
 unyielding=Svaka razina pruža:\n\n+5% brzine napada i -5% dolazne štete dok je zdravlje ispod 20%
-lastbreath=Umjesto da umrete, postanite neranjivi na §a[[3 x razina vještine]] sekundi§0\nKada vrijeme istekne, umrijet ćete
+lastbreath=Umjesto da umrete, postanite neranjivi na §a[[3 x <skilllevel>]] sekundi§0\nKada vrijeme istekne, umrijet ćete
 
 // Rendžer
-plasmagrenade=Svakih 8 napada iz daljine, ispalite navođeni eksplozivni projektil koji nanosi §i[[30 x razina vještine]]%§0 štete oružja
-wolfcompanion=Vuk pratilac će napadati označene neprijatelje nanoseći §i[[razina igrača x razina vještine + inteligencija x razina vještine]] štete prizivača§0
+plasmagrenade=Svakih 8 napada iz daljine, ispalite navođeni eksplozivni projektil koji nanosi §i[[30 x <skilllevel>]]%§0 štete oružja
+wolfcompanion=Vuk pratilac će napadati označene neprijatelje nanoseći §i[[<playerlevel> + <intelligence> x <skilllevel>]] štete prizivača§0
 
+// Čarobnjak
+manapower=Svaka razina pruža:\n\n+1% magične štete za svakih 10% neiskorištene mane
+flamingsteps=Kada trčite s aktivnim privjeskom, ostavljat ćete plamenove na tlu\nPlamenovi će zapaliti neprijatelje na 2 sekunde, nanoseći §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0 u sekundi
+stormbound=Svakih §a[[9 - 0.5 x <skilllevel>]] sekundi§0, munja udari nasumičnog neprijatelja u vašem vidokrugu\nNanosi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0 i omamljuje na 1 sekundu
+arcaneshield=Štit koji sprječava jedan udarac\nŠtit će se oporaviti §a[[20 - <skilllevel>]] sekundi§0 nakon upotrebe
+fireshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete eksploziju koja nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\ni zapaliti mobove, ponavljajući 20% njihove izvorne štete u sekundi tijekom 5 sekundi\nŠtit će se oporaviti 26 sekundi nakon upotrebe
+iceshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete ledenu auru koja nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nzamrzavajući mobove na 5 sekundi, i potpuno ih zamrzavajući na 1 sekundu\nŠtit će se oporaviti 22 sekunde nakon upotrebe
 
 [activeskills]
 empty=Prazno
@@ -136,7 +160,6 @@ parry=Pariranje
 battlecry=Bojni poklič
 
 ironguard=Željezni stražar
-thornedguard=Trnoviti stražar
 intimidation=Zastrašivanje
 
 objectthrowing=Bacanje predmeta
@@ -155,41 +178,70 @@ beartrap=Medvjeđa zamka
 huntersinstinct=Lovački instinkt
 arrowstorm=Oluja strijela
 
+// Čarobnjak
+arcaneoverload=Arkansko preopterećenje
+firedance=Vatreni ples
+iceball=Ledena kugla
+zap=Strujni udar
+manarecharge=Punjenje mane
+
+teleport=Teleportacija
+inferno=Pakao
+fireenchantment=Vatreno očaravanje
+iceenchantment=Ledeno očaravanje
+
+fireball=Vatrena kugla
+lightning=Munja
+
 
 [activeskillsdesc]
 
 // Ratnik
-fury=Sljedećih 6 sekundi povećajte svoju štetu u bliskoj borbi i brzinu napada za §a[[20 x razina vještine]]%
-recovery=Sljedećih 10 sekundi uvelike pojačava regeneraciju zdravlja u borbi, obnavljajući §a[[20 + izdržljivost x razina vještine]] zdravlja§0 tijekom trajanja
-provocation=Sljedećih §a[[2 x razina vještine]] sekundi§0, prisilite obližnje neprijatelje da usredotoče svoje napade na vas
-berserkercharge=Jurišajte naprijed na kratku udaljenost, nanoseći §i[[10 x razina igrača + 2 x snaga x razina vještine + 2 x brzina x razina vještine]] štete§0 svim neprijateljima pored kojih prođete\nTroši 50% izdržljivosti
-groundslam=Područni napad koji nanosi §i[[5 x snaga]] štete u bliskoj borbi§0 i §9omamljuje§0 na §a[[1 x razina vještine]] sekundi§0
-grounddestruction=Područni napad koji nanosi §i[[5 x snaga x razina vještine + 5 x razina igrača x razina vještine]] štete u bliskoj borbi§0 i §9omamljuje§0 na 2 sekunde
+fury=Sljedećih 6 sekundi povećajte svoju štetu u bliskoj borbi i brzinu napada za §a[[20 x <skilllevel>]]%
+recovery=Sljedećih 10 sekundi uvelike pojačava regeneraciju zdravlja u borbi, obnavljajući §a[[20 + <endurance> x <skilllevel>]] zdravlja§0 tijekom trajanja
+provocation=Sljedećih §a[[2 x <skilllevel>]] sekundi§0, prisilite obližnje neprijatelje da usredotoče svoje napade na vas
+berserkercharge=Jurišajte naprijed na kratku udaljenost, nanoseći §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] štete§0 svim neprijateljima pored kojih prođete\nTroši 50% izdržljivosti
+groundslam=Područni napad koji nanosi §i[[5 x <strength>]] štete u bliskoj borbi§0 i §9omamljuje§0 na §a[[1 x <skilllevel>]] sekundi§0
+grounddestruction=Područni napad koji nanosi §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] štete u bliskoj borbi§0 i §9omamljuje§0 na 2 sekunde
 parry=Postanite neranjivi na 0,5 sekundi i vratite 500% izvorne primljene štete\nTroši 100% izdržljivosti
-battlecry=Sljedećih 10 sekundi povećajte svoju i štetu obližnjih saveznika te brzinu kretanja za §a[[10 x razina vještine]]%
+battlecry=Sljedećih 10 sekundi povećajte svoju i štetu obližnjih saveznika te brzinu kretanja za §a[[10 x <skilllevel>]]%
 
-ironguard=-50% dolazne štete na §a[[4 x razina vještine]] sekundi
-thornedguard=-50% dolazne štete na 12 sekundi\nDodatno, vraća §a[[100 x razina vještine]]%§0 izvorne primljene štete
-intimidation=Sljedećih §a[[razina vještine]] sekundi§0, natjerajte obližnje neprijatelje da pobjegnu
+ironguard=-50% dolazne štete na §a[[4 x <skilllevel>]] sekundi
+intimidation=Sljedećih §a[[<skilllevel>]] sekundi§0, natjerajte obližnje neprijatelje da pobjegnu
 
-objectthrowing=Korak 1: Zgrabite predmet ispred sebe\nKorak 2: Bacite ga naprijed nanoseći §i[[20 x razina igrača + 5 x snaga x razina vještine]] štete u bliskoj borbi§0\nOba koraka troše svu vašu izdržljivost (najmanje 100%)
+objectthrowing=Korak 1: Zgrabite predmet ispred sebe\nKorak 2: Bacite ga naprijed nanoseći §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] štete u bliskoj borbi§0\nOba koraka troše svu vašu izdržljivost (najmanje 100%)
 
 // Rendžer
-shortdash=Izvedite juriš snage 100\nTroši 15% izdržljivosti
-longdash=Izvedite juriš snage 150\nTroši 25% izdržljivosti
-lethalshot=Ispalite §hsmrtonosnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[5 x razina igrača + 5 x snaga x razina vještine]] štete rendžera§0
-venomshot=Ispalite §botrovnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x razina igrača + 2 x snaga x razina vještine + 2 x inteligencija x razina vještine]] štete rendžera§0
-explosiveshot=Ispalite §ieksplozivnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x razina igrača + 2 x snaga x razina vještine + 2 x inteligencija x razina vještine]] štete rendžera§0
+shortdash=Izvedite juriš snage 100 <strength>\nTroši 15% izdržljivosti
+longdash=Izvedite juriš snage 150 <strength>\nTroši 25% izdržljivosti
+lethalshot=Ispalite §hsmrtonosnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] štete rendžera§0
+venomshot=Ispalite §botrovnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] štete rendžera§0
+explosiveshot=Ispalite §ieksplozivnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] štete rendžera§0
 
 shotsrampage=Dok imate barem 1 hrpu Pomame hitaca, pogađanje neprijatelja napadom iz daljine daje 1 dodatnu hrpu na 5 sekundi\nSvaka hrpa Pomame hitaca povećava brzinu napada za 5%, do najviše 30 hrpa
-huntersmark=§hOznačite§0 najbližeg neprijatelja s najviše zdravlja na 10 sekundi\nAko ubijete označenu metu, dobivate §a+[[20 x razina vještine]]%§0 brzine napada iz daljine i brzine kretanja na 5 sekundi
-beartrap=Postavite medvjeđu zamku na tlo koja nestaje ako se aktivira ili nakon 20 sekundi\nAko je neprijatelj aktivira, primit će §i[[10 x razina igrača]] štete§0 i bit će zarobljen 5 sekundi
+huntersmark=§hOznačite§0 najbližeg neprijatelja s najviše zdravlja na 10 sekundi\nAko ubijete označenu metu, dobivate §a+[[20 x <skilllevel>]]%§0 brzine napada iz daljine i brzine kretanja na 5 sekundi
+beartrap=Postavite medvjeđu zamku na tlo koja nestaje ako se aktivira ili nakon 20 sekundi\nAko je neprijatelj aktivira, primit će §i[[10 x <playerlevel>]] štete§0 i bit će zarobljen 5 sekundi
 
-huntersinstinct=Sljedećih 12 sekundi povećajte svoju §7šansu za izbjegavanje§0 za §a[[10 x razina vještine]]%\n§hOznačite§0 na 5 sekundi neprijatelje koje izbjegnete
-arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći §i[[2 x razina igrača + snaga x razina vještine + brzina x razina vještine]] štete rendžera§0 svakom strijelom
+huntersinstinct=Sljedećih 12 sekundi povećajte svoju §7šansu za izbjegavanje§0 za §a[[10 x <skilllevel>]]%\n§hOznačite§0 na 5 sekundi neprijatelje koje izbjegnete
+arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] štete rendžera§0 svakom strijelom
+
+// Čarobnjak
+arcaneoverload=Dok je aktivno, povećava vašu brzinu magičnog napada za §a[[30 x <skilllevel>]]%§0, ali se nećete moći kretati\nZavršava kada ostanete bez mane, ili ako se ponovno koristi\nTroši §a[[10 + 2 x <skilllevel>]] mane u sekundi
+manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu\nZavršava kada se ponovno koristi
+firedance=Priziva 4 §bPlešuća plamena§0, od kojih svaki nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nPrizovite još jedan svakih 5 sekundi\nSvi prizivi nestaju 20 sekundi nakon aktivacije sposobnosti\nTroši §a[[30 + 6 x <skilllevel>]] mane
+iceball=Bacite §aLedenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[50 + 10 x <skilllevel>]] mane
+zap=Pokrenite strujni udar koji skače između mobova 2 sekunde, nanoseći §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 1 sekundu\nTroši §a[[10 + 2 x <skilllevel>]] mane
+
+teleport=Teleportira vas ispred vas\nTroši 10 mane
+inferno=Zapalite sve obližnje neprijatelje, nanoseći §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] vatrene štete§0 u sekundi tijekom 10 sekundi\nTroši §a[[40 + 8 x <skilllevel>]] mane
+fireenchantment=Sljedećih 10 sekundi, napadi od vas i obližnjih saveznika pale neprijatelje, nanoseći §a[[5 x <skilllevel>]]%§0 štete u sekundi tijekom 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane
+iceenchantment=Sljedećih 10 sekundi, napadi od vas i obližnjih saveznika zamrzavaju neprijatelje na §a[[2 x <skilllevel>]] sekundi§0\nTroši 20 mane
+
+fireball=Bacite §iVatrenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[80 + 16 x <skilllevel>]] mane
+lightning=Pokrenite munju koja skače između mobova 1 sekundu, nanoseći §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 2 sekunde\nNe može pogoditi istu metu više puta\nTroši §a[[30 + 6 x <skilllevel>]] mane
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Razina vještine
 playerlevel=Razina igrača
 endurance=Izdržljivost
@@ -200,8 +252,12 @@ grace=Gracioznost
 
 
 [extraskilldesc]
+// Osnovne mehanike
+manausage=Ako nemate dovoljno mane, vrijeme hlađenja se udvostručuje
+setmax=Negativni učinci postavljeni su na maksimum i ne mogu se ukloniti drugim pojačanjima
+
 // Pojačanja
-marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\nSvi navođeni i/ili ispaljeni projektili na najbližeg neprijatelja dat će prednost označenim neprijateljima
+marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\n"Najbliži neprijatelj" daje prednost označenim neprijateljima
 
 // Modifikatori šanse
 dodgechance=§7Šansa za izbjegavanje:§0 Šansa za izbjegavanje dolaznih napada. Ne može premašiti 80%
@@ -209,11 +265,17 @@ focuschance=§hŠansa za fokus:§0 Šansa za §hoznačavanje§0 moba na 5 sekund
 
 // Ravni modifikatori
 mobdetection=§9Detekcija mobova:§0 Prikazuje obližnje mobove na karti. Veći domet detekcije otkriva mobove s veće udaljenosti
+ignitedamage=§iŠteta od zapaljenja:§0 Povećava štetu od zapaljenja tijekom vremena, ali ne utječe na izravnu štetu od udarca
 
 // Projektili
 lethalarrow=§hSmrtonosna strijela:§0 Navođena strijela koja daje kritični udarac
-venomarrow=§bOtrovna strijela:§0 Navođena strijela koja truje neprijatelje, ponavljajući 10% svoje izvorne štete u sekundi tijekom 30 sekundi
+venomarrow=§bOtrovna strijela:§0 Navođena strijela koja truje neprijatelje. Ponavlja 10% svoje izvorne štete u sekundi tijekom 30 sekundi
 explosivearrow=§iEksplozivna strijela:§0 Navođena strijela koja uzrokuje magičnu eksploziju s jednakom štetom
+iceball=§aLedena kugla:§0 Magični projektil koji eksplodira i zamrzava mobove na 5 sekundi, a također ih potpuno zamrzava na 1 sekundu
+fireball=§iVatrena kugla:§0 Magični projektil koji eksplodira i zapali mobove ponavljajući 20% njihove izvorne štete u sekundi tijekom 5 sekundi
+
+// Prizivi
+dancingflame=§bPlešući plamen:§0 Priziv koji djeluje kao projektil. Zapali neprijatelje pri udarcu. Ponavlja 20% svoje izvorne štete u sekundi tijekom 5 sekundi
 
 
 [item]
@@ -278,7 +340,7 @@ classes=Klase
 
 level=Razina <level>
 classlevel=<class> razina <level>
-lvl=Razina <level>
+lvl=Raz <level>
 eachlevel=Svaka razina pruža:
 experience=XP: <exp> / <nextexp>
 totalexperience=Ukupno XP: <exp>
@@ -296,7 +358,7 @@ activeskillsequipinstructions=Kliknite na utor da biste opremili aktivnu vješti
 noactiveskills=Nemate aktivnih vještina. Otključajte ih kroz klase
 
 activeskillcooldown=§9Hlađenje: <seconds>s
-activeskillcooldownmod=§9Hlađenje: [[<seconds> <sign> <mod> x razina vještine]]s
+activeskillcooldownmod=§9Hlađenje: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bPotrebna je razina klase <level>
 requiredactiveskill=§bZahtijeva '<skill>' razinu <level>
 maxlevel=§aMaksimalna razina: <level>

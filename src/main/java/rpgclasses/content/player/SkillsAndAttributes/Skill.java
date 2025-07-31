@@ -23,6 +23,8 @@ abstract public class Skill {
     public GameTexture texture;
     public PlayerClass playerClass;
 
+    public String family = null;
+
     public Skill(String stringID, String color, int levelMax, int requiredClassLevel) {
         this.stringID = stringID;
         this.color = color;
@@ -30,12 +32,24 @@ abstract public class Skill {
         this.requiredClassLevel = requiredClassLevel;
     }
 
+    public static String[] changes = new String[]{"skilllevel", "playerlevel", "endurance", "speed", "strength", "intelligence", "grace"};
+
     public ListGameTooltips getToolTips() {
         ListGameTooltips tooltips = new ListGameTooltips();
         for (String string : getToolTipsText()) {
+            if (string.contains("<") && string.contains(">")) {
+                for (String change : changes) {
+                    string = string.replaceAll("<" + change + ">", Localization.translate("skillsdesckeys", change));
+                }
+            }
             tooltips.add(string);
         }
         return tooltips;
+    }
+
+    public Skill setFamily(String family) {
+        this.family = family;
+        return this;
     }
 
     abstract public List<String> getToolTipsText();
@@ -48,17 +62,8 @@ abstract public class Skill {
 
     abstract public void registerSkillBuffs();
 
-    public ListGameTooltips getFinalToolTips(PlayerMob player, int skillLevel) {
+    public ListGameTooltips getFinalToolTips(PlayerMob player, int skillLevel, boolean onlyChanges) {
         if (containsComplexTooltips() && skillLevel > 0) {
-            String xKey = Localization.translate("skillsdesckeys", "x");
-            String skillLevelKey = Localization.translate("skillsdesckeys", "skilllevel");
-            String playerLevelKey = Localization.translate("skillsdesckeys", "playerlevel");
-            String enduranceKey = Localization.translate("skillsdesckeys", "endurance");
-            String speedKey = Localization.translate("skillsdesckeys", "speed");
-            String strengthKey = Localization.translate("skillsdesckeys", "strength");
-            String intelligenceKey = Localization.translate("skillsdesckeys", "intelligence");
-            String graceKey = Localization.translate("skillsdesckeys", "grace");
-
             PlayerData playerData = PlayerDataList.getPlayerData(player);
             int playerLevel = playerData.getLevel();
             int endurance = playerData.getEndurance(player);
@@ -73,41 +78,44 @@ abstract public class Skill {
             stringTooltips.set(0, stringTooltips.get(0) + " - " + Localization.translate("ui", "level", "level", skillLevel));
 
             for (String toolTip : stringTooltips) {
-                List<String> parts = splitToolTip(toolTip);
+                if (toolTip.contains("<") && toolTip.contains(">")) {
+                    List<String> parts = splitToolTip(toolTip);
 
-                for (int i = 0; i < parts.size(); i++) {
-                    String part = parts.get(i);
-                    if (part.startsWith("[[") && part.endsWith("]]")) {
-                        String inside = part.substring(2, part.length() - 2);
+                    for (int i = 0; i < parts.size(); i++) {
+                        String part = parts.get(i);
+                        if (part.startsWith("[[") && part.endsWith("]]")) {
+                            String inside = part.substring(2, part.length() - 2);
 
-                        inside = inside
-                                .replace(xKey, "x")
-                                .replace(skillLevelKey, String.valueOf(skillLevel))
-                                .replace(playerLevelKey, String.valueOf(playerLevel))
-                                .replace(enduranceKey, String.valueOf(endurance))
-                                .replace(speedKey, String.valueOf(speed))
-                                .replace(strengthKey, String.valueOf(strength))
-                                .replace(intelligenceKey, String.valueOf(intelligence))
-                                .replace(graceKey, String.valueOf(grace));
+                            inside = inside
+                                    .replaceAll("<skilllevel>", String.valueOf(skillLevel))
+                                    .replaceAll("<playerlevel>", String.valueOf(playerLevel))
+                                    .replaceAll("<endurance>", String.valueOf(endurance))
+                                    .replaceAll("<speed>", String.valueOf(speed))
+                                    .replaceAll("<strength>", String.valueOf(strength))
+                                    .replaceAll("<intelligence>", String.valueOf(intelligence))
+                                    .replaceAll("<grace>", String.valueOf(grace));
 
-                        float value = calculateValue(inside);
-                        String valueText;
-                        if (value == (int) value) {
-                            valueText = String.valueOf((int) value);
-                        } else {
-                            valueText = String.format("%.1f", value);
+                            float value = calculateValue(inside);
+                            String valueText;
+                            if (value == (int) value) {
+                                valueText = String.valueOf((int) value);
+                            } else {
+                                valueText = String.format("%.1f", value);
+                            }
+
+                            parts.set(i, valueText);
                         }
-
-                        parts.set(i, valueText);
                     }
-                }
 
-                StringBuilder modifiedToolTip = new StringBuilder();
-                for (String p : parts) {
-                    modifiedToolTip.append(p);
-                }
+                    StringBuilder modifiedToolTip = new StringBuilder();
+                    for (String p : parts) {
+                        modifiedToolTip.append(p);
+                    }
 
-                tooltips.add(modifiedToolTip.toString());
+                    tooltips.add(modifiedToolTip.toString());
+                } else {
+                    if (!onlyChanges) tooltips.add(toolTip);
+                }
             }
             return tooltips;
         }
@@ -156,12 +164,24 @@ abstract public class Skill {
 
             if (token.equals("x")) {
                 float prev = values.remove(values.size() - 1);
-                float next = Float.parseFloat(tokens[++i]);
+                float next;
+
+                try {
+                    next = Float.parseFloat(tokens[++i]);
+                } catch (RuntimeException e) {
+                    next = 0;
+                }
+
                 values.add(prev * next);
             } else if (token.equals("+") || token.equals("-")) {
                 operators.add(token);
             } else {
-                values.add(Float.parseFloat(token));
+                try {
+                    float n = Float.parseFloat(token);
+                    values.add(n);
+                } catch (RuntimeException e) {
+                    values.add(0F);
+                }
             }
         }
 
@@ -181,13 +201,12 @@ abstract public class Skill {
     }
 
     public static Point2D.Float getDir(PlayerMob player) {
-        float dirX;
-        float dirY;
+        float dirX, dirY;
 
         if (player.dx == 0 && player.dy == 0) {
-            Point2D.Float dirFromFacing = getDirFromFacing(player.getDir());
-            dirX = dirFromFacing.x;
-            dirY = dirFromFacing.y;
+            Point2D.Float dir = getDirFromFacing(player.getDir());
+            dirX = dir.x;
+            dirY = dir.y;
         } else {
             dirX = player.dx;
             dirY = player.dy;
@@ -200,16 +219,17 @@ abstract public class Skill {
 
             Point2D.Float expected = getDirFromFacing(player.getDir());
 
-            if ((Math.signum(dirX) != 0 && Math.signum(dirX) != Math.signum(expected.x)) ||
-                    (Math.signum(dirY) != 0 && Math.signum(dirY) != Math.signum(expected.y))) {
+            if (expected.x != 0 && dirX > 0 != expected.x > 0) {
                 dirX = expected.x;
+            }
+            if (expected.y != 0 && dirY > 0 != expected.y > 0) {
                 dirY = expected.y;
             }
+
         }
 
         return new Point2D.Float(dirX, dirY);
     }
-
 
     private static Point2D.Float getDirFromFacing(int dir) {
         switch (dir) {

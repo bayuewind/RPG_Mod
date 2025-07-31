@@ -7,18 +7,14 @@ import necesse.entity.mobs.PlayerMob;
 import rpgclasses.data.PlayerData;
 
 abstract public class SimpleLevelEventActiveSkill extends ActiveSkill {
-    public SimpleLevelEventActiveSkill(String familyID, String stringID, String color, int levelMax, int requiredClassLevel) {
-        super(familyID, stringID, color, levelMax, requiredClassLevel);
-    }
-
     public SimpleLevelEventActiveSkill(String stringID, String color, int levelMax, int requiredClassLevel) {
-        this(stringID, stringID, color, levelMax, requiredClassLevel);
+        super(stringID, color, levelMax, requiredClassLevel);
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUSe);
-        addLevelEvent(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
+        addLevelEvent(player, playerData, activeSkillLevel, seed, isInUse);
     }
 
     public void addLevelEvent(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {

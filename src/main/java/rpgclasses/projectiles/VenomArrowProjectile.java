@@ -1,13 +1,11 @@
 package rpgclasses.projectiles;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.projectile.followingProjectile.FollowingProjectile;
 import necesse.entity.trails.Trail;
 import necesse.gfx.GameResources;
@@ -19,17 +17,17 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.buffs.MarkedBuff;
-import rpgclasses.registry.RPGBuffs;
+import rpgclasses.RPGUtils;
+import rpgclasses.buffs.MagicPoisonBuff;
 
 import java.awt.*;
 import java.util.List;
 
-public class VenomArrow extends FollowingProjectile {
-    public VenomArrow() {
+public class VenomArrowProjectile extends FollowingProjectile {
+    public VenomArrowProjectile() {
     }
 
-    public VenomArrow(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+    public VenomArrowProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -54,14 +52,7 @@ public class VenomArrow extends FollowingProjectile {
     @Override
     public void updateTarget() {
         if (this.traveledDistance > 50F) {
-            target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance),
-                    m -> MarkedBuff.isMarked((PlayerMob) getOwner(), m)
-            );
-            if (target == null) target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance + 100),
-                    m -> m.canBeTargeted(getOwner(), ((PlayerMob) getOwner()).getNetworkClient())
-            );
+            target = RPGUtils.findBestTarget(getOwner(), 1000);
         }
     }
 
@@ -95,9 +86,7 @@ public class VenomArrow extends FollowingProjectile {
     public void doHitLogic(Mob mob, LevelObjectHit object, float x, float y) {
         super.doHitLogic(mob, object, x, y);
         if (mob != null) {
-            ActiveBuff ab = new ActiveBuff(RPGBuffs.MagicPoison, mob, 30F, this.getOwner());
-            ab.getGndData().setFloat("poisonDamage", getDamage().damage * 0.1F);
-            mob.buffManager.addBuff(ab, true);
+            MagicPoisonBuff.apply(getOwner(), mob, getDamage().damage * 0.1F, 30F);
         }
     }
 

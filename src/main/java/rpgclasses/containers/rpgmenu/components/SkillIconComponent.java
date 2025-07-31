@@ -13,8 +13,8 @@ import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.SpriteTooltip;
 import necesse.gfx.gameTooltips.TooltipLocation;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.containers.rpgmenu.BorderFormGameBackground;
+import rpgclasses.content.player.SkillsAndAttributes.Skill;
 
 import java.awt.*;
 import java.util.List;
@@ -67,7 +67,7 @@ public class SkillIconComponent extends FormButton implements FormPositionContai
             ListGameTooltips tooltips;
             if (skill.containsComplexTooltips() && skillLevel > 0) {
                 if (showLevelVersion) {
-                    tooltips = skill.getFinalToolTips(playerMob, skillLevel);
+                    tooltips = skill.getFinalToolTips(playerMob, skillLevel, false);
                     tooltips.add(" ");
                     tooltips.add(Localization.translate("ui", "clicktoseebase"));
                 } else {

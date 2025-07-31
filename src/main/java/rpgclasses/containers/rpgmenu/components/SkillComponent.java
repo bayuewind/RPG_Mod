@@ -20,6 +20,7 @@ import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.data.PlayerClassData;
 
@@ -27,7 +28,7 @@ import java.awt.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SkillComponent extends FormContentBox {
-    public static int width = 32 + 6;
+    public static int width = 32 + 6 + 8;
     public static int height = 66;
     int currentSkillLevel;
     FormEventListener<FormInputEvent<FormButton>> onAdd;
@@ -54,14 +55,14 @@ public class SkillComponent extends FormContentBox {
 
         SkillIconComponent skillIconComponent = this.addComponent(new SkillIconComponent(skill, skillLevel.get(), 0, 0, width, 34));
 
-        this.addComponent(new FormContentIconButton(width / 2 + 2, 34 + 2, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.addSmall_icon[style]) {
+        this.addComponent(new FormContentIconButton((width / 2) + 2, 34 + 2, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.addSmall_icon[style]) {
             @Override
             protected void addTooltips(PlayerMob perspective) {
                 GameTooltips tooltips = null;
                 if (skill.containsComplexTooltips()) {
                     int skillLevel = getSkillLevel();
                     if (skillLevel < skill.levelMax) {
-                        tooltips = skill.getFinalToolTips(player, skillLevel + 1);
+                        tooltips = skill.getFinalToolTips(player, skillLevel + 1, true);
                     }
                 }
 
@@ -74,8 +75,8 @@ public class SkillComponent extends FormContentBox {
             int maxLevel = classData.getEffectiveSkillMaxLevel(skill, classLevel);
 
             if (skillLevel.get() < maxLevel) {
-                boolean hasRequired = true;
                 if (skill instanceof ActiveSkill) {
+                    boolean hasRequired = true;
                     ActiveSkill activeSkill = (ActiveSkill) skill;
                     for (ActiveSkill.RequiredSkill requiredSkill : activeSkill.requiredSkills) {
                         if (mutableSkillLevels[requiredSkill.activeSkill.id] < requiredSkill.activeSkillLevel) {
@@ -83,25 +84,39 @@ public class SkillComponent extends FormContentBox {
                             break;
                         }
                     }
+                    if (!hasRequired) return;
                 }
-                if (hasRequired) {
-                    int newLevel = skillLevel.incrementAndGet();
-                    levelText.setLocalization(getLevelText(newLevel));
-                    levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
-                    skillIconComponent.setSkillLevel(newLevel);
-                    onAdd.onEvent(c);
+
+                if (skill instanceof Passive && skill.family != null) {
+                    boolean onlyInFamily = true;
+                    for (int i = 0; i < mutableSkillLevels.length; i++) {
+                        if (mutableSkillLevels[i] > 0 && i != skill.id) {
+                            Passive other = classData.playerClass.passivesList.get(i);
+                            if (other.family != null && other.family.equals(skill.family)) {
+                                onlyInFamily = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (!onlyInFamily) return;
                 }
+
+                int newLevel = skillLevel.incrementAndGet();
+                levelText.setLocalization(getLevelText(newLevel));
+                levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
+                skillIconComponent.setSkillLevel(newLevel);
+                onAdd.onEvent(c);
             }
         }));
 
-        this.addComponent(new FormContentIconButton(0, 34 + 2, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.removeSmall_icon[style]) {
+        this.addComponent(new FormContentIconButton((width / 2) - 16 - 2, 34 + 2, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.removeSmall_icon[style]) {
             @Override
             protected void addTooltips(PlayerMob perspective) {
                 GameTooltips tooltips = null;
                 if (skill.containsComplexTooltips()) {
                     int skillLevel = getSkillLevel();
-                    if (skillLevel > 0) {
-                        tooltips = skill.getFinalToolTips(player, skillLevel - 1);
+                    if (skillLevel > 1) {
+                        tooltips = skill.getFinalToolTips(player, skillLevel - 1, true);
                     }
                 }
 
@@ -111,29 +126,35 @@ public class SkillComponent extends FormContentBox {
             }
         }.onClicked(c -> {
             if (skillLevel.get() > 0) {
-                int isRequirement = 0;
                 if (skill instanceof ActiveSkill) {
-                    for (ActiveSkill activeSkill : classData.playerClass.activeSkillsList.getList()) {
-                        for (ActiveSkill.RequiredSkill requiredSkill : activeSkill.requiredSkills) {
-                            if (requiredSkill != null && requiredSkill.activeSkill.id == skill.id && mutableSkillLevels[activeSkill.id] > 0) {
-                                int levelRequired = requiredSkill.activeSkillLevel;
-                                if (levelRequired > isRequirement) {
-                                    isRequirement = levelRequired;
-                                }
-                            }
-                        }
+                    int isRequirement = getIsRequirement(skill, classData, mutableSkillLevels);
+                    if (skillLevel.get() <= isRequirement) {
+                        return;
                     }
                 }
 
-                if (skillLevel.get() > isRequirement) {
-                    int newLevel = skillLevel.decrementAndGet();
-                    levelText.setLocalization(getLevelText(newLevel));
-                    levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
-                    skillIconComponent.setSkillLevel(newLevel);
-                    onRemove.onEvent(c);
-                }
+                int newLevel = skillLevel.decrementAndGet();
+                levelText.setLocalization(getLevelText(newLevel));
+                levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
+                skillIconComponent.setSkillLevel(newLevel);
+                onRemove.onEvent(c);
             }
         }));
+    }
+
+    private static int getIsRequirement(Skill skill, PlayerClassData classData, int[] mutableSkillLevels) {
+        int isRequirement = 0;
+        for (ActiveSkill activeSkill : classData.playerClass.activeSkillsList.getList()) {
+            for (ActiveSkill.RequiredSkill requiredSkill : activeSkill.requiredSkills) {
+                if (requiredSkill != null && requiredSkill.activeSkill.id == skill.id && mutableSkillLevels[activeSkill.id] > 0) {
+                    int levelRequired = requiredSkill.activeSkillLevel;
+                    if (levelRequired > isRequirement) {
+                        isRequirement = levelRequired;
+                    }
+                }
+            }
+        }
+        return isRequirement;
     }
 
     public GameMessage getLevelText(int skillLevel) {

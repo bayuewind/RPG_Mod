@@ -8,12 +8,8 @@ import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.data.PlayerData;
 
 abstract public class SimpleBuffActiveSkill extends ActiveSkill {
-    public SimpleBuffActiveSkill(String familyID, String stringID, String color, int levelMax, int requiredClassLevel) {
-        super(familyID, stringID, color, levelMax, requiredClassLevel);
-    }
-
     public SimpleBuffActiveSkill(String stringID, String color, int levelMax, int requiredClassLevel) {
-        this(stringID, stringID, color, levelMax, requiredClassLevel);
+        super(stringID, color, levelMax, requiredClassLevel);
     }
 
     @Override
@@ -28,17 +24,18 @@ abstract public class SimpleBuffActiveSkill extends ActiveSkill {
 
     public void giveBuff(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
         ActiveBuff ab = getActiveBuff(buffOwner, target, playerData, activeSkillLevel);
-        target.buffManager.addBuff(ab, false, true);
+        target.buffManager.addBuff(ab, true);
     }
 
     public void giveBuff2(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
         ActiveBuff ab = getActiveBuff2(buffOwner, target, playerData, activeSkillLevel);
-        target.buffManager.addBuff(ab, false, true);
+        target.buffManager.addBuff(ab, true);
     }
 
     public ActiveBuff getActiveBuff(String buffID, int duration, PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
         ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(buffID), target, duration, null);
         ab.getGndData().setInt("skillLevel", activeSkillLevel);
+        ab.getGndData().setInt("playerLevel", activeSkillLevel);
         ab.getGndData().setInt("endurance", playerData.getEndurance(buffOwner));
         ab.getGndData().setInt("speed", playerData.getSpeed(buffOwner));
         ab.getGndData().setInt("strength", playerData.getStrength(buffOwner));
@@ -48,18 +45,18 @@ abstract public class SimpleBuffActiveSkill extends ActiveSkill {
     }
 
     public ActiveBuff getActiveBuff(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
-        return this.getActiveBuff(getBuffID(), getDuration(activeSkillLevel), buffOwner, target, playerData, activeSkillLevel);
+        return this.getActiveBuff(getBuffStringID(), getDuration(activeSkillLevel), buffOwner, target, playerData, activeSkillLevel);
     }
 
     public ActiveBuff getActiveBuff2(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
-        return this.getActiveBuff(getBuff2ID(), getDuration2(activeSkillLevel), buffOwner, target, playerData, activeSkillLevel);
+        return this.getActiveBuff(getBuff2StringID(), getDuration2(activeSkillLevel), buffOwner, target, playerData, activeSkillLevel);
     }
 
     @Override
     public void registerSkillBuffs() {
-        BuffRegistry.registerBuff(getBuffID(), getBuff());
+        BuffRegistry.registerBuff(getBuffStringID(), getBuff());
         ActiveSkillBuff buff2 = getBuff2();
-        if (buff2 != null) BuffRegistry.registerBuff(getBuff2ID(), buff2);
+        if (buff2 != null) BuffRegistry.registerBuff(getBuff2StringID(), buff2);
     }
 
     abstract public ActiveSkillBuff getBuff();
@@ -74,11 +71,11 @@ abstract public class SimpleBuffActiveSkill extends ActiveSkill {
         return 0;
     }
 
-    public String getBuffID() {
+    public String getBuffStringID() {
         return stringID + "activeskillbuff";
     }
 
-    public String getBuff2ID() {
+    public String getBuff2StringID() {
         return stringID + "2activeskillbuff";
     }
 }

@@ -78,8 +78,10 @@ public class ModifiersBuff extends PassiveBuff {
         String prevent = this.shouldPreventDamage(activeBuff);
         if (prevent != null && activeBuff.owner.isServer()) {
             if (prevent.equals("dodge")) {
-                activeBuff.owner.getServer().network.sendToAllClients(new ShowDodgePacket(activeBuff.owner.getX(), activeBuff.owner.getY()));
-                final List<ActiveBuff> dodgeClassBuffs = activeBuff.owner.buffManager.getBuffs().values().stream().filter(ab -> ab.buff instanceof DodgeClassBuff).collect(Collectors.toList());
+                activeBuff.owner.getServer().network.sendToClientsAtEntireLevel(new ShowDodgePacket(activeBuff.owner.getX(), activeBuff.owner.getY()), activeBuff.owner.getLevel());
+                final List<ActiveBuff> dodgeClassBuffs = activeBuff.owner.buffManager.getBuffs().values().stream()
+                        .filter(ab -> ab.buff instanceof DodgeClassBuff)
+                        .collect(Collectors.toList());
                 for (ActiveBuff ab : dodgeClassBuffs) {
                     ((DodgeClassBuff) ab.buff).onDodge(ab, event);
                 }

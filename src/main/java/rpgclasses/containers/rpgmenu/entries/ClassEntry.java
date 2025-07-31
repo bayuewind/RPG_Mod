@@ -14,14 +14,14 @@ import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
+import rpgclasses.containers.rpgmenu.MenuContainer;
+import rpgclasses.containers.rpgmenu.MenuContainerForm;
+import rpgclasses.containers.rpgmenu.components.SkillComponent;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.containers.rpgmenu.MenuContainer;
-import rpgclasses.containers.rpgmenu.MenuContainerForm;
-import rpgclasses.containers.rpgmenu.components.SkillComponent;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -111,22 +111,34 @@ public class ClassEntry extends MenuEntry {
                     actualColumn = 0;
                     lastPassiveLevel = passive.requiredClassLevel;
                     newSeparation = true;
-                } else if (maxPassiveColumns > actualColumn) {
+                } else if (actualColumn < maxPassiveColumns - 1) {
                     actualColumn++;
                 } else {
                     passiveRows++;
                     actualColumn = 0;
                 }
             }
+
             int yPosition = 12 + passiveRows * (SkillComponent.height + 12);
 
             if (newSeparation && lastPassiveLevel != 0) {
-                passives.addComponent(new FormLocalLabel(new LocalMessage("ui", "classlevelseparation", "level", lastPassiveLevel), new FontOptions(12), -1, 8, yPosition + passiveSeparations * 24 + 8));
+                passives.addComponent(new FormLocalLabel(
+                        new LocalMessage("ui", "classlevelseparation", "level", lastPassiveLevel),
+                        new FontOptions(12), -1, 8, yPosition + passiveSeparations * 24 + 8
+                ));
                 passiveSeparations++;
             }
 
             int finalI = i;
-            SkillComponent passiveSkillComponent = passives.addComponent(new SkillComponent(12 + actualColumn * (SkillComponent.width + 12), yPosition + passiveSeparations * 24, playerClass.passivesList.get(i), player, playerClassData, passiveLevels[i], mutablePassiveLevels));
+            SkillComponent passiveSkillComponent = passives.addComponent(new SkillComponent(
+                    6 + actualColumn * (SkillComponent.width + 2),
+                    yPosition + passiveSeparations * 24,
+                    playerClass.passivesList.get(i),
+                    player,
+                    playerClassData,
+                    passiveLevels[i],
+                    mutablePassiveLevels
+            ));
             passiveSkillComponent.setOnAdd(
                     c -> {
                         int currentUsedPassives = mutableUsedPassivePoints.incrementAndGet();
@@ -193,7 +205,7 @@ public class ClassEntry extends MenuEntry {
             }
 
             int finalI = i;
-            SkillComponent activeSkillComponent = activeSkills.addComponent(new SkillComponent(12 + (actualColumn - 1) * (SkillComponent.width + 12), yPosition + activeSeparations * 24, activeSkill, player, playerClassData, activeSkillLevels[i], mutableActiveSkillLevels));
+            SkillComponent activeSkillComponent = activeSkills.addComponent(new SkillComponent(6 + (actualColumn - 1) * (SkillComponent.width + 2), yPosition + activeSeparations * 24, activeSkill, player, playerClassData, activeSkillLevels[i], mutableActiveSkillLevels));
             activeSkillComponent.setOnAdd(
                     c -> {
                         int currentUsedActiveSkills = mutableUsedActiveSkillsPoints.incrementAndGet();

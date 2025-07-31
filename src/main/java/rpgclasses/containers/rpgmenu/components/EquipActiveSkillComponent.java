@@ -69,11 +69,13 @@ public class EquipActiveSkillComponent extends FormContentBox {
                                 newEquippedActiveSkills[finalI].playerClass = playerClass;
                                 newEquippedActiveSkills[finalI].activeSkill = activeSkill;
 
-                                // If this skill is in cooldown in any other slot with a later lastUse, then apply that lastUse to this slot. If not, restart it
+                                // If this skill is in cooldown in any other slot, then apply that lastUse to this slot if higher and remove the last one
                                 long maxLastUse = 0;
                                 for (int j = 0; j < 4; j++) {
-                                    if (finalI != j) {
-                                        maxLastUse = Math.max(maxLastUse, newEquippedActiveSkills[j].lastUse);
+                                    EquippedActiveSkill equippedActiveSkill2 = newEquippedActiveSkills[j];
+                                    if (finalI != j && !equippedActiveSkill2.isEmpty() && equippedActiveSkill2.isSameSkill(newEquippedActiveSkills[finalI])) {
+                                        maxLastUse = Math.max(maxLastUse, equippedActiveSkill2.lastUse);
+                                        newEquippedActiveSkills[j].empty();
                                     }
                                 }
                                 newEquippedActiveSkills[finalI].lastUse = maxLastUse;

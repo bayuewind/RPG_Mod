@@ -1,6 +1,7 @@
 package rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs;
 
 import necesse.engine.modifiers.Modifier;
+import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.buffs.ActiveBuff;
 
 import java.util.Objects;
@@ -9,13 +10,51 @@ abstract public class ModifierBuff<T> {
     public final Modifier<T> modifier;
     public final T value;
 
+    public boolean setMin = false;
+    public boolean setMax = false;
+    public T maxMod;
+    public T minMod;
+
     public ModifierBuff(Modifier<T> modifier, T value) {
         this.modifier = modifier;
         this.value = value;
     }
 
+    public ModifierBuff<T> doSetMin() {
+        this.setMin = true;
+        return this;
+    }
+
+    public ModifierBuff<T> doSetMin(T minMod) {
+        this.setMin = true;
+        this.maxMod = minMod;
+        return this;
+    }
+
+    public ModifierBuff<T> doSetMax() {
+        this.setMax = true;
+        return this;
+    }
+
+    public ModifierBuff<T> doSetMax(T maxMod) {
+        this.setMax = true;
+        this.maxMod = maxMod;
+        return this;
+    }
+
     public void applyBuff(ActiveBuff activeBuff, int attributeLevel) {
-        activeBuff.addModifier(modifier, scaledValue(attributeLevel));
+        T value = scaledValue(attributeLevel);
+        ModifierValue<T> modifierValue = new ModifierValue<>(modifier, value);
+        if (value instanceof Integer) {
+            int base = (Integer) value;
+            if (setMin) modifierValue.min((T) (Object) (base + (Integer) minMod));
+            if (setMax) modifierValue.max((T) (Object) (base + (Integer) maxMod));
+        } else if (value instanceof Float) {
+            float base = (Float) value;
+            if (setMin) modifierValue.min((T) (Object) (base + (Float) minMod));
+            if (setMax) modifierValue.max((T) (Object) (base + (Float) maxMod));
+        }
+        modifierValue.apply(activeBuff);
     }
 
     public String getLocalizationString() {

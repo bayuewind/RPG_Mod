@@ -1,5 +1,6 @@
 package rpgclasses;
 
+import necesse.engine.sound.gameSound.GameSound;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.ui.ButtonIcon;
 import necesse.gfx.ui.GameInterfaceStyle;
@@ -7,7 +8,7 @@ import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.mobs.summons.pasive.RangerWolfMob;
+import rpgclasses.mobs.summons.pasivesummon.RangerWolfMob;
 
 public class RPGResources {
 
@@ -15,6 +16,7 @@ public class RPGResources {
         initUIResources();
         initParticleResources();
         initMobResources();
+        SOUNDS.initSoundResources();
     }
 
     public static class UI_TEXTURES {
@@ -84,5 +86,13 @@ public class RPGResources {
 
     public static void initMobResources() {
         RangerWolfMob.texture = GameTexture.fromFile("mobs/rangerwolf");
+    }
+
+    public static class SOUNDS {
+        public static GameSound Zap;
+
+        public static void initSoundResources() {
+            Zap = GameSound.fromFile("zap");
+        }
     }
 }

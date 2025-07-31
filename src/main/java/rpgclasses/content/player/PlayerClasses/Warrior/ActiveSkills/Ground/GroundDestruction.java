@@ -18,8 +18,8 @@ import java.awt.*;
 
 public class GroundDestruction extends ActiveSkill {
 
-    public GroundDestruction(String familyID, int levelMax, int requiredClassLevel) {
-        super(familyID, "grounddestruction", "#cc3E2B", levelMax, requiredClassLevel);
+    public GroundDestruction(int levelMax, int requiredClassLevel) {
+        super("grounddestruction", "#cc3E2B", levelMax, requiredClassLevel);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class GroundDestruction extends ActiveSkill {
         AphAreaList areaList = new AphAreaList(
                 new AphArea(120, colorArea, RPGColors.dirt, RPGColors.red)
                         .setDebuffArea(2000, AphBuffs.STUN.getStringID())
-                        .setDamageArea(new GameDamage(DamageTypeRegistry.MELEE, 5 * playerData.getStrength(player) * activeSkillLevel + 5 * playerData.getLevel() * activeSkillLevel))
+                        .setDamageArea(new GameDamage(DamageTypeRegistry.MELEE, 5 * playerData.getLevel() + 5 * playerData.getStrength(player) * activeSkillLevel))
         );
         areaList.execute(player, false);
     }

@@ -99,7 +99,7 @@ public class EquippedActiveSkill {
 
             gameTexture.initDraw().pos(pos.x - size / 2, pos.y - size / 2 + 5).draw();
 
-            if (lastUse > 0 && playerClass != null && activeSkill != null) {
+            if (playerClass != null && activeSkill != null) {
                 PlayerData playerData = PlayerDataList.getPlayerData(player);
                 int activeSkillLevel = playerData.getClassesData()[playerClass.id].getActiveSkillLevels()[activeSkill.id];
                 int cooldownLeft = getCooldownLeft(activeSkillLevel, player.getTime());
@@ -130,14 +130,19 @@ public class EquippedActiveSkill {
         if (isInUse()) {
             return Localization.translate("ui", "inuse");
         } else {
-            String amountString;
-            if (cooldownLeft < 1000) {
-                amountString = String.format("%.1fs", (float) cooldownLeft / 1000);
-            } else {
-                amountString = (cooldownLeft / 1000) + "s";
-            }
-            return amountString;
+            return getTimeLeftString(cooldownLeft);
         }
+    }
+
+    public static String getTimeLeftString(int cooldownLeft) {
+        String amountString;
+        if (cooldownLeft < 1000) {
+            amountString = String.format("%.1fs", (float) cooldownLeft / 1000);
+        } else {
+            amountString = (cooldownLeft / 1000) + "s";
+        }
+        return amountString;
+
     }
 
     public int getCooldownLeft(int activeSkillLevel, long currentTime) {
@@ -152,7 +157,7 @@ public class EquippedActiveSkill {
         int cooldownLeft;
         if (cooldownLeftLong > Integer.MAX_VALUE) {
             // Extremely high cooldown - prefer to allow the player to use the active skill instead of punishing them
-            cooldownLeft = 1;
+            cooldownLeft = 0;
         } else if (cooldownLeftLong < Integer.MIN_VALUE) {
             cooldownLeft = Integer.MIN_VALUE;
         } else {
@@ -172,16 +177,20 @@ public class EquippedActiveSkill {
         return !equippedActiveSkill.isEmpty() && this.isSameSkill(equippedActiveSkill.playerClass, equippedActiveSkill.activeSkill);
     }
 
+    public boolean isSameSkill(ActiveSkill activeSkill) {
+        return this.isSameSkill(activeSkill.playerClass, activeSkill);
+    }
+
     public boolean isSameSkill(PlayerClass playerClass, ActiveSkill activeSkill) {
-        return this.playerClass != null && this.activeSkill != null && this.playerClass.id == playerClass.id && this.activeSkill.id == activeSkill.id;
+        return !this.isEmpty() && this.playerClass.id == playerClass.id && this.activeSkill.id == activeSkill.id;
     }
 
     public boolean isSameFamily(EquippedActiveSkill equippedActiveSkill) {
-        return this.playerClass != null && this.activeSkill != null && this.playerClass.id == equippedActiveSkill.playerClass.id && Objects.equals(this.activeSkill.family, equippedActiveSkill.activeSkill.family);
+        return !equippedActiveSkill.isEmpty() && this.isSameFamily(equippedActiveSkill.playerClass, equippedActiveSkill.activeSkill);
     }
 
     public boolean isSameFamily(PlayerClass playerClass, ActiveSkill activeSkill) {
-        return this.playerClass != null && this.activeSkill != null && this.playerClass.id == playerClass.id && Objects.equals(this.activeSkill.family, activeSkill.family);
+        return !this.isEmpty() && activeSkill.family != null && this.playerClass.id == playerClass.id && Objects.equals(this.activeSkill.family, activeSkill.family);
     }
 
     public boolean isNotSameSkillButSameFamily(EquippedActiveSkill equippedActiveSkill) {
@@ -207,6 +216,7 @@ public class EquippedActiveSkill {
     public void empty() {
         playerClass = null;
         activeSkill = null;
+        lastUse = 0;
     }
 
     public void tryRun(PlayerMob player, int skillSlot) {

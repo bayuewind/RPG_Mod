@@ -3,6 +3,7 @@
 [global]
 rpgmod=§!RPG Mod
 
+
 [buffmodifiers]
 enduranceattrflat=<mod> atributo de aguante
 speedattrflat=<mod> atributo de velocidad
@@ -16,6 +17,7 @@ rangedweaponsrange=<mod>% de alcance de armas a distancia
 mobdetectionrange=<mod> rango de detección de monstruos
 focusdamage=<mod>% de daño de enfoque
 focuschance=<mod>% de probabilidad de enfoque
+ignitedamage=<mod>% de daño de quemadura
 
 
 [enchantment]
@@ -30,6 +32,8 @@ depleted=Agotado
 overlevelclassbuff=Clase de sobrenivel
 markedbuff=Marcado
 darkcursebuff=Maldición Oscura
+magicpoisonbuff=Veneno Mágico
+ignitedbuff=Quemado
 
 
 [buffdesc]
@@ -40,8 +44,11 @@ darkcursebuff2=Todo el daño también reduce la Salud Máxima
 
 
 [mob]
-rpgmobname=[<class>] <name> nivel <level>
-rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivel <level>§0
+rpgmobname=[<class>] <name> nv <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9nv <level>§0
+
+rangerwolf=Lobo Explorador
+dancingflame=Llama Danzante
 
 
 [mobclass]
@@ -81,7 +88,7 @@ druid=Druida
 [passives]
 passives=Pasivas
 
-// Guerrero
+// Warrior
 regeneration=Regeneración
 muscles=Músculos
 legs=Piernas
@@ -94,7 +101,7 @@ unleashinghaste=Prisa Desatada
 unyielding=Inflexible
 lastbreath=Último Aliento
 
-// Explorador
+// Ranger
 aim=Puntería
 agility=Agilidad
 criticalshots=Disparos Críticos
@@ -107,24 +114,42 @@ predatorsense=Sentido Depredador
 plasmagrenade=Granada de Plasma
 wolfcompanion=Lobo Compañero
 
+// Wizard
+arcanepower=Poder Arcano
+manapower=Poder de Maná
+manaproficiency=Competencia de Maná
+firepower=Poder de Fuego
+arcaneshield=Escudo Arcano
+fireshield=Escudo de Fuego
+iceshield=Escudo de Hielo
+flamingsteps=Pasos Llameantes
+stormbound=Atado a la Tormenta
+
 
 [passivesdesc]
-
-// Guerrero
+// Warrior
 unleashingrage=Cada nivel proporciona:\n\n+1% de Daño Total por cada 10% de Salud perdida
 unleashinghaste=Cada nivel proporciona:\n\n+1% de Velocidad de Movimiento por cada 10% de Salud perdida
 unyielding=Cada nivel proporciona:\n\n+5% de Velocidad de Ataque y -5% de Daño Recibido mientras estés por debajo del 20% de Salud
-lastbreath=En lugar de morir, te vuelves invulnerable durante §a[[3 x Nivel de Habilidad]] segundos§0\nUna vez que se acabe el tiempo, morirás
+lastbreath=En lugar de morir, te vuelves invulnerable durante §a[[3 x <skilllevel>]] segundos§0\nUna vez que se acabe el tiempo, morirás
 
-// Explorador
-plasmagrenade=Cada 8 ataques a distancia, dispara un proyectil explosivo guiado que inflige un §i[[30 x Nivel de Habilidad]]%§0 del daño del arma
-wolfcompanion=Un lobo compañero atacará a los enemigos marcados infligiendo §i[[Nivel del Jugador x Nivel de Habilidad + Inteligencia x Nivel de Habilidad]] de Daño de invocador§0
+// Ranger
+plasmagrenade=Cada 8 ataques a distancia, dispara un proyectil explosivo guiado que inflige un §i[[30 x <skilllevel>]]%§0 del daño del arma
+wolfcompanion=Un lobo compañero atacará a los enemigos marcados infligiendo §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño de Invocador
+
+// Wizard
+manapower=Cada nivel proporciona:\n\n+1% de Daño Mágico por cada 10% de Maná no utilizado
+flamingsteps=Al correr con un abalorio activo, dejarás llamas en el suelo\nLas llamas quemarán a los enemigos durante 2 segundos, infligiendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 por segundo
+stormbound=Cada §a[[9 - 0.5 x <skilllevel>]] segundos§0, un rayo cae sobre un enemigo aleatorio en tu visión\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturde durante 1 segundo
+arcaneshield=Un escudo que previene un golpe\nEl escudo se recuperará §a[[20 - <skilllevel>]] segundos§0 después de usarlo
+fireshield=Un escudo que previene un golpe\nAl usarlo, liberarás una explosión que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ny quemarás a los monstruos, repitiendo el 20% de su daño original por segundo durante 5 segundos\nEl escudo se recuperará 26 segundos después de usarlo
+iceshield=Un escudo que previene un golpe\nAl usarlo, liberarás un aura de hielo que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ncongelando a los monstruos durante 5 segundos, y congelándolos totalmente durante 1 segundo\nEl escudo se recuperará 22 segundos después de usarlo
 
 
 [activeskills]
 empty=Vacío
 
-// Guerrero
+// Warrior
 fury=Furia
 recovery=Recuperación
 provocation=Provocación
@@ -136,12 +161,11 @@ parry=Parada
 battlecry=Grito de Batalla
 
 ironguard=Guardia de Hierro
-thornedguard=Guardia Espinosa
 intimidation=Intimidación
 
 objectthrowing=Lanzamiento de Objetos
 
-// Explorador
+// Ranger
 shortdash=Carrera Corta
 longdash=Carrera Larga
 lethalshot=Disparo Letal
@@ -155,41 +179,70 @@ beartrap=Trampa para Osos
 huntersinstinct=Instinto de Cazador
 arrowstorm=Tormenta de Flechas
 
+// Wizard
+arcaneoverload=Sobrecarga Arcana
+firedance=Danza de Fuego
+iceball=Bola de Hielo
+zap=Chispazo
+manarecharge=Recarga de Maná
+
+teleport=Teletransporte
+inferno=Infierno
+fireenchantment=Encantamiento de Fuego
+iceenchantment=Encantamiento de Hielo
+
+fireball=Bola de Fuego
+lightning=Rayo
+
 
 [activeskillsdesc]
+// Warrior
+fury=Durante los próximos 6 segundos, aumenta tu Daño Cuerpo a Cuerpo y Velocidad de Ataque en un §a[[20 x <skilllevel>]]%
+recovery=Durante los próximos 10 segundos, aumenta enormemente la Regeneración de Salud en Combate, restaurando §a[[20 + <endurance> x <skilllevel>]] de salud§0 durante el tiempo
+provocation=Durante los próximos §a[[2 x <skilllevel>]] segundos§0, obliga a los enemigos cercanos a centrar sus ataques en ti
+berserkercharge=Avanza rápidamente una corta distancia, infligiendo §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] de Daño§0 a todos los enemigos que atravieses\nConsume el 50% de la Resistencia
 
-// Guerrero
-fury=Durante los próximos 6 segundos, aumenta tu Daño Cuerpo a Cuerpo y Velocidad de Ataque en un §a[[20 x Nivel de Habilidad]]%
-recovery=Durante los próximos 10 segundos, aumenta enormemente la Regeneración de Salud en Combate, restaurando §a[[20 + Aguante x Nivel de Habilidad]] de salud§0 durante el tiempo
-provocation=Durante los próximos §a[[2 x Nivel de Habilidad]] segundos§0, obliga a los enemigos cercanos a centrar sus ataques en ti
-berserkercharge=Avanza rápidamente una corta distancia, infligiendo §i[[10 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Velocidad x Nivel de Habilidad]] de Daño§0 a todos los enemigos que atravieses\nConsume el 50% de la Resistencia
-groundslam=Ataque de área que inflige §i[[5 x Fuerza]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante §a[[1 x Nivel de Habilidad]] segundos§0
-grounddestruction=Ataque de área que inflige §i[[5 x Fuerza x Nivel de Habilidad + 5 x Nivel del Jugador x Nivel de Habilidad]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante 2 segundos
+groundslam=Ataque de área que inflige §i[[5 x <strength>]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante §a[[1 x <skilllevel>]] segundos§0
+grounddestruction=Ataque de área que inflige §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante 2 segundos
 parry=Te vuelves invulnerable durante 0.5 segundos y devuelves el 500% del Daño original recibido\nConsume el 100% de la Resistencia
-battlecry=Durante los próximos 10 segundos, aumenta tu Daño Total y el de los aliados cercanos y la Velocidad de Movimiento en un §a[[10 x Nivel de Habilidad]]%
+battlecry=Durante los próximos 10 segundos, aumenta tu Daño Total y el de los aliados cercanos y la Velocidad de Movimiento en un §a[[10 x <skilllevel>]]%
 
-ironguard=-50% de Daño Recibido durante §a[[4 x Nivel de Habilidad]] segundos
-thornedguard=-50% de Daño Recibido durante 12 segundos\nAdemás, devuelve un §a[[100 x Nivel de Habilidad]]%§0 del Daño original recibido
-intimidation=Durante los próximos §a[[Nivel de Habilidad]] segundos§0, haz que los enemigos cercanos huyan
+ironguard=-50% de Daño Recibido durante §a[[4 x <skilllevel>]] segundos
+intimidation=Durante los próximos §a[[<skilllevel>]] segundos§0, haz que los enemigos cercanos huyan
 
-objectthrowing=Paso 1: Agarra un objeto frente a ti\nPaso 2: Lánzalo hacia adelante infligiendo §i[[20 x Nivel del Jugador + 5 x Fuerza x Nivel de Habilidad]] de Daño Cuerpo a Cuerpo§0\nAmbos pasos consumen toda tu Resistencia (al menos el 100%)
+objectthrowing=Paso 1: Agarra un objeto frente a ti\nPaso 2: Lánzalo hacia adelante infligiendo §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0\nAmbos pasos consumen toda tu Resistencia (al menos el 100%)
 
-// Explorador
-shortdash=Realiza una carrera de 100 de Fuerza\nConsume el 15% de la Resistencia
-longdash=Realiza una carrera de 150 de Fuerza\nConsume el 25% de la Resistencia
-lethalshot=Dispara una §hFlecha Letal§0 al enemigo más cercano, infligiendo §i[[5 x Nivel del Jugador + 5 x Fuerza x Nivel de Habilidad]] de Daño de Explorador§0
-venomshot=Dispara una §bFlecha de Veneno§0 al enemigo más cercano, infligiendo §i[[4 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Inteligencia x Nivel de Habilidad]] de Daño de Explorador§0
-explosiveshot=Dispara una §iFlecha Explosiva§0 al enemigo más cercano, infligiendo §i[[4 x Nivel del Jugador + 2 x Fuerza x Nivel de Habilidad + 2 x Inteligencia x Nivel de Habilidad]] de Daño de Explorador§0
+// Ranger
+shortdash=Realiza una carrera de 100 de <strength>\nConsume el 15% de la Resistencia
+longdash=Realiza una carrera de 150 de <strength>\nConsume el 25% de la Resistencia
+lethalshot=Dispara una §hFlecha Letal§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de Daño de Explorador§0
+venomshot=Dispara una §bFlecha de Veneno§0 al enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de Daño de Explorador§0
+explosiveshot=Dispara una §iFlecha Explosiva§0 al enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de Daño de Explorador§0
 
 shotsrampage=Mientras tengas al menos 1 acumulación de Ráfaga de Disparos, golpear a un enemigo con un ataque a distancia otorga 1 acumulación adicional durante 5 segundos\nCada acumulación de Ráfaga de Disparos aumenta la Velocidad de Ataque en un 5%, hasta un máximo de 30 acumulaciones
-huntersmark=§hMarca§0 al enemigo cercano con la salud más alta durante 10 segundos\nSi matas a un objetivo marcado, obtienes un §a+[[20 x Nivel de Habilidad]]%§0 de Velocidad de Ataque a Distancia y Velocidad de Movimiento durante 5 segundos
-beartrap=Coloca una trampa para osos en el suelo que desaparece si se activa o después de 20 segundos\nSi un enemigo la activa, recibirá §i[[10 x Nivel del Jugador]] de Daño§0 y quedará atrapado durante 5 segundos
+huntersmark=§hMarca§0 al enemigo cercano con la salud más alta durante 10 segundos\nSi matas a un objetivo marcado, obtienes un §a+[[20 x <skilllevel>]]%§0 de Velocidad de Ataque a Distancia y Velocidad de Movimiento durante 5 segundos
+beartrap=Coloca una trampa para osos en el suelo que desaparece si se activa o después de 20 segundos\nSi un enemigo la activa, recibirá §i[[10 x <playerlevel>]] de Daño§0 y quedará atrapado durante 5 segundos
 
-huntersinstinct=Durante los próximos 12 segundos, aumenta tu §7Probabilidad de Esquivar§0 en un §a[[10 x Nivel de Habilidad]]%\n§hMarca§0 durante 5 segundos a los enemigos que esquives
-arrowstorm=Dispara una flecha básica a cada enemigo cercano, infligiendo §i[[2 x Nivel del Jugador + Fuerza x Nivel de Habilidad + Velocidad x Nivel de Habilidad]] de Daño de Explorador§0 por cada flecha
+huntersinstinct=Durante los próximos 12 segundos, aumenta tu §7Probabilidad de Esquivar§0 en un §a[[10 x <skilllevel>]]%\n§hMarca§0 durante 5 segundos a los enemigos que esquives
+arrowstorm=Dispara una flecha básica a cada enemigo cercano, infligiendo §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] de Daño de Explorador§0 por cada flecha
+
+// Wizard
+arcaneoverload=Mientras está activo, aumenta tu Velocidad de Ataque Mágico en un §a[[30 x <skilllevel>]]%§0, pero no podrás moverte\nTermina cuando te quedas sin maná, o si se usa de nuevo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná por segundo
+manarecharge=Mientras está activo, aumenta tu Regeneración de Maná en +1 y en un §a[[50 x <skilllevel>]]%§0, pero estarás paralizado y recibirás el doble de daño\nTermina cuando se usa de nuevo
+firedance=Invoca 4 §bLlamas Danzantes§0, cada una inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\nInvoca otra cada 5 segundos\nTodas las invocaciones desaparecen 20 segundos después de activar la habilidad\nConsume §a[[30 + 6 x <skilllevel>]] de Maná
+iceball=Lanza una §aBola de Hielo§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\nConsume §a[[50 + 10 x <skilllevel>]] de Maná
+zap=Inicia un chispazo que salta entre los monstruos durante 2 segundos, infligiendo §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturdiendo durante 1 segundo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná
+
+teleport=Te teletransporta delante de ti\nConsume 10 de Maná
+inferno=Quema a todos los enemigos cercanos, infligiendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño de Fuego§0 por segundo durante 10 segundos\nConsume §a[[40 + 8 x <skilllevel>]] de Maná
+fireenchantment=Durante los próximos 10 segundos, los ataques tuyos y de los aliados cercanos queman a los enemigos, infligiendo un §a[[5 x <skilllevel>]]%§0 del daño por segundo durante 5 segundos\nConsume §a[[20 + 4 x <skilllevel>]] de Maná
+iceenchantment=Durante los próximos 10 segundos, los ataques tuyos y de los aliados cercanos congelan a los enemigos durante §a[[2 x <skilllevel>]] segundos§0\nConsume 20 de Maná
+
+fireball=Lanza una §iBola de Fuego§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\nConsume §a[[80 + 16 x <skilllevel>]] de Maná
+lightning=Inicia un rayo que salta entre los monstruos durante 1 segundo, infligiendo §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturdiendo durante 2 segundos\nNo puede golpear varias veces al mismo objetivo\nConsume §a[[30 + 6 x <skilllevel>]] de Maná
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Nivel de Habilidad
 playerlevel=Nivel del Jugador
 endurance=Aguante
@@ -200,27 +253,37 @@ grace=Gracia
 
 
 [extraskilldesc]
-// Mejoras
-marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\nTodos los proyectiles guiados y/o disparados al enemigo más cercano priorizarán a los enemigos marcados
+// Basic Mechanics
+manausage=Si no tienes suficiente maná, su enfriamiento se duplica
+setmax=Los efectos negativos se establecen como máximos y no se pueden eliminar con otras mejoras
 
-// Modificadores de probabilidad
+// Buffs
+marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\n"El enemigo más cercano" prioriza a los enemigos marcados
+
+// Chance Modifiers
 dodgechance=§7Probabilidad de Esquivar:§0 Probabilidad de esquivar los ataques entrantes. No puede exceder el 80%
 focuschance=§hProbabilidad de Enfoque:§0 Probabilidad de §hMarcar§0 durante 5 segundos a un monstruo cuando es atacado con daño que no sea de Invocador
 
-// Modificadores planos
+// Flat Modifiers
 mobdetection=§9Detección de Monstruos:§0 Muestra los monstruos cercanos en el mapa. Un rango de detección más alto revela monstruos desde más lejos
+ignitedamage=§iDaño de Quemadura:§0 Aumenta el daño de quemadura con el tiempo, pero no afecta el daño del golpe directo
 
-// Proyectiles
+// Projectiles
 lethalarrow=§hFlecha Letal:§0 Flecha guiada que otorga un golpe Crítico
-venomarrow=§bFlecha de Veneno:§0 Flecha guiada que envenena a los enemigos, repitiendo el 10% de su daño original por segundo durante 30 segundos
+venomarrow=§bFlecha de Veneno:§0 Flecha guiada que envenena a los enemigos. Repite el 10% de su daño original por segundo durante 30 segundos
 explosivearrow=§iFlecha Explosiva:§0 Flecha guiada que causa una explosión mágica con el mismo daño
+iceball=§aBola de Hielo:§0 Proyectil mágico que explota y congela a los monstruos durante 5 segundos, también los congela totalmente durante 1 segundo
+fireball=§iBola de Fuego:§0 Proyectil mágico que explota y quema a los monstruos repitiendo el 20% de su daño original por segundo durante 5 segundos
+
+// Summons
+dancingflame=§bLlama Danzante:§0 Invocación que actúa como un proyectil. Quema a los enemigos al golpear. Repite el 20% de su daño original por segundo durante 5 segundos
 
 
 [item]
 scrollofoblivion=Pergamino del Olvido
 ringsbox=Caja de Anillos
 
-// Anillos de Atributos
+// Attribute Rings
 endurancewoodring=Anillo de Madera de Aguante
 endurancecopperring=Anillo de Cobre de Aguante
 enduranceironring=Anillo de Hierro de Aguante
@@ -270,6 +333,7 @@ incooldown=En Enfriamiento
 notenoughstamina=No hay Suficiente Resistencia
 nograbbableobject=No hay ningún objeto agarrable frente a ti
 
+
 [ui]
 menutitle=MOD RPG por Save
 attributes=Atributos
@@ -278,7 +342,7 @@ classes=Clases
 
 level=Nivel <level>
 classlevel=<class> nivel <level>
-lvl=Nivel <level>
+lvl=Nv <level>
 eachlevel=Cada nivel proporciona:
 experience=EXP: <exp> / <nextexp>
 totalexperience=EXP Total: <exp>

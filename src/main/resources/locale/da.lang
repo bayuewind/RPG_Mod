@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% rækkevidde på afstandsvåben
 mobdetectionrange=<mod> pøbeldetekteringsrækkevidde
 focusdamage=<mod>% fokusskade
 focuschance=<mod>% fokuschance
+ignitedamage=<mod>% brændskade
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Udtømt
 overlevelclassbuff=Overniveauklasse
 markedbuff=Mærket
 darkcursebuff=Mørk forbandelse
+magicpoisonbuff=Magisk Gift
+ignitedbuff=Antændt
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Al skade reducerer også maks. helbred
 [mob]
 rpgmobname=[<class>] <name> lvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+rangerwolf=Ranger Ulv
+dancingflame=Dansende Flamme
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Rovdyrsans
 plasmagrenade=Plasmagranat
 wolfcompanion=Ulvekammerat
 
+// Troldmand
+arcanepower=Arkan Kraft
+manapower=Mana Kraft
+manaproficiency=Mana Færdighed
+firepower=Ildkraft
+arcaneshield=Arkan Skjold
+fireshield=Ildskjold
+iceshield=Isskjold
+flamingsteps=Flammende Skridt
+stormbound=Stormbundet
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Ulvekammerat
 unleashingrage=Hvert niveau giver:\n\n+1% al skade for hver 10% manglende helbred
 unleashinghaste=Hvert niveau giver:\n\n+1% bevægelseshastighed for hver 10% manglende helbred
 unyielding=Hvert niveau giver:\n\n+5% angrebshastighed og -5% indkommende skade, når helbredet er under 20%
-lastbreath=I stedet for at dø, bliv usårlig i §a[[3 x færdighedsniveau]] sekunder§0\nNår tiden er gået, dør du
+lastbreath=I stedet for at dø, bliv usårlig i §a[[3 x <skilllevel>]] sekunder§0\nNår tiden er gået, dør du
 
 // Ranger
-plasmagrenade=Hver 8. afstandangreb affyrer et styret eksplosivt projektil, der giver §i[[30 x færdighedsniveau]]%§0 af våbnets skade
-wolfcompanion=En ulvekammerat vil angribe mærkede fjender og give §i[[spillerniveau x færdighedsniveau + intelligens x færdighedsniveau]] tilkalderskade§0
+plasmagrenade=Hver 8. afstandangreb affyrer et styret eksplosivt projektil, der giver §i[[30 x <skilllevel>]]%§0 af våbnets skade
+wolfcompanion=En ulvekammerat vil angribe mærkede fjender og give §i[[<playerlevel> + <intelligence> x <skilllevel>]] tilkalderskade§0
 
+// Troldmand
+manapower=Hvert niveau giver:\n\n+1% Magisk Skade for hver 10% ubrugt Mana
+flamingsteps=Når du løber med en aktiv pyntegenstand, efterlader du flammer på jorden\nFlammerne vil antænde fjender i 2 sekunder og give §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 pr. sekund
+stormbound=Hver §a[[9 - 0.5 x <skilllevel>]] sekunder§0, rammer et lyn en tilfældig fjende i dit synsfelt\nGiver §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund
+arcaneshield=Et skjold, der forhindrer et hit\nSkjoldet vil komme sig §a[[20 - <skilllevel>]] sekunder§0 efter brug
+fireshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en eksplosion, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nog antænder pøbler, der gentager 20% af deres oprindelige skade pr. sekund i 5 sekunder\nSkjoldet vil komme sig 26 sekunder efter brug
+iceshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en is-aura, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nfryser pøbler i 5 sekunder og fryser dem helt i 1 sekund\nSkjoldet vil komme sig 22 sekunder efter brug
 
 [activeskills]
 empty=Tom
@@ -136,7 +160,6 @@ parry=Parade
 battlecry=Kampråb
 
 ironguard=Jernvagt
-thornedguard=Tornevagt
 intimidation=Intimidering
 
 objectthrowing=Objektkast
@@ -155,41 +178,70 @@ beartrap=Bjørnefælde
 huntersinstinct=Jægerinstinkt
 arrowstorm=Pilestorm
 
+// Troldmand
+arcaneoverload=Arkan Overbelastning
+firedance=Ilddans
+iceball=Iskugle
+zap=Stød
+manarecharge=Mana Genopladning
+
+teleport=Teleporter
+inferno=Inferno
+fireenchantment=Ildfortryllelse
+iceenchantment=Isfortryllelse
+
+fireball=Ildkugle
+lightning=Lyn
+
 
 [activeskillsdesc]
 
 // Kriger
-fury=I de næste 6 sekunder øges din nærkampsskade og angrebshastighed med §a[[20 x færdighedsniveau]]%
-recovery=I de næste 10 sekunder øges din kamphbredsregeneration kraftigt, hvilket gendanner §a[[20 + udholdenhed x færdighedsniveau]] helbred§0 over varigheden
-provocation=I de næste §a[[2 x færdighedsniveau]] sekunder§0 tvinges nærliggende fjender til at fokusere deres angreb på dig
-berserkercharge=Skynd dig fremad en kort afstand og giv §i[[10 x spillerniveau + 2 x styrke x færdighedsniveau + 2 x hastighed x færdighedsniveau]] skade§0 til alle fjender, du passerer\nForbruger 50% udholdenhed
-groundslam=Områdeangreb, der giver §i[[5 x styrke]] nærkampsskade§0 og §9lammer§0 i §a[[1 x færdighedsniveau]] sekunder§0
-grounddestruction=Områdeangreb, der giver §i[[5 x styrke x færdighedsniveau + 5 x spillerniveau x færdighedsniveau]] nærkampsskade§0 og §9lammer§0 i 2 sekunder
+fury=I de næste 6 sekunder øges din nærkampsskade og angrebshastighed med §a[[20 x <skilllevel>]]%
+recovery=I de næste 10 sekunder øges din kamphbredsregeneration kraftigt, hvilket gendanner §a[[20 + <endurance> x <skilllevel>]] helbred§0 over varigheden
+provocation=I de næste §a[[2 x <skilllevel>]] sekunder§0 tvinges nærliggende fjender til at fokusere deres angreb på dig
+berserkercharge=Skynd dig fremad en kort afstand og giv §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] skade§0 til alle fjender, du passerer\nForbruger 50% udholdenhed
+groundslam=Områdeangreb, der giver §i[[5 x <strength>]] nærkampsskade§0 og §9lammer§0 i §a[[1 x <skilllevel>]] sekunder§0
+grounddestruction=Områdeangreb, der giver §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] nærkampsskade§0 og §9lammer§0 i 2 sekunder
 parry=Bliv usårlig i 0,5 sekunder og returner 500% af den oprindelige modtagne skade\nForbruger 100% udholdenhed
-battlecry=I de næste 10 sekunder øges din og nærliggende allieredes al skade og bevægelseshastighed med §a[[10 x færdighedsniveau]]%
+battlecry=I de næste 10 sekunder øges din og nærliggende allieredes al skade og bevægelseshastighed med §a[[10 x <skilllevel>]]%
 
-ironguard=-50% indkommende skade i §a[[4 x færdighedsniveau]] sekunder
-thornedguard=-50% indkommende skade i 12 sekunder\nReturnerer desuden §a[[100 x færdighedsniveau]]%§0 af den oprindelige modtagne skade
-intimidation=I de næste §a[[færdighedsniveau]] sekunder§0 får du nærliggende fjender til at flygte
+ironguard=-50% indkommende skade i §a[[4 x <skilllevel>]] sekunder
+intimidation=I de næste §a[[<skilllevel>]] sekunder§0 får du nærliggende fjender til at flygte
 
-objectthrowing=Trin 1: Grib en genstand foran dig\nTrin 2: Kast den fremad og giv §i[[20 x spillerniveau + 5 x styrke x færdighedsniveau]] nærkampsskade§0\nBegge trin bruger al din udholdenhed (mindst 100%)
+objectthrowing=Trin 1: Grib en genstand foran dig\nTrin 2: Kast den fremad og giv §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] nærkampsskade§0\nBegge trin bruger al din udholdenhed (mindst 100%)
 
 // Ranger
-shortdash=Udfør en spurt med 100 styrke\nForbruger 15% udholdenhed
-longdash=Udfør en spurt med 150 styrke\nForbruger 25% udholdenhed
-lethalshot=Skyd en §hdødbringende pil§0 mod den nærmeste fjende og giv §i[[5 x spillerniveau + 5 x styrke x færdighedsniveau]] rangerskade§0
-venomshot=Skyd en §bgiftpil§0 mod den nærmeste fjende og giv §i[[4 x spillerniveau + 2 x styrke x færdighedsniveau + 2 x intelligens x færdighedsniveau]] rangerskade§0
-explosiveshot=Skyd en §ieksplosiv pil§0 mod den nærmeste fjende og giv §i[[4 x spillerniveau + 2 x styrke x færdighedsniveau + 2 x intelligens x færdighedsniveau]] rangerskade§0
+shortdash=Udfør en 100-<strength> spurt\nForbruger 15% udholdenhed
+longdash=Udfør en 150-<strength> spurt\nForbruger 25% udholdenhed
+lethalshot=Skyd en §hdødbringende pil§0 mod den nærmeste fjende og giv §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] rangerskade§0
+venomshot=Skyd en §bgiftpil§0 mod den nærmeste fjende og giv §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] rangerskade§0
+explosiveshot=Skyd en §ieksplosiv pil§0 mod den nærmeste fjende og giv §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] rangerskade§0
 
 shotsrampage=Mens du har mindst 1 stak skudrampage, giver det at ramme en fjende med et afstandangreb 1 ekstra stak i 5 sekunder\nHver stak skudrampage øger angrebshastigheden med 5%, op til et maksimum på 30 stakke
-huntersmark=§hMærk§0 den nærmeste fjende med det højeste helbred i 10 sekunder\nHvis du dræber et mærket mål, får du §a+[[20 x færdighedsniveau]]%§0 afstandangrebshastighed og bevægelseshastighed i 5 sekunder
-beartrap=Placer en bjørnefælde på jorden, der forsvinder, hvis den udløses eller efter 20 sekunder\nHvis en fjende udløser den, tager de §i[[10 x spillerniveau]] skade§0 og bliver fanget i 5 sekunder
+huntersmark=§hMærk§0 den nærmeste fjende med det højeste helbred i 10 sekunder\nHvis du dræber et mærket mål, får du §a+[[20 x <skilllevel>]]%§0 afstandangrebshastighed og bevægelseshastighed i 5 sekunder
+beartrap=Placer en bjørnefælde på jorden, der forsvinder, hvis den udløses eller efter 20 sekunder\nHvis en fjende udløser den, tager de §i[[10 x <playerlevel>]] skade§0 og bliver fanget i 5 sekunder
 
-huntersinstinct=I de næste 12 sekunder øges din §7undvigelseschance§0 med §a[[10 x færdighedsniveau]]%\n§hMærk§0 i 5 sekunder de fjender, du undviger
-arrowstorm=Skyd en basispil mod hver nær fjende og giv §i[[2 x spillerniveau + styrke x færdighedsniveau + hastighed x færdighedsniveau]] rangerskade§0 pr. pil
+huntersinstinct=I de næste 12 sekunder øges din §7undvigelseschance§0 med §a[[10 x <skilllevel>]]%\n§hMærk§0 i 5 sekunder de fjender, du undviger
+arrowstorm=Skyd en basispil mod hver nær fjende og giv §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] rangerskade§0 pr. pil
+
+// Troldmand
+arcaneoverload=Mens aktiv, øger din Magiske Angrebshastighed med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevæge dig\nSlutter, når du løber tør for mana, eller hvis den bruges igen\nForbruger §a[[10 + 2 x <skilllevel>]] Mana pr. sekund
+manarecharge=Mens aktiv, øger din Mana Regeneration med +1 og med §a[[50 x <skilllevel>]]%§0, men du vil være lammet og modtage dobbelt skade\nSlutter, når den bruges igen
+firedance=Tilkald 4 §bDansende Flammer§0, der hver giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nTilkald en mere hvert 5. sekund\nAlle tilkaldelser forsvinder 20 sekunder efter, at evnen er aktiveret\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Kast en §aIskugle§0 mod den nærmeste fjende, der giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruger §a[[50 + 10 x <skilllevel>]] Mana
+zap=Start et stød, der hopper mellem pøbler i 2 sekunder, giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund\nForbruger §a[[10 + 2 x <skilllevel>]] Mana
+
+teleport=Teleporterer dig foran dig\nForbruger 10 Mana
+inferno=Antænd alle nærliggende fjender, der giver §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Ildskade§0 pr. sekund i 10 sekunder\nForbruger §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=I de næste 10 sekunder antænder angreb fra dig og nærliggende allierede fjender, der giver §a[[5 x <skilllevel>]]%§0 af skaden pr. sekund i 5 sekunder\nForbruger §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=I de næste 10 sekunder fryser angreb fra dig og nærliggende allierede fjender i §a[[2 x <skilllevel>]] sekunder§0\nForbruger 20 Mana
+
+fireball=Kast en §iIldkugle§0 mod den nærmeste fjende, der giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruger §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Start et lyn, der hopper mellem pøbler i 1 sekund, giver §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 2 sekunder\nKan ikke ramme det samme mål flere gange\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Færdighedsniveau
 playerlevel=Spillerniveau
 endurance=Udholdenhed
@@ -200,8 +252,12 @@ grace=Ynde
 
 
 [extraskilldesc]
+// Grundlæggende Mekanik
+manausage=Hvis du ikke har nok mana, fordobles dens nedkøling
+setmax=Negative effekter er sat som maks. og kan ikke fjernes af andre buffs
+
 // Buffs
-marked=§hMærket:§0 Giv +20% skade (+ §hfokusskade§0) og +10% kritisk chance til pøbler, du mærker\nAlle projektiler, der styres og/eller affyres mod den nærmeste fjende, vil prioritere mærkede fjender
+marked=§hMærket:§0 Giv +20% Skade (+ §hFokusskade§0) og +10% Kritisk Chance til pøbler, du mærker\n"Nærmeste fjende" prioriterer mærkede fjender
 
 // Chance-modifikatorer
 dodgechance=§7Undvigelseschance:§0 Chance for at undvige indkommende angreb. Kan ikke overstige 80%
@@ -209,11 +265,17 @@ focuschance=§hFokuschance:§0 Chance for at §hmærke§0 en pøbel i 5 sekunder
 
 // Flade modifikatorer
 mobdetection=§9Pøbeldetektering:§0 Viser nærliggende pøbler på kortet. En højere detekteringsrækkevidde afslører pøbler fra længere væk
+ignitedamage=§iBrændskade:§0 Øger brændskade over tid, men påvirker ikke direkte træfskade
 
 // Projektiler
 lethalarrow=§hDødbringende pil:§0 Styret pil, der giver et kritisk hit
-venomarrow=§bGiftpil:§0 Styret pil, der forgifter fjender og gentager 10% af sin oprindelige skade pr. sekund i 30 sekunder
+venomarrow=§bGiftpil:§0 Styret pil, der forgifter fjender. Gentager 10% af sin oprindelige skade pr. sekund i 30 sekunder
 explosivearrow=§iEksplosiv pil:§0 Styret pil, der forårsager en magisk eksplosion med samme skade
+iceball=§aIskugle:§0 Magisk projektil, der eksploderer og fryser pøbler i 5 sekunder, og fryser dem også helt i 1 sekund
+fireball=§iIldkugle:§0 Magisk projektil, der eksploderer og antænder pøbler, der gentager 20% af deres oprindelige skade pr. sekund i 5 sekunder
+
+// Tilkaldelser
+dancingflame=§bDansende Flamme:§0 Tilkaldelse, der fungerer som et projektil. Antænder fjender ved træf. Gentager 20% af sin oprindelige skade pr. sekund i 5 sekunder
 
 
 [item]
@@ -296,7 +358,7 @@ activeskillsequipinstructions=Klik på en plads for at udstyre en aktiv færdigh
 noactiveskills=Du har ingen aktive færdigheder. Lås dem op gennem klasserne
 
 activeskillcooldown=§9Nedkøling: <seconds>s
-activeskillcooldownmod=§9Nedkøling: [[<seconds> <sign> <mod> x færdighedsniveau]]s
+activeskillcooldownmod=§9Nedkøling: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bKlasseniveau <level> påkrævet
 requiredactiveskill=§bKræver '<skill>' niveau <level>
 maxlevel=§aMaks. niveau: <level>

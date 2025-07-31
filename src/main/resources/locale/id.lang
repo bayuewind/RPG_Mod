@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% jangkauan senjata jarak jauh
 mobdetectionrange=<mod> jangkauan deteksi monster
 focusdamage=<mod>% kerusakan fokus
 focuschance=<mod>% peluang fokus
+ignitedamage=<mod>% kerusakan terbakar
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Habis
 overlevelclassbuff=Kelas Level Berlebih
 markedbuff=Ditandai
 darkcursebuff=Kutukan Kegelapan
+magicpoisonbuff=Racun Ajaib
+ignitedbuff=Terbakar
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Semua kerusakan juga mengurangi Kesehatan Maks
 [mob]
 rpgmobname=[<class>] <name> lvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+rangerwolf=Serigala Penjaga
+dancingflame=Api Menari
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Indra Predator
 plasmagrenade=Granat Plasma
 wolfcompanion=Rekan Serigala
 
+// Penyihir
+arcanepower=Kekuatan Arcane
+manapower=Kekuatan Mana
+manaproficiency=Kemahiran Mana
+firepower=Kekuatan Api
+arcaneshield=Perisai Arcane
+fireshield=Perisai Api
+iceshield=Perisai Es
+flamingsteps=Langkah Membara
+stormbound=Terikat Badai
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Rekan Serigala
 unleashingrage=Setiap level memberikan:\n\n+1% Semua Kerusakan untuk setiap 10% Kesehatan yang hilang
 unleashinghaste=Setiap level memberikan:\n\n+1% Kecepatan Gerakan untuk setiap 10% Kesehatan yang hilang
 unyielding=Setiap level memberikan:\n\n+5% Kecepatan Serangan dan -5% Kerusakan Masuk saat di bawah 20% Kesehatan
-lastbreath=Alih-alih mati, menjadi kebal selama §a[[3 x Level Keterampilan]] detik§0\nSetelah waktu habis, Anda akan mati
+lastbreath=Alih-alih mati, menjadi kebal selama §a[[3 x <skilllevel>]] detik§0\nSetelah waktu habis, Anda akan mati
 
 // Penjaga
-plasmagrenade=Setiap 8 serangan Jarak Jauh, tembakkan proyektil peledak terpandu yang menghasilkan §i[[30 x Level Keterampilan]]%§0 dari kerusakan senjata
-wolfcompanion=Rekan serigala akan menyerang musuh yang ditandai yang menghasilkan §i[[Level Pemain x Level Keterampilan + Kecerdasan x Level Keterampilan]] Kerusakan Pemanggil§0
+plasmagrenade=Setiap 8 serangan Jarak Jauh, tembakkan proyektil peledak terpandu yang menghasilkan §i[[30 x <skilllevel>]]%§0 dari kerusakan senjata
+wolfcompanion=Rekan serigala akan menyerang musuh yang ditandai yang menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Pemanggil§0
 
+// Penyihir
+manapower=Setiap level memberikan:\n\n+1% Kerusakan Sihir untuk setiap 10% Mana yang tidak terpakai
+flamingsteps=Saat berlari dengan pernak-pernik aktif, Anda akan meninggalkan api di tanah\nApi akan membakar musuh selama 2 detik, menghasilkan §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 per detik
+stormbound=Setiap §a[[9 - 0.5 x <skilllevel>]] detik§0, petir menyambar musuh acak dalam pandangan Anda\nMenghasilkan §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 1 detik
+arcaneshield=Perisai yang mencegah satu serangan\nPerisai akan pulih §a[[20 - <skilllevel>]] detik§0 setelah digunakan
+fireshield=Perisai yang mencegah satu serangan\nSaat digunakan, Anda akan melepaskan ledakan yang menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\ndan membakar monster, mengulangi 20% dari kerusakan asli mereka per detik selama 5 detik\nPerisai akan pulih 26 detik setelah digunakan
+iceshield=Perisai yang mencegah satu serangan\nSaat digunakan, Anda akan melepaskan aura es yang menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nmembekukan monster selama 5 detik, dan membekukan mereka sepenuhnya selama 1 detik\nPerisai akan pulih 22 detik setelah digunakan
 
 [activeskills]
 empty=Kosong
@@ -136,7 +160,6 @@ parry=Menangkis
 battlecry=Teriakan Perang
 
 ironguard=Penjaga Besi
-thornedguard=Penjaga Berduri
 intimidation=Intimidasi
 
 objectthrowing=Melempar Benda
@@ -155,41 +178,70 @@ beartrap=Perangkap Beruang
 huntersinstinct=Naluri Pemburu
 arrowstorm=Badai Panah
 
+// Penyihir
+arcaneoverload=Beban Berlebih Arcane
+firedance=Tarian Api
+iceball=Bola Es
+zap=Setrum
+manarecharge=Isi Ulang Mana
+
+teleport=Teleportasi
+inferno=Inferno
+fireenchantment=Pesona Api
+iceenchantment=Pesona Es
+
+fireball=Bola Api
+lightning=Petir
+
 
 [activeskillsdesc]
 
 // Prajurit
-fury=Selama 6 detik berikutnya, tingkatkan Kerusakan Jarak Dekat dan Kecepatan Serangan Anda sebesar §a[[20 x Level Keterampilan]]%
-recovery=Selama 10 detik berikutnya, sangat meningkatkan Regenerasi Kesehatan Tempur, memulihkan §a[[20 + Daya Tahan x Level Keterampilan]] kesehatan§0 selama durasi
-provocation=Selama §a[[2 x Level Keterampilan]] detik§0 berikutnya, paksa musuh terdekat untuk memfokuskan serangan mereka pada Anda
-berserkercharge=Melesat ke depan jarak pendek, menghasilkan §i[[10 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecepatan x Level Keterampilan]] Kerusakan§0 ke semua musuh yang dilewati\nMengkonsumsi 50% Stamina
-groundslam=Serangan area yang menghasilkan §i[[5 x Kekuatan]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama §a[[1 x Level Keterampilan]] detik§0
-grounddestruction=Serangan area yang menghasilkan §i[[5 x Kekuatan x Level Keterampilan + 5 x Level Pemain x Level Keterampilan]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama 2 detik
+fury=Selama 6 detik berikutnya, tingkatkan Kerusakan Jarak Dekat dan Kecepatan Serangan Anda sebesar §a[[20 x <skilllevel>]]%
+recovery=Selama 10 detik berikutnya, sangat meningkatkan Regenerasi Kesehatan Tempur, memulihkan §a[[20 + <endurance> x <skilllevel>]] kesehatan§0 selama durasi
+provocation=Selama §a[[2 x <skilllevel>]] detik§0 berikutnya, paksa musuh terdekat untuk memfokuskan serangan mereka pada Anda
+berserkercharge=Melesat ke depan jarak pendek, menghasilkan §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Kerusakan§0 ke semua musuh yang dilewati\nMengkonsumsi 50% Stamina
+groundslam=Serangan area yang menghasilkan §i[[5 x <strength>]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama §a[[1 x <skilllevel>]] detik§0
+grounddestruction=Serangan area yang menghasilkan §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama 2 detik
 parry=Menjadi kebal selama 0,5 detik dan mengembalikan 500% dari Kerusakan asli yang diterima\nMengkonsumsi 100% Stamina
-battlecry=Selama 10 detik berikutnya, tingkatkan Semua Kerusakan dan Kecepatan Gerakan Anda dan sekutu terdekat sebesar §a[[10 x Level Keterampilan]]%
+battlecry=Selama 10 detik berikutnya, tingkatkan Semua Kerusakan dan Kecepatan Gerakan Anda dan sekutu terdekat sebesar §a[[10 x <skilllevel>]]%
 
-ironguard=-50% Kerusakan Masuk selama §a[[4 x Level Keterampilan]] detik
-thornedguard=-50% Kerusakan Masuk selama 12 detik\nSelain itu, mengembalikan §a[[100 x Level Keterampilan]]%§0 dari Kerusakan asli yang diterima
-intimidation=Selama §a[[Level Keterampilan]] detik§0 berikutnya, buat musuh terdekat lari
+ironguard=-50% Kerusakan Masuk selama §a[[4 x <skilllevel>]] detik
+intimidation=Selama §a[[<skilllevel>]] detik§0 berikutnya, buat musuh terdekat lari
 
-objectthrowing=Langkah 1: Ambil objek di depan Anda\nLangkah 2: Lemparkan ke depan menghasilkan §i[[20 x Level Pemain + 5 x Kekuatan x Level Keterampilan]] Kerusakan Jarak Dekat§0\nKedua langkah mengkonsumsi semua Stamina Anda (setidaknya 100%)
+objectthrowing=Langkah 1: Ambil objek di depan Anda\nLangkah 2: Lemparkan ke depan menghasilkan §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Kerusakan Jarak Dekat§0\nKedua langkah mengkonsumsi semua Stamina Anda (setidaknya 100%)
 
 // Penjaga
-shortdash=Lakukan lari cepat 100-Kekuatan\nMengkonsumsi 15% Stamina
-longdash=Lakukan lari cepat 150-Kekuatan\nMengkonsumsi 25% Stamina
-lethalshot=Tembak §hPanah Mematikan§0 ke musuh terdekat, menghasilkan §i[[5 x Level Pemain + 5 x Kekuatan x Level Keterampilan]] Kerusakan Penjaga§0
-venomshot=Tembak §bPanah Racun§0 ke musuh terdekat, menghasilkan §i[[4 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecerdasan x Level Keterampilan]] Kerusakan Penjaga§0
-explosiveshot=Tembak §iPanah Peledak§0 ke musuh terdekat, menghasilkan §i[[4 x Level Pemain + 2 x Kekuatan x Level Keterampilan + 2 x Kecerdasan x Level Keterampilan]] Kerusakan Penjaga§0
+shortdash=Lakukan lari cepat 100-<strength>\nMengkonsumsi 15% Stamina
+longdash=Lakukan lari cepat 150-<strength>\nMengkonsumsi 25% Stamina
+lethalshot=Tembak §hPanah Mematikan§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Kerusakan Penjaga§0
+venomshot=Tembak §bPanah Racun§0 ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Kerusakan Penjaga§0
+explosiveshot=Tembak §iPanah Peledak§0 ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Kerusakan Penjaga§0
 
 shotsrampage=Saat Anda memiliki setidaknya 1 tumpukan Amukan Tembakan, mengenai musuh dengan serangan jarak jauh memberikan 1 tumpukan tambahan selama 5 detik\nSetiap tumpukan Amukan Tembakan meningkatkan Kecepatan Serangan sebesar 5%, hingga maksimum 30 tumpukan
-huntersmark=§hTandai§0 musuh terdekat dengan kesehatan tertinggi selama 10 detik\nJika Anda membunuh target yang ditandai, dapatkan §a+[[20 x Level Keterampilan]]%§0 Kecepatan Serangan Jarak Jauh dan Kecepatan Gerakan selama 5 detik
-beartrap=Tempatkan perangkap beruang di tanah yang akan hilang jika dipicu atau setelah 20 detik\nJika musuh memicunya, mereka akan menerima §i[[10 x Level Pemain]] Kerusakan§0 dan terperangkap selama 5 detik
+huntersmark=§hTandai§0 musuh terdekat dengan kesehatan tertinggi selama 10 detik\nJika Anda membunuh target yang ditandai, dapatkan §a+[[20 x <skilllevel>]]%§0 Kecepatan Serangan Jarak Jauh dan Kecepatan Gerakan selama 5 detik
+beartrap=Tempatkan perangkap beruang di tanah yang akan hilang jika dipicu atau setelah 20 detik\nJika musuh memicunya, mereka akan menerima §i[[10 x <playerlevel>]] Kerusakan§0 dan terperangkap selama 5 detik
 
-huntersinstinct=Selama 12 detik berikutnya, tingkatkan §7Peluang Menghindar§0 Anda sebesar §a[[10 x Level Keterampilan]]%\n§hTandai§0 selama 5 detik musuh yang Anda hindari
-arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x Level Pemain + Kekuatan x Level Keterampilan + Kecepatan x Level Keterampilan]] Kerusakan Penjaga§0 setiap panah
+huntersinstinct=Selama 12 detik berikutnya, tingkatkan §7Peluang Menghindar§0 Anda sebesar §a[[10 x <skilllevel>]]%\n§hTandai§0 selama 5 detik musuh yang Anda hindari
+arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Kerusakan Penjaga§0 setiap panah
+
+// Penyihir
+arcaneoverload=Saat aktif, tingkatkan Kecepatan Serangan Sihir Anda sebesar §a[[30 x <skilllevel>]]%§0, tetapi Anda tidak akan bisa bergerak\nBerakhir saat Anda kehabisan mana, atau jika digunakan lagi\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana per detik
+manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda\nBerakhir saat digunakan lagi
+firedance=Memanggil 4 §bApi Menari§0, masing-masing menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMemanggil satu lagi setiap 5 detik\nSemua panggilan menghilang 20 detik setelah kemampuan diaktifkan\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Lemparkan §aBola Es§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[50 + 10 x <skilllevel>]] Mana
+zap=Mulai sengatan yang melompat di antara monster selama 2 detik, menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 1 detik\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana
+
+teleport=Teleportasi di depan Anda\nMengkonsumsi 10 Mana
+inferno=Bakar semua musuh terdekat, menghasilkan §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Api§0 per detik selama 10 detik\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=Selama 10 detik berikutnya, serangan dari Anda dan sekutu terdekat membakar musuh, menghasilkan §a[[5 x <skilllevel>]]%§0 dari kerusakan per detik selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=Selama 10 detik berikutnya, serangan dari Anda dan sekutu terdekat membekukan musuh selama §a[[2 x <skilllevel>]] detik§0\nMengkonsumsi 20 Mana
+
+fireball=Lemparkan §iBola Api§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Mulai petir yang melompat di antara monster selama 1 detik, menghasilkan §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 2 detik\nTidak dapat mengenai target yang sama beberapa kali\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Level Keterampilan
 playerlevel=Level Pemain
 endurance=Daya Tahan
@@ -200,8 +252,12 @@ grace=Keanggunan
 
 
 [extraskilldesc]
+// Mekanika Dasar
+manausage=Jika Anda tidak memiliki cukup mana, cooldown-nya digandakan
+setmax=Efek negatif diatur sebagai maks dan tidak dapat dihilangkan oleh buff lain
+
 // Buff
-marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\nSemua proyektil yang dipandu dan/atau ditembakkan ke musuh terdekat akan memprioritaskan musuh yang ditandai
+marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\n"Musuh terdekat" memprioritaskan musuh yang ditandai
 
 // Pengubah Peluang
 dodgechance=§7Peluang Menghindar:§0 Peluang untuk menghindari serangan yang masuk. Tidak dapat melebihi 80%
@@ -209,11 +265,17 @@ focuschance=§hPeluang Fokus:§0 Peluang untuk §hMenandai§0 monster selama 5 d
 
 // Pengubah Datar
 mobdetection=§9Deteksi Monster:§0 Menampilkan monster terdekat di peta. Jangkauan deteksi yang lebih tinggi mengungkapkan monster dari jarak yang lebih jauh
+ignitedamage=§iKerusakan Terbakar:§0 Meningkatkan kerusakan terbakar dari waktu ke waktu, tetapi tidak mempengaruhi kerusakan serangan langsung
 
 // Proyektil
 lethalarrow=§hPanah Mematikan:§0 Panah terpandu yang memberikan serangan Kritis
-venomarrow=§bPanah Racun:§0 Panah terpandu yang meracuni musuh, mengulangi 10% dari kerusakan aslinya per detik selama 30 detik
+venomarrow=§bPanah Racun:§0 Panah terpandu yang meracuni musuh. Mengulangi 10% dari kerusakan aslinya per detik selama 30 detik
 explosivearrow=§iPanah Peledak:§0 Panah terpandu yang menyebabkan ledakan sihir dengan kerusakan yang sama
+iceball=§aBola Es:§0 Proyektil sihir yang meledak dan membekukan monster selama 5 detik, juga membekukan mereka sepenuhnya selama 1 detik
+fireball=§iBola Api:§0 Proyektil sihir yang meledak dan membakar monster mengulangi 20% dari kerusakan aslinya per detik selama 5 detik
+
+// Panggilan
+dancingflame=§bApi Menari:§0 Panggilan yang bertindak seperti proyektil. Membakar musuh saat terkena. Mengulangi 20% dari kerusakan aslinya per detik selama 5 detik
 
 
 [item]
@@ -296,7 +358,7 @@ activeskillsequipinstructions=Klik pada slot untuk melengkapi Keterampilan Aktif
 noactiveskills=Anda tidak memiliki Keterampilan Aktif. Buka kuncinya melalui kelas
 
 activeskillcooldown=§9Cooldown: <seconds>d
-activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x Level Keterampilan]]d
+activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x <skilllevel>]]d
 requiredclasslevel=§bLevel kelas <level> diperlukan
 requiredactiveskill=§bMembutuhkan '<skill>' level <level>
 maxlevel=§aLevel Maks: <level>

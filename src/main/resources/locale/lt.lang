@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% nuotolinių ginklų nuotolis
 mobdetectionrange=<mod> mobų aptikimo nuotolis
 focusdamage=<mod>% fokusavimo žala
 focuschance=<mod>% fokusavimo tikimybė
+ignitedamage=<mod>% uždegimo žala
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Išeikvotas
 overlevelclassbuff=Per aukšto lygio klasė
 markedbuff=Pažymėtas
 darkcursebuff=Tamsus prakeiksmas
+magicpoisonbuff=Magiškas Nuodas
+ignitedbuff=Uždegtas
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Visa žala taip pat sumažina maksimalią sveikatą
 [mob]
 rpgmobname=[<class>] <name> <level> lygis
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9<level> lygis§0
+
+rangerwolf=Lankininko Vilkas
+dancingflame=Šokanti Liepsna
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Plėšrūno pojūtis
 plasmagrenade=Plazminė granata
 wolfcompanion=Vilkas kompanionas
 
+// Burtininkas
+arcanepower=Slėpininga Galia
+manapower=Manos Galia
+manaproficiency=Manos Įgūdis
+firepower=Ugnies Galia
+arcaneshield=Slėpiningas Skydas
+fireshield=Ugnies Skydas
+iceshield=Ledo Skydas
+flamingsteps=Liepsnojantys Žingsniai
+stormbound=Audros Susaistytas
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Vilkas kompanionas
 unleashingrage=Kiekvienas lygis suteikia:\n\n+1% visos žalos už kiekvieną 10% trūkstamos sveikatos
 unleashinghaste=Kiekvienas lygis suteikia:\n\n+1% judėjimo greičio už kiekvieną 10% trūkstamos sveikatos
 unyielding=Kiekvienas lygis suteikia:\n\n+5% atakos greičio ir -5% gaunamos žalos, kai sveikata yra mažesnė nei 20%
-lastbreath=Užuot mirę, tapsite nepažeidžiami §a[[3 x įgūdžių lygis]] sekundėms§0\nPasibaigus laikui, mirsite
+lastbreath=Užuot mirę, tapsite nepažeidžiami §a[[3 x <skilllevel>]] sekundėms§0\nPasibaigus laikui, mirsite
 
 // Lankininkas
-plasmagrenade=Kas 8 nuotolines atakas iššauna valdomą sprogstamąjį sviedinį, kuris padaro §i[[30 x įgūdžių lygis]]%§0 ginklo žalos
-wolfcompanion=Vilkas kompanionas atakuos pažymėtus priešus, padarydamas §i[[žaidėjo lygis x įgūdžių lygis + intelektas x įgūdžių lygis]] šauklio žalos§0
+plasmagrenade=Kas 8 nuotolines atakas iššauna valdomą sprogstamąjį sviedinį, kuris padaro §i[[30 x <skilllevel>]]%§0 ginklo žalos
+wolfcompanion=Vilkas kompanionas atakuos pažymėtus priešus, padarydamas §i[[<playerlevel> + <intelligence> x <skilllevel>]] šauklio žalos§0
 
+// Burtininkas
+manapower=Kiekvienas lygis suteikia:\n\n+1% Magiškos Žalos už kiekvieną 10% nepanaudotos Manos
+flamingsteps=Bėgdami su aktyviu niekučiu, paliksite ant žemės liepsnas\nLiepsnos uždegs priešus 2 sekundėms, padarydamos §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 per sekundę
+stormbound=Kas §a[[9 - 0.5 x <skilllevel>]] sekundes§0, žaibas trenkia į atsitiktinį priešą jūsų regėjimo lauke\nPadaro §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigina 1 sekundei
+arcaneshield=Skydas, kuris apsaugo nuo vieno smūgio\nSkydas atsistatys po §a[[20 - <skilllevel>]] sekundžių§0 po panaudojimo
+fireshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite sprogimą, padarantį §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nir uždegantį mobus, 5 sekundes kartojant 20% jų pradinės žalos per sekundę\nSkydas atsistatys po 26 sekundžių po panaudojimo
+iceshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite ledo aurą, padarančią §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nsušaldantį mobus 5 sekundėms ir visiškai juos sušaldantį 1 sekundei\nSkydas atsistatys po 22 sekundžių po panaudojimo
 
 [activeskills]
 empty=Tuščia
@@ -136,7 +160,6 @@ parry=Pariravimas
 battlecry=Kovos šūkis
 
 ironguard=Geležinė apsauga
-thornedguard=Spygliuota apsauga
 intimidation=Bauginimas
 
 objectthrowing=Objektų mėtymas
@@ -155,41 +178,70 @@ beartrap=Meškos spąstai
 huntersinstinct=Medžiotojo instinktas
 arrowstorm=Strėlių audra
 
+// Burtininkas
+arcaneoverload=Slėpiningas Perkrovimas
+firedance=Ugnies Šokis
+iceball=Ledo Kamuolys
+zap=Žaibas
+manarecharge=Manos Įkrovimas
+
+teleport=Teleportacija
+inferno=Pragaras
+fireenchantment=Ugnies Užkerėjimas
+iceenchantment=Ledo Užkerėjimas
+
+fireball=Ugnies Kamuolys
+lightning=Žaibas
+
 
 [activeskillsdesc]
 
 // Karys
-fury=Kitoms 6 sekundėms padidinkite savo artimos kovos žalą ir atakos greitį §a[[20 x įgūdžių lygis]]%
-recovery=Kitoms 10 sekundžių labai padidina kovos sveikatos regeneraciją, per visą trukmę atstatydama §a[[20 + ištvermė x įgūdžių lygis]] sveikatos§0
-provocation=Kitoms §a[[2 x įgūdžių lygis]] sekundėms§0 priverskite netoliese esančius priešus sutelkti savo atakas į jus
-berserkercharge=Puola į priekį trumpą atstumą, padarydamas §i[[10 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x greitis x įgūdžių lygis]] žalos§0 visiems praėjusiems priešams\nSunaudoja 50% ištvermės
-groundslam=Srities ataka, kuri padaro §i[[5 x jėga]] artimos kovos žalos§0 ir §9apsvaigina§0 §a[[1 x įgūdžių lygis]] sekundėms§0
-grounddestruction=Srities ataka, kuri padaro §i[[5 x jėga x įgūdžių lygis + 5 x žaidėjo lygis x įgūdžių lygis]] artimos kovos žalos§0 ir §9apsvaigina§0 2 sekundėms
+fury=Kitoms 6 sekundėms padidinkite savo artimos kovos žalą ir atakos greitį §a[[20 x <skilllevel>]]%
+recovery=Kitoms 10 sekundžių labai padidina kovos sveikatos regeneraciją, per visą trukmę atstatydama §a[[20 + <endurance> x <skilllevel>]] sveikatos§0
+provocation=Kitoms §a[[2 x <skilllevel>]] sekundėms§0 priverskite netoliese esančius priešus sutelkti savo atakas į jus
+berserkercharge=Puola į priekį trumpą atstumą, padarydamas §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] žalos§0 visiems praėjusiems priešams\nSunaudoja 50% ištvermės
+groundslam=Srities ataka, kuri padaro §i[[5 x <strength>]] artimos kovos žalos§0 ir §9apsvaigina§0 §a[[1 x <skilllevel>]] sekundėms§0
+grounddestruction=Srities ataka, kuri padaro §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] artimos kovos žalos§0 ir §9apsvaigina§0 2 sekundėms
 parry=Tapsite nepažeidžiami 0,5 sekundės ir grąžinsite 500% gautos pradinės žalos\nSunaudoja 100% ištvermės
-battlecry=Kitoms 10 sekundžių padidinkite savo ir netoliese esančių sąjungininkų visą žalą ir judėjimo greitį §a[[10 x įgūdžių lygis]]%
+battlecry=Kitoms 10 sekundžių padidinkite savo ir netoliese esančių sąjungininkų visą žalą ir judėjimo greitį §a[[10 x <skilllevel>]]%
 
-ironguard=-50% gaunamos žalos §a[[4 x įgūdžių lygis]] sekundėms
-thornedguard=-50% gaunamos žalos 12 sekundžių\nBe to, grąžina §a[[100 x įgūdžių lygis]]%§0 gautos pradinės žalos
-intimidation=Kitoms §a[[įgūdžių lygis]] sekundėms§0 priverskite netoliese esančius priešus bėgti
+ironguard=-50% gaunamos žalos §a[[4 x <skilllevel>]] sekundėms
+intimidation=Kitoms §a[[<skilllevel>]] sekundėms§0 priverskite netoliese esančius priešus bėgti
 
-objectthrowing=1 žingsnis: paimkite objektą priešais save\n2 žingsnis: meskite jį į priekį, padarydami §i[[20 x žaidėjo lygis + 5 x jėga x įgūdžių lygis]] artimos kovos žalos§0\nAbu žingsniai sunaudoja visą jūsų ištvermę (mažiausiai 100%)
+objectthrowing=1 žingsnis: paimkite objektą priešais save\n2 žingsnis: meskite jį į priekį, padarydami §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] artimos kovos žalos§0\nAbu žingsniai sunaudoja visą jūsų ištvermę (mažiausiai 100%)
 
 // Lankininkas
-shortdash=Atlikite 100 jėgos brūkšnį\nSunaudoja 15% ištvermės
-longdash=Atlikite 150 jėgos brūkšnį\nSunaudoja 25% ištvermės
-lethalshot=Iššaukite §hmirtiną strėlę§0 į artimiausią priešą, padarydami §i[[5 x žaidėjo lygis + 5 x jėga x įgūdžių lygis]] lankininko žalos§0
-venomshot=Iššaukite §bnuodingą strėlę§0 į artimiausią priešą, padarydami §i[[4 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x intelektas x įgūdžių lygis]] lankininko žalos§0
-explosiveshot=Iššaukite §isprogstamąją strėlę§0 į artimiausią priešą, padarydami §i[[4 x žaidėjo lygis + 2 x jėga x įgūdžių lygis + 2 x intelektas x įgūdžių lygis]] lankininko žalos§0
+shortdash=Atlikite 100-<strength> brūkšnį\nSunaudoja 15% ištvermės
+longdash=Atlikite 150-<strength> brūkšnį\nSunaudoja 25% ištvermės
+lethalshot=Iššaukite §hmirtiną strėlę§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] lankininko žalos§0
+venomshot=Iššaukite §bnuodingą strėlę§0 į artimiausią priešą, padarydami §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] lankininko žalos§0
+explosiveshot=Iššaukite §isprogstamąją strėlę§0 į artimiausią priešą, padarydami §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] lankininko žalos§0
 
 shotsrampage=Kol turite bent 1 Šūvių siautulio kaupimą, pataikę į priešą nuotoline ataka suteikia 1 papildomą kaupimą 5 sekundėms\nKiekvienas Šūvių siautulio kaupimas padidina atakos greitį 5%, iki daugiausiai 30 kaupimų
-huntersmark=§hPažymėkite§0 artimiausią priešą su didžiausia sveikata 10 sekundžių\nJei nužudysite pažymėtą taikinį, 5 sekundėms gausite §a+[[20 x įgūdžių lygis]]%§0 nuotolinės atakos greičio ir judėjimo greičio
-beartrap=Padėkite ant žemės meškos spąstus, kurie išnyks, jei bus suaktyvinti arba po 20 sekundžių\nJei priešas juos suaktyvins, jis patirs §i[[10 x žaidėjo lygis]] žalos§0 ir bus įstrigęs 5 sekundes
+huntersmark=§hPažymėkite§0 artimiausią priešą su didžiausia sveikata 10 sekundžių\nJei nužudysite pažymėtą taikinį, 5 sekundėms gausite §a+[[20 x <skilllevel>]]%§0 nuotolinės atakos greičio ir judėjimo greičio
+beartrap=Padėkite ant žemės meškos spąstus, kurie išnyks, jei bus suaktyvinti arba po 20 sekundžių\nJei priešas juos suaktyvins, jis patirs §i[[10 x <playerlevel>]] žalos§0 ir bus įstrigęs 5 sekundes
 
-huntersinstinct=Kitoms 12 sekundžių padidinkite savo §7išsisukimo tikimybę§0 §a[[10 x įgūdžių lygis]]%\n§hPažymėkite§0 5 sekundėms priešus, kurių išvengiate
-arrowstorm=Iššaukite paprastą strėlę į kiekvieną artimą priešą, padarydami §i[[2 x žaidėjo lygis + jėga x įgūdžių lygis + greitis x įgūdžių lygis]] lankininko žalos§0 kiekviena strėle
+huntersinstinct=Kitoms 12 sekundžių padidinkite savo §7išsisukimo tikimybę§0 §a[[10 x <skilllevel>]]%\n§hPažymėkite§0 5 sekundėms priešus, kurių išvengiate
+arrowstorm=Iššaukite paprastą strėlę į kiekvieną artimą priešą, padarydami §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] lankininko žalos§0 kiekviena strėle
+
+// Burtininkas
+arcaneoverload=Kol aktyvus, padidina jūsų Magiškos Atakos Greitį §a[[30 x <skilllevel>]]%§0, bet negalėsite judėti\nBaigiasi, kai baigiasi mana, arba jei naudojamas dar kartą\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos per sekundę
+manarecharge=Kol aktyvus, padidina jūsų Manos Regeneraciją +1 ir §a[[50 x <skilllevel>]]%§0, bet būsite paralyžiuotas ir gausite dvigubą žalą\nBaigiasi, kai naudojamas dar kartą
+firedance=Iškviečia 4 §bŠokančias Liepsnas§0, kurių kiekviena padaro §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nKas 5 sekundes iškviečia dar vieną\nVisi iškvietimai išnyksta praėjus 20 sekundžių po sugebėjimo aktyvavimo\nSunaudoja §a[[30 + 6 x <skilllevel>]] Manos
+iceball=Meskite §aLedo Kamuolį§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0\nSunaudoja §a[[50 + 10 x <skilllevel>]] Manos
+zap=Pradėkite žaibą, kuris 2 sekundes šokinėja tarp mobų, padarydamas §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigindamas 1 sekundei\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos
+
+teleport=Teleportuoja jus priešais save\nSunaudoja 10 Manos
+inferno=Uždekite visus netoliese esančius priešus, 10 sekundžių darydami §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Ugnies Žalos§0 per sekundę\nSunaudoja §a[[40 + 8 x <skilllevel>]] Manos
+fireenchantment=Kitoms 10 sekundžių jūsų ir netoliese esančių sąjungininkų atakos uždega priešus, 5 sekundes darydamos §a[[5 x <skilllevel>]]%§0 žalos per sekundę\nSunaudoja §a[[20 + 4 x <skilllevel>]] Manos
+iceenchantment=Kitoms 10 sekundžių jūsų ir netoliese esančių sąjungininkų atakos sušaldo priešus §a[[2 x <skilllevel>]] sekundėms§0\nSunaudoja 20 Manos
+
+fireball=Meskite §iUgnies Kamuolį§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0\nSunaudoja §a[[80 + 16 x <skilllevel>]] Manos
+lightning=Pradėkite žaibą, kuris 1 sekundę šokinėja tarp mobų, padarydamas §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigindamas 2 sekundėms\nNegali kelis kartus pataikyti į tą patį taikinį\nSunaudoja §a[[30 + 6 x <skilllevel>]] Manos
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Įgūdžių lygis
 playerlevel=Žaidėjo lygis
 endurance=Ištvermė
@@ -200,8 +252,12 @@ grace=Gracingumas
 
 
 [extraskilldesc]
+// Pagrindinė Mechanika
+manausage=Jei neturite pakankamai manos, jos atsistatymo laikas padvigubėja
+setmax=Neigiami efektai nustatomi kaip maksimalūs ir negali būti pašalinti kitais stiprinimais
+
 // Stiprinimai
-marked=§hPažymėtas:§0 Padarykite +20% žalos (+ §hfokusavimo žalos§0) ir +10% kritinės tikimybės mobams, kuriuos pažymite\nVisi valdomi ir/arba į artimiausią priešą iššauti sviediniai teiks pirmenybę pažymėtiems priešams
+marked=§hPažymėtas:§0 Padarykite +20% Žalos (+ §hFokusavimo Žalos§0) ir +10% Kritinės Tikimybės mobams, kuriuos pažymite\n"Artimiausias priešas" teikia pirmenybę pažymėtiems priešams
 
 // Tikimybės modifikatoriai
 dodgechance=§7Išsisukimo tikimybė:§0 Tikimybė išsisukti nuo artėjančių atakų. Negali viršyti 80%
@@ -209,11 +265,17 @@ focuschance=§hFokusavimo tikimybė:§0 Tikimybė §hpažymėti§0 mobą 5 sekun
 
 // Plokštieji modifikatoriai
 mobdetection=§9Mobų aptikimas:§0 Rodo netoliese esančius mobus žemėlapyje. Didesnis aptikimo nuotolis atskleidžia mobus iš toliau
+ignitedamage=§iUždegimo Žala:§0 Padidina uždegimo žalą laikui bėgant, bet neturi įtakos tiesioginei smūgio žalai
 
 // Sviediniai
 lethalarrow=§hMirtina strėlė:§0 Valdoma strėlė, kuri suteikia kritinį smūgį
-venomarrow=§bNuodinga strėlė:§0 Valdoma strėlė, kuri nuodija priešus, 30 sekundžių per sekundę kartodama 10% savo pradinės žalos
+venomarrow=§bNuodinga strėlė:§0 Valdoma strėlė, kuri nuodija priešus. 30 sekundžių per sekundę kartoja 10% savo pradinės žalos
 explosivearrow=§iSprogstamoji strėlė:§0 Valdoma strėlė, kuri sukelia magišką sprogimą su lygia žala
+iceball=§aLedo Kamuolys:§0 Magiškas sviedinys, kuris sprogsta ir sušaldo mobus 5 sekundėms, taip pat visiškai juos sušaldo 1 sekundei
+fireball=§iUgnies Kamuolys:§0 Magiškas sviedinys, kuris sprogsta ir uždega mobus, 5 sekundes kartodamas 20% jų pradinės žalos per sekundę
+
+// Iškvietimai
+dancingflame=§bŠokanti Liepsna:§0 Iškvietimas, kuris veikia kaip sviedinys. Pataikius uždega priešus. 5 sekundes kartoja 20% savo pradinės žalos per sekundę
 
 
 [item]
@@ -278,7 +340,7 @@ classes=Klasės
 
 level=Lygis <level>
 classlevel=<class> <level> lygis
-lvl=Lygis <level>
+lvl=Lyg <level>
 eachlevel=Kiekvienas lygis suteikia:
 experience=Patirtis: <exp> / <nextexp>
 totalexperience=Bendra patirtis: <exp>
@@ -296,7 +358,7 @@ activeskillsequipinstructions=Spustelėkite vietą, kad aprūpintumėte aktyvų 
 noactiveskills=Jūs neturite aktyvių įgūdžių. Atrakinkite juos per klases
 
 activeskillcooldown=§9Atsistatymas: <seconds>s
-activeskillcooldownmod=§9Atsistatymas: [[<seconds> <sign> <mod> x įgūdžių lygis]]s
+activeskillcooldownmod=§9Atsistatymas: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bReikalingas <level> klasės lygis
 requiredactiveskill=§bReikalingas '<skill>' <level> lygis
 maxlevel=§aMaksimalus lygis: <level>

@@ -5,10 +5,10 @@ import necesse.engine.network.client.Client;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.components.FormContentBox;
 import necesse.gfx.gameTexture.GameTexture;
-import rpgclasses.data.PlayerData;
-import rpgclasses.data.PlayerDataList;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
 

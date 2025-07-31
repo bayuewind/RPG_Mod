@@ -8,11 +8,11 @@ import necesse.gfx.forms.components.FormLabel;
 import necesse.gfx.forms.components.localComponents.FormLocalTextButton;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.data.PlayerDataList;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.AttributeComponent;
+import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.data.PlayerDataList;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

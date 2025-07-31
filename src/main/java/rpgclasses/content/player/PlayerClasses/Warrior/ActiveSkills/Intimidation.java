@@ -15,6 +15,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
+import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
@@ -42,11 +43,9 @@ public class Intimidation extends SimpleBuffActiveSkill {
 
     @Override
     public void giveBuffOnRun(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        player.getLevel().entityManager.mobs.streamArea(player.getX(), player.getY(), 300)
-                .filter(target ->
-                        target.getDistance(player) <= 300 && !target.isBoss() &&
-                                player.canBeTargeted(target, null)
-                )
+        RPGUtils.streamMobsAndPlayers(player, 300)
+                .filter(m -> !m.isBoss())
+                .filter(RPGUtils.isValidTargetFilter(player))
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );
@@ -59,7 +58,7 @@ public class Intimidation extends SimpleBuffActiveSkill {
         SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(0.5F));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(300, new Color(153, 0, 204))
-        );
+        ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
 

@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% de alcance de armas de longo alcance
 mobdetectionrange=<mod> alcance de detecção de monstros
 focusdamage=<mod>% de dano de foco
 focuschance=<mod>% de chance de foco
+ignitedamage=<mod>% de dano de queimadura
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Esgotado
 overlevelclassbuff=Classe de nível superior
 markedbuff=Marcado
 darkcursebuff=Maldição das trevas
+magicpoisonbuff=Veneno Mágico
+ignitedbuff=Em Chamas
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Todo o dano também reduz a Vida Máxima
 [mob]
 rpgmobname=[<class>] <name> nvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9nvl <level>§0
+
+rangerwolf=Lobo Arqueiro
+dancingflame=Chama Dançante
 
 
 [mobclass]
@@ -107,26 +113,37 @@ predatorsense=Sentido de predador
 plasmagrenade=Granada de plasma
 wolfcompanion=Lobo companheiro
 
+// Mago
+arcanepower=Poder Arcano
+manapower=Poder de Mana
+manaproficiency=Proficiência em Mana
+firepower=Poder de Fogo
+arcaneshield=Escudo Arcano
+fireshield=Escudo de Fogo
+iceshield=Escudo de Gelo
+flamingsteps=Passos Flamejantes
+stormbound=Ligado à Tempestade
+
 
 [passivesdesc]
 
 // Guerreiro
-unleashingrage=Cada nível fornece:
-
-+1% de todo o dano para cada 10% de Vida perdida
-unleashinghaste=Cada nível fornece:
-
-+1% de velocidade de movimento para cada 10% de Vida perdida
-unyielding=Cada nível fornece:
-
-+5% de velocidade de ataque e -5% de dano recebido abaixo de 20% de Vida
-lastbreath=Em vez de morrer, torne-se invulnerável por §a[[3 x Nível de Habilidade]] segundos§0
-Quando o tempo acabar, você morrerá
+unleashingrage=Cada nível fornece:\n\n+1% de todo o dano para cada 10% de Vida perdida
+unleashinghaste=Cada nível fornece:\n\n+1% de velocidade de movimento para cada 10% de Vida perdida
+unyielding=Cada nível fornece:\n\n+5% de velocidade de ataque e -5% de dano recebido abaixo de 20% de Vida
+lastbreath=Em vez de morrer, torne-se invulnerável por §a[[3 x <skilllevel>]] segundos§0\nQuando o tempo acabar, você morrerá
 
 // Arqueiro
-plasmagrenade=A cada 8 ataques de longo alcance, dispare um projétil explosivo guiado que causa §i[[30 x Nível de Habilidade]]%§0 do dano da arma
-wolfcompanion=Um lobo companheiro atacará inimigos marcados causando §i[[Nível do Jogador x Nível de Habilidade + Inteligência x Nível de Habilidade]] de dano de invocador§0
+plasmagrenade=A cada 8 ataques de longo alcance, dispare um projétil explosivo guiado que causa §i[[30 x <skilllevel>]]%§0 do dano da arma
+wolfcompanion=Um lobo companheiro atacará inimigos marcados causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de dano de invocador§0
 
+// Mago
+manapower=Cada nível fornece:\n\n+1% de Dano Mágico para cada 10% de Mana não utilizada
+flamingsteps=Ao correr com um amuleto ativo, você deixará chamas no chão\nAs chamas incendiarão os inimigos por 2 segundos, causando §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dano Mágico§0 por segundo
+stormbound=A cada §a[[9 - 0.5 x <skilllevel>]] segundos§0, um raio atinge um inimigo aleatório em sua visão\nCausa §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoa por 1 segundo
+arcaneshield=Um escudo que previne um acerto\nO escudo se recuperará §a[[20 - <skilllevel>]] segundos§0 após o uso
+fireshield=Um escudo que previne um acerto\nQuando usado, você liberará uma explosão causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\ne incendiando monstros, repetindo 20% de seu dano original por segundo por 5 segundos\nO escudo se recuperará 26 segundos após o uso
+iceshield=Um escudo que previne um acerto\nQuando usado, você liberará uma aura de gelo causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\ncongelando monstros por 5 segundos, e congelando-os totalmente por 1 segundo\nO escudo se recuperará 22 segundos após o uso
 
 [activeskills]
 empty=Vazio
@@ -143,7 +160,6 @@ parry=Aparar
 battlecry=Grito de guerra
 
 ironguard=Guarda de ferro
-thornedguard=Guarda espinhosa
 intimidation=Intimidação
 
 objectthrowing=Arremesso de objeto
@@ -162,52 +178,70 @@ beartrap=Armadilha de urso
 huntersinstinct=Instinto de caçador
 arrowstorm=Tempestade de flechas
 
+// Mago
+arcaneoverload=Sobrecarga Arcana
+firedance=Dança do Fogo
+iceball=Bola de Gelo
+zap=Zap
+manarecharge=Recarga de Mana
+
+teleport=Teleporte
+inferno=Inferno
+fireenchantment=Encantamento de Fogo
+iceenchantment=Encantamento de Gelo
+
+fireball=Bola de Fogo
+lightning=Relâmpago
+
 
 [activeskillsdesc]
 
 // Guerreiro
-fury=Pelos próximos 6 segundos, aumente seu dano corpo a corpo e velocidade de ataque em §a[[20 x Nível de Habilidade]]%
-recovery=Pelos próximos 10 segundos, aumenta muito a regeneração de Vida em combate, restaurando §a[[20 + Resistência x Nível de Habilidade]] de vida§0 ao longo da duração
-provocation=Pelos próximos §a[[2 x Nível de Habilidade]] segundos§0, force os inimigos próximos a focarem seus ataques em você
-berserkercharge=Avance rapidamente por uma curta distância, causando §i[[10 x Nível do Jogador + 2 x Força x Nível de Habilidade + 2 x Velocidade x Nível de Habilidade]] de dano§0 a todos os inimigos pelos quais passar
-Consome 50% de Vigor
-groundslam=Ataque em área que causa §i[[5 x Força]] de dano corpo a corpo§0 e §9atordoa§0 por §a[[1 x Nível de Habilidade]] segundos§0
-grounddestruction=Ataque em área que causa §i[[5 x Força x Nível de Habilidade + 5 x Nível do Jogador x Nível de Habilidade]] de dano corpo a corpo§0 e §9atordoa§0 por 2 segundos
-parry=Torne-se invulnerável por 0,5 segundos e devolva 500% do dano original recebido
-Consome 100% de Vigor
-battlecry=Pelos próximos 10 segundos, aumente todo o seu dano e o de aliados próximos e a velocidade de movimento em §a[[10 x Nível de Habilidade]]%
+fury=Pelos próximos 6 segundos, aumente seu dano corpo a corpo e velocidade de ataque em §a[[20 x <skilllevel>]]%
+recovery=Pelos próximos 10 segundos, aumenta muito a regeneração de Vida em combate, restaurando §a[[20 + <endurance> x <skilllevel>]] de vida§0 ao longo da duração
+provocation=Pelos próximos §a[[2 x <skilllevel>]] segundos§0, force os inimigos próximos a focarem seus ataques em você
+berserkercharge=Avance rapidamente por uma curta distância, causando §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] de dano§0 a todos os inimigos pelos quais passar\nConsome 50% de Vigor
+groundslam=Ataque em área que causa §i[[5 x <strength>]] de dano corpo a corpo§0 e §9atordoa§0 por §a[[1 x <skilllevel>]] segundos§0
+grounddestruction=Ataque em área que causa §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de dano corpo a corpo§0 e §9atordoa§0 por 2 segundos
+parry=Torne-se invulnerável por 0,5 segundos e devolva 500% do dano original recebido\nConsome 100% de Vigor
+battlecry=Pelos próximos 10 segundos, aumente todo o seu dano e o de aliados próximos e a velocidade de movimento em §a[[10 x <skilllevel>]]%
 
-ironguard=-50% de dano recebido por §a[[4 x Nível de Habilidade]] segundos
-thornedguard=-50% de dano recebido por 12 segundos
-Além disso, devolve §a[[100 x Nível de Habilidade]]%§0 do dano original recebido
-intimidation=Pelos próximos §a[[Nível de Habilidade]] segundos§0, faça os inimigos próximos fugirem
+ironguard=-50% de dano recebido por §a[[4 x <skilllevel>]] segundos
+intimidation=Pelos próximos §a[[<skilllevel>]] segundos§0, faça os inimigos próximos fugirem
 
-objectthrowing=Passo 1: Pegue um objeto à sua frente
-Passo 2: Jogue-o para frente causando §i[[20 x Nível do Jogador + 5 x Força x Nível de Habilidade]] de dano corpo a corpo§0
-Ambos os passos consomem todo o seu Vigor (pelo menos 100%)
+objectthrowing=Passo 1: Pegue um objeto à sua frente\nPasso 2: Jogue-o para frente causando §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de dano corpo a corpo§0\nAmbos os passos consomem todo o seu Vigor (pelo menos 100%)
 
 // Arqueiro
-shortdash=Execute uma corrida de 100 de Força
-Consome 15% de Vigor
-longdash=Execute uma corrida de 150 de Força
-Consome 25% de Vigor
-lethalshot=Atire uma §hflecha letal§0 no inimigo mais próximo, causando §i[[5 x Nível do Jogador + 5 x Força x Nível de Habilidade]] de dano de arqueiro§0
-venomshot=Atire uma §bflecha venenosa§0 no inimigo mais próximo, causando §i[[4 x Nível do Jogador + 2 x Força x Nível de Habilidade + 2 x Inteligência x Nível de Habilidade]] de dano de arqueiro§0
-explosiveshot=Atire uma §iflecha explosiva§0 no inimigo mais próximo, causando §i[[4 x Nível do Jogador + 2 x Força x Nível de Habilidade + 2 x Inteligência x Nível de Habilidade]] de dano de arqueiro§0
+shortdash=Execute uma corrida de 100 de <strength>\nConsome 15% de Vigor
+longdash=Execute uma corrida de 150 de <strength>\nConsome 25% de Vigor
+lethalshot=Atire uma §hflecha letal§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de dano de arqueiro§0
+venomshot=Atire uma §bflecha venenosa§0 no inimigo mais próximo, causando §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de dano de arqueiro§0
+explosiveshot=Atire uma §iflecha explosiva§0 no inimigo mais próximo, causando §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de dano de arqueiro§0
 
-shotsrampage=Enquanto você tiver pelo menos 1 acúmulo de Frenesi de Tiros, acertar um inimigo com um ataque de longo alcance concede 1 acúmulo adicional por 5 segundos
-Cada acúmulo de Frenesi de Tiros aumenta a velocidade de ataque em 5%, até um máximo de 30 acúmulos
-huntersmark=§hMarque§0 o inimigo próximo com a vida mais alta por 10 segundos
-Se você matar um alvo marcado, ganhe §a+[[20 x Nível de Habilidade]]%§0 de velocidade de ataque de longo alcance e velocidade de movimento por 5 segundos
-beartrap=Coloque uma armadilha de urso no chão que desaparece se for acionada ou após 20 segundos
-Se um inimigo a acionar, ele receberá §i[[10 x Nível do Jogador]] de dano§0 e ficará preso por 5 segundos
+shotsrampage=Enquanto você tiver pelo menos 1 acúmulo de Frenesi de Tiros, acertar um inimigo com um ataque de longo alcance concede 1 acúmulo adicional por 5 segundos\nCada acúmulo de Frenesi de Tiros aumenta a velocidade de ataque em 5%, até um máximo de 30 acúmulos
+huntersmark=§hMarque§0 o inimigo próximo com a vida mais alta por 10 segundos\nSe você matar um alvo marcado, ganhe §a+[[20 x <skilllevel>]]%§0 de velocidade de ataque de longo alcance e velocidade de movimento por 5 segundos
+beartrap=Coloque uma armadilha de urso no chão que desaparece se for acionada ou após 20 segundos\nSe um inimigo a acionar, ele receberá §i[[10 x <playerlevel>]] de dano§0 e ficará preso por 5 segundos
 
-huntersinstinct=Pelos próximos 12 segundos, aumente sua §7chance de esquiva§0 em §a[[10 x Nível de Habilidade]]%
-§hMarque§0 por 5 segundos os inimigos que você esquivar
-arrowstorm=Atire uma flecha básica em cada inimigo próximo, causando §i[[2 x Nível do Jogador + Força x Nível de Habilidade + Velocidade x Nível de Habilidade]] de dano de arqueiro§0 a cada flecha
+huntersinstinct=Pelos próximos 12 segundos, aumente sua §7chance de esquiva§0 em §a[[10 x <skilllevel>]]%\n§hMarque§0 por 5 segundos os inimigos que você esquivar
+arrowstorm=Atire uma flecha básica em cada inimigo próximo, causando §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] de dano de arqueiro§0 a cada flecha
+
+// Mago
+arcaneoverload=Enquanto ativo, aumenta sua Velocidade de Ataque Mágico em §a[[30 x <skilllevel>]]%§0, mas você não poderá se mover\nTermina quando você fica sem mana, ou se usado novamente\nConsome §a[[10 + 2 x <skilllevel>]] de Mana por segundo
+manarecharge=Enquanto ativo, aumenta sua Regeneração de Mana em +1 e em §a[[50 x <skilllevel>]]%§0, mas você ficará paralisado e receberá o dobro do dano\nTermina quando usado novamente
+firedance=Invoca 4 §bChamas Dançantes§0, cada uma causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\nInvoca outra a cada 5 segundos\nTodas as invocações desaparecem 20 segundos após a ativação da habilidade\nConsome §a[[30 + 6 x <skilllevel>]] de Mana
+iceball=Atire uma §aBola de Gelo§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0\nConsome §a[[50 + 10 x <skilllevel>]] de Mana
+zap=Inicia um zap que salta entre monstros por 2 segundos, causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoando por 1 segundo\nConsome §a[[10 + 2 x <skilllevel>]] de Mana
+
+teleport=Teleporta você para a frente\nConsome 10 de Mana
+inferno=Incendeia todos os inimigos próximos, causando §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dano de Fogo§0 por segundo por 10 segundos\nConsome §a[[40 + 8 x <skilllevel>]] de Mana
+fireenchantment=Pelos próximos 10 segundos, ataques seus e de aliados próximos incendeiam inimigos, causando §a[[5 x <skilllevel>]]%§0 do dano por segundo por 5 segundos\nConsome §a[[20 + 4 x <skilllevel>]] de Mana
+iceenchantment=Pelos próximos 10 segundos, ataques seus e de aliados próximos congelam inimigos por §a[[2 x <skilllevel>]] segundos§0\nConsome 20 de Mana
+
+fireball=Atire uma §iBola de Fogo§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0\nConsome §a[[80 + 16 x <skilllevel>]] de Mana
+lightning=Inicia um relâmpago que salta entre monstros por 1 segundo, causando §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoando por 2 segundos\nNão pode atingir o mesmo alvo várias vezes\nConsome §a[[30 + 6 x <skilllevel>]] de Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Nível de Habilidade
 playerlevel=Nível do Jogador
 endurance=Resistência
@@ -218,9 +252,12 @@ grace=Graça
 
 
 [extraskilldesc]
+// Mecânicas Básicas
+manausage=Se você não tiver mana suficiente, o tempo de recarga é dobrado
+setmax=Efeitos negativos são definidos como máximos e não podem ser removidos por outros bônus
+
 // Bônus
-marked=§hMarcado:§0 Cause +20% de dano (+ §hdano de foco§0) e +10% de chance de acerto crítico em monstros que você marcar
-Todos os projéteis guiados e/ou disparados no inimigo mais próximo priorizarão os inimigos marcados
+marked=§hMarcado:§0 Cause +20% de dano (+ §hdano de foco§0) e +10% de chance de acerto crítico em monstros que você marcar\n"Inimigo mais próximo" prioriza inimigos marcados
 
 // Modificadores de chance
 dodgechance=§7Chance de esquiva:§0 Chance de se esquivar de ataques recebidos. Não pode exceder 80%
@@ -228,11 +265,17 @@ focuschance=§hChance de foco:§0 Chance de §hmarcar§0 um monstro por 5 segund
 
 // Modificadores fixos
 mobdetection=§9Detecção de monstros:§0 Exibe monstros próximos no mapa. Um alcance de detecção maior revela monstros de mais longe
+ignitedamage=§iDano de Queimadura:§0 Aumenta o dano de queimadura ao longo do tempo, mas não afeta o dano do acerto direto
 
 // Projéteis
 lethalarrow=§hFlecha letal:§0 Flecha guiada que concede um acerto crítico
-venomarrow=§bFlecha venenosa:§0 Flecha guiada que envenena inimigos, repetindo 10% de seu dano original por segundo por 30 segundos
+venomarrow=§bFlecha venenosa:§0 Flecha guiada que envenena inimigos. Repete 10% de seu dano original por segundo por 30 segundos
 explosivearrow=§iFlecha explosiva:§0 Flecha guiada que causa uma explosão mágica com dano igual
+iceball=§aBola de Gelo:§0 Projétil mágico que explode e congela monstros por 5 segundos, e também os congela totalmente por 1 segundo
+fireball=§iBola de Fogo:§0 Projétil mágico que explode e incendeia monstros repetindo 20% de seu dano original por segundo por 5 segundos
+
+// Invocações
+dancingflame=§bChama Dançante:§0 Invocação que age como um projétil. Incendeia inimigos ao acertar. Repete 20% de seu dano original por segundo por 5 segundos
 
 
 [item]

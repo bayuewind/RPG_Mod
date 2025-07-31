@@ -28,8 +28,8 @@ public class RangerPlayerClass extends PlayerClass {
 
         int requiredLevel = 0;
 
-        skillsList.addSkill(new ShortDash(dashFamily, 5, requiredLevel));
-        skillsList.addSkill(new LongDash(dashFamily, 5, requiredLevel));
+        skillsList.addSkill(new ShortDash(5, requiredLevel).setFamily(dashFamily));
+        skillsList.addSkill(new LongDash(5, requiredLevel).setFamily(dashFamily));
 
         skillsList.addSkill(new LethalShot(5, requiredLevel));
 
@@ -77,6 +77,7 @@ public class RangerPlayerClass extends PlayerClass {
                 "energy", "#ffff00", 10, 0,
                 new FloatPercentModifierBuff(BuffModifiers.STAMINA_CAPACITY, 0.2F, false)
         ));
+
         skillsList.addSkill(new BasicPassive(
                 "recovery", "#00ff00", 10, 5,
                 new FloatPercentModifierBuff(BuffModifiers.STAMINA_REGEN, 0.1F)
@@ -96,11 +97,13 @@ public class RangerPlayerClass extends PlayerClass {
                 new String[]{"focuschance", "marked"},
                 new FloatPercentModifierBuff(RPGModifiers.FOCUS_CHANCE, 0.01F)
         ));
+
         skillsList.addSkill(new BasicPassive(
                 "predatorsense", "#ffcc00", 10, 10,
                 new String[]{"mobdetection"},
                 new FloatModifierBuff(RPGModifiers.MOB_DETECTION_RANGE, 300F)
         ));
+
         skillsList.addSkill(new PlasmaGrenade(10, 15));
         skillsList.addSkill(new WolfCompanion(5, 15));
 

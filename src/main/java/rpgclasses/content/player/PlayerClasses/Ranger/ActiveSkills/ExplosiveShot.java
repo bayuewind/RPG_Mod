@@ -1,6 +1,5 @@
 package rpgclasses.content.player.PlayerClasses.Ranger.ActiveSkills;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.network.packet.PacketSpawnProjectile;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -12,10 +11,10 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import org.jetbrains.annotations.NotNull;
-import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
-import rpgclasses.projectiles.ExplosiveArrow;
+import rpgclasses.projectiles.ExplosiveArrowProjectile;
 
 import java.awt.geom.Point2D;
 
@@ -26,8 +25,8 @@ public class ExplosiveShot extends ActiveSkill {
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
 
         Projectile projectile = getProjectile(player, playerData, activeSkillLevel);
         projectile.resetUniqueID(new GameRandom(seed));
@@ -37,19 +36,13 @@ public class ExplosiveShot extends ActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         SoundManager.playSound(GameResources.bow, SoundEffect.effect(player));
     }
 
     private static @NotNull Projectile getProjectile(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        Mob target = AphDistances.findClosestMob(player, 1000,
-                m -> MarkedBuff.isMarked(player, m)
-        );
-        if (target == null)
-            target = AphDistances.findClosestMob(player, 1100,
-                    m -> m.canBeTargeted(player, player.getNetworkClient())
-            );
+        Mob target = RPGUtils.findBestTarget(player, 1000);
 
         float targetX;
         float targetY;
@@ -63,7 +56,7 @@ public class ExplosiveShot extends ActiveSkill {
             targetY = target.y;
         }
 
-        return new ExplosiveArrow(player.getLevel(), player, player.x, player.y, targetX, targetY, 200, 1000, new GameDamage(DamageTypeRegistry.RANGED, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
+        return new ExplosiveArrowProjectile(player.getLevel(), player, player.x, player.y, targetX, targetY, 200, 1000, new GameDamage(DamageTypeRegistry.RANGED, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
     }
 
     @Override

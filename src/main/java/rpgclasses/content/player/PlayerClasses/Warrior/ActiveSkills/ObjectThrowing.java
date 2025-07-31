@@ -69,7 +69,7 @@ public class ObjectThrowing extends ActiveSkill {
         Point2D.Float dir = getDir(player);
         float targetX = dir.x * 100 + player.x;
         float targetY = dir.y * 100 + player.y;
-        return new ObjectProjectile(player.getLevel(), player, playerData.grabbedObject, player.x, player.y, targetX, targetY, 100, 500, new GameDamage(DamageTypeRegistry.MELEE, 20 * playerData.getLevel() + 5 * playerData.getStrength(player) * activeSkillLevel), 300);
+        return new ObjectProjectile(player.getLevel(), player, playerData.grabbedObject, player.x, player.y, targetX, targetY, 100, 500, new GameDamage(DamageTypeRegistry.MELEE, 20 * playerData.getLevel() + 10 * playerData.getStrength(player) * activeSkillLevel), 300);
     }
 
     @Override

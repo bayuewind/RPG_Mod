@@ -13,6 +13,7 @@ public class RPGBuffs {
     public static Buff Marked;
     public static Buff DarkCurse;
     public static Buff MagicPoison;
+    public static Buff Ignited;
 
     public static class PASSIVES {
         public static ModifiersBuff Modifiers;
@@ -25,6 +26,7 @@ public class RPGBuffs {
         BuffRegistry.registerBuff("markedbuff", Marked = new MarkedBuff());
         BuffRegistry.registerBuff("darkcursebuff", DarkCurse = new DarkCurseBuff());
         BuffRegistry.registerBuff("magicpoisonbuff", MagicPoison = new MagicPoisonBuff());
+        BuffRegistry.registerBuff("ignitedbuff", Ignited = new IgnitedBuff());
 
         // Passive Buffs
         BuffRegistry.registerBuff("modifiersbuff", PASSIVES.Modifiers = new ModifiersBuff());

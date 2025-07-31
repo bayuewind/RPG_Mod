@@ -17,6 +17,7 @@ import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.ShardCannonProjectileToolItem;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.projectiles.PlasmaGrenadeProjectile;
 
 import java.util.Objects;
 
@@ -79,7 +80,7 @@ public class PlasmaGrenade extends SimpleBuffPassive {
                         if (activeBuff.owner.isServer()) {
                             GameDamage damage = toolItem.getAttackDamage(item)
                                     .modDamage(getLevel(activeBuff) * 0.3F);
-                            attacker.getLevel().entityManager.projectiles.add(new rpgclasses.projectiles.PlasmaGrenade(attacker.getLevel(), attacker, attacker.x, attacker.y, targetX, targetY, 200, 2000, damage, 0));
+                            attacker.getLevel().entityManager.projectiles.add(new PlasmaGrenadeProjectile(attacker.getLevel(), attacker, attacker.x, attacker.y, targetX, targetY, 200, 2000, damage, 0));
                         }
                     }
                 }

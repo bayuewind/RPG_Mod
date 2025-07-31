@@ -17,17 +17,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract public class ActiveSkill extends Skill {
-    public final String family;
     public boolean newRow;
     public List<RequiredSkill> requiredSkills = new ArrayList<>();
 
-    public ActiveSkill(String family, String stringID, String color, int levelMax, int requiredClassLevel) {
+    public ActiveSkill(String stringID, String color, int levelMax, int requiredClassLevel) {
         super(stringID, color, levelMax, requiredClassLevel);
-        this.family = family;
     }
 
-    public ActiveSkill(String stringID, String color, int levelMax, int requiredClassLevel) {
-        this(stringID, stringID, color, levelMax, requiredClassLevel);
+    public ActiveSkill setFamily(String family) {
+        this.family = family;
+        return this;
     }
 
     public ActiveSkill addRequiredSkill(ActiveSkill activeSkill, int activeSkillLevel, PlayerClass playerClass) {
@@ -50,8 +49,7 @@ abstract public class ActiveSkill extends Skill {
         List<String> tooltips = new ArrayList<>();
         tooltips.add("§" + color + Localization.translate("activeskills", stringID));
         tooltips.add(" ");
-        tooltips.add(Localization
-                .translate("activeskillsdesc", stringID));
+        tooltips.add(Localization.translate("activeskillsdesc", stringID));
         tooltips.add(" ");
         float rawCooldown = getBaseCooldown();
         float seconds = rawCooldown / 1000f;
@@ -112,19 +110,29 @@ abstract public class ActiveSkill extends Skill {
             StaminaBuff.useStaminaAndGetValid(player, consumedStamina);
         }
 
+        float manaUsage = manaUsage(activeSkillLevel);
+        boolean enoughMana = true;
+        if (manaUsage > 0) {
+            if (manaUsage > player.getMana()) enoughMana = false;
+            player.useMana(manaUsage, player.isServer() ? player.getServerClient() : null);
+        }
+
+        int addedCooldown = enoughMana ? 0 : getCooldown(activeSkillLevel);
+
+        long useTime = player.getTime() + addedCooldown;
         for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
             if (equippedActiveSkill.activeSkill == this) {
-                equippedActiveSkill.lastUse = equippedActiveSkill.activeSkill.isInUseSkill() && !equippedActiveSkill.isInUse() ? -100 : player.getTime();
+                equippedActiveSkill.lastUse = equippedActiveSkill.activeSkill.isInUseSkill() && !equippedActiveSkill.isInUse() ? -100 : useTime;
             }
         }
     }
 
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        run(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        run(player, playerData, activeSkillLevel, seed, isInUse);
     }
 
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        run(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        run(player, playerData, activeSkillLevel, seed, isInUse);
     }
 
 
@@ -179,6 +187,10 @@ abstract public class ActiveSkill extends Skill {
     public float consumedStamina(PlayerMob player) {
         float staminaUSage = player.buffManager.getModifier(BuffModifiers.STAMINA_USAGE);
         return consumedStaminaBase() * staminaUSage;
+    }
+
+    public float manaUsage(int activeSkillLevel) {
+        return 0;
     }
 
     public boolean isInUseSkill() {

@@ -37,7 +37,7 @@ public class ShotsRampage extends SimpleBuffActiveSkill {
             public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
                 super.onHasAttacked(activeBuff, event);
                 if (!event.wasPrevented && (event.target.isHostile || event.target.isHuman) && event.damage > 0 && event.damageType == DamageTypeRegistry.RANGED) {
-                    activeBuff.owner.buffManager.addBuff(new ActiveBuff(getBuffID(), activeBuff.owner, 5000, null), true);
+                    activeBuff.owner.buffManager.addBuff(new ActiveBuff(getBuffStringID(), activeBuff.owner, 5000, null), true);
                 }
             }
 

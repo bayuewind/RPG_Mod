@@ -14,6 +14,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import org.jetbrains.annotations.NotNull;
+import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 
@@ -26,13 +27,12 @@ public class ArrowStorm extends ActiveSkill {
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
 
-        player.getLevel().entityManager.streamAreaMobsAndPlayers(player.x, player.y, 400)
-                .filter(
-                        mob -> player.getDistance(mob) <= 400 && (mob.isHostile || (mob.isHuman && mob.canBeTargeted(player, player.getNetworkClient())))
-                ).forEach(
+        RPGUtils.streamMobsAndPlayers(player, 400)
+                .filter(RPGUtils.isValidTargetFilter(player))
+                .forEach(
                         target -> {
                             Projectile projectile = getProjectile(player, target, playerData, activeSkillLevel);
                             projectile.resetUniqueID(new GameRandom(seed));
@@ -44,8 +44,8 @@ public class ArrowStorm extends ActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         SoundManager.playSound(GameResources.bow, SoundEffect.effect(player));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(400, new Color(0, 102, 0))

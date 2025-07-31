@@ -34,7 +34,7 @@ public class UnleashingHaste extends SimpleBuffPassive {
 
             public void updateBuff(ActiveBuff activeBuff) {
                 float healthPercent = activeBuff.owner.getHealthPercent();
-                float increment = getLevel(activeBuff) * 0.01F * (1 - healthPercent);
+                float increment = getLevel(activeBuff) * 0.01F * (1 - healthPercent) * 10;
                 this.isVisible = increment > 0;
                 activeBuff.setModifier(
                         BuffModifiers.SPEED, increment

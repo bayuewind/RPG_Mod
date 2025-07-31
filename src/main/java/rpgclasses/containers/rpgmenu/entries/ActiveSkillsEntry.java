@@ -3,13 +3,13 @@ package rpgclasses.containers.rpgmenu.entries;
 import necesse.gfx.forms.components.FormContentBox;
 import necesse.gfx.forms.components.localComponents.FormLocalLabel;
 import necesse.gfx.gameFont.FontOptions;
+import rpgclasses.containers.rpgmenu.MenuContainer;
+import rpgclasses.containers.rpgmenu.MenuContainerForm;
+import rpgclasses.containers.rpgmenu.components.EquipActiveSkillComponent;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerClassData;
-import rpgclasses.containers.rpgmenu.MenuContainer;
-import rpgclasses.containers.rpgmenu.MenuContainerForm;
-import rpgclasses.containers.rpgmenu.components.EquipActiveSkillComponent;
 
 import java.awt.*;
 import java.util.ArrayList;

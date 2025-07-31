@@ -30,8 +30,8 @@ public class HuntersMark extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
         super.giveBuff(player, player, playerData, activeSkillLevel);
 
         GameUtils.streamServerClients(player.getLevel()).forEach(targetPlayer -> {
@@ -42,8 +42,8 @@ public class HuntersMark extends SimpleBuffActiveSkill {
         List<Mob> validMobs = player.getLevel().entityManager.mobs.streamAreaTileRange(player.getX(), player.getY(), 7)
                 .filter(target ->
                         target.getDistance(player) <= 400 &&
-                                target.canBeTargeted(player, player.getNetworkClient())
-                                && (target.isHostile || target.isHuman)
+                                target.canTakeDamage() && target.canBeTargeted(player, player.getNetworkClient())
+                                && target.isHostile
                 ).collect(Collectors.toList());
 
         if (!validMobs.isEmpty()) {
@@ -74,7 +74,7 @@ public class HuntersMark extends SimpleBuffActiveSkill {
                 PlayerMob player = (PlayerMob) activeBuff.owner;
                 if (!event.wasPrevented && MarkedBuff.isMarked(player, event.target) && 0 >= event.target.getHealth()) {
                     giveBuff2(player, player, PlayerDataList.getPlayerData(player), getLevel(activeBuff));
-                    player.buffManager.removeBuff(getBuffID(), true);
+                    player.buffManager.removeBuff(getBuffStringID(), true);
                 }
             }
         };

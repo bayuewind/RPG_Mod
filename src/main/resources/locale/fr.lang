@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% de portée des armes à distance
 mobdetectionrange=<mod> portée de détection des monstres
 focusdamage=<mod>% de dégâts de focalisation
 focuschance=<mod>% de chance de focalisation
+ignitedamage=<mod>% de dégâts d'incinération
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Epuisé
 overlevelclassbuff=Classe de sur-niveau
 markedbuff=Marqué
 darkcursebuff=Malédiction des ténèbres
+magicpoisonbuff=Poison Magique
+ignitedbuff=Enflammé
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Tous les dégâts réduisent également la santé maximale
 [mob]
 rpgmobname=[<class>] <name> niv <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9niv <level>§0
+
+rangerwolf=Loup Rôdeur
+dancingflame=Flamme Dansante
 
 
 [mobclass]
@@ -107,26 +113,37 @@ predatorsense=Sens du prédateur
 plasmagrenade=Grenade à plasma
 wolfcompanion=Compagnon loup
 
+// Sorcier
+arcanepower=Puissance des Arcanes
+manapower=Puissance du Mana
+manaproficiency=Maîtrise du Mana
+firepower=Puissance du Feu
+arcaneshield=Bouclier des Arcanes
+fireshield=Bouclier de Feu
+iceshield=Bouclier de Glace
+flamingsteps=Pas Enflammés
+stormbound=Lié à la Tempête
+
 
 [passivesdesc]
 
 // Guerrier
-unleashingrage=Chaque niveau fournit :
-
-+1% de tous les dégâts pour chaque 10% de santé manquante
-unleashinghaste=Chaque niveau fournit :
-
-+1% de vitesse de déplacement pour chaque 10% de santé manquante
-unyielding=Chaque niveau fournit :
-
-+5% de vitesse d'attaque et -5% de dégâts entrants en dessous de 20% de santé
-lastbreath=Au lieu de mourir, devenez invulnérable pendant §a[[3 x niveau de compétence]] secondes§0
-Une fois le temps écoulé, vous mourrez
+unleashingrage=Chaque niveau fournit:\n\n+1% de tous les dégâts pour chaque 10% de santé manquante
+unleashinghaste=Chaque niveau fournit:\n\n+1% de vitesse de déplacement pour chaque 10% de santé manquante
+unyielding=Chaque niveau fournit:\n\n+5% de vitesse d'attaque et -5% de dégâts entrants en dessous de 20% de santé
+lastbreath=Au lieu de mourir, devenez invulnérable pendant §a[[3 x <skilllevel>]] secondes§0\nUne fois le temps écoulé, vous mourrez
 
 // Rôdeur
-plasmagrenade=Toutes les 8 attaques à distance, tire un projectile explosif guidé qui inflige §i[[30 x niveau de compétence]]%§0 des dégâts de l'arme
-wolfcompanion=Un compagnon loup attaquera les ennemis marqués en infligeant §i[[niveau du joueur x niveau de compétence + intelligence x niveau de compétence]] de dégâts d'invocateur§0
+plasmagrenade=Toutes les 8 attaques à distance, tire un projectile explosif guidé qui inflige §i[[30 x <skilllevel>]]%§0 des dégâts de l'arme
+wolfcompanion=Un compagnon loup attaquera les ennemis marqués en infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de dégâts d'invocateur§0
 
+// Sorcier
+manapower=Chaque niveau fournit:\n\n+1% de Dégâts Magiques pour chaque 10% de Mana non utilisé
+flamingsteps=Lorsque vous courez avec un bijou actif, vous laisserez des flammes sur le sol\nLes flammes enflammeront les ennemis pendant 2 secondes, infligeant §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 par seconde
+stormbound=Toutes les §a[[9 - 0.5 x <skilllevel>]] secondes§0, un éclair frappe un ennemi aléatoire dans votre champ de vision\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdit pendant 1 seconde
+arcaneshield=Un bouclier qui empêche un coup\nLe bouclier se rétablira §a[[20 - <skilllevel>]] secondes§0 après son utilisation
+fireshield=Un bouclier qui empêche un coup\nLorsqu'il est utilisé, vous libérerez une explosion infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\net enflammant les monstres, répétant 20% de leurs dégâts d'origine par seconde pendant 5 secondes\nLe bouclier se rétablira 26 secondes après son utilisation
+iceshield=Un bouclier qui empêche un coup\nLorsqu'il est utilisé, vous libérerez une aura de glace infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\ncombinant les monstres pendant 5 secondes, et les gelant totalement pendant 1 seconde\nLe bouclier se rétablira 22 secondes après son utilisation
 
 [activeskills]
 empty=Vide
@@ -143,7 +160,6 @@ parry=Parade
 battlecry=Cri de guerre
 
 ironguard=Garde de fer
-thornedguard=Garde épineuse
 intimidation=Intimidation
 
 objectthrowing=Lancer d'objet
@@ -162,52 +178,70 @@ beartrap=Piège à ours
 huntersinstinct=Instinct de chasseur
 arrowstorm=Tempête de flèches
 
+// Sorcier
+arcaneoverload=Surcharge des Arcanes
+firedance=Danse du Feu
+iceball=Boule de Glace
+zap=Zapper
+manarecharge=Recharge de Mana
+
+teleport=Téléportation
+inferno=Enfer
+fireenchantment=Enchantement de Feu
+iceenchantment=Enchantement de Glace
+
+fireball=Boule de Feu
+lightning=Éclair
+
 
 [activeskillsdesc]
 
 // Guerrier
-fury=Pendant les 6 prochaines secondes, augmentez vos dégâts de mêlée et votre vitesse d'attaque de §a[[20 x niveau de compétence]]%
-recovery=Pendant les 10 prochaines secondes, augmente considérablement la régénération de santé en combat, restaurant §a[[20 + endurance x niveau de compétence]] de santé§0 sur la durée
-provocation=Pendant les §a[[2 x niveau de compétence]] prochaines secondes§0, forcez les ennemis proches à concentrer leurs attaques sur vous
-berserkercharge=Foncez sur une courte distance, infligeant §i[[10 x niveau du joueur + 2 x force x niveau de compétence + 2 x vitesse x niveau de compétence]] de dégâts§0 à tous les ennemis traversés
-Consomme 50% de l'endurance
-groundslam=Attaque de zone qui inflige §i[[5 x force]] de dégâts de mêlée§0 et §9étourdit§0 pendant §a[[1 x niveau de compétence]] secondes§0
-grounddestruction=Attaque de zone qui inflige §i[[5 x force x niveau de compétence + 5 x niveau du joueur x niveau de compétence]] de dégâts de mêlée§0 et §9étourdit§0 pendant 2 secondes
-parry=Devenez invulnérable pendant 0,5 seconde et renvoyez 500% des dégâts d'origine reçus
-Consomme 100% de l'endurance
-battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de vos alliés proches, ainsi que leur vitesse de déplacement de §a[[10 x niveau de compétence]]%
+fury=Pendant les 6 prochaines secondes, augmentez vos dégâts de mêlée et votre vitesse d'attaque de §a[[20 x <skilllevel>]]%
+recovery=Pendant les 10 prochaines secondes, augmente considérablement la régénération de santé en combat, restaurant §a[[20 + <endurance> x <skilllevel>]] de santé§0 sur la durée
+provocation=Pendant les §a[[2 x <skilllevel>]] prochaines secondes§0, forcez les ennemis proches à concentrer leurs attaques sur vous
+berserkercharge=Foncez sur une courte distance, infligeant §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] de dégâts§0 à tous les ennemis traversés\nConsomme 50% de l'endurance
+groundslam=Attaque de zone qui inflige §i[[5 x <strength>]] de dégâts de mêlée§0 et §9étourdit§0 pendant §a[[1 x <skilllevel>]] secondes§0
+grounddestruction=Attaque de zone qui inflige §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de dégâts de mêlée§0 et §9étourdit§0 pendant 2 secondes
+parry=Devenez invulnérable pendant 0,5 seconde et renvoyez 500% des dégâts d'origine reçus\nConsomme 100% de l'endurance
+battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de vos alliés proches, ainsi que leur vitesse de déplacement de §a[[10 x <skilllevel>]]%
 
-ironguard=-50% de dégâts entrants pendant §a[[4 x niveau de compétence]] secondes
-thornedguard=-50% de dégâts entrants pendant 12 secondes
-De plus, renvoie §a[[100 x niveau de compétence]]%§0 des dégâts d'origine reçus
-intimidation=Pendant les §a[[niveau de compétence]] prochaines secondes§0, faites fuir les ennemis proches
+ironguard=-50% de dégâts entrants pendant §a[[4 x <skilllevel>]] secondes
+intimidation=Pendant les §a[[<skilllevel>]] prochaines secondes§0, faites fuir les ennemis proches
 
-objectthrowing=Étape 1 : Saisissez un objet devant vous
-Étape 2 : Lancez-le vers l'avant en infligeant §i[[20 x niveau du joueur + 5 x force x niveau de compétence]] de dégâts de mêlée§0
-Les deux étapes consomment toute votre endurance (au moins 100%)
+objectthrowing=Étape 1: Saisissez un objet devant vous\nÉtape 2: Lancez-le vers l'avant en infligeant §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de dégâts de mêlée§0\nLes deux étapes consomment toute votre endurance (au moins 100%)
 
 // Rôdeur
-shortdash=Effectuez une roulade de 100 de force
-Consomme 15% de l'endurance
-longdash=Effectuez une roulade de 150 de force
-Consomme 25% de l'endurance
-lethalshot=Tirez une §hflèche mortelle§0 sur l'ennemi le plus proche, infligeant §i[[5 x niveau du joueur + 5 x force x niveau de compétence]] de dégâts de rôdeur§0
-venomshot=Tirez une §bflèche de venin§0 sur l'ennemi le plus proche, infligeant §i[[4 x niveau du joueur + 2 x force x niveau de compétence + 2 x intelligence x niveau de compétence]] de dégâts de rôdeur§0
-explosiveshot=Tirez une §iflèche explosive§0 sur l'ennemi le plus proche, infligeant §i[[4 x niveau du joueur + 2 x force x niveau de compétence + 2 x intelligence x niveau de compétence]] de dégâts de rôdeur§0
+shortdash=Effectuez une roulade de 100 de <strength>\nConsomme 15% de l'endurance
+longdash=Effectuez une roulade de 150 de <strength>\nConsomme 25% de l'endurance
+lethalshot=Tirez une §hflèche mortelle§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de dégâts de rôdeur§0
+venomshot=Tirez une §bflèche de venin§0 sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de dégâts de rôdeur§0
+explosiveshot=Tirez une §iflèche explosive§0 sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] de dégâts de rôdeur§0
 
-shotsrampage=Tant que vous avez au moins 1 cumul de Carnage de tirs, toucher un ennemi avec une attaque à distance vous accorde 1 cumul supplémentaire pendant 5 secondes
-Chaque cumul de Carnage de tirs augmente la vitesse d'attaque de 5%, jusqu'à un maximum de 30 cumuls
-huntersmark=§hMarquez§0 l'ennemi proche avec la santé la plus élevée pendant 10 secondes
-Si vous tuez une cible marquée, gagnez §a+[[20 x niveau de compétence]]%§0 de vitesse d'attaque à distance et de vitesse de déplacement pendant 5 secondes
-beartrap=Placez un piège à ours sur le sol qui disparaît s'il est déclenché ou après 20 secondes
-Si un ennemi le déclenche, il subira §i[[10 x niveau du joueur]] de dégâts§0 et sera piégé pendant 5 secondes
+shotsrampage=Tant que vous avez au moins 1 cumul de Carnage de tirs, toucher un ennemi avec une attaque à distance vous accorde 1 cumul supplémentaire pendant 5 secondes\nChaque cumul de Carnage de tirs augmente la vitesse d'attaque de 5%, jusqu'à un maximum de 30 cumuls
+huntersmark=§hMarquez§0 l'ennemi proche avec la santé la plus élevée pendant 10 secondes\nSi vous tuez une cible marquée, gagnez §a+[[20 x <skilllevel>]]%§0 de vitesse d'attaque à distance et de vitesse de déplacement pendant 5 secondes
+beartrap=Placez un piège à ours sur le sol qui disparaît s'il est déclenché ou après 20 secondes\nSi un ennemi le déclenche, il subira §i[[10 x <playerlevel>]] de dégâts§0 et sera piégé pendant 5 secondes
 
-huntersinstinct=Pendant les 12 prochaines secondes, augmentez votre §7chance d'esquive§0 de §a[[10 x niveau de compétence]]%
-§hMarquez§0 pendant 5 secondes les ennemis que vous esquivez
-arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2 x niveau du joueur + force x niveau de compétence + vitesse x niveau de compétence]] de dégâts de rôdeur§0 par flèche
+huntersinstinct=Pendant les 12 prochaines secondes, augmentez votre §7chance d'esquive§0 de §a[[10 x <skilllevel>]]%\n§hMarquez§0 pendant 5 secondes les ennemis que vous esquivez
+arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] de dégâts de rôdeur§0 par flèche
+
+// Sorcier
+arcaneoverload=Lorsqu'il est actif, augmente votre Vitesse d'Attaque Magique de §a[[30 x <skilllevel>]]%§0, mais vous ne pourrez pas bouger\nSe termine lorsque vous n'avez plus de mana, ou s'il est utilisé à nouveau\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana par seconde
+manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts\nSe termine lorsqu'il est utilisé à nouveau
+firedance=Invoque 4 §bFlammes Dansantes§0, chacune infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nInvoque une autre toutes les 5 secondes\nToutes les invocations disparaissent 20 secondes après l'activation de la capacité\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
+iceball=Lance une §aBoule de Glace§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[50 + 10 x <skilllevel>]] de Mana
+zap=Lance un zapping qui saute entre les monstres pendant 2 secondes, infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 1 seconde\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana
+
+teleport=Vous téléporte devant vous\nConsomme 10 de Mana
+inferno=Enflamme tous les ennemis proches, infligeant §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dégâts de Feu§0 par seconde pendant 10 secondes\nConsomme §a[[40 + 8 x <skilllevel>]] de Mana
+fireenchantment=Pendant les 10 prochaines secondes, les attaques de vous et de vos alliés proches enflamment les ennemis, infligeant §a[[5 x <skilllevel>]]%§0 des dégâts par seconde pendant 5 secondes\nConsomme §a[[20 + 4 x <skilllevel>]] de Mana
+iceenchantment=Pendant les 10 prochaines secondes, les attaques de vous et de vos alliés proches gèlent les ennemis pendant §a[[2 x <skilllevel>]] secondes§0\nConsomme 20 de Mana
+
+fireball=Lance une §iBoule de Feu§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[80 + 16 x <skilllevel>]] de Mana
+lightning=Lance un éclair qui saute entre les monstres pendant 1 seconde, infligeant §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 2 secondes\nNe peut pas frapper plusieurs fois la même cible\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Niveau de compétence
 playerlevel=Niveau du joueur
 endurance=Endurance
@@ -218,21 +252,30 @@ grace=Grâce
 
 
 [extraskilldesc]
+// Mécaniques de base
+manausage=Si vous n'avez pas assez de mana, son temps de recharge est doublé
+setmax=Les effets négatifs sont définis au maximum et ne peuvent pas être supprimés par d'autres améliorations
+
 // Améliorations
-marked=§hMarqué :§0 Infligez +20% de dégâts (+ §hdégâts de focalisation§0) et +10% de chance de coup critique aux monstres que vous marquez
-Tous les projectiles guidés et/ou tirés sur l'ennemi le plus proche donneront la priorité aux ennemis marqués
+marked=§hMarqué:§0 Infligez +20% de Dégâts (+ §hDégâts de Focalisation§0) et +10% de Chance de Critique aux monstres que vous marquez\n"L'ennemi le plus proche" donne la priorité aux ennemis marqués
 
 // Modificateurs de chance
-dodgechance=§7Chance d'esquive :§0 Chance d'esquiver les attaques entrantes. Ne peut pas dépasser 80%
-focuschance=§hChance de focalisation :§0 Chance de §hmarquer§0 un monstre pendant 5 secondes lorsqu'il est attaqué avec des dégâts autres que ceux d'invocateur
+dodgechance=§7Chance d'esquive:§0 Chance d'esquiver les attaques entrantes. Ne peut pas dépasser 80%
+focuschance=§hChance de focalisation:§0 Chance de §hmarquer§0 un monstre pendant 5 secondes lorsqu'il est attaqué avec des dégâts autres que ceux d'invocateur
 
 // Modificateurs fixes
-mobdetection=§9Détection de monstres :§0 Affiche les monstres proches sur la carte. Une portée de détection plus élevée révèle les monstres de plus loin
+mobdetection=§9Détection de monstres:§0 Affiche les monstres proches sur la carte. Une portée de détection plus élevée révèle les monstres de plus loin
+ignitedamage=§iDégâts d'Incinération:§0 Augmente les dégâts d'incinération sur la durée, mais n'affecte pas les dégâts des coups directs
 
 // Projectiles
-lethalarrow=§hFlèche mortelle :§0 Flèche guidée qui garantit un coup critique
-venomarrow=§bFlèche de venin :§0 Flèche guidée qui empoisonne les ennemis, répétant 10% de ses dégâts d'origine par seconde pendant 30 secondes
-explosivearrow=§iFlèche explosive :§0 Flèche guidée qui provoque une explosion magique de dégâts égaux
+lethalarrow=§hFlèche mortelle:§0 Flèche guidée qui garantit un coup critique
+venomarrow=§bFlèche de Venin:§0 Flèche guidée qui empoisonne les ennemis. Répète 10% de ses dégâts d'origine par seconde pendant 30 secondes
+explosivearrow=§iFlèche explosive:§0 Flèche guidée qui provoque une explosion magique de dégâts égaux
+iceball=§aBoule de Glace:§0 Projectile magique qui explose et gèle les monstres pendant 5 secondes, et les gèle aussi totalement pendant 1 seconde
+fireball=§iBoule de Feu:§0 Projectile magique qui explose et enflamme les monstres en répétant 20% de ses dégâts d'origine par seconde pendant 5 secondes
+
+// Invocations
+dancingflame=§bFlamme Dansante:§0 Invocation qui agit comme un projectile. Enflamme les ennemis à l'impact. Répète 20% de ses dégâts d'origine par seconde pendant 5 secondes
 
 
 [item]
@@ -298,15 +341,15 @@ classes=Classes
 level=Niveau <level>
 classlevel=<class> niveau <level>
 lvl=Niv <level>
-eachlevel=Chaque niveau fournit :
-experience=EXP : <exp> / <nextexp>
-totalexperience=EXP totale : <exp>
+eachlevel=Chaque niveau fournit:
+experience=EXP: <exp> / <nextexp>
+totalexperience=EXP totale: <exp>
 
-resetpoints=Points de réinitialisation : <points>
-attrpoints=Points d'attribut : <points>
-classpoints=Points de classe : <points>
-passivepoints=Points de passif : <points>
-activeskillpoints=Points de compétence active : <points>
+resetpoints=Points de réinitialisation: <points>
+attrpoints=Points d'attribut: <points>
+classpoints=Points de classe: <points>
+passivepoints=Points de passif: <points>
+activeskillpoints=Points de compétence active: <points>
 
 activeskillsuse=Ce mod transforme la roue d'expression (touche T par défaut) en roue de compétences actives
 activeskillsusetip1=Il est recommandé de changer la commande de la roue d'expression en une touche facilement accessible
@@ -314,11 +357,11 @@ activeskillsusetip2=Vous pouvez également attribuer une touche à chaque emplac
 activeskillsequipinstructions=Cliquez sur un emplacement pour équiper une compétence active. Vous ne pouvez pas déséquiper une compétence active en recharge
 noactiveskills=Vous n'avez aucune compétence active. Débloquez-les via les classes
 
-activeskillcooldown=§9Recharge : <seconds>s
-activeskillcooldownmod=§9Recharge : [[<seconds> <sign> <mod> x niveau de compétence]]s
+activeskillcooldown=§9Recharge: <seconds>s
+activeskillcooldownmod=§9Recharge: [[<seconds> <sign> <mod> x niveau de compétence]]s
 requiredclasslevel=§bNiveau de classe <level> requis
 requiredactiveskill=§bNécessite '<skill>' niveau <level>
-maxlevel=§aNiveau maximum : <level>
+maxlevel=§aNiveau maximum: <level>
 
 clicktoseebase=[input=mouse1] pour voir la base
 clicktoseelevel=[input=mouse1] pour voir le niveau <level>
@@ -327,9 +370,7 @@ classlevelseparation=- Niveau de classe <level> -
 
 inuse=En cours d'utilisation
 
-upcomingclass=§6Classe à venir
-§9Cette classe est actuellement en développement
-et sera disponible dans une future mise à jour
+upcomingclass=§6Classe à venir\n§9Cette classe est actuellement en développement\net sera disponible dans une future mise à jour
 
 addcolumn=Ajouter une colonne
 removecolumn=Supprimer la colonne

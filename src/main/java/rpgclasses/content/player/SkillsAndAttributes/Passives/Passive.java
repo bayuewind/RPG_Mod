@@ -14,6 +14,11 @@ abstract public class Passive extends Skill {
         super(stringID, color, levelMax, requiredClassLevel);
     }
 
+    public Passive setFamily(String family) {
+        this.family = family;
+        return this;
+    }
+
     @Override
     public List<String> getToolTipsText() {
         List<String> tooltips = new ArrayList<>();

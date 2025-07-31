@@ -5,6 +5,9 @@ import necesse.engine.network.NetworkClient;
 import necesse.engine.network.server.ServerClient;
 import necesse.entity.mobs.PlayerMob;
 import necesse.inventory.container.Container;
+import rpgclasses.containers.rpgmenu.customactions.ClassUpdateCustomAction;
+import rpgclasses.containers.rpgmenu.customactions.EquippedActiveSkillsCustomAction;
+import rpgclasses.containers.rpgmenu.customactions.IntArrayCustomAction;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
@@ -18,11 +21,10 @@ import rpgclasses.packets.UpdateClientClassDataPacket;
 import rpgclasses.packets.UpdateClientClassesPacket;
 import rpgclasses.packets.UpdateClientEquippedActiveSkillsPacket;
 import rpgclasses.registry.RPGBuffs;
-import rpgclasses.containers.rpgmenu.customactions.ClassUpdateCustomAction;
-import rpgclasses.containers.rpgmenu.customactions.EquippedActiveSkillsCustomAction;
-import rpgclasses.containers.rpgmenu.customactions.IntArrayCustomAction;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MenuContainer extends Container {
     public final IntArrayCustomAction updateAttributes;
@@ -213,9 +215,20 @@ public class MenuContainer extends Container {
                             PlayerClassData classData = playerData.getClassesData()[classID];
 
                             boolean valid = true;
+                            Set<String> passiveFamilies = new HashSet<>();
                             for (int i = 0; i < passiveLevels.length; i++) {
+                                Passive passive = classData.playerClass.passivesList.get(i);
                                 int assignedLevel = passiveLevels[i];
-                                int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.passivesList.get(i), classData.getLevel(false));
+
+                                if (assignedLevel > 0 && passive.family != null) {
+                                    if (passiveFamilies.contains(passive.family)) {
+                                        valid = false;
+                                        break;
+                                    }
+                                    passiveFamilies.add(passive.family);
+                                }
+
+                                int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(false));
 
                                 if (assignedLevel < 0 || assignedLevel > effectiveMax) {
                                     valid = false;
@@ -374,7 +387,7 @@ public class MenuContainer extends Container {
                                 return;
                             }
 
-                            // If any skill is in cooldown in any other slot with a later lastUse, then apply that lastUse to its slot. If not, reset it to 0
+                            // If any skill is in cooldown in any other slot, then apply that lastUse to its slot and remove the last one. If not, reset it to 0
                             for (int i = 0; i < equippedActiveSkills.length; i++) {
                                 EquippedActiveSkill equippedActiveSkill = equippedActiveSkills[i];
                                 if (equippedActiveSkill != null) {
@@ -384,6 +397,7 @@ public class MenuContainer extends Container {
                                             EquippedActiveSkill equippedActiveSkill2 = equippedActiveSkills[j];
                                             if (equippedActiveSkill2 != null && !equippedActiveSkill2.isEmpty() && equippedActiveSkill.isSameSkill(equippedActiveSkill2)) {
                                                 maxLastUse = Math.max(maxLastUse, equippedActiveSkill2.lastUse);
+                                                equippedActiveSkills[j].empty();
                                             }
                                         }
                                     }

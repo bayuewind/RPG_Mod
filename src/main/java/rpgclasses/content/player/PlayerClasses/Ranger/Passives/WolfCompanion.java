@@ -7,7 +7,7 @@ import necesse.entity.mobs.itemAttacker.FollowPosition;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
-import rpgclasses.mobs.summons.pasive.PassiveSummonedMob;
+import rpgclasses.mobs.summons.pasivesummon.PassiveSummonedMob;
 
 public class WolfCompanion extends SimpleBuffPassive {
 
@@ -30,15 +30,15 @@ public class WolfCompanion extends SimpleBuffPassive {
         }
 
         @Override
-        public void serverTick(ActiveBuff buff) {
-            super.serverTick(buff);
-            if (buff.owner.isPlayer) {
-                PlayerMob player = (PlayerMob) buff.owner;
+        public void serverTick(ActiveBuff activeBuff) {
+            super.serverTick(activeBuff);
+            if (activeBuff.owner.isPlayer) {
+                PlayerMob player = (PlayerMob) activeBuff.owner;
                 if (player.serverFollowersManager.getFollowerCount(buffStringID) == 0) {
-                    PassiveSummonedMob mob = (PassiveSummonedMob) MobRegistry.getMob("rangerwolf", buff.owner.getLevel());
+                    PassiveSummonedMob mob = (PassiveSummonedMob) MobRegistry.getMob("rangerwolf", activeBuff.owner.getLevel());
                     player.serverFollowersManager.addFollower(buffStringID, mob, FollowPosition.WALK_CLOSE, buffStringID, 1, 1, null, true);
                     mob.setPassive(passive);
-                    mob.getLevel().entityManager.addMob(mob, buff.owner.x, buff.owner.y);
+                    mob.getLevel().entityManager.addMob(mob, activeBuff.owner.x, activeBuff.owner.y);
                 }
             }
 

@@ -302,7 +302,7 @@ public class PlayerData {
             }
         }
 
-        serverClient.getServer().network.sendToAllClients(new ShowModExpPacket(serverClient.playerMob.getX(), serverClient.playerMob.getY(), amount, levelUp));
+        serverClient.getServer().network.sendToClientsAtEntireLevel(new ShowModExpPacket(serverClient.playerMob.getX(), serverClient.playerMob.getY(), amount, levelUp), serverClient.getLevel());
         serverClient.getServer().network.sendToAllClients(new UpdateClientExpPacket(PlayerDataList.getPlayerData(serverClient.playerMob)));
     }
 

@@ -7,12 +7,9 @@ import necesse.engine.registries.MobRegistry;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.util.GameRandom;
-import necesse.entity.mobs.LevelMob;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.WormMobBody;
 import necesse.entity.mobs.WormMobHead;
-import necesse.entity.mobs.hostile.bosses.CrystalDragonBody;
-import necesse.entity.mobs.hostile.bosses.CrystalDragonHead;
 import necesse.entity.mobs.hostile.bosses.NightSwarmBatMob;
 import necesse.level.maps.IncursionLevel;
 import necesse.level.maps.Level;
@@ -42,7 +39,7 @@ public class MobData {
     public static Map<Integer, MobData> mobsData = new HashMap<>();
 
     public static MobData getMob(Mob mob) {
-        if(mob instanceof WormMobBody) {
+        if (mob instanceof WormMobBody) {
             WormMobBody<?, ?> body = (WormMobBody<?, ?>) mob;
             WormMobHead<?, ?> master = body.master.get(mob.getLevel());
             return master == null ? null : getMob(master.getUniqueID());

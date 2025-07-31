@@ -16,14 +16,11 @@ public class EquipmentBuffManagerPatches {
     public static class updateTrinketBuffs {
         @Advice.OnMethodExit
         static void onExit(@Advice.This EquipmentBuffManager This) {
-            System.out.println("1");
             try {
                 Field ownerField = EquipmentBuffManager.class.getDeclaredField("owner");
                 ownerField.setAccessible(true);
                 Mob owner = (Mob) ownerField.get(This);
-                System.out.println("2");
                 if (owner.isPlayer) {
-                    System.out.println("3");
                     PlayerMob player = (PlayerMob) owner;
                     PlayerData playerData = PlayerDataList.getPlayerData(player);
                     playerData.updateModifiersBuff(player);

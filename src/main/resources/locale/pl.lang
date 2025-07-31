@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% zasięg broni dystansowej
 mobdetectionrange=<mod> zasięg wykrywania mobów
 focusdamage=<mod>% obrażeń od skupienia
 focuschance=<mod>% szansy na skupienie
+ignitedamage=<mod>% obrażeń od podpalenia
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Wyczerpany
 overlevelclassbuff=Klasa ponadpoziomowa
 markedbuff=Oznaczony
 darkcursebuff=Mroczna klątwa
+magicpoisonbuff=Magiczna Trucizna
+ignitedbuff=Podpalony
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Wszystkie obrażenia zmniejszają również maksymalne zdrowie
 [mob]
 rpgmobname=[<class>] <name> poz. <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9poz. <level>§0
+
+rangerwolf=Wilk Łowcy
+dancingflame=Tańczący Płomień
 
 
 [mobclass]
@@ -107,26 +113,38 @@ predatorsense=Zmysł drapieżnika
 plasmagrenade=Granat plazmowy
 wolfcompanion=Wilczy towarzysz
 
+// Czarodziej
+arcanepower=Tajemna Moc
+manapower=Moc Many
+manaproficiency=Biegłość w Manie
+firepower=Siła Ognia
+arcaneshield=Tajemna Tarcza
+fireshield=Tarcza Ognia
+iceshield=Tarcza Lodu
+flamingsteps=Płonące Kroki
+stormbound=Związany z Burzą
+
 
 [passivesdesc]
 
 // Wojownik
-unleashingrage=Każdy poziom zapewnia:
-
-+1% wszystkich obrażeń za każde 10% brakującego zdrowia
-unleashinghaste=Każdy poziom zapewnia:
-
-+1% prędkości ruchu za każde 10% brakującego zdrowia
-unyielding=Każdy poziom zapewnia:
-
-+5% prędkości ataku i -5% otrzymywanych obrażeń poniżej 20% zdrowia
-lastbreath=Zamiast umierać, stajesz się niewrażliwy na §a[[3 x poziom umiejętności]] sekund§0
-Gdy czas minie, umrzesz
+unleashingrage=Każdy poziom zapewnia:\n\n+1% wszystkich obrażeń za każde 10% brakującego zdrowia
+unleashinghaste=Każdy poziom zapewnia:\n\n+1% prędkości ruchu za każde 10% brakującego zdrowia
+unyielding=Każdy poziom zapewnia:\n\n+5% prędkości ataku i -5% otrzymywanych obrażeń poniżej 20% zdrowia
+lastbreath=Zamiast umierać, stajesz się niewrażliwy na §a[[3 x <skilllevel>]] sekund§0\nGdy czas minie, umrzesz
 
 // Łowca
-plasmagrenade=Co 8 ataków dystansowych wystrzeliwuje naprowadzany pocisk wybuchowy, który zadaje §i[[30 x poziom umiejętności]]%§0 obrażeń broni
-wolfcompanion=Wilczy towarzysz będzie atakował oznaczone wrogów, zadając §i[[poziom gracza x poziom umiejętności + inteligencja x poziom umiejętności]] obrażeń przywoływacza§0
+plasmagrenade=Co 8 ataków dystansowych wystrzeliwuje naprowadzany pocisk wybuchowy, który zadaje §i[[30 x <skilllevel>]]%§0 obrażeń broni
+wolfcompanion=Wilczy towarzysz będzie atakował oznaczone wrogów, zadając §i[[<playerlevel> + <intelligence> x <skilllevel>]] obrażeń przywoływacza§0
 
+// Czarodziej
+manapower=Każdy poziom zapewnia:\n\n+1% Obrażeń Magicznych za każde 10% niewykorzystanej Many
+flamingsteps=Biegnąc z aktywnym talizmanem, będziesz zostawiać na ziemi płomienie
+Płomienie podpalą wrogów na 2 sekundy, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 na sekundę
+stormbound=Co §a[[9 - 0.5 x <skilllevel>]] sekund§0, piorun uderza w losowego wroga w twoim polu widzenia\nZadaje §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłusza na 1 sekundę
+arcaneshield=Tarcza, która zapobiega jednemu uderzeniu\nTarcza odnowi się §a[[20 - <skilllevel>]] sekund§0 po użyciu
+fireshield=Tarcza, która zapobiega jednemu uderzeniu\nPo użyciu wyzwolisz eksplozję zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\ni podpalającą moby, powtarzając 20% ich pierwotnych obrażeń na sekundę przez 5 sekund\nTarcza odnowi się 26 sekund po użyciu
+iceshield=Tarcza, która zapobiega jednemu uderzeniu\nPo użyciu wyzwolisz aurę lodu zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nzamrażając moby na 5 sekund i całkowicie je zamrażając na 1 sekundę\nTarcza odnowi się 22 sekundy po użyciu
 
 [activeskills]
 empty=Pusty
@@ -143,7 +161,6 @@ parry=Parowanie
 battlecry=Okrzyk bojowy
 
 ironguard=Żelazna straż
-thornedguard=Ciernista straż
 intimidation=Zastraszenie
 
 objectthrowing=Rzucanie przedmiotami
@@ -162,52 +179,70 @@ beartrap=Niedźwiedzia pułapka
 huntersinstinct=Instynkt łowcy
 arrowstorm=Burza strzał
 
+// Czarodziej
+arcaneoverload=Przeciążenie Tajemne
+firedance=Taniec Ognia
+iceball=Kula Lodu
+zap=Porażenie
+manarecharge=Ładowanie Many
+
+teleport=Teleportacja
+inferno=Piekło
+fireenchantment=Zaklęcie Ognia
+iceenchantment=Zaklęcie Lodu
+
+fireball=Kula Ognia
+lightning=Piorun
+
 
 [activeskillsdesc]
 
 // Wojownik
-fury=Przez następne 6 sekund zwiększ swoje obrażenia w walce wręcz i prędkość ataku o §a[[20 x poziom umiejętności]]%
-recovery=Przez następne 10 sekund znacznie zwiększa regenerację zdrowia w walce, przywracając §a[[20 + wytrzymałość x poziom umiejętności]] zdrowia§0 w czasie trwania
-provocation=Przez następne §a[[2 x poziom umiejętności]] sekund§0 zmuś pobliskich wrogów do skupienia na tobie swoich ataków
-berserkercharge=Szarżuj do przodu na niewielką odległość, zadając §i[[10 x poziom gracza + 2 x siła x poziom umiejętności + 2 x szybkość x poziom umiejętności]] obrażeń§0 wszystkim mijanym wrogom
-Zużywa 50% wytrzymałości
-groundslam=Atak obszarowy, który zadaje §i[[5 x siła]] obrażeń w walce wręcz§0 i §9ogłusza§0 na §a[[1 x poziom umiejętności]] sekund§0
-grounddestruction=Atak obszarowy, który zadaje §i[[5 x siła x poziom umiejętności + 5 x poziom gracza x poziom umiejętności]] obrażeń w walce wręcz§0 i §9ogłusza§0 na 2 sekundy
-parry=Stajesz się niewrażliwy na 0,5 sekundy i zwracasz 500% pierwotnych otrzymanych obrażeń
-Zużywa 100% wytrzymałości
-battlecry=Przez następne 10 sekund zwiększ swoje i pobliskich sojuszników wszystkie obrażenia i prędkość ruchu o §a[[10 x poziom umiejętności]]%
+fury=Przez następne 6 sekund zwiększ swoje obrażenia w walce wręcz i prędkość ataku o §a[[20 x <skilllevel>]]%
+recovery=Przez następne 10 sekund znacznie zwiększa regenerację zdrowia w walce, przywracając §a[[20 + <endurance> x <skilllevel>]] zdrowia§0 w czasie trwania
+provocation=Przez następne §a[[2 x <skilllevel>]] sekund§0 zmuś pobliskich wrogów do skupienia na tobie swoich ataków
+berserkercharge=Szarżuj do przodu na niewielką odległość, zadając §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] obrażeń§0 wszystkim mijanym wrogom\nZużywa 50% wytrzymałości
+groundslam=Atak obszarowy, który zadaje §i[[5 x <strength>]] obrażeń w walce wręcz§0 i §9ogłusza§0 na §a[[1 x <skilllevel>]] sekund§0
+grounddestruction=Atak obszarowy, który zadaje §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] obrażeń w walce wręcz§0 i §9ogłusza§0 na 2 sekundy
+parry=Stajesz się niewrażliwy na 0,5 sekundy i zwracasz 500% pierwotnych otrzymanych obrażeń\nZużywa 100% wytrzymałości
+battlecry=Przez następne 10 sekund zwiększ swoje i pobliskich sojuszników wszystkie obrażenia i prędkość ruchu o §a[[10 x <skilllevel>]]%
 
-ironguard=-50% otrzymywanych obrażeń przez §a[[4 x poziom umiejętności]] sekund
-thornedguard=-50% otrzymywanych obrażeń przez 12 sekund
-Dodatkowo zwraca §a[[100 x poziom umiejętności]]%§0 pierwotnych otrzymanych obrażeń
-intimidation=Przez następne §a[[poziom umiejętności]] sekund§0 spraw, by pobliscy wrogowie uciekli
+ironguard=-50% otrzymywanych obrażeń przez §a[[4 x <skilllevel>]] sekund
+intimidation=Przez następne §a[[<skilllevel>]] sekund§0 spraw, by pobliscy wrogowie uciekli
 
-objectthrowing=Krok 1: Chwyć przedmiot przed sobą
-Krok 2: Rzuć go do przodu, zadając §i[[20 x poziom gracza + 5 x siła x poziom umiejętności]] obrażeń w walce wręcz§0
-Oba kroki zużywają całą twoją wytrzymałość (co najmniej 100%)
+objectthrowing=Krok 1: Chwyć przedmiot przed sobą\nKrok 2: Rzuć go do przodu, zadając §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] obrażeń w walce wręcz§0\nOba kroki zużywają całą twoją wytrzymałość (co najmniej 100%)
 
 // Łowca
-shortdash=Wykonaj doskok o sile 100
-Zużywa 15% wytrzymałości
-longdash=Wykonaj doskok o sile 150
-Zużywa 25% wytrzymałości
-lethalshot=Wystrzel §hzabójczą strzałę§0 w najbliższego wroga, zadając §i[[5 x poziom gracza + 5 x siła x poziom umiejętności]] obrażeń łowcy§0
-venomshot=Wystrzel §bjadowitą strzałę§0 w najbliższego wroga, zadając §i[[4 x poziom gracza + 2 x siła x poziom umiejętności + 2 x inteligencja x poziom umiejętności]] obrażeń łowcy§0
-explosiveshot=Wystrzel §iwybuchową strzałę§0 w najbliższego wroga, zadając §i[[4 x poziom gracza + 2 x siła x poziom umiejętności + 2 x inteligencja x poziom umiejętności]] obrażeń łowcy§0
+shortdash=Wykonaj doskok o sile 100 <strength>\nZużywa 15% wytrzymałości
+longdash=Wykonaj doskok o sile 150 <strength>\nZużywa 25% wytrzymałości
+lethalshot=Wystrzel §hzabójczą strzałę§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] obrażeń łowcy§0
+venomshot=Wystrzel §bjadowitą strzałę§0 w najbliższego wroga, zadając §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] obrażeń łowcy§0
+explosiveshot=Wystrzel §iwybuchową strzałę§0 w najbliższego wroga, zadając §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] obrażeń łowcy§0
 
-shotsrampage=Gdy masz co najmniej 1 stos szału strzałów, trafienie wroga atakiem dystansowym daje 1 dodatkowy stos na 5 sekund
-Każdy stos szału strzałów zwiększa prędkość ataku o 5%, do maksymalnie 30 stosów
-huntersmark=§hOznacz§0 najbliższego wroga o najwyższym zdrowiu na 10 sekund
-Jeśli zabijesz oznaczony cel, zyskasz §a+[[20 x poziom umiejętności]]%§0 prędkości ataku dystansowego i prędkości ruchu na 5 sekund
-beartrap=Umieść na ziemi niedźwiedzią pułapkę, która zniknie po uruchomieniu lub po 20 sekundach
-Jeśli wróg ją uruchomi, otrzyma §i[[10 x poziom gracza]] obrażeń§0 i zostanie uwięziony na 5 sekund
+shotsrampage=Gdy masz co najmniej 1 stos szału strzałów, trafienie wroga atakiem dystansowym daje 1 dodatkowy stos na 5 sekund\nKażdy stos szału strzałów zwiększa prędkość ataku o 5%, do maksymalnie 30 stosów
+huntersmark=§hOznacz§0 najbliższego wroga o najwyższym zdrowiu na 10 sekund\nJeśli zabijesz oznaczony cel, zyskasz §a+[[20 x <skilllevel>]]%§0 prędkości ataku dystansowego i prędkości ruchu na 5 sekund
+beartrap=Umieść na ziemi niedźwiedzią pułapkę, która zniknie po uruchomieniu lub po 20 sekundach\nJeśli wróg ją uruchomi, otrzyma §i[[10 x <playerlevel>]] obrażeń§0 i zostanie uwięziony na 5 sekund
 
-huntersinstinct=Przez następne 12 sekund zwiększ swoją §7szansę na unik§0 o §a[[10 x poziom umiejętności]]%
-§hOznacz§0 na 5 sekund wrogów, których unikniesz
-arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając §i[[2 x poziom gracza + siła x poziom umiejętności + szybkość x poziom umiejętności]] obrażeń łowcy§0 każdą strzałą
+huntersinstinct=Przez następne 12 sekund zwiększ swoją §7szansę na unik§0 o §a[[10 x <skilllevel>]]%§hOznacz§0 na 5 sekund wrogów, których unikniesz
+arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] obrażeń łowcy§0 każdą strzałą
+
+// Czarodziej
+arcaneoverload=Gdy aktywne, zwiększa twoją Prędkość Ataku Magicznego o §a[[30 x <skilllevel>]]%§0, ale nie będziesz mógł się poruszać\nKończy się, gdy skończy ci się mana, lub jeśli zostanie użyte ponownie\nZużywa §a[[10 + 2 x <skilllevel>]] Many na sekundę
+manarecharge=Gdy aktywne, zwiększa twoją Regenerację Many o +1 i o §a[[50 x <skilllevel>]]%§0, ale zostaniesz sparaliżowany i będziesz otrzymywać podwójne obrażenia\nKończy się po ponownym użyciu
+firedance=Przywołuje 4 §bTańczące Płomienie§0, z których każdy zadaje §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nPrzywołuj kolejny co 5 sekund\nWszystkie przywołania znikają 20 sekund po aktywacji umiejętności\nZużywa §a[[30 + 6 x <skilllevel>]] Many
+iceball=Rzuć §aKulą Lodu§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nZużywa §a[[50 + 10 x <skilllevel>]] Many
+zap=Rozpocznij porażenie, które przeskakuje między mobami przez 2 sekundy, zadając §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłuszając na 1 sekundę\nZużywa §a[[10 + 2 x <skilllevel>]] Many
+
+teleport=Teleportuje cię przed siebie\nZużywa 10 Many
+inferno=Podpal wszystkich pobliskich wrogów, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń od Ognia§0 na sekundę przez 10 sekund\nZużywa §a[[40 + 8 x <skilllevel>]] Many
+fireenchantment=Przez następne 10 sekund ataki twoje i pobliskich sojuszników podpalają wrogów, zadając §a[[5 x <skilllevel>]]%§0 obrażeń na sekundę przez 5 sekund\nZużywa §a[[20 + 4 x <skilllevel>]] Many
+iceenchantment=Przez następne 10 sekund ataki twoje i pobliskich sojuszników zamrażają wrogów na §a[[2 x <skilllevel>]] sekund§0\nZużywa 20 Many
+
+fireball=Rzuć §iKulą Ognia§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nZużywa §a[[80 + 16 x <skilllevel>]] Many
+lightning=Rozpocznij piorun, który przeskakuje między mobami przez 1 sekundę, zadając §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłuszając na 2 sekundy\nNie może trafić tego samego celu wielokrotnie\nZużywa §a[[30 + 6 x <skilllevel>]] Many
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Poziom umiejętności
 playerlevel=Poziom gracza
 endurance=Wytrzymałość
@@ -218,9 +253,12 @@ grace=Wdzięk
 
 
 [extraskilldesc]
+// Podstawowe mechaniki
+manausage=Jeśli nie masz wystarczająco dużo many, czas odnowienia jest podwojony
+setmax=Negatywne efekty są ustawione jako maksymalne i nie mogą być usunięte przez inne wzmocnienia
+
 // Wzmocnienia
-marked=§hOznaczony:§0 Zadaj +20% obrażeń (+ §hobrażeń od skupienia§0) i +10% szansy na trafienie krytyczne mobom, które oznaczysz
-Wszystkie naprowadzane i/lub wystrzelone w najbliższego wroga pociski będą priorytetowo traktować oznaczone wrogów
+marked=§hOznaczony:§0 Zadaj +20% obrażeń (+ §hobrażeń od skupienia§0) i +10% szansy na trafienie krytyczne mobom, które oznaczysz\n"Najbliższy wróg" priorytetowo traktuje oznaczone wrogów
 
 // Modyfikatory szans
 dodgechance=§7Szansa na unik:§0 Szansa na uniknięcie nadchodzących ataków. Nie może przekroczyć 80%
@@ -228,11 +266,17 @@ focuschance=§hSzansa na skupienie:§0 Szansa na §hoznaczenie§0 moba na 5 seku
 
 // Modyfikatory płaskie
 mobdetection=§9Wykrywanie mobów:§0 Wyświetla pobliskie moby na mapie. Większy zasięg wykrywania ujawnia moby z dalszej odległości
+ignitedamage=§iObrażenia od Podpalenia:§0 Zwiększa obrażenia od podpalenia w czasie, ale nie wpływa na obrażenia od bezpośredniego trafienia
 
 // Pociski
 lethalarrow=§hZabójcza strzała:§0 Naprowadzana strzała, która gwarantuje trafienie krytyczne
-venomarrow=§bJadowita strzała:§0 Naprowadzana strzała, która zatruwa wrogów, powtarzając 10% swoich pierwotnych obrażeń na sekundę przez 30 sekund
+venomarrow=§bJadowita strzała:§0 Naprowadzana strzała, która zatruwa wrogów. Powtarza 10% swoich pierwotnych obrażeń na sekundę przez 30 sekund
 explosivearrow=§iWybuchowa strzała:§0 Naprowadzana strzała, która powoduje magiczną eksplozję o równych obrażeniach
+iceball=§aKula Lodu:§0 Magiczny pocisk, który wybucha i zamraża moby na 5 sekund, a także całkowicie je zamraża na 1 sekundę
+fireball=§iKula Ognia:§0 Magiczny pocisk, który wybucha i podpala moby, powtarzając 20% ich pierwotnych obrażeń na sekundę przez 5 sekund
+
+// Przywołania
+dancingflame=§bTańczący Płomień:§0 Przywołanie, które działa jak pocisk. Podpala wrogów przy trafieniu. Powtarza 20% swoich pierwotnych obrażeń na sekundę przez 5 sekund
 
 
 [item]
@@ -274,7 +318,7 @@ ringsboxtip=Może przechowywać pierścienie atrybutów
 [message]
 xp=PD
 levelup=Awans!
-unik=Unik!
+dodge=Unik!
 
 newmobkill=Zdobyłeś <exp> doświadczenia za zabicie <mob> po raz pierwszy
 newlevel=Gratulacje! Osiągnąłeś poziom <level>. Naciśnij [input=openrpgmenu], aby otworzyć menu RPG
@@ -315,7 +359,7 @@ activeskillsequipinstructions=Kliknij gniazdo, aby wyposażyć aktywną umiejęt
 noactiveskills=Nie masz żadnych umiejętności aktywnych. Odblokuj je poprzez klasy
 
 activeskillcooldown=§9Czas odnowienia: <seconds>s
-activeskillcooldownmod=§9Czas odnowienia: [[<seconds> <sign> <mod> x poziom umiejętności]]s
+activeskillcooldownmod=§9Czas odnowienia: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bWymagany poziom klasy <level>
 requiredactiveskill=§bWymaga '<skill>' poziomu <level>
 maxlevel=§aMaksymalny poziom: <level>

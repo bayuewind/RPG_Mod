@@ -17,6 +17,7 @@ rangedweaponsrange=<mod>% ranged weapons range
 mobdetectionrange=<mod> mob detection range
 focusdamage=<mod>% focus damage
 focuschance=<mod>% focus chance
+ignitedamage=<mod>% ignite damage
 
 
 [enchantment]
@@ -31,6 +32,8 @@ depleted=Depleted
 overlevelclassbuff=Overlevel Class
 markedbuff=Marked
 darkcursebuff=Dark Curse
+magicpoisonbuff=Magic Poison
+ignitedbuff=Ignited
 
 
 [buffdesc]
@@ -43,6 +46,9 @@ darkcursebuff2=All damage also reduces Max Health
 [mob]
 rpgmobname=[<class>] <name> lvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+rangerwolf=Ranger Wolf
+dancingflame=Dancing Flame
 
 
 [mobclass]
@@ -108,18 +114,36 @@ predatorsense=Predator Sense
 plasmagrenade=Plasma Grenade
 wolfcompanion=Wolf Companion
 
+// Wizard
+arcanepower=Arcane Power
+manapower=Mana Power
+manaproficiency=Mana Proficiency
+firepower=Fire Power
+arcaneshield=Arcane Shield
+fireshield=Fire Shield
+iceshield=Ice Shield
+flamingsteps=Flaming Steps
+stormbound=Stormbound
+
 
 [passivesdesc]
-
 // Warrior
 unleashingrage=Each level provides:\n\n+1% All Damage for every 10% of Health missing
 unleashinghaste=Each level provides:\n\n+1% Movement Speed for every 10% of Health missing
 unyielding=Each level provides:\n\n+5% Attack Speed and -5% Incoming Damage while below 20% Health
-lastbreath=Instead of dying, become invulnerable for §a[[3 x Skill Level]] seconds§0\nOnce the time is up, you will die
+lastbreath=Instead of dying, become invulnerable for §a[[3 x <skilllevel>]] seconds§0\nOnce the time is up, you will die
 
 // Ranger
-plasmagrenade=Every 8 Range attacks, fire a guided explosive projectile that deals §i[[30 x Skill Level]]%§0 of the weapon's damage
-wolfcompanion=A wolf companion will attack marked enemies dealing §i[[Player Level x Skill Level + Intelligence x Skill Level]] Summoner Damage§0
+plasmagrenade=Every 8 Range attacks, fire a guided explosive projectile that deals §i[[30 x <skilllevel>]]%§0 of the weapon's damage
+wolfcompanion=A wolf companion will attack marked enemies dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Summoner Damage
+
+// Wizard
+manapower=Each level provides:\n\n+1% Magic Damage for every 10% non used Mana
+flamingsteps=When running with an active trinket, you will leave flames on the ground\nThe flames will ignite enemies for 2 seconds, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 per second
+stormbound=Every §a[[9 - 0.5 x <skilllevel>]] seconds§0, a bolt of lightning strikes a random enemy in your vision\nDeal §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 and stun 1 second
+arcaneshield=A shield that prevents one hit\nThe shield will recover §a[[20 - <skilllevel>]] seconds§0 after using it
+fireshield=A shield that prevents one hit\nWhen used, you will release an explosion dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nand igniting mobs, repeating 20% of their original damage per second for 5 seconds\nThe shield will recover 26 seconds after using it
+iceshield=A shield that prevents one hit\nWhen used, you will release an ice aura dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nfreezing mobs for 5 seconds, and totally freezing them for 1 second\nThe shield will recover 22 seconds after using it
 
 
 [activeskills]
@@ -137,7 +161,6 @@ parry=Parry
 battlecry=Battle Cry
 
 ironguard=Iron Guard
-thornedguard=Thorned Guard
 intimidation=Intimidation
 
 objectthrowing=Object Throwing
@@ -156,42 +179,70 @@ beartrap=Bear Trap
 huntersinstinct=Hunter's Instinct
 arrowstorm=Arrow Storm
 
+// Wizard
+arcaneoverload=Arcane Overload
+firedance=Fire Dance
+iceball=Ice Ball
+zap=Zap
+manarecharge=Mana Recharge
+
+teleport=Teleport
+inferno=Inferno
+fireenchantment=Fire Enchantment
+iceenchantment=Ice Enchantment
+
+fireball=Fireball
+lightning=Lightning
+
 
 [activeskillsdesc]
-
 // Warrior
-fury=For the next 6 seconds, increase your Melee Damage and Attack Speed by §a[[20 x Skill Level]]%
-recovery=For the next 10 seconds greatly boosts Combat Health Regeneration, restoring §a[[20 + Endurance x Skill Level]] health§0 over the duration
-provocation=For the next §a[[2 x Skill Level]] seconds§0, force nearby enemies to focus their attacks on you
-berserkercharge=Rush forward a short distance, dealing §i[[10 x Player Level + 2 x Strength x Skill Level + 2 x Speed x Skill Level]] Damage§0 to all enemies passed by\nConsumes 50% Stamina
+fury=For the next 6 seconds, increase your Melee Damage and Attack Speed by §a[[20 x <skilllevel>]]%
+recovery=For the next 10 seconds greatly boosts Combat Health Regeneration, restoring §a[[20 + <endurance> x <skilllevel>]] health§0 over the duration
+provocation=For the next §a[[2 x <skilllevel>]] seconds§0, force nearby enemies to focus their attacks on you
+berserkercharge=Rush forward a short distance, dealing §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Damage§0 to all enemies passed by\nConsumes 50% Stamina
 
-groundslam=Area attack that deals §i[[5 x Strength]] Melee Damage§0 and §9Stuns§0 for §a[[1 x Skill Level]] seconds§0
-grounddestruction=Area attack that deals §i[[5 x Strength x Skill Level + 5 x Player Level x Skill Level]] Melee Damage§0 and §9Stuns§0 for 2 seconds
+groundslam=Area attack that deals §i[[5 x <strength>]] Melee Damage§0 and §9Stuns§0 for §a[[1 x <skilllevel>]] seconds§0
+grounddestruction=Area attack that deals §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Melee Damage§0 and §9Stuns§0 for 2 seconds
 parry=Become invulnerable for 0.5 seconds and return 500% of the original Damage received\nConsumes 100% Stamina
-battlecry=For the next 10 seconds, increase your and nearby allies' All Damage and Movement Speed by §a[[10 x Skill Level]]%
+battlecry=For the next 10 seconds, increase your and nearby allies' All Damage and Movement Speed by §a[[10 x <skilllevel>]]%
 
-ironguard=-50% Incoming Damage for §a[[4 x Skill Level]] seconds
-thornedguard=-50% Incoming Damage for 12 seconds\nAdditionally, returns §a[[100 x Skill Level]]%§0 of the original Damage received
-intimidation=For the next §a[[Skill Level]] seconds§0, make nearby enemies run away
+ironguard=-50% Incoming Damage for §a[[4 x <skilllevel>]] seconds
+intimidation=For the next §a[[<skilllevel>]] seconds§0, make nearby enemies run away
 
-objectthrowing=Step 1: Grab an object in front of you\nStep 2: Throw it forwards dealing §i[[20 x Player Level + 5 x Strength x Skill Level]] Melee Damage§0\nBoth steps consume all your Stamina (at least 100%)
+objectthrowing=Step 1: Grab an object in front of you\nStep 2: Throw it forwards dealing §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Melee Damage§0\nBoth steps consume all your Stamina (at least 100%)
 
 // Ranger
-shortdash=Perfom a 100-Strength dash\nConsumes 15% Stamina
-longdash=Perfom a 150-Strength dash\nConsumes 25% Stamina
-lethalshot=Shoot an §hLethal Arrow§0 at the closest enemy, dealing §i[[5 x Player Level + 5 x Strength x Skill Level]] Ranger Damage§0
-venomshot=Shoot an §bVenom Arrow§0 at the closest enemy, dealing §i[[4 x Player Level + 2 x Strength x Skill Level + 2 x Intelligence x Skill Level]] Ranger Damage§0
-explosiveshot=Shoot an §iExplosive Arrow§0 at the closest enemy, dealing §i[[4 x Player Level + 2 x Strength x Skill Level + 2 x Intelligence x Skill Level]] Ranger Damage§0
+shortdash=Perfom a 100-<strength> dash\nConsumes 15% Stamina
+longdash=Perfom a 150-<strength> dash\nConsumes 25% Stamina
+lethalshot=Shoot an §hLethal Arrow§0 at the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Ranger Damage§0
+venomshot=Shoot an §bVenom Arrow§0 at the closest enemy, dealing §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger Damage§0
+explosiveshot=Shoot an §iExplosive Arrow§0 at the closest enemy, dealing §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger Damage§0
 
 shotsrampage=While you have at least 1 stack of Shots Rampage, hitting an enemy with a ranged attack grants 1 additional stack for 5 seconds\nEach stack of Shots Rampage increases Attack Speed by 5%, up to a maximum of 30 stacks
-huntersmark=§hMark§0 the nearby enemy with the highest health for 10 seconds\nIf you kill a marked target, gain §a+[[20 x Skill Level]]%§0 Ranged Attack Speed and Movement Speed for 5 seconds
-beartrap=Place a bear trap on the ground that disappears if triggered or after 20 seconds\nIf an enemy triggers it, they will take §i[[10 x Player Level]] Damage§0 and be trapped for 5 seconds
+huntersmark=§hMark§0 the nearby enemy with the highest health for 10 seconds\nIf you kill a marked target, gain §a+[[20 x <skilllevel>]]%§0 Ranged Attack Speed and Movement Speed for 5 seconds
+beartrap=Place a bear trap on the ground that disappears if triggered or after 20 seconds\nIf an enemy triggers it, they will take §i[[10 x <playerlevel>]] Damage§0 and be trapped for 5 seconds
 
-huntersinstinct=For the next 12 seconds, increase your §7Dodge Chance§0 by §a[[10 x Skill Level]]%\n§hMark§0 for 5 seconds the enemies you dodge
-arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x Player Level + Strength x Skill Level + Speed x Skill Level]] Ranger Damage§0 each arrow
+huntersinstinct=For the next 12 seconds, increase your §7Dodge Chance§0 by §a[[10 x <skilllevel>]]%\n§hMark§0 for 5 seconds the enemies you dodge
+arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Ranger Damage§0 each arrow
+
+// Wizard
+arcaneoverload=While active, increases your Magic Attack Speed by §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEnds when you run out of mana, or if used again\nConsumes §a[[10 + 2 x <skilllevel>]] Mana per second
+manarecharge=While active, increases your Mana Regen in +1 and by §a[[50 x <skilllevel>]]%§0, but you will be paralyzed and take double damage\nEnds when used again
+firedance=Summons 4 §bDancing Flames§0, each dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nSummon another one every 5 seconds\nAll summons disappear 20 seconds after the ability is activated\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Throw an §aIce Ball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[50 + 10 x <skilllevel>]] Mana
+zap=Start a zap that jumps between mobs for 2 seconds, dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 1 second\nConsumes §a[[10 + 2 x <skilllevel>]] Mana
+
+teleport=Teleports in front of you\nConsumes 10 Mana
+inferno=Ignite all nearby enemies, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Fire Damage§0 per second for 10 seconds\nConsumes §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=For the next 10 seconds, attacks from you and nearby allies ignite enemies, dealing §a[[5 x <skilllevel>]]%§0 of the damage per second for 5 seconds\nConsumes §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=For the next 10 seconds, attacks from you and nearby allies freeze enemies for §a[[2 x <skilllevel>]] seconds§0\nConsumes 20 Mana
+
+fireball=Throw a §iFireball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Start a lightning that jumps between mobs for 1 second, dealing §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 2 second\nCannot hit multiple times the same target\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Skill Level
 playerlevel=Player Level
 endurance=Endurance
@@ -202,8 +253,12 @@ grace=Grace
 
 
 [extraskilldesc]
+// Basic Mechanics
+manausage=If you don't have enough mana, its cooldown is doubled
+setmax=Negative effects are set as max and can't be removed by other buffs
+
 // Buffs
-marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\nAll projectiles guided and/or fired at the closest enemy will prioritize marked enemies
+marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\n"Closest enemy" prioritize marked enemies
 
 // Chance Modifiers
 dodgechance=§7Dodge Chance:§0 Chance to dodge incoming attacks. Cannot exceed 80%
@@ -211,11 +266,17 @@ focuschance=§hFocus Chance:§0 Chance to §hMark§0 5 seconds a mob when attack
 
 // Flat Modifiers
 mobdetection=§9Mob Detection:§0 Displays nearby mobs on the map. A higher detection range reveals mobs from farther away
+ignitedamage=§iIgnite Damage:§0 Increases ignite damage over time, but does not affect direct hit damage
 
 // Projectiles
 lethalarrow=§hLethal Arrow:§0 Guided arrow that grants a Critical hit
-venomarrow=§bVenom Arrow:§0 Guided arrow that poisons enemies, repeating 10% of its original damage per second for 30 seconds
+venomarrow=§bVenom Arrow:§0 Guided arrow that poisons enemies. Repeats 10% of its original damage per second for 30 seconds
 explosivearrow=§iExplosive Arrow:§0 Guided arrow that causes a magic explosion with equal damage
+iceball=§aIce Ball:§0 Magic projectile that explodes and freeze mobs for 5 seconds, also totally freeze for 1 second
+fireball=§iFireball:§0 Magic projectile that explodes and ignite mobs repeating 20% of its original damage per second for 5 seconds
+
+// Summons
+dancingflame=§bDancing Flame:§0 Summon that acts like a projectile. Ignite enemies on hit. Repeats 20% of its original damage per second for 5 seconds
 
 
 [item]
@@ -223,7 +284,7 @@ scrollofoblivion=Scroll of Oblivion
 ringsbox=Rings Box
 
 // Attribute Rings
-endurancewoodring=Endurance Wood Ring// Attribute Rings
+endurancewoodring=Endurance Wood Ring
 endurancecopperring=Endurance Copper Ring
 enduranceironring=Endurance Iron Ring
 endurancegoldring=Endurance Gold Ring
@@ -272,6 +333,7 @@ incooldown=In Cooldown
 notenoughstamina=Not Enough Stamina
 nograbbableobject=There is no grabbable object in front of you
 
+
 [ui]
 menutitle=RPG MOD by Save
 attributes=Attributes
@@ -298,7 +360,7 @@ activeskillsequipinstructions=Click on a slot to equip an Active Skill. You cann
 noactiveskills=You have no Active Skills. Unlock them through the classes
 
 activeskillcooldown=§9Cooldown: <seconds>s
-activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x Skill Level]]s
+activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bClass lvl <level> required
 requiredactiveskill=§bRequires '<skill>' level <level>
 maxlevel=§aMax Level: <level>

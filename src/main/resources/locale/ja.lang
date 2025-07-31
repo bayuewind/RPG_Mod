@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% 遠距離武器射程
 mobdetectionrange=<mod> モブ検出範囲
 focusdamage=<mod>% フォーカスダメージ
 focuschance=<mod>% フォーカスチャンス
+ignitedamage=<mod>% 燃焼ダメージ
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=枯渇
 overlevelclassbuff=オーバーレベルクラス
 markedbuff=マーク
 darkcursebuff=闇の呪い
+magicpoisonbuff=魔法の毒
+ignitedbuff=発火
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=すべてのダメージは最大体力も減少させます
 [mob]
 rpgmobname=[<class>] <name> レベル <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9レベル <level>§0
+
+rangerwolf=レンジャーウルフ
+dancingflame=踊る炎
 
 
 [mobclass]
@@ -107,26 +113,37 @@ predatorsense=捕食者の感覚
 plasmagrenade=プラズマグレネード
 wolfcompanion=狼の仲間
 
+// ウィザード
+arcanepower=秘術の力
+manapower=マナの力
+manaproficiency=マナの習熟
+firepower=火力
+arcaneshield=秘術の盾
+fireshield=炎の盾
+iceshield=氷の盾
+flamingsteps=燃える足跡
+stormbound=嵐に縛られた
+
 
 [passivesdesc]
 
 // 戦士
-unleashingrage=各レベルで提供：
-
-失われた体力10%ごとに+1%の全ダメージ
-unleashinghaste=各レベルで提供：
-
-失われた体力10%ごとに+1%の移動速度
-unyielding=各レベルで提供：
-
-体力が20%未満の場合、攻撃速度+5%、被ダメージ-5%
-lastbreath=死ぬ代わりに、§a[[3 x スキルレベル]]秒間§0無敵になります
-時間が経過すると死にます
+unleashingrage=各レベルで提供：\n\n失われた体力10%ごとに+1%の全ダメージ
+unleashinghaste=各レベルで提供：\n\n失われた体力10%ごとに+1%の移動速度
+unyielding=各レベルで提供：\n\n体力が20%未満の場合、攻撃速度+5%、被ダメージ-5%
+lastbreath=死ぬ代わりに、§a[[3 x <skilllevel>]]秒間§0無敵になります\n時間が経過すると死にます
 
 // レンジャー
-plasmagrenade=8回の遠距離攻撃ごとに、武器のダメージの§i[[30 x スキルレベル]]%§0を与える誘導爆発物を発射します
-wolfcompanion=狼の仲間がマークされた敵を攻撃し、§i[[プレイヤーレベル x スキルレベル + 知力 x スキルレベル]]の召喚士ダメージ§0を与えます
+plasmagrenade=8回の遠距離攻撃ごとに、武器のダメージの§i[[30 x <skilllevel>]]%§0を与える誘導爆発物を発射します
+wolfcompanion=狼の仲間がマークされた敵を攻撃し、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の召喚士ダメージ§0を与えます
 
+// ウィザード
+manapower=各レベルで提供：\n\n未使用のマナ10%ごとに+1%の魔法ダメージ
+flamingsteps=アクティブな装身具を装備して走ると、地面に炎が残ります\n炎は敵を2秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
+stormbound=§a[[9 - 0.5 x <skilllevel>]]秒§0ごとに、視界内のランダムな敵に雷が落ちます\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます
+arcaneshield=一撃を防ぐシールド\nシールドは使用後§a[[20 - <skilllevel>]]秒§0で回復します
+fireshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える爆発を放ち\nモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返します\nシールドは使用後26秒で回復します
+iceshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える氷のオーラを放ち\nモブを5秒間凍結させ、1秒間完全に凍結させます\nシールドは使用後22秒で回復します
 
 [activeskills]
 empty=空
@@ -143,7 +160,6 @@ parry=パリィ
 battlecry=バトルクライ
 
 ironguard=アイアンガード
-thornedguard=ソーンガード
 intimidation=威嚇
 
 objectthrowing=オブジェクト投げ
@@ -162,52 +178,70 @@ beartrap=ベアトラップ
 huntersinstinct=ハンターズインスティンクト
 arrowstorm=アローストーム
 
+// ウィザード
+arcaneoverload=秘術の過負荷
+firedance=ファイアダンス
+iceball=アイスボール
+zap=ザップ
+manarecharge=マナリチャージ
+
+teleport=テレポート
+inferno=インフェルノ
+fireenchantment=ファイアエンチャントメント
+iceenchantment=アイスエンチャントメント
+
+fireball=ファイアボール
+lightning=ライトニング
+
 
 [activeskillsdesc]
 
 // 戦士
-fury=次の6秒間、近接ダメージと攻撃速度が§a[[20 x スキルレベル]]%§0増加します
-recovery=次の10秒間、戦闘中の体力再生を大幅に向上させ、持続時間中に§a[[20 + 持久力 x スキルレベル]]の体力§0を回復します
-provocation=次の§a[[2 x スキルレベル]]秒間§0、近くの敵に攻撃を集中させます
-berserkercharge=短距離を突進し、通り過ぎたすべての敵に§i[[10 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 速度 x スキルレベル]]のダメージ§0を与えます
-スタミナを50%消費します
-groundslam=§i[[5 x 筋力]]の近接ダメージ§0を与え、§a[[1 x スキルレベル]]秒間§0§9スタン§0させる範囲攻撃
-grounddestruction=§i[[5 x 筋力 x スキルレベル + 5 x プレイヤーレベル x スキルレベル]]の近接ダメージ§0を与え、2秒間§9スタン§0させる範囲攻撃
-parry=0.5秒間無敵になり、受けた元のダメージの500%を返します
-スタミナを100%消費します
-battlecry=次の10秒間、あなたと近くの味方の全ダメージと移動速度が§a[[10 x スキルレベル]]%§0増加します
+fury=次の6秒間、近接ダメージと攻撃速度が§a[[20 x <skilllevel>]]%§0増加します
+recovery=次の10秒間、戦闘中の体力再生を大幅に向上させ、持続時間中に§a[[20 + <endurance> x <skilllevel>]]の体力§0を回復します
+provocation=次の§a[[2 x <skilllevel>]]秒間§0、近くの敵に攻撃を集中させます
+berserkercharge=短距離を突進し、通り過ぎたすべての敵に§i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]]のダメージ§0を与えます\nスタミナを50%消費します
+groundslam=§i[[5 x <strength>]]の近接ダメージ§0を与え、§a[[1 x <skilllevel>]]秒間§0§9スタン§0させる範囲攻撃
+grounddestruction=§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]]の近接ダメージ§0を与え、2秒間§9スタン§0させる範囲攻撃
+parry=0.5秒間無敵になり、受けた元のダメージの500%を返します\nスタミナを100%消費します
+battlecry=次の10秒間、あなたと近くの味方の全ダメージと移動速度が§a[[10 x <skilllevel>]]%§0増加します
 
-ironguard=§a[[4 x スキルレベル]]秒間§0、被ダメージ-50%
-thornedguard=12秒間、被ダメージ-50%
-さらに、受けた元のダメージの§a[[100 x スキルレベル]]%§0を返します
-intimidation=次の§a[[スキルレベル]]秒間§0、近くの敵を逃げさせます
+ironguard=§a[[4 x <skilllevel>]]秒間§0、被ダメージ-50%
+intimidation=次の§a[[<skilllevel>]]秒間§0、近くの敵を逃げさせます
 
-objectthrowing=ステップ1：目の前のオブジェクトをつかむ
-ステップ2：前方に投げて、§i[[20 x プレイヤーレベル + 5 x 筋力 x スキルレベル]]の近接ダメージ§0を与える
-両方のステップでスタミナをすべて消費します（少なくとも100%）
+objectthrowing=ステップ1：目の前のオブジェクトをつかむ\nステップ2：前方に投げて、§i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]の近接ダメージ§0を与える\n両方のステップでスタミナをすべて消費します（少なくとも100%）
 
 // レンジャー
-shortdash=100筋力のダッシュを実行します
-スタミナを15%消費します
-longdash=150筋力のダッシュを実行します
-スタミナを25%消費します
-lethalshot=最も近い敵に§hリーサルアロー§0を撃ち、§i[[5 x プレイヤーレベル + 5 x 筋力 x スキルレベル]]のレンジャーダメージ§0を与えます
-venomshot=最も近い敵に§bベノムアロー§0を撃ち、§i[[4 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 知力 x スキルレベル]]のレンジャーダメージ§0を与えます
-explosiveshot=最も近い敵に§i爆発矢§0を撃ち、§i[[4 x プレイヤーレベル + 2 x 筋力 x スキルレベル + 2 x 知力 x スキルレベル]]のレンジャーダメージ§0を与えます
+shortdash=100-<strength>のダッシュを実行します\nスタミナを15%消費します
+longdash=150-<strength>のダッシュを実行します\nスタミナを25%消費します
+lethalshot=最も近い敵に§hリーサルアロー§0を撃ち、§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]]のレンジャーダメージ§0を与えます
+venomshot=最も近い敵に§bベノムアロー§0を撃ち、§i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]]のレンジャーダメージ§0を与えます
+explosiveshot=最も近い敵に§i爆発矢§0を撃ち、§i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]]のレンジャーダメージ§0を与えます
 
-shotsrampage=ショットランページのスタックが少なくとも1つある場合、遠距離攻撃で敵に命中すると、5秒間追加のスタックが1つ付与されます
-ショットランページの各スタックは攻撃速度を5%増加させ、最大30スタックまで
-huntersmark=最も体力の高い近くの敵を10秒間§hマーク§0します
-マークされたターゲットを倒すと、5秒間、遠距離攻撃速度と移動速度が§a+[[20 x スキルレベル]]%§0増加します
-beartrap=地面にベアトラップを設置します。トリガーされるか20秒後に消えます
-敵がトリガーすると、§i[[10 x プレイヤーレベル]]のダメージ§0を受け、5秒間閉じ込められます
+shotsrampage=ショットランページのスタックが少なくとも1つある場合、遠距離攻撃で敵に命中すると、5秒間追加のスタックが1つ付与されます\nショットランページの各スタックは攻撃速度を5%増加させ、最大30スタックまで
+huntersmark=最も体力の高い近くの敵を10秒間§hマーク§0します\nマークされたターゲットを倒すと、5秒間、遠距離攻撃速度と移動速度が§a+[[20 x <skilllevel>]]%§0増加します
+beartrap=地面にベアトラップを設置します。トリガーされるか20秒後に消えます\n敵がトリガーすると、§i[[10 x <playerlevel>]]のダメージ§0を受け、5秒間閉じ込められます
 
-huntersinstinct=次の12秒間、§7回避チャンス§0が§a[[10 x スキルレベル]]%§0増加します
-回避した敵を5秒間§hマーク§0します
-arrowstorm=近くの各敵に基本的な矢を撃ち、各矢で§i[[2 x プレイヤーレベル + 筋力 x スキルレベル + 速度 x スキルレベル]]のレンジャーダメージ§0を与えます
+huntersinstinct=次の12秒間、§7回避チャンス§0が§a[[10 x <skilllevel>]]%§0増加します\n回避した敵を5秒間§hマーク§0します
+arrowstorm=近くの各敵に基本的な矢を撃ち、各矢で§i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]のレンジャーダメージ§0を与えます
+
+// ウィザード
+arcaneoverload=アクティブな間、魔法攻撃速度が§a[[30 x <skilllevel>]]%§0増加しますが、移動できなくなります\nマナがなくなると終了するか、再度使用すると終了します\n毎秒§a[[10 + 2 x <skilllevel>]]のマナを消費します
+manarecharge=アクティブな間、マナ再生が+1および§a[[50 x <skilllevel>]]%§0増加しますが、麻痺して2倍のダメージを受けます\n再度使用すると終了します
+firedance=4つの§b踊る炎§0を召喚し、それぞれが§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n5秒ごとに1つ追加で召喚します\nすべての召喚は、能力がアクティブになってから20秒後に消えます\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
+iceball=最も近い敵に§aアイスボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[50 + 10 x <skilllevel>]]のマナを消費します
+zap=2秒間モブ間をジャンプするザップを開始し、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます\n§a[[10 + 2 x <skilllevel>]]のマナを消費します
+
+teleport=目の前にテレポートします\nマナを10消費します
+inferno=近くのすべての敵を燃やし、10秒間、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の火炎ダメージ§0を与えます\n§a[[40 + 8 x <skilllevel>]]のマナを消費します
+fireenchantment=次の10秒間、あなたと近くの味方からの攻撃が敵を燃やし、5秒間、毎秒ダメージの§a[[5 x <skilllevel>]]%§0を与えます\n§a[[20 + 4 x <skilllevel>]]のマナを消費します
+iceenchantment=次の10秒間、あなたと近くの味方からの攻撃が敵を§a[[2 x <skilllevel>]]秒間§0凍結させます\nマナを20消費します
+
+fireball=最も近い敵に§iファイアボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[80 + 16 x <skilllevel>]]のマナを消費します
+lightning=1秒間モブ間をジャンプするライトニングを開始し、§i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、2秒間スタンさせます\n同じターゲットに複数回ヒットすることはできません\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
+
 
 [skillsdesckeys]
-x=x
 skilllevel=スキルレベル
 playerlevel=プレイヤーレベル
 endurance=持久力
@@ -218,9 +252,12 @@ grace=優雅さ
 
 
 [extraskilldesc]
+// 基本的な仕組み
+manausage=マナが足りない場合、クールダウンは2倍になります
+setmax=負の効果は最大に設定され、他のバフで削除することはできません
+
 // バフ
-marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます
-最も近い敵に誘導および/または発射されたすべての発射物は、マークされた敵を優先します
+marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます\n「最も近い敵」はマークされた敵を優先します
 
 // チャンスモディファイア
 dodgechance=§7回避チャンス：§0飛来する攻撃を回避するチャンス。80%を超えることはできません
@@ -228,11 +265,17 @@ focuschance=§hフォーカスチャンス：§0召喚士以外のダメージ�
 
 // フラットモディファイア
 mobdetection=§9モブ検出：§0近くのモブをマップに表示します。検出範囲が広いほど、遠くのモブが明らかになります
+ignitedamage=§i燃焼ダメージ：§0時間経過による燃焼ダメージを増加させますが、直接的なヒットダメージには影響しません
 
 // 発射物
 lethalarrow=§hリーサルアロー：§0クリティカルヒットを与える誘導矢
-venomarrow=§bベノムアロー：§0敵を毒にし、30秒間、毎秒元のダメージの10%を繰り返す誘導矢
+venomarrow=§bベノムアロー：§0敵を毒にする誘導矢。30秒間、毎秒元のダメージの10%を繰り返します
 explosivearrow=§i爆発矢：§0同等のダメージの魔法の爆発を引き起こす誘導矢
+iceball=§aアイスボール：§0爆発してモブを5秒間凍結させ、1秒間完全に凍結させる魔法の発射物
+fireball=§iファイアボール：§0爆発してモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返す魔法の発射物
+
+// 召喚
+dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒット時に敵を燃やします。5秒間、毎秒元のダメージの20%を繰り返します
 
 
 [item]
@@ -297,7 +340,7 @@ classes=クラス
 
 level=レベル<level>
 classlevel=<class>レベル<level>
-lvl=レベル<level>
+lvl=Lv <level>
 eachlevel=各レベルで提供：
 experience=経験値：<exp> / <nextexp>
 totalexperience=合計経験値：<exp>
@@ -315,7 +358,7 @@ activeskillsequipinstructions=スロットをクリックしてアクティブ�
 noactiveskills=アクティブスキルがありません。クラスを通じてロックを解除してください
 
 activeskillcooldown=§9クールダウン：<seconds>秒
-activeskillcooldownmod=§9クールダウン：[[<seconds> <sign> <mod> x スキルレベル]]秒
+activeskillcooldownmod=§9クールダウン：[[<seconds> <sign> <mod> x <skilllevel>]]秒
 requiredclasslevel=§bクラスレベル<level>が必要です
 requiredactiveskill=§b'<skill>'レベル<level>が必要です
 maxlevel=§a最大レベル：<level>
@@ -327,9 +370,7 @@ classlevelseparation=- クラスレベル<level> -
 
 inuse=使用中
 
-upcomingclass=§6今後のクラス
-§9このクラスは現在開発中です
-今後のアップデートで利用可能になります
+upcomingclass=§6今後のクラス\n§9このクラスは現在開発中です\n今後のアップデートで利用可能になります
 
 addcolumn=列を追加
 removecolumn=列を削除

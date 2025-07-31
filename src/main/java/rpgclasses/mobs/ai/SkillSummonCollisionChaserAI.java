@@ -27,7 +27,7 @@ public class SkillSummonCollisionChaserAI<T extends Mob> extends SelectorAINode<
                 return SkillSummonCollisionChaserAI.this.getCustomFocus(mob, searchDistance);
             }
         });
-        if(defaultTargets) chaserSequence.addChild(new SummonTargetFinderAINode<>(searchDistance));
+        if (defaultTargets) chaserSequence.addChild(new SummonTargetFinderAINode<>(searchDistance));
         CollisionChaserAINode<T> chaser = new CollisionChaserAINode<T>() {
             public boolean attackTarget(T mob, Mob target) {
                 return SkillSummonCollisionChaserAI.this.attackTarget(mob, target);
@@ -75,7 +75,7 @@ public class SkillSummonCollisionChaserAI<T extends Mob> extends SelectorAINode<
                 blackboard.put(this.focusTargetKey, customFocus);
             } else {
                 blackboard.put(this.focusTargetKey, null);
-                if(defaultTargets) {
+                if (defaultTargets) {
                     ItemAttackerMob followingAttacker = mob.getFollowingItemAttacker();
                     if (followingAttacker != null) {
                         blackboard.put(this.focusTargetKey, followingAttacker.getSummonFocusMob());

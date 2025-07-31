@@ -12,6 +12,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
+import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
@@ -44,11 +45,8 @@ public class Provocation extends SimpleBuffActiveSkill {
 
     @Override
     public void giveBuffOnRun(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        player.getLevel().entityManager.mobs.streamArea(player.getX(), player.getY(), 500)
-                .filter(target ->
-                        target.getDistance(player) <= 500 &&
-                                player.canBeTargeted(target, null)
-                )
+        RPGUtils.streamMobsAndPlayers(player, 500)
+                .filter(RPGUtils.isValidAttackerFilter(player))
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );
@@ -61,7 +59,7 @@ public class Provocation extends SimpleBuffActiveSkill {
         SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(500, new Color(255, 0, 0))
-        );
+        ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
 
@@ -101,9 +99,8 @@ public class Provocation extends SimpleBuffActiveSkill {
             public PlayerMob getPlayerTarget(ActiveBuff activeBuff) {
                 String playerName = activeBuff.getGndData().getString("playerTarget");
                 if (playerName == null) return null;
-                return activeBuff.owner.getLevel().entityManager.players
-                        .streamArea(activeBuff.owner.x, activeBuff.owner.y, 600)
-                        .filter(player -> Objects.equals(player.playerName, playerName) && player.getDistance(activeBuff.owner) <= 600)
+                return RPGUtils.streamPlayers(activeBuff.owner, 200)
+                        .filter(player -> Objects.equals(player.playerName, playerName))
                         .findFirst().orElse(null);
             }
         };

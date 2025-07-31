@@ -8,6 +8,7 @@ public class RPGColors extends AphColors {
     public static class HEX {
         public static String iron = "#626871";
         public static String gold = "#EAB676";
+        public static String lighting = "#FAFBA5";
         public static String dirt = "#5A3E2B";
     }
 

@@ -15,8 +15,8 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class LongDash extends ActiveSkill {
-    public LongDash(String familyID, int levelMax, int requiredClassLevel) {
-        super(familyID, "longdash", "#99ff99", levelMax, requiredClassLevel);
+    public LongDash(int levelMax, int requiredClassLevel) {
+        super("longdash", "#99ff99", levelMax, requiredClassLevel);
     }
 
     @Override
@@ -47,8 +47,8 @@ public class LongDash extends ActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUSe);
+    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
+        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         SoundManager.playSound(GameResources.swoosh, SoundEffect.effect(player).volume(0.35F).pitch(1.7F));
     }
 

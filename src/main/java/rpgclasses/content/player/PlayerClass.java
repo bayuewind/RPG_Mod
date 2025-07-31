@@ -5,6 +5,7 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import rpgclasses.content.player.PlayerClasses.Ranger.RangerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.WarriorPlayerClass;
+import rpgclasses.content.player.PlayerClasses.Wizard.WizardPlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
@@ -22,7 +23,7 @@ abstract public class PlayerClass {
     public static void registerCore() {
         registerClass(new WarriorPlayerClass());
         registerClass(new RangerPlayerClass());
-        registerClass(new UpcomingPlayerClass("wizard", "#4F75FF"));
+        registerClass(new WizardPlayerClass());
         registerClass(new UpcomingPlayerClass("necromancer", "#6A0DAD"));
         registerClass(new UpcomingPlayerClass("cleric", "#FFD60A"));
         registerClass(new UpcomingPlayerClass("rogue", "#8B0000"));

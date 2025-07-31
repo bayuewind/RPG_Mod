@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% távolsági fegyverek hatótávolsága
 mobdetectionrange=<mod> mob érzékelési tartomány
 focusdamage=<mod>% fókusz sebzés
 focuschance=<mod>% fókusz esély
+ignitedamage=<mod>% égési sebzés
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Kimerült
 overlevelclassbuff=Túlszintelt osztály
 markedbuff=Megjelölt
 darkcursebuff=Sötét átok
+magicpoisonbuff=Mágikus Méreg
+ignitedbuff=Égő
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Minden sebzés csökkenti a maximális életerőt is
 [mob]
 rpgmobname=[<class>] <name> szint <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9szint <level>§0
+
+rangerwolf=Íjász Farkas
+dancingflame=Táncoló Láng
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Ragadozó érzék
 plasmagrenade=Plazmagránát
 wolfcompanion=Farkas társ
 
+// Varázsló
+arcanepower=Arkán Erő
+manapower=Mana Erő
+manaproficiency=Mana Jártasság
+firepower=Tűzerő
+arcaneshield=Arkán Pajzs
+fireshield=Tűzpajzs
+iceshield=Jégpajzs
+flamingsteps=Lángoló Léptek
+stormbound=Viharkötött
+
 
 [passivesdesc]
 
@@ -114,11 +131,16 @@ wolfcompanion=Farkas társ
 unleashingrage=Minden szint biztosít:\n\n+1% minden sebzést minden 10% hiányzó életerő után
 unleashinghaste=Minden szint biztosít:\n\n+1% mozgási sebességet minden 10% hiányzó életerő után
 unyielding=Minden szint biztosít:\n\n+5% támadási sebességet és -5% bejövő sebzést 20% életerő alatt
-lastbreath=Ahelyett, hogy meghalnál, sebezhetetlenné válsz §a[[3 x képességszint]] másodpercre§0\nAmint lejár az idő, meghalsz
+lastbreath=Ahelyett, hogy meghalnál, sebezhetetlenné válsz §a[[3 x <skilllevel>]] másodpercre§0\nAmint lejár az idő, meghalsz
 
 // Íjász
-plasmagrenade=Minden 8. távolsági támadás után kilő egy irányított robbanó lövedéket, amely a fegyver sebzésének §i[[30 x képességszint]]%-át§0 okozza\nwolfcompanion=Egy farkas társ megtámadja a megjelölt ellenségeket, §i[[játékos szint x képességszint + intelligencia x képességszint]] idéző sebzést§0 okozva
+plasmagrenade=Minden 8. távolsági támadás után kilő egy irányított robbanó lövedéket, amely a fegyver sebzésének §i[[30 x <skilllevel>]]%-át§0 okozza
+wolfcompanion=Egy farkas társ megtámadja a megjelölt ellenségeket, §i[[<playerlevel> + <intelligence> x <skilllevel>]] idéző sebzést§0 okozva
 
+// Varázsló
+manapower=Minden szint biztosít:\n\n+1% Mágikus Sebzést minden 10% fel nem használt Mana után
+flamingsteps=Aktív csecsebecsével futva lángokat hagysz a földön\nA lángok 2 másodpercre meggyújtják az ellenséget, §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva másodpercenként
+stormbound=Minden §a[[9 - 0.5 x <skilllevel>]] másodpercben§0 egy villámcsapás ér egy véletlenszerű ellenséget a látótereden belül\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz és 1 másodpercre elkábít\narcaneshield=Egy pajzs, amely egyetlen találatot hárít\nA pajzs §a[[20 - <skilllevel>]] másodperc§0 múlva regenerálódik használat után\nfireshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy robbanást bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\nés meggyújtja a mobokat, 5 másodpercen keresztül másodpercenként megismételve eredeti sebzésük 20%-át\nA pajzs 26 másodperc múlva regenerálódik használat után\niceshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy jégaurát bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\n5 másodpercre lefagyasztja a mobokat, és 1 másodpercre teljesen lefagyasztja őket\nA pajzs 22 másodperc múlva regenerálódik használat után
 
 [activeskills]
 empty=Üres
@@ -135,7 +157,6 @@ parry=Hárítás
 battlecry=Csatakiáltás
 
 ironguard=Vaspajzs
-thornedguard=Tövises pajzs
 intimidation=Megfélemlítés
 
 objectthrowing=Tárgydobás
@@ -154,41 +175,70 @@ beartrap=Medvecsapda
 huntersinstinct=Vadász ösztön
 arrowstorm=Nyílzápor
 
+// Varázsló
+arcaneoverload=Arkán Túltöltés
+firedance=Tűztánc
+iceball=Jéggolyó
+zap=Szikra
+manarecharge=Mana Feltöltés
+
+teleport=Teleportálás
+inferno=Inferno
+fireenchantment=Tűz Varázslat
+iceenchantment=Jég Varázslat
+
+fireball=Tűzgolyó
+lightning=Villám
+
 
 [activeskillsdesc]
 
 // Harcos
-fury=A következő 6 másodpercben növeld a közelharci sebzésedet és a támadási sebességedet §a[[20 x képességszint]]%-kal
-recovery=A következő 10 másodpercben jelentősen megnöveli a harci életerő-regenerációt, §a[[20 + állóképesség x képességszint]] életerőt§0 állítva vissza az időtartam alatt
-provocation=A következő §a[[2 x képességszint]] másodpercig§0 kényszerítsd a közeli ellenségeket, hogy rád koncentrálják a támadásaikat
-berserkercharge=Ronts előre egy rövid távolságra, §i[[10 x játékos szint + 2 x erő x képességszint + 2 x sebesség x képességszint]] sebzést§0 okozva minden elhaladt ellenségnek\n50% állóképességet fogyaszt
-groundslam=Területi támadás, amely §i[[5 x erő]] közelharci sebzést§0 okoz és §9elkábít§0 §a[[1 x képességszint]] másodpercre§0
-grounddestruction=Területi támadás, amely §i[[5 x erő x képességszint + 5 x játékos szint x képességszint]] közelharci sebzést§0 okoz és 2 másodpercre §9elkábít§0
+fury=A következő 6 másodpercben növeld a közelharci sebzésedet és a támadási sebességedet §a[[20 x <skilllevel>]]%-kal
+recovery=A következő 10 másodpercben jelentősen megnöveli a harci életerő-regenerációt, §a[[20 + <endurance> x <skilllevel>]] életerőt§0 állítva vissza az időtartam alatt
+provocation=A következő §a[[2 x <skilllevel>]] másodpercig§0 kényszerítsd a közeli ellenségeket, hogy rád koncentrálják a támadásaikat
+berserkercharge=Ronts előre egy rövid távolságra, §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] sebzést§0 okozva minden elhaladt ellenségnek\n50% állóképességet fogyaszt
+groundslam=Területi támadás, amely §i[[5 x <strength>]] közelharci sebzést§0 okoz és §9elkábít§0 §a[[1 x <skilllevel>]] másodpercre§0
+grounddestruction=Területi támadás, amely §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] közelharci sebzést§0 okoz és 2 másodpercre §9elkábít§0
 parry=Válj sebezhetetlenné 0,5 másodpercre, és add vissza az eredeti kapott sebzés 500%-át\n100% állóképességet fogyaszt
-battlecry=A következő 10 másodpercben növeld a saját és a közeli szövetségesek minden sebzését és mozgási sebességét §a[[10 x képességszint]]%-kal
+battlecry=A következő 10 másodpercben növeld a saját és a közeli szövetségesek minden sebzését és mozgási sebességét §a[[10 x <skilllevel>]]%-kal
 
-ironguard=-50% bejövő sebzés §a[[4 x képességszint]] másodpercig
-thornedguard=-50% bejövő sebzés 12 másodpercig\nTovábbá visszaadja az eredeti kapott sebzés §a[[100 x képességszint]]%-át§0
-intimidation=A következő §a[[képességszint]] másodpercig§0 menekülésre kényszeríted a közeli ellenségeket
+ironguard=-50% bejövő sebzés §a[[4 x <skilllevel>]] másodpercig
+intimidation=A következő §a[[<skilllevel>]] másodpercig§0 menekülésre kényszeríted a közeli ellenségeket
 
-objectthrowing=1. lépés: Ragadj meg egy tárgyat magad előtt\n2. lépés: Dobd előre, §i[[20 x játékos szint + 5 x erő x képességszint]] közelharci sebzést§0 okozva\nMindkét lépés felemészti az összes állóképességedet (legalább 100%)
+objectthrowing=1. lépés: Ragadj meg egy tárgyat magad előtt\n2. lépés: Dobd előre, §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] közelharci sebzést§0 okozva\nMindkét lépés felemészti az összes állóképességedet (legalább 100%)
 
 // Íjász
-shortdash=Végezz egy 100-as erősségű sprintet\n15% állóképességet fogyaszt
-longdash=Végezz egy 150-es erősségű sprintet\n25% állóképességet fogyaszt
-lethalshot=Lőj egy §hhalálos nyilat§0 a legközelebbi ellenségre, §i[[5 x játékos szint + 5 x erő x képességszint]] íjász sebzést§0 okozva
-venomshot=Lőj egy §bmérgező nyilat§0 a legközelebbi ellenségre, §i[[4 x játékos szint + 2 x erő x képességszint + 2 x intelligencia x képességszint]] íjász sebzést§0 okozva
-explosiveshot=Lőj egy §irobbanó nyilat§0 a legközelebbi ellenségre, §i[[4 x játékos szint + 2 x erő x képességszint + 2 x intelligencia x képességszint]] íjász sebzést§0 okozva
+shortdash=Végezz egy 100-<strength> sprintet\n15% állóképességet fogyaszt
+longdash=Végezz egy 150-<strength> sprintet\n25% állóképességet fogyaszt
+lethalshot=Lőj egy §hhalálos nyilat§0 a legközelebbi ellenségre, §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] íjász sebzést§0 okozva
+venomshot=Lőj egy §bmérgező nyilat§0 a legközelebbi ellenségre, §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] íjász sebzést§0 okozva
+explosiveshot=Lőj egy §irobbanó nyilat§0 a legközelebbi ellenségre, §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] íjász sebzést§0 okozva
 
 shotsrampage=Amíg legalább 1 halom Lövésrohamod van, egy ellenség eltalálása távolsági támadással 1 további halmot ad 5 másodpercre\nMinden halom Lövésroham 5%-kal növeli a támadási sebességet, legfeljebb 30 halomig
-huntersmark=§hJelöld meg§0 a legközelebbi, legmagasabb életerejű ellenséget 10 másodpercre\nHa megölsz egy megjelölt célpontot, §a+[[20 x képességszint]]%§0 távolsági támadási sebességet és mozgási sebességet kapsz 5 másodpercre
-beartrap=Helyezz egy medvecsapdát a földre, amely eltűnik, ha aktiválódik, vagy 20 másodperc után\nHa egy ellenség aktiválja, §i[[10 x játékos szint]] sebzést§0 szenved, és 5 másodpercre csapdába esik
+huntersmark=§hJelöld meg§0 a legközelebbi, legmagasabb életerejű ellenséget 10 másodpercre\nHa megölsz egy megjelölt célpontot, §a+[[20 x <skilllevel>]]%§0 távolsági támadási sebességet és mozgási sebességet kapsz 5 másodpercre
+beartrap=Helyezz egy medvecsapdát a földre, amely eltűnik, ha aktiválódik, vagy 20 másodperc után\nHa egy ellenség aktiválja, §i[[10 x <playerlevel>]] sebzést§0 szenved, és 5 másodpercre csapdába esik
 
-huntersinstinct=A következő 12 másodpercben növeld a §7kitérési esélyedet§0 §a[[10 x képességszint]]%-kal\n§hJelöld meg§0 5 másodpercre azokat az ellenségeket, akiket kikerülsz
-arrowstorm=Lőj egy alap nyilat minden közeli ellenségre, §i[[2 x játékos szint + erő x képességszint + sebesség x képességszint]] íjász sebzést§0 okozva minden nyíllal
+huntersinstinct=A következő 12 másodpercben növeld a §7kitérési esélyedet§0 §a[[10 x <skilllevel>]]%-kal\n§hJelöld meg§0 5 másodpercre azokat az ellenségeket, akiket kikerülsz
+arrowstorm=Lőj egy alap nyilat minden közeli ellenségre, §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] íjász sebzést§0 okozva minden nyíllal
+
+// Varázsló
+arcaneoverload=Amíg aktív, növeli a Mágikus Támadási Sebességedet §a[[30 x <skilllevel>]]%-kal§0, de nem tudsz mozogni\nLejár, ha kifogysz a manából, vagy ha újra használod\n§a[[10 + 2 x <skilllevel>]] Manát§0 fogyaszt másodpercenként
+manarecharge=Amíg aktív, növeli a Mana Regenerációdat +1-gyel és §a[[50 x <skilllevel>]]%-kal§0, de lebénulsz és dupla sebzést szenvedsz\nÚjrahasználatkor lejár
+firedance=Megidéz 4 §bTáncoló Lángot§0, amelyek mindegyike §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\n5 másodpercenként megidéz egy másikat\nMinden idézés eltűnik 20 másodperccel a képesség aktiválása után\n§a[[30 + 6 x <skilllevel>]] Manát§0 fogyaszt
+iceball=Dobj egy §aJéggolyót§0 a legközelebbi ellenségre, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva\n§a[[50 + 10 x <skilllevel>]] Manát§0 fogyaszt
+zap=Indíts egy szikrát, amely 2 másodpercig ugrál a mobok között, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva és 1 másodpercre elkábítva\n§a[[10 + 2 x <skilllevel>]] Manát§0 fogyaszt
+
+teleport=Előre teleportál\n10 Manát fogyaszt
+inferno=Gyújtsd fel az összes közeli ellenséget, 10 másodpercen keresztül másodpercenként §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Tűzsebzést§0 okozva\n§a[[40 + 8 x <skilllevel>]] Manát§0 fogyaszt
+fireenchantment=A következő 10 másodpercben a te és a közeli szövetségesek támadásai meggyújtják az ellenséget, 5 másodpercen keresztül másodpercenként a sebzés §a[[5 x <skilllevel>]]%-át§0 okozva\n§a[[20 + 4 x <skilllevel>]] Manát§0 fogyaszt
+iceenchantment=A következő 10 másodpercben a te és a közeli szövetségesek támadásai §a[[2 x <skilllevel>]] másodpercre§0 lefagyasztják az ellenséget\n20 Manát fogyaszt
+
+fireball=Dobj egy §iTűzgolyót§0 a legközelebbi ellenségre, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva\n§a[[80 + 16 x <skilllevel>]] Manát§0 fogyaszt
+lightning=Indíts egy villámot, amely 1 másodpercig ugrál a mobok között, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva és 2 másodpercre elkábítva\nNem találhatja el ugyanazt a célpontot többször\n§a[[30 + 6 x <skilllevel>]] Manát§0 fogyaszt
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Képességszint
 playerlevel=Játékos szint
 endurance=Állóképesség
@@ -199,8 +249,12 @@ grace=Kecsesség
 
 
 [extraskilldesc]
+// Alapvető mechanikák
+manausage=Ha nincs elég manád, a hűlési ideje megduplázódik
+setmax=A negatív hatások maximálisra vannak állítva, és más buffokkal nem távolíthatók el
+
 // Buffok
-marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\nMinden irányított és/vagy a legközelebbi ellenségre kilőtt lövedék a megjelölt ellenségeket részesíti előnyben
+marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\n"Legközelebbi ellenség" a megjelölt ellenségeket részesíti előnyben
 
 // Esély módosítók
 dodgechance=§7Kitérési esély:§0 Esély a bejövő támadások kikerülésére. Nem haladhatja meg a 80%-ot
@@ -208,11 +262,17 @@ focuschance=§hFókusz esély:§0 Esély egy mob §hmegjelölésére§0 5 másod
 
 // Sík módosítók
 mobdetection=§9Mob érzékelés:§0 Megjeleníti a közeli mobokat a térképen. A nagyobb érzékelési tartomány távolabbról is felfedi a mobokat
+ignitedamage=§iÉgési Sebzés:§0 Növeli az égési sebzést az idő múlásával, de nem befolyásolja a közvetlen találati sebzést
 
 // Lövedékek
 lethalarrow=§hHalálos nyíl:§0 Irányított nyíl, amely kritikus találatot biztosít
-venomarrow=§bMérgező nyíl:§0 Irányított nyíl, amely megmérgezi az ellenséget, másodpercenként megismételve eredeti sebzésének 10%-át 30 másodpercig
+venomarrow=§bMérgező nyíl:§0 Irányított nyíl, amely megmérgezi az ellenséget. 30 másodpercen keresztül másodpercenként megismétli eredeti sebzésének 10%-át
 explosivearrow=§iRobbanó nyíl:§0 Irányított nyíl, amely egyenlő sebzésű mágikus robbanást okoz
+iceball=§aJéggolyó:§0 Mágikus lövedék, amely felrobban és 5 másodpercre lefagyasztja a mobokat, valamint 1 másodpercre teljesen lefagyasztja őket
+fireball=§iTűzgolyó:§0 Mágikus lövedék, amely felrobban és meggyújtja a mobokat, 5 másodpercen keresztül másodpercenként megismétli eredeti sebzésük 20%-át
+
+// Idézések
+dancingflame=§bTáncoló Láng:§0 Idézés, amely lövedékként működik. Találatkor meggyújtja az ellenséget. 5 másodpercen keresztül másodpercenként megismétli eredeti sebzésének 20%-át
 
 
 [item]
@@ -277,7 +337,7 @@ classes=Osztályok
 
 level=Szint <level>
 classlevel=<class> szint <level>
-lvl=Szint <level>
+lvl=Sz <level>
 eachlevel=Minden szint biztosít:
 experience=TP: <exp> / <nextexp>
 totalexperience=Összes TP: <exp>
@@ -295,7 +355,7 @@ activeskillsequipinstructions=Kattints egy helyre egy aktív képesség felszere
 noactiveskills=Nincsenek aktív képességeid. Oldd fel őket az osztályokon keresztül
 
 activeskillcooldown=§9Hűlési idő: <seconds>s
-activeskillcooldownmod=§9Hűlési idő: [[<seconds> <sign> <mod> x képességszint]]s
+activeskillcooldownmod=§9Hűlési idő: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§b<level> osztályszint szükséges
 requiredactiveskill=§bSzükséges '<skill>' <level> szint
 maxlevel=§aMaximális szint: <level>

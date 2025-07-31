@@ -7,6 +7,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
+import rpgclasses.registry.RPGBuffs;
 
 import java.awt.*;
 
@@ -29,5 +30,34 @@ public class MagicPoisonBuff extends Buff {
     @Override
     public void init(ActiveBuff activeBuff, BuffEventSubscriber eventSubscriber) {
         activeBuff.setModifier(BuffModifiers.POISON_DAMAGE_FLAT, activeBuff.getGndData().getFloat("poisonDamage"));
+    }
+
+    public static void apply(Mob attacker, Mob target, float damage, float duration) {
+        apply(attacker, target, damage, (int) (duration * 1000));
+    }
+
+    public static void apply(Mob attacker, Mob target, float damage, int duration) {
+        ActiveBuff ab = new ActiveBuff(RPGBuffs.MagicPoison, target, duration, attacker);
+        setPoisonDamage(ab, damage);
+
+        if (shouldApply(target, damage, duration)) {
+            target.buffManager.addBuff(ab, true);
+        }
+    }
+
+    public static boolean shouldApply(Mob target, float damage, int duration) {
+        if (!target.buffManager.hasBuff(RPGBuffs.MagicPoison)) return true;
+
+        float finalDamage = damage * duration / 1000F;
+
+        ActiveBuff ab = target.buffManager.getBuff(RPGBuffs.MagicPoison);
+        float finalOldDamage = ab.getGndData().getFloat("poisonDamage") * ab.getDurationLeft() / 1000F;
+
+        return finalDamage > finalOldDamage;
+    }
+
+
+    public static void setPoisonDamage(ActiveBuff activeBuff, float damage) {
+        activeBuff.getGndData().setFloat("poisonDamage", damage);
     }
 }

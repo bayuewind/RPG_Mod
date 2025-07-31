@@ -18,8 +18,8 @@ import java.awt.*;
 
 public class GroundSlam extends ActiveSkill {
 
-    public GroundSlam(String familyID, int levelMax, int requiredClassLevel) {
-        super(familyID, "groundslam", RPGColors.HEX.dirt, levelMax, requiredClassLevel);
+    public GroundSlam(int levelMax, int requiredClassLevel) {
+        super("groundslam", RPGColors.HEX.dirt, levelMax, requiredClassLevel);
     }
 
     @Override

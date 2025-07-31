@@ -17,12 +17,12 @@ import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.shader.FormShader;
-import rpgclasses.content.player.PlayerClass;
-import rpgclasses.data.PlayerData;
-import rpgclasses.data.PlayerDataList;
 import rpgclasses.containers.rpgmenu.components.PlayerDataComponent;
 import rpgclasses.containers.rpgmenu.components.TitleComponent;
 import rpgclasses.containers.rpgmenu.entries.*;
+import rpgclasses.content.player.PlayerClass;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
 import java.util.ArrayList;

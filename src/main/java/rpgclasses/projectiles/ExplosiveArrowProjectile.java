@@ -1,6 +1,5 @@
 package rpgclasses.projectiles;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -23,16 +22,16 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.RPGUtils;
 
 import java.awt.*;
 import java.util.List;
 
-public class ExplosiveArrow extends FollowingProjectile {
-    public ExplosiveArrow() {
+public class ExplosiveArrowProjectile extends FollowingProjectile {
+    public ExplosiveArrowProjectile() {
     }
 
-    public ExplosiveArrow(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+    public ExplosiveArrowProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -57,14 +56,7 @@ public class ExplosiveArrow extends FollowingProjectile {
     @Override
     public void updateTarget() {
         if (this.traveledDistance > 50F) {
-            target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance),
-                    m -> MarkedBuff.isMarked((PlayerMob) getOwner(), m)
-            );
-            if (target == null) target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance + 100),
-                    m -> m.canBeTargeted(getOwner(), ((PlayerMob) getOwner()).getNetworkClient())
-            );
+            target = RPGUtils.findBestTarget(getOwner(), 1000);
         }
     }
 
@@ -113,7 +105,6 @@ public class ExplosiveArrow extends FollowingProjectile {
             super(x, y, range, damage, false, toolTier, owner);
             this.explosionTypeSwitcher = new ParticleTypeSwitcher(Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC, Particle.GType.CRITICAL);
             this.targetRangeMod = 0.0F;
-            this.hitsOwner = false;
         }
 
         @Override

@@ -21,30 +21,34 @@ abstract public class SimpleBuffPassive extends Passive {
 
     @Override
     public void givePassiveBuff(PlayerMob player, PlayerData playerData, int passiveLevel) {
-        ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getBuffStringID()), player, 1000, null);
-        ab.getGndData().setInt("skillLevel", passiveLevel);
-        ab.getGndData().setInt("endurance", playerData.getEndurance(player));
-        ab.getGndData().setInt("speed", playerData.getSpeed(player));
-        ab.getGndData().setInt("strength", playerData.getStrength(player));
-        ab.getGndData().setInt("intelligence", playerData.getIntelligence(player));
-        ab.getGndData().setInt("grace", playerData.getGrace(player));
-        player.buffManager.addBuff(ab, true, true);
+        ActiveBuff oldAb = player.buffManager.getBuff(getBuffStringID());
+        int oldLevel = oldAb == null ? 0 : oldAb.getGndData().getInt("skillLevel");
+        boolean differentOldLevel = oldLevel != passiveLevel;
+
+        if (differentOldLevel) {
+            ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getBuffStringID()), player, 1000, null);
+            ab.getGndData().setInt("skillLevel", passiveLevel);
+            ab.getGndData().setString("playerName", playerData.playerName);
+
+            player.buffManager.addBuff(ab, true, oldAb != null);
+        }
     }
 
     public void giveDatalessSecondaryPassiveBuff(PlayerMob player, int duration) {
         ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), player, duration, null);
-        player.buffManager.addBuff(ab, true, true);
+        player.buffManager.addBuff(ab, true);
     }
 
     public void giveSecondaryPassiveBuff(PlayerMob player, PlayerData playerData, int passiveLevel, int duration) {
         ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), player, duration, null);
         ab.getGndData().setInt("skillLevel", passiveLevel);
+        ab.getGndData().setInt("playerLevel", passiveLevel);
         ab.getGndData().setInt("endurance", playerData.getEndurance(player));
         ab.getGndData().setInt("speed", playerData.getSpeed(player));
         ab.getGndData().setInt("strength", playerData.getStrength(player));
         ab.getGndData().setInt("intelligence", playerData.getIntelligence(player));
         ab.getGndData().setInt("grace", playerData.getGrace(player));
-        player.buffManager.addBuff(ab, true, true);
+        player.buffManager.addBuff(ab, true);
     }
 
     @Override

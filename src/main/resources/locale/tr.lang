@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% menzilli silahlar menzili
 mobdetectionrange=<mod> mob tespit aralığı
 focusdamage=<mod>% odaklanma hasarı
 focuschance=<mod>% odaklanma şansı
+ignitedamage=<mod>% yanma hasarı
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Tükenmiş
 overlevelclassbuff=Aşırı Seviye Sınıfı
 markedbuff=İşaretli
 darkcursebuff=Karanlık Lanet
+magicpoisonbuff=Sihirli Zehir
+ignitedbuff=Yanıyor
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Tüm hasarlar aynı zamanda Maksimum Canı da azaltır
 [mob]
 rpgmobname=[<sınıf>] <isim> svy <seviye>
 rpgmobnamecolor=§<renk>[<sınıf>]§0 <isim> §9svy <seviye>§0
+
+rangerwolf=Menzilli Kurt
+dancingflame=Dans Eden Alev
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Yırtıcı Duyusu
 plasmagrenade=Plazma Bombası
 wolfcompanion=Kurt Arkadaş
 
+// Büyücü
+arcanepower=Gizemli Güç
+manapower=Mana Gücü
+manaproficiency=Mana Ustalığı
+firepower=Ateş Gücü
+arcaneshield=Gizemli Kalkan
+fireshield=Ateş Kalkanı
+iceshield=Buz Kalkanı
+flamingsteps=Alevli Adımlar
+stormbound=Fırtınaya Bağlı
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Kurt Arkadaş
 unleashingrage=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Tüm Hasar
 unleashinghaste=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Hareket Hızı
 unyielding=Her seviye şunları sağlar:\n\nCan %20'nin altındayken +%5 Saldırı Hızı ve -%5 Gelen Hasar
-lastbreath=Ölmek yerine, §a[[3 x Beceri Seviyesi]] saniye§0 boyunca yenilmez olursunuz\nSüre dolduğunda ölürsünüz
+lastbreath=Ölmek yerine, §a[[3 x <skilllevel>]] saniye§0 boyunca yenilmez olursunuz\nSüre dolduğunda ölürsünüz
 
 // Menzilli
-plasmagrenade=Her 8 Menzilli saldırıda, silahın hasarının §i[[30 x Beceri Seviyesi]]%§0 kadar hasar veren güdümlü bir patlayıcı mermi ateşler
-wolfcompanion=Bir kurt arkadaş, işaretli düşmanlara saldırarak §i[[Oyuncu Seviyesi x Beceri Seviyesi + Zekâ x Beceri Seviyesi]] Çağırıcı Hasarı§0 verir
+plasmagrenade=Her 8 Menzilli saldırıda, silahın hasarının §i[[30 x <skilllevel>]]%§0 kadar hasar veren güdümlü bir patlayıcı mermi ateşler
+wolfcompanion=Bir kurt arkadaş, işaretli düşmanlara saldırarak §i[[<playerlevel> + <intelligence> x <skilllevel>]] Çağırıcı Hasarı§0 verir
 
+// Büyücü
+manapower=Her seviye şunları sağlar:\n\nKullanılmayan her %10 Mana için +%1 Büyü Hasarı
+flamingsteps=Aktif bir biblo ile koşarken, yerde alevler bırakırsınız\nAlevler düşmanları 2 saniye boyunca yakar ve saniyede §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir
+stormbound=Her §a[[9 - 0.5 x <skilllevel>]] saniyede§0, görüş alanınızdaki rastgele bir düşmana bir şimşek çarpar\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir ve 1 saniye sersemletir
+arcaneshield=Bir vuruşu önleyen bir kalkan\nKalkan, kullanımdan §a[[20 - <skilllevel>]] saniye§0 sonra iyileşir
+fireshield=Bir vuruşu önleyen bir kalkan\nKullanıldığında, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren bir patlama salarsınız\nve mobları yakarak, 5 saniye boyunca saniyede orijinal hasarlarının %20'sini tekrarlarsınız\nKalkan, kullanımdan 26 saniye sonra iyileşir
+iceshield=Bir vuruşu önleyen bir kalkan\nKullanıldığında, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren bir buz aurası salarsınız\nmobları 5 saniye boyunca dondurur ve 1 saniye boyunca tamamen dondurursunuz\nKalkan, kullanımdan 22 saniye sonra iyileşir
 
 [activeskills]
 empty=Boş
@@ -136,7 +160,6 @@ parry=Savuşturma
 battlecry=Savaş Çığlığı
 
 ironguard=Demir Kalkan
-thornedguard=Dikenli Kalkan
 intimidation=Gözdağı
 
 objectthrowing=Nesne Fırlatma
@@ -155,42 +178,70 @@ beartrap=Ayı Tuzağı
 huntersinstinct=Avcı İçgüdüsü
 arrowstorm=Ok Fırtınası
 
+// Büyücü
+arcaneoverload=Gizemli Aşırı Yükleme
+firedance=Ateş Dansı
+iceball=Buz Topu
+zap=Çarpma
+manarecharge=Mana Yenileme
+
+teleport=Işınlanma
+inferno=Cehennem
+fireenchantment=Ateş Büyüsü
+iceenchantment=Buz Büyüsü
+
+fireball=Ateş Topu
+lightning=Şimşek
+
 
 [activeskillsdesc]
 
 // Savaşçı
-fury=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızınızı §a[[20 x Beceri Seviyesi]]%§0 artırın
-recovery=Sonraki 10 saniye boyunca Savaş Canı Yenilenmesini büyük ölçüde artırır, süre boyunca §a[[20 + Dayanıklılık x Beceri Seviyesi]] can§0 yeniler
-provocation=Sonraki §a[[2 x Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
-berserkercharge=Kısa bir mesafe ileri atılarak, geçilen tüm düşmanlara §i[[10 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Hız x Beceri Seviyesi]] Hasar§0 verir\n%50 Dayanıklılık tüketir
-
-groundslam=§i[[5 x Güç]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x Beceri Seviyesi]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
-grounddestruction=§i[[5 x Güç x Beceri Seviyesi + 5 x Oyuncu Seviyesi x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
+fury=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızınızı §a[[20 x <skilllevel>]]%§0 artırın
+recovery=Sonraki 10 saniye boyunca Savaş Canı Yenilenmesini büyük ölçüde artırır, süre boyunca §a[[20 + <endurance> x <skilllevel>]] can§0 yeniler
+provocation=Sonraki §a[[2 x <skilllevel>]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
+berserkercharge=Kısa bir mesafe ileri atılarak, geçilen tüm düşmanlara §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Hasar§0 verir\n%50 Dayanıklılık tüketir
+groundslam=§i[[5 x <strength>]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x <skilllevel>]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
+grounddestruction=§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
 parry=0,5 saniye boyunca yenilmez olun ve alınan orijinal Hasarın %500'ünü iade edin\n%100 Dayanıklılık tüketir
-battlecry=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerinizin Tüm Hasarını ve Hareket Hızını §a[[10 x Beceri Seviyesi]]%§0 artırın
+battlecry=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerinizin Tüm Hasarını ve Hareket Hızını §a[[10 x <skilllevel>]]%§0 artırın
 
-ironguard=-%50 Gelen Hasar §a[[4 x Beceri Seviyesi]] saniye boyunca
-thornedguard=-%50 Gelen Hasar 12 saniye boyunca\nAyrıca, alınan orijinal Hasarın §a[[100 x Beceri Seviyesi]]%§0 kadarını iade eder
-intimidation=Sonraki §a[[Beceri Seviyesi]] saniye§0 boyunca, yakındaki düşmanları kaçırın
+ironguard=-%50 Gelen Hasar §a[[4 x <skilllevel>]] saniye boyunca
+intimidation=Sonraki §a[[<skilllevel>]] saniye§0 boyunca, yakındaki düşmanları kaçırın
 
-objectthrowing=Adım 1: Önünüzdeki bir nesneyi alın\nAdım 2: İleriye fırlatarak §i[[20 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Yakın Dövüş Hasarı§0 verin\nHer iki adım da tüm Dayanıklılığınızı tüketir (en az %100)
+objectthrowing=Adım 1: Önünüzdeki bir nesneyi alın\nAdım 2: İleriye fırlatarak §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 verin\nHer iki adım da tüm Dayanıklılığınızı tüketir (en az %100)
 
 // Menzilli
-shortdash=100 Güçlük bir koşu yapın\n%15 Dayanıklılık tüketir
-longdash=150 Güçlük bir koşu yapın\n%25 Dayanıklılık tüketir
-lethalshot=En yakın düşmana bir §höldürücü ok§0 atarak §i[[5 x Oyuncu Seviyesi + 5 x Güç x Beceri Seviyesi]] Menzilli Hasarı§0 verir
-venomshot=En yakın düşmana bir §bzehirli ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
-explosiveshot=En yakın düşmana bir §ipatlayıcı ok§0 atarak §i[[4 x Oyuncu Seviyesi + 2 x Güç x Beceri Seviyesi + 2 x Zekâ x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+shortdash=100-<strength> bir koşu yapın\n%15 Dayanıklılık tüketir
+longdash=150-<strength> bir koşu yapın\n%25 Dayanıklılık tüketir
+lethalshot=En yakın düşmana bir §höldürücü ok§0 atarak §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Menzilli Hasarı§0 verir
+venomshot=En yakın düşmana bir §bzehirli ok§0 atarak §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Menzilli Hasarı§0 verir
+explosiveshot=En yakın düşmana bir §ipatlayıcı ok§0 atarak §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Menzilli Hasarı§0 verir
 
 shotsrampage=En az 1 Vuruş Çılgınlığı yığınına sahipken, bir düşmana menzilli bir saldırıyla vurmak 5 saniye boyunca 1 ek yığın kazandırır\nHer Vuruş Çılgınlığı yığını Saldırı Hızını %5 artırır, en fazla 30 yığına kadar
-huntersmark=En yüksek cana sahip yakındaki düşmanı 10 saniye boyunca §hişaretleyin§0\nİşaretli bir hedefi öldürürseniz, 5 saniye boyunca §a+[[20 x Beceri Seviyesi]]%§0 Menzilli Saldırı Hızı ve Hareket Hızı kazanırsınız
-beartrap=Tetiklendiğinde veya 20 saniye sonra kaybolan bir ayı tuzağı yere yerleştirin\nBir düşman tetiklerse, §i[[10 x Oyuncu Seviyesi]] Hasar§0 alır ve 5 saniye boyunca tuzağa düşer
+huntersmark=En yüksek cana sahip yakındaki düşmanı 10 saniye boyunca §hişaretleyin§0\nİşaretli bir hedefi öldürürseniz, 5 saniye boyunca §a+[[20 x <skilllevel>]]%§0 Menzilli Saldırı Hızı ve Hareket Hızı kazanırsınız
+beartrap=Tetiklendiğinde veya 20 saniye sonra kaybolan bir ayı tuzağı yere yerleştirin\nBir düşman tetiklerse, §i[[10 x <playerlevel>]] Hasar§0 alır ve 5 saniye boyunca tuzağa düşer
 
-huntersinstinct=Sonraki 12 saniye boyunca, §7Savunma Şansınızı§0 §a[[10 x Beceri Seviyesi]]%§0 artırın\nSavunduğunuz düşmanları 5 saniye boyunca §hişaretleyin§0
-arrowstorm=Her yakın düşmana temel bir ok atarak, her ok için §i[[2 x Oyuncu Seviyesi + Güç x Beceri Seviyesi + Hız x Beceri Seviyesi]] Menzilli Hasarı§0 verir
+huntersinstinct=Sonraki 12 saniye boyunca, §7Savunma Şansınızı§0 §a[[10 x <skilllevel>]]%§0 artırın\nSavunduğunuz düşmanları 5 saniye boyunca §hişaretleyin§0
+arrowstorm=Her yakın düşmana temel bir ok atarak, her ok için §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Menzilli Hasarı§0 verir
+
+// Büyücü
+arcaneoverload=Aktifken, Büyü Saldırı Hızınızı §a[[30 x <skilllevel>]]%§0 artırır, ancak hareket edemezsiniz\nMananız bittiğinde veya tekrar kullanıldığında sona erer\nSaniyede §a[[10 + 2 x <skilllevel>]] Mana tüketir
+manarecharge=Aktifken, Mana Yenilenmenizi +1 ve §a[[50 x <skilllevel>]]%§0 artırır, ancak felç olursunuz ve çift hasar alırsınız\nTekrar kullanıldığında sona erer
+firedance=Her biri §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren 4 §bDans Eden Alev§0 çağırır\nHer 5 saniyede bir tane daha çağırır\nTüm çağrılar, yetenek etkinleştirildikten 20 saniye sonra kaybolur\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
+iceball=En yakın düşmana bir §aBuz Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\n§a[[50 + 10 x <skilllevel>]] Mana tüketir
+zap=Moblar arasında 2 saniye boyunca zıplayan, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren ve 1 saniye sersemleten bir çarpma başlatır\n§a[[10 + 2 x <skilllevel>]] Mana tüketir
+
+teleport=Önünüze ışınlanır\n10 Mana tüketir
+inferno=Yakındaki tüm düşmanları ateşe vererek, 10 saniye boyunca saniyede §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Ateş Hasarı§0 verir\n§a[[40 + 8 x <skilllevel>]] Mana tüketir
+fireenchantment=Sonraki 10 saniye boyunca, sizden ve yakındaki müttefiklerden gelen saldırılar düşmanları ateşe vererek, 5 saniye boyunca saniyede hasarın §a[[5 x <skilllevel>]]%§0 kadarını verir\n§a[[20 + 4 x <skilllevel>]] Mana tüketir
+iceenchantment=Sonraki 10 saniye boyunca, sizden ve yakındaki müttefiklerden gelen saldırılar düşmanları §a[[2 x <skilllevel>]] saniye§0 boyunca dondurur\n20 Mana tüketir
+
+fireball=En yakın düşmana bir §iAteş Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\n§a[[80 + 16 x <skilllevel>]] Mana tüketir
+lightning=Moblar arasında 1 saniye boyunca zıplayan, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren ve 2 saniye sersemleten bir şimşek başlatır\nAynı hedefi birden çok kez vuramaz\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Beceri Seviyesi
 playerlevel=Oyuncu Seviyesi
 endurance=Dayanıklılık
@@ -201,8 +252,12 @@ grace=Nezaket
 
 
 [extraskilldesc]
+// Temel Mekanik
+manausage=Yeterli mananız yoksa, bekleme süresi iki katına çıkar
+setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle kaldırılamaz
+
 // Güçlendirmeler
-marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\nTüm güdümlü ve/veya en yakın düşmana ateşlenen mermiler, işaretli düşmanlara öncelik verecektir
+marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir
 
 // Şans Değiştiricileri
 dodgechance=§7Savunma Şansı:§0 Gelen saldırıları savunma şansı. %80'i geçemez
@@ -210,11 +265,17 @@ focuschance=§hOdaklanma Şansı:§0 Çağırıcı olmayan hasarla saldırıldı
 
 // Düz Değiştiriciler
 mobdetection=§9Mob Tespiti:§0 Yakındaki mobları haritada gösterir. Daha yüksek bir tespit aralığı, mobları daha uzaktan ortaya çıkarır
+ignitedamage=§iYanma Hasarı:§0 Yanma hasarını zamanla artırır, ancak doğrudan vuruş hasarını etkilemez
 
 // Mermiler
 lethalarrow=§hÖldürücü Ok:§0 Kritik bir vuruş sağlayan güdümlü ok
 venomarrow=§bZehirli Ok:§0 Düşmanları zehirleyen, 30 saniye boyunca saniyede orijinal hasarının %10'unu tekrarlayan güdümlü ok
 explosivearrow=§iPatlayıcı Ok:§0 Eşit hasara sahip sihirli bir patlamaya neden olan güdümlü ok
+iceball=§aBuz Topu:§0 Patlayan ve mobları 5 saniye boyunca donduran, ayrıca 1 saniye boyunca tamamen donduran sihirli mermi
+fireball=§iAteş Topu:§0 Patlayan ve mobları ateşe vererek 5 saniye boyunca saniyede orijinal hasarlarının %20'sini tekrarlayan sihirli mermi
+
+// Çağrılar
+dancingflame=§bDans Eden Alev:§0 Mermi gibi davranan bir çağrı. Vurulduğunda düşmanları ateşe verir. 5 saniye boyunca saniyede orijinal hasarının %20'sini tekrarlar
 
 
 [item]
@@ -242,7 +303,7 @@ intelligencecopperring=Zekâ Bakır Yüzük
 intelligencegoldring=Zekâ Altın Yüzük
 intelligenceironring=Zekâ Demir Yüzük
 
-gracewoodring=Nezaket Ağaç Yüzük
+gracedwoodring=Nezaket Ağaç Yüzük
 gracecopperring=Nezaket Bakır Yüzük
 graceironring=Nezaket Demir Yüzük
 gracegoldring=Nezaket Altın Yüzük
@@ -297,7 +358,7 @@ activeskillsequipinstructions=Bir Aktif Beceri takmak için bir yuvaya tıklayı
 noactiveskills=Aktif Beceriniz yok. Sınıflar aracılığıyla kilidini açın
 
 activeskillcooldown=§9Bekleme: <saniye>s
-activeskillcooldownmod=§9Bekleme: [[<saniye> <işaret> <mod> x Beceri Seviyesi]]s
+activeskillcooldownmod=§9Bekleme: [[<saniye> <işaret> <mod> x <skilllevel>]]s
 requiredclasslevel=§bSınıf seviyesi <seviye> gerekli
 requiredactiveskill=§b'<beceri>' seviye <seviye> gerektirir
 maxlevel=§aMaks Seviye: <seviye>

@@ -1,6 +1,5 @@
-package rpgclasses.mobs.summons.pasive;
+package rpgclasses.mobs.summons.pasivesummon;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.NetworkClient;
 import necesse.engine.registries.DamageTypeRegistry;
@@ -17,7 +16,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.RPGUtils;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.ai.SkillSummonCollisionChaserAI;
@@ -50,10 +49,8 @@ public class RangerWolfMob extends PassiveSummonedMob {
         this.ai = new BehaviourTreeAI<>(this, new SkillSummonCollisionChaserAI<RangerWolfMob>(1024, getDamage(), 30, 500, 640, 64, false) {
             @Override
             public Mob getCustomFocus(RangerWolfMob mob, int searchDistance) {
-                return AphDistances.findClosestMob(getLevel(), x, y,
-                        searchDistance,
-                        m -> MarkedBuff.isMarked(getFollowingClient().playerMob, m)
-                );
+                PlayerMob player = (PlayerMob) getFollowingMob();
+                return RPGUtils.findBestTarget(player, mob.x, mob.y, 1000, RPGUtils.isMarkedFilter(player));
             }
         });
     }
@@ -83,9 +80,7 @@ public class RangerWolfMob extends PassiveSummonedMob {
             }
         });
         TextureDrawOptions shadow = MobRegistry.Textures.snowWolf.shadow.initDraw().sprite(0, sprite.y, 64).light(light).pos(drawX, drawY);
-        tileList.add((tm) -> {
-            shadow.draw();
-        });
+        tileList.add((tm) -> shadow.draw());
     }
 
     @Override
@@ -97,7 +92,7 @@ public class RangerWolfMob extends PassiveSummonedMob {
         NetworkClient client = this.getFollowingClient();
         if (client == null) return new GameDamage(0);
         PlayerData playerData = PlayerDataList.getPlayerData(client.playerMob);
-        int skillLevel = getSkillLevel(playerData);
-        return new GameDamage(DamageTypeRegistry.SUMMON, playerData.getLevel() * skillLevel + playerData.getIntelligence(client.playerMob) * skillLevel);
+        int skillLevel = getPassiveLevel(playerData);
+        return new GameDamage(DamageTypeRegistry.SUMMON, playerData.getLevel() + playerData.getIntelligence(client.playerMob) * skillLevel);
     }
 }

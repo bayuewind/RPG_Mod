@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% Reichweite für Fernkampfwaffen
 mobdetectionrange=<mod> Mob-Erkennungsreichweite
 focusdamage=<mod>% Fokusschaden
 focuschance=<mod>% Fokus-Chance
+ignitedamage=<mod>% Brandschaden
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Erschöpft
 overlevelclassbuff=Überlevel-Klasse
 markedbuff=Markiert
 darkcursebuff=Dunkler Fluch
+magicpoisonbuff=Magisches Gift
+ignitedbuff=Entzündet
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Jeder Schaden reduziert auch die maximale Gesundheit
 [mob]
 rpgmobname=[<class>] <name> Lvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9Lvl <level>§0
+
+rangerwolf=Waldläuferwolf
+dancingflame=Tanzende Flamme
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Raubtiersinn
 plasmagrenade=Plasmagranate
 wolfcompanion=Wolfsgefährte
 
+// Zauberer
+arcanepower=Arkane Macht
+manapower=Manakraft
+manaproficiency=Manabeherrschung
+firepower=Feuerkraft
+arcaneshield=Arkaner Schild
+fireshield=Feuerschild
+iceshield=Eisschild
+flamingsteps=Flammende Schritte
+stormbound=Sturmgebunden
+
 
 [passivesdesc]
 
@@ -114,12 +131,19 @@ wolfcompanion=Wolfsgefährte
 unleashingrage=Jede Stufe gewährt:\n\n+1% Gesamtschaden für jede 10% fehlende Gesundheit
 unleashinghaste=Jede Stufe gewährt:\n\n+1% Bewegungsgeschwindigkeit für jede 10% fehlende Gesundheit
 unyielding=Jede Stufe gewährt:\n\n+5% Angriffsgeschwindigkeit und -5% eingehender Schaden bei unter 20% Gesundheit
-lastbreath=Anstatt zu sterben, wirst du für §a[[3 x Fähigkeitslevel]] Sekunden§0 unverwundbar\nSobald die Zeit abgelaufen ist, stirbst du
+lastbreath=Anstatt zu sterben, wirst du für §a[[3 x <skilllevel>]] Sekunden§0 unverwundbar\nSobald die Zeit abgelaufen ist, stirbst du
 
 // Waldläufer
-plasmagrenade=Alle 8 Fernkampfangriffe wird ein gelenktes explosives Projektil abgefeuert, das §i[[30 x Fähigkeitslevel]]%§0 des Waffenschadens verursacht
-wolfcompanion=Ein Wolfsgefährte greift markierte Gegner an und verursacht §i[[Spielerlevel x Fähigkeitslevel + Intelligenz x Fähigkeitslevel]] Beschwörerschaden§0
+plasmagrenade=Alle 8 Fernkampfangriffe wird ein gelenktes explosives Projektil abgefeuert, das §i[[30 x <skilllevel>]]%§0 des Waffenschadens verursacht
+wolfcompanion=Ein Wolfsgefährte greift markierte Gegner an und verursacht §i[[<playerlevel> + <intelligence> x <skilllevel>]] Beschwörerschaden§0
 
+// Zauberer
+manapower=Jede Stufe gewährt:\n\n+1% Magieschaden für jede 10% ungenutztes Mana
+flamingsteps=Wenn du mit einem aktiven Schmuckstück rennst, hinterlässt du Flammen auf dem Boden\nDie Flammen entzünden Gegner für 2 Sekunden und verursachen §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 pro Sekunde
+stormbound=Alle §a[[9 - 0.5 x <skilllevel>]] Sekunden§0 schlägt ein Blitz bei einem zufälligen Gegner in deiner Sichtweite ein\nVerursacht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 und betäubt für 1 Sekunde
+arcaneshield=Ein Schild, der einen Treffer verhindert\nDer Schild erholt sich §a[[20 - <skilllevel>]] Sekunden§0 nach der Benutzung
+fireshield=Ein Schild, der einen Treffer verhindert\nBei Benutzung löst du eine Explosion aus, die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht\nund Mobs entzündet, die 5 Sekunden lang 20% ihres ursprünglichen Schadens pro Sekunde wiederholen\nDer Schild erholt sich 26 Sekunden nach der Benutzung
+iceshield=Ein Schild, der einen Treffer verhindert\nBei Benutzung löst du eine Eisaura aus, die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht\nund Mobs für 5 Sekunden einfriert und für 1 Sekunde komplett einfriert\nDer Schild erholt sich 22 Sekunden nach der Benutzung
 
 [activeskills]
 empty=Leer
@@ -136,7 +160,6 @@ parry=Parade
 battlecry=Schlachtruf
 
 ironguard=Eiserne Wache
-thornedguard=Dornenwache
 intimidation=Einschüchterung
 
 objectthrowing=Objektwerfen
@@ -155,41 +178,70 @@ beartrap=Bärenfalle
 huntersinstinct=Jägerinstinkt
 arrowstorm=Pfeilsturm
 
+// Zauberer
+arcaneoverload=Arkane Überladung
+firedance=Feuertanz
+iceball=Eisball
+zap=Zappen
+manarecharge=Manawiederaufladung
+
+teleport=Teleportieren
+inferno=Inferno
+fireenchantment=Feuerverzauberung
+iceenchantment=Eisverzauberung
+
+fireball=Feuerball
+lightning=Blitz
+
 
 [activeskillsdesc]
 
 // Krieger
-fury=Für die nächsten 6 Sekunden werden dein Nahkampfschaden und deine Angriffsgeschwindigkeit um §a[[20 x Fähigkeitslevel]]%§0 erhöht
-recovery=Für die nächsten 10 Sekunden wird die Kampf-Gesundheitsregeneration stark erhöht und stellt über die Dauer §a[[20 + Ausdauer x Fähigkeitslevel]] Gesundheit§0 wieder her
-provocation=Für die nächsten §a[[2 x Fähigkeitslevel]] Sekunden§0 zwingst du nahe Gegner, ihre Angriffe auf dich zu konzentrieren
-berserkercharge=Stürme eine kurze Distanz nach vorne und verursache bei allen durchquerten Gegnern §i[[10 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Geschwindigkeit x Fähigkeitslevel]] Schaden§0\nVerbraucht 50% Ausdauer
-groundslam=Flächenangriff, der §i[[5 x Stärke]] Nahkampfschaden§0 verursacht und für §a[[1 x Fähigkeitslevel]] Sekunden§0 §9betäubt§0
-grounddestruction=Flächenangriff, der §i[[5 x Stärke x Fähigkeitslevel + 5 x Spielerlevel x Fähigkeitslevel]] Nahkampfschaden§0 verursacht und für 2 Sekunden §9betäubt§0
+fury=Für die nächsten 6 Sekunden werden dein Nahkampfschaden und deine Angriffsgeschwindigkeit um §a[[20 x <skilllevel>]]%§0 erhöht
+recovery=Für die nächsten 10 Sekunden wird die Kampf-Gesundheitsregeneration stark erhöht und stellt über die Dauer §a[[20 + <endurance> x <skilllevel>]] Gesundheit§0 wieder her
+provocation=Für die nächsten §a[[2 x <skilllevel>]] Sekunden§0 zwingst du nahe Gegner, ihre Angriffe auf dich zu konzentrieren
+berserkercharge=Stürme eine kurze Distanz nach vorne und verursache bei allen durchquerten Gegnern §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Schaden§0\nVerbraucht 50% Ausdauer
+groundslam=Flächenangriff, der §i[[5 x <strength>]] Nahkampfschaden§0 verursacht und für §a[[1 x <skilllevel>]] Sekunden§0 §9betäubt§0
+grounddestruction=Flächenangriff, der §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Nahkampfschaden§0 verursacht und für 2 Sekunden §9betäubt§0
 parry=Werde für 0,5 Sekunden unverwundbar und gib 500% des ursprünglich erhaltenen Schadens zurück\nVerbraucht 100% Ausdauer
-battlecry=Für die nächsten 10 Sekunden werden dein und der Gesamtschaden und die Bewegungsgeschwindigkeit naher Verbündeter um §a[[10 x Fähigkeitslevel]]%§0 erhöht
+battlecry=Für die nächsten 10 Sekunden werden dein und der Gesamtschaden und die Bewegungsgeschwindigkeit naher Verbündeter um §a[[10 x <skilllevel>]]%§0 erhöht
 
-ironguard=-50% eingehender Schaden für §a[[4 x Fähigkeitslevel]] Sekunden
-thornedguard=-50% eingehender Schaden für 12 Sekunden\nZusätzlich werden §a[[100 x Fähigkeitslevel]]%§0 des ursprünglich erhaltenen Schadens zurückgegeben
-intimidation=Für die nächsten §a[[Fähigkeitslevel]] Sekunden§0 lässt du nahe Gegner weglaufen
+ironguard=-50% eingehender Schaden für §a[[4 x <skilllevel>]] Sekunden
+intimidation=Für die nächsten §a[[<skilllevel>]] Sekunden§0 lässt du nahe Gegner weglaufen
 
-objectthrowing=Schritt 1: Greife ein Objekt vor dir\nSchritt 2: Wirf es nach vorne und verursache §i[[20 x Spielerlevel + 5 x Stärke x Fähigkeitslevel]] Nahkampfschaden§0\nBeide Schritte verbrauchen deine gesamte Ausdauer (mindestens 100%)
+objectthrowing=Schritt 1: Greife ein Objekt vor dir\nSchritt 2: Wirf es nach vorne und verursache §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Nahkampfschaden§0\nBeide Schritte verbrauchen deine gesamte Ausdauer (mindestens 100%)
 
 // Waldläufer
-shortdash=Führe einen Sprint mit 100 Stärke aus\nVerbraucht 15% Ausdauer
-longdash=Führe einen Sprint mit 150 Stärke aus\nVerbraucht 25% Ausdauer
-lethalshot=Schieße einen §htödlichen Pfeil§0 auf den nächsten Gegner und verursache §i[[5 x Spielerlevel + 5 x Stärke x Fähigkeitslevel]] Waldläuferschaden§0
-venomshot=Schieße einen §bgiftigen Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Intelligenz x Fähigkeitslevel]] Waldläuferschaden§0
-explosiveshot=Schieße einen §iexplosiven Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x Spielerlevel + 2 x Stärke x Fähigkeitslevel + 2 x Intelligenz x Fähigkeitslevel]] Waldläuferschaden§0
+shortdash=Führe einen 100-<strength> Sprint aus\nVerbraucht 15% Ausdauer
+longdash=Führe einen 150-<strength> Sprint aus\nVerbraucht 25% Ausdauer
+lethalshot=Schieße einen §htödlichen Pfeil§0 auf den nächsten Gegner und verursache §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Waldläuferschaden§0
+venomshot=Schieße einen §bgiftigen Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Waldläuferschaden§0
+explosiveshot=Schieße einen §iexplosiven Pfeil§0 auf den nächsten Gegner und verursache §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Waldläuferschaden§0
 
 shotsrampage=Solange du mindestens 1 Stapel Schuss-Amoklauf hast, gewährt das Treffen eines Gegners mit einem Fernkampfangriff 1 zusätzlichen Stapel für 5 Sekunden\nJeder Stapel Schuss-Amoklauf erhöht die Angriffsgeschwindigkeit um 5%, bis zu einem Maximum von 30 Stapeln
-huntersmark=§hMarkiere§0 den nächsten Gegner mit der höchsten Gesundheit für 10 Sekunden\nWenn du ein markiertes Ziel tötest, erhältst du für 5 Sekunden §a+[[20 x Fähigkeitslevel]]%§0 Fernkampfangriffsgeschwindigkeit und Bewegungsgeschwindigkeit
-beartrap=Platziere eine Bärenfalle auf dem Boden, die verschwindet, wenn sie ausgelöst wird oder nach 20 Sekunden\nWenn ein Gegner sie auslöst, erleidet er §i[[10 x Spielerlevel]] Schaden§0 und ist für 5 Sekunden gefangen
+huntersmark=§hMarkiere§0 den nächsten Gegner mit der höchsten Gesundheit für 10 Sekunden\nWenn du ein markiertes Ziel tötest, erhältst du für 5 Sekunden §a+[[20 x <skilllevel>]]%§0 Fernkampfangriffsgeschwindigkeit und Bewegungsgeschwindigkeit
+beartrap=Platziere eine Bärenfalle auf dem Boden, die verschwindet, wenn sie ausgelöst wird oder nach 20 Sekunden\nWenn ein Gegner sie auslöst, erleidet er §i[[10 x <playerlevel>]] Schaden§0 und ist für 5 Sekunden gefangen
 
-huntersinstinct=Für die nächsten 12 Sekunden wird deine §7Ausweichchance§0 um §a[[10 x Fähigkeitslevel]]%§0 erhöht\n§hMarkiere§0 für 5 Sekunden die Gegner, denen du ausweichst
-arrowstorm=Schieße einen einfachen Pfeil auf jeden nahen Gegner und verursache mit jedem Pfeil §i[[2 x Spielerlevel + Stärke x Fähigkeitslevel + Geschwindigkeit x Fähigkeitslevel]] Waldläuferschaden§0
+huntersinstinct=Für die nächsten 12 Sekunden wird deine §7Ausweichchance§0 um §a[[10 x <skilllevel>]]%§0 erhöht\n§hMarkiere§0 für 5 Sekunden die Gegner, denen du ausweichst
+arrowstorm=Schieße einen einfachen Pfeil auf jeden nahen Gegner und verursache mit jedem Pfeil §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Waldläuferschaden§0
+
+// Zauberer
+arcaneoverload=Solange aktiv, erhöht deine magische Angriffsgeschwindigkeit um §a[[30 x <skilllevel>]]%§0, aber du kannst dich nicht bewegen\nEndet, wenn du kein Mana mehr hast oder wenn es erneut verwendet wird\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana pro Sekunde
+manarecharge=Solange aktiv, erhöht deine Manaregeneration um +1 und um §a[[50 x <skilllevel>]]%§0, aber du bist gelähmt und erleidest doppelten Schaden\nEndet, wenn es erneut verwendet wird
+firedance=Beschwört 4 §bTanzende Flammen§0, die jeweils §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursachen\nBeschwöre alle 5 Sekunden eine weitere\nAlle Beschwörungen verschwinden 20 Sekunden nach Aktivierung der Fähigkeit\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Wirf einen §aEisball§0 auf den nächsten Gegner und verursache §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nVerbraucht §a[[50 + 10 x <skilllevel>]] Mana
+zap=Starte einen Zappen, der 2 Sekunden lang zwischen Mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht und 1 Sekunde lang betäubt\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana
+
+teleport=Teleportiert dich vor dich\nVerbraucht 10 Mana
+inferno=Entzünde alle nahen Gegner und verursache 10 Sekunden lang §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Feuerschaden§0 pro Sekunde\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=Für die nächsten 10 Sekunden entzünden Angriffe von dir und nahen Verbündeten Gegner und verursachen 5 Sekunden lang §a[[5 x <skilllevel>]]%§0 des Schadens pro Sekunde\nVerbraucht §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=Für die nächsten 10 Sekunden frieren Angriffe von dir und nahen Verbündeten Gegner für §a[[2 x <skilllevel>]] Sekunden§0 ein\nVerbraucht 20 Mana
+
+fireball=Wirf einen §iFeuerball§0 auf den nächsten Gegner und verursache §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nVerbraucht §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Starte einen Blitz, der 1 Sekunde lang zwischen Mobs springt, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magieschaden§0 verursacht und 2 Sekunden lang betäubt\nKann dasselbe Ziel nicht mehrmals treffen\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Fähigkeitslevel
 playerlevel=Spielerlevel
 endurance=Ausdauer
@@ -200,8 +252,12 @@ grace=Anmut
 
 
 [extraskilldesc]
+// Grundlegende Mechanik
+manausage=Wenn du nicht genug Mana hast, wird die Abklingzeit verdoppelt
+setmax=Negative Effekte werden als Maximum festgelegt und können nicht durch andere Buffs entfernt werden
+
 // Buffs
-marked=§hMarkiert:§0 Verursache +20% Schaden (+ §hFokusschaden§0) und +10% kritische Trefferchance bei Mobs, die du markierst\nAlle gelenkten und/oder auf den nächsten Gegner abgefeuerten Projektile priorisieren markierte Gegner
+marked=§hMarkiert:§0 Verursache +20% Schaden (+ §hFokusschaden§0) und +10% kritische Trefferchance bei Mobs, die du markierst\n"Nächster Gegner" priorisiert markierte Gegner
 
 // Chancenmodifikatoren
 dodgechance=§7Ausweichchance:§0 Chance, eingehenden Angriffen auszuweichen. Kann 80% nicht überschreiten
@@ -209,11 +265,17 @@ focuschance=§hFokus-Chance:§0 Chance, einen Mob für 5 Sekunden zu §hmarkiere
 
 // Flache Modifikatoren
 mobdetection=§9Mob-Erkennung:§0 Zeigt nahe Mobs auf der Karte an. Eine höhere Erkennungsreichweite deckt Mobs aus größerer Entfernung auf
+ignitedamage=§iBrandschaden:§0 Erhöht den Brandschaden über Zeit, beeinflusst aber nicht den direkten Trefferschaden
 
 // Projektile
 lethalarrow=§hTödlicher Pfeil:§0 Gelenkter Pfeil, der einen kritischen Treffer gewährt
-venomarrow=§bGiftpfeil:§0 Gelenkter Pfeil, der Gegner vergiftet und 30 Sekunden lang 10% seines ursprünglichen Schadens pro Sekunde wiederholt
+venomarrow=§bGiftpfeil:§0 Gelenkter Pfeil, der Gegner vergiftet. Wiederholt 30 Sekunden lang 10% seines ursprünglichen Schadens pro Sekunde
 explosivearrow=§iExplosiver Pfeil:§0 Gelenkter Pfeil, der eine magische Explosion mit gleichem Schaden verursacht
+iceball=§aEisball:§0 Magisches Projektil, das explodiert und Mobs für 5 Sekunden einfriert, und sie auch für 1 Sekunde komplett einfriert
+fireball=§iFeuerball:§0 Magisches Projektil, das explodiert und Mobs entzündet, die 5 Sekunden lang 20% ihres ursprünglichen Schadens pro Sekunde wiederholen
+
+// Beschwörungen
+dancingflame=§bTanzende Flamme:§0 Beschwörung, die wie ein Projektil wirkt. Entzündet Gegner bei Treffer. Wiederholt 5 Sekunden lang 20% ihres ursprünglichen Schadens pro Sekunde
 
 
 [item]

@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% 远程武器射程
 mobdetectionrange=<mod> 生物探测范围
 focusdamage=<mod>% 专注伤害
 focuschance=<mod>% 专注几率
+ignitedamage=<mod>% 点燃伤害
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=枯竭
 overlevelclassbuff=超等级职业
 markedbuff=已标记
 darkcursebuff=黑暗诅咒
+magicpoisonbuff=魔法毒药
+ignitedbuff=已点燃
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=所有伤害也会降低最大生命值
 [mob]
 rpgmobname=[<class>] <name> 等级 <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9等级 <level>§0
+
+rangerwolf=游侠狼
+dancingflame=舞动之焰
 
 
 [mobclass]
@@ -107,26 +113,37 @@ predatorsense=捕食者感知
 plasmagrenade=等离子手榴弹
 wolfcompanion=狼伙伴
 
+// 巫师
+arcanepower=奥术之力
+manapower=法力之力
+manaproficiency=法力精通
+firepower=火力
+arcaneshield=奥术护盾
+fireshield=火焰护盾
+iceshield=冰霜护盾
+flamingsteps=烈焰步伐
+stormbound=风暴束缚
+
 
 [passivesdesc]
 
 // 战士
-unleashingrage=每级提供：
-
-每损失 10% 生命值，所有伤害 +1%
-unleashinghaste=每级提供：
-
-每损失 10% 生命值，移动速度 +1%
-unyielding=每级提供：
-
-生命值低于 20% 时，攻击速度 +5%，受到伤害 -5%
-lastbreath= вместо смерти, станьте неуязвимым на §a[[3 x уровень умения]] секунд§0
-Когда время истечет, вы умрете
+unleashingrage=每级提供：\n\n每损失 10% 生命值，所有伤害 +1%
+unleashinghaste=每级提供：\n\n每损失 10% 生命值，移动速度 +1%
+unyielding=每级提供：\n\n生命值低于 20% 时，攻击速度 +5%，受到伤害 -5%
+lastbreath=死亡时，你会获得§a[[3 x <skilllevel>]]秒§0的无敌时间\n时间结束后，你将死亡
 
 // 游侠
-plasmagrenade=每 8 次远程攻击，发射一枚制导爆炸射弹，造成武器伤害的 §i[[30 x 技能等级]]%§0
-wolfcompanion=狼伙伴会攻击被标记的敌人，造成 §i[[玩家等级 x 技能等级 + 智力 x 技能等级]] 的召唤师伤害§0
+plasmagrenade=每 8 次远程攻击，发射一枚制导爆炸射弹，造成武器伤害的 §i[[30 x <skilllevel>]]%§0
+wolfcompanion=狼伙伴会攻击被标记的敌人，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 的召唤师伤害§0
 
+// 巫师
+manapower=每级提供：\n\n每 10% 未使用的法力，魔法伤害 +1%
+flamingsteps=当佩戴活动饰品奔跑时，你会在地上留下火焰\n火焰会点燃敌人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0
+stormbound=每 §a[[9 - 0.5 x <skilllevel>]] 秒§0，一道闪电会击中你视野内的一个随机敌人\n造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 1 秒
+arcaneshield=一个可以抵挡一次攻击的护盾\n护盾将在使用后 §a[[20 - <skilllevel>]] 秒§0 后恢复
+fireshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一次爆炸，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n并点燃生物，在 5 秒内每秒重复其原始伤害的 20%\n护盾将在使用后 26 秒后恢复
+iceshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一道冰霜光环，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n使生物冰冻 5 秒，并完全冰冻 1 秒\n护盾将在使用后 22 秒后恢复
 
 [activeskills]
 empty=空
@@ -143,7 +160,6 @@ parry=格挡
 battlecry=战吼
 
 ironguard=铁卫
-thornedguard=荆棘卫士
 intimidation=恐吓
 
 objectthrowing=投掷物体
@@ -162,50 +178,70 @@ beartrap=捕熊夹
 huntersinstinct=猎人直觉
 arrowstorm=箭雨
 
+// 巫师
+arcaneoverload=奥术超载
+firedance=火焰之舞
+iceball=冰球
+zap=电击
+manarecharge=法力再充
+
+teleport=传送
+inferno=地狱火
+fireenchantment=火焰附魔
+iceenchantment=冰霜附魔
+
+fireball=火球术
+lightning=闪电
+
 
 [activeskillsdesc]
 
 // 战士
-fury=在接下来的 6 秒内，你的近战伤害和攻击速度提高 §a[[20 x 技能等级]]%
-recovery=在接下来的 10 秒内，大幅提升战斗生命恢复，在持续时间内恢复 §a[[20 + 耐力 x 技能等级]] 生命值§0
-provocation=在接下来的 §a[[2 x 技能等级]] 秒内§0，强迫附近的敌人将攻击集中在你身上
-berserkercharge=向前冲一小段距离，对所有经过的敌人造成 §i[[10 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 速度 x 技能等级]] 伤害§0
-消耗 50% 耐力
-groundslam=区域攻击，造成 §i[[5 x 力量]] 近战伤害§0 并 §9眩晕§0 §a[[1 x 技能等级]] 秒§0
-grounddestruction=区域攻击，造成 §i[[5 x 力量 x 技能等级 + 5 x 玩家等级 x 技能等级]] 近战伤害§0 并 §9眩晕§0 2 秒
-parry=在 0.5 秒内变得无敌，并返还 500% 的原始伤害
-消耗 100% 耐力
-battlecry=在接下来的 10 秒内，你和附近盟友的所有伤害和移动速度提高 §a[[10 x 技能等级]]%
+fury=在接下来的 6 秒内，你的近战伤害和攻击速度提高 §a[[20 x <skilllevel>]]%
+recovery=在接下来的 10 秒内，大幅提升战斗生命恢复，在持续时间内恢复 §a[[20 + <endurance> x <skilllevel>]] 生命值§0
+provocation=在接下来的 §a[[2 x <skilllevel>]] 秒内§0，强迫附近的敌人将攻击集中在你身上
+berserkercharge=向前冲一小段距离，对所有经过的敌人造成 §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] 伤害§0\n消耗 50% 耐力
+groundslam=区域攻击，造成 §i[[5 x <strength>]] 近战伤害§0 并 §9眩晕§0 §a[[1 x <skilllevel>]] 秒§0
+grounddestruction=区域攻击，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 近战伤害§0 并 §9眩晕§0 2 秒
+parry=在 0.5 秒内变得无敌，并返还 500% 的原始伤害\n消耗 100% 耐力
+battlecry=在接下来的 10 秒内，你和附近盟友的所有伤害和移动速度提高 §a[[10 x <skilllevel>]]%
 
-ironguard=在 §a[[4 x 技能等级]] 秒内§0，受到伤害 -50%
-thornedguard=在 12 秒内，受到伤害 -50%
-此外，返还 §a[[100 x 技能等级]]%§0 的原始伤害
-intimidation=在接下来的 §a[[技能等级]] 秒内§0，让附近的敌人逃跑
+ironguard=在 §a[[4 x <skilllevel>]] 秒内§0，受到伤害 -50%
+intimidation=在接下来的 §a[[<skilllevel>]] 秒内§0，让附近的敌人逃跑
 
-objectthrowing=第 1 步：抓住你面前的一个物体
-第 2 步：向前投掷，造成 §i[[20 x 玩家等级 + 5 x 力量 x 技能等级]] 近战伤害§0
-两个步骤都会消耗你所有的耐力（至少 100%）
+objectthrowing=第 1 步：抓住你面前的一个物体\n第 2 步：向前投掷，造成 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] 近战伤害§0\n两个步骤都会消耗你所有的耐力（至少 100%）
 
 // 游侠
-shortdash=短冲刺
-longdash=长冲刺
-lethalshot=向最近的敌人发射一支 §h致命箭§0，造成 §i[[5 x 玩家等级 + 5 x 力量 x 技能等级]] 游侠伤害§0
-venomshot=向最近的敌人发射一支 §b剧毒箭§0，造成 §i[[4 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 智力 x 技能等级]] 游侠伤害§0
-explosiveshot=向最近的敌人发射一支 §i爆炸箭§0，造成 §i[[4 x 玩家等级 + 2 x 力量 x 技能等级 + 2 x 智力 x 技能等级]] 游侠伤害§0
+shortdash=进行一次 100-<strength> 的冲刺\n消耗 15% 耐力
+longdash=进行一次 150-<strength> 的冲刺\n消耗 25% 耐力
+lethalshot=向最近的敌人发射一支 §h致命箭§0，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 游侠伤害§0
+venomshot=向最近的敌人发射一支 §b剧毒箭§0，造成 §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] 游侠伤害§0
+explosiveshot=向最近的敌人发射一支 §i爆炸箭§0，造成 §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] 游侠伤害§0
 
-shotsrampage=当你至少有 1 层射击狂暴时，用远程攻击击中敌人会在 5 秒内额外获得 1 层
-每层射击狂暴会使攻击速度提高 5%，最多 30 层
-huntersmark=§h标记§0 附近生命值最高的敌人 10 秒
-如果你杀死一个被标记的目标，则在 5 秒内获得 §a+[[20 x 技能等级]]%§0 的远程攻击速度和移动速度
-beartrap=在地上放置一个捕熊夹，如果被触发或 20 秒后会消失
-如果敌人触发它，他们将受到 §i[[10 x 玩家等级]] 伤害§0 并被困住 5 秒
+shotsrampage=当你至少有 1 层射击狂暴时，用远程攻击击中敌人会在 5 秒内额外获得 1 层\n每层射击狂暴会使攻击速度提高 5%，最多 30 层
+huntersmark=§h标记§0 附近生命值最高的敌人 10 秒\n如果你杀死一个被标记的目标，则在 5 秒内获得 §a+[[20 x <skilllevel>]]%§0 的远程攻击速度和移动速度
+beartrap=在地上放置一个捕熊夹，如果被触发或 20 秒后会消失\n如果敌人触发它，他们将受到 §i[[10 x <playerlevel>]] 伤害§0 并被困住 5 秒
 
-huntersinstinct=在接下来的 12 秒内，你的 §7闪避几率§0 提高 §a[[10 x 技能等级]]%
-§h标记§0 你闪避的敌人 5 秒
-arrowstorm=向每个附近的敌人发射一支基本箭，每支箭造成 §i[[2 x 玩家等级 + 力量 x 技能等级 + 速度 x 技能等级]] 游侠伤害§0
+huntersinstinct=在接下来的 12 秒内，你的 §7闪避几率§0 提高 §a[[10 x <skilllevel>]]%\n§h标记§0 你闪避的敌人 5 秒
+arrowstorm=向每个附近的敌人发射一支基本箭，每支箭造成 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] 游侠伤害§0
+
+// 巫师
+arcaneoverload=激活时，你的魔法攻击速度提高 §a[[30 x <skilllevel>]]%§0，但你将无法移动\n当你的法力耗尽或再次使用时结束\n每秒消耗 §a[[10 + 2 x <skilllevel>]] 法力
+manarecharge=激活时，你的法力恢复提高 +1 和 §a[[50 x <skilllevel>]]%§0，但你将被麻痹并受到双倍伤害\n再次使用时结束
+firedance=召唤 4 个 §b舞动之焰§0，每个造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n每 5 秒召唤一个\n所有召唤物在技能激活 20 秒后消失\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
+iceball=向最近的敌人投掷一个 §a冰球§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法伤害§0\n消耗 §a[[50 + 10 x <skilllevel>]] 法力
+zap=开始一次电击，在生物之间跳跃 2 秒，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 1 秒\n消耗 §a[[10 + 2 x <skilllevel>]] 法力
+
+teleport=将你传送到你面前\n消耗 10 法力
+inferno=点燃附近所有敌人，在 10 秒内每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 火焰伤害§0\n消耗 §a[[40 + 8 x <skilllevel>]] 法力
+fireenchantment=在接下来的 10 秒内，你和附近盟友的攻击会点燃敌人，在 5 秒内每秒造成伤害的 §a[[5 x <skilllevel>]]%§0\n消耗 §a[[20 + 4 x <skilllevel>]] 法力
+iceenchantment=在接下来的 10 秒内，你和附近盟友的攻击会使敌人冰冻 §a[[2 x <skilllevel>]] 秒§0\n消耗 20 法力
+
+fireball=向最近的敌人投掷一个 §i火球术§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法伤害§0\n消耗 §a[[80 + 16 x <skilllevel>]] 法力
+lightning=开始一道闪电，在生物之间跳跃 1 秒，造成 §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 2 秒\n不能多次击中同一目标\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
+
 
 [skillsdesckeys]
-x=x
 skilllevel=技能等级
 playerlevel=玩家等级
 endurance=耐力
@@ -216,9 +252,12 @@ grace=优雅
 
 
 [extraskilldesc]
+// 基本机制
+manausage=如果你的法力不足，其冷却时间将加倍
+setmax=负面效果被设置为最大值，不能被其他增益移除
+
 // 增益
-marked=§h已标记：§0 对你标记的生物造成 +20% 伤害（+ §h专注伤害§0）和 +10% 暴击几率
-所有制导和/或射向最近敌人的射弹将优先攻击被标记的敌人
+marked=§h已标记：§0 对你标记的生物造成 +20% 伤害（+ §h专注伤害§0）和 +10% 暴击几率\n“最近的敌人”优先攻击被标记的敌人
 
 // 几率修正
 dodgechance=§7闪避几率：§0 闪避来袭攻击的几率。不能超过 80%
@@ -226,11 +265,17 @@ focuschance=§h专注几率：§0 当受到非召唤师伤害攻击时，有几�
 
 // 固定修正
 mobdetection=§9生物探测：§0 在地图上显示附近的生物。更高的探测范围会显示更远的生物
+ignitedamage=§i点燃伤害：§0 随时间增加点燃伤害，但不影响直接命中伤害
 
 // 射弹
 lethalarrow=§h致命箭：§0 保证暴击的制导箭
-venomarrow=§b剧毒箭：§0 使敌人中毒的制导箭，在 30 秒内每秒重复其原始伤害的 10%
+venomarrow=§b剧毒箭：§0 使敌人中毒的制导箭。在 30 秒内每秒重复其原始伤害的 10%
 explosivearrow=§i爆炸箭：§0 造成同等伤害的魔法爆炸的制导箭
+iceball=§a冰球：§0 爆炸并使生物冰冻 5 秒，并完全冰冻 1 秒的魔法射弹
+fireball=§i火球术：§0 爆炸并点燃生物，在 5 秒内每秒重复其原始伤害的 20% 的魔法射弹
+
+// 召唤物
+dancingflame=§b舞动之焰：§0 像射弹一样行动的召唤物。击中时点燃敌人。在 5 秒内每秒重复其原始伤害的 20%
 
 
 [item]
@@ -295,7 +340,7 @@ classes=职业
 
 level=等级 <level>
 classlevel=<class> 等级 <level>
-lvl=等级 <level>
+lvl=等 <level>
 eachlevel=每级提供：
 experience=经验值：<exp> / <nextexp>
 totalexperience=总经验值：<exp>
@@ -313,7 +358,7 @@ activeskillsequipinstructions=点击一个插槽来装备一个主动技能。�
 noactiveskills=你没有主动技能。通过职业解锁它们
 
 activeskillcooldown=§9冷却时间：<seconds>秒
-activeskillcooldownmod=§9冷却时间：[[<seconds> <sign> <mod> x 技能等级]]秒
+activeskillcooldownmod=§9冷却时间：[[<seconds> <sign> <mod> x <skilllevel>]]秒
 requiredclasslevel=§b需要职业等级 <level>
 requiredactiveskill=§b需要“<skill>”等级 <level>
 maxlevel=§a最高等级：<level>
@@ -325,9 +370,7 @@ classlevelseparation=- 职业等级 <level> -
 
 inuse=使用中
 
-upcomingclass=§6即将推出的职业
-§9此职业目前正在开发中
-并将在未来的更新中提供
+upcomingclass=§6即将推出的职业\n§9此职业目前正在开发中\n并将在未来的更新中提供
 
 addcolumn=添加列
 removecolumn=删除列

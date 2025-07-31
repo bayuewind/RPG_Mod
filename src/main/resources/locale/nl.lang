@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% bereik van afstandswapens
 mobdetectionrange=<mod> mob detectiebereik
 focusdamage=<mod>% focusschade
 focuschance=<mod>% focuskans
+ignitedamage=<mod>% brandschade
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Uitgeput
 overlevelclassbuff=Overlevel klasse
 markedbuff=Gemarkeerd
 darkcursebuff=Donkere vloek
+magicpoisonbuff=Magisch Gif
+ignitedbuff=In Brand
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Alle schade vermindert ook de maximale gezondheid
 [mob]
 rpgmobname=[<class>] <name> lvl <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
+
+rangerwolf=Verkenner Wolf
+dancingflame=Dansende Vlam
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Roofdierenzin
 plasmagrenade=Plasmagranaat
 wolfcompanion=Wolf metgezel
 
+// Tovenaar
+arcanepower=Arcane Kracht
+manapower=Mana Kracht
+manaproficiency=Mana Vaardigheid
+firepower=Vuurkracht
+arcaneshield=Arcane Schild
+fireshield=Vuurschild
+iceshield=IJsschild
+flamingsteps=Vlammende Stappen
+stormbound=Stormgebonden
+
 
 [passivesdesc]
 
@@ -114,12 +131,18 @@ wolfcompanion=Wolf metgezel
 unleashingrage=Elk niveau biedt:\n\n+1% alle schade voor elke 10% ontbrekende gezondheid
 unleashinghaste=Elk niveau biedt:\n\n+1% bewegingssnelheid voor elke 10% ontbrekende gezondheid
 unyielding=Elk niveau biedt:\n\n+5% aanvalssnelheid en -5% inkomende schade bij minder dan 20% gezondheid
-lastbreath=In plaats van te sterven, word je §a[[3 x vaardigheidsniveau]] seconden§0 onkwetsbaar\nZodra de tijd om is, sterf je
+lastbreath=In plaats van te sterven, word je §a[[3 x <skilllevel>]] seconden§0 onkwetsbaar\nZodra de tijd om is, sterf je
 
 // Verkenner
-plasmagrenade=Elke 8 afstandsaanvallen, vuur een geleid explosief projectiel af dat §i[[30 x vaardigheidsniveau]]%§0 van de wapenschade aanricht
-wolfcompanion=Een wolf metgezel zal gemarkeerde vijanden aanvallen en §i[[spelersniveau x vaardigheidsniveau + intelligentie x vaardigheidsniveau]] oproeperschade§0 aanrichten
+plasmagrenade=Elke 8 afstandsaanvallen, vuur een geleid explosief projectiel af dat §i[[30 x <skilllevel>]]%§0 van de wapenschade aanricht
+wolfcompanion=Een wolf metgezel zal gemarkeerde vijanden aanvallen en §i[[<playerlevel> + <intelligence> x <skilllevel>]] oproeperschade§0 aanrichten
 
+// Tovenaar
+manapower=Elk niveau biedt:\n\n+1% Magische Schade voor elke 10% ongebruikte Mana
+flamingsteps=Wanneer je rent met een actieve snuisterij, laat je vlammen achter op de grond\nDe vlammen zullen vijanden 2 seconden in brand steken, waarbij ze §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische Schade§0 per seconde aanrichten
+stormbound=Elke §a[[9 - 0.5 x <skilllevel>]] seconden§0, treft een bliksemschicht een willekeurige vijand in je zicht\nRicht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan en verdooft 1 seconde
+arcaneshield=Een schild dat één klap voorkomt\nHet schild herstelt §a[[20 - <skilllevel>]] seconden§0 na gebruik
+fireshield=Een schild dat één klap voorkomt\nBij gebruik laat je een explosie los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nen mobs in brand steekt, waarbij 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden wordt herhaald\nHet schild herstelt 26 seconden na gebruik\niceshield=Een schild dat één klap voorkomt\nBij gebruik laat je een ijsaura los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nvijanden 5 seconden bevriest en ze 1 seconde volledig bevriest\nHet schild herstelt 22 seconden na gebruik
 
 [activeskills]
 empty=Leeg
@@ -136,7 +159,6 @@ parry=Pareren
 battlecry=Strijdkreet
 
 ironguard=IJzeren garde
-thornedguard=Gedoornikkelde garde
 intimidation=Intimidatie
 
 objectthrowing=Object gooien
@@ -155,41 +177,70 @@ beartrap=Berenval
 huntersinstinct=Jagersinstinct
 arrowstorm=Pijlenstorm
 
+// Tovenaar
+arcaneoverload=Arcane Overload
+firedance=Vuurdans
+iceball=IJsbal
+zap=Zap
+manarecharge=Mana Opladen
+
+teleport=Teleporteren
+inferno=Inferno
+fireenchantment=Vuur Betovering
+iceenchantment=IJs Betovering
+
+fireball=Vuurbal
+lightning=Bliksem
+
 
 [activeskillsdesc]
 
 // Krijger
-fury=Verhoog de komende 6 seconden je contactschade en aanvalssnelheid met §a[[20 x vaardigheidsniveau]]%
-recovery=Verhoogt de komende 10 seconden de gevechtsgezondheidsregeneratie aanzienlijk, waardoor §a[[20 + uithoudingsvermogen x vaardigheidsniveau]] gezondheid§0 gedurende de duur wordt hersteld
-provocation=Dwing de komende §a[[2 x vaardigheidsniveau]] seconden§0 nabije vijanden om hun aanvallen op jou te richten
-berserkercharge=Ren een korte afstand naar voren en richt §i[[10 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x snelheid x vaardigheidsniveau]] schade§0 aan alle gepasseerde vijanden\nVerbruikt 50% uithoudingsvermogen
-groundslam=Gebiedsaanval die §i[[5 x kracht]] contactschade§0 aanricht en §a[[1 x vaardigheidsniveau]] seconden§0 §9verdooft§0
-grounddestruction=Gebiedsaanval die §i[[5 x kracht x vaardigheidsniveau + 5 x spelersniveau x vaardigheidsniveau]] contactschade§0 aanricht en 2 seconden §9verdooft§0
+fury=Verhoog de komende 6 seconden je contactschade en aanvalssnelheid met §a[[20 x <skilllevel>]]%
+recovery=Verhoogt de komende 10 seconden de gevechtsgezondheidsregeneratie aanzienlijk, waardoor §a[[20 + <endurance> x <skilllevel>]] gezondheid§0 gedurende de duur wordt hersteld
+provocation=Dwing de komende §a[[2 x <skilllevel>]] seconden§0 nabije vijanden om hun aanvallen op jou te richten
+berserkercharge=Ren een korte afstand naar voren en richt §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] schade§0 aan alle gepasseerde vijanden\nVerbruikt 50% uithoudingsvermogen
+groundslam=Gebiedsaanval die §i[[5 x <strength>]] contactschade§0 aanricht en §a[[1 x <skilllevel>]] seconden§0 §9verdooft§0
+grounddestruction=Gebiedsaanval die §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] contactschade§0 aanricht en 2 seconden §9verdooft§0
 parry=Word 0,5 seconde onkwetsbaar en retourneer 500% van de oorspronkelijk ontvangen schade\nVerbruikt 100% uithoudingsvermogen
-battlecry=Verhoog de komende 10 seconden de alle schade en bewegingssnelheid van jou en nabije bondgenoten met §a[[10 x vaardigheidsniveau]]%
+battlecry=Verhoog de komende 10 seconden de alle schade en bewegingssnelheid van jou en nabije bondgenoten met §a[[10 x <skilllevel>]]%
 
-ironguard=-50% inkomende schade gedurende §a[[4 x vaardigheidsniveau]] seconden
-thornedguard=-50% inkomende schade gedurende 12 seconden\nRetourneert bovendien §a[[100 x vaardigheidsniveau]]%§0 van de oorspronkelijk ontvangen schade
-intimidation=Laat de komende §a[[vaardigheidsniveau]] seconden§0 nabije vijanden wegrennen
+ironguard=-50% inkomende schade gedurende §a[[4 x <skilllevel>]] seconden
+intimidation=Laat de komende §a[[<skilllevel>]] seconden§0 nabije vijanden wegrennen
 
-objectthrowing=Stap 1: Grijp een object voor je\nStap 2: Gooi het naar voren en richt §i[[20 x spelersniveau + 5 x kracht x vaardigheidsniveau]] contactschade§0 aan\nBeide stappen verbruiken al je uithoudingsvermogen (minstens 100%)
+objectthrowing=Stap 1: Grijp een object voor je\nStap 2: Gooi het naar voren en richt §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] contactschade§0 aan\nBeide stappen verbruiken al je uithoudingsvermogen (minstens 100%)
 
 // Verkenner
-shortdash=Voer een sprint van 100 kracht uit\nVerbruikt 15% uithoudingsvermogen
-longdash=Voer een sprint van 150 kracht uit\nVerbruikt 25% uithoudingsvermogen
-lethalshot=Schiet een §hdodelijke pijl§0 op de dichtstbijzijnde vijand en richt §i[[5 x spelersniveau + 5 x kracht x vaardigheidsniveau]] verkennersschade§0 aan
-venomshot=Schiet een §bgifpijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x intelligentie x vaardigheidsniveau]] verkennersschade§0 aan
-explosiveshot=Schiet een §iexplosieve pijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x spelersniveau + 2 x kracht x vaardigheidsniveau + 2 x intelligentie x vaardigheidsniveau]] verkennersschade§0 aan
+shortdash=Voer een 100-<strength> sprint uit\nVerbruikt 15% uithoudingsvermogen
+longdash=Voer een 150-<strength> sprint uit\nVerbruikt 25% uithoudingsvermogen
+lethalshot=Schiet een §hdodelijke pijl§0 op de dichtstbijzijnde vijand en richt §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] verkennersschade§0 aan
+venomshot=Schiet een §bgifpijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] verkennersschade§0 aan
+explosiveshot=Schiet een §iexplosieve pijl§0 op de dichtstbijzijnde vijand en richt §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] verkennersschade§0 aan
 
 shotsrampage=Zolang je minstens 1 stapel schoten razernij hebt, levert het raken van een vijand met een afstandsaanval 1 extra stapel op gedurende 5 seconden\nElke stapel schoten razernij verhoogt de aanvalssnelheid met 5%, tot een maximum van 30 stapels
-huntersmark=§hMarkeer§0 de nabije vijand met de hoogste gezondheid gedurende 10 seconden\nAls je een gemarkeerd doelwit doodt, krijg je gedurende 5 seconden §a+[[20 x vaardigheidsniveau]]%§0 afstandsaanvalssnelheid en bewegingssnelheid
-beartrap=Plaats een berenval op de grond die verdwijnt als hij wordt geactiveerd of na 20 seconden\nAls een vijand hem activeert, loopt hij §i[[10 x spelersniveau]] schade§0 op en zit hij 5 seconden vast
+huntersmark=§hMarkeer§0 de nabije vijand met de hoogste gezondheid gedurende 10 seconden\nAls je een gemarkeerd doelwit doodt, krijg je gedurende 5 seconden §a+[[20 x <skilllevel>]]%§0 afstandsaanvalssnelheid en bewegingssnelheid
+beartrap=Plaats een berenval op de grond die verdwijnt als hij wordt geactiveerd of na 20 seconden\nAls een vijand hem activeert, loopt hij §i[[10 x <playerlevel>]] schade§0 op en zit hij 5 seconden vast
 
-huntersinstinct=Verhoog de komende 12 seconden je §7ontwijkkans§0 met §a[[10 x vaardigheidsniveau]]%\n§hMarkeer§0 gedurende 5 seconden de vijanden die je ontwijkt
-arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i[[2 x spelersniveau + kracht x vaardigheidsniveau + snelheid x vaardigheidsniveau]] verkennersschade§0 aan
+huntersinstinct=Verhoog de komende 12 seconden je §7ontwijkkans§0 met §a[[10 x <skilllevel>]]%\n§hMarkeer§0 gedurende 5 seconden de vijanden die je ontwijkt
+arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] verkennersschade§0 aan
+
+// Tovenaar
+arcaneoverload=Verhoogt, terwijl actief, je Magische Aanvalssnelheid met §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEindigt wanneer je mana op is, of als het opnieuw wordt gebruikt\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana per seconde
+manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen\nEindigt wanneer opnieuw gebruikt
+firedance=Roept 4 §bDansende Vlammen§0 op, die elk §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanrichten\nRoept elke 5 seconden een nieuwe op\nAlle oproepen verdwijnen 20 seconden nadat de vaardigheid is geactiveerd\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Gooi een §aIJsbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[50 + 10 x <skilllevel>]] Mana
+zap=Start een zap die 2 seconden tussen mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht en 1 seconde verdooft\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana
+
+teleport=Teleporteert je voor je\nVerbruikt 10 Mana
+inferno=Steek alle nabije vijanden in brand, die gedurende 10 seconden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Vuurschade§0 per seconde aanrichten\nVerbruikt §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=De komende 10 seconden steken aanvallen van jou en nabije bondgenoten vijanden in brand, die gedurende 5 seconden §a[[5 x <skilllevel>]]%§0 van de schade per seconde aanrichten\nVerbruikt §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=De komende 10 seconden bevriezen aanvallen van jou en nabije bondgenoten vijanden gedurende §a[[2 x <skilllevel>]] seconden§0\nVerbruikt 20 Mana
+
+fireball=Gooi een §iVuurbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Start een bliksem die 1 seconde tussen mobs springt, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht en 2 seconden verdooft\nKan hetzelfde doelwit niet meerdere keren raken\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Vaardigheidsniveau
 playerlevel=Spelersniveau
 endurance=Uithoudingsvermogen
@@ -200,8 +251,12 @@ grace=Gratie
 
 
 [extraskilldesc]
+// Basisprincipes
+manausage=Als je niet genoeg mana hebt, wordt de afkoeltijd verdubbeld
+setmax=Negatieve effecten worden als maximaal ingesteld en kunnen niet worden verwijderd door andere buffs
+
 // Buffs
-marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\nAlle geleide en/of op de dichtstbijzijnde vijand afgevuurde projectielen geven voorrang aan gemarkeerde vijanden
+marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\n"Dichtstbijzijnde vijand" geeft voorrang aan gemarkeerde vijanden
 
 // Kansenmodificatoren
 dodgechance=§7Ontwijkkans:§0 Kans om inkomende aanvallen te ontwijken. Kan niet hoger zijn dan 80%
@@ -209,11 +264,17 @@ focuschance=§hFocuskans:§0 Kans om een mob 5 seconden te §hmarkeren§0 wannee
 
 // Vlakke modificatoren
 mobdetection=§9Mobdetectie:§0 Toont nabije mobs op de kaart. Een hoger detectiebereik onthult mobs van verder weg
+ignitedamage=§iBrandschade:§0 Verhoogt brandschade na verloop van tijd, maar heeft geen invloed op directe trefferschade
 
 // Projectielen
 lethalarrow=§hDodelijke pijl:§0 Geleide pijl die een kritieke treffer garandeert
-venomarrow=§bGifpijl:§0 Geleide pijl die vijanden vergiftigt en gedurende 30 seconden 10% van de oorspronkelijke schade per seconde herhaalt
+venomarrow=§bGifpijl:§0 Geleide pijl die vijanden vergiftigt. Herhaalt 10% van de oorspronkelijke schade per seconde gedurende 30 seconden
 explosivearrow=§iExplosieve pijl:§0 Geleide pijl die een magische explosie met gelijke schade veroorzaakt
+iceball=§aIJsbal:§0 Magisch projectiel dat explodeert en mobs 5 seconden bevriest, en ze ook 1 seconde volledig bevriest
+fireball=§iVuurbal:§0 Magisch projectiel dat explodeert en mobs in brand steekt en 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden herhaalt
+
+// Oproepen
+dancingflame=§bDansende Vlam:§0 Oproep die fungeert als een projectiel. Steekt vijanden in brand bij een treffer. Herhaalt 20% van de oorspronkelijke schade per seconde gedurende 5 seconden
 
 
 [item]
@@ -296,7 +357,7 @@ activeskillsequipinstructions=Klik op een slot om een actieve vaardigheid uit te
 noactiveskills=Je hebt geen actieve vaardigheden. Ontgrendel ze via de klassen
 
 activeskillcooldown=§9Afkoeltijd: <seconds>s
-activeskillcooldownmod=§9Afkoeltijd: [[<seconds> <sign> <mod> x vaardigheidsniveau]]s
+activeskillcooldownmod=§9Afkoeltijd: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bKlasseniveau <level> vereist
 requiredactiveskill=§bVereist '<skill>' niveau <level>
 maxlevel=§aMaximaal niveau: <level>

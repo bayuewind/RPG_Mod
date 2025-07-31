@@ -6,8 +6,8 @@ import necesse.gfx.forms.components.FormButton;
 import necesse.gfx.gameTooltips.GameTooltipManager;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.TooltipLocation;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.containers.rpgmenu.BorderFormGameBackground;
+import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 
 import java.awt.*;
 import java.util.ArrayList;

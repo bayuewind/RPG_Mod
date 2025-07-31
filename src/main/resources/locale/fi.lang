@@ -16,6 +16,7 @@ rangedweaponsrange=<mod>% etäaseiden kantama
 mobdetectionrange=<mod> mobien havaitsemisalue
 focusdamage=<mod>% keskittymisvaurio
 focuschance=<mod>% keskittymismahdollisuus
+ignitedamage=<mod>% sytytysvahinko
 
 
 [enchantment]
@@ -30,6 +31,8 @@ depleted=Ehtynyt
 overlevelclassbuff=Ylitasoluokka
 markedbuff=Merkitty
 darkcursebuff=Pimeä kirous
+magicpoisonbuff=Taikamyrkky
+ignitedbuff=Sytytetty
 
 
 [buffdesc]
@@ -42,6 +45,9 @@ darkcursebuff2=Kaikki vahinko vähentää myös enimmäisterveyttä
 [mob]
 rpgmobname=[<class>] <name> taso <level>
 rpgmobnamecolor=§<color>[<class>]§0 <name> §9taso <level>§0
+
+rangerwolf=Metsänvartijan susi
+dancingflame=Tanssiva liekki
 
 
 [mobclass]
@@ -107,6 +113,17 @@ predatorsense=Saalistajan aisti
 plasmagrenade=Plasmakranaatti
 wolfcompanion=Susi-kumppani
 
+// Velho
+arcanepower=Salaperäinen voima
+manapower=Manan voima
+manaproficiency=Manan taito
+firepower=Tulivoima
+arcaneshield=Salaperäinen kilpi
+fireshield=Tulikilpi
+iceshield=Jääkilpi
+flamingsteps=Liekkiaskeleet
+stormbound=Myrskyn sitoma
+
 
 [passivesdesc]
 
@@ -114,11 +131,18 @@ wolfcompanion=Susi-kumppani
 unleashingrage=Jokainen taso antaa:\n\n+1% kaikkea vahinkoa jokaista 10% puuttuvaa terveyttä kohden
 unleashinghaste=Jokainen taso antaa:\n\n+1% liikkumisnopeutta jokaista 10% puuttuvaa terveyttä kohden
 unyielding=Jokainen taso antaa:\n\n+5% hyökkäysnopeutta ja -5% saapuvaa vahinkoa alle 20% terveydellä
-lastbreath=Sen sijaan, että kuolisit, tulet haavoittumattomaksi §a[[3 x taitotaso]] sekunniksi§0\nKun aika loppuu, kuolet
+lastbreath=Sen sijaan, että kuolisit, tulet haavoittumattomaksi §a[[3 x <skilllevel>]] sekunniksi§0\nKun aika loppuu, kuolet
 
 // Metsänvartija
-plasmagrenade=Joka 8. etähyökkäys ampuu ohjatun räjähtävän ammuksen, joka tekee §i[[30 x taitotaso]]%§0 aseen vahingosta\nwolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden §i[[pelaajan taso x taitotaso + älykkyys x taitotaso]] kutsujan vahinkoa§0
+plasmagrenade=Joka 8. etähyökkäys ampuu ohjatun räjähtävän ammuksen, joka tekee §i[[30 x <skilllevel>]]%§0 aseen vahingosta\nwolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] kutsujan vahinkoa§0
 
+// Velho
+manapower=Jokainen taso antaa:\n\n+1% taikavahinkoa jokaista 10% käyttämätöntä manaa kohden
+flamingsteps=Kun juokset aktiivisen helyen kanssa, jätät maahan liekkejä\nLiekit sytyttävät viholliset tuleen 2 sekunniksi, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 sekunnissa
+stormbound=Joka §a[[9 - 0.5 x <skilllevel>]] sekunti§0, salama iskee satunnaiseen viholliseen näkökentässäsi\nTekee §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaa 1 sekunniksi
+arcaneshield=Kilpi, joka estää yhden osuman\nKilpi palautuu §a[[20 - <skilllevel>]] sekunnin§0 kuluttua käytöstä
+fireshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat räjähdyksen, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nja sytyttää mobit tuleen, toistaen 20% niiden alkuperäisestä vahingosta sekunnissa 5 sekunnin ajan\nKilpi palautuu 26 sekunnin kuluttua käytöstä
+iceshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat jää-auran, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\njäädyttäen mobit 5 sekunniksi ja jäädyttäen ne kokonaan 1 sekunniksi\nKilpi palautuu 22 sekunnin kuluttua käytöstä
 
 [activeskills]
 empty=Tyhjä
@@ -135,7 +159,6 @@ parry=Torjunta
 battlecry=Sotahuuto
 
 ironguard=Rautavartio
-thornedguard=Piikkivartio
 intimidation=Pelottelu
 
 objectthrowing=Esineen heittäminen
@@ -154,41 +177,70 @@ beartrap=Karhunrauta
 huntersinstinct=Metsästäjän vaisto
 arrowstorm=Nuolimyrsky
 
+// Velho
+arcaneoverload=Salaperäinen ylikuormitus
+firedance=Tulitanssi
+iceball=Jääpallo
+zap=Sähköisku
+manarecharge=Manan lataus
+
+teleport=Teleportaatio
+inferno=Inferno
+fireenchantment=Tulen lumous
+iceenchantment=Jään lumous
+
+fireball=Tulipallo
+lightning=Salama
+
 
 [activeskillsdesc]
 
 // Soturi
-fury=Seuraavien 6 sekunnin ajan lisää lähitaisteluvahinkoasi ja hyökkäysnopeuttaasi §a[[20 x taitotaso]]%§0
-recovery=Seuraavien 10 sekunnin ajan tehostaa huomattavasti taisteluterveyden palautumista ja palauttaa §a[[20 + kestävyys x taitotaso]] terveyttä§0 keston aikana
-provocation=Pakota seuraavien §a[[2 x taitotaso]] sekunnin§0 ajan lähellä olevat viholliset keskittämään hyökkäyksensä sinuun
-berserkercharge=Ryntää eteenpäin lyhyen matkan ja tee §i[[10 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x nopeus x taitotaso]] vahinkoa§0 kaikille ohittamillesi vihollisille\nKuluttaa 50% kestävyydestä
-groundslam=Aluehyökkäys, joka tekee §i[[5 x voimakkuus]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 §a[[1 x taitotaso]] sekunniksi§0
-grounddestruction=Aluehyökkäys, joka tekee §i[[5 x voimakkuus x taitotaso + 5 x pelaajan taso x taitotaso]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 2 sekunniksi
+fury=Seuraavien 6 sekunnin ajan lisää lähitaisteluvahinkoasi ja hyökkäysnopeuttaasi §a[[20 x <skilllevel>]]%§0
+recovery=Seuraavien 10 sekunnin ajan tehostaa huomattavasti taisteluterveyden palautumista ja palauttaa §a[[20 + <endurance> x <skilllevel>]] terveyttä§0 keston aikana
+provocation=Pakota seuraavien §a[[2 x <skilllevel>]] sekunnin§0 ajan lähellä olevat viholliset keskittämään hyökkäyksensä sinuun
+berserkercharge=Ryntää eteenpäin lyhyen matkan ja tee §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] vahinkoa§0 kaikille ohittamillesi vihollisille\nKuluttaa 50% kestävyydestä
+groundslam=Aluehyökkäys, joka tekee §i[[5 x <strength>]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 §a[[1 x <skilllevel>]] sekunniksi§0
+grounddestruction=Aluehyökkäys, joka tekee §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 2 sekunniksi
 parry=Tule haavoittumattomaksi 0,5 sekunniksi ja palauta 500% alkuperäisestä saadusta vahingosta\nKuluttaa 100% kestävyydestä
-battlecry=Seuraavien 10 sekunnin ajan lisää sinun ja lähellä olevien liittolaisten kaikkea vahinkoa ja liikkumisnopeutta §a[[10 x taitotaso]]%§0
+battlecry=Seuraavien 10 sekunnin ajan lisää sinun ja lähellä olevien liittolaisten kaikkea vahinkoa ja liikkumisnopeutta §a[[10 x <skilllevel>]]%§0
 
-ironguard=-50% saapuvaa vahinkoa §a[[4 x taitotaso]] sekunnin ajan
-thornedguard=-50% saapuvaa vahinkoa 12 sekunnin ajan\nLisäksi palauttaa §a[[100 x taitotaso]]%§0 alkuperäisestä saadusta vahingosta
-intimidation=Seuraavien §a[[taitotaso]] sekunnin§0 ajan saa lähellä olevat viholliset pakenemaan
+ironguard=-50% saapuvaa vahinkoa §a[[4 x <skilllevel>]] sekunnin ajan
+intimidation=Seuraavien §a[[<skilllevel>]] sekunnin§0 ajan saa lähellä olevat viholliset pakenemaan
 
-objectthrowing=Vaihe 1: Tartu edessäsi olevaan esineeseen\nVaihe 2: Heitä se eteenpäin tehden §i[[20 x pelaajan taso + 5 x voimakkuus x taitotaso]] lähitaisteluvahinkoa§0\nMolemmat vaiheet kuluttavat kaiken kestävyytesi (vähintään 100%)
+objectthrowing=Vaihe 1: Tartu edessäsi olevaan esineeseen\nVaihe 2: Heitä se eteenpäin tehden §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0\nMolemmat vaiheet kuluttavat kaiken kestävyytesi (vähintään 100%)
 
 // Metsänvartija
-shortdash=Suorita 100 voimakkuuden syöksy\nKuluttaa 15% kestävyydestä
-longdash=Suorita 150 voimakkuuden syöksy\nKuluttaa 25% kestävyydestä
-lethalshot=Ammu §htappava nuoli§0 lähimpään viholliseen tehden §i[[5 x pelaajan taso + 5 x voimakkuus x taitotaso]] metsänvartijan vahinkoa§0
-venomshot=Ammu §bmyrkkynuoli§0 lähimpään viholliseen tehden §i[[4 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x älykkyys x taitotaso]] metsänvartijan vahinkoa§0
-explosiveshot=Ammu §iräjähtävä nuoli§0 lähimpään viholliseen tehden §i[[4 x pelaajan taso + 2 x voimakkuus x taitotaso + 2 x älykkyys x taitotaso]] metsänvartijan vahinkoa§0
+shortdash=Suorita 100-<strength> syöksy\nKuluttaa 15% kestävyydestä
+longdash=Suorita 150-<strength> syöksy\nKuluttaa 25% kestävyydestä
+lethalshot=Ammu §htappava nuoli§0 lähimpään viholliseen tehden §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] metsänvartijan vahinkoa§0
+venomshot=Ammu §bmyrkkynuoli§0 lähimpään viholliseen tehden §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] metsänvartijan vahinkoa§0
+explosiveshot=Ammu §iräjähtävä nuoli§0 lähimpään viholliseen tehden §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] metsänvartijan vahinkoa§0
 
 shotsrampage=Kun sinulla on vähintään 1 pino Laukausten riehuntaa, vihollisen osuminen etähyökkäyksellä antaa 1 lisäpinon 5 sekunniksi\nJokainen Laukausten riehunnan pino lisää hyökkäysnopeutta 5%, enintään 30 pinoon asti
-huntersmark=§hMerkitse§0 lähin vihollinen, jolla on eniten terveyttä, 10 sekunniksi\nJos tapat merkityn kohteen, saat §a+[[20 x taitotaso]]%§0 etähyökkäysnopeutta ja liikkumisnopeutta 5 sekunniksi
-beartrap=Aseta maahan karhunrauta, joka katoaa, jos se laukeaa tai 20 sekunnin kuluttua\nJos vihollinen laukaisee sen, hän saa §i[[10 x pelaajan taso]] vahinkoa§0 ja jää ansaan 5 sekunniksi
+huntersmark=§hMerkitse§0 lähin vihollinen, jolla on eniten terveyttä, 10 sekunniksi\nJos tapat merkityn kohteen, saat §a+[[20 x <skilllevel>]]%§0 etähyökkäysnopeutta ja liikkumisnopeutta 5 sekunniksi
+beartrap=Aseta maahan karhunrauta, joka katoaa, jos se laukeaa tai 20 sekunnin kuluttua\nJos vihollinen laukaisee sen, hän saa §i[[10 x <playerlevel>]] vahinkoa§0 ja jää ansaan 5 sekunniksi
 
-huntersinstinct=Seuraavien 12 sekunnin ajan lisää §7väistömahdollisuuttasi§0 §a[[10 x taitotaso]]%§0\n§hMerkitse§0 5 sekunniksi viholliset, jotka väistät
-arrowstorm=Ammu perusnuoli jokaiseen lähellä olevaan viholliseen tehden §i[[2 x pelaajan taso + voimakkuus x taitotaso + nopeus x taitotaso]] metsänvartijan vahinkoa§0 kullakin nuolella
+huntersinstinct=Seuraavien 12 sekunnin ajan lisää §7väistömahdollisuuttasi§0 §a[[10 x <skilllevel>]]%§0\n§hMerkitse§0 5 sekunniksi viholliset, jotka väistät
+arrowstorm=Ammu perusnuoli jokaiseen lähellä olevaan viholliseen tehden §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] metsänvartijan vahinkoa§0 kullakin nuolella
+
+// Velho
+arcaneoverload=Aktiivisena ollessaan lisää taikahyökkäysnopeutta §a[[30 x <skilllevel>]]%§0, mutta et voi liikkua\nLoppuu, kun mana loppuu tai jos sitä käytetään uudelleen\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa sekunnissa
+manarecharge=Aktiivisena ollessaan lisää manan palautumista +1 ja §a[[50 x <skilllevel>]]%§0, mutta olet halvaantunut ja saat kaksinkertaista vahinkoa\nLoppuu, kun sitä käytetään uudelleen
+firedance=Kutsuu 4 §bTanssivaa liekkiä§0, joista kukin tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nKutsuu uuden 5 sekunnin välein\nKaikki kutsut katoavat 20 sekunnin kuluttua kyvyn aktivoinnista\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
+iceball=Heitä §aJääpallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[50 + 10 x <skilllevel>]] manaa
+zap=Aloita sähköisku, joka hyppii mobien välillä 2 sekunnin ajan, tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 1 sekunniksi\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa
+
+teleport=Teleporttaa eteesi\nKuluttaa 10 manaa
+inferno=Sytytä kaikki lähellä olevat viholliset tuleen, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] tulivahinkoa§0 sekunnissa 10 sekunnin ajan\nKuluttaa §a[[40 + 8 x <skilllevel>]] manaa
+fireenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolaisten hyökkäykset sytyttävät viholliset tuleen, tehden §a[[5 x <skilllevel>]]%§0 vahingosta sekunnissa 5 sekunnin ajan\nKuluttaa §a[[20 + 4 x <skilllevel>]] manaa
+iceenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolaisten hyökkäykset jäädyttävät viholliset §a[[2 x <skilllevel>]] sekunniksi§0\nKuluttaa 20 manaa
+
+fireball=Heitä §iTulipallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[80 + 16 x <skilllevel>]] manaa
+lightning=Aloita salama, joka hyppii mobien välillä 1 sekunnin ajan, tehden §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 2 sekunniksi\nEi voi osua samaan kohteeseen useita kertoja\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
+
 
 [skillsdesckeys]
-x=x
 skilllevel=Taitotaso
 playerlevel=Pelaajan taso
 endurance=Kestävyys
@@ -199,8 +251,12 @@ grace=Sulo
 
 
 [extraskilldesc]
+// Perusmekaniikat
+manausage=Jos sinulla ei ole tarpeeksi manaa, sen jäähtymisaika kaksinkertaistuu
+setmax=Negatiiviset vaikutukset asetetaan maksimiin, eikä niitä voi poistaa muilla buffeilla
+
 // Buffit
-marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\nKaikki ohjatut ja/tai lähimpään viholliseen ammutut ammukset priorisoivat merkittyjä vihollisia
+marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\n"Lähin vihollinen" priorisoi merkittyjä vihollisia
 
 // Mahdollisuusmuuntimet
 dodgechance=§7Väistömahdollisuus:§0 Mahdollisuus väistää saapuvia hyökkäyksiä. Ei voi ylittää 80%
@@ -208,11 +264,17 @@ focuschance=§hKeskittymismahdollisuus:§0 Mahdollisuus §hmerkitä§0 mobi 5 se
 
 // Tasaiset muuntimet
 mobdetection=§9Mobien havaitseminen:§0 Näyttää lähellä olevat mobit kartalla. Suurempi havaitsemisalue paljastaa mobit kauempaa
+ignitedamage=§iSytytysvahinko:§0 Lisää sytytysvahinkoa ajan myötä, mutta ei vaikuta suoraan osumavahinkoon
 
 // Ammukset
 lethalarrow=§hTappava nuoli:§0 Ohjattu nuoli, joka antaa kriittisen osuman
-venomarrow=§bMyrkkynuoli:§0 Ohjattu nuoli, joka myrkyttää vihollisia ja toistaa 10% alkuperäisestä vahingostaan sekunnissa 30 sekunnin ajan
+venomarrow=§bMyrkkynuoli:§0 Ohjattu nuoli, joka myrkyttää vihollisia. Toistaa 10% alkuperäisestä vahingostaan sekunnissa 30 sekunnin ajan
 explosivearrow=§iRäjähtävä nuoli:§0 Ohjattu nuoli, joka aiheuttaa samanvahinkoisen maagisen räjähdyksen
+iceball=§aJääpallo:§0 Maaginen ammus, joka räjähtää ja jäädyttää mobit 5 sekunniksi ja jäädyttää ne myös kokonaan 1 sekunniksi
+fireball=§iTulipallo:§0 Maaginen ammus, joka räjähtää ja sytyttää mobit tuleen toistaen 20% niiden alkuperäisestä vahingosta sekunnissa 5 sekunnin ajan
+
+// Kutsut
+dancingflame=§bTanssiva liekki:§0 Kutsu, joka toimii kuin ammus. Sytyttää viholliset tuleen osuessaan. Toistaa 20% alkuperäisestä vahingostaan sekunnissa 5 sekunnin ajan
 
 
 [item]
@@ -277,7 +339,7 @@ classes=Luokat
 
 level=Taso <level>
 classlevel=<class> taso <level>
-lvl=Taso <level>
+lvl=T <level>
 eachlevel=Jokainen taso antaa:
 experience=XP: <exp> / <nextexp>
 totalexperience=Kokonais-XP: <exp>
@@ -295,7 +357,7 @@ activeskillsequipinstructions=Napsauta paikkaa varustaaksesi aktiivisen taidon. 
 noactiveskills=Sinulla ei ole aktiivisia taitoja. Avaa ne luokkien kautta
 
 activeskillcooldown=§9Jäähtymisaika: <seconds>s
-activeskillcooldownmod=§9Jäähtymisaika: [[<seconds> <sign> <mod> x taitotaso]]s
+activeskillcooldownmod=§9Jäähtymisaika: [[<seconds> <sign> <mod> x <skilllevel>]]s
 requiredclasslevel=§bLuokkataso <level> vaaditaan
 requiredactiveskill=§bVaatii '<skill>' tason <level>
 maxlevel=§aMaksimitaso: <level>

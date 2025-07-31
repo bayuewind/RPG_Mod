@@ -1,6 +1,5 @@
 package rpgclasses.projectiles;
 
-import aphorea.utils.AphDistances;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
@@ -20,16 +19,16 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
-import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.RPGUtils;
 
 import java.awt.*;
 import java.util.List;
 
-public class PlasmaGrenade extends FollowingProjectile {
-    public PlasmaGrenade() {
+public class PlasmaGrenadeProjectile extends FollowingProjectile {
+    public PlasmaGrenadeProjectile() {
     }
 
-    public PlasmaGrenade(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
+    public PlasmaGrenadeProjectile(Level level, Mob owner, float x, float y, float targetX, float targetY, float speed, int distance, GameDamage damage, int knockback) {
         this.setLevel(level);
         this.setOwner(owner);
         this.x = x;
@@ -69,14 +68,7 @@ public class PlasmaGrenade extends FollowingProjectile {
     @Override
     public void updateTarget() {
         if (this.traveledDistance > 50F) {
-            target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance),
-                    m -> MarkedBuff.isMarked((PlayerMob) getOwner(), m)
-            );
-            if (target == null) target = AphDistances.findClosestMob(getLevel(), x, y,
-                    (int) (distance - traveledDistance + 100),
-                    m -> m.canBeTargeted(getOwner(), ((PlayerMob) getOwner()).getNetworkClient())
-            );
+            target = RPGUtils.findBestTarget(getOwner(), 1000);
         }
     }
 
@@ -103,6 +95,7 @@ public class PlasmaGrenade extends FollowingProjectile {
             this(0.0F, 0.0F, 50, new GameDamage(0), 0, null);
             this.destroysObjects = false;
             this.destroysTiles = false;
+            this.hitsOwner = false;
         }
 
         public PlasmaGrenadeExplosionLevelEvent(float x, float y, int range, GameDamage damage, int toolTier, Mob owner) {
@@ -111,17 +104,21 @@ public class PlasmaGrenade extends FollowingProjectile {
             this.targetRangeMod = 0.0F;
             this.destroysObjects = false;
             this.destroysTiles = false;
+            this.hitsOwner = false;
         }
 
+        @Override
         protected void playExplosionEffects() {
             SoundManager.playSound(GameResources.explosionLight, SoundEffect.effect(this.x, this.y).volume(0.8F).pitch(1F));
             this.level.getClient().startCameraShake(this.x, this.y, 100, 40, 0.5F, 0.5F, true);
         }
 
+        @Override
         public float getParticleCount(float currentRange, float lastRange) {
             return super.getParticleCount(currentRange, lastRange) * 1.5F;
         }
 
+        @Override
         public void spawnExplosionParticle(float x, float y, float dirX, float dirY, int lifeTime, float range) {
             if (this.particleBuffer < 10) {
                 ++this.particleBuffer;
@@ -141,7 +138,7 @@ public class PlasmaGrenade extends FollowingProjectile {
 
         @Override
         protected boolean canHitMob(Mob target) {
-            return target.canBeTargeted(ownerMob, ((PlayerMob) ownerMob).getNetworkClient());
+            return target.canTakeDamage() && target.canBeTargeted(ownerMob, ((PlayerMob) ownerMob).getNetworkClient());
         }
     }
 

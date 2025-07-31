@@ -82,4 +82,5 @@ public class RPGMod {
         RPGResources.initResources();
 
     }
+
 }

@@ -9,7 +9,17 @@ public class FloatModifierBuff extends ModifierBuff<Float> {
     }
 
     public String getTooltip() {
-        return Localization.translate("buffmodifiers", getLocalizationString(), "mod", (value > 0 ? "+" : "") + value);
+        return Localization.translate("buffmodifiers", getLocalizationString(), "mod", getNumber());
+    }
+
+    public String getNumber() {
+        String sign = (value > 0 ? "+" : "");
+
+        String valueString = (value == Math.floor(value))
+                ? String.format("%.0f", value)
+                : String.format("%.2f", value).replaceAll("\\.?0+$", "");
+
+        return sign + valueString;
     }
 
     @Override

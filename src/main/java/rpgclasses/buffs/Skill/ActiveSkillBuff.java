@@ -17,11 +17,10 @@ public class ActiveSkillBuff extends SkillBuff {
     public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
     }
 
-
     @Override
     public void loadTextures() {
         try {
-            this.iconTexture = GameTexture.fromFileRaw("ui/activeskills/" + activeSkillID());
+            this.iconTexture = GameTexture.fromFileRaw("ui/activeskills/" + skillID());
         } catch (FileNotFoundException var2) {
             this.iconTexture = GameTexture.fromFile("buffs/positive");
         }
@@ -29,10 +28,30 @@ public class ActiveSkillBuff extends SkillBuff {
 
     @Override
     public void updateLocalDisplayName() {
-        this.displayName = new LocalMessage("activeskills", activeSkillID());
+        this.displayName = new LocalMessage("activeskills", skillID());
     }
 
-    public String activeSkillID() {
+    public String skillID() {
         return this.getStringID().replace("activeskillbuff", "");
+    }
+
+    public int getEndurance(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getInt("endurance");
+    }
+
+    public int getSpeed(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getInt("speed");
+    }
+
+    public int getStrength(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getInt("strength");
+    }
+
+    public int getIntelligence(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getInt("intelligence");
+    }
+
+    public int getGrace(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getInt("grace");
     }
 }

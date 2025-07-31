@@ -1,7 +1,6 @@
 package rpgclasses.registry;
 
 import necesse.engine.registries.ContainerRegistry;
-import necesse.gfx.forms.presets.containerComponent.item.ItemInventoryContainerForm;
 import necesse.inventory.container.item.ItemInventoryContainer;
 import rpgclasses.containers.customiteminventory.CustomItemInventoryForm;
 import rpgclasses.containers.rpgmenu.MenuContainer;

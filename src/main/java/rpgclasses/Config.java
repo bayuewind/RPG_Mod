@@ -237,7 +237,7 @@ public class Config {
         }
 
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(Files.newOutputStream(file.toPath()), StandardCharsets.UTF_8))) {
-            writer.write("# v0.1.0");
+            writer.write("# v0.2.0");
             writer.write("\n# ↑↑↑ DO NOT MODIFY unless: To prevent auto-updates when this file becomes obsolete, change the first version line to \"# no-update\"");
 
             writer.write("\n\n######################");
