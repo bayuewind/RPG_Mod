@@ -1,5 +1,5 @@
 # RPG Mod
-This is the code for the RPG Mod!
+This is the code for RPG Mod!
 
 All code was created by Save by modifying and expanding the original game files. Of course, a large part of the code still belongs to the original game. You are free to use this code for learning purposes or for creating Necesse-related content
 

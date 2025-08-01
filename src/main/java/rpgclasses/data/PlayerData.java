@@ -54,7 +54,7 @@ public class PlayerData {
         }
     }
 
-    public void loadData(LoadData loadData) {
+    public void loadData(PlayerMob player, LoadData loadData) {
         loadData(
                 loadData.getInt(expDataName, 0),
                 loadData.getInt(resetsDataName, 0)
@@ -62,7 +62,7 @@ public class PlayerData {
         loadDataAttributes(loadData);
         loadDataClasses(loadData);
         loadDataClassesData(classLevels, loadData);
-        loadDataEquippedActiveSkills(loadData);
+        loadDataEquippedActiveSkills(player, loadData);
         loadDataMisc(loadData);
     }
 
@@ -109,10 +109,10 @@ public class PlayerData {
         }
     }
 
-    public void loadDataEquippedActiveSkills(LoadData loadData) {
+    public void loadDataEquippedActiveSkills(PlayerMob player, LoadData loadData) {
         equippedActiveSkills = new EquippedActiveSkill[4];
         for (int i = 0; i < 4; i++) {
-            equippedActiveSkills[i] = EquippedActiveSkill.loadData(loadData, i);
+            equippedActiveSkills[i] = EquippedActiveSkill.loadData(player, loadData, i);
         }
     }
 

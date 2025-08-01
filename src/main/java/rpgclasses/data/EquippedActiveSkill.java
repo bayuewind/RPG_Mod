@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import rpgclasses.RPGResources;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimplePassiveBuffActiveSkill;
 import rpgclasses.packets.ActiveAbilityRunPacket;
 
 import java.awt.*;
@@ -56,7 +57,7 @@ public class EquippedActiveSkill {
         saveData.addLong(dataKeyPrefix + "lastUse", lastUse);
     }
 
-    public static EquippedActiveSkill loadData(LoadData loadData, int position) {
+    public static EquippedActiveSkill loadData(PlayerMob player, LoadData loadData, int position) {
         String dataKeyPrefix = PlayerData.equippedActiveSkillsDataName + position + "_";
 
         int classID = loadData.getInt(dataKeyPrefix + "class", -1);
@@ -64,7 +65,12 @@ public class EquippedActiveSkill {
         long lastUse = loadData.getLong(dataKeyPrefix + "lastUse", 0);
 
         EquippedActiveSkill equippedActiveSkill = new EquippedActiveSkill(classID, activeSkillID);
-        equippedActiveSkill.lastUse = lastUse;
+
+        if(lastUse == -100 && equippedActiveSkill.activeSkill instanceof SimplePassiveBuffActiveSkill) {
+            equippedActiveSkill.lastUse = player.getTime();
+        } else {
+            equippedActiveSkill.lastUse = lastUse;
+        }
 
         return equippedActiveSkill;
     }
