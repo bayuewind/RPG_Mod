@@ -75,7 +75,7 @@ public class RangerPlayerClass extends PlayerClass {
         ));
         skillsList.addSkill(new BasicPassive(
                 "energy", "#ffff00", 10, 0,
-                new FloatPercentModifierBuff(BuffModifiers.STAMINA_CAPACITY, 0.2F, false)
+                new FloatPercentModifierBuff(BuffModifiers.STAMINA_CAPACITY, 0.2F)
         ));
 
         skillsList.addSkill(new BasicPassive(
