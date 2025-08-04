@@ -6,7 +6,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import rpgclasses.data.MobData;
-import rpgclasses.levelevents.GlacialMobExplosionEvent;
+import rpgclasses.levelevents.Mobs.GlacialMobExplosionEvent;
 
 import java.awt.*;
 import java.util.HashMap;

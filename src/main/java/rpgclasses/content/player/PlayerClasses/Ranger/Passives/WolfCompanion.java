@@ -7,7 +7,7 @@ import necesse.entity.mobs.itemAttacker.FollowPosition;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
-import rpgclasses.mobs.summons.pasivesummon.PassiveSummonedMob;
+import rpgclasses.mobs.summons.passive.PassiveFollowingMob;
 
 public class WolfCompanion extends SimpleBuffPassive {
 
@@ -35,9 +35,9 @@ public class WolfCompanion extends SimpleBuffPassive {
             if (activeBuff.owner.isPlayer) {
                 PlayerMob player = (PlayerMob) activeBuff.owner;
                 if (player.serverFollowersManager.getFollowerCount(buffStringID) == 0) {
-                    PassiveSummonedMob mob = (PassiveSummonedMob) MobRegistry.getMob("rangerwolf", activeBuff.owner.getLevel());
+                    PassiveFollowingMob mob = (PassiveFollowingMob) MobRegistry.getMob("rangerwolf", activeBuff.owner.getLevel());
                     player.serverFollowersManager.addFollower(buffStringID, mob, FollowPosition.WALK_CLOSE, buffStringID, 1, 1, null, true);
-                    mob.setPassive(passive);
+                    mob.setSkill(passive);
                     mob.getLevel().entityManager.addMob(mob, activeBuff.owner.x, activeBuff.owner.y);
                 }
             }

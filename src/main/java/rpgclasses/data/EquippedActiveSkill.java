@@ -66,7 +66,7 @@ public class EquippedActiveSkill {
 
         EquippedActiveSkill equippedActiveSkill = new EquippedActiveSkill(classID, activeSkillID);
 
-        if(lastUse == -100 && equippedActiveSkill.activeSkill instanceof SimplePassiveBuffActiveSkill) {
+        if (lastUse == -100 && equippedActiveSkill.activeSkill instanceof SimplePassiveBuffActiveSkill) {
             equippedActiveSkill.lastUse = player.getTime();
         } else {
             equippedActiveSkill.lastUse = lastUse;

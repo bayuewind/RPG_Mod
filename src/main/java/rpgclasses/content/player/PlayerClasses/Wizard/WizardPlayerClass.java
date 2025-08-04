@@ -65,7 +65,7 @@ public class WizardPlayerClass extends PlayerClass {
 
         skillsList.addSkill(new BasicPassive(
                 "arcanepower", "#6633ff", 10, 0,
-                new String[] {"setmax"},
+                new String[]{"setmax"},
                 new FloatPercentModifierBuff(BuffModifiers.MAGIC_DAMAGE, 0.3F),
                 new FloatPercentModifierBuff(BuffModifiers.SPEED, -0.02F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, -0.05F).doSetMax(1F),

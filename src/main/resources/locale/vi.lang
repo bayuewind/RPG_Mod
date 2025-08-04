@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9cấp <level>§0
 
 rangerwolf=Sói kiểm lâm
 dancingflame=Ngọn lửa nhảy múa
+necromancerskeleton=Bộ xương
+necromancerskeletonwarrior=Chiến binh xương
+boneslinger=Kẻ ném xương
+necromancertomb=Mộ
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Khiên băng
 flamingsteps=Bước chân rực lửa
 stormbound=Bị bão tố trói buộc
 
+// Thầy chiêu hồn
+darkpower=Sức mạnh bóng tối
+necroticpower=Sức mạnh hoại tử
+darkmagic=Ma thuật bóng tối
+necroticarmy=Đội quân hoại tử
+darksummons=Triệu hồi bóng tối
+lifeleech=Hút máu
+necroticremains=Tàn dư hoại tử
+endlesslegion=Quân đoàn vô tận
+lichborn=Sinh ra từ Lich
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Cứ sau §a[[9 - 0.5 x <skilllevel>]] giây§0, một tia sét đán
 arcaneshield=Một chiếc khiên ngăn chặn một đòn đánh\nChiếc khiên sẽ phục hồi sau §a[[20 - <skilllevel>]] giây§0 sau khi sử dụng
 fireshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một vụ nổ gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nvà đốt cháy mob, lặp lại 20% sát thương ban đầu của chúng mỗi giây trong 5 giây\nChiếc khiên sẽ phục hồi sau 26 giây sau khi sử dụng
 iceshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một luồng khí băng gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nlàm đóng băng mob trong 5 giây và đóng băng hoàn toàn chúng trong 1 giây\nChiếc khiên sẽ phục hồi sau 22 giây sau khi sử dụng
+
+// Thầy chiêu hồn
+necroticpower=Tất cả các đòn tấn công Phép và Triệu hồi của bạn đều gây độc bằng 5% Sát thương của chúng trong §a[[2 x <skilllevel>]] giây§0, miễn là chúng không phải do triệu hồi gây ra
+darkmagic=Tiền thưởng Sát thương của Người triệu hồi ảnh hưởng đến Sát thương Phép bằng §a[[5 x <skilllevel>]]%
+necroticarmy=Kẻ thù bị đánh bại sẽ biến thành §bBộ xương§0 với §a-[[100 - 3 x <skilllevel>]]%§0 Máu và Sát thương
+darksummons=Gây thêm §a+[[10 x <skilllevel>]]%§0 Sát thương của Người triệu hồi cho kẻ thù bị nhiễm độc
+lifeleech=Hồi phục §a[[<skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
+necroticremains=Khi một triệu hồi hoại tử chết, nó sẽ phát nổ, gây §i[[0.1 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó, đầu độc chúng bằng 20% sát thương mỗi giây trong 10 giây
+endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận được +1 triệu hồi tối đa
+lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một lich\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một lich (một bộ xương) chỉ có thể bắn xương gây Sát thương Phép bằng [[Sức mạnh]] và sử dụng các kỹ năng còn lại của mình\nKhi ở dạng lich, bạn nhận gấp đôi sát thương
+
 
 [activeskills]
 empty=Trống
@@ -193,6 +219,20 @@ iceenchantment=Phép thuật băng
 fireball=Quả cầu lửa
 lightning=Sét
 
+// Thầy chiêu hồn
+skeletonhorde=Đám đông bộ xương
+skeletonwarrior=Chiến binh xương
+sacrifice=Sự hy sinh
+siegecry=Tiếng hét bao vây
+
+boneslingerhorde=Đám đông kẻ ném xương
+tomb=Mộ
+necroticbloom=Sự nở hoa hoại tử
+wardingtaunt=Lời chế nhạo phòng thủ
+
+unholyground=Vùng đất ô uế
+necroticbarrage=Cơn mưa hoại tử
+
 
 [activeskillsdesc]
 
@@ -222,14 +262,13 @@ shotsrampage=Khi bạn có ít nhất 1 điểm cộng dồn của Cơn thịnh 
 huntersmark=§hĐánh dấu§0 kẻ thù gần đó có lượng máu cao nhất trong 10 giây\nNếu bạn giết một mục tiêu được đánh dấu, nhận §a+[[20 x <skilllevel>]]%§0 tốc độ tấn công tầm xa và tốc độ di chuyển trong 5 giây
 beartrap=Đặt một cái bẫy gấu trên mặt đất sẽ biến mất nếu được kích hoạt hoặc sau 20 giây\nNếu kẻ thù kích hoạt nó, chúng sẽ nhận §i[[10 x <playerlevel>]] sát thương§0 và bị mắc kẹt trong 5 giây
 
-huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[10 x <skilllevel>]]%
-§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
+huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[10 x <skilllevel>]]%\n§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
 arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] sát thương của kiểm lâm§0 cho mỗi mũi tên
 
 // Pháp sư
 arcaneoverload=Khi đang hoạt động, tăng Tốc độ Tấn công Phép của bạn lên §a[[30 x <skilllevel>]]%§0, nhưng bạn sẽ không thể di chuyển\nKết thúc khi bạn hết mana, hoặc nếu được sử dụng lại\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana mỗi giây
 manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi\nKết thúc khi sử dụng lại
-firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt khả năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
+firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt kỹ năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Ném một §aQuả cầu băng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[50 + 10 x <skilllevel>]] Mana
 zap=Bắt đầu một cú giật nhảy giữa các mob trong 2 giây, gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana
 
@@ -240,6 +279,20 @@ iceenchantment=Trong 10 giây tiếp theo, các đòn tấn công từ bạn và
 
 fireball=Ném một §iQuả cầu lửa§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Bắt đầu một tia sét nhảy giữa các mob trong 1 giây, gây §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 2 giây\nKhông thể đánh trúng cùng một mục tiêu nhiều lần\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
+
+// Thầy chiêu hồn
+skeletonhorde=Triệu hồi §a[[1 + <skilllevel>]] §bBộ xương§0
+skeletonwarrior=Triệu hồi một §bChiến binh xương§0 với §a+[[20 x <skilllevel>]]%§0 Máu và Sát thương
+sacrifice=Triệu hồi có thể bị sát thương gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
+siegecry=Nhận §a+[[50 x <skilllevel>]]%§0 Tốc độ Triệu hồi trong 6 giây
+
+boneslingerhorde=Triệu hồi §a[[1 + <skilllevel>]]§0 §bKẻ ném xương§0
+tomb=Tạo ra một cấu trúc triệu hồi một §bBộ xương§0 mỗi §a[[10 - <skilllevel>]] giây§0\nMộ có Máu bằng §a[[5 x <playerlevel> x <skilllevel>]]§0\nMộ mất 2% Tổng Máu mỗi giây
+necroticbloom=Tăng tốc hiệu ứng của độc trên tất cả kẻ thù gần đó bằng cách giảm thời gian của nó xuống 10%, nhưng tăng sát thương mỗi giây để duy trì tổng sát thương
+wardingtaunt=Triệu hồi có thể bị sát thương gần nhất buộc kẻ thù gần đó trong bán kính §a[[50 x <skilllevel>]]§0 phải nhắm vào nó
+
+unholyground=Mở rộng một luồng khí ô uế xung quanh bạn trong 10 giây\nKẻ thù trong khu vực này nhận §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Sát thương độc§0 mỗi giây và bị §7Hạn chế
+necroticbarrage=Tất cả các triệu hồi có thể bị sát thương sẽ phát nổ khi chết, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó\nvà đầu độc chúng trong 10 giây với 20% sát thương ban đầu mỗi giây
 
 
 [skillsdesckeys]
@@ -259,6 +312,7 @@ setmax=Các hiệu ứng tiêu cực được đặt ở mức tối đa và kh�
 
 // Bùa lợi
 marked=§hĐược đánh dấu:§0 Gây thêm +20% Sát thương (+ §hSát thương tập trung§0) và +10% Cơ hội chí mạng cho các mob bạn đánh dấu\n"Kẻ thù gần nhất" ưu tiên các kẻ thù được đánh dấu
+constrained=§7Bị hạn chế:§0 -50% Tốc độ di chuyển
 
 // Công cụ sửa đổi cơ hội
 dodgechance=§7Cơ hội né tránh:§0 Cơ hội né tránh các đòn tấn công sắp tới. Không thể vượt quá 80%
@@ -277,6 +331,11 @@ fireball=§iQuả cầu lửa:§0 Quả đạn ma thuật phát nổ và đốt 
 
 // Triệu hồi
 dancingflame=§bNgọn lửa nhảy múa:§0 Triệu hồi hoạt động giống như một quả đạn. Đốt cháy kẻ thù khi trúng. Lặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
+
+// Triệu hồi có thể bị sát thương
+necromancerskeleton=§bBộ xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerskeletonwarrior=§bChiến binh xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerboneslinger=§bKẻ ném xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (khoảng cách 320)\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
 
 
 [item]
@@ -331,7 +390,10 @@ activeskillinuse=Kỹ năng này đã được sử dụng
 anotheractiveskillinuse=Bạn đã có một kỹ năng khác đang được sử dụng
 incooldown=Đang hồi chiêu
 notenoughstamina=Không đủ thể lực
+notarget=Không có mục tiêu nào ở gần
 nograbbableobject=Không có vật thể nào có thể nắm được trước mặt bạn
+nodamageablefollower=Không có triệu hồi nào có thể bị sát thương ở gần
+
 
 [ui]
 menutitle=MOD RPG của Save
@@ -375,6 +437,8 @@ upcomingclass=§6Lớp sắp ra mắt\n§9Lớp này hiện đang được phát
 
 addcolumn=Thêm cột
 removecolumn=Xóa cột
+
+rate=Đánh giá MOD RPG!
 
 
 [controls]

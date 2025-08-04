@@ -47,6 +47,7 @@ public class Provocation extends SimpleBuffActiveSkill {
     public void giveBuffOnRun(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
         RPGUtils.streamMobsAndPlayers(player, 500)
                 .filter(RPGUtils.isValidAttackerFilter(player))
+                .filter(mob -> !mob.isPlayer)
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );

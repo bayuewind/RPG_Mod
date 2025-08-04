@@ -4,11 +4,13 @@ import necesse.engine.sound.gameSound.GameSound;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.ui.ButtonIcon;
 import necesse.gfx.ui.GameInterfaceStyle;
+import necesse.gfx.ui.HoverStateTextures;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.mobs.summons.pasivesummon.RangerWolfMob;
+import rpgclasses.mobs.summons.damageable.NecromancerTombMob;
+import rpgclasses.mobs.summons.passive.RangerWolfMob;
 
 public class RPGResources {
 
@@ -22,8 +24,11 @@ public class RPGResources {
     public static class UI_TEXTURES {
         public static GameTexture emptyActiveSkill_texture;
         public static GameTexture rpgMenu_texture;
-        public static GameTexture star_texture;
-        public static GameTexture star2_texture;
+        public static GameTexture qr_texture;
+        public static GameTexture[] star_textures;
+
+        public static GameTexture[] timebar_texture;
+
         public static ButtonIcon[] add_icon;
         public static ButtonIcon[] remove_icon;
         public static ButtonIcon[] addSmall_icon;
@@ -34,8 +39,13 @@ public class RPGResources {
     public static void initUIResources() {
         UI_TEXTURES.emptyActiveSkill_texture = GameTexture.fromFile("ui/activeskills/empty");
         UI_TEXTURES.rpgMenu_texture = GameTexture.fromFile("ui/misc/rpgmenu");
-        UI_TEXTURES.star_texture = GameTexture.fromFile("ui/misc/star");
-        UI_TEXTURES.star2_texture = GameTexture.fromFile("ui/misc/star2");
+        UI_TEXTURES.qr_texture = GameTexture.fromFile("ui/qr");
+
+        UI_TEXTURES.star_textures = new GameTexture[4];
+        UI_TEXTURES.star_textures[0] = GameTexture.fromFile("ui/misc/star");
+        UI_TEXTURES.star_textures[1] = GameTexture.fromFile("ui/misc/star2");
+        UI_TEXTURES.star_textures[2] = GameTexture.fromFile("ui/misc/star3");
+        UI_TEXTURES.star_textures[3] = GameTexture.fromFile("ui/misc/star4");
 
         int styles = GameInterfaceStyle.styles.size();
 
@@ -45,6 +55,8 @@ public class RPGResources {
             playerClass.passivesList.each(Passive::initResources);
             playerClass.activeSkillsList.each(ActiveSkill::initResources);
         });
+
+        UI_TEXTURES.timebar_texture = new GameTexture[styles];
 
         UI_TEXTURES.add_icon = new ButtonIcon[styles];
         UI_TEXTURES.remove_icon = new ButtonIcon[styles];
@@ -56,6 +68,8 @@ public class RPGResources {
 
         for (int i = 0; i < styles; i++) {
             GameInterfaceStyle style = GameInterfaceStyle.styles.get(i);
+
+            UI_TEXTURES.timebar_texture[i] = new HoverStateTextures(style, "timebar_background").active;
 
             UI_TEXTURES.add_icon[i] = new ButtonIcon(style, "add");
             UI_TEXTURES.remove_icon[i] = new ButtonIcon(style, "remove");
@@ -86,6 +100,8 @@ public class RPGResources {
 
     public static void initMobResources() {
         RangerWolfMob.texture = GameTexture.fromFile("mobs/rangerwolf");
+
+        NecromancerTombMob.texture = GameTexture.fromFile("mobs/necromancertomb");
     }
 
     public static class SOUNDS {

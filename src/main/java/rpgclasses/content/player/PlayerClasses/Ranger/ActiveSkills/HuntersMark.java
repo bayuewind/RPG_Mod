@@ -3,7 +3,6 @@ package rpgclasses.content.player.PlayerClasses.Ranger.ActiveSkills;
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.util.GameRandom;
-import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
@@ -11,6 +10,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
+import rpgclasses.RPGUtils;
 import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
@@ -34,17 +34,8 @@ public class HuntersMark extends SimpleBuffActiveSkill {
         super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
         super.giveBuff(player, player, playerData, activeSkillLevel);
 
-        GameUtils.streamServerClients(player.getLevel()).forEach(targetPlayer -> {
-            if (targetPlayer.isSameTeam(player.getTeam()))
-                super.giveBuff(player, targetPlayer.playerMob, playerData, activeSkillLevel);
-        });
-
-        List<Mob> validMobs = player.getLevel().entityManager.mobs.streamAreaTileRange(player.getX(), player.getY(), 7)
-                .filter(target ->
-                        target.getDistance(player) <= 400 &&
-                                target.canTakeDamage() && target.canBeTargeted(player, player.getNetworkClient())
-                                && target.isHostile
-                ).collect(Collectors.toList());
+        List<Mob> validMobs = RPGUtils.getAllTargets(player, 400)
+                .collect(Collectors.toList());
 
         if (!validMobs.isEmpty()) {
             validMobs.sort(Comparator.comparingInt(Mob::getMaxHealth).reversed());
@@ -54,6 +45,11 @@ public class HuntersMark extends SimpleBuffActiveSkill {
             ab.getGndData().setString("playerAttacker", player.playerName);
             target.addBuff(ab, true);
         }
+    }
+
+    @Override
+    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
+        return RPGUtils.anyTarget(player, 400) ? null : "notarget";
     }
 
     @Override

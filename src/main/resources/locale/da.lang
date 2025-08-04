@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
 
 rangerwolf=Ranger Ulv
 dancingflame=Dansende Flamme
+necromancerskeleton=Skelet
+necromancerskeletonwarrior=Skeletkriger
+necromancerboneslinger=Knoglekaster
+necromancertomb=Grav
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Isskjold
 flamingsteps=Flammende Skridt
 stormbound=Stormbundet
 
+// Nekromantiker
+darkpower=Mørk Kraft
+necroticpower=Nekrotisk Kraft
+darkmagic=Mørk Magi
+necroticarmy=Nekrotisk Hær
+darksummons=Mørke Tilkaldelser
+lifeleech=Livstyveri
+necroticremains=Nekrotiske Rester
+endlesslegion=Uendelig Legion
+lichborn=Lichfødt
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Hver §a[[9 - 0.5 x <skilllevel>]] sekunder§0, rammer et lyn en tilf
 arcaneshield=Et skjold, der forhindrer et hit\nSkjoldet vil komme sig §a[[20 - <skilllevel>]] sekunder§0 efter brug
 fireshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en eksplosion, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nog antænder pøbler, der gentager 20% af deres oprindelige skade pr. sekund i 5 sekunder\nSkjoldet vil komme sig 26 sekunder efter brug
 iceshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en is-aura, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nfryser pøbler i 5 sekunder og fryser dem helt i 1 sekund\nSkjoldet vil komme sig 22 sekunder efter brug
+
+// Nekromantiker
+necroticpower=Alle dine magiske og tilkaldende angreb forgifter for 5% af deres skade i §a[[2 x <skilllevel>]] sekunder§0, så længe de ikke er forårsaget af en tilkaldelse
+darkmagic=Tilkalderskadebonusser påvirker magisk skade med §a[[5 x <skilllevel>]]%
+necroticarmy=Besejrede fjendtlige fjender vil blive til §bSkeletter§0 med §a-[[100 - 3 x <skilllevel>]]%§0 helbred og skade
+darksummons=Giv §a+[[10 x <skilllevel>]]%§0 tilkalderskade til forgiftede fjender
+lifeleech=Gendanner §a[[<skilllevel>]]%§0 af den påførte tilkalderskade som helbred
+necroticremains=Når en nekrotisk tilkaldelse dør, eksploderer den og giver §i[[0.1 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fjender og forgifter dem med 20% af skaden pr. sekund i 10 sekunder
+endlesslegion=Hver 4. niveau af denne færdighed får du +1 maks. tilkaldelse
+lichborn=Når du dør, overlever du og gendanner §a[[10 x <skilllevel>]]%§0 helbred, hvis du ikke allerede er en lich\nI de næste §a[[120 - 6 x <skilllevel>]] sekunder§0 bliver du en lich (et skelet), der kun kan skyde knogler, der giver magisk skade svarende til [[Styrke]] og bruge resten af dine færdigheder\nMens du er i lich-form, tager du dobbelt skade
+
 
 [activeskills]
 empty=Tom
@@ -193,6 +219,20 @@ iceenchantment=Isfortryllelse
 fireball=Ildkugle
 lightning=Lyn
 
+// Nekromantiker
+skeletonhorde=Skelethorde
+skeletonwarrior=Skeletkriger
+sacrifice=Offer
+siegecry=Belejringskrig
+
+boneslingerhorde=Knoglekasterhorde
+tomb=Grav
+necroticbloom=Nekrotisk Blomstring
+wardingtaunt=Afværgende Hån
+
+unholyground=Uhellig Jord
+necroticbarrage=Nekrotisk Spærreild
+
 
 [activeskillsdesc]
 
@@ -228,7 +268,7 @@ arrowstorm=Skyd en basispil mod hver nær fjende og giv §i[[2 x <playerlevel> +
 // Troldmand
 arcaneoverload=Mens aktiv, øger din Magiske Angrebshastighed med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevæge dig\nSlutter, når du løber tør for mana, eller hvis den bruges igen\nForbruger §a[[10 + 2 x <skilllevel>]] Mana pr. sekund
 manarecharge=Mens aktiv, øger din Mana Regeneration med +1 og med §a[[50 x <skilllevel>]]%§0, men du vil være lammet og modtage dobbelt skade\nSlutter, når den bruges igen
-firedance=Tilkald 4 §bDansende Flammer§0, der hver giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nTilkald en mere hvert 5. sekund\nAlle tilkaldelser forsvinder 20 sekunder efter, at evnen er aktiveret\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
+firedance=Tilkald 4 §bDansende Flammer§0, der hver giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nTilkald en mere hvert 5. sekund\nAlle tilkaldelser forsvinder 20 sekunder efter, at færdigheden er aktiveret\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kast en §aIskugle§0 mod den nærmeste fjende, der giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruger §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start et stød, der hopper mellem pøbler i 2 sekunder, giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund\nForbruger §a[[10 + 2 x <skilllevel>]] Mana
 
@@ -239,6 +279,20 @@ iceenchantment=I de næste 10 sekunder fryser angreb fra dig og nærliggende all
 
 fireball=Kast en §iIldkugle§0 mod den nærmeste fjende, der giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruger §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Start et lyn, der hopper mellem pøbler i 1 sekund, giver §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 2 sekunder\nKan ikke ramme det samme mål flere gange\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
+
+// Nekromantiker
+skeletonhorde=Tilkald §a[[1 + <skilllevel>]] §bSkeletter§0
+skeletonwarrior=Tilkald en §bSkeletkriger§0 med §a+[[20 x <skilllevel>]]%§0 helbred og skade
+sacrifice=Den nærmeste skadelige tilkaldelse dør, og du gendanner derefter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] helbred§0 som magisk helbredelse
+siegecry=Få §a+[[50 x <skilllevel>]]%§0 tilkaldelseshastighed i 6 sekunder
+
+boneslingerhorde=Tilkald §a[[1 + <skilllevel>]]§0 §bKnoglekastere§0
+tomb=Genererer en struktur, der tilkalder et §bSkelet§0 hvert §a[[10 - <skilllevel>]] sekund§0\nGraven har helbred svarende til §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven mister 2% af sit samlede helbred pr. sekund
+necroticbloom=Fremskynder effekten af gift på alle nærliggende fjender ved at reducere dens varighed til 10%, men øge dens skade pr. sekund for at opretholde den samlede skade
+wardingtaunt=Den nærmeste skadelige tilkaldelse tvinger nærliggende fjender inden for en §a[[50 x <skilllevel>]] radius§0 til at angribe den
+
+unholyground=Udvider en aura af korruption omkring dig i 10 sekunder\nFjender inden for dette område tager §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] giftskade§0 pr. sekund og er §7Begrænsede
+necroticbarrage=Alle skadelige tilkaldelser eksploderer ved døden og giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fjender\nog forgifter dem i 10 sekunder med 20% af den oprindelige skade pr. sekund
 
 
 [skillsdesckeys]
@@ -258,6 +312,7 @@ setmax=Negative effekter er sat som maks. og kan ikke fjernes af andre buffs
 
 // Buffs
 marked=§hMærket:§0 Giv +20% Skade (+ §hFokusskade§0) og +10% Kritisk Chance til pøbler, du mærker\n"Nærmeste fjende" prioriterer mærkede fjender
+constrained=§7Begrænset:§0 -50% bevægelseshastighed
 
 // Chance-modifikatorer
 dodgechance=§7Undvigelseschance:§0 Chance for at undvige indkommende angreb. Kan ikke overstige 80%
@@ -276,6 +331,11 @@ fireball=§iIldkugle:§0 Magisk projektil, der eksploderer og antænder pøbler,
 
 // Tilkaldelser
 dancingflame=§bDansende Flamme:§0 Tilkaldelse, der fungerer som et projektil. Antænder fjender ved træf. Gentager 20% af sin oprindelige skade pr. sekund i 5 sekunder
+
+// Skadelige tilkaldelser
+necromancerskeleton=§bSkelet:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
+necromancerskeletonwarrior=§bSkeletkriger:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
+necromancerboneslinger=§bKnoglekaster:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Denne færdighed er allerede i brug
 anotheractiveskillinuse=Du har allerede en anden færdighed i brug
 incooldown=På nedkøling
 notenoughstamina=Ikke nok udholdenhed
+notarget=Der er ingen mål i nærheden
 nograbbableobject=Der er ingen genstand, der kan gribes, foran dig
+nodamageablefollower=Der er ingen skadelige tilkaldelser i nærheden
+
 
 [ui]
 menutitle=RPG-MOD af Save
@@ -374,6 +437,8 @@ upcomingclass=§6Kommende klasse\n§9Denne klasse er i øjeblikket under udvikli
 
 addcolumn=Tilføj kolonne
 removecolumn=Fjern kolonne
+
+rate=Bedøm RPG Mod!
 
 
 [controls]

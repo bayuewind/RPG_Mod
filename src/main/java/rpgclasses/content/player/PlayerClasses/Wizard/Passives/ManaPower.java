@@ -19,6 +19,7 @@ public class ManaPower extends SimpleBuffPassive {
             public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
                 super.init(activeBuff, buffEventSubscriber);
                 updateBuff(activeBuff);
+                this.isVisible = false;
             }
 
             @Override
@@ -36,7 +37,6 @@ public class ManaPower extends SimpleBuffPassive {
             public void updateBuff(ActiveBuff activeBuff) {
                 float manaPercent = GameMath.clamp(activeBuff.owner.getMana() / activeBuff.owner.getMaxMana(), 0, 1);
                 float increment = getLevel(activeBuff) * 0.01F * manaPercent * 10;
-                this.isVisible = increment > 0;
                 activeBuff.setModifier(
                         BuffModifiers.MAGIC_DAMAGE, increment
                 );

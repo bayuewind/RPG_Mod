@@ -50,7 +50,7 @@ public class SkillIconComponent extends FormButton implements FormPositionContai
     }
 
     @Override
-    public void draw(TickManager tickManager, PlayerMob playerMob, Rectangle rectangle) {
+    public void draw(TickManager tickManager, PlayerMob player, Rectangle rectangle) {
         int textureWidth = skill.texture.getWidth();
         int textureHeight = skill.texture.getWidth();
 
@@ -67,7 +67,7 @@ public class SkillIconComponent extends FormButton implements FormPositionContai
             ListGameTooltips tooltips;
             if (skill.containsComplexTooltips() && skillLevel > 0) {
                 if (showLevelVersion) {
-                    tooltips = skill.getFinalToolTips(playerMob, skillLevel, false);
+                    tooltips = skill.getFinalToolTips(player, skillLevel, false);
                     tooltips.add(" ");
                     tooltips.add(Localization.translate("ui", "clicktoseebase"));
                 } else {
@@ -80,18 +80,14 @@ public class SkillIconComponent extends FormButton implements FormPositionContai
             }
             GameTooltipManager.addTooltip(tooltips, new BorderFormGameBackground(12), TooltipLocation.FORM_FOCUS);
 
-            String[] extraTooltipsString = skill.getExtraTooltips();
+            String[] extraTooltipsString = skill.getFinalExtraTooltips(player, skillLevel > 0 && showLevelVersion);
             for (String extraTooltip : extraTooltipsString) {
-                GameTooltipManager.addTooltip(new ListGameTooltips(Localization.translate("extraskilldesc", extraTooltip)), new BorderFormGameBackground(12), TooltipLocation.FORM_FOCUS);
+                GameTooltipManager.addTooltip(new ListGameTooltips(extraTooltip), new BorderFormGameBackground(12), TooltipLocation.FORM_FOCUS);
             }
 
             GameTooltipManager.addTooltip(new SpriteTooltip(skill.texture), new BorderFormGameBackground(4), TooltipLocation.FORM_FOCUS);
 
         }
-    }
-
-    public static void drawStar(int drawX, int drawY, int iconDrawX, int iconDrawY) {
-        RPGResources.UI_TEXTURES.star_texture.initDraw().draw(drawX + iconDrawX, drawY + iconDrawY);
     }
 
     @Override
@@ -113,31 +109,42 @@ public class SkillIconComponent extends FormButton implements FormPositionContai
     }
 
     public static Star[] stars = {
-            new Star(0, 26, false),   // 1
-            new Star(6, 18, false),   // 2
-            new Star(12, 26, false),  // 3
-            new Star(18, 18, false),  // 4
-            new Star(24, 26, false),  // 5
+            new Star(0, 26, 0),   // 1
+            new Star(6, 18, 0),   // 2
+            new Star(12, 26, 0),  // 3
+            new Star(18, 18, 0),  // 4
+            new Star(24, 26, 0),  // 5
 
-            new Star(0, 26, true),    // 6
-            new Star(6, 18, true),    // 7
-            new Star(12, 26, true),   // 8
-            new Star(18, 18, true),   // 9
-            new Star(24, 26, true)    // 10
+            new Star(0, 26, 1),    // 6
+            new Star(6, 18, 1),    // 7
+            new Star(12, 26, 1),   // 8
+            new Star(18, 18, 1),   // 9
+            new Star(24, 26, 1),   // 10
+
+            new Star(0, 26, 2),    // 11
+            new Star(6, 18, 2),    // 12
+            new Star(12, 26, 2),   // 13
+            new Star(18, 18, 2),   // 14
+            new Star(24, 26, 2),    // 15
+
+            new Star(0, 26, 3),    // 16
+            new Star(6, 18, 3),    // 17
+            new Star(12, 26, 3),   // 18
+            new Star(18, 18, 3),   // 19
+            new Star(24, 26, 3)    // 20
     };
 
     public static class Star {
-        int x, y;
-        boolean upgraded;
+        int x, y, upgrades;
 
-        public Star(int x, int y, boolean upgraded) {
+        public Star(int x, int y, int upgrades) {
             this.x = x;
             this.y = y;
-            this.upgraded = upgraded;
+            this.upgrades = upgrades;
         }
 
         public void draw(int iconDrawX, int iconDrawY) {
-            (upgraded ? RPGResources.UI_TEXTURES.star2_texture : RPGResources.UI_TEXTURES.star_texture).initDraw().draw(x + iconDrawX, y + iconDrawY);
+            RPGResources.UI_TEXTURES.star_textures[upgrades].initDraw().draw(x + iconDrawX, y + iconDrawY);
         }
     }
 

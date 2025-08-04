@@ -63,6 +63,11 @@ public class Zap extends SimpleLevelEventActiveSkill {
         return new String[]{"manausage"};
     }
 
+    @Override
+    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
+        return RPGUtils.anyTarget(player, 500) ? null : "notarget";
+    }
+
     public static class ZapLevelEvent extends MobAbilityLevelEvent implements Attacker {
         private int lifeTime = 0;
         public int nextHit = 0;

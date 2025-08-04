@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9poz. <level>§0
 
 rangerwolf=Wilk Łowcy
 dancingflame=Tańczący Płomień
+necromancerskeleton=Szkielet
+necromancerskeletonwarrior=Wojownik Szkielet
+necromancerboneslinger=Rzucacz Kości
+necromancertomb=Grób
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Tarcza Lodu
 flamingsteps=Płonące Kroki
 stormbound=Związany z Burzą
 
+// Nekromanta
+darkpower=Mroczna Moc
+necroticpower=Moc Nekrotyczna
+darkmagic=Mroczna Magia
+necroticarmy=Armia Nekrotyczna
+darksummons=Mroczne Przywołania
+lifeleech=Kradzież Życia
+necroticremains=Szczątki Nekrotyczne
+endlesslegion=Nieskończony Legion
+lichborn=Urodzony jako Lisz
+
 
 [passivesdesc]
 
@@ -139,12 +154,22 @@ wolfcompanion=Wilczy towarzysz będzie atakował oznaczone wrogów, zadając §i
 
 // Czarodziej
 manapower=Każdy poziom zapewnia:\n\n+1% Obrażeń Magicznych za każde 10% niewykorzystanej Many
-flamingsteps=Biegnąc z aktywnym talizmanem, będziesz zostawiać na ziemi płomienie
-Płomienie podpalą wrogów na 2 sekundy, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 na sekundę
+flamingsteps=Biegnąc z aktywnym talizmanem, będziesz zostawiać na ziemi płomienie\nPłomienie podpalą wrogów na 2 sekundy, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 na sekundę
 stormbound=Co §a[[9 - 0.5 x <skilllevel>]] sekund§0, piorun uderza w losowego wroga w twoim polu widzenia\nZadaje §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłusza na 1 sekundę
 arcaneshield=Tarcza, która zapobiega jednemu uderzeniu\nTarcza odnowi się §a[[20 - <skilllevel>]] sekund§0 po użyciu
 fireshield=Tarcza, która zapobiega jednemu uderzeniu\nPo użyciu wyzwolisz eksplozję zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\ni podpalającą moby, powtarzając 20% ich pierwotnych obrażeń na sekundę przez 5 sekund\nTarcza odnowi się 26 sekund po użyciu
 iceshield=Tarcza, która zapobiega jednemu uderzeniu\nPo użyciu wyzwolisz aurę lodu zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nzamrażając moby na 5 sekund i całkowicie je zamrażając na 1 sekundę\nTarcza odnowi się 22 sekundy po użyciu
+
+// Nekromanta
+necroticpower=Wszystkie twoje ataki magiczne i przywołujące zatruwają na 5% ich obrażeń przez §a[[2 x <skilllevel>]] sekund§0, o ile nie są spowodowane przez przywołanie
+darkmagic=Bonusy do obrażeń przywoływacza wpływają na obrażenia magiczne o §a[[5 x <skilllevel>]]%
+necroticarmy=Pokonani wrodzy wrogowie zamienią się w §bSzkielety§0 z §a-[[100 - 3 x <skilllevel>]]%§0 zdrowia i obrażeń
+darksummons=Zadaj §a+[[10 x <skilllevel>]]%§0 obrażeń przywoływacza zatrutym wrogom
+lifeleech=Odzyskuje §a[[<skilllevel>]]%§0 zadanych obrażeń przywoływacza jako zdrowie
+necroticremains=Gdy nekrotyczne przywołanie umiera, wybucha, zadając §i[[0.1 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom, zatruwając ich na 20% obrażeń na sekundę przez 10 sekund
+endlesslegion=Co 4 poziomy tej umiejętności, zyskujesz +1 maksymalne przywołanie
+lichborn=Gdy umierasz, przeżywasz i odzyskujesz §a[[10 x <skilllevel>]]%§0 zdrowia, jeśli nie jesteś już liszem\nPrzez następne §a[[120 - 6 x <skilllevel>]] sekund§0 stajesz się liszem (szkieletem), który może strzelać tylko kośćmi zadającymi obrażenia magiczne równe [[Siła]] i używać reszty swoich umiejętności\nW formie lisza otrzymujesz podwójne obrażenia
+
 
 [activeskills]
 empty=Pusty
@@ -194,6 +219,20 @@ iceenchantment=Zaklęcie Lodu
 fireball=Kula Ognia
 lightning=Piorun
 
+// Nekromanta
+skeletonhorde=Horda Szkieletów
+skeletonwarrior=Wojownik Szkielet
+sacrifice=Ofiara
+siegecry=Okrzyk Oblężniczy
+
+boneslingerhorde=Horda Rzucaczy Kości
+tomb=Grób
+necroticbloom=Nekrotyczny Rozkwit
+wardingtaunt=Ochronna Prowokacja
+
+unholyground=Nieświęta Ziemia
+necroticbarrage=Nekrotyczna Nawałnica
+
 
 [activeskillsdesc]
 
@@ -223,7 +262,7 @@ shotsrampage=Gdy masz co najmniej 1 stos szału strzałów, trafienie wroga atak
 huntersmark=§hOznacz§0 najbliższego wroga o najwyższym zdrowiu na 10 sekund\nJeśli zabijesz oznaczony cel, zyskasz §a+[[20 x <skilllevel>]]%§0 prędkości ataku dystansowego i prędkości ruchu na 5 sekund
 beartrap=Umieść na ziemi niedźwiedzią pułapkę, która zniknie po uruchomieniu lub po 20 sekundach\nJeśli wróg ją uruchomi, otrzyma §i[[10 x <playerlevel>]] obrażeń§0 i zostanie uwięziony na 5 sekund
 
-huntersinstinct=Przez następne 12 sekund zwiększ swoją §7szansę na unik§0 o §a[[10 x <skilllevel>]]%§hOznacz§0 na 5 sekund wrogów, których unikniesz
+huntersinstinct=Przez następne 12 sekund zwiększ swoją §7szansę na unik§0 o §a[[10 x <skilllevel>]]%\n§hOznacz§0 na 5 sekund wrogów, których unikniesz
 arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] obrażeń łowcy§0 każdą strzałą
 
 // Czarodziej
@@ -240,6 +279,20 @@ iceenchantment=Przez następne 10 sekund ataki twoje i pobliskich sojuszników z
 
 fireball=Rzuć §iKulą Ognia§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nZużywa §a[[80 + 16 x <skilllevel>]] Many
 lightning=Rozpocznij piorun, który przeskakuje między mobami przez 1 sekundę, zadając §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłuszając na 2 sekundy\nNie może trafić tego samego celu wielokrotnie\nZużywa §a[[30 + 6 x <skilllevel>]] Many
+
+// Nekromanta
+skeletonhorde=Przywołaj §a[[1 + <skilllevel>]] §bSzkieletów§0
+skeletonwarrior=Przywołaj §bWojownika Szkielet§0 z §a+[[20 x <skilllevel>]]%§0 zdrowia i obrażeń
+sacrifice=Najbliższe możliwe do zranienia przywołanie umiera, a ty odzyskujesz §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdrowia§0 jako magiczne uzdrowienie
+siegecry=Zyskaj §a+[[50 x <skilllevel>]]%§0 prędkości przywoływania na 6 sekund
+
+boneslingerhorde=Przywołaj §a[[1 + <skilllevel>]]§0 §bRzucaczy Kości§0
+tomb=Generuje strukturę, która co §a[[10 - <skilllevel>]] sekund§0 przywołuje §bSzkielet§0\nGrób ma zdrowie równe §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrób traci 2% swojego całkowitego zdrowia na sekundę
+necroticbloom=Przyspiesza działanie trucizny na wszystkich pobliskich wrogach, skracając jej czas trwania do 10%, ale zwiększając obrażenia na sekundę, aby utrzymać całkowite obrażenia
+wardingtaunt=Najbliższe możliwe do zranienia przywołanie zmusza pobliskich wrogów w promieniu §a[[50 x <skilllevel>]]§0 do atakowania go
+
+unholyground=Rozszerza wokół ciebie aurę zepsucia na 10 sekund\nWrogowie w tym obszarze otrzymują §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] obrażeń od trucizny§0 na sekundę i są §7Ograniczeni
+necroticbarrage=Wszystkie możliwe do zranienia przywołania wybuchają po śmierci, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom\ni zatruwając ich na 10 sekund 20% pierwotnych obrażeń na sekundę
 
 
 [skillsdesckeys]
@@ -259,6 +312,7 @@ setmax=Negatywne efekty są ustawione jako maksymalne i nie mogą być usunięte
 
 // Wzmocnienia
 marked=§hOznaczony:§0 Zadaj +20% obrażeń (+ §hobrażeń od skupienia§0) i +10% szansy na trafienie krytyczne mobom, które oznaczysz\n"Najbliższy wróg" priorytetowo traktuje oznaczone wrogów
+constrained=§7Ograniczony:§0 -50% Prędkości Ruchu
 
 // Modyfikatory szans
 dodgechance=§7Szansa na unik:§0 Szansa na uniknięcie nadchodzących ataków. Nie może przekroczyć 80%
@@ -277,6 +331,11 @@ fireball=§iKula Ognia:§0 Magiczny pocisk, który wybucha i podpala moby, powta
 
 // Przywołania
 dancingflame=§bTańczący Płomień:§0 Przywołanie, które działa jak pocisk. Podpala wrogów przy trafieniu. Powtarza 20% swoich pierwotnych obrażeń na sekundę przez 5 sekund
+
+// Możliwe do zranienia przywołania
+necromancerskeleton=§bSzkielet:§0 Nekrotyczne możliwe do zranienia przywołanie\nZdrowie: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nPrędkość: 60\nTraci 2% całkowitego zdrowia na sekundę
+necromancerskeletonwarrior=§bWojownik Szkielet:§0 Nekrotyczne możliwe do zranienia przywołanie\nZdrowie: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nObrażenia: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nPrędkość: 60\nTraci 2% całkowitego zdrowia na sekundę
+necromancerboneslinger=§bRzucacz Kości:§0 Nekrotyczne możliwe do zranienia przywołanie\nZdrowie: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (zasięg 320)\nPrędkość: 60\nTraci 2% całkowitego zdrowia na sekundę
 
 
 [item]
@@ -331,7 +390,10 @@ activeskillinuse=Ta umiejętność jest już w użyciu
 anotheractiveskillinuse=Masz już inną umiejętność w użyciu
 incooldown=W trakcie odnawiania
 notenoughstamina=Za mało wytrzymałości
+notarget=W pobliżu nie ma celów
 nograbbableobject=Przed tobą nie ma żadnego przedmiotu do chwycenia
+nodamageablefollower=W pobliżu nie ma możliwych do zranienia przywołań
+
 
 [ui]
 menutitle=MOD RPG autorstwa Save
@@ -375,6 +437,8 @@ upcomingclass=§6Nadchodząca klasa\n§9Ta klasa jest obecnie w fazie rozwoju\ni
 
 addcolumn=Dodaj kolumnę
 removecolumn=Usuń kolumnę
+
+rate=Oceń MOD RPG!
 
 
 [controls]

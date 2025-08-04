@@ -8,7 +8,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import rpgclasses.data.MobData;
-import rpgclasses.levelevents.ExplosiveMobExplosionEvent;
+import rpgclasses.levelevents.Mobs.ExplosiveMobExplosionEvent;
 
 import java.awt.*;
 import java.util.HashMap;

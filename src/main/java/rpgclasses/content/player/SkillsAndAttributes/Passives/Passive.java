@@ -51,4 +51,8 @@ abstract public class Passive extends Skill {
     public boolean containsComplexTooltips() {
         return true;
     }
+
+    @Override
+    public void registerSkillBuffs() {
+    }
 }

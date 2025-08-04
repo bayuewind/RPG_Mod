@@ -11,7 +11,7 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
-import rpgclasses.levelevents.Mobs.FireExplosionLevelEvent;
+import rpgclasses.levelevents.FireExplosionLevelEvent;
 
 import java.awt.*;
 import java.util.List;

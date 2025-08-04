@@ -44,6 +44,11 @@ public class ArrowStorm extends ActiveSkill {
     }
 
     @Override
+    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
+        return RPGUtils.anyTarget(player, 400) ? null : "notarget";
+    }
+
+    @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         SoundManager.playSound(GameResources.bow, SoundEffect.effect(player));

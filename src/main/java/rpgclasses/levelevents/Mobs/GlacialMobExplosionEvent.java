@@ -1,4 +1,4 @@
-package rpgclasses.levelevents;
+package rpgclasses.levelevents.Mobs;
 
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -30,18 +30,22 @@ public class GlacialMobExplosionEvent extends ExplosionEvent implements Attacker
         this.hitsOwner = false;
     }
 
+    @Override
     protected GameDamage getTotalObjectDamage(float targetDistance) {
         return super.getTotalObjectDamage(targetDistance).modDamage(10.0F);
     }
 
+    @Override
     protected void playExplosionEffects() {
         SoundManager.playSound(GameResources.iceHit, SoundEffect.effect(this.x, this.y).volume(2.5F).pitch(1.5F));
     }
 
+    @Override
     public float getParticleCount(float currentRange, float lastRange) {
         return super.getParticleCount(currentRange, lastRange) * 1.5F;
     }
 
+    @Override
     public void spawnExplosionParticle(float x, float y, float dirX, float dirY, int lifeTime, float range) {
         if (this.particleBuffer < 10) {
             ++this.particleBuffer;

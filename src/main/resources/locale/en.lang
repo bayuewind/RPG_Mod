@@ -50,6 +50,11 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
 rangerwolf=Ranger Wolf
 dancingflame=Dancing Flame
 
+necromancerskeleton=Skeleton
+necromancerskeletonwarrior=Skeleton Warrior
+necromancerboneslinger=Boneslinger
+necromancertomb=Tomb
+
 
 [mobclass]
 boss=Boss
@@ -125,6 +130,17 @@ iceshield=Ice Shield
 flamingsteps=Flaming Steps
 stormbound=Stormbound
 
+// Necromancer
+darkpower=Dark Power
+necroticpower=Necrotic Power
+darkmagic=Dark Magic
+necroticarmy=Necrotic Army
+darksummons=Dark Summons
+lifeleech=Life Leech
+necroticremains=Necrotic Remains
+endlesslegion=Endless Legion
+lichborn=Lichborn
+
 
 [passivesdesc]
 // Warrior
@@ -144,6 +160,16 @@ stormbound=Every §a[[9 - 0.5 x <skilllevel>]] seconds§0, a bolt of lightning s
 arcaneshield=A shield that prevents one hit\nThe shield will recover §a[[20 - <skilllevel>]] seconds§0 after using it
 fireshield=A shield that prevents one hit\nWhen used, you will release an explosion dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nand igniting mobs, repeating 20% of their original damage per second for 5 seconds\nThe shield will recover 26 seconds after using it
 iceshield=A shield that prevents one hit\nWhen used, you will release an ice aura dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nfreezing mobs for 5 seconds, and totally freezing them for 1 second\nThe shield will recover 22 seconds after using it
+
+// Necromancer
+necroticpower=All your Magic and Summoner attacks poison for 5% of their Damage for §a[[2 x <skilllevel>]] seconds§0, as long as they are not caused by a summon
+darkmagic=Summoner Damage bonuses affect Magic Damage by §a[[5 x <skilllevel>]]%
+necroticarmy=Defeated hostile enemies will turn into §bSkeletons§0 with §a-[[100 - 3 x <skilllevel>]]%§0 Health and Damage
+darksummons=Deal §a+[[10 x <skilllevel>]]%§0 Summoner Damage to poisoned enemies
+lifeleech=Recovers §a[[<skilllevel>]]%§0 of the Summon Damage dealt as Health
+necroticremains=When a necrotic summon dies, it explodes, dealing §i[[0.1 x <intelligence> x <skilllevel>]] Magic Damage§0 to nearby enemies, poisoning them for 20% of the damage per second for 10 seconds
+endlesslegion=Every 4 levels of this skill, you gain +1 max summon
+lichborn=When you die, you survive and recover §a[[10 x <skilllevel>]]%§0 Health if you are not already a lich\nFor the next §a[[120 - 6 x <skilllevel>]] seconds§0, you become a lich (a skeleton) that can only shoot bones dealing Magic Damage equal to [[Strength]] and use the rest of your skills\nWhile in lich form, you take double damage
 
 
 [activeskills]
@@ -194,6 +220,20 @@ iceenchantment=Ice Enchantment
 fireball=Fireball
 lightning=Lightning
 
+// Necromancer
+skeletonhorde=Skeleton Horde
+skeletonwarrior=Skeleton Warrior
+sacrifice=Sacrifice
+siegecry=Siege Cry
+
+boneslingerhorde=Boneslinger Horde
+tomb=Tomb
+necroticbloom=Necrotic Bloom
+wardingtaunt=Warding Taunt
+
+unholyground=Unholy Ground
+necroticbarrage=Necrotic Barrage
+
 
 [activeskillsdesc]
 // Warrior
@@ -229,7 +269,7 @@ arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x <playerleve
 // Wizard
 arcaneoverload=While active, increases your Magic Attack Speed by §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEnds when you run out of mana, or if used again\nConsumes §a[[10 + 2 x <skilllevel>]] Mana per second
 manarecharge=While active, increases your Mana Regen in +1 and by §a[[50 x <skilllevel>]]%§0, but you will be paralyzed and take double damage\nEnds when used again
-firedance=Summons 4 §bDancing Flames§0, each dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nSummon another one every 5 seconds\nAll summons disappear 20 seconds after the ability is activated\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
+firedance=Summons 4 §bDancing Flames§0, each dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nSummon another one every 5 seconds\nAll summons disappear 20 seconds after the skill is activated\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Throw an §aIce Ball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start a zap that jumps between mobs for 2 seconds, dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 1 second\nConsumes §a[[10 + 2 x <skilllevel>]] Mana
 
@@ -241,6 +281,19 @@ iceenchantment=For the next 10 seconds, attacks from you and nearby allies freez
 fireball=Throw a §iFireball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Start a lightning that jumps between mobs for 1 second, dealing §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 2 second\nCannot hit multiple times the same target\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
 
+// Necromancer
+skeletonhorde=Summons §a[[1 + <skilllevel>]] §bSkeletons§0
+skeletonwarrior=Summons a §bSkeleton Warrior§0 with §a+[[20 x <skilllevel>]]%§0 Health and Damage
+sacrifice=The nearest damageable summon dies, and you then recover §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Health§0 as magical healing
+siegecry=Gain §a+[[50 x <skilllevel>]]%§0 Summon Speed for 6 seconds
+
+boneslingerhorde=Summons §a[[1 + <skilllevel>]]§0 §bBoneslingers§0
+tomb=Generates a structure that summons a §bSkeleton§0 every §a[[10 - <skilllevel>]] seconds§0\nThe Tomb has Health equal to §a[[5 x <playerlevel> x <skilllevel>]]§0\nThe Tomb loses 2% of its Total Health per second
+necroticbloom=Accelerates the effect of poison on all nearby enemies by reducing its duration to 10%, but increasing its damage per second to maintain total damage
+wardingtaunt=The nearest damageable summon forces nearby enemies within a §a[[50 x <skilllevel>]] radius§0 to target it
+
+unholyground=Extends an aura of corruption around you for 10 seconds\nEnemies within this area take §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Poison Damage§0 per second and are §7Constrained
+necroticbarrage=All damageable summons explode upon dying, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0 to nearby enemies\nand poisoning them for 10 seconds with 20% of the original damage per second
 
 [skillsdesckeys]
 skilllevel=Skill Level
@@ -259,6 +312,7 @@ setmax=Negative effects are set as max and can't be removed by other buffs
 
 // Buffs
 marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\n"Closest enemy" prioritize marked enemies
+constrained=§7Constrained:§0 -50% Movement Speed
 
 // Chance Modifiers
 dodgechance=§7Dodge Chance:§0 Chance to dodge incoming attacks. Cannot exceed 80%
@@ -277,6 +331,11 @@ fireball=§iFireball:§0 Magic projectile that explodes and ignite mobs repeatin
 
 // Summons
 dancingflame=§bDancing Flame:§0 Summon that acts like a projectile. Ignite enemies on hit. Repeats 20% of its original damage per second for 5 seconds
+
+// Damageable Summons
+necromancerskeleton=§bSkeleton:§0 Necrotic damageable summon\nHealth: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDamage: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSpeed: 60\nLoses 2% of Total Health per second
+necromancerskeletonwarrior=§bSkeleton Warrior:§0 Necrotic damageable summon\nHealth: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDamage: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSpeed: 60\nLoses 2% of Total Health per second
+necromancerboneslinger=§bBoneslinger:§0 Necrotic damageable summon\nHealth: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDamage: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 distance)\nSpeed: 60\nLoses 2% of Total Health per second
 
 
 [item]
@@ -331,7 +390,10 @@ activeskillinuse=This skill is already In Use
 anotheractiveskillinuse=You have already another skill In Use
 incooldown=In Cooldown
 notenoughstamina=Not Enough Stamina
+
+notarget=There is no targets nearby
 nograbbableobject=There is no grabbable object in front of you
+nodamageablefollower=There is no damageable summons nearby
 
 
 [ui]
@@ -376,6 +438,8 @@ upcomingclass=§6Upcoming Class\n§9This class is currently in development\nand 
 
 addcolumn=Add column
 removecolumn=Remove column
+
+rate=Rate RPG Mod!
 
 
 [controls]

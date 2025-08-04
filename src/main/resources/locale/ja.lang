@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9レベル <level>§0
 
 rangerwolf=レンジャーウルフ
 dancingflame=踊る炎
+necromancerskeleton=スケルトン
+necromancerskeletonwarrior=スケルトンウォリアー
+necromancerboneslinger=ボーンスリンガー
+necromancertomb=墓
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=氷の盾
 flamingsteps=燃える足跡
 stormbound=嵐に縛られた
 
+// ネクロマンサー
+darkpower=闇の力
+necroticpower=壊死の力
+darkmagic=闇の魔法
+necroticarmy=壊死の軍隊
+darksummons=闇の召喚
+lifeleech=生命吸収
+necroticremains=壊死の残骸
+endlesslegion=無限の軍団
+lichborn=リッチボーン
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=§a[[9 - 0.5 x <skilllevel>]]秒§0ごとに、視界内のランダ�
 arcaneshield=一撃を防ぐシールド\nシールドは使用後§a[[20 - <skilllevel>]]秒§0で回復します
 fireshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える爆発を放ち\nモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返します\nシールドは使用後26秒で回復します
 iceshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える氷のオーラを放ち\nモブを5秒間凍結させ、1秒間完全に凍結させます\nシールドは使用後22秒で回復します
+
+// ネクロマンサー
+necroticpower=あなたのすべての魔法と召喚士の攻撃は、召喚によって引き起こされない限り、§a[[2 x <skilllevel>]]秒間§0、ダメージの5%で毒を与えます
+darkmagic=召喚士ダメージボーナスは、魔法ダメージに§a[[5 x <skilllevel>]]%§0影響します
+necroticarmy=倒された敵対的な敵は、§a-[[100 - 3 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトン§0に変わります
+darksummons=毒された敵に§a+[[10 x <skilllevel>]]%§0の召喚士ダメージを与えます
+lifeleech=与えられた召喚ダメージの§a[[<skilllevel>]]%§0を体力として回復します
+necroticremains=壊死した召喚が死ぬと爆発し、近くの敵に§i[[0.1 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、10秒間、毎秒ダメージの20%で毒を与えます
+endlesslegion=このスキルの4レベルごとに、最大召喚数が+1されます
+lichborn=死ぬと、まだリッチでない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは[[筋力]]に等しい魔法ダメージを与える骨を撃つことしかできず、残りのスキルを使用できるリッチ（スケルトン）になります\nリッチの形態では、2倍のダメージを受けます
+
 
 [activeskills]
 empty=空
@@ -193,6 +219,20 @@ iceenchantment=アイスエンチャントメント
 fireball=ファイアボール
 lightning=ライトニング
 
+// ネクロマンサー
+skeletonhorde=スケルトンホード
+skeletonwarrior=スケルトンウォリアー
+sacrifice=犠牲
+siegecry=シージクライ
+
+boneslingerhorde=ボーンスリンガーホード
+tomb=墓
+necroticbloom=ネクロティックブルーム
+wardingtaunt=ワーディングタウント
+
+unholyground=アンホーリーグラウンド
+necroticbarrage=ネクロティックバラージ
+
 
 [activeskillsdesc]
 
@@ -228,7 +268,7 @@ arrowstorm=近くの各敵に基本的な矢を撃ち、各矢で§i[[2 x <playe
 // ウィザード
 arcaneoverload=アクティブな間、魔法攻撃速度が§a[[30 x <skilllevel>]]%§0増加しますが、移動できなくなります\nマナがなくなると終了するか、再度使用すると終了します\n毎秒§a[[10 + 2 x <skilllevel>]]のマナを消費します
 manarecharge=アクティブな間、マナ再生が+1および§a[[50 x <skilllevel>]]%§0増加しますが、麻痺して2倍のダメージを受けます\n再度使用すると終了します
-firedance=4つの§b踊る炎§0を召喚し、それぞれが§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n5秒ごとに1つ追加で召喚します\nすべての召喚は、能力がアクティブになってから20秒後に消えます\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
+firedance=4つの§b踊る炎§0を召喚し、それぞれが§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n5秒ごとに1つ追加で召喚します\nすべての召喚は、スキルがアクティブになってから20秒後に消えます\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
 iceball=最も近い敵に§aアイスボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[50 + 10 x <skilllevel>]]のマナを消費します
 zap=2秒間モブ間をジャンプするザップを開始し、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます\n§a[[10 + 2 x <skilllevel>]]のマナを消費します
 
@@ -239,6 +279,20 @@ iceenchantment=次の10秒間、あなたと近くの味方からの攻撃が敵
 
 fireball=最も近い敵に§iファイアボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[80 + 16 x <skilllevel>]]のマナを消費します
 lightning=1秒間モブ間をジャンプするライトニングを開始し、§i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、2秒間スタンさせます\n同じターゲットに複数回ヒットすることはできません\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
+
+// ネクロマンサー
+skeletonhorde=§a[[1 + <skilllevel>]]体の§bスケルトン§0を召喚します
+skeletonwarrior=§a+[[20 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトンウォリアー§0を召喚します
+sacrifice=最も近いダメージ可能な召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]の体力§0を回復します
+siegecry=6秒間、召喚速度が§a+[[50 x <skilllevel>]]%§0増加します
+
+boneslingerhorde=§a[[1 + <skilllevel>]]§0体の§bボーンスリンガー§0を召喚します
+tomb=§a[[10 - <skilllevel>]]秒§0ごとに§bスケルトン§0を召喚する構造物を生成します\n墓の体力は§a[[5 x <playerlevel> x <skilllevel>]]§0です\n墓は毎秒総体力の2%を失います
+necroticbloom=近くのすべての敵の毒の効果を加速させ、持続時間を10%に短縮しますが、総ダメージを維持するために毎秒のダメージを増加させます
+wardingtaunt=最も近いダメージ可能な召喚は、§a[[50 x <skilllevel>]]の半径§0内の近くの敵にそれをターゲットさせます
+
+unholyground=10秒間、あなたの周りに腐敗のオーラを広げます\nこのエリア内の敵は、毎秒§i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]の毒ダメージ§0を受け、§7拘束§0されます
+necroticbarrage=すべてのダメージ可能な召喚は死ぬと爆発し、近くの敵に§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\nそして、10秒間、毎秒元のダメージの20%で毒を与えます
 
 
 [skillsdesckeys]
@@ -258,6 +312,7 @@ setmax=負の効果は最大に設定され、他のバフで削除すること�
 
 // バフ
 marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます\n「最も近い敵」はマークされた敵を優先します
+constrained=§7拘束：§0-50%の移動速度
 
 // チャンスモディファイア
 dodgechance=§7回避チャンス：§0飛来する攻撃を回避するチャンス。80%を超えることはできません
@@ -272,10 +327,15 @@ lethalarrow=§hリーサルアロー：§0クリティカルヒットを与え�
 venomarrow=§bベノムアロー：§0敵を毒にする誘導矢。30秒間、毎秒元のダメージの10%を繰り返します
 explosivearrow=§i爆発矢：§0同等のダメージの魔法の爆発を引き起こす誘導矢
 iceball=§aアイスボール：§0爆発してモブを5秒間凍結させ、1秒間完全に凍結させる魔法の発射物
-fireball=§iファイアボール：§0爆発してモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返す魔法の発射物
+fireball=§iファイアボール：§0爆発してモbを燃やし、5秒間、毎秒元のダメージの20%を繰り返す魔法の発射物
 
 // 召喚
 dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒット時に敵を燃やします。5秒間、毎秒元のダメージの20%を繰り返します
+
+// ダメージ可能な召喚
+necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
+necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
+necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=このスキルはすでに使用中です
 anotheractiveskillinuse=すでに別のスキルを使用中です
 incooldown=クールダウン中
 notenoughstamina=スタミナが足りません
+notarget=近くにターゲットがいません
 nograbbableobject=目の前につかめるオブジェクトがありません
+nodamageablefollower=近くにダメージ可能な召喚獣がいません
+
 
 [ui]
 menutitle=SaveによるRPG MOD
@@ -374,6 +437,8 @@ upcomingclass=§6今後のクラス\n§9このクラスは現在開発中です\
 
 addcolumn=列を追加
 removecolumn=列を削除
+
+rate=RPG Modを評価してください！
 
 
 [controls]

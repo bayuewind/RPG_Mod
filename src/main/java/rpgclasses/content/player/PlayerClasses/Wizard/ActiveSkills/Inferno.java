@@ -57,6 +57,11 @@ public class Inferno extends ActiveSkill {
     }
 
     @Override
+    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
+        return RPGUtils.anyTarget(player, 300) ? null : "notarget";
+    }
+
+    @Override
     public String[] getExtraTooltips() {
         return new String[]{"manausage"};
     }

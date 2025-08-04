@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9等級 <level>§0
 
 rangerwolf=遊俠狼
 dancingflame=舞動之焰
+necromancerskeleton=骷髏
+necromancerskeletonwarrior=骷髏戰士
+necromancerboneslinger=投骨者
+necromancertomb=墳墓
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=冰霜護盾
 flamingsteps=烈焰步伐
 stormbound=風暴束縛
 
+// 死靈法師
+darkpower=黑暗之力
+necroticpower=亡靈之力
+darkmagic=黑暗魔法
+necroticarmy=亡靈大軍
+darksummons=黑暗召喚
+lifeleech=生命偷取
+necroticremains=亡靈殘骸
+endlesslegion=無盡軍團
+lichborn=巫妖之軀
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=每 §a[[9 - 0.5 x <skilllevel>]] 秒§0，一道閃電會擊中你�
 arcaneshield=一個可以抵擋一次攻擊的護盾\n護盾將在使用後 §a[[20 - <skilllevel>]] 秒§0 後恢復
 fireshield=一個可以抵擋一次攻擊的護盾\n使用時，你會釋放一次爆炸，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0\n並點燃生物，在 5 秒內每秒重複其原始傷害的 20%\n護盾將在使用後 26 秒後恢復
 iceshield=一個可以抵擋一次攻擊的護盾\n使用時，你會釋放一道冰霜光環，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0\n使生物冰凍 5 秒，並完全冰凍 1 秒\n護盾將在使用後 22 秒後恢復
+
+// 死靈法師
+necroticpower=你的所有魔法和召喚師攻擊都會在§a[[2 x <skilllevel>]]秒§0內造成其傷害的5%的毒素傷害，只要它們不是由召喚物造成的
+darkmagic=召喚師傷害加成會影響魔法傷害§a[[5 x <skilllevel>]]%
+necroticarmy=被擊敗的敵對敵人將變成§b骷髏§0，其生命值和傷害為§a-[[100 - 3 x <skilllevel>]]%§0
+darksummons=對中毒的敵人造成§a+[[10 x <skilllevel>]]%§0的召喚師傷害
+lifeleech=將造成的召喚師傷害的§a[[<skilllevel>]]%§0恢復為生命值
+necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，並在10秒內每秒對它們造成20%的傷害
+endlesslegion=此技能每升4級，你將獲得+1最大召喚物
+lichborn=當你死亡時，如果你還不是巫妖，你將存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個巫妖（一個骷髏），只能發射造成相當於[[力量]]的魔法傷害的骨頭，並使用你其餘的技能\n在巫妖形態下，你受到的傷害加倍
+
 
 [activeskills]
 empty=空
@@ -193,6 +219,20 @@ iceenchantment=冰霜附魔
 fireball=火球術
 lightning=閃電
 
+// 死靈法師
+skeletonhorde=骷髏部落
+skeletonwarrior=骷髏戰士
+sacrifice=犧牲
+siegecry=圍攻吶喊
+
+boneslingerhorde=投骨者部落
+tomb=墳墓
+necroticbloom=亡靈之花
+wardingtaunt=守護嘲諷
+
+unholyground=邪惡之地
+necroticbarrage=亡靈彈幕
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=在接下來的 10 秒內，你和附近盟友的攻擊會使敵�
 fireball=向最近的敵人投擲一個 §i火球術§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n消耗 §a[[80 + 16 x <skilllevel>]] 法力
 lightning=開始一道閃電，在生物之間跳躍 1 秒，造成 §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] 魔法傷害§0 並眩暈 2 秒\n不能多次擊中同一目標\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
 
+// 死靈法師
+skeletonhorde=召喚 §a[[1 + <skilllevel>]] 個 §b骷髏§0
+skeletonwarrior=召喚一個擁有 §a+[[20 x <skilllevel>]]%§0 生命值和傷害的 §b骷髏戰士§0
+sacrifice=最近的可受傷害召喚物死亡，然後你以魔法治療的形式恢復 §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] 生命值§0
+siegecry=在 6 秒內獲得 §a+[[50 x <skilllevel>]]%§0 的召喚速度
+
+boneslingerhorde=召喚 §a[[1 + <skilllevel>]]§0 個 §b投骨者§0
+tomb=生成一個每 §a[[10 - <skilllevel>]] 秒§0 召喚一個 §b骷髏§0 的結構\n墳墓的生命值等於 §a[[5 x <playerlevel> x <skilllevel>]]§0\n墳墓每秒損失總生命值的 2%
+necroticbloom=加速附近所有敵人的毒藥效果，將其持續時間縮短至 10%，但增加其每秒傷害以維持總傷害
+wardingtaunt=最近的可受傷害召喚物會強迫附近 §a[[50 x <skilllevel>]]§0 半徑內的敵人以其為目標
+
+unholyground=在你周圍擴散一個腐敗光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒藥傷害§0 並被 §7束縛
+necroticbarrage=所有可受傷害的召喚物在死亡時爆炸，對附近的敵人造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n並在 10 秒內每秒對它們造成 20% 的原始傷害
+
 
 [skillsdesckeys]
 skilllevel=技能等級
@@ -258,6 +312,7 @@ setmax=負面效果被設置為最大值，不能被其他增益移除
 
 // 增益
 marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率\n“最近的敵人”優先攻擊被標記的敵人
+constrained=§7束縛：§0 -50% 移動速度
 
 // 機率修正
 dodgechance=§7閃避機率：§0 閃避來襲攻擊的機率。不能超過 80%
@@ -276,6 +331,11 @@ fireball=§i火球術：§0 爆炸並點燃生物，在 5 秒內每秒重複其�
 
 // 召喚物
 dancingflame=§b舞動之焰：§0 像射彈一樣行動的召喚物。擊中時點燃敵人。在 5 秒內每秒重複其原始傷害的 20%
+
+// 可受傷害的召喚物
+necromancerskeleton=§b骷髏：§0 可受傷害的亡靈召喚物\n生命值：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n傷害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
+necromancerskeletonwarrior=§b骷髏戰士：§0 可受傷害的亡靈召喚物\n生命值：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n傷害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
+necromancerboneslinger=§b投骨者：§0 可受傷害的亡靈召喚物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n傷害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320 距離）\n速度：60\n每秒損失總生命值的 2%
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=此技能已在使用中
 anotheractiveskillinuse=你已經有另一個技能在使用中
 incooldown=冷卻中
 notenoughstamina=耐力不足
+notarget=附近沒有目標
 nograbbableobject=你面前沒有可抓取的物體
+nodamageablefollower=附近沒有可受傷害的召喚物
+
 
 [ui]
 menutitle=Save 的 RPG 模組
@@ -374,6 +437,8 @@ upcomingclass=§6即將推出的職業\n§9此職業目前正在開發中\n並�
 
 addcolumn=添加列
 removecolumn=刪除列
+
+rate=評價 RPG 模組！
 
 
 [controls]

@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9úroveň <level>§0
 
 rangerwolf=Hraničářský vlk
 dancingflame=Tančící plamen
+necromancerskeleton=Kostlivec
+necromancerskeletonwarrior=Kostlivý válečník
+necromancerboneslinger=Hazeč kostí
+necromancertomb=Hrobka
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Ledový štít
 flamingsteps=Plamenné kroky
 stormbound=Spoutaný bouří
 
+// Nekromant
+darkpower=Temná síla
+necroticpower=Nekrotická síla
+darkmagic=Temná magie
+necroticarmy=Nekrotická armáda
+darksummons=Temná vyvolání
+lifeleech=Vysávání života
+necroticremains=Nekrotické ostatky
+endlesslegion=Nekonečná legie
+lichborn=Zrozený jako lich
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Každých §a[[9 - 0.5 x <skilllevel>]] sekund§0 udeří blesk do n�
 arcaneshield=Štít, který zabrání jednomu zásahu\nŠtít se obnoví za §a[[20 - <skilllevel>]] sekund§0 po použití
 fireshield=Štít, který zabrání jednomu zásahu\nPři použití uvolníte explozi, která způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\na zapálí moby, opakujíc 20% jejich původního poškození za sekundu po dobu 5 sekund\nŠtít se obnoví za 26 sekund po použití
 iceshield=Štít, který zabrání jednomu zásahu\nPři použití uvolníte ledovou auru, která způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\nzmrazí moby na 5 sekund a úplně je zmrazí na 1 sekundu\nŠtít se obnoví za 22 sekund po použití
+
+// Nekromant
+necroticpower=Všechny vaše magické a vyvolávačské útoky otráví za 5% jejich poškození na §a[[2 x <skilllevel>]] sekund§0, pokud nejsou způsobeny vyvoláním
+darkmagic=Bonusy k poškození vyvolávače ovlivňují magické poškození o §a[[5 x <skilllevel>]]%
+necroticarmy=Poražení nepřátelští nepřátelé se promění v §bKostlivce§0 s §a-[[100 - 3 x <skilllevel>]]%§0 zdraví a poškození
+darksummons=Způsobte §a+[[10 x <skilllevel>]]%§0 poškození vyvolávače otráveným nepřátelům
+lifeleech=Obnoví §a[[<skilllevel>]]%§0 způsobeného poškození vyvolávače jako zdraví
+necroticremains=Když zemře nekrotické vyvolání, exploduje a způsobí §i[[0.1 x <intelligence> x <skilllevel>]] magického poškození§0 blízkým nepřátelům, otráví je 20% poškození za sekundu po dobu 10 sekund
+endlesslegion=Každé 4 úrovně této dovednosti získáte +1 maximální vyvolání
+lichborn=Když zemřete, přežijete a obnovíte §a[[10 x <skilllevel>]]%§0 zdraví, pokud již nejste lich\nNa dalších §a[[120 - 6 x <skilllevel>]] sekund§0 se stanete lichem (kostlivcem), který může střílet pouze kosti způsobující magické poškození rovné [[Síla]] a používat zbytek svých dovedností\nV podobě licha dostáváte dvojnásobné poškození
+
 
 [activeskills]
 empty=Prázdný
@@ -193,6 +219,20 @@ iceenchantment=Ledové očarování
 fireball=Ohnivá koule
 lightning=Blesk
 
+// Nekromant
+skeletonhorde=Horda kostlivců
+skeletonwarrior=Kostlivý válečník
+sacrifice=Oběť
+siegecry=Oblehací pokřik
+
+boneslingerhorde=Horda hazečů kostí
+tomb=Hrobka
+necroticbloom=Nekrotický květ
+wardingtaunt=Ochranné posměšky
+
+unholyground=Znesvěcená půda
+necroticbarrage=Nekrotická baráž
+
 
 [activeskillsdesc]
 
@@ -228,7 +268,7 @@ arrowstorm=Vystřelte základní šíp na každého blízkého nepřítele a zp�
 // Kouzelník
 arcaneoverload=Když je aktivní, zvýší vaši rychlost magického útoku o §a[[30 x <skilllevel>]]%§0, ale nebudete se moci hýbat\nSkončí, když vám dojde mana, nebo pokud se použije znovu\nSpotřebuje §a[[10 + 2 x <skilllevel>]] many za sekundu
 manarecharge=Když je aktivní, zvýší vaši regeneraci many o +1 a o §a[[50 x <skilllevel>]]%§0, ale budete paralyzováni a budete dostávat dvojnásobné poškození\nSkončí, když se použije znovu
-firedance=Vyvolá 4 §bTančící plameny§0, z nichž každý způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\nKaždých 5 sekund vyvolá další\nVšechna vyvolání zmizí 20 sekund po aktivaci schopnosti\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many
+firedance=Vyvolá 4 §bTančící plameny§0, z nichž každý způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\nKaždých 5 sekund vyvolá další\nVšechna vyvolání zmizí 20 sekund po aktivaci dovednosti\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many
 iceball=Hoďte §aLedovou kouli§0 na nejbližšího nepřítele a způsobte §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magického poškození§0\nSpotřebuje §a[[50 + 10 x <skilllevel>]] many
 zap=Spusťte zásah, který po dobu 2 sekund skáče mezi moby, způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0 a na 1 sekundu omráčí\nSpotřebuje §a[[10 + 2 x <skilllevel>]] many
 
@@ -239,6 +279,20 @@ iceenchantment=Na dalších 10 sekund útoky od vás a blízkých spojenců zmra
 
 fireball=Hoďte §iOhnivou kouli§0 na nejbližšího nepřítele a způsobte §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magického poškození§0\nSpotřebuje §a[[80 + 16 x <skilllevel>]] many
 lightning=Spusťte blesk, který po dobu 1 sekundy skáče mezi moby, způsobí §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] magického poškození§0 a na 2 sekundy omráčí\nNemůže zasáhnout stejný cíl vícekrát\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many
+
+// Nekromant
+skeletonhorde=Vyvolá §a[[1 + <skilllevel>]] §bKostlivců§0
+skeletonwarrior=Vyvolá §bKostlivého válečníka§0 s §a+[[20 x <skilllevel>]]%§0 zdraví a poškození
+sacrifice=Nejbližší poškoditelné vyvolání zemře a vy poté obnovíte §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdraví§0 jako magické léčení
+siegecry=Získejte §a+[[50 x <skilllevel>]]%§0 rychlosti vyvolávání na 6 sekund
+
+boneslingerhorde=Vyvolá §a[[1 + <skilllevel>]]§0 §bHazečů kostí§0
+tomb=Vytvoří strukturu, která každých §a[[10 - <skilllevel>]] sekund§0 vyvolá §bKostlivce§0\nHrobka má zdraví rovné §a[[5 x <playerlevel> x <skilllevel>]]§0\nHrobka ztrácí 2% svého celkového zdraví za sekundu
+necroticbloom=Zrychlí účinek jedu na všechny blízké nepřátele snížením jeho trvání na 10%, ale zvýšením jeho poškození za sekundu, aby se zachovalo celkové poškození
+wardingtaunt=Nejbližší poškoditelné vyvolání donutí blízké nepřátele v okruhu §a[[50 x <skilllevel>]]§0, aby na něj zaměřili útok
+
+unholyground=Rozšíří kolem vás auru korupce na 10 sekund\nNepřátelé v této oblasti utrpí §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] poškození jedem§0 za sekundu a jsou §7Omezeni
+necroticbarrage=Všechna poškoditelná vyvolání při smrti explodují a způsobí §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magického poškození§0 blízkým nepřátelům\na otráví je na 10 sekund 20% původního poškození za sekundu
 
 
 [skillsdesckeys]
@@ -258,6 +312,7 @@ setmax=Negativní účinky jsou nastaveny na maximum a nelze je odstranit jiným
 
 // Posílení
 marked=§hOznačený:§0 Způsobte +20% poškození (+ §hpoškození zaměření§0) a +10% šanci na kritický zásah mobům, které označíte\n"Nejbližší nepřítel" upřednostňuje označené nepřátele
+constrained=§7Omezený:§0 -50% rychlosti pohybu
 
 // Modifikátory šance
 dodgechance=§7Šance na uhnutí:§0 Šance na uhnutí příchozím útokům. Nemůže překročit 80%
@@ -276,6 +331,11 @@ fireball=§iOhnivá koule:§0 Magická střela, která exploduje a zapálí moby
 
 // Vyvolání
 dancingflame=§bTančící plamen:§0 Vyvolání, které se chová jako střela. Při zásahu zapálí nepřátele. Opakuje 20% svého původního poškození za sekundu po dobu 5 sekund
+
+// Poškoditelná vyvolání
+necromancerskeleton=§bKostlivec:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nPoškození: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
+necromancerskeletonwarrior=§bKostlivý válečník:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nPoškození: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
+necromancerboneslinger=§bHazeč kostí:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nPoškození: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (vzdálenost 320)\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Tato dovednost se již používá
 anotheractiveskillinuse=Již máte jinou dovednost v používání
 incooldown=Vychládá
 notenoughstamina=Nedostatek výdrže
+notarget=V blízkosti nejsou žádné cíle
 nograbbableobject=Před vámi není žádný uchopitelný předmět
+nodamageablefollower=V blízkosti nejsou žádná poškoditelná vyvolání
+
 
 [ui]
 menutitle=RPG MOD od Save
@@ -374,6 +437,8 @@ upcomingclass=§6Připravovaná třída\n§9Tato třída je v současné době v
 
 addcolumn=Přidat sloupec
 removecolumn=Odebrat sloupec
+
+rate=Ohodnoťte RPG Mod!
 
 
 [controls]

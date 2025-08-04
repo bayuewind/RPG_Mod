@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9liv <level>§0
 
 rangerwolf=Lupo Ranger
 dancingflame=Fiamma Danzante
+necromancerskeleton=Scheletro
+necromancerskeletonwarrior=Guerriero scheletro
+necromancerboneslinger=Lanciaossa
+necromancertomb=Tomba
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Scudo di Ghiaccio
 flamingsteps=Passi Fiammeggianti
 stormbound=Legato alla Tempesta
 
+// Negromante
+darkpower=Potere Oscuro
+necroticpower=Potere Necrotico
+darkmagic=Magia Nera
+necroticarmy=Esercito Necrotico
+darksummons=Evocazioni Oscure
+lifeleech=Assorbimento Vitale
+necroticremains=Resti Necrotici
+endlesslegion=Legione Infinita
+lichborn=Nato Lich
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Ogni §a[[9 - 0.5 x <skilllevel>]] secondi§0, un fulmine colpisce un
 arcaneshield=Uno scudo che previene un colpo\nLo scudo si ripristinerà §a[[20 - <skilllevel>]] secondi§0 dopo l'uso
 fireshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'esplosione che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ne darà fuoco ai mob, ripetendo il 20% del loro danno originale al secondo per 5 secondi\nLo scudo si ripristinerà 26 secondi dopo l'uso
 iceshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'aura di ghiaccio che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ncongelando i mob per 5 secondi e congelandoli totalmente per 1 secondo\nLo scudo si ripristinerà 22 secondi dopo l'uso
+
+// Negromante
+necroticpower=Tutti i tuoi attacchi Magici e da Evocatore avvelenano per il 5% del loro Danno per §a[[2 x <skilllevel>]] secondi§0, a condizione che non siano causati da un'evocazione
+darkmagic=I bonus ai Danni da Evocatore influenzano i Danni Magici del §a[[5 x <skilllevel>]]%
+necroticarmy=I nemici ostili sconfitti si trasformeranno in §bScheletri§0 con il §a-[[100 - 3 x <skilllevel>]]%§0 di Salute e Danni
+darksummons=Infliggi il §a+[[10 x <skilllevel>]]%§0 di Danni da Evocatore ai nemici avvelenati
+lifeleech=Recupera il §a[[<skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
+necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per il 20% dei danni al secondo per 10 secondi
+endlesslegion=Ogni 4 livelli di questa abilità, ottieni +1 evocazione massima
+lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un lich\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un lich (uno scheletro) che può solo sparare ossa che infliggono Danni Magici pari a [[Forza]] e usare il resto delle tue abilità\nMentre sei in forma di lich, subisci il doppio dei danni
+
 
 [activeskills]
 empty=Vuoto
@@ -193,6 +219,20 @@ iceenchantment=Incantesimo di Ghiaccio
 fireball=Palla di Fuoco
 lightning=Fulmine
 
+// Negromante
+skeletonhorde=Orda di Scheletri
+skeletonwarrior=Guerriero Scheletro
+sacrifice=Sacrificio
+siegecry=Grido d'Assedio
+
+boneslingerhorde=Orda di Lanciaossa
+tomb=Tomba
+necroticbloom=Fioritura Necrotica
+wardingtaunt=Provocazione Protettiva
+
+unholyground=Terreno Sconsacrato
+necroticbarrage=Sbarramento Necrotico
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Per i prossimi 10 secondi, gli attacchi tuoi e degli alleati vici
 fireball=Lancia una §iPalla di Fuoco§0 al nemico più vicino, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0\nConsuma §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Inizia un fulmine che salta tra i mob per 1 secondo, infliggendo §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Danni Magici§0 e stordendo per 2 secondi\nNon può colpire più volte lo stesso bersaglio\nConsuma §a[[30 + 6 x <skilllevel>]] Mana
 
+// Negromante
+skeletonhorde=Evoca §a[[1 + <skilllevel>]] §bScheletri§0
+skeletonwarrior=Evoca un §bGuerriero Scheletro§0 con il §a+[[20 x <skilllevel>]]%§0 di Salute e Danni
+sacrifice=L'evocazione danneggiabile più vicina muore, e tu recuperi §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Salute§0 come guarigione magica
+siegecry=Ottieni il §a+[[50 x <skilllevel>]]%§0 di Velocità di Evocazione per 6 secondi
+
+boneslingerhorde=Evoca §a[[1 + <skilllevel>]]§0 §bLanciaossa§0
+tomb=Genera una struttura che evoca uno §bScheletro§0 ogni §a[[10 - <skilllevel>]] secondi§0\nLa Tomba ha Salute pari a §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tomba perde il 2% della sua Salute Totale al secondo
+necroticbloom=Accelera l'effetto del veleno su tutti i nemici vicini riducendone la durata al 10%, ma aumentandone i danni al secondo per mantenere i danni totali
+wardingtaunt=L'evocazione danneggiabile più vicina costringe i nemici vicini entro un raggio di §a[[50 x <skilllevel>]]§0 a bersagliarla
+
+unholyground=Estende un'aura di corruzione intorno a te per 10 secondi\nI nemici all'interno di quest'area subiscono §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Danni da Veleno§0 al secondo e sono §7Vincolati
+necroticbarrage=Tutte le evocazioni danneggiabili esplodono alla morte, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini\ne avvelenandoli per 10 secondi con il 20% dei danni originali al secondo
+
 
 [skillsdesckeys]
 skilllevel=Livello abilità
@@ -258,6 +312,7 @@ setmax=Gli effetti negativi sono impostati al massimo e non possono essere rimos
 
 // Buff
 marked=§hMarcato:§0 Infliggi +20% di danni (+ §hdanno da concentrazione§0) e +10% di probabilità di colpo critico ai mob che marchi\n"Nemico più vicino" dà la priorità ai nemici marchiati
+constrained=§7Vincolato:§0 -50% di Velocità di Movimento
 
 // Modificatori di probabilità
 dodgechance=§7Probabilità di schivata:§0 Probabilità di schivare gli attacchi in arrivo. Non può superare l'80%
@@ -276,6 +331,11 @@ fireball=§iPalla di Fuoco:§0 Proiettile magico che esplode e incendia i mob ri
 
 // Evocazioni
 dancingflame=§bFiamma Danzante:§0 Evocazione che agisce come un proiettile. Incendia i nemici al colpo. Ripete il 20% del suo danno originale al secondo per 5 secondi
+
+// Evocazioni Danneggiabili
+necromancerskeleton=§bScheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
+necromancerskeletonwarrior=§bGuerriero Scheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDanno: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
+necromancerboneslinger=§bLanciaossa:§0 Evocazione necrotica danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distanza 320)\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Questa abilità è già in uso
 anotheractiveskillinuse=Hai già un'altra abilità in uso
 incooldown=In ricarica
 notenoughstamina=Resistenza insufficiente
+notarget=Non ci sono bersagli nelle vicinanze
 nograbbableobject=Non c'è nessun oggetto afferrabile di fronte a te
+nodamageablefollower=Non ci sono evocazioni danneggiabili nelle vicinanze
+
 
 [ui]
 menutitle=MOD RPG di Save
@@ -374,6 +437,8 @@ upcomingclass=§6Classe imminente\n§9Questa classe è attualmente in fase di sv
 
 addcolumn=Aggiungi colonna
 removecolumn=Rimuovi colonna
+
+rate=Valuta la MOD RPG!
 
 
 [controls]

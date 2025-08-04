@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9niv <level>§0
 
 rangerwolf=Loup Rôdeur
 dancingflame=Flamme Dansante
+necromancerskeleton=Squelette
+necromancerskeletonwarrior=Guerrier squelette
+necromancerboneslinger=Lanceur d'os
+necromancertomb=Tombe
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Bouclier de Glace
 flamingsteps=Pas Enflammés
 stormbound=Lié à la Tempête
 
+// Nécromancien
+darkpower=Puissance des Ténèbres
+necroticpower=Puissance nécrotique
+darkmagic=Magie noire
+necroticarmy=Armée nécrotique
+darksummons=Invocations des ténèbres
+lifeleech=Vol de vie
+necroticremains=Restes nécrotiques
+endlesslegion=Légion sans fin
+lichborn=Né-liche
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Toutes les §a[[9 - 0.5 x <skilllevel>]] secondes§0, un éclair frap
 arcaneshield=Un bouclier qui empêche un coup\nLe bouclier se rétablira §a[[20 - <skilllevel>]] secondes§0 après son utilisation
 fireshield=Un bouclier qui empêche un coup\nLorsqu'il est utilisé, vous libérerez une explosion infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\net enflammant les monstres, répétant 20% de leurs dégâts d'origine par seconde pendant 5 secondes\nLe bouclier se rétablira 26 secondes après son utilisation
 iceshield=Un bouclier qui empêche un coup\nLorsqu'il est utilisé, vous libérerez une aura de glace infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\ncombinant les monstres pendant 5 secondes, et les gelant totalement pendant 1 seconde\nLe bouclier se rétablira 22 secondes après son utilisation
+
+// Nécromancien
+necroticpower=Toutes vos attaques magiques et d'invocateur empoisonnent pour 5% de leurs dégâts pendant §a[[2 x <skilllevel>]] secondes§0, tant qu'elles ne sont pas causées par une invocation
+darkmagic=Les bonus de dégâts d'invocateur affectent les dégâts magiques de §a[[5 x <skilllevel>]]%
+necroticarmy=Les ennemis hostiles vaincus se transformeront en §bSquelettes§0 avec §a-[[100 - 3 x <skilllevel>]]%§0 de santé et de dégâts
+darksummons=Infligez §a+[[10 x <skilllevel>]]%§0 de dégâts d'invocateur aux ennemis empoisonnés
+lifeleech=Récupère §a[[<skilllevel>]]%§0 des dégâts d'invocateur infligés sous forme de santé
+necroticremains=Lorsqu'une invocation nécrotique meurt, elle explose, infligeant §i[[0.1 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches, les empoisonnant pour 20% des dégâts par seconde pendant 10 secondes
+endlesslegion=Tous les 4 niveaux de cette compétence, vous gagnez +1 invocation maximale
+lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de santé si vous n'êtes pas déjà une liche\nPendant les §a[[120 - 6 x <skilllevel>]] prochaines secondes§0, vous devenez une liche (un squelette) qui ne peut que tirer des os infligeant des dégâts magiques égaux à [[Force]] et utiliser le reste de vos compétences\nSous forme de liche, vous subissez le double de dégâts
+
 
 [activeskills]
 empty=Vide
@@ -193,6 +219,20 @@ iceenchantment=Enchantement de Glace
 fireball=Boule de Feu
 lightning=Éclair
 
+// Nécromancien
+skeletonhorde=Horde de squelettes
+skeletonwarrior=Guerrier squelette
+sacrifice=Sacrifice
+siegecry=Cri de siège
+
+boneslingerhorde=Horde de lanceurs d'os
+tomb=Tombe
+necroticbloom=Floraison nécrotique
+wardingtaunt=Provocation protectrice
+
+unholyground=Sol impie
+necroticbarrage=Barrage nécrotique
+
 
 [activeskillsdesc]
 
@@ -228,7 +268,7 @@ arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2
 // Sorcier
 arcaneoverload=Lorsqu'il est actif, augmente votre Vitesse d'Attaque Magique de §a[[30 x <skilllevel>]]%§0, mais vous ne pourrez pas bouger\nSe termine lorsque vous n'avez plus de mana, ou s'il est utilisé à nouveau\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana par seconde
 manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts\nSe termine lorsqu'il est utilisé à nouveau
-firedance=Invoque 4 §bFlammes Dansantes§0, chacune infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nInvoque une autre toutes les 5 secondes\nToutes les invocations disparaissent 20 secondes après l'activation de la capacité\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
+firedance=Invoque 4 §bFlammes Dansantes§0, chacune infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nInvoque une autre toutes les 5 secondes\nToutes les invocations disparaissent 20 secondes après l'activation de la compétence\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
 iceball=Lance une §aBoule de Glace§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[50 + 10 x <skilllevel>]] de Mana
 zap=Lance un zapping qui saute entre les monstres pendant 2 secondes, infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 1 seconde\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana
 
@@ -239,6 +279,20 @@ iceenchantment=Pendant les 10 prochaines secondes, les attaques de vous et de vo
 
 fireball=Lance une §iBoule de Feu§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[80 + 16 x <skilllevel>]] de Mana
 lightning=Lance un éclair qui saute entre les monstres pendant 1 seconde, infligeant §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 2 secondes\nNe peut pas frapper plusieurs fois la même cible\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
+
+// Nécromancien
+skeletonhorde=Invoque §a[[1 + <skilllevel>]] §bSquelettes§0
+skeletonwarrior=Invoque un §bGuerrier squelette§0 avec §a+[[20 x <skilllevel>]]%§0 de santé et de dégâts
+sacrifice=L'invocation vulnérable la plus proche meurt, et vous récupérez alors §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de santé§0 sous forme de guérison magique
+siegecry=Gagnez §a+[[50 x <skilllevel>]]%§0 de vitesse d'invocation pendant 6 secondes
+
+boneslingerhorde=Invoque §a[[1 + <skilllevel>]]§0 §bLanceurs d'os§0
+tomb=Génère une structure qui invoque un §bSquelette§0 toutes les §a[[10 - <skilllevel>]] secondes§0\nLa Tombe a une santé égale à §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tombe perd 2% de sa santé totale par seconde
+necroticbloom=Accélère l'effet du poison sur tous les ennemis proches en réduisant sa durée à 10%, mais en augmentant ses dégâts par seconde pour maintenir les dégâts totaux
+wardingtaunt=L'invocation vulnérable la plus proche force les ennemis proches dans un rayon de §a[[50 x <skilllevel>]]§0 à la cibler
+
+unholyground=Étend une aura de corruption autour de vous pendant 10 secondes\nLes ennemis dans cette zone subissent §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de dégâts de poison§0 par seconde et sont §7Contraints
+necroticbarrage=Toutes les invocations vulnérables explosent à leur mort, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches\net les empoisonnant pendant 10 secondes avec 20% des dégâts d'origine par seconde
 
 
 [skillsdesckeys]
@@ -258,6 +312,7 @@ setmax=Les effets négatifs sont définis au maximum et ne peuvent pas être sup
 
 // Améliorations
 marked=§hMarqué:§0 Infligez +20% de Dégâts (+ §hDégâts de Focalisation§0) et +10% de Chance de Critique aux monstres que vous marquez\n"L'ennemi le plus proche" donne la priorité aux ennemis marqués
+constrained=§7Contraint:§0 -50% de vitesse de déplacement
 
 // Modificateurs de chance
 dodgechance=§7Chance d'esquive:§0 Chance d'esquiver les attaques entrantes. Ne peut pas dépasser 80%
@@ -276,6 +331,11 @@ fireball=§iBoule de Feu:§0 Projectile magique qui explose et enflamme les mons
 
 // Invocations
 dancingflame=§bFlamme Dansante:§0 Invocation qui agit comme un projectile. Enflamme les ennemis à l'impact. Répète 20% de ses dégâts d'origine par seconde pendant 5 secondes
+
+// Invocations vulnérables
+necromancerskeleton=§bSquelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
+necromancerskeletonwarrior=§bGuerrier squelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDégâts: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
+necromancerboneslinger=§bLanceur d'os:§0 Invocation nécrotique vulnérable\nSanté: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distance 320)\nVitesse: 60\nPerd 2% de sa santé totale par seconde
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Cette compétence est déjà en cours d'utilisation
 anotheractiveskillinuse=Vous avez déjà une autre compétence en cours d'utilisation
 incooldown=En recharge
 notenoughstamina=Pas assez d'endurance
+notarget=Il n'y a pas de cibles à proximité
 nograbbableobject=Il n'y a aucun objet saisissable devant vous
+nodamageablefollower=Il n'y a pas d'invocations vulnérables à proximité
+
 
 [ui]
 menutitle=MOD RPG par Save
@@ -374,6 +437,8 @@ upcomingclass=§6Classe à venir\n§9Cette classe est actuellement en développe
 
 addcolumn=Ajouter une colonne
 removecolumn=Supprimer la colonne
+
+rate=Évaluez le mod RPG !
 
 
 [controls]

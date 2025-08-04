@@ -72,7 +72,7 @@ public class SkillComponent extends FormContentBox {
             }
         }.onClicked(c -> {
             int classLevel = classData.getLevel(false);
-            int maxLevel = classData.getEffectiveSkillMaxLevel(skill, classLevel);
+            int maxLevel = classData.getEffectiveSkillMaxLevel(skill, classLevel, mutableSkillLevels);
 
             if (skillLevel.get() < maxLevel) {
                 if (skill instanceof ActiveSkill) {

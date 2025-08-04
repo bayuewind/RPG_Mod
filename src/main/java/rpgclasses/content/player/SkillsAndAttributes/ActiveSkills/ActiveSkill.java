@@ -3,6 +3,8 @@ package rpgclasses.content.player.SkillsAndAttributes.ActiveSkills;
 import necesse.engine.localization.Localization;
 import necesse.engine.network.gameNetworkData.GNDItemMap;
 import necesse.engine.registries.BuffRegistry;
+import necesse.engine.util.GameMath;
+import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffModifiers;
@@ -13,6 +15,7 @@ import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -215,5 +218,14 @@ abstract public class ActiveSkill extends Skill {
                 return Math.abs(1F - gndData.getFloat("stamina")) * capacityMod;
             }
         }
+    }
+
+    public static Point2D.Float getRandomClosePlace(PlayerMob player) {
+        float angle = GameRandom.globalRandom.getIntBetween(0, 359);
+        int distance = GameRandom.globalRandom.getIntBetween(32, 64);
+        return new Point2D.Float(
+                player.x + GameMath.cos(angle) * distance,
+                player.y + GameMath.sin(angle) * distance
+        );
     }
 }

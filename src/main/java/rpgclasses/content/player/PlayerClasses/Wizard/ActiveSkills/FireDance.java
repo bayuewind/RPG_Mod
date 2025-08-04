@@ -30,7 +30,7 @@ public class FireDance extends SimpleBuffActiveSkill {
         super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
 
         for (int i = 0; i < 4; i++) {
-            summonDancingFlame(player, playerData, activeSkillLevel, getBuffStringID());
+            summonDancingFlame(player, playerData, activeSkillLevel, stringID);
         }
     }
 
@@ -43,7 +43,7 @@ public class FireDance extends SimpleBuffActiveSkill {
 
     @Override
     public ActiveSkillBuff getBuff() {
-        return new DancingFlameBuff(this, getBuffStringID());
+        return new DancingFlameBuff(this, stringID);
     }
 
     @Override
@@ -68,11 +68,11 @@ public class FireDance extends SimpleBuffActiveSkill {
 
     public static class DancingFlameBuff extends ActiveSkillBuff {
         public ActiveSkill skill;
-        public String buffStringID;
+        public String skillStringID;
 
-        public DancingFlameBuff(ActiveSkill skill, String buffStringID) {
+        public DancingFlameBuff(ActiveSkill skill, String skillStringID) {
             this.skill = skill;
-            this.buffStringID = buffStringID;
+            this.skillStringID = skillStringID;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class FireDance extends SimpleBuffActiveSkill {
                     activeBuff.getGndData().setInt("alreadySummoned", alreadySummoned);
 
                     PlayerMob player = (PlayerMob) activeBuff.owner;
-                    summonDancingFlame(player, PlayerDataList.getPlayerData(player), skill, buffStringID);
+                    summonDancingFlame(player, PlayerDataList.getPlayerData(player), skill, skillStringID);
                 }
             }
         }
@@ -97,7 +97,7 @@ public class FireDance extends SimpleBuffActiveSkill {
         public void onRemoved(ActiveBuff activeBuff) {
             ArrayList<Mob> mobs = new ArrayList<>();
             ((PlayerMob) activeBuff.owner).serverFollowersManager.streamFollowers()
-                    .filter(m -> m.summonType.equals(buffStringID))
+                    .filter(m -> m.summonType.equals(skillStringID))
                     .forEach(m -> mobs.add(m.mob));
             for (Mob mob : mobs) {
                 mob.remove();
@@ -105,13 +105,13 @@ public class FireDance extends SimpleBuffActiveSkill {
         }
     }
 
-    public static void summonDancingFlame(PlayerMob player, PlayerData playerData, ActiveSkill activeSkill, String buffStringID) {
-        summonDancingFlame(player, playerData, playerData.getClassesData()[activeSkill.playerClass.id].getActiveSkillLevels()[activeSkill.id], buffStringID);
+    public static void summonDancingFlame(PlayerMob player, PlayerData playerData, ActiveSkill activeSkill, String skillStringID) {
+        summonDancingFlame(player, playerData, playerData.getClassesData()[activeSkill.playerClass.id].getActiveSkillLevels()[activeSkill.id], skillStringID);
     }
 
-    public static void summonDancingFlame(PlayerMob player, PlayerData playerData, int activeSkillLevel, String buffStringID) {
+    public static void summonDancingFlame(PlayerMob player, PlayerData playerData, int activeSkillLevel, String skillStringID) {
         AttackingFollowingMob mob = (AttackingFollowingMob) MobRegistry.getMob("dancingflame", player.getLevel());
-        player.serverFollowersManager.addFollower(buffStringID, mob, FollowPosition.FLYING_CIRCLE_FAST, null, 1, 7, null, true);
+        player.serverFollowersManager.addFollower(skillStringID, mob, FollowPosition.FLYING_CIRCLE_FAST, null, 1, 7, null, true);
         mob.updateDamage(new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() * activeSkillLevel + playerData.getIntelligence(player) * activeSkillLevel));
         mob.getLevel().entityManager.addMob(mob, player.x, player.y);
     }

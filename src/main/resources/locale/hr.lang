@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9razina <level>§0
 
 rangerwolf=Vuk Rendžer
 dancingflame=Plešući plamen
+necromancerskeleton=Kostur
+necromancerskeletonwarrior=Ratnik kostur
+necromancerboneslinger=Bacač kostiju
+necromancertomb=Grob
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Ledeni štit
 flamingsteps=Plameni koraci
 stormbound=Okovan olujom
 
+// Nekromant
+darkpower=Mračna moć
+necroticpower=Nekrotična moć
+darkmagic=Mračna magija
+necroticarmy=Nekrotična vojska
+darksummons=Mračni prizivi
+lifeleech=Krađa života
+necroticremains=Nekrotični ostaci
+endlesslegion=Beskrajna legija
+lichborn=Rođen kao lič
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Svakih §a[[9 - 0.5 x <skilllevel>]] sekundi§0, munja udari nasumič
 arcaneshield=Štit koji sprječava jedan udarac\nŠtit će se oporaviti §a[[20 - <skilllevel>]] sekundi§0 nakon upotrebe
 fireshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete eksploziju koja nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\ni zapaliti mobove, ponavljajući 20% njihove izvorne štete u sekundi tijekom 5 sekundi\nŠtit će se oporaviti 26 sekundi nakon upotrebe
 iceshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete ledenu auru koja nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nzamrzavajući mobove na 5 sekundi, i potpuno ih zamrzavajući na 1 sekundu\nŠtit će se oporaviti 22 sekunde nakon upotrebe
+
+// Nekromant
+necroticpower=Svi vaši magični i prizivački napadi truju za 5% njihove štete tijekom §a[[2 x <skilllevel>]] sekundi§0, sve dok ih ne uzrokuje priziv
+darkmagic=Bonusi na štetu prizivača utječu na magičnu štetu za §a[[5 x <skilllevel>]]%
+necroticarmy=Poraženi neprijateljski neprijatelji pretvorit će se u §bKosture§0 s §a-[[100 - 3 x <skilllevel>]]%§0 zdravlja i štete
+darksummons=Nanesite §a+[[10 x <skilllevel>]]%§0 štete prizivača otrovanim neprijateljima
+lifeleech=Oporavlja §a[[<skilllevel>]]%§0 nanesene štete prizivača kao zdravlje
+necroticremains=Kada nekrotični priziv umre, eksplodira, nanoseći §i[[0.1 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima, trujući ih s 20% štete u sekundi tijekom 10 sekundi
+endlesslegion=Svake 4 razine ove vještine, dobivate +1 maksimalni priziv
+lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste lič\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete lič (kostur) koji može samo ispaljivati kosti nanoseći magičnu štetu jednaku [[Snaga]] i koristiti ostatak svojih vještina\nDok ste u obliku liča, primate dvostruku štetu
+
 
 [activeskills]
 empty=Prazno
@@ -193,6 +219,20 @@ iceenchantment=Ledeno očaravanje
 fireball=Vatrena kugla
 lightning=Munja
 
+// Nekromant
+skeletonhorde=Horda kostura
+skeletonwarrior=Ratnik kostur
+sacrifice=Žrtva
+siegecry=Krik opsade
+
+boneslingerhorde=Horda bacača kostiju
+tomb=Grob
+necroticbloom=Nekrotični cvat
+wardingtaunt=Zaštitna provokacija
+
+unholyground=Nečisto tlo
+necroticbarrage=Nekrotična baraža
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Sljedećih 10 sekundi, napadi od vas i obližnjih saveznika zamrz
 fireball=Bacite §iVatrenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[80 + 16 x <skilllevel>]] mane
 lightning=Pokrenite munju koja skače između mobova 1 sekundu, nanoseći §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 2 sekunde\nNe može pogoditi istu metu više puta\nTroši §a[[30 + 6 x <skilllevel>]] mane
 
+// Nekromant
+skeletonhorde=Priziva §a[[1 + <skilllevel>]] §bKostura§0
+skeletonwarrior=Priziva §bRatnika kostura§0 s §a+[[20 x <skilllevel>]]%§0 zdravlja i štete
+sacrifice=Najbliži oštetivi priziv umire, a vi zatim oporavljate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdravlja§0 kao magično iscjeljenje
+siegecry=Dobijte §a+[[50 x <skilllevel>]]%§0 brzine prizivanja na 6 sekundi
+
+boneslingerhorde=Priziva §a[[1 + <skilllevel>]]§0 §bBacača kostiju§0
+tomb=Stvara strukturu koja priziva §bKostura§0 svakih §a[[10 - <skilllevel>]] sekundi§0\nGrob ima zdravlje jednako §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrob gubi 2% svog ukupnog zdravlja u sekundi
+necroticbloom=Ubrzava učinak otrova na sve obližnje neprijatelje smanjujući njegovo trajanje na 10%, ali povećavajući njegovu štetu u sekundi kako bi se održala ukupna šteta
+wardingtaunt=Najbliži oštetivi priziv prisiljava obližnje neprijatelje unutar radijusa od §a[[50 x <skilllevel>]]§0 da ga ciljaju
+
+unholyground=Širi auru korupcije oko vas 10 sekundi\nNeprijatelji unutar ovog područja primaju §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] štete od otrova§0 u sekundi i §7Ograničeni su
+necroticbarrage=Svi oštetivi prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
+
 
 [skillsdesckeys]
 skilllevel=Razina vještine
@@ -258,6 +312,7 @@ setmax=Negativni učinci postavljeni su na maksimum i ne mogu se ukloniti drugim
 
 // Pojačanja
 marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\n"Najbliži neprijatelj" daje prednost označenim neprijateljima
+constrained=§7Ograničen:§0 -50% brzine kretanja
 
 // Modifikatori šanse
 dodgechance=§7Šansa za izbjegavanje:§0 Šansa za izbjegavanje dolaznih napada. Ne može premašiti 80%
@@ -276,6 +331,11 @@ fireball=§iVatrena kugla:§0 Magični projektil koji eksplodira i zapali mobove
 
 // Prizivi
 dancingflame=§bPlešući plamen:§0 Priziv koji djeluje kao projektil. Zapali neprijatelje pri udarcu. Ponavlja 20% svoje izvorne štete u sekundi tijekom 5 sekundi
+
+// Oštetivi prizivi
+necromancerskeleton=§bKostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
+necromancerskeletonwarrior=§bRatnik kostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŠteta: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
+necromancerboneslinger=§bBacač kostiju:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 udaljenost)\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Ova vještina je već u upotrebi
 anotheractiveskillinuse=Već imate drugu vještinu u upotrebi
 incooldown=Na hlađenju
 notenoughstamina=Nema dovoljno izdržljivosti
+notarget=Nema ciljeva u blizini
 nograbbableobject=Ispred vas nema predmeta koji se može zgrabiti
+nodamageablefollower=Nema oštetivih priziva u blizini
+
 
 [ui]
 menutitle=RPG MOD autora Save
@@ -374,6 +437,8 @@ upcomingclass=§6Nadolazeća klasa\n§9Ova klasa je trenutno u razvoju\ni bit ć
 
 addcolumn=Dodaj stupac
 removecolumn=Ukloni stupac
+
+rate=Ocijenite RPG Mod!
 
 
 [controls]

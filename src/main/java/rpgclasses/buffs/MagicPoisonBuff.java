@@ -29,7 +29,7 @@ public class MagicPoisonBuff extends Buff {
 
     @Override
     public void init(ActiveBuff activeBuff, BuffEventSubscriber eventSubscriber) {
-        activeBuff.setModifier(BuffModifiers.POISON_DAMAGE_FLAT, activeBuff.getGndData().getFloat("poisonDamage"));
+        updateModifier(activeBuff);
     }
 
     public static void apply(Mob attacker, Mob target, float damage, float duration) {
@@ -56,8 +56,15 @@ public class MagicPoisonBuff extends Buff {
         return finalDamage > finalOldDamage;
     }
 
+    public static float getPoisonDamage(ActiveBuff activeBuff) {
+        return activeBuff.getGndData().getFloat("poisonDamage");
+    }
 
     public static void setPoisonDamage(ActiveBuff activeBuff, float damage) {
         activeBuff.getGndData().setFloat("poisonDamage", damage);
+    }
+
+    public static void updateModifier(ActiveBuff activeBuff) {
+        activeBuff.setModifier(BuffModifiers.POISON_DAMAGE_FLAT, activeBuff.getGndData().getFloat("poisonDamage"));
     }
 }

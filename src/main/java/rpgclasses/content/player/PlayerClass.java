@@ -3,6 +3,7 @@ package rpgclasses.content.player;
 import necesse.engine.localization.Localization;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
+import rpgclasses.content.player.PlayerClasses.Necromancer.NecromancerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Ranger.RangerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.WarriorPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Wizard.WizardPlayerClass;
@@ -24,7 +25,7 @@ abstract public class PlayerClass {
         registerClass(new WarriorPlayerClass());
         registerClass(new RangerPlayerClass());
         registerClass(new WizardPlayerClass());
-        registerClass(new UpcomingPlayerClass("necromancer", "#6A0DAD"));
+        registerClass(new NecromancerPlayerClass());
         registerClass(new UpcomingPlayerClass("cleric", "#FFD60A"));
         registerClass(new UpcomingPlayerClass("rogue", "#8B0000"));
         registerClass(new UpcomingPlayerClass("warlock", "#B22222"));

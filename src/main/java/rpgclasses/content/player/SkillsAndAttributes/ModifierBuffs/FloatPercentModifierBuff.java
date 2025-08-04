@@ -2,7 +2,6 @@ package rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs;
 
 import necesse.engine.localization.Localization;
 import necesse.engine.modifiers.Modifier;
-import necesse.entity.mobs.buffs.ActiveBuff;
 
 public class FloatPercentModifierBuff extends ModifierBuff<Float> {
     public final boolean add;

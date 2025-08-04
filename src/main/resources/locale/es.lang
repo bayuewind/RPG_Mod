@@ -29,7 +29,7 @@ depleted=Agotado
 
 
 [buff]
-overlevelclassbuff=Clase de sobrenivel
+overlevelclassbuff=Clase sobrenivelada
 markedbuff=Marcado
 darkcursebuff=Maldición Oscura
 magicpoisonbuff=Veneno Mágico
@@ -49,6 +49,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9nv <level>§0
 
 rangerwolf=Lobo Explorador
 dancingflame=Llama Danzante
+necromancerskeleton=Esqueleto
+necromancerskeletonwarrior=Guerrero Esqueleto
+necromancerboneslinger=Lanzahuesos
+necromancertomb=Tumba
 
 
 [mobclass]
@@ -125,6 +129,17 @@ iceshield=Escudo de Hielo
 flamingsteps=Pasos Llameantes
 stormbound=Atado a la Tormenta
 
+// Nigromante
+darkpower=Poder Oscuro
+necroticpower=Poder Necrótico
+darkmagic=Magia Oscura
+necroticarmy=Ejército Necrótico
+darksummons=Invocaciones Oscuras
+lifeleech=Absorción de Vida
+necroticremains=Restos Necróticos
+endlesslegion=Legión Interminable
+lichborn=Nacido como Liche
+
 
 [passivesdesc]
 // Warrior
@@ -144,6 +159,16 @@ stormbound=Cada §a[[9 - 0.5 x <skilllevel>]] segundos§0, un rayo cae sobre un 
 arcaneshield=Un escudo que previene un golpe\nEl escudo se recuperará §a[[20 - <skilllevel>]] segundos§0 después de usarlo
 fireshield=Un escudo que previene un golpe\nAl usarlo, liberarás una explosión que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ny quemarás a los monstruos, repitiendo el 20% de su daño original por segundo durante 5 segundos\nEl escudo se recuperará 26 segundos después de usarlo
 iceshield=Un escudo que previene un golpe\nAl usarlo, liberarás un aura de hielo que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ncongelando a los monstruos durante 5 segundos, y congelándolos totalmente durante 1 segundo\nEl escudo se recuperará 22 segundos después de usarlo
+
+// Nigromante
+necroticpower=Todos tus ataques Mágicos y de Invocador envenenan un 5% de su Daño durante §a[[2 x <skilllevel>]] segundos§0, siempre que no sean causados por una invocación
+darkmagic=Las bonificaciones de Daño de Invocador afectan al Daño Mágico en un §a[[5 x <skilllevel>]]%
+necroticarmy=Los enemigos hostiles derrotados se convertirán en §bEsqueletos§0 con un §a-[[100 - 3 x <skilllevel>]]%§0 de Salud y Daño
+darksummons=Inflige un §a+[[10 x <skilllevel>]]%§0 de Daño de Invocador a los enemigos envenenados
+lifeleech=Recupera un §a[[<skilllevel>]]%§0 del Daño de Invocador infligido como Salud
+necroticremains=Cuando una invocación necrótica muere, explota, infligiendo §i[[0.1 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos, envenenándolos con un 20% del daño por segundo durante 10 segundos
+endlesslegion=Cada 4 niveles de esta habilidad, ganas +1 invocación máxima
+lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un liche\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un liche (un esqueleto) que solo puede disparar huesos que infligen Daño Mágico igual a [[Fuerza]] y usar el resto de tus habilidades\nMientras estás en forma de liche, recibes el doble de daño
 
 
 [activeskills]
@@ -194,6 +219,20 @@ iceenchantment=Encantamiento de Hielo
 fireball=Bola de Fuego
 lightning=Rayo
 
+// Nigromante
+skeletonhorde=Horda de Esqueletos
+skeletonwarrior=Guerrero Esqueleto
+sacrifice=Sacrificio
+siegecry=Grito de Asedio
+
+boneslingerhorde=Horda de Lanzahuesos
+tomb=Tumba
+necroticbloom=Floración Necrótica
+wardingtaunt=Provocación Protectora
+
+unholyground=Suelo Profano
+necroticbarrage=Andanada Necrótica
+
 
 [activeskillsdesc]
 // Warrior
@@ -241,6 +280,20 @@ iceenchantment=Durante los próximos 10 segundos, los ataques tuyos y de los ali
 fireball=Lanza una §iBola de Fuego§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\nConsume §a[[80 + 16 x <skilllevel>]] de Maná
 lightning=Inicia un rayo que salta entre los monstruos durante 1 segundo, infligiendo §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturdiendo durante 2 segundos\nNo puede golpear varias veces al mismo objetivo\nConsume §a[[30 + 6 x <skilllevel>]] de Maná
 
+// Nigromante
+skeletonhorde=Invoca §a[[1 + <skilllevel>]] §bEsqueletos§0
+skeletonwarrior=Invoca un §bGuerrero Esqueleto§0 con un §a+[[20 x <skilllevel>]]%§0 de Salud y Daño
+sacrifice=La invocación dañable más cercana muere, y luego recuperas §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Salud§0 como curación mágica
+siegecry=Gana un §a+[[50 x <skilllevel>]]%§0 de Velocidad de Invocación durante 6 segundos
+
+boneslingerhorde=Invoca §a[[1 + <skilllevel>]]§0 §bLanzahuesos§0
+tomb=Genera una estructura que invoca un §bEsqueleto§0 cada §a[[10 - <skilllevel>]] segundos§0\nLa Tumba tiene una Salud igual a §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tumba pierde un 2% de su Salud Total por segundo
+necroticbloom=Acelera el efecto del veneno en todos los enemigos cercanos reduciendo su duración al 10%, pero aumentando su daño por segundo para mantener el daño total
+wardingtaunt=La invocación dañable más cercana obliga a los enemigos cercanos en un radio de §a[[50 x <skilllevel>]]§0 a atacarla
+
+unholyground=Extiende un aura de corrupción a tu alrededor durante 10 segundos\nLos enemigos dentro de esta área reciben §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Daño de Veneno§0 por segundo y están §7Restringidos
+necroticbarrage=Todas las invocaciones dañables explotan al morir, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos\ny envenenándolos durante 10 segundos con un 20% del daño original por segundo
+
 
 [skillsdesckeys]
 skilllevel=Nivel de Habilidad
@@ -259,6 +312,7 @@ setmax=Los efectos negativos se establecen como máximos y no se pueden eliminar
 
 // Buffs
 marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\n"El enemigo más cercano" prioriza a los enemigos marcados
+constrained=§7Restringido:§0 -50% de Velocidad de Movimiento
 
 // Chance Modifiers
 dodgechance=§7Probabilidad de Esquivar:§0 Probabilidad de esquivar los ataques entrantes. No puede exceder el 80%
@@ -277,6 +331,11 @@ fireball=§iBola de Fuego:§0 Proyectil mágico que explota y quema a los monstr
 
 // Summons
 dancingflame=§bLlama Danzante:§0 Invocación que actúa como un proyectil. Quema a los enemigos al golpear. Repite el 20% de su daño original por segundo durante 5 segundos
+
+// Invocaciones dañables
+necromancerskeleton=§bEsqueleto:§0 Invocación necrótica dañable\nSalud: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
+necromancerskeletonwarrior=§bGuerrero Esqueleto:§0 Invocación necrótica dañable\nSalud: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDaño: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
+necromancerboneslinger=§bLanzahuesos:§0 Invocación necrótica dañable\nSalud: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distancia 320)\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
 
 
 [item]
@@ -331,7 +390,9 @@ activeskillinuse=Esta habilidad ya está En Uso
 anotheractiveskillinuse=Ya tienes otra habilidad En Uso
 incooldown=En Enfriamiento
 notenoughstamina=No hay Suficiente Resistencia
+notarget=No hay objetivos cerca
 nograbbableobject=No hay ningún objeto agarrable frente a ti
+nodamageablefollower=No hay invocaciones dañables cerca
 
 
 [ui]
@@ -376,6 +437,8 @@ upcomingclass=§6Próxima Clase\n§9Esta clase está actualmente en desarrollo\n
 
 addcolumn=Añadir columna
 removecolumn=Eliminar columna
+
+rate=¡Valora el Mod RPG!
 
 
 [controls]

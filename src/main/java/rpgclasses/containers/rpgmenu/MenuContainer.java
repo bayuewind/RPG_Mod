@@ -125,7 +125,7 @@ public class MenuContainer extends Container {
                                             int activeSkillLevel = classData.getActiveSkillLevels()[skillID];
                                             if (activeSkillLevel > 0) {
                                                 ActiveSkill activeSkill = classData.playerClass.activeSkillsList.get(skillID);
-                                                int maxEffectiveLevel = classData.getEffectiveSkillMaxLevel(activeSkill, classLevel);
+                                                int maxEffectiveLevel = classData.getEffectiveSkillMaxLevel(activeSkill, classLevel, classData.getActiveSkillLevels());
                                                 if (maxEffectiveLevel < activeSkillLevel) {
                                                     classData.setActiveSkillLevel(skillID, maxEffectiveLevel);
                                                     checkActiveSkillRequirements(classData, activeSkill, maxEffectiveLevel);
@@ -137,7 +137,7 @@ public class MenuContainer extends Container {
                                             int passiveLevel = classData.getPassiveLevels()[skillID];
                                             if (passiveLevel > 0) {
                                                 Passive passive = classData.playerClass.passivesList.get(skillID);
-                                                int maxEffectiveLevel = classData.getEffectiveSkillMaxLevel(passive, classLevel);
+                                                int maxEffectiveLevel = classData.getEffectiveSkillMaxLevel(passive, classLevel, classData.getPassiveLevels());
                                                 if (maxEffectiveLevel < passiveLevel) {
                                                     classData.setPassiveLevel(skillID, maxEffectiveLevel);
                                                     someChange = true;
@@ -150,7 +150,7 @@ public class MenuContainer extends Container {
                                     }
                                     serverClient.getServer().network.sendToAllClients(new UpdateClientClassesPacket(PlayerDataList.getPlayerData(serverClient.playerMob)));
 
-                                    playerData.updateClassesBuffs(serverClient.playerMob);
+                                    playerData.updateAllBuffs(serverClient.playerMob);
 
                                     boolean someEquippedUpdate = false;
                                     for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
@@ -214,7 +214,9 @@ public class MenuContainer extends Container {
                             PlayerData playerData = PlayerDataList.getPlayerData(serverClient.playerMob);
                             PlayerClassData classData = playerData.getClassesData()[classID];
 
-                            boolean valid = true;
+                            String familyInvalid = null;
+                            String levelsInvalid = null;
+
                             Set<String> passiveFamilies = new HashSet<>();
                             for (int i = 0; i < passiveLevels.length; i++) {
                                 Passive passive = classData.playerClass.passivesList.get(i);
@@ -222,69 +224,86 @@ public class MenuContainer extends Container {
 
                                 if (assignedLevel > 0 && passive.family != null) {
                                     if (passiveFamilies.contains(passive.family)) {
-                                        valid = false;
+                                        familyInvalid = passive.family + " (" + passive.stringID + ")";
                                         break;
                                     }
                                     passiveFamilies.add(passive.family);
                                 }
 
-                                int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(false));
+                                int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(false), passiveLevels);
 
                                 if (assignedLevel < 0 || assignedLevel > effectiveMax) {
-                                    valid = false;
+                                    levelsInvalid = passive.stringID;
                                     break;
                                 }
                             }
 
-                            if (valid) {
-                                for (int i = 0; i < activeSkillLevels.length; i++) {
-                                    int assignedLevel = activeSkillLevels[i];
-                                    int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.activeSkillsList.get(i), classData.getLevel(false));
+                            if (familyInvalid != null) {
+                                System.out.println("updateClass: Repeated Passive Family: " + familyInvalid);
+                                return;
+                            }
 
-                                    if (assignedLevel < 0 || assignedLevel > effectiveMax) {
-                                        valid = false;
+                            if (levelsInvalid != null) {
+                                System.out.println("updateClass: Wrong assigned Passive Level: " + levelsInvalid);
+                                return;
+                            }
+
+                            String requirementsInvalid = null;
+
+                            for (int i = 0; i < activeSkillLevels.length; i++) {
+                                ActiveSkill skill = classData.playerClass.activeSkillsList.get(i);
+
+                                int assignedLevel = activeSkillLevels[i];
+                                int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.activeSkillsList.get(i), classData.getLevel(false), activeSkillLevels);
+
+                                if (assignedLevel < 0 || assignedLevel > effectiveMax) {
+                                    levelsInvalid = skill.stringID;
+                                    break;
+                                }
+
+                                if (assignedLevel > 0) {
+                                    boolean hasRequired = hasRequired(skill, activeSkillLevels);
+                                    if (!hasRequired) {
+                                        requirementsInvalid = skill.stringID;
                                         break;
-                                    }
-
-                                    if (assignedLevel > 0) {
-                                        ActiveSkill skill = classData.playerClass.activeSkillsList.get(i);
-                                        boolean hasRequired = hasRequired(skill, activeSkillLevels);
-                                        if (!hasRequired) {
-                                            valid = false;
-                                            break;
-                                        }
                                     }
                                 }
                             }
 
-                            if (valid) {
-                                int totalPassive = Arrays.stream(passiveLevels).sum();
-                                if (totalPassive <= classData.totalPassivePoints(false)) {
-                                    int totalActiveSkill = Arrays.stream(activeSkillLevels).sum();
-                                    if (totalActiveSkill <= classData.totalActiveSkillPoints(false)) {
-                                        classData.setPassiveLevels(passiveLevels);
-                                        classData.setActiveSkillLevels(activeSkillLevels);
-                                        serverClient.getServer().network.sendToAllClients(new UpdateClientClassDataPacket(classData));
-                                        playerData.updateClassesBuffs(serverClient.playerMob);
+                            if (requirementsInvalid != null) {
+                                System.out.println("updateClass: Not accomplished active skill requirements: " + requirementsInvalid);
+                                return;
+                            }
 
-                                        boolean someEquippedUpdate = false;
-                                        for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                                            if (!equippedActiveSkill.isEmpty() && equippedActiveSkill.sameClass(classData) && classData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
-                                                equippedActiveSkill.empty();
-                                                someEquippedUpdate = true;
-                                            }
+                            if (levelsInvalid != null) {
+                                System.out.println("updateClass: Wrong assigned Active Skill Level: " + levelsInvalid);
+                                return;
+                            }
+
+                            int totalPassive = Arrays.stream(passiveLevels).sum();
+                            if (totalPassive <= classData.totalPassivePoints(false)) {
+                                int totalActiveSkill = Arrays.stream(activeSkillLevels).sum();
+                                if (totalActiveSkill <= classData.totalActiveSkillPoints(false)) {
+                                    classData.setPassiveLevels(passiveLevels);
+                                    classData.setActiveSkillLevels(activeSkillLevels);
+                                    serverClient.getServer().network.sendToAllClients(new UpdateClientClassDataPacket(classData));
+                                    playerData.updateAllBuffs(serverClient.playerMob);
+
+                                    boolean someEquippedUpdate = false;
+                                    for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
+                                        if (!equippedActiveSkill.isEmpty() && equippedActiveSkill.sameClass(classData) && classData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
+                                            equippedActiveSkill.empty();
+                                            someEquippedUpdate = true;
                                         }
-                                        if (someEquippedUpdate) {
-                                            serverClient.getServer().network.sendToAllClients(new UpdateClientEquippedActiveSkillsPacket(playerData));
-                                        }
-                                    } else {
-                                        System.out.println("updateClass: Not enough Active Skill Points");
+                                    }
+                                    if (someEquippedUpdate) {
+                                        serverClient.getServer().network.sendToAllClients(new UpdateClientEquippedActiveSkillsPacket(playerData));
                                     }
                                 } else {
-                                    System.out.println("updateClass: Not enough Passive Points");
+                                    System.out.println("updateClass: Not enough Active Skill Points");
                                 }
                             } else {
-                                System.out.println("updateClass: At least one wrong assigned Passive Level or Active Skill Level");
+                                System.out.println("updateClass: Not enough Passive Points");
                             }
                         }
                     }

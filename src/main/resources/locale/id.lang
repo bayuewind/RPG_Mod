@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
 
 rangerwolf=Serigala Penjaga
 dancingflame=Api Menari
+necromancerskeleton=Tengkorak
+necromancerskeletonwarrior=Prajurit Tengkorak
+necromancerboneslinger=Pelempar Tulang
+necromancertomb=Makam
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Perisai Es
 flamingsteps=Langkah Membara
 stormbound=Terikat Badai
 
+// Ahli Nujum
+darkpower=Kekuatan Kegelapan
+necroticpower=Kekuatan Nekrotik
+darkmagic=Sihir Kegelapan
+necroticarmy=Tentara Nekrotik
+darksummons=Panggilan Kegelapan
+lifeleech=Pencuri Kehidupan
+necroticremains=Sisa-sisa Nekrotik
+endlesslegion=Legiun Tak Berujung
+lichborn=Lahir sebagai Lich
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Setiap §a[[9 - 0.5 x <skilllevel>]] detik§0, petir menyambar musuh 
 arcaneshield=Perisai yang mencegah satu serangan\nPerisai akan pulih §a[[20 - <skilllevel>]] detik§0 setelah digunakan
 fireshield=Perisai yang mencegah satu serangan\nSaat digunakan, Anda akan melepaskan ledakan yang menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\ndan membakar monster, mengulangi 20% dari kerusakan asli mereka per detik selama 5 detik\nPerisai akan pulih 26 detik setelah digunakan
 iceshield=Perisai yang mencegah satu serangan\nSaat digunakan, Anda akan melepaskan aura es yang menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nmembekukan monster selama 5 detik, dan membekukan mereka sepenuhnya selama 1 detik\nPerisai akan pulih 22 detik setelah digunakan
+
+// Ahli Nujum
+necroticpower=Semua serangan Sihir dan Pemanggil Anda meracuni sebesar 5% dari Kerusakan mereka selama §a[[2 x <skilllevel>]] detik§0, selama itu tidak disebabkan oleh panggilan
+darkmagic=Bonus Kerusakan Pemanggil mempengaruhi Kerusakan Sihir sebesar §a[[5 x <skilllevel>]]%
+necroticarmy=Musuh yang dikalahkan akan berubah menjadi §bTengkorak§0 dengan §a-[[100 - 3 x <skilllevel>]]%§0 Kesehatan dan Kerusakan
+darksummons=Menghasilkan §a+[[10 x <skilllevel>]]%§0 Kerusakan Pemanggil ke musuh yang diracuni
+lifeleech=Memulihkan §a[[<skilllevel>]]%§0 dari Kerusakan Pemanggil yang diberikan sebagai Kesehatan
+necroticremains=Ketika panggilan nekrotik mati, ia meledak, menghasilkan §i[[0.1 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat, meracuni mereka dengan 20% dari kerusakan per detik selama 10 detik
+endlesslegion=Setiap 4 level keterampilan ini, Anda mendapatkan +1 panggilan maks
+lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi lich\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi lich (tengkorak) yang hanya bisa menembakkan tulang yang menghasilkan Kerusakan Sihir sama dengan [[Kekuatan]] dan menggunakan sisa keterampilan Anda\nSaat dalam bentuk lich, Anda menerima kerusakan ganda
+
 
 [activeskills]
 empty=Kosong
@@ -193,6 +219,20 @@ iceenchantment=Pesona Es
 fireball=Bola Api
 lightning=Petir
 
+// Ahli Nujum
+skeletonhorde=Gerombolan Tengkorak
+skeletonwarrior=Prajurit Tengkorak
+sacrifice=Pengorbanan
+siegecry=Teriakan Pengepungan
+
+boneslingerhorde=Gerombolan Pelempar Tulang
+tomb=Makam
+necroticbloom=Mekar Nekrotik
+wardingtaunt=Ejekan Pelindung
+
+unholyground=Tanah Najis
+necroticbarrage=Rentetan Nekrotik
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Selama 10 detik berikutnya, serangan dari Anda dan sekutu terdeka
 fireball=Lemparkan §iBola Api§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Mulai petir yang melompat di antara monster selama 1 detik, menghasilkan §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 2 detik\nTidak dapat mengenai target yang sama beberapa kali\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
 
+// Ahli Nujum
+skeletonhorde=Memanggil §a[[1 + <skilllevel>]] §bTengkorak§0
+skeletonwarrior=Memanggil §bPrajurit Tengkorak§0 dengan §a+[[20 x <skilllevel>]]%§0 Kesehatan dan Kerusakan
+sacrifice=Panggilan yang dapat dirusak terdekat mati, dan Anda kemudian memulihkan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Kesehatan§0 sebagai penyembuhan sihir
+siegecry=Dapatkan §a+[[50 x <skilllevel>]]%§0 Kecepatan Panggilan selama 6 detik
+
+boneslingerhorde=Memanggil §a[[1 + <skilllevel>]]§0 §bPelempar Tulang§0
+tomb=Menghasilkan struktur yang memanggil §bTengkorak§0 setiap §a[[10 - <skilllevel>]] detik§0\nMakam memiliki Kesehatan sama dengan §a[[5 x <playerlevel> x <skilllevel>]]§0\nMakam kehilangan 2% dari Total Kesehatannya per detik
+necroticbloom=Mempercepat efek racun pada semua musuh terdekat dengan mengurangi durasinya menjadi 10%, tetapi meningkatkan kerusakannya per detik untuk mempertahankan kerusakan total
+wardingtaunt=Panggilan yang dapat dirusak terdekat memaksa musuh terdekat dalam radius §a[[50 x <skilllevel>]]§0 untuk menargetkannya
+
+unholyground=Memperluas aura korupsi di sekitar Anda selama 10 detik\nMusuh di dalam area ini menerima §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Kerusakan Racun§0 per detik dan §7Dibatasi
+necroticbarrage=Semua panggilan yang dapat dirusak meledak saat mati, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat\ndan meracuni mereka selama 10 detik dengan 20% dari kerusakan asli per detik
+
 
 [skillsdesckeys]
 skilllevel=Level Keterampilan
@@ -258,6 +312,7 @@ setmax=Efek negatif diatur sebagai maks dan tidak dapat dihilangkan oleh buff la
 
 // Buff
 marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\n"Musuh terdekat" memprioritaskan musuh yang ditandai
+constrained=§7Dibatasi:§0 -50% Kecepatan Gerakan
 
 // Pengubah Peluang
 dodgechance=§7Peluang Menghindar:§0 Peluang untuk menghindari serangan yang masuk. Tidak dapat melebihi 80%
@@ -276,6 +331,11 @@ fireball=§iBola Api:§0 Proyektil sihir yang meledak dan membakar monster mengu
 
 // Panggilan
 dancingflame=§bApi Menari:§0 Panggilan yang bertindak seperti proyektil. Membakar musuh saat terkena. Mengulangi 20% dari kerusakan aslinya per detik selama 5 detik
+
+// Panggilan yang Dapat Dirusak
+necromancerskeleton=§bTengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+necromancerskeletonwarrior=§bPrajurit Tengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nKerusakan: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+necromancerboneslinger=§bPelempar Tulang:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (jarak 320)\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Keterampilan ini sudah Digunakan
 anotheractiveskillinuse=Anda sudah memiliki keterampilan lain yang Digunakan
 incooldown=Dalam Cooldown
 notenoughstamina=Stamina Tidak Cukup
+notarget=Tidak ada target di dekatnya
 nograbbableobject=Tidak ada objek yang dapat diambil di depan Anda
+nodamageablefollower=Tidak ada panggilan yang dapat dirusak di dekatnya
+
 
 [ui]
 menutitle=MOD RPG oleh Save
@@ -374,6 +437,8 @@ upcomingclass=§6Kelas Mendatang\n§9Kelas ini saat ini sedang dalam pengembanga
 
 addcolumn=Tambahkan kolom
 removecolumn=Hapus kolom
+
+rate=Beri nilai MOD RPG!
 
 
 [controls]

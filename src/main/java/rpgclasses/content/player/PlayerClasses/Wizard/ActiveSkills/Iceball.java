@@ -10,13 +10,10 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
-import org.jetbrains.annotations.NotNull;
 import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.IceBallProjectile;
-
-import java.awt.geom.Point2D;
 
 public class Iceball extends ActiveSkill {
 
@@ -41,23 +38,17 @@ public class Iceball extends ActiveSkill {
         SoundManager.playSound(GameResources.magicbolt1, SoundEffect.effect(player));
     }
 
-    private static @NotNull Projectile getProjectile(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        Mob target = RPGUtils.findBestTarget(player, 1000);
+    private static Projectile getProjectile(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
+        Mob target = RPGUtils.findBestTarget(player, 600);
 
-        float targetX;
-        float targetY;
+        if (target == null) return null;
 
-        if (target == null) {
-            Point2D.Float dir = getDir(player);
-            targetX = dir.x * 100 + player.x;
-            targetY = dir.y * 100 + player.y;
-            target = player;
-        } else {
-            targetX = target.x;
-            targetY = target.y;
-        }
+        return new IceBallProjectile(player.getLevel(), player, player.x, player.y, target.x, target.y, 100, (int) player.getDistance(target), new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
+    }
 
-        return new IceBallProjectile(player.getLevel(), player, player.x, player.y, targetX, targetY, 100, (int) player.getDistance(target), new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
+    @Override
+    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
+        return RPGUtils.anyTarget(player, 600) ? null : "notarget";
     }
 
     @Override

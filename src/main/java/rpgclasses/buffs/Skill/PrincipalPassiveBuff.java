@@ -29,7 +29,6 @@ public class PrincipalPassiveBuff extends PassiveSkillBuff {
         return this.getStringID().replace("passivebuff", "");
     }
 
-
     public int getPlayerLevel(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getLevel();
     }

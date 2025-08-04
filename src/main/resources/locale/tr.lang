@@ -48,6 +48,10 @@ rpgmobnamecolor=§<renk>[<sınıf>]§0 <isim> §9svy <seviye>§0
 
 rangerwolf=Menzilli Kurt
 dancingflame=Dans Eden Alev
+necromancerskeleton=İskelet
+necromancerskeletonwarrior=İskelet Savaşçı
+necromancerboneslinger=Kemik Atıcı
+necromancertomb=Mezar
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Buz Kalkanı
 flamingsteps=Alevli Adımlar
 stormbound=Fırtınaya Bağlı
 
+// Nekromanser
+darkpower=Karanlık Güç
+necroticpower=Nekrotik Güç
+darkmagic=Karanlık Büyü
+necroticarmy=Nekrotik Ordu
+darksummons=Karanlık Çağrılar
+lifeleech=Can Çalma
+necroticremains=Nekrotik Kalıntılar
+endlesslegion=Sonsuz Lejyon
+lichborn=Lich Doğumlu
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Her §a[[9 - 0.5 x <skilllevel>]] saniyede§0, görüş alanınızdak
 arcaneshield=Bir vuruşu önleyen bir kalkan\nKalkan, kullanımdan §a[[20 - <skilllevel>]] saniye§0 sonra iyileşir
 fireshield=Bir vuruşu önleyen bir kalkan\nKullanıldığında, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren bir patlama salarsınız\nve mobları yakarak, 5 saniye boyunca saniyede orijinal hasarlarının %20'sini tekrarlarsınız\nKalkan, kullanımdan 26 saniye sonra iyileşir
 iceshield=Bir vuruşu önleyen bir kalkan\nKullanıldığında, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren bir buz aurası salarsınız\nmobları 5 saniye boyunca dondurur ve 1 saniye boyunca tamamen dondurursunuz\nKalkan, kullanımdan 22 saniye sonra iyileşir
+
+// Nekromanser
+necroticpower=Tüm Büyü ve Çağırıcı saldırılarınız, bir çağrı tarafından kaynaklanmadığı sürece, §a[[2 x <skilllevel>]] saniye§0 boyunca Hasarlarının %5'i kadar zehirler
+darkmagic=Çağırıcı Hasarı bonusları, Büyü Hasarını §a[[5 x <skilllevel>]]%§0 oranında etkiler
+necroticarmy=Yenilen düşmanlar, §a-[[100 - 3 x <skilllevel>]]%§0 Can ve Hasara sahip §bİskeletlere§0 dönüşür
+darksummons=Zehirli düşmanlara §a+[[10 x <skilllevel>]]%§0 Çağırıcı Hasarı verir
+lifeleech=Verilen Çağırıcı Hasarının §a[[<skilllevel>]]%§0 kadarını Can olarak yeniler
+necroticremains=Bir nekrotik çağrı öldüğünde, patlar ve yakındaki düşmanlara §i[[0.1 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir, onları 10 saniye boyunca saniyede hasarın %20'si kadar zehirler
+endlesslegion=Bu yeteneğin her 4 seviyesinde, +1 maksimum çağrı kazanırsınız
+lichborn=Öldüğünüzde, hayatta kalırsınız ve zaten bir lich değilseniz, Canınızın §a[[10 x <skilllevel>]]%§0 kadarını yenilersiniz\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca, yalnızca [[Güç]]'e eşit Büyü Hasarı veren kemikler atabilen ve geri kalan yeteneklerinizi kullanabilen bir lich (iskelet) olursunuz\nLich formundayken, çift hasar alırsınız
+
 
 [activeskills]
 empty=Boş
@@ -193,6 +219,20 @@ iceenchantment=Buz Büyüsü
 fireball=Ateş Topu
 lightning=Şimşek
 
+// Nekromanser
+skeletonhorde=İskelet Sürüsü
+skeletonwarrior=İskelet Savaşçı
+sacrifice=Kurban
+siegecry=Kuşatma Çığlığı
+
+boneslingerhorde=Kemik Atıcı Sürüsü
+tomb=Mezar
+necroticbloom=Nekrotik Çiçeklenme
+wardingtaunt=Koruyucu Alay
+
+unholyground=Kutsal Olmayan Zemin
+necroticbarrage=Nekrotik Yaylım Ateşi
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Sonraki 10 saniye boyunca, sizden ve yakındaki müttefiklerden g
 fireball=En yakın düşmana bir §iAteş Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\n§a[[80 + 16 x <skilllevel>]] Mana tüketir
 lightning=Moblar arasında 1 saniye boyunca zıplayan, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren ve 2 saniye sersemleten bir şimşek başlatır\nAynı hedefi birden çok kez vuramaz\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
 
+// Nekromanser
+skeletonhorde=§a[[1 + <skilllevel>]] §bİskelet§0 çağırır
+skeletonwarrior=§a+[[20 x <skilllevel>]]%§0 Can ve Hasara sahip bir §bİskelet Savaşçı§0 çağırır
+sacrifice=En yakın hasar verilebilir çağrı ölür ve ardından sihirli iyileştirme olarak §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Can§0 yenilersiniz
+siegecry=6 saniye boyunca §a+[[50 x <skilllevel>]]%§0 Çağırma Hızı kazanın
+
+boneslingerhorde=§a[[1 + <skilllevel>]]§0 §bKemik Atıcı§0 çağırır
+tomb=Her §a[[10 - <skilllevel>]] saniyede§0 bir §bİskelet§0 çağıran bir yapı oluşturur\nMezarın Canı §a[[5 x <playerlevel> x <skilllevel>]]§0 kadardır\nMezar saniyede Toplam Canının %2'sini kaybeder
+necroticbloom=Yakındaki tüm düşmanlardaki zehir etkisini süresini %10'a düşürerek hızlandırır, ancak toplam hasarı korumak için saniyedeki hasarını artırır
+wardingtaunt=En yakın hasar verilebilir çağrı, §a[[50 x <skilllevel>]] yarıçapındaki§0 yakındaki düşmanları onu hedeflemeye zorlar
+
+unholyground=10 saniye boyunca etrafınızda bir bozulma aurası yayar\nBu alandaki düşmanlar saniyede §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Zehir Hasarı§0 alır ve §7Kısıtlanır
+necroticbarrage=Tüm hasar verilebilir çağrılar öldüğünde patlar ve yakındaki düşmanlara §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\nve onları 10 saniye boyunca saniyede orijinal hasarın %20'si kadar zehirler
+
 
 [skillsdesckeys]
 skilllevel=Beceri Seviyesi
@@ -258,6 +312,7 @@ setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle k
 
 // Güçlendirmeler
 marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir
+constrained=§7Kısıtlı:§0 -%50 Hareket Hızı
 
 // Şans Değiştiricileri
 dodgechance=§7Savunma Şansı:§0 Gelen saldırıları savunma şansı. %80'i geçemez
@@ -276,6 +331,11 @@ fireball=§iAteş Topu:§0 Patlayan ve mobları ateşe vererek 5 saniye boyunca 
 
 // Çağrılar
 dancingflame=§bDans Eden Alev:§0 Mermi gibi davranan bir çağrı. Vurulduğunda düşmanları ateşe verir. 5 saniye boyunca saniyede orijinal hasarının %20'sini tekrarlar
+
+// Hasar Verilebilir Çağrılar
+necromancerskeleton=§bİskelet:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nHasar: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
+necromancerskeletonwarrior=§bİskelet Savaşçı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nHasar: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
+necromancerboneslinger=§bKemik Atıcı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHasar: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 menzil)\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Bu beceri zaten Kullanımda
 anotheractiveskillinuse=Zaten başka bir beceriniz Kullanımda
 incooldown=Beklemede
 notenoughstamina=Yeterli Dayanıklılık Yok
+notarget=Yakında hedef yok
 nograbbableobject=Önünüzde tutulabilir bir nesne yok
+nodamageablefollower=Yakında hasar verilebilir çağrı yok
+
 
 [ui]
 menutitle=Save tarafından RPG MODU
@@ -374,6 +437,8 @@ upcomingclass=§6Yakında Sınıf\n§9Bu sınıf şu anda geliştirme aşamasın
 
 addcolumn=Sütun ekle
 removecolumn=Sütun kaldır
+
+rate=RPG Modunu Değerlendir!
 
 
 [controls]

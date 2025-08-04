@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9taso <level>§0
 
 rangerwolf=Metsänvartijan susi
 dancingflame=Tanssiva liekki
+necromancerskeleton=Luuranko
+necromancerskeletonwarrior=Luurankosoturi
+necromancerboneslinger=Luunheittäjä
+necromancertomb=Hauta
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Jääkilpi
 flamingsteps=Liekkiaskeleet
 stormbound=Myrskyn sitoma
 
+// Nekromantikko
+darkpower=Pimeä voima
+necroticpower=Nekroottinen voima
+darkmagic=Pimeä taika
+necroticarmy=Nekroottinen armeija
+darksummons=Pimeät kutsut
+lifeleech=Elämän imeminen
+necroticremains=Nekroottiset jäännökset
+endlesslegion=Loputon legioona
+lichborn=Lich-syntyinen
+
 
 [passivesdesc]
 
@@ -134,7 +149,8 @@ unyielding=Jokainen taso antaa:\n\n+5% hyökkäysnopeutta ja -5% saapuvaa vahink
 lastbreath=Sen sijaan, että kuolisit, tulet haavoittumattomaksi §a[[3 x <skilllevel>]] sekunniksi§0\nKun aika loppuu, kuolet
 
 // Metsänvartija
-plasmagrenade=Joka 8. etähyökkäys ampuu ohjatun räjähtävän ammuksen, joka tekee §i[[30 x <skilllevel>]]%§0 aseen vahingosta\nwolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] kutsujan vahinkoa§0
+plasmagrenade=Joka 8. etähyökkäys ampuu ohjatun räjähtävän ammuksen, joka tekee §i[[30 x <skilllevel>]]%§0 aseen vahingosta
+wolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] kutsujan vahinkoa§0
 
 // Velho
 manapower=Jokainen taso antaa:\n\n+1% taikavahinkoa jokaista 10% käyttämätöntä manaa kohden
@@ -143,6 +159,17 @@ stormbound=Joka §a[[9 - 0.5 x <skilllevel>]] sekunti§0, salama iskee satunnais
 arcaneshield=Kilpi, joka estää yhden osuman\nKilpi palautuu §a[[20 - <skilllevel>]] sekunnin§0 kuluttua käytöstä
 fireshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat räjähdyksen, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nja sytyttää mobit tuleen, toistaen 20% niiden alkuperäisestä vahingosta sekunnissa 5 sekunnin ajan\nKilpi palautuu 26 sekunnin kuluttua käytöstä
 iceshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat jää-auran, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\njäädyttäen mobit 5 sekunniksi ja jäädyttäen ne kokonaan 1 sekunniksi\nKilpi palautuu 22 sekunnin kuluttua käytöstä
+
+// Nekromantikko
+necroticpower=Kaikki taika- ja kutsujahyökkäyksesi myrkyttävät 5% niiden vahingosta §a[[2 x <skilllevel>]] sekunnin§0 ajan, kunhan ne eivät ole kutsun aiheuttamia
+darkmagic=Kutsujan vahinkobonukset vaikuttavat taikavahinkoon §a[[5 x <skilllevel>]]%
+necroticarmy=Voitetut vihamieliset viholliset muuttuvat §bLuurangoiksi§0, joilla on §a-[[100 - 3 x <skilllevel>]]%§0 terveyttä ja vahinkoa
+darksummons=Tee §a+[[10 x <skilllevel>]]%§0 kutsujan vahinkoa myrkytetyille vihollisille
+lifeleech=Palauttaa §a[[<skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
+necroticremains=Kun nekroottinen kutsu kuolee, se räjähtää ja tekee §i[[0.1 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille ja myrkyttää heidät 20% vahingosta sekunnissa 10 sekunnin ajan
+endlesslegion=Joka 4. tämän taidon taso saat +1 maksimikutsua
+lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo lich\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee lich (luuranko), joka voi ampua vain luita, jotka tekevät taikavahinkoa, joka on yhtä suuri kuin [[Voimakkuus]], ja käyttää loput taidoistasi\nLich-muodossa saat kaksinkertaista vahinkoa
+
 
 [activeskills]
 empty=Tyhjä
@@ -192,6 +219,20 @@ iceenchantment=Jään lumous
 fireball=Tulipallo
 lightning=Salama
 
+// Nekromantikko
+skeletonhorde=Luurankolauma
+skeletonwarrior=Luurankosoturi
+sacrifice=Uhri
+siegecry=Piirityshuuto
+
+boneslingerhorde=Luunheittäjälauma
+tomb=Hauta
+necroticbloom=Nekroottinen kukinta
+wardingtaunt=Suojeleva pilkka
+
+unholyground=Epäpyhä maa
+necroticbarrage=Nekroottinen sulkutuli
+
 
 [activeskillsdesc]
 
@@ -227,7 +268,7 @@ arrowstorm=Ammu perusnuoli jokaiseen lähellä olevaan viholliseen tehden §i[[2
 // Velho
 arcaneoverload=Aktiivisena ollessaan lisää taikahyökkäysnopeutta §a[[30 x <skilllevel>]]%§0, mutta et voi liikkua\nLoppuu, kun mana loppuu tai jos sitä käytetään uudelleen\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa sekunnissa
 manarecharge=Aktiivisena ollessaan lisää manan palautumista +1 ja §a[[50 x <skilllevel>]]%§0, mutta olet halvaantunut ja saat kaksinkertaista vahinkoa\nLoppuu, kun sitä käytetään uudelleen
-firedance=Kutsuu 4 §bTanssivaa liekkiä§0, joista kukin tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nKutsuu uuden 5 sekunnin välein\nKaikki kutsut katoavat 20 sekunnin kuluttua kyvyn aktivoinnista\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
+firedance=Kutsuu 4 §bTanssivaa liekkiä§0, joista kukin tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nKutsuu uuden 5 sekunnin välein\nKaikki kutsut katoavat 20 sekunnin kuluttua taidon aktivoinnista\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
 iceball=Heitä §aJääpallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[50 + 10 x <skilllevel>]] manaa
 zap=Aloita sähköisku, joka hyppii mobien välillä 2 sekunnin ajan, tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 1 sekunniksi\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa
 
@@ -238,6 +279,20 @@ iceenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolais
 
 fireball=Heitä §iTulipallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[80 + 16 x <skilllevel>]] manaa
 lightning=Aloita salama, joka hyppii mobien välillä 1 sekunnin ajan, tehden §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 2 sekunniksi\nEi voi osua samaan kohteeseen useita kertoja\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
+
+// Nekromantikko
+skeletonhorde=Kutsuu §a[[1 + <skilllevel>]] §bLuurankoa§0
+skeletonwarrior=Kutsuu §bLuurankosoturin§0, jolla on §a+[[20 x <skilllevel>]]%§0 terveyttä ja vahinkoa
+sacrifice=Lähin vahingoitettavissa oleva kutsu kuolee, ja palautat sitten §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] terveyttä§0 maagisena parannuksena
+siegecry=Saa §a+[[50 x <skilllevel>]]%§0 kutsunopeutta 6 sekunniksi
+
+boneslingerhorde=Kutsuu §a[[1 + <skilllevel>]]§0 §bLuunheittäjää§0
+tomb=Luo rakenteen, joka kutsuu §bLuurangon§0 joka §a[[10 - <skilllevel>]] sekunti§0\nHaudalla on terveyttä §a[[5 x <playerlevel> x <skilllevel>]]§0\nHauta menettää 2% kokonaisterveydestään sekunnissa
+necroticbloom=Nopeuttaa myrkyn vaikutusta kaikissa lähellä olevissa vihollisissa lyhentämällä sen kestoa 10%:iin, mutta lisäämällä sen vahinkoa sekunnissa kokonaisvahingon ylläpitämiseksi
+wardingtaunt=Lähin vahingoitettavissa oleva kutsu pakottaa lähellä olevat viholliset §a[[50 x <skilllevel>]] säteellä§0 kohdistamaan siihen
+
+unholyground=Laajentaa ympärillesi korruption auraa 10 sekunniksi\nTämän alueen sisällä olevat viholliset saavat §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] myrkkyvahinkoa§0 sekunnissa ja ovat §7Rajoitettuja
+necroticbarrage=Kaikki vahingoitettavissa olevat kutsut räjähtävät kuollessaan ja tekevät §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille\nja myrkyttävät heidät 10 sekunniksi 20% alkuperäisestä vahingosta sekunnissa
 
 
 [skillsdesckeys]
@@ -257,6 +312,7 @@ setmax=Negatiiviset vaikutukset asetetaan maksimiin, eikä niitä voi poistaa mu
 
 // Buffit
 marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\n"Lähin vihollinen" priorisoi merkittyjä vihollisia
+constrained=§7Rajoitettu:§0 -50% liikkumisnopeutta
 
 // Mahdollisuusmuuntimet
 dodgechance=§7Väistömahdollisuus:§0 Mahdollisuus väistää saapuvia hyökkäyksiä. Ei voi ylittää 80%
@@ -275,6 +331,11 @@ fireball=§iTulipallo:§0 Maaginen ammus, joka räjähtää ja sytyttää mobit 
 
 // Kutsut
 dancingflame=§bTanssiva liekki:§0 Kutsu, joka toimii kuin ammus. Sytyttää viholliset tuleen osuessaan. Toistaa 20% alkuperäisestä vahingostaan sekunnissa 5 sekunnin ajan
+
+// Vahingoitettavissa olevat kutsut
+necromancerskeleton=§bLuuranko:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
+necromancerskeletonwarrior=§bLuurankosoturi:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nVahinko: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
+necromancerboneslinger=§bLuunheittäjä:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 etäisyys)\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
 
 
 [item]
@@ -329,7 +390,10 @@ activeskillinuse=Tämä taito on jo käytössä
 anotheractiveskillinuse=Sinulla on jo toinen taito käytössä
 incooldown=Jäähtymässä
 notenoughstamina=Ei tarpeeksi kestävyyttä
+notarget=Lähellä ei ole kohteita
 nograbbableobject=Edessäsi ei ole tartuttavaa esinettä
+nodamageablefollower=Lähellä ei ole vahingoitettavissa olevia kutsuja
+
 
 [ui]
 menutitle=RPG-MOD, tekijä Save
@@ -373,6 +437,8 @@ upcomingclass=§6Tuleva luokka\n§9Tämä luokka on parhaillaan kehitteillä\nja
 
 addcolumn=Lisää sarake
 removecolumn=Poista sarake
+
+rate=Arvostele RPG Mod!
 
 
 [controls]

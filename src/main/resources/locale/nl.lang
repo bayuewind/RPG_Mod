@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9lvl <level>§0
 
 rangerwolf=Verkenner Wolf
 dancingflame=Dansende Vlam
+necromancerskeleton=Skelet
+necromancerskeletonwarrior=Skeletkrijger
+necromancerboneslinger=Bottenwerper
+necromancertomb=Graf
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=IJsschild
 flamingsteps=Vlammende Stappen
 stormbound=Stormgebonden
 
+// Necromancer
+darkpower=Donkere Kracht
+necroticpower=Necrotische Kracht
+darkmagic=Donkere Magie
+necroticarmy=Necrotisch Leger
+darksummons=Donkere Oproepen
+lifeleech=Levensroof
+necroticremains=Necrotische Overblijfselen
+endlesslegion=Eindeloze Legioen
+lichborn=Lich Geboren
+
 
 [passivesdesc]
 
@@ -142,7 +157,19 @@ manapower=Elk niveau biedt:\n\n+1% Magische Schade voor elke 10% ongebruikte Man
 flamingsteps=Wanneer je rent met een actieve snuisterij, laat je vlammen achter op de grond\nDe vlammen zullen vijanden 2 seconden in brand steken, waarbij ze §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische Schade§0 per seconde aanrichten
 stormbound=Elke §a[[9 - 0.5 x <skilllevel>]] seconden§0, treft een bliksemschicht een willekeurige vijand in je zicht\nRicht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan en verdooft 1 seconde
 arcaneshield=Een schild dat één klap voorkomt\nHet schild herstelt §a[[20 - <skilllevel>]] seconden§0 na gebruik
-fireshield=Een schild dat één klap voorkomt\nBij gebruik laat je een explosie los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nen mobs in brand steekt, waarbij 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden wordt herhaald\nHet schild herstelt 26 seconden na gebruik\niceshield=Een schild dat één klap voorkomt\nBij gebruik laat je een ijsaura los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nvijanden 5 seconden bevriest en ze 1 seconde volledig bevriest\nHet schild herstelt 22 seconden na gebruik
+fireshield=Een schild dat één klap voorkomt\nBij gebruik laat je een explosie los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nen mobs in brand steekt, waarbij 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden wordt herhaald\nHet schild herstelt 26 seconden na gebruik
+iceshield=Een schild dat één klap voorkomt\nBij gebruik laat je een ijsaura los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nvijanden 5 seconden bevriest en ze 1 seconde volledig bevriest\nHet schild herstelt 22 seconden na gebruik
+
+// Necromancer
+necroticpower=Al je Magische en Oproepersaanvallen vergiftigen voor 5% van hun Schade gedurende §a[[2 x <skilllevel>]] seconden§0, zolang ze niet worden veroorzaakt door een oproep
+darkmagic=Oproeperschadebonussen beïnvloeden Magische Schade met §a[[5 x <skilllevel>]]%
+necroticarmy=Verslagen vijandige vijanden veranderen in §bSkeletten§0 met §a-[[100 - 3 x <skilllevel>]]%§0 Gezondheid en Schade
+darksummons=Richt §a+[[10 x <skilllevel>]]%§0 Oproeperschade aan vergiftigde vijanden
+lifeleech=Herstelt §a[[<skilllevel>]]%§0 van de Oproeperschade die is aangericht als Gezondheid
+necroticremains=Wanneer een necrotische oproep sterft, explodeert deze en richt §i[[0.1 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden, waardoor ze gedurende 10 seconden worden vergiftigd voor 20% van de schade per seconde
+endlesslegion=Elke 4 niveaus van deze vaardigheid, krijg je +1 max oproep
+lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen lich bent\nDe komende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een lich (een skelet) die alleen botten kan schieten die Magische Schade aanrichten gelijk aan [[Kracht]] en de rest van je vaardigheden kan gebruiken\nIn lich-vorm, krijg je dubbele schade
+
 
 [activeskills]
 empty=Leeg
@@ -192,6 +219,20 @@ iceenchantment=IJs Betovering
 fireball=Vuurbal
 lightning=Bliksem
 
+// Necromancer
+skeletonhorde=Skelettenhorde
+skeletonwarrior=Skeletkrijger
+sacrifice=Offer
+siegecry=Belegeringskreet
+
+boneslingerhorde=Bottenwerperhorde
+tomb=Graf
+necroticbloom=Necrotische Bloei
+wardingtaunt=Afwerende Bespotting
+
+unholyground=Onheilige Grond
+necroticbarrage=Necrotische Barrage
+
 
 [activeskillsdesc]
 
@@ -225,7 +266,7 @@ huntersinstinct=Verhoog de komende 12 seconden je §7ontwijkkans§0 met §a[[10 
 arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] verkennersschade§0 aan
 
 // Tovenaar
-arcaneoverload=Verhoogt, terwijl actief, je Magische Aanvalssnelheid met §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEindigt wanneer je mana op is, of als het opnieuw wordt gebruikt\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana per seconde
+arcaneoverload=Verhoogt, terwijl actief, je Magische Aanvalssnelheid met §a[[30 x <skilllevel>]]%§0, maar je kunt niet bewegen\nEindigt wanneer je mana op is, of als het opnieuw wordt gebruikt\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana per seconde
 manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen\nEindigt wanneer opnieuw gebruikt
 firedance=Roept 4 §bDansende Vlammen§0 op, die elk §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanrichten\nRoept elke 5 seconden een nieuwe op\nAlle oproepen verdwijnen 20 seconden nadat de vaardigheid is geactiveerd\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Gooi een §aIJsbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[50 + 10 x <skilllevel>]] Mana
@@ -238,6 +279,20 @@ iceenchantment=De komende 10 seconden bevriezen aanvallen van jou en nabije bond
 
 fireball=Gooi een §iVuurbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[80 + 16 x <skilllevel>]] Mana
 lightning=Start een bliksem die 1 seconde tussen mobs springt, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht en 2 seconden verdooft\nKan hetzelfde doelwit niet meerdere keren raken\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
+
+// Necromancer
+skeletonhorde=Roept §a[[1 + <skilllevel>]] §bSkeletten§0 op
+skeletonwarrior=Roept een §bSkeletkrijger§0 op met §a+[[20 x <skilllevel>]]%§0 Gezondheid en Schade
+sacrifice=De dichtstbijzijnde beschadigbare oproep sterft, en je herstelt dan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gezondheid§0 als magische genezing
+siegecry=Krijg §a+[[50 x <skilllevel>]]%§0 Oproepsnelheid gedurende 6 seconden
+
+boneslingerhorde=Roept §a[[1 + <skilllevel>]]§0 §bBottenwerpers§0 op
+tomb=Genereert een structuur die elke §a[[10 - <skilllevel>]] seconden§0 een §bSkelet§0 oproept\nHet Graf heeft Gezondheid gelijk aan §a[[5 x <playerlevel> x <skilllevel>]]§0\nHet Graf verliest 2% van zijn Totale Gezondheid per seconde
+necroticbloom=Versnelt het effect van gif op alle nabije vijanden door de duur ervan te verminderen tot 10%, maar de schade per seconde te verhogen om de totale schade te behouden
+wardingtaunt=De dichtstbijzijnde beschadigbare oproep dwingt nabije vijanden binnen een straal van §a[[50 x <skilllevel>]]§0 om het te targeten
+
+unholyground=Verlengt een aura van corruptie om je heen gedurende 10 seconden\nVijanden binnen dit gebied lopen §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Gifschade§0 per seconde op en zijn §7Beperkt
+necroticbarrage=Alle beschadigbare oproepen exploderen bij het sterven, en richten §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden\nen vergiftigen ze gedurende 10 seconden met 20% van de oorspronkelijke schade per seconde
 
 
 [skillsdesckeys]
@@ -257,6 +312,7 @@ setmax=Negatieve effecten worden als maximaal ingesteld en kunnen niet worden ve
 
 // Buffs
 marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\n"Dichtstbijzijnde vijand" geeft voorrang aan gemarkeerde vijanden
+constrained=§7Beperkt:§0 -50% Bewegingssnelheid
 
 // Kansenmodificatoren
 dodgechance=§7Ontwijkkans:§0 Kans om inkomende aanvallen te ontwijken. Kan niet hoger zijn dan 80%
@@ -275,6 +331,11 @@ fireball=§iVuurbal:§0 Magisch projectiel dat explodeert en mobs in brand steek
 
 // Oproepen
 dancingflame=§bDansende Vlam:§0 Oproep die fungeert als een projectiel. Steekt vijanden in brand bij een treffer. Herhaalt 20% van de oorspronkelijke schade per seconde gedurende 5 seconden
+
+// Beschadigbare Oproepen
+necromancerskeleton=§bSkelet:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
+necromancerskeletonwarrior=§bSkeletkrijger:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
+necromancerboneslinger=§bBottenwerper:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
 
 
 [item]
@@ -329,7 +390,10 @@ activeskillinuse=Deze vaardigheid is al in gebruik
 anotheractiveskillinuse=Je hebt al een andere vaardigheid in gebruik
 incooldown=Afkoelen
 notenoughstamina=Niet genoeg uithoudingsvermogen
+notarget=Er zijn geen doelen in de buurt
 nograbbableobject=Er is geen grijpbaar object voor je
+nodamageablefollower=Er zijn geen beschadigbare oproepen in de buurt
+
 
 [ui]
 menutitle=RPG MOD door Save
@@ -373,6 +437,8 @@ upcomingclass=§6Aankomende klasse\n§9Deze klasse is momenteel in ontwikkeling\
 
 addcolumn=Kolom toevoegen
 removecolumn=Kolom verwijderen
+
+rate=Beoordeel RPG Mod!
 
 
 [controls]

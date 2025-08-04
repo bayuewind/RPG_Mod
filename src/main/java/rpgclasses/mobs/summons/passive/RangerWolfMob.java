@@ -1,4 +1,4 @@
-package rpgclasses.mobs.summons.pasivesummon;
+package rpgclasses.mobs.summons.passive;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.network.NetworkClient;
@@ -19,12 +19,12 @@ import necesse.level.maps.light.GameLight;
 import rpgclasses.RPGUtils;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.mobs.ai.SkillSummonCollisionChaserAI;
+import rpgclasses.mobs.ai.PassiveSummonCollisionChaserAI;
 
 import java.awt.*;
 import java.util.List;
 
-public class RangerWolfMob extends PassiveSummonedMob {
+public class RangerWolfMob extends PassiveFollowingMob {
     public static GameTexture texture;
 
     public RangerWolfMob() {
@@ -46,7 +46,7 @@ public class RangerWolfMob extends PassiveSummonedMob {
     @Override
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new SkillSummonCollisionChaserAI<RangerWolfMob>(1024, getDamage(), 30, 500, 640, 64, false) {
+        this.ai = new BehaviourTreeAI<>(this, new PassiveSummonCollisionChaserAI<RangerWolfMob>(1024, getDamage(), 30, 500, 640, 64, false) {
             @Override
             public Mob getCustomFocus(RangerWolfMob mob, int searchDistance) {
                 PlayerMob player = (PlayerMob) getFollowingMob();

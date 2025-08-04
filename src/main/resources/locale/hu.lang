@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9szint <level>§0
 
 rangerwolf=Íjász Farkas
 dancingflame=Táncoló Láng
+necromancerskeleton=Csontváz
+necromancerskeletonwarrior=Csontvázharcos
+necromancerboneslinger=Csontdobáló
+necromancertomb=Sír
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Jégpajzs
 flamingsteps=Lángoló Léptek
 stormbound=Viharkötött
 
+// Nekromanta
+darkpower=Sötét Erő
+necroticpower=Nekrotikus Erő
+darkmagic=Sötét Mágia
+necroticarmy=Nekrotikus Hadsereg
+darksummons=Sötét Idézések
+lifeleech=Életlopás
+necroticremains=Nekrotikus Maradványok
+endlesslegion=Végtelen Légió
+lichborn=Lich Született
+
 
 [passivesdesc]
 
@@ -140,7 +155,21 @@ wolfcompanion=Egy farkas társ megtámadja a megjelölt ellenségeket, §i[[<pla
 // Varázsló
 manapower=Minden szint biztosít:\n\n+1% Mágikus Sebzést minden 10% fel nem használt Mana után
 flamingsteps=Aktív csecsebecsével futva lángokat hagysz a földön\nA lángok 2 másodpercre meggyújtják az ellenséget, §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva másodpercenként
-stormbound=Minden §a[[9 - 0.5 x <skilllevel>]] másodpercben§0 egy villámcsapás ér egy véletlenszerű ellenséget a látótereden belül\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz és 1 másodpercre elkábít\narcaneshield=Egy pajzs, amely egyetlen találatot hárít\nA pajzs §a[[20 - <skilllevel>]] másodperc§0 múlva regenerálódik használat után\nfireshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy robbanást bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\nés meggyújtja a mobokat, 5 másodpercen keresztül másodpercenként megismételve eredeti sebzésük 20%-át\nA pajzs 26 másodperc múlva regenerálódik használat után\niceshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy jégaurát bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\n5 másodpercre lefagyasztja a mobokat, és 1 másodpercre teljesen lefagyasztja őket\nA pajzs 22 másodperc múlva regenerálódik használat után
+stormbound=Minden §a[[9 - 0.5 x <skilllevel>]] másodpercben§0 egy villámcsapás ér egy véletlenszerű ellenséget a látótereden belül\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz és 1 másodpercre elkábít
+arcaneshield=Egy pajzs, amely egyetlen találatot hárít\nA pajzs §a[[20 - <skilllevel>]] másodperc§0 múlva regenerálódik használat után
+fireshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy robbanást bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\nés meggyújtja a mobokat, 5 másodpercen keresztül másodpercenként megismételve eredeti sebzésük 20%-át\nA pajzs 26 másodperc múlva regenerálódik használat után
+iceshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy jégaurát bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\n5 másodpercre lefagyasztja a mobokat, és 1 másodpercre teljesen lefagyasztja őket\nA pajzs 22 másodperc múlva regenerálódik használat után
+
+// Nekromanta
+necroticpower=Minden mágikus és idéző támadásod megmérgezi az ellenfelet a sebzésének 5%-ával §a[[2 x <skilllevel>]] másodpercre§0, amíg azokat nem egy idézés okozza
+darkmagic=Az idéző sebzés bónuszai §a[[5 x <skilllevel>]]%-kal§0 befolyásolják a mágikus sebzést
+necroticarmy=A legyőzött ellenséges ellenfelek §bCsontvázakká§0 válnak §a-[[100 - 3 x <skilllevel>]]%§0 életerővel és sebzéssel
+darksummons=§a+[[10 x <skilllevel>]]%§0 idéző sebzést okoz a megmérgezett ellenségeknek
+lifeleech=Visszaállítja az okozott idéző sebzés §a[[<skilllevel>]]%-át§0 életerőként
+necroticremains=Amikor egy nekrotikus idézés meghal, felrobban, §i[[0.1 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva a közeli ellenségeknek, megmérgezve őket a sebzés 20%-ával másodpercenként 10 másodpercig
+endlesslegion=Ennek a képességnek minden 4. szintje után +1 maximális idézést kapsz
+lichborn=Amikor meghalsz, túléled és visszaállítod az életerőd §a[[10 x <skilllevel>]]%-át§0, ha még nem vagy lich\nA következő §a[[120 - 6 x <skilllevel>]] másodpercre§0 lich-cské (csontvázzá) válsz, aki csak csontokat lőhet, amelyek [[Erő]]-nek megfelelő mágikus sebzést okoznak, és használhatod a többi képességedet\nLich formában dupla sebzést szenvedsz
+
 
 [activeskills]
 empty=Üres
@@ -190,6 +219,20 @@ iceenchantment=Jég Varázslat
 fireball=Tűzgolyó
 lightning=Villám
 
+// Nekromanta
+skeletonhorde=Csontvázhorda
+skeletonwarrior=Csontvázharcos
+sacrifice=Áldozat
+siegecry=Ostromkiáltás
+
+boneslingerhorde=Csontdobáló horda
+tomb=Sír
+necroticbloom=Nekrotikus virágzás
+wardingtaunt=Védő gúny
+
+unholyground=Szenttelen föld
+necroticbarrage=Nekrotikus zárótűz
+
 
 [activeskillsdesc]
 
@@ -237,6 +280,20 @@ iceenchantment=A következő 10 másodpercben a te és a közeli szövetségesek
 fireball=Dobj egy §iTűzgolyót§0 a legközelebbi ellenségre, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva\n§a[[80 + 16 x <skilllevel>]] Manát§0 fogyaszt
 lightning=Indíts egy villámot, amely 1 másodpercig ugrál a mobok között, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva és 2 másodpercre elkábítva\nNem találhatja el ugyanazt a célpontot többször\n§a[[30 + 6 x <skilllevel>]] Manát§0 fogyaszt
 
+// Nekromanta
+skeletonhorde=Megidéz §a[[1 + <skilllevel>]] §bCsontvázat§0
+skeletonwarrior=Megidéz egy §bCsontvázharcost§0 §a+[[20 x <skilllevel>]]%§0 életerővel és sebzéssel
+sacrifice=A legközelebbi sebezhető idézés meghal, majd §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] életerőt§0 állítasz vissza mágikus gyógyítással
+siegecry=§a+[[50 x <skilllevel>]]%§0 idézési sebességet kapsz 6 másodpercre
+
+boneslingerhorde=Megidéz §a[[1 + <skilllevel>]]§0 §bCsontdobálót§0
+tomb=Létrehoz egy struktúrát, amely minden §a[[10 - <skilllevel>]] másodpercben§0 megidéz egy §bCsontvázat§0\nA Sírnak §a[[5 x <playerlevel> x <skilllevel>]]§0 életereje van\nA Sír másodpercenként elveszíti teljes életerejének 2%-át
+necroticbloom=Felgyorsítja a méreg hatását az összes közeli ellenségen azáltal, hogy időtartamát 10%-ra csökkenti, de növeli a másodpercenkénti sebzését a teljes sebzés fenntartása érdekében
+wardingtaunt=A legközelebbi sebezhető idézés arra kényszeríti a közeli ellenségeket egy §a[[50 x <skilllevel>]] sugarú körben§0, hogy azt célozzák
+
+unholyground=10 másodpercre kiterjeszti a korrupció auráját körülötted\nEzen a területen belül az ellenségek másodpercenként §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] méregsebzést§0 szenvednek, és §7Korlátozottak
+necroticbarrage=Minden sebezhető idézés felrobban halálakor, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva a közeli ellenségeknek\nés megmérgezve őket 10 másodpercre az eredeti sebzés 20%-ával másodpercenként
+
 
 [skillsdesckeys]
 skilllevel=Képességszint
@@ -255,6 +312,7 @@ setmax=A negatív hatások maximálisra vannak állítva, és más buffokkal nem
 
 // Buffok
 marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\n"Legközelebbi ellenség" a megjelölt ellenségeket részesíti előnyben
+constrained=§7Korlátozott:§0 -50% mozgási sebesség
 
 // Esély módosítók
 dodgechance=§7Kitérési esély:§0 Esély a bejövő támadások kikerülésére. Nem haladhatja meg a 80%-ot
@@ -273,6 +331,11 @@ fireball=§iTűzgolyó:§0 Mágikus lövedék, amely felrobban és meggyújtja a
 
 // Idézések
 dancingflame=§bTáncoló Láng:§0 Idézés, amely lövedékként működik. Találatkor meggyújtja az ellenséget. 5 másodpercen keresztül másodpercenként megismétli eredeti sebzésének 20%-át
+
+// Sebezhető idézések
+necromancerskeleton=§bCsontváz:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSebzés: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
+necromancerskeletonwarrior=§bCsontvázharcos:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSebzés: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
+necromancerboneslinger=§bCsontdobáló:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSebzés: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 távolság)\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
 
 
 [item]
@@ -327,7 +390,10 @@ activeskillinuse=Ez a képesség már használatban van
 anotheractiveskillinuse=Már van egy másik képességed használatban
 incooldown=Hűlési idő
 notenoughstamina=Nincs elég állóképesség
+notarget=Nincsenek célpontok a közelben
 nograbbableobject=Nincs megragadható tárgy előtted
+nodamageablefollower=Nincsenek sebezhető idézések a közelben
+
 
 [ui]
 menutitle=RPG MOD, készítette: Save
@@ -371,6 +437,8 @@ upcomingclass=§6Közelgő osztály\n§9Ez az osztály jelenleg fejlesztés alat
 
 addcolumn=Oszlop hozzáadása
 removecolumn=Oszlop eltávolítása
+
+rate=Értékeld az RPG Modot!
 
 
 [controls]

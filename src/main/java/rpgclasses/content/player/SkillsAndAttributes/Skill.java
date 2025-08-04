@@ -63,8 +63,53 @@ abstract public class Skill {
     abstract public void registerSkillBuffs();
 
     public ListGameTooltips getFinalToolTips(PlayerMob player, int skillLevel, boolean onlyChanges) {
-        if (containsComplexTooltips() && skillLevel > 0) {
-            PlayerData playerData = PlayerDataList.getPlayerData(player);
+        if (!containsComplexTooltips() || skillLevel <= 0) {
+            return getToolTips();
+        }
+
+        PlayerData playerData = PlayerDataList.getPlayerData(player);
+        ListGameTooltips tooltips = new ListGameTooltips();
+
+        List<String> raw = getToolTipsText();
+        raw.set(0, raw.get(0) + " - " + Localization.translate("ui", "level", "level", skillLevel));
+
+        for (String rawTip : raw) {
+            String processed = processToolTip(rawTip, skillLevel, player, playerData, onlyChanges);
+            if (processed != null) {
+                tooltips.add(processed);
+            }
+        }
+        return tooltips;
+    }
+
+
+    public String[] getExtraTooltips() {
+        return new String[0];
+    }
+
+    public String[] getFinalExtraTooltips(PlayerMob player, boolean processComplex) {
+        String[] tooltips = getExtraTooltips().clone();
+
+        PlayerData playerData = PlayerDataList.getPlayerData(player);
+
+        for (int i = 0; i < tooltips.length; i++) {
+            String tooltip = Localization.translate("extraskilldesc", tooltips[i]);
+            String finalTooltip = processComplex ? processToolTip(tooltip, 0, player, playerData) : tooltip;
+            if (finalTooltip != null) {
+                tooltips[i] = finalTooltip;
+            }
+        }
+        return tooltips;
+    }
+
+    public static String processToolTip(String toolTip, int skillLevel, PlayerMob player, PlayerData playerData) {
+        return processToolTip(toolTip, skillLevel, player, playerData, false);
+    }
+
+    public static String processToolTip(String toolTip, int skillLevel, PlayerMob player, PlayerData playerData, boolean onlyChanges) {
+        if (toolTip.contains("<") && toolTip.contains(">")) {
+            List<String> parts = splitToolTip(toolTip);
+
             int playerLevel = playerData.getLevel();
             int endurance = playerData.getEndurance(player);
             int speed = playerData.getSpeed(player);
@@ -72,54 +117,33 @@ abstract public class Skill {
             int intelligence = playerData.getIntelligence(player);
             int grace = playerData.getGrace(player);
 
-            ListGameTooltips tooltips = new ListGameTooltips();
+            for (int i = 0; i < parts.size(); i++) {
+                String part = parts.get(i);
+                if (part.startsWith("[[") && part.endsWith("]]")) {
+                    String expr = part.substring(2, part.length() - 2)
+                            .replaceAll("<skilllevel>", String.valueOf(skillLevel))
+                            .replaceAll("<playerlevel>", String.valueOf(playerLevel))
+                            .replaceAll("<endurance>", String.valueOf(endurance))
+                            .replaceAll("<speed>", String.valueOf(speed))
+                            .replaceAll("<strength>", String.valueOf(strength))
+                            .replaceAll("<intelligence>", String.valueOf(intelligence))
+                            .replaceAll("<grace>", String.valueOf(grace));
 
-            List<String> stringTooltips = getToolTipsText();
-            stringTooltips.set(0, stringTooltips.get(0) + " - " + Localization.translate("ui", "level", "level", skillLevel));
-
-            for (String toolTip : stringTooltips) {
-                if (toolTip.contains("<") && toolTip.contains(">")) {
-                    List<String> parts = splitToolTip(toolTip);
-
-                    for (int i = 0; i < parts.size(); i++) {
-                        String part = parts.get(i);
-                        if (part.startsWith("[[") && part.endsWith("]]")) {
-                            String inside = part.substring(2, part.length() - 2);
-
-                            inside = inside
-                                    .replaceAll("<skilllevel>", String.valueOf(skillLevel))
-                                    .replaceAll("<playerlevel>", String.valueOf(playerLevel))
-                                    .replaceAll("<endurance>", String.valueOf(endurance))
-                                    .replaceAll("<speed>", String.valueOf(speed))
-                                    .replaceAll("<strength>", String.valueOf(strength))
-                                    .replaceAll("<intelligence>", String.valueOf(intelligence))
-                                    .replaceAll("<grace>", String.valueOf(grace));
-
-                            float value = calculateValue(inside);
-                            String valueText;
-                            if (value == (int) value) {
-                                valueText = String.valueOf((int) value);
-                            } else {
-                                valueText = String.format("%.1f", value);
-                            }
-
-                            parts.set(i, valueText);
-                        }
-                    }
-
-                    StringBuilder modifiedToolTip = new StringBuilder();
-                    for (String p : parts) {
-                        modifiedToolTip.append(p);
-                    }
-
-                    tooltips.add(modifiedToolTip.toString());
-                } else {
-                    if (!onlyChanges) tooltips.add(toolTip);
+                    float val = calculateValue(expr);
+                    String text = (val == (int) val)
+                            ? String.valueOf((int) val)
+                            : String.format("%.1f", val);
+                    parts.set(i, text);
                 }
             }
-            return tooltips;
+
+            StringBuilder builder = new StringBuilder();
+            for (String p : parts) builder.append(p);
+            return builder.toString();
+
+        } else {
+            return onlyChanges ? null : toolTip;
         }
-        return getToolTips();
     }
 
     private static @NotNull List<String> splitToolTip(String toolTip) {
@@ -154,7 +178,7 @@ abstract public class Skill {
         return false;
     }
 
-    private float calculateValue(String expression) {
+    private static float calculateValue(String expression) {
         String[] tokens = expression.split(" ");
         List<Float> values = new ArrayList<>();
         List<String> operators = new ArrayList<>();
@@ -244,9 +268,5 @@ abstract public class Skill {
             default:
                 return new Point2D.Float(0, 0);
         }
-    }
-
-    public String[] getExtraTooltips() {
-        return new String[0];
     }
 }

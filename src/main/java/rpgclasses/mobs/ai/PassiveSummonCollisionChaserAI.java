@@ -13,24 +13,24 @@ import necesse.entity.mobs.ai.behaviourTree.leaves.PlayerFollowerAINode;
 import necesse.entity.mobs.ai.behaviourTree.leaves.SummonTargetFinderAINode;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 
-public class SkillSummonCollisionChaserAI<T extends Mob> extends SelectorAINode<T> {
+public class PassiveSummonCollisionChaserAI<T extends Mob> extends SelectorAINode<T> {
     public GameDamage damage;
     public int knockback;
 
-    public SkillSummonCollisionChaserAI(int searchDistance, GameDamage damage, int knockback, int hitCooldown, int teleportDistance, int stoppingDistance, boolean defaultTargets) {
+    public PassiveSummonCollisionChaserAI(int searchDistance, GameDamage damage, int knockback, int hitCooldown, int teleportDistance, int stoppingDistance, boolean defaultTargets) {
         this.damage = damage;
         this.knockback = knockback;
         SequenceAINode<T> chaserSequence = new SequenceAINode<>();
         chaserSequence.addChild(new FollowerBaseSetterAINode<>());
         chaserSequence.addChild(new SkillSummonFocusTargetSetterAINode<T>(defaultTargets, searchDistance) {
             public Mob getCustomFocus(T mob, int searchDistance) {
-                return SkillSummonCollisionChaserAI.this.getCustomFocus(mob, searchDistance);
+                return PassiveSummonCollisionChaserAI.this.getCustomFocus(mob, searchDistance);
             }
         });
         if (defaultTargets) chaserSequence.addChild(new SummonTargetFinderAINode<>(searchDistance));
         CollisionChaserAINode<T> chaser = new CollisionChaserAINode<T>() {
             public boolean attackTarget(T mob, Mob target) {
-                return SkillSummonCollisionChaserAI.this.attackTarget(mob, target);
+                return PassiveSummonCollisionChaserAI.this.attackTarget(mob, target);
             }
         };
         chaser.hitCooldowns.hitCooldown = hitCooldown;

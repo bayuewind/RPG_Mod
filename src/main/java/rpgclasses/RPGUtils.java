@@ -11,6 +11,7 @@ import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
 
 import java.awt.geom.Line2D;
 import java.util.function.Predicate;
@@ -118,13 +119,6 @@ public class RPGUtils {
         return isInVision(level, x, y, new CollisionFilter().projectileCollision(), target);
     }
 
-
-    // MARKED
-    public static Predicate<Mob> isMarkedFilter(PlayerMob player) {
-        return m -> MarkedBuff.isMarked(player, m);
-    }
-
-
     public static boolean isInVision(Level level, float x, float y, CollisionFilter collisionFilter, Mob target) {
         return !level.collides(new Line2D.Float(x, y, target.x, target.y), collisionFilter);
     }
@@ -132,6 +126,31 @@ public class RPGUtils {
     public static Predicate<Mob> inVisionFilter(Level level, float x, float y) {
         CollisionFilter collisionFilter = new CollisionFilter().projectileCollision();
         return m -> isInVision(level, x, y, collisionFilter, m);
+    }
+
+
+    // MARKED
+    public static Predicate<Mob> isMarkedFilter(PlayerMob player) {
+        return m -> MarkedBuff.isMarked(player, m);
+    }
+
+
+    // FOLLOWER
+    public static boolean isFollower(Mob owner, Mob target) {
+        return target.isFollowing() && target.getFollowingMob() == owner;
+    }
+
+    public static Predicate<Mob> isFollowerFilter(Mob owner) {
+        return m -> isFollower(owner, m);
+    }
+
+    // DAMAGEABLE FOLLOWER
+    public static boolean isDamageableFollower(Mob owner, Mob target) {
+        return isFollower(owner, target) && target instanceof DamageableFollowingMob;
+    }
+
+    public static Predicate<Mob> isDamageableFollowerFilter(Mob owner) {
+        return m -> isDamageableFollower(owner, m);
     }
 
 
@@ -149,25 +168,12 @@ public class RPGUtils {
     }
 
     public static Mob findBestTarget(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
-
         Mob[] bestHolder = new Mob[1];
         float[] bestDistSq = {Float.MAX_VALUE};
         int[] bestPriority = {-1};
         boolean attackerIsPlayer = attacker.isPlayer;
 
-        NetworkClient client = attackerIsPlayer ? ((PlayerMob) attacker).getNetworkClient() : null;
-
-        CollisionFilter collisionFilter = new CollisionFilter().projectileCollision();
-
-        boolean hasFilter = filter != null;
-
-        streamMobsAndPlayers(level, x, y, maxDistance)
-                .filter(m -> {
-                    if (!isValidTarget(attackerIsPlayer, client, attacker, m)) return false;
-                    if (!isInVision(level, x, y, collisionFilter, m)) return false;
-
-                    return (!hasFilter || filter.test(m));
-                })
+        getAllTargets(level, attacker, x, y, maxDistance, filter)
                 .forEach(m -> {
                     float dx = m.getX() - x, dy = m.getY() - y;
                     float distSq = dx * dx + dy * dy;
@@ -205,6 +211,32 @@ public class RPGUtils {
         Mob[] chosenHolder = new Mob[1];
         int[] count = {0};
 
+        getAllTargets(level, attacker, x, y, maxDistance, filter)
+                .forEach(m -> {
+                    count[0]++;
+                    if (GameRandom.globalRandom.getChance(1.0f / count[0])) {
+                        chosenHolder[0] = m;
+                    }
+                });
+
+        return chosenHolder[0];
+    }
+
+
+    // ANY TARGETS
+    public static boolean anyTarget(@NotNull Mob mob, int distance) {
+        return anyTarget(mob, distance, null);
+    }
+
+    public static boolean anyTarget(@NotNull Mob mob, int distance, @Nullable Predicate<Mob> filter) {
+        return anyTarget(mob, mob.x, mob.y, distance, filter);
+    }
+
+    public static boolean anyTarget(@NotNull Mob mob, float x, float y, int distance, @Nullable Predicate<Mob> filter) {
+        return anyTarget(mob.getLevel(), mob, x, y, distance, filter);
+    }
+
+    public static boolean anyTarget(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
         boolean attackerIsPlayer = attacker.isPlayer;
         NetworkClient client = attackerIsPlayer
                 ? ((PlayerMob) attacker).getNetworkClient()
@@ -214,21 +246,111 @@ public class RPGUtils {
 
         boolean hasFilter = filter != null;
 
-        streamMobsAndPlayers(level, x, y, maxDistance)
+        return streamMobsAndPlayers(level, x, y, maxDistance)
+                .anyMatch(m -> {
+                    if (!isValidTarget(attackerIsPlayer, client, attacker, m)) return false;
+                    if (!isInVision(level, x, y, collisionFilter, m)) return false;
+
+                    return (!hasFilter || filter.test(m));
+                });
+    }
+
+
+    // GET ALL TARGETS
+    public static GameAreaStream<Mob> getAllTargets(@NotNull Mob mob, int distance) {
+        return getAllTargets(mob, distance, null);
+    }
+
+    public static GameAreaStream<Mob> getAllTargets(@NotNull Mob mob, int distance, @Nullable Predicate<Mob> filter) {
+        return getAllTargets(mob, mob.x, mob.y, distance, filter);
+    }
+
+    public static GameAreaStream<Mob> getAllTargets(@NotNull Mob mob, float x, float y, int distance, @Nullable Predicate<Mob> filter) {
+        return getAllTargets(mob.getLevel(), mob, x, y, distance, filter);
+    }
+
+    public static GameAreaStream<Mob> getAllTargets(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
+        boolean attackerIsPlayer = attacker.isPlayer;
+        NetworkClient client = attackerIsPlayer
+                ? ((PlayerMob) attacker).getNetworkClient()
+                : null;
+
+        CollisionFilter collisionFilter = new CollisionFilter().projectileCollision();
+
+        boolean hasFilter = filter != null;
+
+        return streamMobsAndPlayers(level, x, y, maxDistance)
                 .filter(m -> {
                     if (!isValidTarget(attackerIsPlayer, client, attacker, m)) return false;
                     if (!isInVision(level, x, y, collisionFilter, m)) return false;
 
                     return (!hasFilter || filter.test(m));
+                });
+    }
+
+
+    // ANY DAMAGEABLE FOLLOWER
+
+    public static boolean anyDamageableFollower(@NotNull Mob attacker, int maxDistance) {
+        return anyDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, null);
+    }
+
+    public static boolean anyDamageableFollower(@NotNull Mob attacker, int maxDistance, @Nullable Predicate<Mob> filter) {
+        return anyDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, filter);
+    }
+
+    public static boolean anyDamageableFollower(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
+        boolean hasFilter = filter != null;
+
+        return streamMobs(level, x, y, maxDistance)
+                .anyMatch(m -> {
+                    if (!isDamageableFollower(attacker, m)) return false;
+
+                    return (!hasFilter || filter.test(m));
+                });
+    }
+
+
+    // FIND CLOSEST DAMAGEABLE FOLLOWER
+
+    public static Mob findClosestDamageableFollower(@NotNull Mob attacker, int maxDistance) {
+        return findClosestDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, null);
+    }
+
+    public static Mob findClosestDamageableFollower(@NotNull Mob attacker, int maxDistance, @Nullable Predicate<Mob> filter) {
+        return findClosestDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, filter);
+    }
+
+    public static Mob findClosestDamageableFollower(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
+        Mob[] bestHolder = new Mob[1];
+        float[] bestDistSq = {Float.MAX_VALUE};
+        int[] bestPriority = {-1};
+        boolean attackerIsPlayer = attacker.isPlayer;
+
+        boolean hasFilter = filter != null;
+
+        streamMobs(level, x, y, maxDistance)
+                .filter(m -> {
+                    if (!isDamageableFollower(attacker, m)) return false;
+
+                    return (!hasFilter || filter.test(m));
                 })
                 .forEach(m -> {
-                    count[0]++;
-                    if (GameRandom.globalRandom.getChance(1.0f / count[0])) {
-                        chosenHolder[0] = m;
+                    float dx = m.getX() - x, dy = m.getY() - y;
+                    float distSq = dx * dx + dy * dy;
+                    int priority = 0;
+                    if (attackerIsPlayer) {
+                        if (MarkedBuff.isMarked((PlayerMob) attacker, m)) priority += 2;
+                        if (m.isHostile) priority++;
+                    }
+                    if (priority > bestPriority[0] || (priority == bestPriority[0] && distSq < bestDistSq[0])) {
+                        bestHolder[0] = m;
+                        bestDistSq[0] = distSq;
+                        bestPriority[0] = priority;
                     }
                 });
 
-        return chosenHolder[0];
+        return bestHolder[0];
     }
 
 }

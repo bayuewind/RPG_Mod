@@ -5,7 +5,7 @@ import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
-import rpgclasses.levelevents.Mobs.IceExplosionLevelEvent;
+import rpgclasses.levelevents.IceExplosionLevelEvent;
 
 import java.awt.*;
 

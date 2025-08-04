@@ -14,6 +14,7 @@ public class RPGBuffs {
     public static Buff DarkCurse;
     public static Buff MagicPoison;
     public static Buff Ignited;
+    public static Buff Constrained;
 
     public static class PASSIVES {
         public static ModifiersBuff Modifiers;
@@ -27,6 +28,7 @@ public class RPGBuffs {
         BuffRegistry.registerBuff("darkcursebuff", DarkCurse = new DarkCurseBuff());
         BuffRegistry.registerBuff("magicpoisonbuff", MagicPoison = new MagicPoisonBuff());
         BuffRegistry.registerBuff("ignitedbuff", Ignited = new IgnitedBuff());
+        BuffRegistry.registerBuff("constrainedbuff", Constrained = new ConstrainedBuff());
 
         // Passive Buffs
         BuffRegistry.registerBuff("modifiersbuff", PASSIVES.Modifiers = new ModifiersBuff());

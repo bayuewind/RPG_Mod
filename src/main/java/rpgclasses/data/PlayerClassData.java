@@ -127,22 +127,14 @@ public class PlayerClassData {
         writer.putNextInts(activeSkillLevels);
     }
 
-    public int getEffectiveSkillMaxLevel(Skill skill, int classLevel) {
+    public int getEffectiveSkillMaxLevel(Skill skill, int classLevel, int[] skillLevels) {
         if (skill.requiredClassLevel == 0) return skill.levelMax;
 
         int levelMax = skill.levelMax;
         int requiredLevel = Math.max(1, skill.requiredClassLevel);
 
         int usedPointsAtLevel = 0;
-        SkillsList<? extends Skill> skillsList;
-        int[] skillLevels;
-        if (skill instanceof Passive) {
-            skillsList = playerClass.getPassivesList();
-            skillLevels = getPassiveLevels();
-        } else {
-            skillsList = playerClass.getActiveSkillsList();
-            skillLevels = getActiveSkillLevels();
-        }
+        SkillsList<? extends Skill> skillsList = skill instanceof Passive ? playerClass.getPassivesList() : playerClass.getActiveSkillsList();
 
         for (int i = 0; i < skillsList.size(); i++) {
             Skill otherSkill = skillsList.get(i);

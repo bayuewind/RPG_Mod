@@ -238,10 +238,6 @@ public class PlayerData {
     }
 
     public void updateAllBuffs(PlayerMob player) {
-        updateClassesBuffs(player);
-    }
-
-    public void updateClassesBuffs(PlayerMob player) {
         updateModifiersBuff(player);
 
         boolean someOverlevel = false;

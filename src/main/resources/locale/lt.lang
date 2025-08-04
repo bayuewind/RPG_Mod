@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9<level> lygis§0
 
 rangerwolf=Lankininko Vilkas
 dancingflame=Šokanti Liepsna
+necromancerskeleton=Skeletas
+necromancerskeletonwarrior=Karys skeletas
+necromancerboneslinger=Kaulų mėtytojas
+necromancertomb=Kapas
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Ledo Skydas
 flamingsteps=Liepsnojantys Žingsniai
 stormbound=Audros Susaistytas
 
+// Nekromantas
+darkpower=Tamsioji Galia
+necroticpower=Nekrotinė Galia
+darkmagic=Tamsioji Magija
+necroticarmy=Nekrotinė Armija
+darksummons=Tamsieji Iškvietimai
+lifeleech=Gyvybės Siurbimas
+necroticremains=Nekrotinės Liekanos
+endlesslegion=Begalinis Legionas
+lichborn=Gimęs Lichu
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=Kas §a[[9 - 0.5 x <skilllevel>]] sekundes§0, žaibas trenkia į ats
 arcaneshield=Skydas, kuris apsaugo nuo vieno smūgio\nSkydas atsistatys po §a[[20 - <skilllevel>]] sekundžių§0 po panaudojimo
 fireshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite sprogimą, padarantį §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nir uždegantį mobus, 5 sekundes kartojant 20% jų pradinės žalos per sekundę\nSkydas atsistatys po 26 sekundžių po panaudojimo
 iceshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite ledo aurą, padarančią §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nsušaldantį mobus 5 sekundėms ir visiškai juos sušaldantį 1 sekundei\nSkydas atsistatys po 22 sekundžių po panaudojimo
+
+// Nekromantas
+necroticpower=Visi jūsų magiški ir šauklio išpuoliai nuodija 5% jų žalos §a[[2 x <skilllevel>]] sekundes§0, kol juos sukelia ne iškvietimas
+darkmagic=Šauklio žalos premijos veikia magišką žalą §a[[5 x <skilllevel>]]%
+necroticarmy=Nugalėti priešiški priešai pavirs §bSkeletais§0 su §a-[[100 - 3 x <skilllevel>]]%§0 sveikatos ir žalos
+darksummons=Padarykite §a+[[10 x <skilllevel>]]%§0 šauklio žalos nuodytiems priešams
+lifeleech=Atkuria §a[[<skilllevel>]]%§0 padarytos šauklio žalos kaip sveikatą
+necroticremains=Kai miršta nekrotinis iškvietimas, jis sprogsta, padarydamas §i[[0.1 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams, nuodydamas juos 20% žalos per sekundę 10 sekundžių
+endlesslegion=Kas 4 šio įgūdžio lygius, gaunate +1 maksimalų iškvietimą
+lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu), kuris gali šaudyti tik kaulus, darančius magišką žalą, lygią [[Jėga]], ir naudoti likusius savo įgūdžius\nBūdami licho formoje, gaunate dvigubą žalą
+
 
 [activeskills]
 empty=Tuščia
@@ -193,6 +219,20 @@ iceenchantment=Ledo Užkerėjimas
 fireball=Ugnies Kamuolys
 lightning=Žaibas
 
+// Nekromantas
+skeletonhorde=Skeletų Orda
+skeletonwarrior=Karys Skeletas
+sacrifice=Auka
+siegecry=Apgulties Šauksmas
+
+boneslingerhorde=Kaulų Mėtytojų Orda
+tomb=Kapas
+necroticbloom=Nekrotinis Žydėjimas
+wardingtaunt=Apsauginis Pašiepimas
+
+unholyground=Nešventa Žemė
+necroticbarrage=Nekrotinis Baražas
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Kitoms 10 sekundžių jūsų ir netoliese esančių sąjunginink�
 fireball=Meskite §iUgnies Kamuolį§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0\nSunaudoja §a[[80 + 16 x <skilllevel>]] Manos
 lightning=Pradėkite žaibą, kuris 1 sekundę šokinėja tarp mobų, padarydamas §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigindamas 2 sekundėms\nNegali kelis kartus pataikyti į tą patį taikinį\nSunaudoja §a[[30 + 6 x <skilllevel>]] Manos
 
+// Nekromantas
+skeletonhorde=Iškviečia §a[[1 + <skilllevel>]] §bSkeletų§0
+skeletonwarrior=Iškviečia §bKarį Skeletą§0 su §a+[[20 x <skilllevel>]]%§0 sveikatos ir žalos
+sacrifice=Artimiausias pažeidžiamas iškvietimas miršta, o jūs atgaunate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] sveikatos§0 kaip magišką gydymą
+siegecry=Gaukite §a+[[50 x <skilllevel>]]%§0 iškvietimo greičio 6 sekundėms
+
+boneslingerhorde=Iškviečia §a[[1 + <skilllevel>]]§0 §bKaulų Mėtytojų§0
+tomb=Sukuria struktūrą, kuri kas §a[[10 - <skilllevel>]] sekundes§0 iškviečia §bSkeletą§0\nKapo sveikata lygi §a[[5 x <playerlevel> x <skilllevel>]]§0\nKapas per sekundę praranda 2% savo bendros sveikatos
+necroticbloom=Pagreitina nuodų poveikį visiems netoliese esantiems priešams, sutrumpindamas jo trukmę iki 10%, bet padidindamas jo žalą per sekundę, kad išlaikytų bendrą žalą
+wardingtaunt=Artimiausias pažeidžiamas iškvietimas priverčia netoliese esančius priešus §a[[50 x <skilllevel>]] spinduliu§0 jį pulti
+
+unholyground=10 sekundžių aplink jus išplečia korupcijos aurą\nŠioje srityje esantys priešai per sekundę gauna §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] nuodų žalos§0 ir yra §7Susaistyti
+necroticbarrage=Visi pažeidžiami iškvietimai mirę sprogsta, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams\nir nuodydami juos 10 sekundžių 20% pradinės žalos per sekundę
+
 
 [skillsdesckeys]
 skilllevel=Įgūdžių lygis
@@ -258,6 +312,7 @@ setmax=Neigiami efektai nustatomi kaip maksimalūs ir negali būti pašalinti ki
 
 // Stiprinimai
 marked=§hPažymėtas:§0 Padarykite +20% Žalos (+ §hFokusavimo Žalos§0) ir +10% Kritinės Tikimybės mobams, kuriuos pažymite\n"Artimiausias priešas" teikia pirmenybę pažymėtiems priešams
+constrained=§7Susaistytas:§0 -50% Judėjimo Greičio
 
 // Tikimybės modifikatoriai
 dodgechance=§7Išsisukimo tikimybė:§0 Tikimybė išsisukti nuo artėjančių atakų. Negali viršyti 80%
@@ -276,6 +331,11 @@ fireball=§iUgnies Kamuolys:§0 Magiškas sviedinys, kuris sprogsta ir uždega m
 
 // Iškvietimai
 dancingflame=§bŠokanti Liepsna:§0 Iškvietimas, kuris veikia kaip sviedinys. Pataikius uždega priešus. 5 sekundes kartoja 20% savo pradinės žalos per sekundę
+
+// Pažeidžiami Iškvietimai
+necromancerskeleton=§bSkeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
+necromancerskeletonwarrior=§bKarys Skeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŽala: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
+necromancerboneslinger=§bKaulų Mėtytojas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 atstumas)\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Šis įgūdis jau naudojamas
 anotheractiveskillinuse=Jūs jau naudojate kitą įgūdį
 incooldown=Atsistatymas
 notenoughstamina=Nepakanka ištvermės
+notarget=Netoliese nėra taikinių
 nograbbableobject=Priešais jus nėra paimamo objekto
+nodamageablefollower=Netoliese nėra pažeidžiamų iškvietimų
+
 
 [ui]
 menutitle=RPG MODAS, autorius Save
@@ -374,6 +437,8 @@ upcomingclass=§6Būsimoji klasė\n§9Ši klasė šiuo metu kuriama\nir bus pasi
 
 addcolumn=Pridėti stulpelį
 removecolumn=Pašalinti stulpelį
+
+rate=Įvertinkite RPG Modą!
 
 
 [controls]

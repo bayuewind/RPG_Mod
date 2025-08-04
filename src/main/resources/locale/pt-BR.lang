@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9nvl <level>§0
 
 rangerwolf=Lobo Arqueiro
 dancingflame=Chama Dançante
+necromancerskeleton=Esqueleto
+necromancerskeletonwarrior=Guerreiro Esqueleto
+necromancerboneslinger=Lançador de Ossos
+necromancertomb=Tumba
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=Escudo de Gelo
 flamingsteps=Passos Flamejantes
 stormbound=Ligado à Tempestade
 
+// Necromante
+darkpower=Poder Sombrio
+necroticpower=Poder Necrótico
+darkmagic=Magia Negra
+necroticarmy=Exército Necrótico
+darksummons=Invocações Sombrias
+lifeleech=Roubo de Vida
+necroticremains=Restos Necróticos
+endlesslegion=Legião Infinita
+lichborn=Nascido Lich
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=A cada §a[[9 - 0.5 x <skilllevel>]] segundos§0, um raio atinge um i
 arcaneshield=Um escudo que previne um acerto\nO escudo se recuperará §a[[20 - <skilllevel>]] segundos§0 após o uso
 fireshield=Um escudo que previne um acerto\nQuando usado, você liberará uma explosão causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\ne incendiando monstros, repetindo 20% de seu dano original por segundo por 5 segundos\nO escudo se recuperará 26 segundos após o uso
 iceshield=Um escudo que previne um acerto\nQuando usado, você liberará uma aura de gelo causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\ncongelando monstros por 5 segundos, e congelando-os totalmente por 1 segundo\nO escudo se recuperará 22 segundos após o uso
+
+// Necromante
+necroticpower=Todos os seus ataques Mágicos e de Invocador envenenam por 5% do seu Dano por §a[[2 x <skilllevel>]] segundos§0, desde que não sejam causados por uma invocação
+darkmagic=Bônus de Dano de Invocador afetam o Dano Mágico em §a[[5 x <skilllevel>]]%
+necroticarmy=Inimigos hostis derrotados se transformarão em §bEsqueletos§0 com §a-[[100 - 3 x <skilllevel>]]%§0 de Vida e Dano
+darksummons=Cause §a+[[10 x <skilllevel>]]%§0 de Dano de Invocador a inimigos envenenados
+lifeleech=Recupera §a[[<skilllevel>]]%§0 do Dano de Invocador causado como Vida
+necroticremains=Quando uma invocação necrótica morre, ela explode, causando §i[[0.1 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos, envenenando-os por 20% do dano por segundo por 10 segundos
+endlesslegion=A cada 4 níveis desta habilidade, você ganha +1 invocação máxima
+lichborn=Quando você morre, você sobrevive e recupera §a[[10 x <skilllevel>]]%§0 de Vida se você ainda não for um lich\nPelos próximos §a[[120 - 6 x <skilllevel>]] segundos§0, você se torna um lich (um esqueleto) que só pode atirar ossos que causam Dano Mágico igual a [[Força]] e usar o resto de suas habilidades\nEnquanto estiver na forma de lich, você recebe o dobro do dano
+
 
 [activeskills]
 empty=Vazio
@@ -193,6 +219,20 @@ iceenchantment=Encantamento de Gelo
 fireball=Bola de Fogo
 lightning=Relâmpago
 
+// Necromante
+skeletonhorde=Horda de Esqueletos
+skeletonwarrior=Guerreiro Esqueleto
+sacrifice=Sacrifício
+siegecry=Grito de Cerco
+
+boneslingerhorde=Horda de Lançadores de Ossos
+tomb=Tumba
+necroticbloom=Florescer Necrótico
+wardingtaunt=Provocação Protetora
+
+unholyground=Solo Profano
+necroticbarrage=Barragem Necrótica
+
 
 [activeskillsdesc]
 
@@ -240,6 +280,20 @@ iceenchantment=Pelos próximos 10 segundos, ataques seus e de aliados próximos 
 fireball=Atire uma §iBola de Fogo§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0\nConsome §a[[80 + 16 x <skilllevel>]] de Mana
 lightning=Inicia um relâmpago que salta entre monstros por 1 segundo, causando §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoando por 2 segundos\nNão pode atingir o mesmo alvo várias vezes\nConsome §a[[30 + 6 x <skilllevel>]] de Mana
 
+// Necromante
+skeletonhorde=Invoca §a[[1 + <skilllevel>]] §bEsqueletos§0
+skeletonwarrior=Invoca um §bGuerreiro Esqueleto§0 com §a+[[20 x <skilllevel>]]%§0 de Vida e Dano
+sacrifice=A invocação danificável mais próxima morre, e você então recupera §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Vida§0 como cura mágica
+siegecry=Ganhe §a+[[50 x <skilllevel>]]%§0 de Velocidade de Invocação por 6 segundos
+
+boneslingerhorde=Invoca §a[[1 + <skilllevel>]]§0 §bLançadores de Ossos§0
+tomb=Gera uma estrutura que invoca um §bEsqueleto§0 a cada §a[[10 - <skilllevel>]] segundos§0\nA Tumba tem Vida igual a §a[[5 x <playerlevel> x <skilllevel>]]§0\nA Tumba perde 2% de sua Vida Total por segundo
+necroticbloom=Acelera o efeito do veneno em todos os inimigos próximos, reduzindo sua duração para 10%, mas aumentando seu dano por segundo para manter o dano total
+wardingtaunt=A invocação danificável mais próxima força os inimigos próximos em um raio de §a[[50 x <skilllevel>]]§0 a alvejá-la
+
+unholyground=Estende uma aura de corrupção ao seu redor por 10 segundos\nInimigos dentro desta área recebem §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Dano de Veneno§0 por segundo e são §7Restringidos
+necroticbarrage=Todas as invocações danificáveis explodem ao morrer, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos\ne envenenando-os por 10 segundos com 20% do dano original por segundo
+
 
 [skillsdesckeys]
 skilllevel=Nível de Habilidade
@@ -258,6 +312,7 @@ setmax=Efeitos negativos são definidos como máximos e não podem ser removidos
 
 // Bônus
 marked=§hMarcado:§0 Cause +20% de dano (+ §hdano de foco§0) e +10% de chance de acerto crítico em monstros que você marcar\n"Inimigo mais próximo" prioriza inimigos marcados
+constrained=§7Restringido:§0 -50% de Velocidade de Movimento
 
 // Modificadores de chance
 dodgechance=§7Chance de esquiva:§0 Chance de se esquivar de ataques recebidos. Não pode exceder 80%
@@ -276,6 +331,11 @@ fireball=§iBola de Fogo:§0 Projétil mágico que explode e incendeia monstros 
 
 // Invocações
 dancingflame=§bChama Dançante:§0 Invocação que age como um projétil. Incendeia inimigos ao acertar. Repete 20% de seu dano original por segundo por 5 segundos
+
+// Invocações Danificáveis
+necromancerskeleton=§bEsqueleto:§0 Invocação necrótica danificável\nVida: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDano: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocidade: 60\nPerde 2% da Vida Total por segundo
+necromancerskeletonwarrior=§bGuerreiro Esqueleto:§0 Invocação necrótica danificável\nVida: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDano: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocidade: 60\nPerde 2% da Vida Total por segundo
+necromancerboneslinger=§bLançador de Ossos:§0 Invocação necrótica danificável\nVida: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDano: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distância 320)\nVelocidade: 60\nPerde 2% da Vida Total por segundo
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=Esta habilidade já está em uso
 anotheractiveskillinuse=Você já tem outra habilidade em uso
 incooldown=Em recarga
 notenoughstamina=Vigor insuficiente
+notarget=Não há alvos por perto
 nograbbableobject=Não há nenhum objeto que possa ser pego à sua frente
+nodamageablefollower=Não há invocações danificáveis por perto
+
 
 [ui]
 menutitle=MOD de RPG por Save
@@ -374,6 +437,8 @@ upcomingclass=§6Próxima classe\n§9Esta classe está atualmente em desenvolvim
 
 addcolumn=Adicionar coluna
 removecolumn=Remover coluna
+
+rate=Avalie o MOD de RPG!
 
 
 [controls]

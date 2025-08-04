@@ -48,6 +48,10 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9레벨 <level>§0
 
 rangerwolf=레인저 늑대
 dancingflame=춤추는 불꽃
+necromancerskeleton=해골
+necromancerskeletonwarrior=해골 전사
+necromancerboneslinger=뼈 투척병
+necromancertomb=무덤
 
 
 [mobclass]
@@ -124,6 +128,17 @@ iceshield=얼음 보호막
 flamingsteps=불타는 발걸음
 stormbound=폭풍결속
 
+// 강령술사
+darkpower=어둠의 힘
+necroticpower=괴저의 힘
+darkmagic=어둠의 마법
+necroticarmy=괴저 군대
+darksummons=어둠의 소환수
+lifeleech=생명력 흡수
+necroticremains=괴저 잔해
+endlesslegion=끝없는 군단
+lichborn=리치본
+
 
 [passivesdesc]
 
@@ -144,6 +159,17 @@ stormbound=§a[[9 - 0.5 x <skilllevel>]]초§0마다 시야에 있는 무작위 
 arcaneshield=한 번의 공격을 막는 보호막\n보호막은 사용 후 §a[[20 - <skilllevel>]]초§0 후에 회복됩니다.
 fireshield=한 번의 공격을 막는 보호막\n사용 시, §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 폭발을 일으키고\n몹을 불태워 5초 동안 초당 원래 피해의 20%를 반복합니다.\n보호막은 사용 후 26초 후에 회복됩니다.
 iceshield=한 번의 공격을 막는 보호막\n사용 시, §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 얼음 아우라를 방출하여\n몹을 5초 동안 얼리고 1초 동안 완전히 얼립니다.\n보호막은 사용 후 22초 후에 회복됩니다.
+
+// 강령술사
+necroticpower=모든 마법 및 소환사 공격은 소환으로 인한 것이 아닌 한 §a[[2 x <skilllevel>]]초§0 동안 피해의 5%만큼 중독시킵니다.
+darkmagic=소환사 피해 보너스는 마법 피해에 §a[[5 x <skilllevel>]]%§0만큼 영향을 미칩니다.
+necroticarmy=패배한 적대적인 적은 §a-[[100 - 3 x <skilllevel>]]%§0의 체력과 피해를 가진 §b해골§0로 변합니다.
+darksummons=중독된 적에게 §a+[[10 x <skilllevel>]]%§0의 소환사 피해를 입힙니다.
+lifeleech=입힌 소환사 피해의 §a[[<skilllevel>]]%§0를 체력으로 회복합니다.
+necroticremains=괴저 소환수가 죽으면 폭발하여 주변의 적에게 §i[[0.1 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 10초 동안 초당 피해의 20%만큼 중독시킵니다.
+endlesslegion=이 스킬의 4레벨마다 최대 소환수가 +1됩니다.
+lichborn=죽으면 아직 리치가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다.\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 [[힘]]과 동일한 마법 피해를 입히는 뼈만 쏠 수 있고 나머지 스킬을 사용할 수 있는 리치(해골)가 됩니다.\n리치 형태에서는 두 배의 피해를 받습니다.
+
 
 [activeskills]
 empty=비어 있음
@@ -193,6 +219,20 @@ iceenchantment=얼음 마법 부여
 fireball=화염구
 lightning=번개
 
+// 강령술사
+skeletonhorde=해골 무리
+skeletonwarrior=해골 전사
+sacrifice=희생
+siegecry=공성 외침
+
+boneslingerhorde=뼈 투척병 무리
+tomb=무덤
+necroticbloom=괴저 개화
+wardingtaunt=보호 도발
+
+unholyground=부정한 땅
+necroticbarrage=괴저 포격
+
 
 [activeskillsdesc]
 
@@ -228,7 +268,7 @@ arrowstorm=주변의 각 적에게 기본 화살을 발사하여 각 화살마�
 // 마법사
 arcaneoverload=활성화된 동안 마법 공격 속도가 §a[[30 x <skilllevel>]]%§0 증가하지만 움직일 수 없습니다.\n마나가 다 떨어지거나 다시 사용하면 종료됩니다.\n초당 §a[[10 + 2 x <skilllevel>]]의 마나를 소모합니다.
 manarecharge=활성화된 동안 마나 재생이 +1 및 §a[[50 x <skilllevel>]]%§0 증가하지만 마비되고 두 배의 피해를 받습니다.\n다시 사용하면 종료됩니다.
-firedance=각각 §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 4개의 §b춤추는 불꽃§0을 소환합니다.\n5초마다 하나씩 더 소환합니다.\n모든 소환수는 능력 활성화 후 20초 후에 사라집니다.\n§a[[30 + 6 x <skilllevel>]]의 마나를 소모합니다.
+firedance=각각 §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 4개의 §b춤추는 불꽃§0을 소환합니다.\n5초마다 하나씩 더 소환합니다.\n모든 소환수는 스킬 활성화 후 20초 후에 사라집니다.\n§a[[30 + 6 x <skilllevel>]]의 마나를 소모합니다.
 iceball=가장 가까운 적에게 §a얼음 구슬§0을 던져 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n§a[[50 + 10 x <skilllevel>]]의 마나를 소모합니다.
 zap=2초 동안 몹 사이를 뛰어다니며 §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 1초 동안 기절시키는 감전을 시작합니다.\n§a[[10 + 2 x <skilllevel>]]의 마나를 소모합니다.
 
@@ -239,6 +279,20 @@ iceenchantment=다음 10초 동안 당신과 주변 아군의 공격이 적을 �
 
 fireball=가장 가까운 적에게 §i화염구§0를 던져 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n§a[[80 + 16 x <skilllevel>]]의 마나를 소모합니다.
 lightning=1초 동안 몹 사이를 뛰어다니며 §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 2초 동안 기절시키는 번개를 시작합니다.\n같은 대상을 여러 번 공격할 수 없습니다.\n§a[[30 + 6 x <skilllevel>]]의 마나를 소모합니다.
+
+// 강령술사
+skeletonhorde=§a[[1 + <skilllevel>]]마리의 §b해골§0을 소환합니다.
+skeletonwarrior=§a+[[20 x <skilllevel>]]%§0의 체력과 피해를 가진 §b해골 전사§0를 소환합니다.
+sacrifice=가장 가까운 피해를 입힐 수 있는 소환수가 죽고, 그 후 마법 치유로 §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]의 체력§0을 회복합니다.
+siegecry=6초 동안 소환 속도가 §a+[[50 x <skilllevel>]]%§0 증가합니다.
+
+boneslingerhorde=§a[[1 + <skilllevel>]]§0마리의 §b뼈 투척병§0을 소환합니다.
+tomb=§a[[10 - <skilllevel>]]초§0마다 §b해골§0을 소환하는 구조물을 생성합니다.\n무덤의 체력은 §a[[5 x <playerlevel> x <skilllevel>]]§0입니다.\n무덤은 초당 총 체력의 2%를 잃습니다.
+necroticbloom=주변의 모든 적의 독 효과를 가속화하여 지속 시간을 10%로 줄이지만, 총 피해를 유지하기 위해 초당 피해를 증가시킵니다.
+wardingtaunt=가장 가까운 피해를 입힐 수 있는 소환수는 §a[[50 x <skilllevel>]] 반경§0 내의 주변의 적들이 그것을 목표로 삼도록 강요합니다.
+
+unholyground=10초 동안 주변에 부패의 아우라를 퍼뜨립니다.\n이 지역 내의 적들은 초당 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]의 독 피해§0를 입고 §7속박§0됩니다.
+necroticbarrage=모든 피해를 입힐 수 있는 소환수는 죽을 때 폭발하여 주변의 적에게 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n그리고 10초 동안 초당 원래 피해의 20%만큼 중독시킵니다.
 
 
 [skillsdesckeys]
@@ -258,6 +312,7 @@ setmax=부정적인 효과는 최대로 설정되며 다른 버프로 제거할 
 
 // 버프
 marked=§h표식:§0 표식이 있는 몹에게 +20% 피해(+§h집중 피해§0) 및 +10% 치명타 확률을 부여합니다.\n"가장 가까운 적"은 표식이 있는 적을 우선적으로 공격합니다.
+constrained=§7속박됨:§0 -50% 이동 속도
 
 // 확률 수정자
 dodgechance=§7회피 확률:§0 들어오는 공격을 회피할 확률. 80%를 초과할 수 없습니다.
@@ -276,6 +331,11 @@ fireball=§i화염구:§0 5초 동안 초당 원래 피해의 20%를 반복하�
 
 // 소환수
 dancingflame=§b춤추는 불꽃:§0 발사체처럼 행동하는 소환수. 적중 시 적을 불태웁니다. 5초 동안 초당 원래 피해의 20%를 반복합니다.
+
+// 피해를 입힐 수 있는 소환수
+necromancerskeleton=§b해골:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
+necromancerskeletonwarrior=§b해골 전사:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n피해: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
+necromancerboneslinger=§b뼈 투척병:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 거리)\n속도: 60\n초당 총 체력의 2%를 잃습니다.
 
 
 [item]
@@ -330,7 +390,10 @@ activeskillinuse=이 스킬은 이미 사용 중입니다.
 anotheractiveskillinuse=이미 다른 스킬을 사용 중입니다.
 incooldown=재사용 대기 중
 notenoughstamina=체력이 부족합니다.
+notarget=주변에 대상이 없습니다.
 nograbbableobject=앞에 잡을 수 있는 물건이 없습니다.
+nodamageablefollower=주변에 피해를 입힐 수 있는 소환수가 없습니다.
+
 
 [ui]
 menutitle=Save의 RPG 모드
@@ -374,6 +437,8 @@ upcomingclass=§6출시 예정 클래스\n§9이 클래스는 현재 개발 중�
 
 addcolumn=열 추가
 removecolumn=열 제거
+
+rate=RPG 모드를 평가해주세요!
 
 
 [controls]
