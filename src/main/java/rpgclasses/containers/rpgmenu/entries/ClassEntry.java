@@ -25,6 +25,8 @@ import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClassEntry extends MenuEntry {
@@ -56,7 +58,7 @@ public class ClassEntry extends MenuEntry {
 
         FormLabel passivePointsLabel = entryForm.addComponent(new FormLabel(
                 "",
-                new FontOptions(12), -1, 12, 25
+                new FontOptions(12), -1, 12, 43
         ));
         updatePassivePoints(passivePointsLabel, totalPassivePoints, mutableUsedPassivePoints.get(), 0);
 
@@ -66,7 +68,7 @@ public class ClassEntry extends MenuEntry {
 
         FormLabel activeSkillPointsLabel = entryForm.addComponent(new FormLabel(
                 "",
-                new FontOptions(12), -1, 12, 43
+                new FontOptions(12), -1, 12, 25
         ));
         updateActiveSkillPoints(activeSkillPointsLabel, totalActiveSkillPoints, mutableUsedActiveSkillsPoints.get(), 0);
 
@@ -105,23 +107,24 @@ public class ClassEntry extends MenuEntry {
             Passive passive = playerClass.passivesList.get(i);
 
             boolean newSeparation = false;
-            if (i != 0) {
-                if (passive.requiredClassLevel != lastPassiveLevel) {
-                    passiveRows++;
-                    actualColumn = 0;
-                    lastPassiveLevel = passive.requiredClassLevel;
-                    newSeparation = true;
-                } else if (actualColumn < maxPassiveColumns - 1) {
-                    actualColumn++;
-                } else {
-                    passiveRows++;
-                    actualColumn = 0;
-                }
+            if (i == 0) {
+                lastPassiveLevel = passive.requiredClassLevel;
+                newSeparation = true;
+            } else if (passive.requiredClassLevel != lastPassiveLevel) {
+                passiveRows++;
+                actualColumn = 0;
+                lastPassiveLevel = passive.requiredClassLevel;
+                newSeparation = true;
+            } else if (actualColumn < maxPassiveColumns - 1) {
+                actualColumn++;
+            } else {
+                passiveRows++;
+                actualColumn = 0;
             }
 
             int yPosition = 12 + passiveRows * (SkillComponent.height + 12);
 
-            if (newSeparation && lastPassiveLevel != 0) {
+            if (newSeparation) {
                 passives.addComponent(new FormLocalLabel(
                         new LocalMessage("ui", "classlevelseparation", "level", lastPassiveLevel),
                         new FontOptions(12), -1, 8, yPosition + passiveSeparations * 24 + 8
@@ -178,7 +181,7 @@ public class ClassEntry extends MenuEntry {
         actualColumn = 0;
         int lastActiveLevel = 0;
 
-        int activeSkillsStartY = 56 + 4;
+        int activeSkillsStartY = 56 + 10;
 
         int activeSeparations = 0;
 
@@ -187,7 +190,7 @@ public class ClassEntry extends MenuEntry {
             ActiveSkill activeSkill = playerClass.activeSkillsList.get(i);
 
             int requiredLevel = activeSkill.requiredClassLevel;
-            if (requiredLevel != 0 && (activeSkill.newRow || lastActiveLevel != requiredLevel)) {
+            if (i != 0 && (activeSkill.newRow || lastActiveLevel != requiredLevel)) {
                 activeRows++;
                 actualColumn = 1;
             } else {
@@ -196,9 +199,9 @@ public class ClassEntry extends MenuEntry {
                     activeColumns = actualColumn;
                 }
             }
-            int yPosition = 12 + (activeRows - 1) * (SkillComponent.height + 12);
+            int yPosition = 6 + (activeRows - 1) * (SkillComponent.height + 12);
 
-            if (requiredLevel != 0 && requiredLevel != lastActiveLevel) {
+            if (i == 0 || requiredLevel != lastActiveLevel) {
                 lastActiveLevel = requiredLevel;
                 activeSkills.addComponent(new FormLocalLabel(new LocalMessage("ui", "classlevelseparation", "level", lastActiveLevel), new FontOptions(12), -1, 8, yPosition + activeSeparations * 24 + 8));
                 activeSeparations++;
@@ -244,10 +247,11 @@ public class ClassEntry extends MenuEntry {
         updatePassivePoints(passivePointsLabel, totalPassivePoints, currentUsedPassives, passivePointsDifference);
         updateActiveSkillPoints(activeSkillPointsLabel, totalActiveSkillPoints, currentUsedActiveSkill, activeSkillPointsDifference);
 
-        cancelButton.setActive(cancelEnabledPassives(passiveLevels, mutablePassiveLevels) || cancelEnabledActiveSkills(activeSkillLevels, mutableActiveSkillLevels));
+        cancelButton.setActive(
+                cancelEnabled(passiveLevels, mutablePassiveLevels, activeSkillLevels, mutableActiveSkillLevels)
+        );
         confirmButton.setActive(
-                confirmEnabledPassives(totalPassivePoints, currentUsedPassives) && confirmEnabledActiveSkills(totalActiveSkillPoints, currentUsedActiveSkill)
-                        && (confirmEnabledPassivesOptional(passiveLevels, mutablePassiveLevels) || confirmEnabledActiveSkillsOptional(activeSkillLevels, mutableActiveSkillLevels))
+                confirmEnabled(totalPassivePoints, totalActiveSkillPoints, currentUsedPassives, currentUsedActiveSkill, activeSkillLevels, mutableActiveSkillLevels, passiveLevels, mutablePassiveLevels)
         );
     }
 
@@ -275,28 +279,64 @@ public class ClassEntry extends MenuEntry {
         activeSkillPointsLabel.setText(Localization.translate("ui", "activeskillpoints", "points", text));
     }
 
-    public boolean cancelEnabledPassives(final int[] passiveLevels, int[] mutablePassiveLevels) {
-        return !Arrays.equals(passiveLevels, mutablePassiveLevels);
+    public boolean confirmEnabled(int totalPassivePoints, int totalActiveSkillPoints, int mutablePassiveLevelsTotal, int mutableActiveSkillLevelsTotal, final int[] activeSkillLevels, int[] mutableActiveSkillLevels, final int[] passiveLevels, int[] mutablePassiveLevels) {
+        if (Arrays.equals(activeSkillLevels, mutableActiveSkillLevels) && Arrays.equals(passiveLevels, mutablePassiveLevels))
+            return false;
+        if (totalPassivePoints < mutablePassiveLevelsTotal) return false;
+        if (totalActiveSkillPoints < mutableActiveSkillLevelsTotal) return false;
+
+        PlayerClassData classData = playerData.getClassesData()[playerClass.id];
+
+        boolean confirm = true;
+
+        Set<String> passiveFamilies = new HashSet<>();
+        for (int i = 0; i < passiveLevels.length; i++) {
+            Passive passive = classData.playerClass.passivesList.get(i);
+            int assignedLevel = passiveLevels[i];
+
+            if (assignedLevel > 0 && passive.family != null) {
+                if (passiveFamilies.contains(passive.family)) {
+                    confirm = false;
+                    break;
+                }
+                passiveFamilies.add(passive.family);
+            }
+
+            int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(false), passiveLevels);
+
+            if (assignedLevel < 0 || assignedLevel > effectiveMax) {
+                confirm = false;
+                break;
+            }
+        }
+
+        if (!confirm) return false;
+
+        for (int i = 0; i < mutableActiveSkillLevels.length; i++) {
+            ActiveSkill skill = classData.playerClass.activeSkillsList.get(i);
+
+            int assignedLevel = mutableActiveSkillLevels[i];
+            int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.activeSkillsList.get(i), classData.getLevel(false), mutableActiveSkillLevels);
+
+            if (assignedLevel < 0 || assignedLevel > effectiveMax) {
+                confirm = false;
+                break;
+            }
+
+            if (assignedLevel > 0) {
+                boolean hasRequired = hasRequired(skill, mutableActiveSkillLevels);
+                if (!hasRequired) {
+                    confirm = false;
+                    break;
+                }
+            }
+        }
+
+        return confirm;
     }
 
-    public boolean confirmEnabledPassivesOptional(final int[] passiveLevels, int[] mutablePassiveLevels) {
-        return !Arrays.equals(passiveLevels, mutablePassiveLevels);
-    }
-
-    public boolean confirmEnabledPassives(int totalPassivePoints, int mutablePassiveLevelsTotal) {
-        return mutablePassiveLevelsTotal <= totalPassivePoints;
-    }
-
-    public boolean cancelEnabledActiveSkills(final int[] activeSkillLevels, int[] mutableActiveSkillLevels) {
-        return !Arrays.equals(activeSkillLevels, mutableActiveSkillLevels);
-    }
-
-    public boolean confirmEnabledActiveSkillsOptional(final int[] activeSkillLevels, int[] mutableActiveSkillLevels) {
-        return !Arrays.equals(activeSkillLevels, mutableActiveSkillLevels);
-    }
-
-    public boolean confirmEnabledActiveSkills(int totalActiveSkillPoints, int mutableActiveSkillLevelsTotal) {
-        return mutableActiveSkillLevelsTotal <= totalActiveSkillPoints;
+    public boolean cancelEnabled(final int[] passiveLevels, int[] mutablePassiveLevels, final int[] activeSkillLevels, int[] mutableActiveSkillLevels) {
+        return !Arrays.equals(passiveLevels, mutablePassiveLevels) || !Arrays.equals(activeSkillLevels, mutableActiveSkillLevels);
     }
 
     @Override
@@ -319,5 +359,18 @@ public class ClassEntry extends MenuEntry {
     @Override
     public GameTexture getTexture() {
         return playerClass.texture;
+    }
+
+    public static boolean hasRequired(ActiveSkill skill, int[] activeSkillLevels) {
+        boolean hasRequired = true;
+        if (skill != null) {
+            for (ActiveSkill.RequiredSkill requiredSkill : skill.requiredSkills) {
+                if (activeSkillLevels[requiredSkill.activeSkill.id] < requiredSkill.activeSkillLevel) {
+                    hasRequired = false;
+                    break;
+                }
+            }
+        }
+        return hasRequired;
     }
 }

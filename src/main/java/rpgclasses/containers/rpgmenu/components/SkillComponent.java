@@ -22,6 +22,7 @@ import rpgclasses.RPGResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.Skill;
+import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.data.PlayerClassData;
 
 import java.awt.*;
@@ -71,42 +72,64 @@ public class SkillComponent extends FormContentBox {
                 }
             }
         }.onClicked(c -> {
+
             int classLevel = classData.getLevel(false);
+
             int maxLevel = classData.getEffectiveSkillMaxLevel(skill, classLevel, mutableSkillLevels);
 
-            if (skillLevel.get() < maxLevel) {
-                if (skill instanceof ActiveSkill) {
-                    boolean hasRequired = true;
-                    ActiveSkill activeSkill = (ActiveSkill) skill;
-                    for (ActiveSkill.RequiredSkill requiredSkill : activeSkill.requiredSkills) {
-                        if (mutableSkillLevels[requiredSkill.activeSkill.id] < requiredSkill.activeSkillLevel) {
-                            hasRequired = false;
+            if (skillLevel.get() >= maxLevel) return;
+
+            boolean wellAssigned = true;
+
+            int[] newMutableSkillLevels = mutableSkillLevels.clone();
+            newMutableSkillLevels[skill.id]++;
+
+            SkillsList<?> skillsList = skill instanceof Passive ? classData.playerClass.passivesList : classData.playerClass.activeSkillsList;
+            for (int i = 0; i < newMutableSkillLevels.length; i++) {
+                if(i != skill.id) {
+                    Skill skill1 = skillsList.get(i);
+                    maxLevel = classData.getEffectiveSkillMaxLevel(skill1, classLevel, newMutableSkillLevels);
+
+                    if (newMutableSkillLevels[i] > maxLevel) {
+                        wellAssigned = false;
+                        break;
+                    }
+                }
+            }
+
+            if (!wellAssigned) return;
+
+            if (skill instanceof ActiveSkill) {
+                boolean hasRequired = true;
+                ActiveSkill activeSkill = (ActiveSkill) skill;
+                for (ActiveSkill.RequiredSkill requiredSkill : activeSkill.requiredSkills) {
+                    if (mutableSkillLevels[requiredSkill.activeSkill.id] < requiredSkill.activeSkillLevel) {
+                        hasRequired = false;
+                        break;
+                    }
+                }
+                if (!hasRequired) return;
+            }
+
+            if (skill instanceof Passive && skill.family != null) {
+                boolean onlyInFamily = true;
+                for (int i = 0; i < mutableSkillLevels.length; i++) {
+                    if (mutableSkillLevels[i] > 0 && i != skill.id) {
+                        Passive other = classData.playerClass.passivesList.get(i);
+                        if (other.family != null && other.family.equals(skill.family)) {
+                            onlyInFamily = false;
                             break;
                         }
                     }
-                    if (!hasRequired) return;
                 }
-
-                if (skill instanceof Passive && skill.family != null) {
-                    boolean onlyInFamily = true;
-                    for (int i = 0; i < mutableSkillLevels.length; i++) {
-                        if (mutableSkillLevels[i] > 0 && i != skill.id) {
-                            Passive other = classData.playerClass.passivesList.get(i);
-                            if (other.family != null && other.family.equals(skill.family)) {
-                                onlyInFamily = false;
-                                break;
-                            }
-                        }
-                    }
-                    if (!onlyInFamily) return;
-                }
-
-                int newLevel = skillLevel.incrementAndGet();
-                levelText.setLocalization(getLevelText(newLevel));
-                levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
-                skillIconComponent.setSkillLevel(newLevel);
-                onAdd.onEvent(c);
+                if (!onlyInFamily) return;
             }
+
+            int newLevel = skillLevel.incrementAndGet();
+            levelText.setLocalization(getLevelText(newLevel));
+            levelText.setColor(newLevel == currentSkillLevel ? sameLevel : differentLevel);
+            skillIconComponent.setSkillLevel(newLevel);
+            onAdd.onEvent(c);
         }));
 
         this.addComponent(new FormContentIconButton((width / 2) - 16 - 2, 34 + 2, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.removeSmall_icon[style]) {

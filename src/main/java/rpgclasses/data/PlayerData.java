@@ -281,10 +281,31 @@ public class PlayerData {
         player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.Modifiers, player, 1000, null), true, true);
     }
 
+    public static int MAX_EXP = 2000000000;
+
     public void modExpSendPacket(ServerClient serverClient, int amount) {
+        if (amount == 0) return;
+
         int oldLevel = this.getLevel();
 
-        this.exp += amount;
+        int maxExp = MAX_EXP - Config.getStartingExperience();
+        if (amount > 0) {
+            if (this.exp > maxExp - amount) {
+                amount = maxExp - this.exp;
+                if (amount <= 0) return;
+                this.exp = maxExp;
+            } else {
+                this.exp += amount;
+            }
+        } else {
+            if (this.exp + amount < 0) {
+                amount = -this.exp;
+                if (amount == 0) return;
+                this.exp = 0;
+            } else {
+                this.exp += amount;
+            }
+        }
 
         int newLevel = this.getLevel();
         boolean levelUp = newLevel > oldLevel;

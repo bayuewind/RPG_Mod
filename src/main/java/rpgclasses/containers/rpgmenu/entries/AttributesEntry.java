@@ -74,18 +74,18 @@ public class AttributesEntry extends MenuEntry {
         for (int i = 0; i < numItems; i++) {
             int x = spacing + i * (AttributeComponent.width + spacing);
             int finalI = i;
-            entryForm.addComponent(new AttributeComponent(client, x, entryForm.getHeight() / 2, Attribute.attributesList.get(i), attributes[i],
-                    c -> {
-                        int currentAttributesTotal = mutableAttributesTotal.incrementAndGet();
-                        mutableAttributes[finalI]++;
-                        updateFormAttributes(attributePointsLabel, resetPointsLabel, cancelButton, confirmButton, attributesTotal, currentAttributesTotal, maxAttributes, resetPoints, attributes, mutableAttributes);
-                    },
-                    c -> {
-                        int currentAttributesTotal = mutableAttributesTotal.decrementAndGet();
-                        mutableAttributes[finalI]--;
-                        updateFormAttributes(attributePointsLabel, resetPointsLabel, cancelButton, confirmButton, attributesTotal, currentAttributesTotal, maxAttributes, resetPoints, attributes, mutableAttributes);
-                    }
-            ));
+            AttributeComponent attributeComponent = entryForm.addComponent(new AttributeComponent(client, x, entryForm.getHeight() / 2, Attribute.attributesList.get(i), attributes[i]));
+            attributeComponent.addOnMod(c -> {
+                int newLevel = attributeComponent.attributeLevel.get();
+                int oldLevel = mutableAttributes[finalI];
+                int mod = newLevel - oldLevel;
+
+                if (mod != 0) {
+                    mutableAttributes[finalI] = newLevel;
+                    int currentAttributesTotal = mutableAttributesTotal.addAndGet(mod);
+                    updateFormAttributes(attributePointsLabel, resetPointsLabel, cancelButton, confirmButton, attributesTotal, currentAttributesTotal, maxAttributes, resetPoints, attributes, mutableAttributes);
+                }
+            });
         }
     }
 

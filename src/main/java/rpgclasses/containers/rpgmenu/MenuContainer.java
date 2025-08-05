@@ -8,6 +8,7 @@ import necesse.inventory.container.Container;
 import rpgclasses.containers.rpgmenu.customactions.ClassUpdateCustomAction;
 import rpgclasses.containers.rpgmenu.customactions.EquippedActiveSkillsCustomAction;
 import rpgclasses.containers.rpgmenu.customactions.IntArrayCustomAction;
+import rpgclasses.containers.rpgmenu.entries.ClassEntry;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
@@ -262,7 +263,7 @@ public class MenuContainer extends Container {
                                 }
 
                                 if (assignedLevel > 0) {
-                                    boolean hasRequired = hasRequired(skill, activeSkillLevels);
+                                    boolean hasRequired = ClassEntry.hasRequired(skill, activeSkillLevels);
                                     if (!hasRequired) {
                                         requirementsInvalid = skill.stringID;
                                         break;
@@ -306,19 +307,6 @@ public class MenuContainer extends Container {
                                 System.out.println("updateClass: Not enough Passive Points");
                             }
                         }
-                    }
-
-                    private boolean hasRequired(ActiveSkill skill, int[] activeSkillLevels) {
-                        boolean hasRequired = true;
-                        if (skill != null) {
-                            for (ActiveSkill.RequiredSkill requiredSkill : skill.requiredSkills) {
-                                if (activeSkillLevels[requiredSkill.activeSkill.id] < requiredSkill.activeSkillLevel) {
-                                    hasRequired = false;
-                                    break;
-                                }
-                            }
-                        }
-                        return hasRequired;
                     }
                 }
         );

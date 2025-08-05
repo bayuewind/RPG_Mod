@@ -19,7 +19,7 @@ public class NecromancerPlayerClass extends PlayerClass {
     public SkillsList<ActiveSkill> getActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
-        int requiredLevel = 0;
+        int requiredLevel = 1;
 
         skillsList.addSkill(new SkeletonHorde(5, requiredLevel));
 
@@ -54,7 +54,7 @@ public class NecromancerPlayerClass extends PlayerClass {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(
-                "darkpower", "#666666", 10, 0,
+                "darkpower", "#666666", 10, 1,
                 new String[]{"setmax"},
                 new FloatPercentModifierBuff(BuffModifiers.SUMMON_DAMAGE, 0.1F),
                 new FloatPercentModifierBuff(BuffModifiers.SUMMON_CRIT_CHANCE, 0.1F),
@@ -62,9 +62,9 @@ public class NecromancerPlayerClass extends PlayerClass {
                 new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, -0.05F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.ARMOR, -0.05F).doSetMax(1F)
         ));
-        skillsList.addSkill(new NecroticPower(10, 0));
-        skillsList.addSkill(new DarkMagic(10, 0));
-        skillsList.addSkill(new NecroticArmy(10, 0));
+        skillsList.addSkill(new NecroticPower(10, 1));
+        skillsList.addSkill(new DarkMagic(10, 1));
+        skillsList.addSkill(new NecroticArmy(10, 1));
 
         skillsList.addSkill(new DarkSummons(10, 5));
         skillsList.addSkill(new LifeLeech(10, 5));

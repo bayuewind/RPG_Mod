@@ -1,5 +1,7 @@
 package rpgclasses.content.player.PlayerClasses.Necromancer.Passives;
 
+import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 
@@ -10,6 +12,11 @@ public class NecroticRemains extends SimpleBuffPassive {
 
     @Override
     public PrincipalPassiveBuff getBuff() {
-        return new PrincipalPassiveBuff();
+        return new PrincipalPassiveBuff() {
+            @Override
+            public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
+                this.isVisible = false;
+            }
+        };
     }
 }

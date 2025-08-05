@@ -10,6 +10,8 @@ import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PlayerClassData {
     public final String prefixDataName;
@@ -128,23 +130,47 @@ public class PlayerClassData {
     }
 
     public int getEffectiveSkillMaxLevel(Skill skill, int classLevel, int[] skillLevels) {
-        if (skill.requiredClassLevel == 0) return skill.levelMax;
+        boolean isPassive = skill instanceof Passive;
+        SkillsList<? extends Skill> skillsList = isPassive ? playerClass.getPassivesList() : playerClass.getActiveSkillsList();
 
-        int levelMax = skill.levelMax;
-        int requiredLevel = Math.max(1, skill.requiredClassLevel);
+        int availablePoints = getAvailableSkillPointsAtLevel(skill.requiredClassLevel, classLevel, isPassive, skillLevels, skillsList, skill.id);
 
-        int usedPointsAtLevel = 0;
-        SkillsList<? extends Skill> skillsList = skill instanceof Passive ? playerClass.getPassivesList() : playerClass.getActiveSkillsList();
+        return Math.min(skill.levelMax, availablePoints);
+    }
 
+
+    public static int getMaxSkillPointsAtLevel(int requiredLevel, int classLevel, boolean isPassive) {
+        int maxPoints = classLevel - requiredLevel + 1;
+        if (maxPoints <= 0) return 0;
+
+        return isPassive ? maxPoints * 2 : maxPoints;
+    }
+
+    public static int getAvailableSkillPointsAtLevel(int requiredLevel, int classLevel, boolean isPassive, int[] skillLevels, SkillsList<? extends Skill> skillsList, int skillIdToExclude) {
+        int maxPoints = getMaxSkillPointsAtLevel(requiredLevel, classLevel, isPassive);
+
+        if (maxPoints == 0) return 0;
+
+        int usedPoints = getUsedSkillPointsAtLevel(requiredLevel, skillLevels, skillsList, skillIdToExclude);
+
+        int available = maxPoints - usedPoints;
+        return Math.max(0, available);
+    }
+
+    public static int getUsedSkillPointsAtLevel(int requiredLevel, int[] skillLevels, SkillsList<? extends Skill> skillsList, int skillIdToExclude) {
+        int usedPoints = 0;
         for (int i = 0; i < skillsList.size(); i++) {
-            Skill otherSkill = skillsList.get(i);
-            if (skill.id != otherSkill.id && otherSkill.requiredClassLevel >= skill.requiredClassLevel)
-                usedPointsAtLevel += skillLevels[i];
+            Skill skill = skillsList.get(i);
+            if (skill.id != skillIdToExclude) {
+                int skillLevel = skillLevels[i];
+                if (skillLevel > 0) {
+                    if (skill.requiredClassLevel >= requiredLevel) {
+                        usedPoints += skillLevels[i];
+                    }
+                }
+            }
         }
-        if (skill instanceof Passive) usedPointsAtLevel /= 2;
-
-        int allowedByLevel = Math.max(0, classLevel - requiredLevel - usedPointsAtLevel + 1);
-        return Math.min(levelMax, allowedByLevel);
+        return usedPoints;
     }
 
 }

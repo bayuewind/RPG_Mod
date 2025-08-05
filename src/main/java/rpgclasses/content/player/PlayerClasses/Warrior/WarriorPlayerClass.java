@@ -28,7 +28,7 @@ public class WarriorPlayerClass extends PlayerClass {
 
         String groundFamily = "warrior_ground";
 
-        int requiredLevel = 0;
+        int requiredLevel = 1;
 
         skillsList.addSkill(new Fury(5, requiredLevel));
 
@@ -68,21 +68,21 @@ public class WarriorPlayerClass extends PlayerClass {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(
-                "regeneration", "#00ff00", 10, 0,
+                "regeneration", "#00ff00", 10, 1,
                 new FloatModifierBuff(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.2F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "muscles", "#ff6600", 10, 0,
+                "muscles", "#ff6600", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.MELEE_DAMAGE, 0.02F),
                 new FloatPercentModifierBuff(BuffModifiers.ATTACK_SPEED, 0.02F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "legs", "#ff6600", 10, 0,
+                "legs", "#ff6600", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.STAMINA_CAPACITY, 0.1F),
                 new FloatPercentModifierBuff(BuffModifiers.ATTACK_MOVEMENT_MOD, 0.06F, false)
         ));
         skillsList.addSkill(new BasicPassive(
-                "force", "#ff6600", 10, 0,
+                "force", "#ff6600", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.KNOCKBACK_OUT, 0.2F)
         ));
 

@@ -26,7 +26,7 @@ public class RangerPlayerClass extends PlayerClass {
 
         String dashFamily = "ranger_dash";
 
-        int requiredLevel = 0;
+        int requiredLevel = 1;
 
         skillsList.addSkill(new ShortDash(5, requiredLevel).setFamily(dashFamily));
         skillsList.addSkill(new LongDash(5, requiredLevel).setFamily(dashFamily));
@@ -59,22 +59,22 @@ public class RangerPlayerClass extends PlayerClass {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(
-                "aim", "#ff3300", 10, 0,
+                "aim", "#ff3300", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.RANGED_DAMAGE, 0.02F),
                 new FloatPercentModifierBuff(BuffModifiers.RANGED_CRIT_CHANCE, 0.02F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "criticalshots", "#ff0000", 10, 0,
+                "criticalshots", "#ff0000", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.RANGED_CRIT_DAMAGE, 0.1F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "agility", "#009900", 10, 0,
+                "agility", "#009900", 10, 1,
                 new String[]{"dodgechance"},
                 new FloatPercentModifierBuff(RPGModifiers.DODGE_CHANCE, 0.03F),
                 new FloatPercentModifierBuff(BuffModifiers.SPEED, 0.02F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "energy", "#ffff00", 10, 0,
+                "energy", "#ffff00", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.STAMINA_CAPACITY, 0.2F)
         ));
 

@@ -31,6 +31,8 @@ public class RPGResources {
 
         public static ButtonIcon[] add_icon;
         public static ButtonIcon[] remove_icon;
+        public static ButtonIcon[] add10_icon;
+        public static ButtonIcon[] remove10_icon;
         public static ButtonIcon[] addSmall_icon;
         public static ButtonIcon[] removeSmall_icon;
         public static ButtonIcon[][] slot_icons;
@@ -61,6 +63,9 @@ public class RPGResources {
         UI_TEXTURES.add_icon = new ButtonIcon[styles];
         UI_TEXTURES.remove_icon = new ButtonIcon[styles];
 
+        UI_TEXTURES.add10_icon = new ButtonIcon[styles];
+        UI_TEXTURES.remove10_icon = new ButtonIcon[styles];
+
         UI_TEXTURES.addSmall_icon = new ButtonIcon[styles];
         UI_TEXTURES.removeSmall_icon = new ButtonIcon[styles];
 
@@ -73,6 +78,9 @@ public class RPGResources {
 
             UI_TEXTURES.add_icon[i] = new ButtonIcon(style, "add");
             UI_TEXTURES.remove_icon[i] = new ButtonIcon(style, "remove");
+
+            UI_TEXTURES.add10_icon[i] = new ButtonIcon(style, "add10");
+            UI_TEXTURES.remove10_icon[i] = new ButtonIcon(style, "remove10");
 
             UI_TEXTURES.addSmall_icon[i] = new ButtonIcon(style, "add_small");
             UI_TEXTURES.removeSmall_icon[i] = new ButtonIcon(style, "remove_small");

@@ -26,7 +26,7 @@ public class WizardPlayerClass extends PlayerClass {
     public SkillsList<ActiveSkill> getActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
-        int requiredLevel = 0;
+        int requiredLevel = 1;
 
         skillsList.addSkill(new ArcaneOverload(5, requiredLevel));
 
@@ -64,21 +64,21 @@ public class WizardPlayerClass extends PlayerClass {
         String shieldFamily = "wizard_shield";
 
         skillsList.addSkill(new BasicPassive(
-                "arcanepower", "#6633ff", 10, 0,
+                "arcanepower", "#6633ff", 10, 1,
                 new String[]{"setmax"},
                 new FloatPercentModifierBuff(BuffModifiers.MAGIC_DAMAGE, 0.3F),
                 new FloatPercentModifierBuff(BuffModifiers.SPEED, -0.02F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, -0.05F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.ARMOR, -0.05F).doSetMax(1F)
         ));
-        skillsList.addSkill(new ManaPower(10, 0));
+        skillsList.addSkill(new ManaPower(10, 1));
         skillsList.addSkill(new BasicPassive(
-                "manaproficiency", "#33ccff", 10, 0,
+                "manaproficiency", "#33ccff", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.MAX_MANA, 0.05F),
                 new FloatModifierBuff(BuffModifiers.COMBAT_MANA_REGEN_FLAT, 0.2F)
         ));
         skillsList.addSkill(new BasicPassive(
-                "firepower", "#ff3300", 10, 0,
+                "firepower", "#ff3300", 10, 1,
                 new String[]{"ignitedamage"},
                 new FloatPercentModifierBuff(RPGModifiers.IGNITE_DAMAGE, 0.2F)
         ));

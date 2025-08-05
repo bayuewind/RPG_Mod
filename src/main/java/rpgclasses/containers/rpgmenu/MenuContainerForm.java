@@ -88,7 +88,7 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
             titleComponent.setColor(new Color(0, 51, 102));
         }
 
-        FormLabel version = this.principalForm.addComponent(new FormLabel(RPGMod.currentVersion, new FontOptions(10), 1, this.principalForm.getHeight() - 4, 4));
+        FormLabel version = this.principalForm.addComponent(new FormLabel(RPGMod.currentVersion, new FontOptions(10), 1, 925 - 4, 4));
         version.setColor(Settings.UI.activeTextColor);
 
         entryForm = this.principalForm.addComponent(new FormContentBox(entries.getWidth() + 20, 10, 925 - entries.getWidth() - 20 - 4, this.principalForm.getHeight() - 60));

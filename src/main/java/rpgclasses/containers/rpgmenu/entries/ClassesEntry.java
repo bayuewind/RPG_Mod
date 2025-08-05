@@ -87,18 +87,18 @@ public class ClassesEntry extends MenuEntry {
             int y = (entryForm.getHeight() / (numRows + 1)) * (row + 1);
 
             int finalI = i;
-            entryForm.addComponent(new ClassComponent(x, y, PlayerClass.classesList.get(i), classes[i],
-                    c -> {
-                        int currentClassesTotal = mutableClassesTotal.incrementAndGet();
-                        mutableClasses[finalI]++;
-                        updateFormClasses(classPointsLabel, resetPointsLabel, cancelButton, confirmButton, classesTotal, currentClassesTotal, maxClasses, resetPoints, classes, mutableClasses);
-                    },
-                    c -> {
-                        int currentClassesTotal = mutableClassesTotal.decrementAndGet();
-                        mutableClasses[finalI]--;
-                        updateFormClasses(classPointsLabel, resetPointsLabel, cancelButton, confirmButton, classesTotal, currentClassesTotal, maxClasses, resetPoints, classes, mutableClasses);
-                    }
-            ));
+            ClassComponent classComponent = entryForm.addComponent(new ClassComponent(x, y, PlayerClass.classesList.get(i), classes[i]));
+            classComponent.addOnMod(c -> {
+                int newLevel = classComponent.classLevel.get();
+                int oldLevel = mutableClasses[finalI];
+                int mod = newLevel - oldLevel;
+
+                if (mod != 0) {
+                    mutableClasses[finalI] = newLevel;
+                    int currentClassesTotal = mutableClassesTotal.addAndGet(mod);
+                    updateFormClasses(classPointsLabel, resetPointsLabel, cancelButton, confirmButton, classesTotal, currentClassesTotal, maxClasses, resetPoints, classes, mutableClasses);
+                }
+            });
         }
     }
 

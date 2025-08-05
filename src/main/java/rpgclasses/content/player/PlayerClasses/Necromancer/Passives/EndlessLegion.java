@@ -16,6 +16,7 @@ public class EndlessLegion extends SimpleBuffPassive {
         return new PrincipalPassiveBuff() {
             @Override
             public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
+                this.isVisible = false;
                 activeBuff.setModifier(BuffModifiers.MAX_SUMMONS, getLevel(activeBuff) / 4);
             }
         };
