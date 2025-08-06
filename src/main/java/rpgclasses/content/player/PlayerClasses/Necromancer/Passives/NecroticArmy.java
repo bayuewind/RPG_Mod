@@ -4,6 +4,7 @@ import necesse.engine.registries.MobRegistry;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
@@ -25,6 +26,12 @@ public class NecroticArmy extends SimpleBuffPassive {
     @Override
     public PrincipalPassiveBuff getBuff() {
         return new PrincipalPassiveBuff() {
+            @Override
+            public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
+                super.init(activeBuff, buffEventSubscriber);
+                this.isVisible = false;
+            }
+
             @Override
             public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
                 super.onHasAttacked(activeBuff, event);

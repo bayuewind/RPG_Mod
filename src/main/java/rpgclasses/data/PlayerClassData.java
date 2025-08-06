@@ -10,8 +10,6 @@ import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class PlayerClassData {
     public final String prefixDataName;

@@ -231,7 +231,7 @@ public class MenuContainer extends Container {
                                     passiveFamilies.add(passive.family);
                                 }
 
-                                int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(false), passiveLevels);
+                                int effectiveMax = classData.getEffectiveSkillMaxLevel(passive, classData.getLevel(true), passiveLevels);
 
                                 if (assignedLevel < 0 || assignedLevel > effectiveMax) {
                                     levelsInvalid = passive.stringID;
@@ -255,7 +255,7 @@ public class MenuContainer extends Container {
                                 ActiveSkill skill = classData.playerClass.activeSkillsList.get(i);
 
                                 int assignedLevel = activeSkillLevels[i];
-                                int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.activeSkillsList.get(i), classData.getLevel(false), activeSkillLevels);
+                                int effectiveMax = classData.getEffectiveSkillMaxLevel(classData.playerClass.activeSkillsList.get(i), classData.getLevel(true), activeSkillLevels);
 
                                 if (assignedLevel < 0 || assignedLevel > effectiveMax) {
                                     levelsInvalid = skill.stringID;
@@ -282,9 +282,9 @@ public class MenuContainer extends Container {
                             }
 
                             int totalPassive = Arrays.stream(passiveLevels).sum();
-                            if (totalPassive <= classData.totalPassivePoints(false)) {
+                            if (totalPassive <= classData.totalPassivePoints(true)) {
                                 int totalActiveSkill = Arrays.stream(activeSkillLevels).sum();
-                                if (totalActiveSkill <= classData.totalActiveSkillPoints(false)) {
+                                if (totalActiveSkill <= classData.totalActiveSkillPoints(true)) {
                                     classData.setPassiveLevels(passiveLevels);
                                     classData.setActiveSkillLevels(activeSkillLevels);
                                     serverClient.getServer().network.sendToAllClients(new UpdateClientClassDataPacket(classData));
@@ -342,7 +342,7 @@ public class MenuContainer extends Container {
                             for (EquippedActiveSkill equippedActiveSkill : equippedActiveSkills) {
                                 if (equippedActiveSkill != null && equippedActiveSkill.playerClass != null && equippedActiveSkill.activeSkill != null) {
                                     PlayerClassData playerClassData = playerData.getClassesData()[equippedActiveSkill.playerClass.id];
-                                    if (playerClassData.getLevel(false) < 1 || playerClassData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
+                                    if (playerClassData.getLevel(true) < 1 || playerClassData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
                                         allCorrect = false;
                                         break;
                                     }
