@@ -355,7 +355,7 @@ public class MenuContainer extends Container {
 
                             // No continue if any changed skill is in cooldown. Also sets lastUse to server's lastUse
                             boolean changedInCooldown = false;
-                            for (int i = 0; i < 4; i++) {
+                            for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
                                 EquippedActiveSkill equippedActiveSkill = equippedActiveSkills[i];
                                 EquippedActiveSkill serverEquippedActiveSkill = playerData.equippedActiveSkills[i];
                                 if (equippedActiveSkill.isEmpty()) {

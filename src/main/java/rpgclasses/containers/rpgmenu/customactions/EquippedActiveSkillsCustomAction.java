@@ -5,6 +5,7 @@ import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.inventory.container.customAction.ContainerCustomAction;
 import rpgclasses.data.EquippedActiveSkill;
+import rpgclasses.data.PlayerData;
 
 public abstract class EquippedActiveSkillsCustomAction extends ContainerCustomAction {
     public EquippedActiveSkillsCustomAction() {
@@ -21,8 +22,8 @@ public abstract class EquippedActiveSkillsCustomAction extends ContainerCustomAc
     }
 
     public void executePacket(PacketReader reader) {
-        EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[4];
-        for (int i = 0; i < equippedActiveSkills.length; i++) {
+        EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
+        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
         }
         this.run(equippedActiveSkills);

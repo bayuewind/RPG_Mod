@@ -2,6 +2,7 @@ package rpgclasses.ui;
 
 import necesse.gfx.forms.Form;
 import necesse.gfx.forms.MainGameFormManager;
+import rpgclasses.data.PlayerData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ abstract public class CustomUIManager<T extends Form> {
 
         expBar = (ExpBarUIManger) addCustomForm(new ExpBarUIManger());
         rpgMenu = (RPGMenuUIManager) addCustomForm(new RPGMenuUIManager());
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             rpgSkills.add((RPGSkillUIManager) addCustomForm(new RPGSkillUIManager(i)));
         }
     }

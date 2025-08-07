@@ -89,7 +89,9 @@ public class RPGResources {
                     new ButtonIcon(style, "slot1"),
                     new ButtonIcon(style, "slot2"),
                     new ButtonIcon(style, "slot3"),
-                    new ButtonIcon(style, "slot4")
+                    new ButtonIcon(style, "slot4"),
+                    new ButtonIcon(style, "slot5"),
+                    new ButtonIcon(style, "slot6")
             };
         }
 

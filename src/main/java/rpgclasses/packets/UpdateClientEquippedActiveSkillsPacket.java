@@ -22,9 +22,9 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
         PacketReader reader = new PacketReader(this);
 
         name = reader.getNextString();
-        equippedActiveSkills = new EquippedActiveSkill[4];
+        equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
         }
     }

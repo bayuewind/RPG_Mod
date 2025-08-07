@@ -23,7 +23,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
     public static int height = 54;
     public static int width = 300;
 
-    private final FormContentIconButton[] buttons = new FormContentIconButton[4];
+    private final FormContentIconButton[] buttons = new FormContentIconButton[PlayerData.EQUIPPED_SKILLS_MAX];
     public final PlayerClass playerClass;
     public final ActiveSkill activeSkill;
 
@@ -41,13 +41,13 @@ public class EquipActiveSkillComponent extends FormContentBox {
 
         this.addComponent(new FormLocalLabel(getSkillText(activeSkill, skillLevel), new FontOptions(16), -1, 34 + 10, 0));
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             int finalI = i;
             buttons[i] = (FormContentIconButton) this.addComponent(new FormContentIconButton(34 + 10 + (32 + 4) * i, 16 + 6, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][i])
                     .onClicked(c -> {
                         // Only if it has not equipped another skill with the same family, and it's not the same
                         boolean sameFamily = false;
-                        for (int j = 0; j < 4; j++) {
+                        for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
                             if (finalI != j && newEquippedActiveSkills[j].isNotSameSkillButSameFamily(playerClass, activeSkill)) {
                                 sameFamily = true;
                                 break;
@@ -71,7 +71,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
 
                                 // If this skill is in cooldown in any other slot, then apply that lastUse to this slot if higher and remove the last one
                                 long maxLastUse = 0;
-                                for (int j = 0; j < 4; j++) {
+                                for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
                                     EquippedActiveSkill equippedActiveSkill2 = newEquippedActiveSkills[j];
                                     if (finalI != j && !equippedActiveSkill2.isEmpty() && equippedActiveSkill2.isSameSkill(newEquippedActiveSkills[finalI])) {
                                         maxLastUse = Math.max(maxLastUse, equippedActiveSkill2.lastUse);
@@ -93,7 +93,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
         for (int i = 0; i < newEquippedActiveSkills.length; i++) {
             boolean sameFamily = false;
             boolean sameSkill = false;
-            for (int j = 0; j < 4; j++) {
+            for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
                 if (i != j && newEquippedActiveSkills[j] != null) {
                     if (newEquippedActiveSkills[j].isSameSkill(playerClass, activeSkill)) {
                         sameSkill = true;

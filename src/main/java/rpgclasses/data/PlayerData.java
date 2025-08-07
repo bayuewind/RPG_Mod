@@ -25,6 +25,8 @@ import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
 
 public class PlayerData {
+    public static int EQUIPPED_SKILLS_MAX = 6;
+
     public static String prefixDataName = "rpgmod_";
     public static String expDataName = prefixDataName + "exp";
     public static String resetsDataName = prefixDataName + "resets";
@@ -40,7 +42,7 @@ public class PlayerData {
     private int[] attributeLevels = new int[Attribute.attributesList.size()];
     private int[] classLevels = new int[PlayerClass.classesList.size()];
     private PlayerClassData[] classesData = new PlayerClassData[PlayerClass.classesList.size()];
-    public EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[4];
+    public EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[EQUIPPED_SKILLS_MAX];
 
     public GameObject grabbedObject;
 
@@ -49,7 +51,7 @@ public class PlayerData {
         for (int i = 0; i < classesData.length; i++) {
             classesData[i] = new PlayerClassData(i, playerName);
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = new EquippedActiveSkill();
         }
     }
@@ -110,8 +112,8 @@ public class PlayerData {
     }
 
     public void loadDataEquippedActiveSkills(PlayerMob player, LoadData loadData) {
-        equippedActiveSkills = new EquippedActiveSkill[4];
-        for (int i = 0; i < 4; i++) {
+        equippedActiveSkills = new EquippedActiveSkill[EQUIPPED_SKILLS_MAX];
+        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = EquippedActiveSkill.loadData(player, loadData, i);
         }
     }
@@ -145,7 +147,7 @@ public class PlayerData {
             classesDatum.saveData(saveData);
         }
 
-        for (int i = 0; i < equippedActiveSkills.length; i++) {
+        for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i].saveData(saveData, i);
         }
 
@@ -378,7 +380,7 @@ public class PlayerData {
         }
 
         // Equipped Active Skills
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             playerData.equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
         }
 

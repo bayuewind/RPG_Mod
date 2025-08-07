@@ -25,7 +25,7 @@ public class RPGControls {
             }
         });
 
-        Control.addModControl(new Control(-97, "activeskillslot1") {
+        Control.addModControl(new Control(-1, "activeskillslot1") {
             @Override
             public void activate(InputEvent event) {
                 super.activate(event);
@@ -36,7 +36,7 @@ public class RPGControls {
                 }
             }
         });
-        Control.addModControl(new Control(-96, "activeskillslot2") {
+        Control.addModControl(new Control(-1, "activeskillslot2") {
             @Override
             public void activate(InputEvent event) {
                 super.activate(event);
@@ -66,6 +66,28 @@ public class RPGControls {
                     Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
                     PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
                     playerData.equippedActiveSkills[3].tryRun(client.getPlayer(), 3);
+                }
+            }
+        });
+        Control.addModControl(new Control(-97, "activeskillslot5") {
+            @Override
+            public void activate(InputEvent event) {
+                super.activate(event);
+                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
+                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
+                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
+                    playerData.equippedActiveSkills[4].tryRun(client.getPlayer(), 4);
+                }
+            }
+        });
+        Control.addModControl(new Control(-96, "activeskillslot6") {
+            @Override
+            public void activate(InputEvent event) {
+                super.activate(event);
+                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
+                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
+                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
+                    playerData.equippedActiveSkills[5].tryRun(client.getPlayer(), 5);
                 }
             }
         });
