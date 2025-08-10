@@ -107,8 +107,8 @@ public class Judgment extends SimpleLevelEventActiveSkill {
         @Override
         protected void onMobWasHit(Mob mob, float distance) {
             float mod = this.getDistanceMod(distance);
-            float knockback = (float)this.knockback * mod;
-            mob.isServerHit(this.getTotalMobDamage(mod), (float)mob.getX() - this.x, (float)mob.getY() - this.y, knockback, this);
+            float knockback = (float) this.knockback * mod;
+            mob.isServerHit(this.getTotalMobDamage(mod), (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
 
             if (MobData.isWeakToHoly(mob)) {
                 mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 5000, null), true);

@@ -142,8 +142,8 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
             super.clientTick();
             lifeTime += 50;
 
-            if(hits < 10) {
-                if(lifeTime >= hits * 500) clientHit();
+            if (hits < 10) {
+                if (lifeTime >= hits * 500) clientHit();
             } else {
                 clientHit();
                 this.over();
@@ -155,8 +155,8 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
             super.serverTick();
             lifeTime += 50;
 
-            if(hits < 10) {
-                if(lifeTime >= hits * 500) clientHit();
+            if (hits < 10) {
+                if (lifeTime >= hits * 500) clientHit();
             } else {
                 clientHit();
                 this.over();

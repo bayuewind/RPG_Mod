@@ -46,7 +46,7 @@ public class RPGArea extends AphArea {
 
             if (this.areaTypes.contains(AphAreaType.HEALING) && (target == attacker || AphMagicHealing.canHealMob(attacker, target))) {
                 int healing = this.areaHealing;
-                if(target == attacker) healing = (int) (healing * attackerHealthMod);
+                if (target == attacker) healing = (int) (healing * attackerHealthMod);
 
                 if (this.directExecuteHealing) {
                     AphMagicHealing.healMobExecute(attacker, target, healing, item, toolItem);

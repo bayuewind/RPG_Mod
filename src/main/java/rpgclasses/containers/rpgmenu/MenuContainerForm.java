@@ -135,7 +135,7 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
                     }
 
                     String drawText = menuEntry.getDisplayName();
-                    float drawX = width / 2F - FontManager.bit.getWidthCeil(drawText, fontOptions) / 2F + 6;
+                    float drawX = width / 2F - FontManager.bit.getWidthCeil(drawText, fontOptions) / 2F + 10;
                     FontManager.bit.drawString(drawX, getY() + (height - 16) / 2F, drawText, fontOptions);
 
                     GameTexture gameTexture = menuEntry.getTexture();

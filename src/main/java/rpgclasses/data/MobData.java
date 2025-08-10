@@ -154,13 +154,13 @@ public class MobData {
                         mobData.level += 10;
                     } else if (biome instanceof DesertBiome) {
                         mobData.level += 12;
+                    } else if (biome instanceof PirateVillageBiome && dimension == 0) {
+                        mobData.level += 12;
                     } else if (biome instanceof InfectedFieldsBiome) {
                         mobData.level += 16;
                     }
                 } else {
-                    if (biome instanceof PirateVillageBiome) {
-                        mobData.level += 12;
-                    } else if (biome instanceof PlainsBiome) {
+                    if (biome instanceof PlainsBiome) {
                         mobData.level += 15;
                     } else if (biome instanceof SnowBiome) {
                         mobData.level += 18;

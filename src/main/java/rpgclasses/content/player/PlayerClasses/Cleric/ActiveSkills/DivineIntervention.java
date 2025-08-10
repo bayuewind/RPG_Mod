@@ -48,9 +48,9 @@ public class DivineIntervention extends SimpleBuffActiveSkill {
                         change = true;
                     } else {
                         float lHealthPercent = lowestHealthPercent[0];
-                        if(targetContainer[0] == player) {
+                        if (targetContainer[0] == player) {
                             change = /*Ally*/ healthPercent < /*Player*/ lHealthPercent + 0.25F;
-                        } else if(m == player) {
+                        } else if (m == player) {
                             change = /*Player*/ healthPercent < /*Ally*/ lHealthPercent - 0.25F;
                         } else if (lHealthPercent != healthPercent) {
                             change = healthPercent < lHealthPercent;

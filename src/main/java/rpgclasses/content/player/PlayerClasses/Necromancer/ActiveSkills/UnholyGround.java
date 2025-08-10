@@ -132,7 +132,7 @@ public class UnholyGround extends SimpleLevelEventActiveSkill {
                         float px = owner.x + GameMath.cos(angle) * radius;
                         float py = owner.y + GameMath.sin(angle) * radius;
 
-                        if(RPGUtils.isInVision(owner.getLevel(), px, py, owner)) {
+                        if (RPGUtils.isInVision(owner.getLevel(), px, py, owner)) {
                             this.getLevel().entityManager.addParticle(px, py, Particle.GType.IMPORTANT_COSMETIC)
                                     .color(GameRandom.globalRandom.getOneOf(
                                             new Color(51, 0, 204),

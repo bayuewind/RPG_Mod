@@ -19,7 +19,7 @@ abstract public class SimpleLevelEventActiveSkill extends ActiveSkill {
 
     public void addLevelEvent(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         LevelEvent event = getLevelEvent(player, playerData, activeSkillLevel, seed, isInUSe);
-        if(event != null) {
+        if (event != null) {
             player.getLevel().entityManager.addLevelEventHidden(event);
             player.getServer().network.sendToClientsWithEntity(new PacketLevelEvent(event), event);
         }
