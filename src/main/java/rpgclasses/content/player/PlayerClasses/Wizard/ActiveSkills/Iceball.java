@@ -10,10 +10,10 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.IceBallProjectile;
+import rpgclasses.utils.RPGUtils;
 
 public class Iceball extends ActiveSkill {
 
@@ -52,7 +52,7 @@ public class Iceball extends ActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 50 + activeSkillLevel * 10;
     }
 

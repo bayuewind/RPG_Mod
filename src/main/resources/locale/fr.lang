@@ -18,6 +18,17 @@ focusdamage=<mod>% de dégâts de focalisation
 focuschance=<mod>% de chance de focalisation
 ignitedamage=<mod>% de dégâts d'incinération
 
+// Holy Damage
+holydamage=<mod>% de dégâts sacrés
+holycritchance=<mod>% de chance de critique sacré
+holycritdamage=<mod>% de dégâts critiques sacrés
+holyeffect=<mod>% d'effet sacré
+holyabilityspeed=<mod>% de vitesse de capacité sacrée
+
+
+[stats]
+holy_damage=Dégâts sacrés
+
 
 [enchantment]
 evasive=Évasif
@@ -33,6 +44,7 @@ markedbuff=Marqué
 darkcursebuff=Malédiction des ténèbres
 magicpoisonbuff=Poison Magique
 ignitedbuff=Enflammé
+holydamagedealtbuff=Dégâts sacrés infligés
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Électrique
 flash=Flash
 dark=Sombre
 legend=Légende
+
+
+[mobtrait]
+undead=Mort-vivant
+demonic=Démoniaque
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Restes nécrotiques
 endlesslegion=Légion sans fin
 lichborn=Né-liche
 
+// Cleric
+healer=Guérisseur
+shaman=Chaman
+vitalaura=Aura vitale
+divinejudge=Juge divin
+empoweredhealing=Guérison renforcée
+sanctifiedmind=Esprit sanctifié
+sanctifiedarmor=Armure sanctifiée
+radiantexpansion=Expansion radieuse
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Infligez §a+[[10 x <skilllevel>]]%§0 de dégâts d'invocateur aux 
 lifeleech=Récupère §a[[<skilllevel>]]%§0 des dégâts d'invocateur infligés sous forme de santé
 necroticremains=Lorsqu'une invocation nécrotique meurt, elle explose, infligeant §i[[0.1 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches, les empoisonnant pour 20% des dégâts par seconde pendant 10 secondes
 endlesslegion=Tous les 4 niveaux de cette compétence, vous gagnez +1 invocation maximale
-lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de santé si vous n'êtes pas déjà une liche\nPendant les §a[[120 - 6 x <skilllevel>]] prochaines secondes§0, vous devenez une liche (un squelette) qui ne peut que tirer des os infligeant des dégâts magiques égaux à [[Force]] et utiliser le reste de vos compétences\nSous forme de liche, vous subissez le double de dégâts
+lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de santé si vous n'êtes pas déjà une liche\nPendant les §a[[120 - 6 x <skilllevel>]] prochaines secondes§0, vous devenez une liche (un squelette) qui ne peut que tirer des os infligeant des dégâts d'invocateur égaux à [[Force]] et utiliser le reste de vos compétences\nSous forme de liche, vous subissez le double de dégâts
+
+// Cleric
+vitalaura=Toutes les §a[[15 - <skilllevel>]] secondes§0, vous libérez une aura de guérison magique autour de vous qui restaure §a[[10 + <grace>]] de santé§0\nElle vous guérit également de la moitié de ce montant
+divinejudge=Les bonus de dégâts magiques affectent les dégâts sacrés de §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Lorsque vous vous soignez ou soignez un allié par magie, augmentez leurs dégâts de §a[[5 x <skilllevel>]]%§0 pendant 3 secondes
+sanctifiedmind=La guérison magique restaure également du mana égal à §a[[5 x <skilllevel>]]%§0 de la guérison effectuée
+sanctifiedarmor=La guérison magique restaure également la résilience égale à §a[[2 x <skilllevel>]]%§0 de la guérison effectuée
+radiantexpansion=Lorsque vous vous soignez ou soignez un allié par magie, infligez §a[[5 x <skilllevel>]]%§0 de la guérison sous forme de dégâts sacrés aux ennemis proches de la cible soignée
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Provocation protectrice
 unholyground=Sol impie
 necroticbarrage=Barrage nécrotique
 
+// Cleric
+smite=Châtiment
+divineblessing=Bénédiction divine
+purify=Purifier
+lightinfusion=Infusion de lumière
+holyguard=Garde sacrée
+judgment=Jugement
+sanctuary=Sanctuaire
+divineintervention=Intervention divine
+resurrection=Résurrection
+wrathoflight=Colère de la lumière
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=L'invocation vulnérable la plus proche force les ennemis proches d
 unholyground=Étend une aura de corruption autour de vous pendant 10 secondes\nLes ennemis dans cette zone subissent §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de dégâts de poison§0 par seconde et sont §7Contraints
 necroticbarrage=Toutes les invocations vulnérables explosent à leur mort, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches\net les empoisonnant pendant 10 secondes avec 20% des dégâts d'origine par seconde
 
+// Cleric
+smite=Faites tomber un rayon de lumière sacrée sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dégâts sacrés§0\nInflige le double de dégâts aux monstres morts-vivants et démoniaques\nConsomme §a[[10 + 2 x <skilllevel>]] de mana§0
+divineblessing=Aura de guérison magique qui vous restaure, à vous et à vos alliés, §a[[20 + 3 x <grace> x <skilllevel>]] de santé§0\nConsomme §a[[20 + 4 x <skilllevel>]] de mana§0
+purify=Purifiez-vous et vos alliés proches de tous les effets négatifs\nConsomme 10 de mana
+lightinfusion=Pendant les 8 prochaines secondes, vous gagnez §a+[[20 x <skilllevel>]]%§0 de guérison magique et de dégâts sacrés
+holyguard=Appliquez à vous et à tous les alliés proches un bouclier sacré pendant 30 secondes maximum\nIls gagnent §a+[[10 x <skilllevel>]]%§0 de guérison magique reçue et le bouclier bloque un coup avant de se briser\nConsomme §a[[40 + 8 x <skilllevel>]] de mana§0
+judgment=Libérez une vague d'énergie radiante, infligeant §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de dégâts sacrés§0 à tous les ennemis proches\nLes monstres morts-vivants et démoniaques sont contraints pendant 5 secondes\nConsomme §a[[20 + 4 x <skilllevel>]] de mana§0
+sanctuary=Créez une zone sacrée pendant 8 secondes\nVous et vos alliés à l'intérieur êtes immunisés contre les effets négatifs et gagnez §a[[0.2 x <grace> x <skilllevel>]]§0 de régénération de santé par seconde\nLes monstres morts-vivants et démoniaques à l'intérieur sont contraints\nConsomme §a[[30 + 6 x <skilllevel>]] de mana§0
+divineintervention=Soignez instantanément l'allié proche le plus endommagé à sa santé maximale et accordez-lui l'immunité à tous les dégâts pendant §a[[<skilllevel>]]§0 secondes\nConsomme §a[[60 + 12 x <skilllevel>]] de mana§0
+resurrection=Ressuscitez le dernier allié joueur mort sur votre même île avec §a[[10 x <skilllevel>]]%§0 de sa santé maximale à votre position\nVous ne pouvez pas ressusciter les joueurs qui auraient pu réapparaître il y a plus de 10 secondes\nConsomme §a[[100 - 10 x <skilllevel>]]%§0 de votre mana (au moins §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Invoquez une colonne de lumière sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dégâts sacrés§0 par seconde pendant 5 secondes dans la zone\nLes monstres morts-vivants et démoniaques à l'intérieur sont contraints\nConsomme §a[[40 + 8 x <skilllevel>]] de mana§0
+
 
 [skillsdesckeys]
 skilllevel=Niveau de compétence
@@ -309,6 +368,7 @@ grace=Grâce
 // Mécaniques de base
 manausage=Si vous n'avez pas assez de mana, son temps de recharge est doublé
 setmax=Les effets négatifs sont définis au maximum et ne peuvent pas être supprimés par d'autres améliorations
+holydamage=10% des dégâts sacrés infligés seront convertis en guérison pour les monstres que vous soignez par magie\nMet également le feu aux monstres morts-vivants et démoniaques pendant 10 secondes
 
 // Améliorations
 marked=§hMarqué:§0 Infligez +20% de Dégâts (+ §hDégâts de Focalisation§0) et +10% de Chance de Critique aux monstres que vous marquez\n"L'ennemi le plus proche" donne la priorité aux ennemis marqués
@@ -316,7 +376,7 @@ constrained=§7Contraint:§0 -50% de vitesse de déplacement
 
 // Modificateurs de chance
 dodgechance=§7Chance d'esquive:§0 Chance d'esquiver les attaques entrantes. Ne peut pas dépasser 80%
-focuschance=§hChance de focalisation:§0 Chance de §hmarquer§0 un monstre pendant 5 secondes lorsqu'il est attaqué avec des dégâts autres que ceux d'invocateur
+focuschance=§hChance de focalisation:§0 Chance de §hmarquer§0 un monstre pendant 5 secondes lorsque vous l'attaquez directement
 
 // Modificateurs fixes
 mobdetection=§9Détection de monstres:§0 Affiche les monstres proches sur la carte. Une portée de détection plus élevée révèle les monstres de plus loin
@@ -370,6 +430,7 @@ gracegoldring=Bague en or de grâce
 
 
 [itemtooltip]
+Dégâts sacrés: <value>
 scrollofoblivion=Donne 2 points de réinitialisation
 ringsboxtip=Peut stocker des bagues d'attributs
 
@@ -393,6 +454,7 @@ notenoughstamina=Pas assez d'endurance
 notarget=Il n'y a pas de cibles à proximité
 nograbbableobject=Il n'y a aucun objet saisissable devant vous
 nodamageablefollower=Il n'y a pas d'invocations vulnérables à proximité
+nodeathplayers=Aucun joueur mort ne peut être ressuscité à ce niveau
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Emplacement de compétence active 1
 activeskillslot2=Emplacement de compétence active 2
 activeskillslot3=Emplacement de compétence active 3
 activeskillslot4=Emplacement de compétence active 4
+activeskillslot5=Emplacement de compétence active 5
+activeskillslot6=Emplacement de compétence active 6

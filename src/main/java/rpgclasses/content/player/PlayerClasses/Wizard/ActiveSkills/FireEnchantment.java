@@ -12,11 +12,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 
@@ -36,7 +36,7 @@ public class FireEnchantment extends SimpleBuffActiveSkill {
         });
 
         RPGUtils.streamMobsAndPlayers(player, 200)
-                .filter(m -> m.isSameTeam(player))
+                .filter(m -> m == player || m.isSameTeam(player))
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );
@@ -84,7 +84,7 @@ public class FireEnchantment extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 20 + activeSkillLevel * 4;
     }
 

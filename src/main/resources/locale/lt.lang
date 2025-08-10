@@ -18,6 +18,17 @@ focusdamage=<mod>% fokusavimo žala
 focuschance=<mod>% fokusavimo tikimybė
 ignitedamage=<mod>% uždegimo žala
 
+// Holy Damage
+holydamage=<mod>% šventos žalos
+holycritchance=<mod>% šventos kritinės tikimybės
+holycritdamage=<mod>% šventos kritinės žalos
+holyeffect=<mod>% švento poveikio
+holyabilityspeed=<mod>% šventų sugebėjimų greičio
+
+
+[stats]
+holy_damage=Šventa žala
+
 
 [enchantment]
 evasive=Išsisukantis
@@ -33,6 +44,7 @@ markedbuff=Pažymėtas
 darkcursebuff=Tamsus prakeiksmas
 magicpoisonbuff=Magiškas Nuodas
 ignitedbuff=Uždegtas
+holydamagedealtbuff=Padaryta šventa žala
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrinis
 flash=Blyksnis
 dark=Tamsus
 legend=Legenda
+
+
+[mobtrait]
+undead=Nemirėlis
+demonic=Demoniškas
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotinės Liekanos
 endlesslegion=Begalinis Legionas
 lichborn=Gimęs Lichu
 
+// Cleric
+healer=Gydytojas
+shaman=Šamanas
+vitalaura=Gyvybingumo aura
+divinejudge=Dieviškas teisėjas
+empoweredhealing=Sustiprintas gydymas
+sanctifiedmind=Pašventinta sąmonė
+sanctifiedarmor=Pašventinti šarvai
+radiantexpansion=Spinduliuojanti plėtra
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Padarykite §a+[[10 x <skilllevel>]]%§0 šauklio žalos nuodytiems 
 lifeleech=Atkuria §a[[<skilllevel>]]%§0 padarytos šauklio žalos kaip sveikatą
 necroticremains=Kai miršta nekrotinis iškvietimas, jis sprogsta, padarydamas §i[[0.1 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams, nuodydamas juos 20% žalos per sekundę 10 sekundžių
 endlesslegion=Kas 4 šio įgūdžio lygius, gaunate +1 maksimalų iškvietimą
-lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu), kuris gali šaudyti tik kaulus, darančius magišką žalą, lygią [[Jėga]], ir naudoti likusius savo įgūdžius\nBūdami licho formoje, gaunate dvigubą žalą
+lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu), kuris gali šaudyti tik kaulus, darančius šauklio žalą, lygią [[Jėga]], ir naudoti likusius savo įgūdžius\nBūdami licho formoje, gaunate dvigubą žalą
+
+// Cleric
+vitalaura=Kas §a[[15 - <skilllevel>]] sekundes§0, jūs išlaisvinate magišką gydomąją aurą aplink save, kuri atkuria §a[[10 + <grace>]] sveikatos§0\nJi taip pat išgydo jus puse tos sumos
+divinejudge=Magiškos žalos premijos veikia šventą žalą §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Kai magiškai išgydote save ar sąjungininką, padidinkite jų žalą §a[[5 x <skilllevel>]]%§0 3 sekundėms
+sanctifiedmind=Magiškas gydymas taip pat atkuria maną, lygią §a[[5 x <skilllevel>]]%§0 atlikto gydymo
+sanctifiedarmor=Magiškas gydymas taip pat atkuria atsparumą, lygų §a[[2 x <skilllevel>]]%§0 atlikto gydymo
+radiantexpansion=Kai magiškai išgydote save ar sąjungininką, padarykite §a[[5 x <skilllevel>]]%§0 gydymo kaip šventą žalą netoliese esantiems išgydyto taikinio priešams
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Apsauginis Pašiepimas
 unholyground=Nešventa Žemė
 necroticbarrage=Nekrotinis Baražas
 
+// Cleric
+smite=Sutriuškinti
+divineblessing=Dieviškas palaiminimas
+purify=Išvalyti
+lightinfusion=Šviesos infuzija
+holyguard=Šventoji sargyba
+judgment=Nuosprendis
+sanctuary=Šventovė
+divineintervention=Dieviškas įsikišimas
+resurrection=Prisikėlimas
+wrathoflight=Šviesos pyktis
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Artimiausias pažeidžiamas iškvietimas priverčia netoliese esan�
 unholyground=10 sekundžių aplink jus išplečia korupcijos aurą\nŠioje srityje esantys priešai per sekundę gauna §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] nuodų žalos§0 ir yra §7Susaistyti
 necroticbarrage=Visi pažeidžiami iškvietimai mirę sprogsta, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams\nir nuodydami juos 10 sekundžių 20% pradinės žalos per sekundę
 
+// Cleric
+smite=Nuleiskite šventos šviesos spindulį ant artimiausio priešo, padarydami §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] šventos žalos§0\nPadaro dvigubą žalą nemirėliams ir demoniškiems mobams\nSunaudoja §a[[10 + 2 x <skilllevel>]] manos§0
+divineblessing=Magiška gydomoji aura, kuri atkuria §a[[20 + 3 x <grace> x <skilllevel>]] sveikatos§0 jums ir jūsų sąjungininkams\nSunaudoja §a[[20 + 4 x <skilllevel>]] manos§0
+purify=Išvalykite save ir netoliese esančius sąjungininkus nuo visų neigiamų poveikių\nSunaudoja 10 manos
+lightinfusion=Kitoms 8 sekundėms gausite §a+[[20 x <skilllevel>]]%§0 magiško gydymo ir šventos žalos
+holyguard=Uždėkite sau ir visiems netoliese esantiems sąjungininkams Šventąjį skydą iki 30 sekundžių\nJie gauna §a+[[10 x <skilllevel>]]%§0 gauto magiško gydymo, o skydas blokuoja vieną smūgį prieš sulūždamas\nSunaudoja §a[[40 + 8 x <skilllevel>]] manos§0
+judgment=Išlaisvinkite spinduliuojančios energijos bangą, padarydami §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] šventos žalos§0 visiems netoliese esantiems priešams\nNemirėliai ir demoniški mobai yra suvaržyti 5 sekundes\nSunaudoja §a[[20 + 4 x <skilllevel>]] manos§0
+sanctuary=Sukurkite šventą zoną 8 sekundėms\nJūs ir sąjungininkai viduje esate atsparūs neigiamiems poveikiams ir gaunate §a[[0.2 x <grace> x <skilllevel>]]§0 sveikatos regeneracijos per sekundę\nNemirėliai ir demoniški mobai viduje yra suvaržyti\nSunaudoja §a[[30 + 6 x <skilllevel>]] manos§0
+divineintervention=Akimirksniu išgydykite labiausiai sužeistą artimą sąjungininką iki maksimalios sveikatos ir suteikite imunitetą visai žalai §a[[<skilllevel>]]§0 sekundėms\nSunaudoja §a[[60 + 12 x <skilllevel>]] manos§0
+resurrection=Atgaivinkite paskutinį mirusį žaidėjo sąjungininką toje pačioje saloje su §a[[10 x <skilllevel>]]%§0 jų maksimalios sveikatos jūsų pozicijoje\nNegalite atgaivinti žaidėjų, kurie galėjo atgimti daugiau nei prieš 10 sekundžių\nSunaudoja §a[[100 - 10 x <skilllevel>]]%§0 jūsų manos (mažiausiai §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Iškvieskite šviesos stulpą ant artimiausio priešo, padarydami §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] šventos žalos§0 per sekundę 5 sekundes srityje\nNemirėliai ir demoniški mobai viduje yra suvaržyti\nSunaudoja §a[[40 + 8 x <skilllevel>]] manos§0
+
 
 [skillsdesckeys]
 skilllevel=Įgūdžių lygis
@@ -309,6 +368,7 @@ grace=Gracingumas
 // Pagrindinė Mechanika
 manausage=Jei neturite pakankamai manos, jos atsistatymo laikas padvigubėja
 setmax=Neigiami efektai nustatomi kaip maksimalūs ir negali būti pašalinti kitais stiprinimais
+holydamage=10% padarytos šventos žalos bus paversta gydymu mobams, kuriuos magiškai gydote\nTaip pat uždega nemirėlius ir demoniškus mobus 10 sekundžių
 
 // Stiprinimai
 marked=§hPažymėtas:§0 Padarykite +20% Žalos (+ §hFokusavimo Žalos§0) ir +10% Kritinės Tikimybės mobams, kuriuos pažymite\n"Artimiausias priešas" teikia pirmenybę pažymėtiems priešams
@@ -316,7 +376,7 @@ constrained=§7Susaistytas:§0 -50% Judėjimo Greičio
 
 // Tikimybės modifikatoriai
 dodgechance=§7Išsisukimo tikimybė:§0 Tikimybė išsisukti nuo artėjančių atakų. Negali viršyti 80%
-focuschance=§hFokusavimo tikimybė:§0 Tikimybė §hpažymėti§0 mobą 5 sekundėms, kai jis atakuojamas ne šauklio žala
+focuschance=§hFokusavimo tikimybė:§0 Tikimybė §hpažymėti§0 mobą 5 sekundėms, kai jį tiesiogiai puolate
 
 // Plokštieji modifikatoriai
 mobdetection=§9Mobų aptikimas:§0 Rodo netoliese esančius mobus žemėlapyje. Didesnis aptikimo nuotolis atskleidžia mobus iš toliau
@@ -370,6 +430,7 @@ gracegoldring=Gracingumo auksinis žiedas
 
 
 [itemtooltip]
+Šventa žala: <value>
 scrollofoblivion=Suteikia 2 atstatymo taškus
 ringsboxtip=Gali saugoti atributų žiedus
 
@@ -393,6 +454,7 @@ notenoughstamina=Nepakanka ištvermės
 notarget=Netoliese nėra taikinių
 nograbbableobject=Priešais jus nėra paimamo objekto
 nodamageablefollower=Netoliese nėra pažeidžiamų iškvietimų
+nodeathplayers=Šiame lygyje negalima prikelti mirusių žaidėjų
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktyvaus įgūdžio vieta 1
 activeskillslot2=Aktyvaus įgūdžio vieta 2
 activeskillslot3=Aktyvaus įgūdžio vieta 3
 activeskillslot4=Aktyvaus įgūdžio vieta 4
+activeskillslot5=Aktyvaus įgūdžio vieta 5
+activeskillslot6=Aktyvaus įgūdžio vieta 6

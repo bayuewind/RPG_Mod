@@ -15,11 +15,11 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import necesse.level.maps.regionSystem.RegionPosition;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.MagicPoisonBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.util.Collections;
@@ -132,13 +132,15 @@ public class UnholyGround extends SimpleLevelEventActiveSkill {
                         float px = owner.x + GameMath.cos(angle) * radius;
                         float py = owner.y + GameMath.sin(angle) * radius;
 
-                        this.getLevel().entityManager.addParticle(px, py, Particle.GType.IMPORTANT_COSMETIC)
-                                .color(GameRandom.globalRandom.getOneOf(
-                                        new Color(51, 0, 204),
-                                        new Color(102, 0, 255),
-                                        new Color(102, 51, 255)
-                                ))
-                                .heightMoves(0F, GameRandom.globalRandom.getFloatBetween(16, 24F));
+                        if(RPGUtils.isInVision(owner.getLevel(), px, py, owner)) {
+                            this.getLevel().entityManager.addParticle(px, py, Particle.GType.IMPORTANT_COSMETIC)
+                                    .color(GameRandom.globalRandom.getOneOf(
+                                            new Color(51, 0, 204),
+                                            new Color(102, 0, 255),
+                                            new Color(102, 51, 255)
+                                    ))
+                                    .heightMoves(0F, GameRandom.globalRandom.getFloatBetween(16, 24F));
+                        }
                     }
                 }
             }

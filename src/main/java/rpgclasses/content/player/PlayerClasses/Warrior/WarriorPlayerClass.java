@@ -1,7 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Warrior;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
-import rpgclasses.RPGColors;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground.GroundDestruction;
@@ -16,6 +15,7 @@ import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentM
 import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
+import rpgclasses.utils.RPGColors;
 
 public class WarriorPlayerClass extends PlayerClass {
     public WarriorPlayerClass() {

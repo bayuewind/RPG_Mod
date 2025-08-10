@@ -98,7 +98,7 @@ public class EquippedActiveSkill {
             int size = 34;
             GameTexture gameTexture;
             if (activeSkill == null) {
-                gameTexture = RPGResources.UI_TEXTURES.emptyActiveSkill_texture;
+                gameTexture = RPGResources.emptyActiveSkill_texture;
             } else {
                 gameTexture = activeSkill.texture;
             }

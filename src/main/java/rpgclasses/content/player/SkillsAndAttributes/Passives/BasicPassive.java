@@ -33,7 +33,7 @@ public class BasicPassive extends Passive {
         for (ModifierBuff<?> attributeModifier : attributeModifiers) {
             tooltips.add(attributeModifier.getTooltip());
         }
-        if (requiredClassLevel > 0) {
+        if (requiredClassLevel > 1) {
             tooltips.add(" ");
             tooltips.add(Localization.translate("ui", "requiredclasslevel", "level", requiredClassLevel));
         }

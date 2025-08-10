@@ -7,6 +7,7 @@ import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
 import necesse.engine.registries.PacketRegistry;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import rpgclasses.buffs.Passive.HolyDamageDealtBuff;
 import rpgclasses.containers.rpgmenu.RPGMenuPacket;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Stormbound;
 import rpgclasses.packets.*;
@@ -33,6 +34,8 @@ public class RPGPackets {
         PacketRegistry.registerPacket(UpdateClientObjectGrabbedPacket.class);
 
         PacketRegistry.registerPacket(UpdateClientClassDataPacket.class);
+
+        PacketRegistry.registerPacket(HolyDamageDealtBuff.ModClientHolyDamageDealtPacket.class);
 
         // Skills
         PacketRegistry.registerPacket(ResetSkillTime.class);

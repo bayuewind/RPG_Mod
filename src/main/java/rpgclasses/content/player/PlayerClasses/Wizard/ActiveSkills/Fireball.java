@@ -10,10 +10,10 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.FireballProjectile;
+import rpgclasses.utils.RPGUtils;
 
 public class Fireball extends ActiveSkill {
 
@@ -54,7 +54,7 @@ public class Fireball extends ActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 80 + activeSkillLevel * 16;
     }
 

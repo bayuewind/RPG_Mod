@@ -18,6 +18,17 @@ focusdamage=<mod>% 專注傷害
 focuschance=<mod>% 專注機率
 ignitedamage=<mod>% 點燃傷害
 
+// Holy Damage
+holydamage=<mod>%神聖傷害
+holycritchance=<mod>%神聖暴擊率
+holycritdamage=<mod>%神聖暴擊傷害
+holyeffect=<mod>%神聖效果
+holyabilityspeed=<mod>%神聖技能速度
+
+
+[stats]
+holy_damage=神聖傷害
+
 
 [enchantment]
 evasive=閃避
@@ -33,6 +44,7 @@ markedbuff=已標記
 darkcursebuff=黑暗詛咒
 magicpoisonbuff=魔法毒藥
 ignitedbuff=已點燃
+holydamagedealtbuff=造成神聖傷害
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=電
 flash=閃光
 dark=黑暗
 legend=傳奇
+
+
+[mobtrait]
+undead=亡靈
+demonic=惡魔
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=亡靈殘骸
 endlesslegion=無盡軍團
 lichborn=巫妖之軀
 
+// Cleric
+healer=治療者
+shaman=薩滿
+vitalaura=活力光環
+divinejudge=神聖審判者
+empoweredhealing=強化治療
+sanctifiedmind=聖化心智
+sanctifiedarmor=聖化護甲
+radiantexpansion=光輝擴張
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=對中毒的敵人造成§a+[[10 x <skilllevel>]]%§0的召喚師傷
 lifeleech=將造成的召喚師傷害的§a[[<skilllevel>]]%§0恢復為生命值
 necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，並在10秒內每秒對它們造成20%的傷害
 endlesslegion=此技能每升4級，你將獲得+1最大召喚物
-lichborn=當你死亡時，如果你還不是巫妖，你將存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個巫妖（一個骷髏），只能發射造成相當於[[力量]]的魔法傷害的骨頭，並使用你其餘的技能\n在巫妖形態下，你受到的傷害加倍
+lichborn=當你死亡時，如果你還不是巫妖，你將存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個巫妖（一個骷髏），只能發射造成相當於[[力量]]的召喚師傷害的骨頭，並使用你其餘的技能\n在巫妖形態下，你受到的傷害加倍
+
+// Cleric
+vitalaura=每§a[[15 - <skilllevel>]]秒§0，你會在周圍釋放一個魔法治療光環，恢復§a[[10 + <grace>]]點生命值§0\n它還會為你恢復該數值的一半
+divinejudge=魔法傷害加成會影響神聖傷害§a[[5 x <skilllevel>]]%§0
+empoweredhealing=當你魔法治療自己或盟友時，他們的傷害會在3秒內增加§a[[5 x <skilllevel>]]%§0
+sanctifiedmind=魔法治療還會恢復相當於治療量§a[[5 x <skilllevel>]]%§0的法力值
+sanctifiedarmor=魔法治療還會恢復相當於治療量§a[[2 x <skilllevel>]]%§0的韌性
+radiantexpansion=當你魔法治療自己或盟友時，對被治療目標附近的敵人造成相當於治療量§a[[5 x <skilllevel>]]%§0的神聖傷害
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=守護嘲諷
 unholyground=邪惡之地
 necroticbarrage=亡靈彈幕
 
+// Cleric
+smite=懲擊
+divineblessing=神聖祝福
+purify=淨化
+lightinfusion=光之注入
+holyguard=神聖守衛
+judgment=審判
+sanctuary=聖所
+divineintervention=神聖干預
+resurrection=復活
+wrathoflight=光之怒
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=最近的可受傷害召喚物會強迫附近 §a[[50 x <skilllevel
 unholyground=在你周圍擴散一個腐敗光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒藥傷害§0 並被 §7束縛
 necroticbarrage=所有可受傷害的召喚物在死亡時爆炸，對附近的敵人造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n並在 10 秒內每秒對它們造成 20% 的原始傷害
 
+// Cleric
+smite=在最近的敵人身上召喚一道聖光，造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]點神聖傷害§0\n對亡靈和惡魔生物造成雙倍傷害\n消耗§a[[10 + 2 x <skilllevel>]]點法力§0
+divineblessing=恢復你和你的盟友§a[[20 + 3 x <grace> x <skilllevel>]]點生命值§0的魔法治療光環\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
+purify=淨化你自己和附近盟友的所有負面效果\n消耗10點法力
+lightinfusion=在接下來的8秒內，你獲得§a+[[20 x <skilllevel>]]%§0的魔法治療和神聖傷害
+holyguard=為你和所有附近的盟友施加一個持續長達30秒的神聖護盾\n他們獲得§a+[[10 x <skilllevel>]]%§0的魔法治療，護盾在破裂前阻擋一次攻擊\n消耗§a[[40 + 8 x <skilllevel>]]點法力§0
+judgment=釋放一道輻射能量波，對附近所有敵人造成§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]點神聖傷害§0\n亡靈和惡魔生物被束縛5秒\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
+sanctuary=創建一個持續8秒的神聖區域\n你和裡面的盟友對負面效果免疫，每秒獲得§a[[0.2 x <grace> x <skilllevel>]]§0的生命恢復\n裡面的亡靈和惡魔生物被束縛\n消耗§a[[30 + 6 x <skilllevel>]]點法力§0
+divineintervention=立即將受損最嚴重的附近盟友治療至其最大生命值，並使其在§a[[<skilllevel>]]§0秒內對所有傷害免疫\n消耗§a[[60 + 12 x <skilllevel>]]點法力§0
+resurrection=在你所在的位置用他們最大生命值的§a[[10 x <skilllevel>]]%§0復活你同一島嶼上最後死亡的玩家盟友\n你不能復活10秒前就可以重生的玩家\n消耗你法力的§a[[100 - 10 x <skilllevel>]]%§0（至少§a[[60 + 12 x <skilllevel>]]§0）
+wrathoflight=在最近的敵人身上召喚一道光柱，在區域內每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]點神聖傷害§0，持續5秒\n裡面的亡靈和惡魔生物被束縛\n消耗§a[[40 + 8 x <skilllevel>]]點法力§0
+
 
 [skillsdesckeys]
 skilllevel=技能等級
@@ -309,6 +368,7 @@ grace=優雅
 // 基本機制
 manausage=如果你的法力不足，其冷卻時間將加倍
 setmax=負面效果被設置為最大值，不能被其他增益移除
+holydamage=造成的神聖傷害的10%將轉化為對你魔法治療的生物的治療\n還會讓亡靈和惡魔生物著火10秒
 
 // 增益
 marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率\n“最近的敵人”優先攻擊被標記的敵人
@@ -316,7 +376,7 @@ constrained=§7束縛：§0 -50% 移動速度
 
 // 機率修正
 dodgechance=§7閃避機率：§0 閃避來襲攻擊的機率。不能超過 80%
-focuschance=§h專注機率：§0 當受到非召喚師傷害攻擊時，有機率 §h標記§0 生物 5 秒
+focuschance=§h專注機率：§0直接攻擊時有機率§h標記§0一個生物5秒
 
 // 固定修正
 mobdetection=§9生物探測：§0 在地圖上顯示附近的生物。更高的探測範圍會顯示更遠的生物
@@ -370,6 +430,7 @@ gracegoldring=優雅金戒指
 
 
 [itemtooltip]
+神聖傷害：<value>
 scrollofoblivion=授予 2 個重置點
 ringsboxtip=可以存放屬性戒指
 
@@ -393,6 +454,7 @@ notenoughstamina=耐力不足
 notarget=附近沒有目標
 nograbbableobject=你面前沒有可抓取的物體
 nodamageablefollower=附近沒有可受傷害的召喚物
+nodeathplayers=此級別沒有可復活的死亡玩家
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=主動技能槽 1
 activeskillslot2=主動技能槽 2
 activeskillslot3=主動技能槽 3
 activeskillslot4=主動技能槽 4
+activeskillslot5=主動技能槽 5
+activeskillslot6=主動技能槽 6

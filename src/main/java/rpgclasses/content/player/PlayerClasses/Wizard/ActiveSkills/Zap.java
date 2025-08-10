@@ -1,6 +1,5 @@
 package rpgclasses.content.player.PlayerClasses.Wizard.ActiveSkills;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
@@ -13,16 +12,16 @@ import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.entity.trails.LightningTrail;
 import necesse.entity.trails.TrailVector;
 import necesse.level.maps.regionSystem.RegionPosition;
-import rpgclasses.RPGColors;
 import rpgclasses.RPGResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.registry.RPGBuffs;
+import rpgclasses.utils.RPGColors;
+import rpgclasses.utils.RPGUtils;
 
 import java.util.Collections;
 import java.util.Set;
@@ -44,18 +43,13 @@ public class Zap extends SimpleLevelEventActiveSkill {
 
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 10 + activeSkillLevel * 2;
     }
 
     @Override
     public int getBaseCooldown() {
-        return 28000;
-    }
-
-    @Override
-    public int getCooldownModPerLevel() {
-        return -5000;
+        return 8000;
     }
 
     @Override
@@ -145,8 +139,7 @@ public class Zap extends SimpleLevelEventActiveSkill {
                     if (this.isServer()) {
                         target.isServerHit(damage, currentX, currentY, 10, owner);
 
-                        ActiveBuff ab = new ActiveBuff(AphBuffs.STUN, target, 1F, null);
-                        target.buffManager.addBuff(ab, true);
+                        RPGBuffs.applyStun(target, 1F);
 
                         SoundManager.playSound(RPGResources.SOUNDS.Zap, SoundEffect.effect(target).volume(1F));
                     }

@@ -18,6 +18,17 @@ focusdamage=<mod>% šteta od fokusa
 focuschance=<mod>% šansa za fokus
 ignitedamage=<mod>% šteta od zapaljenja
 
+// Holy Damage
+holydamage=<mod>% svete štete
+holycritchance=<mod>% šanse za sveti kritični udarac
+holycritdamage=<mod>% svete kritične štete
+holyeffect=<mod>% svetog učinka
+holyabilityspeed=<mod>% brzine svetih sposobnosti
+
+
+[stats]
+holy_damage=Sveta šteta
+
 
 [enchantment]
 evasive=Izbjegavajući
@@ -33,6 +44,7 @@ markedbuff=Označen
 darkcursebuff=Mračna kletva
 magicpoisonbuff=Magični otrov
 ignitedbuff=Zapaljen
+holydamagedealtbuff=Nanesena sveta šteta
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Električni
 flash=Bljesak
 dark=Mračni
 legend=Legenda
+
+
+[mobtrait]
+undead=Nemrtvi
+demonic=Demonski
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotični ostaci
 endlesslegion=Beskrajna legija
 lichborn=Rođen kao lič
 
+// Cleric
+healer=Iscjelitelj
+shaman=Šaman
+vitalaura=Vitalna aura
+divinejudge=Božanski sudac
+empoweredhealing=Osnaženo iscjeljivanje
+sanctifiedmind=Posvećeni um
+sanctifiedarmor=Posvećeni oklop
+radiantexpansion=Zračeće širenje
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Nanesite §a+[[10 x <skilllevel>]]%§0 štete prizivača otrovanim n
 lifeleech=Oporavlja §a[[<skilllevel>]]%§0 nanesene štete prizivača kao zdravlje
 necroticremains=Kada nekrotični priziv umre, eksplodira, nanoseći §i[[0.1 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima, trujući ih s 20% štete u sekundi tijekom 10 sekundi
 endlesslegion=Svake 4 razine ove vještine, dobivate +1 maksimalni priziv
-lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste lič\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete lič (kostur) koji može samo ispaljivati kosti nanoseći magičnu štetu jednaku [[Snaga]] i koristiti ostatak svojih vještina\nDok ste u obliku liča, primate dvostruku štetu
+lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste lič\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete lič (kostur) koji može samo ispaljivati kosti nanoseći štetu prizivača jednaku [[Snaga]] i koristiti ostatak svojih vještina\nDok ste u obliku liča, primate dvostruku štetu
+
+// Cleric
+vitalaura=Svakih §a[[15 - <skilllevel>]] sekundi§0 oslobađate magičnu iscjeljujuću auru oko sebe koja obnavlja §a[[10 + <grace>]] zdravlja§0\nTakođer vas liječi za polovicu tog iznosa
+divinejudge=Bonusi na magičnu štetu utječu na svetu štetu za §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Kada magično izliječite sebe ili saveznika, povećajte njihovu štetu za §a[[5 x <skilllevel>]]%§0 na 3 sekunde
+sanctifiedmind=Magično iscjeljivanje također obnavlja manu jednaku §a[[5 x <skilllevel>]]%§0 izvršenog iscjeljivanja
+sanctifiedarmor=Magično iscjeljivanje također obnavlja otpornost jednaku §a[[2 x <skilllevel>]]%§0 izvršenog iscjeljivanja
+radiantexpansion=Kada magično izliječite sebe ili saveznika, nanesite §a[[5 x <skilllevel>]]%§0 iscjeljivanja kao svetu štetu obližnjim neprijateljima izliječenog cilja
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Zaštitna provokacija
 unholyground=Nečisto tlo
 necroticbarrage=Nekrotična baraža
 
+// Cleric
+smite=Udariti
+divineblessing=Božanski blagoslov
+purify=Pročistiti
+lightinfusion=Svjetlosna infuzija
+holyguard=Sveti čuvar
+judgment=Presuda
+sanctuary=Svetište
+divineintervention=Božanska intervencija
+resurrection=Uskrsnuće
+wrathoflight=Gnjev svjetla
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Najbliži oštetivi priziv prisiljava obližnje neprijatelje unutar
 unholyground=Širi auru korupcije oko vas 10 sekundi\nNeprijatelji unutar ovog područja primaju §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] štete od otrova§0 u sekundi i §7Ograničeni su
 necroticbarrage=Svi oštetivi prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
 
+// Cleric
+smite=Sazovite zraku svetog svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0\nNanosi dvostruku štetu nemrtvim i demonskim mobovima\nTroši §a[[10 + 2 x <skilllevel>]] mane§0
+divineblessing=Magična iscjeljujuća aura koja obnavlja §a[[20 + 3 x <grace> x <skilllevel>]] zdravlja§0 vama i vašim saveznicima\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
+purify=Očistite sebe i obližnje saveznike od svih negativnih učinaka\nTroši 10 mane
+lightinfusion=Sljedećih 8 sekundi dobivate §a+[[20 x <skilllevel>]]%§0 magičnog iscjeljivanja i svete štete
+holyguard=Nanesite na sebe i sve obližnje saveznike Sveti štit do 30 sekundi\nOni dobivaju §a+[[10 x <skilllevel>]]%§0 primljenog magičnog iscjeljivanja, a štit blokira jedan udarac prije nego što se slomi\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
+judgment=Oslobodite val zračeće energije, nanoseći §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svete štete§0 svim obližnjim neprijateljima\nNemrtvi i demonski mobovi su ograničeni na 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
+sanctuary=Stvorite svetu zonu na 8 sekundi\nVi i saveznici unutra ste imuni na negativne učinke i dobivate §a[[0.2 x <grace> x <skilllevel>]]§0 regeneracije zdravlja u sekundi\nNemrtvi i demonski mobovi unutra su ograničeni\nTroši §a[[30 + 6 x <skilllevel>]] mane§0
+divineintervention=Trenutačno izliječite najviše oštećenog bliskog saveznika do njihovog maksimalnog zdravlja i dajte imunitet na svu štetu na §a[[<skilllevel>]]§0 sekundi\nTroši §a[[60 + 12 x <skilllevel>]] mane§0
+resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <skilllevel>]]%§0 njihovog maksimalnog zdravlja na vašoj poziciji\nNe možete oživjeti igrače koji su se mogli ponovno pojaviti prije više od 10 sekundi\nTroši §a[[100 - 10 x <skilllevel>]]%§0 vaše mane (najmanje §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su ograničeni\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
+
 
 [skillsdesckeys]
 skilllevel=Razina vještine
@@ -309,6 +368,7 @@ grace=Gracioznost
 // Osnovne mehanike
 manausage=Ako nemate dovoljno mane, vrijeme hlađenja se udvostručuje
 setmax=Negativni učinci postavljeni su na maksimum i ne mogu se ukloniti drugim pojačanjima
+holydamage=10% nanesene svete štete pretvorit će se u iscjeljivanje za mobove koje magično liječite\nTakođer zapali nemrtve i demonske mobove na 10 sekundi
 
 // Pojačanja
 marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\n"Najbliži neprijatelj" daje prednost označenim neprijateljima
@@ -316,7 +376,7 @@ constrained=§7Ograničen:§0 -50% brzine kretanja
 
 // Modifikatori šanse
 dodgechance=§7Šansa za izbjegavanje:§0 Šansa za izbjegavanje dolaznih napada. Ne može premašiti 80%
-focuschance=§hŠansa za fokus:§0 Šansa za §hoznačavanje§0 moba na 5 sekundi kada je napadnut štetom koja nije od prizivača
+focuschance=§hŠansa za fokus:§0 Šansa za §hoznačavanje§0 moba na 5 sekundi kada ga izravno napadnete
 
 // Ravni modifikatori
 mobdetection=§9Detekcija mobova:§0 Prikazuje obližnje mobove na karti. Veći domet detekcije otkriva mobove s veće udaljenosti
@@ -370,6 +430,7 @@ gracegoldring=Zlatni prsten gracioznosti
 
 
 [itemtooltip]
+Sveta šteta: <value>
 scrollofoblivion=Daje 2 boda za resetiranje
 ringsboxtip=Može pohraniti prstenove atributa
 
@@ -393,6 +454,7 @@ notenoughstamina=Nema dovoljno izdržljivosti
 notarget=Nema ciljeva u blizini
 nograbbableobject=Ispred vas nema predmeta koji se može zgrabiti
 nodamageablefollower=Nema oštetivih priziva u blizini
+nodeathplayers=Na ovoj razini ne mogu se uskrsnuti mrtvi igrači
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Utor za aktivnu vještinu 1
 activeskillslot2=Utor za aktivnu vještinu 2
 activeskillslot3=Utor za aktivnu vještinu 3
 activeskillslot4=Utor za aktivnu vještinu 4
+activeskillslot5=Utor za aktivnu vještinu 5
+activeskillslot6=Utor za aktivnu vještinu 6

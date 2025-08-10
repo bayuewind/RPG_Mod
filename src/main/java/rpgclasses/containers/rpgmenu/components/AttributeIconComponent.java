@@ -1,6 +1,7 @@
 package rpgclasses.containers.rpgmenu.components;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.localization.Localization;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.components.FormButton;
 import necesse.gfx.gameTooltips.GameTooltipManager;
@@ -36,6 +37,9 @@ public class AttributeIconComponent extends FormButton {
         if (isHovering()) {
             ListGameTooltips tooltips = attribute.getToolTips();
             GameTooltipManager.addTooltip(tooltips, new BorderFormGameBackground(12), TooltipLocation.FORM_FOCUS);
+            for (String extraTooltip : attribute.extraTooltips) {
+                GameTooltipManager.addTooltip(new ListGameTooltips(Localization.translate("extraskilldesc", extraTooltip)), new BorderFormGameBackground(12), TooltipLocation.FORM_FOCUS);
+            }
         }
     }
 

@@ -10,7 +10,7 @@ import rpgclasses.registry.*;
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.3.3";
+    public static String currentVersion = "v0.4.1";
 
     static {
         new RPGModifiers();
@@ -18,7 +18,7 @@ public class RPGMod {
 
     public void preInit() {
 
-        Config.startConfig();
+        RPGConfig.startConfig();
 
     }
 
@@ -51,6 +51,9 @@ public class RPGMod {
 
         // Level Events
         RPGLevelEvents.registerCore();
+
+        // Damage Type
+        RPGDamageType.registerCore();
 
         // Items
         RPGItems.registerCore();

@@ -77,9 +77,9 @@ abstract public class ActiveSkill extends Skill {
             ));
         }
 
-        if (requiredClassLevel > 0 || !requiredSkills.isEmpty()) {
+        if (requiredClassLevel > 1 || !requiredSkills.isEmpty()) {
             tooltips.add(" ");
-            if (requiredClassLevel > 0)
+            if (requiredClassLevel > 1)
                 tooltips.add(Localization.translate("ui", "requiredclasslevel", "level", requiredClassLevel));
             if (!requiredSkills.isEmpty()) {
                 for (RequiredSkill requiredSkill : requiredSkills) {
@@ -98,7 +98,7 @@ abstract public class ActiveSkill extends Skill {
 
     @Override
     public void initResources() {
-        texture = GameTexture.fromFile("ui/activeskills/" + stringID);
+        texture = GameTexture.fromFile("activeskills/" + stringID);
     }
 
     public void registerSkillBuffs() {
@@ -113,7 +113,7 @@ abstract public class ActiveSkill extends Skill {
             StaminaBuff.useStaminaAndGetValid(player, consumedStamina);
         }
 
-        float manaUsage = manaUsage(activeSkillLevel);
+        float manaUsage = manaUsage(player, activeSkillLevel);
         boolean enoughMana = true;
         if (manaUsage > 0) {
             if (manaUsage > player.getMana()) enoughMana = false;
@@ -192,7 +192,7 @@ abstract public class ActiveSkill extends Skill {
         return consumedStaminaBase() * staminaUSage;
     }
 
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 0;
     }
 

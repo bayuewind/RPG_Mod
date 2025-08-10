@@ -78,7 +78,7 @@ public class Teleport extends ActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 10;
     }
 

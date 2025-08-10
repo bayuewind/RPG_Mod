@@ -86,7 +86,7 @@ public class SkillComponent extends FormContentBox {
 
             SkillsList<?> skillsList = skill instanceof Passive ? classData.playerClass.passivesList : classData.playerClass.activeSkillsList;
             for (int i = 0; i < newMutableSkillLevels.length; i++) {
-                if(i != skill.id) {
+                if (i != skill.id) {
                     Skill skill1 = skillsList.get(i);
                     maxLevel = classData.getEffectiveSkillMaxLevel(skill1, classLevel, newMutableSkillLevels);
 

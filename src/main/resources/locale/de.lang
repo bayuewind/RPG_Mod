@@ -18,6 +18,17 @@ focusdamage=<mod>% Fokusschaden
 focuschance=<mod>% Fokus-Chance
 ignitedamage=<mod>% Brandschaden
 
+// Holy Damage
+holydamage=<mod>% heiliger Schaden
+holycritchance=<mod>% heilige kritische Trefferchance
+holycritdamage=<mod>% heiliger kritischer Schaden
+holyeffect=<mod>% heiliger Effekt
+holyabilityspeed=<mod>% Geschwindigkeit heiliger Fähigkeiten
+
+
+[stats]
+holy_damage=Heiliger Schaden
+
 
 [enchantment]
 evasive=Ausweichend
@@ -33,6 +44,7 @@ markedbuff=Markiert
 darkcursebuff=Dunkler Fluch
 magicpoisonbuff=Magisches Gift
 ignitedbuff=Entzündet
+holydamagedealtbuff=Verursachter heiliger Schaden
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrisch
 flash=Blitz
 dark=Dunkel
 legend=Legende
+
+
+[mobtrait]
+undead=Untot
+demonic=Dämonisch
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotische Überreste
 endlesslegion=Endlose Legion
 lichborn=Lichgeboren
 
+// Cleric
+healer=Heiler
+shaman=Schamane
+vitalaura=Vitale Aura
+divinejudge=Göttlicher Richter
+empoweredhealing=Ermächtigte Heilung
+sanctifiedmind=Geheiligter Geist
+sanctifiedarmor=Geheiligte Rüstung
+radiantexpansion=Strahlende Erweiterung
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Verursache §a+[[10 x <skilllevel>]]%§0 Beschwörerschaden bei verg
 lifeleech=Stellt §a[[<skilllevel>]]%§0 des verursachten Beschwörerschadens als Gesundheit wieder her
 necroticremains=Wenn eine nekrotische Beschwörung stirbt, explodiert sie und verursacht bei nahen Gegnern §i[[0.1 x <intelligence> x <skilllevel>]] Magieschaden§0 und vergiftet sie für 10 Sekunden mit 20% des Schadens pro Sekunde
 endlesslegion=Alle 4 Stufen dieser Fähigkeit erhältst du +1 maximale Beschwörung
-lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein Lich bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein Lich (ein Skelett), das nur Knochen schießen kann, die Magieschaden in Höhe von [[Stärke]] verursachen, und den Rest deiner Fähigkeiten einsetzen kann\nIn Lichform erleidest du doppelten Schaden
+lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein Lich bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein Lich (ein Skelett), das nur Knochen schießen kann, die Beschwörerschaden in Höhe von [[Stärke]] verursachen, und den Rest deiner Fähigkeiten einsetzen kann\nIn Lichform erleidest du doppelten Schaden
+
+// Cleric
+vitalaura=Alle §a[[15 - <skilllevel>]] Sekunden§0 setzt du eine magische Heilungsaura um dich herum frei, die §a[[10 + <grace>]] Gesundheit§0 wiederherstellt\nSie heilt dich auch um die Hälfte dieses Betrags
+divinejudge=Magieschaden-Boni beeinflussen den heiligen Schaden um §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Wenn du dich selbst oder einen Verbündeten magisch heilst, erhöhe ihren Schaden für 3 Sekunden um §a[[5 x <skilllevel>]]%§0
+sanctifiedmind=Magische Heilung stellt auch Mana in Höhe von §a[[5 x <skilllevel>]]%§0 der bewirkten Heilung wieder her
+sanctifiedarmor=Magische Heilung stellt auch Widerstandsfähigkeit in Höhe von §a[[2 x <skilllevel>]]%§0 der bewirkten Heilung wieder her
+radiantexpansion=Wenn du dich selbst oder einen Verbündeten magisch heilst, verursache §a[[5 x <skilllevel>]]%§0 der Heilung als heiligen Schaden bei nahen Gegnern des geheilten Ziels
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Abwehrender Spott
 unholyground=Unheiliger Boden
 necroticbarrage=Nekrotisches Sperrfeuer
 
+// Cleric
+smite=Zerschmettern
+divineblessing=Göttlicher Segen
+purify=Reinigen
+lightinfusion=Lichtinfusion
+holyguard=Heilige Wache
+judgment=Urteil
+sanctuary=Heiligtum
+divineintervention=Göttliche Intervention
+resurrection=Auferstehung
+wrathoflight=Zorn des Lichts
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Die nächste beschädigbare Beschwörung zwingt nahe Gegner in eine
 unholyground=Verbreitet für 10 Sekunden eine Aura der Verderbnis um dich herum\nGegner in diesem Bereich erleiden pro Sekunde §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftschaden§0 und sind §7Eingeschränkt
 necroticbarrage=Alle beschädigbaren Beschwörungen explodieren beim Tod und verursachen bei nahen Gegnern §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nund vergiften sie für 10 Sekunden mit 20% des ursprünglichen Schadens pro Sekunde
 
+// Cleric
+smite=Rufe einen Strahl heiligen Lichts auf den nächsten Gegner herab, der §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] heiligen Schaden§0 verursacht\nVerursacht doppelten Schaden bei untoten und dämonischen Mobs\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Magische Heilungsaura, die dir und deinen Verbündeten §a[[20 + 3 x <grace> x <skilllevel>]] Gesundheit§0 wiederherstellt\nVerbraucht §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Reinige dich und nahe Verbündete von allen negativen Effekten\nVerbraucht 10 Mana
+lightinfusion=Für die nächsten 8 Sekunden erhältst du §a+[[20 x <skilllevel>]]%§0 magische Heilung und heiligen Schaden
+holyguard=Wende auf dich und alle nahen Verbündeten einen heiligen Schild für bis zu 30 Sekunden an\nSie erhalten §a+[[10 x <skilllevel>]]%§0 erhaltene magische Heilung und der Schild blockiert einen Treffer, bevor er bricht\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Entfessle eine Welle strahlender Energie, die allen nahen Gegnern §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] heiligen Schaden§0 zufügt\nUntote und dämonische Mobs sind für 5 Sekunden eingeschränkt\nVerbraucht §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Erstelle eine heilige Zone für 8 Sekunden\nDu und Verbündete im Inneren sind immun gegen negative Effekte und erhalten §a[[0.2 x <grace> x <skilllevel>]]§0 Gesundheitsregeneration pro Sekunde\nUntote und dämonische Mobs im Inneren sind eingeschränkt\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Heile sofort den am meisten beschädigten nahen Verbündeten auf seine maximale Gesundheit und gewähre Immunität gegen allen Schaden für §a[[<skilllevel>]]§0 Sekunden\nVerbraucht §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Belebe den letzten toten Spieler-Verbündeten auf deiner Insel mit §a[[10 x <skilllevel>]]%§0 seiner maximalen Gesundheit an deiner Position wieder\nDu kannst keine Spieler wiederbeleben, die vor mehr als 10 Sekunden wiederbelebt werden konnten\nVerbraucht §a[[100 - 10 x <skilllevel>]]%§0 deines Manas (mindestens §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Beschwöre eine Lichtsäule auf den nächsten Gegner, die 5 Sekunden lang in einem Gebiet §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] heiligen Schaden§0 pro Sekunde verursacht\nUntote und dämonische Mobs im Inneren sind eingeschränkt\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Fähigkeitslevel
@@ -309,6 +368,7 @@ grace=Anmut
 // Grundlegende Mechanik
 manausage=Wenn du nicht genug Mana hast, wird die Abklingzeit verdoppelt
 setmax=Negative Effekte werden als Maximum festgelegt und können nicht durch andere Buffs entfernt werden
+holydamage=10% des verursachten heiligen Schadens werden in Heilung für Mobs umgewandelt, die du magisch heilst\nSetzt auch untote und dämonische Mobs für 10 Sekunden in Brand
 
 // Buffs
 marked=§hMarkiert:§0 Verursache +20% Schaden (+ §hFokusschaden§0) und +10% kritische Trefferchance bei Mobs, die du markierst\n"Nächster Gegner" priorisiert markierte Gegner
@@ -316,7 +376,7 @@ constrained=§7Eingeschränkt:§0 -50% Bewegungsgeschwindigkeit
 
 // Chancenmodifikatoren
 dodgechance=§7Ausweichchance:§0 Chance, eingehenden Angriffen auszuweichen. Kann 80% nicht überschreiten
-focuschance=§hFokus-Chance:§0 Chance, einen Mob für 5 Sekunden zu §hmarkieren§0, wenn er mit Nicht-Beschwörerschaden angegriffen wird
+focuschance=§hFokus-Chance:§0 Chance, einen Mob für 5 Sekunden zu §hmarkieren§0, wenn du ihn direkt angreifst
 
 // Flache Modifikatoren
 mobdetection=§9Mob-Erkennung:§0 Zeigt nahe Mobs auf der Karte an. Eine höhere Erkennungsreichweite deckt Mobs aus größerer Entfernung auf
@@ -370,6 +430,7 @@ gracegoldring=Anmut-Goldring
 
 
 [itemtooltip]
+Heiliger Schaden: <value>
 scrollofoblivion=Gewährt 2 Rücksetzpunkte
 ringsboxtip=Kann Attributringe aufbewahren
 
@@ -393,6 +454,7 @@ notenoughstamina=Nicht genügend Ausdauer
 notarget=Es sind keine Ziele in der Nähe
 nograbbableobject=Es befindet sich kein greifbares Objekt vor dir
 nodamageablefollower=Es sind keine beschädigbaren Beschwörungen in der Nähe
+nodeathplayers=Auf dieser Ebene können keine toten Spieler wiederbelebt werden
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktiver Fähigkeitsslot 1
 activeskillslot2=Aktiver Fähigkeitsslot 2
 activeskillslot3=Aktiver Fähigkeitsslot 3
 activeskillslot4=Aktiver Fähigkeitsslot 4
+activeskillslot5=Aktiver Fähigkeitsslot 5
+activeskillslot6=Aktiver Fähigkeitsslot 6

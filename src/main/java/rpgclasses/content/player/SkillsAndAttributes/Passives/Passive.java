@@ -25,7 +25,7 @@ abstract public class Passive extends Skill {
         tooltips.add("§" + color + Localization.translate("passives", stringID));
         tooltips.add(" ");
         tooltips.add(Localization.translate("passivesdesc", stringID));
-        if (requiredClassLevel > 0) {
+        if (requiredClassLevel > 1) {
             tooltips.add(" ");
             tooltips.add(Localization.translate("ui", "requiredclasslevel", "level", requiredClassLevel));
         }
@@ -36,7 +36,7 @@ abstract public class Passive extends Skill {
 
     @Override
     public void initResources() {
-        texture = GameTexture.fromFile("ui/passives/" + stringID);
+        texture = GameTexture.fromFile("passives/" + stringID);
     }
 
     public boolean isBasic() {

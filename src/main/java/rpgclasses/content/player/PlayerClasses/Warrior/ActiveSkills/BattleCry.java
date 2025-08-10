@@ -13,10 +13,10 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 
@@ -36,7 +36,7 @@ public class BattleCry extends SimpleBuffActiveSkill {
         });
 
         RPGUtils.streamMobsAndPlayers(player, 200)
-                .filter(m -> m.isSameTeam(player))
+                .filter(m -> m == player || m.isSameTeam(player))
                 .forEach(
                         target -> super.giveBuff(player, target, playerData, activeSkillLevel)
                 );

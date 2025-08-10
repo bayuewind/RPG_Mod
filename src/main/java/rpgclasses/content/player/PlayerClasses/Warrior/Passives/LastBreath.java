@@ -8,10 +8,10 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.particle.Particle;
 import necesse.level.maps.Level;
-import rpgclasses.RPGColors;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.buffs.Skill.SecondaryPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.utils.RPGColors;
 
 public class LastBreath extends SimpleBuffPassive {
     public LastBreath(int levelMax, int requiredClassLevel) {
@@ -59,6 +59,11 @@ public class LastBreath extends SimpleBuffPassive {
     @Override
     public SecondaryPassiveBuff getSecondaryBuff() {
         return new SecondaryPassiveBuff() {
+            @Override
+            public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
+                buffEventSubscriber.subscribeEvent(MobBeforeDamageOverTimeTakenEvent.class, MobBeforeDamageOverTimeTakenEvent::prevent);
+            }
+
             @Override
             public void onBeforeHit(ActiveBuff activeBuff, MobBeforeHitEvent event) {
                 super.onBeforeHit(activeBuff, event);

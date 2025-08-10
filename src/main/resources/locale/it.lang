@@ -18,6 +18,17 @@ focusdamage=<mod>% di danno da concentrazione
 focuschance=<mod>% di probabilità di concentrazione
 ignitedamage=<mod>% di danno da fuoco
 
+// Holy Damage
+holydamage=<mod>% di danno sacro
+holycritchance=<mod>% di probabilità di critico sacro
+holycritdamage=<mod>% di danno critico sacro
+holyeffect=<mod>% di effetto sacro
+holyabilityspeed=<mod>% di velocità abilità sacra
+
+
+[stats]
+holy_damage=Danno sacro
+
 
 [enchantment]
 evasive=Evasivo
@@ -33,6 +44,7 @@ markedbuff=Marcato
 darkcursebuff=Maledizione oscura
 magicpoisonbuff=Veleno Magico
 ignitedbuff=Incendiato
+holydamagedealtbuff=Danno sacro inflitto
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elettrico
 flash=Lampo
 dark=Oscuro
 legend=Leggenda
+
+
+[mobtrait]
+undead=Non morto
+demonic=Demonico
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Resti Necrotici
 endlesslegion=Legione Infinita
 lichborn=Nato Lich
 
+// Cleric
+healer=Guaritore
+shaman=Sciamano
+vitalaura=Aura vitale
+divinejudge=Giudice divino
+empoweredhealing=Guarigione potenziata
+sanctifiedmind=Mente santificata
+sanctifiedarmor=Armatura santificata
+radiantexpansion=Espansione radiosa
+
 
 [passivesdesc]
 
@@ -158,7 +185,7 @@ flamingsteps=Correndo con un ninnolo attivo, lascerai fiamme a terra\nLe fiamme 
 stormbound=Ogni §a[[9 - 0.5 x <skilllevel>]] secondi§0, un fulmine colpisce un nemico casuale nella tua visuale\nInfligge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 e stordisce per 1 secondo
 arcaneshield=Uno scudo che previene un colpo\nLo scudo si ripristinerà §a[[20 - <skilllevel>]] secondi§0 dopo l'uso
 fireshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'esplosione che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ne darà fuoco ai mob, ripetendo il 20% del loro danno originale al secondo per 5 secondi\nLo scudo si ripristinerà 26 secondi dopo l'uso
-iceshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'aura di ghiaccio che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ncongelando i mob per 5 secondi e congelandoli totalmente per 1 secondo\nLo scudo si ripristinerà 22 secondi dopo l'uso
+iceshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'aura di ghiaccio che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ncongelando i mob per 5 secondi, e congelandoli totalmente per 1 secondo\nLo scudo si ripristinerà 22 secondi dopo l'uso
 
 // Negromante
 necroticpower=Tutti i tuoi attacchi Magici e da Evocatore avvelenano per il 5% del loro Danno per §a[[2 x <skilllevel>]] secondi§0, a condizione che non siano causati da un'evocazione
@@ -168,7 +195,15 @@ darksummons=Infliggi il §a+[[10 x <skilllevel>]]%§0 di Danni da Evocatore ai n
 lifeleech=Recupera il §a[[<skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
 necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per il 20% dei danni al secondo per 10 secondi
 endlesslegion=Ogni 4 livelli di questa abilità, ottieni +1 evocazione massima
-lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un lich\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un lich (uno scheletro) che può solo sparare ossa che infliggono Danni Magici pari a [[Forza]] e usare il resto delle tue abilità\nMentre sei in forma di lich, subisci il doppio dei danni
+lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un lich\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un lich (uno scheletro) che può solo sparare ossa che infliggono Danni da Evocatore pari a [[Forza]] e usare il resto delle tue abilità\nMentre sei in forma di lich, subisci il doppio dei danni
+
+// Cleric
+vitalaura=Ogni §a[[15 - <skilllevel>]] secondi§0, rilasci un'aura di guarigione magica intorno a te che ripristina §a[[10 + <grace>]] salute§0\nTi guarisce anche per la metà di tale importo
+divinejudge=I bonus ai Danni Magici influenzano i Danni Sacri del §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Quando guarisci magicamente te stesso o un alleato, aumenta i loro danni del §a[[5 x <skilllevel>]]%§0 per 3 secondi
+sanctifiedmind=La guarigione magica ripristina anche mana pari al §a[[5 x <skilllevel>]]%§0 della guarigione effettuata
+sanctifiedarmor=La guarigione magica ripristina anche la resilienza pari al §a[[2 x <skilllevel>]]%§0 della guarigione effettuata
+radiantexpansion=Quando guarisci magicamente te stesso o un alleato, infliggi il §a[[5 x <skilllevel>]]%§0 della guarigione come Danno Sacro ai nemici vicini del bersaglio guarito
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Provocazione Protettiva
 unholyground=Terreno Sconsacrato
 necroticbarrage=Sbarramento Necrotico
 
+// Cleric
+smite=Punizione
+divineblessing=Benedizione divina
+purify=Purificare
+lightinfusion=Infusione di luce
+holyguard=Guardia sacra
+judgment=Giudizio
+sanctuary=Santuario
+divineintervention=Intervento divino
+resurrection=Resurrezione
+wrathoflight=Ira della luce
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=L'evocazione danneggiabile più vicina costringe i nemici vicini en
 unholyground=Estende un'aura di corruzione intorno a te per 10 secondi\nI nemici all'interno di quest'area subiscono §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Danni da Veleno§0 al secondo e sono §7Vincolati
 necroticbarrage=Tutte le evocazioni danneggiabili esplodono alla morte, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini\ne avvelenandoli per 10 secondi con il 20% dei danni originali al secondo
 
+// Cleric
+smite=Chiama un raggio di luce sacra sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0\nInfligge il doppio dei danni ai mob Non Morti e Demonici\nConsuma §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Aura di guarigione magica che ripristina §a[[20 + 3 x <grace> x <skilllevel>]] salute§0 a te e ai tuoi alleati\nConsuma §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Purifica te stesso e gli alleati vicini da tutti gli effetti negativi\nConsuma 10 Mana
+lightinfusion=Per i prossimi 8 secondi, ottieni il §a+[[20 x <skilllevel>]]%§0 di Guarigione Magica e Danni Sacri
+holyguard=Applica a te e a tutti gli alleati vicini uno Scudo Sacro per un massimo di 30 secondi\nOttengono il §a+[[10 x <skilllevel>]]%§0 di Guarigione Magica Ricevuta e lo scudo blocca un colpo prima di rompersi\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Scatena un'ondata di energia radiosa, infliggendo §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Danni Sacri§0 a tutti i nemici vicini\nI mob Non Morti e Demonici sono Vincolati per 5 secondi\nConsuma §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Crea una zona sacra per 8 secondi\nTu e gli alleati all'interno siete immuni agli effetti negativi e guadagnate §a[[0.2 x <grace> x <skilllevel>]]§0 rigenerazione della salute al secondo\nI mob Non Morti e Demonici all'interno sono Vincolati\nConsuma §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Guarisci istantaneamente l'alleato vicino più danneggiato alla sua salute massima e concedi l'immunità a tutti i danni per §a[[<skilllevel>]]§0 secondi\nConsuma §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Rianima l'ultimo alleato giocatore morto sulla tua stessa isola con il §a[[10 x <skilllevel>]]%§0 della loro salute massima nella tua posizione\nNon puoi rianimare i giocatori che potrebbero essere rinati più di 10 secondi fa\nConsuma il §a[[100 - 10 x <skilllevel>]]%§0 del tuo Mana (almeno §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Evoca una colonna di luce sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0 al secondo per 5 secondi nell'area\nI mob Non Morti e Demonici all'interno sono vincolati\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Livello abilità
@@ -309,6 +368,7 @@ grace=Grazia
 // Meccaniche di base
 manausage=Se non hai abbastanza mana, il suo tempo di ricarica è raddoppiato
 setmax=Gli effetti negativi sono impostati al massimo e non possono essere rimossi da altri buff
+holydamage=Il 10% dei danni sacri inflitti verrà convertito in guarigione per i mob che guarisci magicamente\nInoltre, dà fuoco ai mob non morti e demoniaci per 10 secondi
 
 // Buff
 marked=§hMarcato:§0 Infliggi +20% di danni (+ §hdanno da concentrazione§0) e +10% di probabilità di colpo critico ai mob che marchi\n"Nemico più vicino" dà la priorità ai nemici marchiati
@@ -316,7 +376,7 @@ constrained=§7Vincolato:§0 -50% di Velocità di Movimento
 
 // Modificatori di probabilità
 dodgechance=§7Probabilità di schivata:§0 Probabilità di schivare gli attacchi in arrivo. Non può superare l'80%
-focuschance=§hProbabilità di concentrazione:§0 Probabilità di §hmarchiare§0 un mob per 5 secondi quando viene attaccato con danni non da evocatore
+focuschance=§hProbabilità di concentrazione:§0 Probabilità di §hmarchiare§0 un mob per 5 secondi quando lo attacchi direttamente
 
 // Modificatori fissi
 mobdetection=§9Rilevamento mob:§0 Mostra i mob vicini sulla mappa. Un raggio di rilevamento più elevato rivela i mob da più lontano
@@ -363,13 +423,14 @@ intelligencecopperring=Anello di rame dell'intelligenza
 intelligencegoldring=Anello d'oro dell'intelligenza
 intelligenceironring=Anello di ferro dell'intelligenza
 
-gracedwoodring=Anello di legno della grazia
+gracewoodring=Anello di legno della grazia
 gracecopperring=Anello di rame della grazia
 graceironring=Anello di ferro della grazia
 gracegoldring=Anello d'oro della grazia
 
 
 [itemtooltip]
+Danno sacro: <value>
 scrollofoblivion=Conferisce 2 punti di ripristino
 ringsboxtip=Può contenere anelli degli attributi
 
@@ -393,6 +454,7 @@ notenoughstamina=Resistenza insufficiente
 notarget=Non ci sono bersagli nelle vicinanze
 nograbbableobject=Non c'è nessun oggetto afferrabile di fronte a te
 nodamageablefollower=Non ci sono evocazioni danneggiabili nelle vicinanze
+nodeathplayers=Nessun giocatore morto può essere resuscitato a questo livello
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Slot abilità attiva 1
 activeskillslot2=Slot abilità attiva 2
 activeskillslot3=Slot abilità attiva 3
 activeskillslot4=Slot abilità attiva 4
+activeskillslot5=Slot abilità attiva 5
+activeskillslot6=Slot abilità attiva 6

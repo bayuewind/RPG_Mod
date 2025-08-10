@@ -18,6 +18,17 @@ focusdamage=<mod>% fokusskade
 focuschance=<mod>% fokuschance
 ignitedamage=<mod>% brændskade
 
+// Holy Damage
+holydamage=<mod>% hellig skade
+holycritchance=<mod>% hellig kritisk chance
+holycritdamage=<mod>% hellig kritisk skade
+holyeffect=<mod>% hellig effekt
+holyabilityspeed=<mod>% hellig evnehastighed
+
+
+[stats]
+holy_damage=Hellig skade
+
 
 [enchantment]
 evasive=Undvigende
@@ -33,6 +44,7 @@ markedbuff=Mærket
 darkcursebuff=Mørk forbandelse
 magicpoisonbuff=Magisk Gift
 ignitedbuff=Antændt
+holydamagedealtbuff=Hellig skade påført
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrisk
 flash=Glimt
 dark=Mørk
 legend=Legende
+
+
+[mobtrait]
+undead=Udød
+demonic=Dæmonisk
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotiske Rester
 endlesslegion=Uendelig Legion
 lichborn=Lichfødt
 
+// Cleric
+healer=Helbreder
+shaman=Shaman
+vitalaura=Vital aura
+divinejudge=Guddommelig dommer
+empoweredhealing=Forstærket helbredelse
+sanctifiedmind=Helliggjort sind
+sanctifiedarmor=Helliggjort rustning
+radiantexpansion=Strålende udvidelse
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Giv §a+[[10 x <skilllevel>]]%§0 tilkalderskade til forgiftede fjen
 lifeleech=Gendanner §a[[<skilllevel>]]%§0 af den påførte tilkalderskade som helbred
 necroticremains=Når en nekrotisk tilkaldelse dør, eksploderer den og giver §i[[0.1 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fjender og forgifter dem med 20% af skaden pr. sekund i 10 sekunder
 endlesslegion=Hver 4. niveau af denne færdighed får du +1 maks. tilkaldelse
-lichborn=Når du dør, overlever du og gendanner §a[[10 x <skilllevel>]]%§0 helbred, hvis du ikke allerede er en lich\nI de næste §a[[120 - 6 x <skilllevel>]] sekunder§0 bliver du en lich (et skelet), der kun kan skyde knogler, der giver magisk skade svarende til [[Styrke]] og bruge resten af dine færdigheder\nMens du er i lich-form, tager du dobbelt skade
+lichborn=Når du dør, overlever du og gendanner §a[[10 x <skilllevel>]]%§0 helbred, hvis du ikke allerede er en lich\nI de næste §a[[120 - 6 x <skilllevel>]] sekunder§0 bliver du en lich (et skelet), der kun kan skyde knogler, der giver tilkalderskade svarende til [[Styrke]] og bruge resten af dine færdigheder\nMens du er i lich-form, tager du dobbelt skade
+
+// Cleric
+vitalaura=Hver §a[[15 - <skilllevel>]] sekunder§0 frigiver du en magisk helbredende aura omkring dig, der gendanner §a[[10 + <grace>]] helbred§0\nDen helbreder dig også for halvdelen af det beløb
+divinejudge=Magisk skadebonus påvirker hellig skade med §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Når du magisk helbreder dig selv eller en allieret, øges deres skade med §a[[5 x <skilllevel>]]%§0 i 3 sekunder
+sanctifiedmind=Magisk helbredelse gendanner også mana svarende til §a[[5 x <skilllevel>]]%§0 af den udførte helbredelse
+sanctifiedarmor=Magisk helbredelse gendanner også modstandsdygtighed svarende til §a[[2 x <skilllevel>]]%§0 af den udførte helbredelse
+radiantexpansion=Når du magisk helbreder dig selv eller en allieret, giver du §a[[5 x <skilllevel>]]%§0 af helbredelsen som hellig skade til nærliggende fjender af det helbredte mål
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Afværgende Hån
 unholyground=Uhellig Jord
 necroticbarrage=Nekrotisk Spærreild
 
+// Cleric
+smite=Smadre
+divineblessing=Guddommelig velsignelse
+purify=Rens
+lightinfusion=Lysinfusion
+holyguard=Hellig vagt
+judgment=Dom
+sanctuary=Helligdom
+divineintervention=Guddommelig indgriben
+resurrection=Genopstandelse
+wrathoflight=Lysets vrede
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Den nærmeste skadelige tilkaldelse tvinger nærliggende fjender in
 unholyground=Udvider en aura af korruption omkring dig i 10 sekunder\nFjender inden for dette område tager §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] giftskade§0 pr. sekund og er §7Begrænsede
 necroticbarrage=Alle skadelige tilkaldelser eksploderer ved døden og giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fjender\nog forgifter dem i 10 sekunder med 20% af den oprindelige skade pr. sekund
 
+// Cleric
+smite=Kald en stråle af helligt lys ned på den nærmeste fjende, der giver §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0\nGiver dobbelt skade til udøde og dæmoniske pøbler\nForbruger §a[[10 + 2 x <skilllevel>]] mana§0
+divineblessing=Magisk helbredende aura, der gendanner §a[[20 + 3 x <grace> x <skilllevel>]] helbred§0 til dig og dine allierede\nForbruger §a[[20 + 4 x <skilllevel>]] mana§0
+purify=Rens dig selv og nærliggende allierede for alle negative effekter\nForbruger 10 mana
+lightinfusion=I de næste 8 sekunder får du §a+[[20 x <skilllevel>]]%§0 magisk helbredelse og hellig skade
+holyguard=Anvend et helligt skjold på dig og alle nærliggende allierede i op til 30 sekunder\nDe får §a+[[10 x <skilllevel>]]%§0 modtaget magisk helbredelse, og skjoldet blokerer et hit, før det går i stykker\nForbruger §a[[40 + 8 x <skilllevel>]] mana§0
+judgment=Frigør en bølge af strålende energi, der giver §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] hellig skade§0 til alle nærliggende fjender\nUdøde og dæmoniske pøbler er begrænsede i 5 sekunder\nForbruger §a[[20 + 4 x <skilllevel>]] mana§0
+sanctuary=Opret en hellig zone i 8 sekunder\nDu og allierede indeni er immune over for negative effekter og får §a[[0.2 x <grace> x <skilllevel>]]§0 helbredsregeneration pr. sekund\nUdøde og dæmoniske pøbler indeni er begrænsede\nForbruger §a[[30 + 6 x <skilllevel>]] mana§0
+divineintervention=Helbred øjeblikkeligt den mest beskadigede nære allierede til deres maksimale helbred og giv immunitet mod al skade i §a[[<skilllevel>]]§0 sekunder\nForbruger §a[[60 + 12 x <skilllevel>]] mana§0
+resurrection=Genopliv den sidst døde spillerallierede på din samme ø med §a[[10 x <skilllevel>]]%§0 af deres maksimale helbred på din position\nDu kan ikke genoplive spillere, der kunne have genopstået for mere end 10 sekunder siden\nForbruger §a[[100 - 10 x <skilllevel>]]%§0 af din mana (mindst §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Tilkald en søjle af lys på den nærmeste fjende, der giver §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0 pr. sekund i 5 sekunder i området\nUdøde og dæmoniske pøbler indeni er begrænsede\nForbruger §a[[40 + 8 x <skilllevel>]] mana§0
+
 
 [skillsdesckeys]
 skilllevel=Færdighedsniveau
@@ -309,6 +368,7 @@ grace=Ynde
 // Grundlæggende Mekanik
 manausage=Hvis du ikke har nok mana, fordobles dens nedkøling
 setmax=Negative effekter er sat som maks. og kan ikke fjernes af andre buffs
+holydamage=10% af den påførte hellige skade vil blive omdannet til helbredelse for pøbler, du magisk helbreder\nSætter også udøde og dæmoniske pøbler i brand i 10 sekunder
 
 // Buffs
 marked=§hMærket:§0 Giv +20% Skade (+ §hFokusskade§0) og +10% Kritisk Chance til pøbler, du mærker\n"Nærmeste fjende" prioriterer mærkede fjender
@@ -316,7 +376,7 @@ constrained=§7Begrænset:§0 -50% bevægelseshastighed
 
 // Chance-modifikatorer
 dodgechance=§7Undvigelseschance:§0 Chance for at undvige indkommende angreb. Kan ikke overstige 80%
-focuschance=§hFokuschance:§0 Chance for at §hmærke§0 en pøbel i 5 sekunder, når den angribes med ikke-tilkalderskade
+focuschance=§hFokuschance:§0 Chance for at §hmærke§0 en pøbel i 5 sekunder, når du angriber den direkte
 
 // Flade modifikatorer
 mobdetection=§9Pøbeldetektering:§0 Viser nærliggende pøbler på kortet. En højere detekteringsrækkevidde afslører pøbler fra længere væk
@@ -370,6 +430,7 @@ gracegoldring=Yndeguldring
 
 
 [itemtooltip]
+Hellig skade: <value>
 scrollofoblivion=Giver 2 nulstillingspoint
 ringsboxtip=Kan opbevare attributringe
 
@@ -393,6 +454,7 @@ notenoughstamina=Ikke nok udholdenhed
 notarget=Der er ingen mål i nærheden
 nograbbableobject=Der er ingen genstand, der kan gribes, foran dig
 nodamageablefollower=Der er ingen skadelige tilkaldelser i nærheden
+nodeathplayers=Ingen døde spillere kan genoplives på dette niveau
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktiv færdighedsplads 1
 activeskillslot2=Aktiv færdighedsplads 2
 activeskillslot3=Aktiv færdighedsplads 3
 activeskillslot4=Aktiv færdighedsplads 4
+activeskillslot5=Aktiv færdighedsplads 5
+activeskillslot6=Aktiv færdighedsplads 6

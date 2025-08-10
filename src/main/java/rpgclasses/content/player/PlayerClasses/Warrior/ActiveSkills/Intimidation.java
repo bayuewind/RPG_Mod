@@ -15,11 +15,11 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.mobs.ai.RunningAwayAI;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.lang.reflect.Field;

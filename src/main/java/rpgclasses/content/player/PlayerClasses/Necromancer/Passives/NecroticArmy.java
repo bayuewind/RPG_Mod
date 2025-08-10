@@ -6,12 +6,12 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
+import rpgclasses.utils.RPGUtils;
 
 public class NecroticArmy extends SimpleBuffPassive {
     public NecroticArmy(int levelMax, int requiredClassLevel) {

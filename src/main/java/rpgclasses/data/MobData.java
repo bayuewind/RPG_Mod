@@ -16,6 +16,7 @@ import necesse.level.maps.Level;
 import necesse.level.maps.biomes.Biome;
 import necesse.level.maps.biomes.desert.DesertBiome;
 import necesse.level.maps.biomes.dungeon.DungeonLevel;
+import necesse.level.maps.biomes.pirate.PirateVillageBiome;
 import necesse.level.maps.biomes.plains.PlainsBiome;
 import necesse.level.maps.biomes.snow.SnowBiome;
 import necesse.level.maps.biomes.swamp.SwampBiome;
@@ -24,13 +25,80 @@ import necesse.level.maps.incursion.DesertDeepCaveIncursionLevel;
 import necesse.level.maps.incursion.SnowDeepCaveIncursionLevel;
 import rpgclasses.content.MobClass;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MobData {
     public static String prefixDataName = "rpgmod_";
     public static String levelDataName = prefixDataName + "level";
     public static String classDataName = prefixDataName + "class";
+
+    public static List<String> undeadMobs = new ArrayList<>();
+    public static List<String> demonicMobs = new ArrayList<>();
+
+    static {
+        undeadMobs.addAll(
+                Arrays.stream(new String[]{
+                        "evilwitch",
+                        "evilwitchflask",
+                        "evilwitchbow",
+                        "evilwitchgreatsword",
+                        "zombie",
+                        "trapperzombie",
+                        "vampire",
+                        "zombiearcher",
+                        "crawlingzombie",
+                        "swampzombie",
+                        "enchantedzombie",
+                        "enchantedzombiearcher",
+                        "enchantedcrawlingzombie",
+                        "mummy",
+                        "mummymage",
+                        "skeleton",
+                        "skeletonthrower",
+                        "skeletonmage",
+                        "skeletonminer",
+                        "swampskeleton",
+                        "ancientskeleton",
+                        "ancientskeletonthrower",
+                        "ancientarmoredskeleton",
+                        "ancientskeletonmage",
+                        "cryptbat",
+                        "phantom",
+                        "cryptvampire",
+                        "bonewalker",
+                        "spiritghoul",
+                        "vampireraider",
+                        "mummyraider",
+                        "ancientskeletonraider",
+                        "reaper",
+                        "reaperspirit",
+                        "incursioncrawlingzombie",
+
+                        // RPG Mod
+                        "lichskeletonmob",
+                        "necromancerskeleton",
+                        "necromancerskeletonwarrior",
+                        "necromancerboneslinger",
+                        "necromancertomb"
+                }).collect(Collectors.toList())
+        );
+
+        demonicMobs.addAll(
+                Arrays.stream(new String[]{
+                        "voidapprentice",
+                        "evilsprotector",
+                        "evilsportal",
+                        "voidwizard",
+                        "voidwizardclone",
+                        "voidadept",
+                        "thecursedcrone",
+
+                        // AphoreaMod
+                        "fallenwizard"
+                }).collect(Collectors.toList())
+        );
+    }
 
     public Mob mob;
     public int level;
@@ -90,7 +158,9 @@ public class MobData {
                         mobData.level += 16;
                     }
                 } else {
-                    if (biome instanceof PlainsBiome) {
+                    if (biome instanceof PirateVillageBiome) {
+                        mobData.level += 12;
+                    } else if (biome instanceof PlainsBiome) {
                         mobData.level += 15;
                     } else if (biome instanceof SnowBiome) {
                         mobData.level += 18;
@@ -160,5 +230,31 @@ public class MobData {
 
     public String realName() {
         return MobRegistry.getLocalization(mob.getID()).translate();
+    }
+
+    public boolean isUndead() {
+        return isUndead(mob);
+    }
+
+    public boolean isDemonic() {
+        return isDemonic(mob);
+    }
+
+    public static boolean isUndead(Mob mob) {
+        return MobData.undeadMobs.contains(mob.getStringID());
+    }
+
+    public static boolean isDemonic(Mob mob) {
+        return MobData.demonicMobs.contains(mob.getStringID());
+    }
+
+    public boolean isWeakToHoly() {
+        return isWeakToHoly(mob);
+    }
+
+    public static boolean isWeakToHoly(Mob mob) {
+        if (MobData.isUndead(mob) || MobData.isDemonic(mob)) return true;
+        Mob mount = mob.getMount();
+        return mount != null && isWeakToHoly(mount);
     }
 }

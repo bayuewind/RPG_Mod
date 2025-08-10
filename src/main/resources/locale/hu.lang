@@ -18,6 +18,17 @@ focusdamage=<mod>% fókusz sebzés
 focuschance=<mod>% fókusz esély
 ignitedamage=<mod>% égési sebzés
 
+// Holy Damage
+holydamage=<mod>% szent sebzés
+holycritchance=<mod>% szent kritikus esély
+holycritdamage=<mod>% szent kritikus sebzés
+holyeffect=<mod>% szent hatás
+holyabilityspeed=<mod>% szent képesség sebesség
+
+
+[stats]
+holy_damage=Szent sebzés
+
 
 [enchantment]
 evasive=Kikerülő
@@ -33,6 +44,7 @@ markedbuff=Megjelölt
 darkcursebuff=Sötét átok
 magicpoisonbuff=Mágikus Méreg
 ignitedbuff=Égő
+holydamagedealtbuff=Okozott szent sebzés
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektromos
 flash=Villanás
 dark=Sötét
 legend=Legenda
+
+
+[mobtrait]
+undead=Élőhalott
+demonic=Démoni
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotikus Maradványok
 endlesslegion=Végtelen Légió
 lichborn=Lich Született
 
+// Cleric
+healer=Gyógyító
+shaman=Sámán
+vitalaura=Élet aura
+divinejudge=Isteni bíró
+empoweredhealing=Felerősített gyógyítás
+sanctifiedmind=Megszentelt elme
+sanctifiedarmor=Megszentelt páncél
+radiantexpansion=Sugárzó terjeszkedés
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=§a+[[10 x <skilllevel>]]%§0 idéző sebzést okoz a megmérgezett 
 lifeleech=Visszaállítja az okozott idéző sebzés §a[[<skilllevel>]]%-át§0 életerőként
 necroticremains=Amikor egy nekrotikus idézés meghal, felrobban, §i[[0.1 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva a közeli ellenségeknek, megmérgezve őket a sebzés 20%-ával másodpercenként 10 másodpercig
 endlesslegion=Ennek a képességnek minden 4. szintje után +1 maximális idézést kapsz
-lichborn=Amikor meghalsz, túléled és visszaállítod az életerőd §a[[10 x <skilllevel>]]%-át§0, ha még nem vagy lich\nA következő §a[[120 - 6 x <skilllevel>]] másodpercre§0 lich-cské (csontvázzá) válsz, aki csak csontokat lőhet, amelyek [[Erő]]-nek megfelelő mágikus sebzést okoznak, és használhatod a többi képességedet\nLich formában dupla sebzést szenvedsz
+lichborn=Amikor meghalsz, túléled és visszaállítod az életerőd §a[[10 x <skilllevel>]]%-át§0, ha még nem vagy lich\nA következő §a[[120 - 6 x <skilllevel>]] másodpercre§0 lich-cské (csontvázzá) válsz, aki csak csontokat lőhet, amelyek [[Erő]]-nek megfelelő idéző sebzést okoznak, és használhatod a többi képességedet\nLich formában dupla sebzést szenvedsz
+
+// Cleric
+vitalaura=Minden §a[[15 - <skilllevel>]] másodpercben§0 egy mágikus gyógyító aurát bocsátasz ki magad körül, amely §a[[10 + <grace>]] életerőt§0 állít vissza\nEz téged is meggyógyít ennek az összegnek a felével
+divinejudge=A mágikus sebzés bónuszai §a[[5 x <skilllevel>]]%-kal§0 befolyásolják a szent sebzést
+empoweredhealing=Amikor mágikusan meggyógyítod magad vagy egy szövetségest, 3 másodpercre §a[[5 x <skilllevel>]]%-kal§0 növeled a sebzésüket
+sanctifiedmind=A mágikus gyógyítás a gyógyítás §a[[5 x <skilllevel>]]%-ának§0 megfelelő manát is visszaállít
+sanctifiedarmor=A mágikus gyógyítás a gyógyítás §a[[2 x <skilllevel>]]%-ának§0 megfelelő rugalmasságot is visszaállít
+radiantexpansion=Amikor mágikusan meggyógyítod magad vagy egy szövetségest, a gyógyítás §a[[5 x <skilllevel>]]%-át§0 szent sebzésként okozod a meggyógyított célpont közeli ellenségeinek
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Védő gúny
 unholyground=Szenttelen föld
 necroticbarrage=Nekrotikus zárótűz
 
+// Cleric
+smite=Lesújtás
+divineblessing=Isteni áldás
+purify=Megtisztítás
+lightinfusion=Fény infúzió
+holyguard=Szent őr
+judgment=Ítélet
+sanctuary=Szentély
+divineintervention=Isteni beavatkozás
+resurrection=Feltámadás
+wrathoflight=A fény haragja
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=A legközelebbi sebezhető idézés arra kényszeríti a közeli el
 unholyground=10 másodpercre kiterjeszti a korrupció auráját körülötted\nEzen a területen belül az ellenségek másodpercenként §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] méregsebzést§0 szenvednek, és §7Korlátozottak
 necroticbarrage=Minden sebezhető idézés felrobban halálakor, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva a közeli ellenségeknek\nés megmérgezve őket 10 másodpercre az eredeti sebzés 20%-ával másodpercenként
 
+// Cleric
+smite=Hívj le egy szent fénysugarat a legközelebbi ellenségre, §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] szent sebzést§0 okozva\nDupla sebzést okoz az élőhalott és démoni moboknak\n§a[[10 + 2 x <skilllevel>]] manát§0 fogyaszt
+divineblessing=Mágikus gyógyító aura, amely §a[[20 + 3 x <grace> x <skilllevel>]] életerőt§0 állít vissza neked és szövetségeseidnek\n§a[[20 + 4 x <skilllevel>]] manát§0 fogyaszt
+purify=Tisztítsd meg magad és a közeli szövetségeseket minden negatív hatástól\n10 manát fogyaszt
+lightinfusion=A következő 8 másodpercben §a+[[20 x <skilllevel>]]%§0 mágikus gyógyítást és szent sebzést kapsz
+holyguard=Alkalmazz magadra és minden közeli szövetségesre egy Szent Pajzsot legfeljebb 30 másodpercre\n§a+[[10 x <skilllevel>]]%§0 kapott mágikus gyógyítást kapnak, és a pajzs egy találatot blokkol, mielőtt eltörne\n§a[[40 + 8 x <skilllevel>]] manát§0 fogyaszt
+judgment=Engedj szabadjára egy sugárzó energia hullámot, amely §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] szent sebzést§0 okoz minden közeli ellenségnek\nAz élőhalott és démoni mobok 5 másodpercre korlátozva vannak\n§a[[20 + 4 x <skilllevel>]] manát§0 fogyaszt
+sanctuary=Hozz létre egy szent zónát 8 másodpercre\nTe és a szövetségesek benne immunisak a negatív hatásokra, és másodpercenként §a[[0.2 x <grace> x <skilllevel>]]§0 életerő-regenerációt kapnak\nAz élőhalott és démoni mobok benne korlátozva vannak\n§a[[30 + 6 x <skilllevel>]] manát§0 fogyaszt
+divineintervention=Azonnal gyógyítsd meg a leginkább sérült közeli szövetségest a maximális életerejére, és adj immunitást minden sebzés ellen §a[[<skilllevel>]]§0 másodpercre\n§a[[60 + 12 x <skilllevel>]] manát§0 fogyaszt
+resurrection=Éleszd újra az utolsó halott játékos szövetségest ugyanazon a szigeten a maximális életerejük §a[[10 x <skilllevel>]]%-ával§0 a te pozíciódban\nNem éleszthetsz újra olyan játékosokat, akik több mint 10 másodperce újraéledhettek volna\nA manád §a[[100 - 10 x <skilllevel>]]%-át§0 fogyasztja (legalább §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Idézz egy fényoszlopot a legközelebbi ellenségre, amely 5 másodpercen keresztül másodpercenként §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] szent sebzést§0 okoz egy területen\nAz élőhalott és démoni mobok benne korlátozva vannak\n§a[[40 + 8 x <skilllevel>]] manát§0 fogyaszt
+
 
 [skillsdesckeys]
 skilllevel=Képességszint
@@ -309,6 +368,7 @@ grace=Kecsesség
 // Alapvető mechanikák
 manausage=Ha nincs elég manád, a hűlési ideje megduplázódik
 setmax=A negatív hatások maximálisra vannak állítva, és más buffokkal nem távolíthatók el
+holydamage=Az okozott szent sebzés 10%-a gyógyítássá alakul a mágikusan gyógyított mobok számára\n10 másodpercre lángra lobbantja az élőhalott és démoni mobokat is
 
 // Buffok
 marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\n"Legközelebbi ellenség" a megjelölt ellenségeket részesíti előnyben
@@ -316,7 +376,7 @@ constrained=§7Korlátozott:§0 -50% mozgási sebesség
 
 // Esély módosítók
 dodgechance=§7Kitérési esély:§0 Esély a bejövő támadások kikerülésére. Nem haladhatja meg a 80%-ot
-focuschance=§hFókusz esély:§0 Esély egy mob §hmegjelölésére§0 5 másodpercre, ha nem idéző sebzéssel támadják meg
+focuschance=§hFókusz esély:§0 Esély egy mob §hmegjelölésére§0 5 másodpercre, ha közvetlenül megtámadod
 
 // Sík módosítók
 mobdetection=§9Mob érzékelés:§0 Megjeleníti a közeli mobokat a térképen. A nagyobb érzékelési tartomány távolabbról is felfedi a mobokat
@@ -370,6 +430,7 @@ gracegoldring=Kecsesség arany gyűrű
 
 
 [itemtooltip]
+Szent sebzés: <value>
 scrollofoblivion=2 visszaállítási pontot ad
 ringsboxtip=Attribútum gyűrűket tárolhat
 
@@ -393,6 +454,7 @@ notenoughstamina=Nincs elég állóképesség
 notarget=Nincsenek célpontok a közelben
 nograbbableobject=Nincs megragadható tárgy előtted
 nodamageablefollower=Nincsenek sebezhető idézések a közelben
+nodeathplayers=Ezen a szinten nem lehet feltámasztani halott játékosokat
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktív képességhely 1
 activeskillslot2=Aktív képességhely 2
 activeskillslot3=Aktív képességhely 3
 activeskillslot4=Aktív képességhely 4
+activeskillslot5=Aktív képességhely 5
+activeskillslot6=Aktív képességhely 6

@@ -18,6 +18,17 @@ focusdamage=<mod>% sát thương tập trung
 focuschance=<mod>% cơ hội tập trung
 ignitedamage=<mod>% sát thương đốt cháy
 
+// Holy Damage
+holydamage=<mod>% sát thương thần thánh
+holycritchance=<mod>% cơ hội chí mạng thần thánh
+holycritdamage=<mod>% sát thương chí mạng thần thánh
+holyeffect=<mod>% hiệu ứng thần thánh
+holyabilityspeed=<mod>% tốc độ kỹ năng thần thánh
+
+
+[stats]
+holy_damage=Sát thương thần thánh
+
 
 [enchantment]
 evasive=Né tránh
@@ -33,6 +44,7 @@ markedbuff=Được đánh dấu
 darkcursebuff=Lời nguyền bóng tối
 magicpoisonbuff=Độc ma thuật
 ignitedbuff=Bị đốt cháy
+holydamagedealtbuff=Sát thương thần thánh đã gây ra
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Điện
 flash=Tia chớp
 dark=Bóng tối
 legend=Huyền thoại
+
+
+[mobtrait]
+undead=Bất tử
+demonic=Ma quỷ
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Tàn dư hoại tử
 endlesslegion=Quân đoàn vô tận
 lichborn=Sinh ra từ Lich
 
+// Cleric
+healer=Người chữa lành
+shaman=Pháp sư
+vitalaura=Hào quang sinh khí
+divinejudge=Thẩm phán thần thánh
+empoweredhealing=Hồi máu được trao quyền
+sanctifiedmind=Tâm trí được thánh hóa
+sanctifiedarmor=Áo giáp được thánh hóa
+radiantexpansion=Mở rộng rạng rỡ
+
 
 [passivesdesc]
 
@@ -157,8 +184,8 @@ manapower=Mỗi cấp độ cung cấp:\n\n+1% Sát thương phép cho mỗi 10%
 flamingsteps=Khi chạy với một món đồ trang sức đang hoạt động, bạn sẽ để lại ngọn lửa trên mặt đất\nNgọn lửa sẽ đốt cháy kẻ thù trong 2 giây, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 mỗi giây
 stormbound=Cứ sau §a[[9 - 0.5 x <skilllevel>]] giây§0, một tia sét đánh vào một kẻ thù ngẫu nhiên trong tầm nhìn của bạn\nGây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây
 arcaneshield=Một chiếc khiên ngăn chặn một đòn đánh\nChiếc khiên sẽ phục hồi sau §a[[20 - <skilllevel>]] giây§0 sau khi sử dụng
-fireshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một vụ nổ gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nvà đốt cháy mob, lặp lại 20% sát thương ban đầu của chúng mỗi giây trong 5 giây\nChiếc khiên sẽ phục hồi sau 26 giây sau khi sử dụng
-iceshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một luồng khí băng gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nlàm đóng băng mob trong 5 giây và đóng băng hoàn toàn chúng trong 1 giây\nChiếc khiên sẽ phục hồi sau 22 giây sau khi sử dụng
+fireshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một vụ nổ gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nvà đốt cháy mob, lặp lại 20% sát thương ban đầu của chúng mỗi giây trong 5 giây\nChiếc khiên sẽ phục hồi sau 26 giây sau khi sử dụng
+iceshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một luồng khí băng gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nlàm đóng băng mob trong 5 giây và đóng băng hoàn toàn chúng trong 1 giây\nChiếc khiên sẽ phục hồi sau 22 giây sau khi sử dụng
 
 // Thầy chiêu hồn
 necroticpower=Tất cả các đòn tấn công Phép và Triệu hồi của bạn đều gây độc bằng 5% Sát thương của chúng trong §a[[2 x <skilllevel>]] giây§0, miễn là chúng không phải do triệu hồi gây ra
@@ -168,7 +195,15 @@ darksummons=Gây thêm §a+[[10 x <skilllevel>]]%§0 Sát thương của Ngườ
 lifeleech=Hồi phục §a[[<skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
 necroticremains=Khi một triệu hồi hoại tử chết, nó sẽ phát nổ, gây §i[[0.1 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó, đầu độc chúng bằng 20% sát thương mỗi giây trong 10 giây
 endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận được +1 triệu hồi tối đa
-lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một lich\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một lich (một bộ xương) chỉ có thể bắn xương gây Sát thương Phép bằng [[Sức mạnh]] và sử dụng các kỹ năng còn lại của mình\nKhi ở dạng lich, bạn nhận gấp đôi sát thương
+lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một lich\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một lich (một bộ xương) chỉ có thể bắn xương gây Sát thương của Người triệu hồi bằng [[Sức mạnh]] và sử dụng các kỹ năng còn lại của mình\nKhi ở dạng lich, bạn nhận gấp đôi sát thương
+
+// Cleric
+vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace>]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
+divinejudge=Tiền thưởng Sát thương phép ảnh hưởng đến Sát thương thần thánh bằng §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, hãy tăng sát thương của họ lên §a[[5 x <skilllevel>]]%§0 trong 3 giây
+sanctifiedmind=Hồi máu bằng phép thuật cũng phục hồi năng lượng bằng §a[[5 x <skilllevel>]]%§0 lượng máu đã hồi
+sanctifiedarmor=Hồi máu bằng phép thuật cũng phục hồi khả năng phục hồi bằng §a[[2 x <skilllevel>]]%§0 lượng máu đã hồi
+radiantexpansion=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, hãy gây §a[[5 x <skilllevel>]]%§0 lượng máu hồi phục thành Sát thương thần thánh cho những kẻ thù gần đó của mục tiêu được chữa lành
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Lời chế nhạo phòng thủ
 unholyground=Vùng đất ô uế
 necroticbarrage=Cơn mưa hoại tử
 
+// Cleric
+smite=Trừng phạt
+divineblessing=Phước lành thiêng liêng
+purify=Thanh tẩy
+lightinfusion=Truyền ánh sáng
+holyguard=Vệ binh thần thánh
+judgment=Phán quyết
+sanctuary=Thánh địa
+divineintervention=Sự can thiệp của thần thánh
+resurrection=Sự hồi sinh
+wrathoflight=Cơn thịnh nộ của ánh sáng
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Triệu hồi có thể bị sát thương gần nhất buộc kẻ
 unholyground=Mở rộng một luồng khí ô uế xung quanh bạn trong 10 giây\nKẻ thù trong khu vực này nhận §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Sát thương độc§0 mỗi giây và bị §7Hạn chế
 necroticbarrage=Tất cả các triệu hồi có thể bị sát thương sẽ phát nổ khi chết, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó\nvà đầu độc chúng trong 10 giây với 20% sát thương ban đầu mỗi giây
 
+// Cleric
+smite=Gọi xuống một chùm ánh sáng thần thánh lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0\nGây sát thương gấp đôi cho mob Bất tử và Ma quỷ\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Hào quang chữa bệnh bằng phép thuật phục hồi §a[[20 + 3 x <grace> x <skilllevel>]] máu§0 cho bạn và đồng minh của bạn\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Thanh tẩy bản thân và các đồng minh gần đó khỏi mọi hiệu ứng tiêu cực\nTiêu tốn 10 Mana
+lightinfusion=Trong 8 giây tiếp theo, bạn nhận được §a+[[20 x <skilllevel>]]%§0 Hồi máu phép và Sát thương thần thánh
+holyguard=Áp dụng cho bạn và tất cả các đồng minh gần đó một Khiên Thánh trong tối đa 30 giây\nHọ nhận được §a+[[10 x <skilllevel>]]%§0 Hồi máu phép đã nhận và khiên chặn một đòn đánh trước khi vỡ\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Giải phóng một làn sóng năng lượng rạng rỡ, gây §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Sát thương thần thánh§0 cho tất cả kẻ thù gần đó\nMob Bất tử và Ma quỷ bị Hạn chế trong 5 giây\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Tạo một khu vực thần thánh trong 8 giây\nBạn và các đồng minh bên trong miễn nhiễm với các hiệu ứng tiêu cực và nhận được §a[[0.2 x <grace> x <skilllevel>]]§0 hồi máu mỗi giây\nMob Bất tử và Ma quỷ bên trong bị Hạn chế\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Hồi máu ngay lập tức cho đồng minh bị sát thương nặng nhất đến mức máu tối đa của họ và cấp quyền miễn nhiễm với mọi sát thương trong §a[[<skilllevel>]]§0 giây\nTiêu tốn §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Hồi sinh đồng minh người chơi đã chết trên cùng một hòn đảo của bạn với §a[[10 x <skilllevel>]]%§0 máu tối đa của họ ở vị trí của bạn\nBạn không thể hồi sinh những người chơi có thể đã hồi sinh hơn 10 giây trước\nTiêu tốn §a[[100 - 10 x <skilllevel>]]%§0 Mana của bạn (ít nhất §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Triệu hồi một cột ánh sáng lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0 mỗi giây trong 5 giây trong khu vực\nMob Bất tử và Ma quỷ bên trong bị hạn chế\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Cấp độ kỹ năng
@@ -309,6 +368,7 @@ grace=Duyên dáng
 // Cơ chế cơ bản
 manausage=Nếu bạn không có đủ mana, thời gian hồi chiêu của nó sẽ được nhân đôi
 setmax=Các hiệu ứng tiêu cực được đặt ở mức tối đa và không thể bị loại bỏ bởi các bùa lợi khác
+holydamage=10% sát thương thần thánh gây ra sẽ được chuyển thành hồi máu cho các mob bạn chữa bệnh bằng phép thuật\nCũng đốt cháy mob Bất tử và Ma quỷ trong 10 giây
 
 // Bùa lợi
 marked=§hĐược đánh dấu:§0 Gây thêm +20% Sát thương (+ §hSát thương tập trung§0) và +10% Cơ hội chí mạng cho các mob bạn đánh dấu\n"Kẻ thù gần nhất" ưu tiên các kẻ thù được đánh dấu
@@ -316,7 +376,7 @@ constrained=§7Bị hạn chế:§0 -50% Tốc độ di chuyển
 
 // Công cụ sửa đổi cơ hội
 dodgechance=§7Cơ hội né tránh:§0 Cơ hội né tránh các đòn tấn công sắp tới. Không thể vượt quá 80%
-focuschance=§hCơ hội tập trung:§0 Cơ hội §hđánh dấu§0 một mob trong 5 giây khi bị tấn công bằng sát thương không phải của người triệu hồi
+focuschance=§hCơ hội tập trung:§0 Cơ hội §hđánh dấu§0 một mob trong 5 giây khi bạn tấn công trực tiếp
 
 // Công cụ sửa đổi phẳng
 mobdetection=§9Phát hiện mob:§0 Hiển thị các mob gần đó trên bản đồ. Phạm vi phát hiện cao hơn sẽ tiết lộ các mob ở xa hơn
@@ -370,6 +430,7 @@ gracegoldring=Nhẫn vàng duyên dáng
 
 
 [itemtooltip]
+holydamagetip=Sát thương thần thánh: <value>
 scrollofoblivion=Cấp 2 điểm đặt lại
 ringsboxtip=Có thể lưu trữ Nhẫn thuộc tính
 
@@ -393,6 +454,7 @@ notenoughstamina=Không đủ thể lực
 notarget=Không có mục tiêu nào ở gần
 nograbbableobject=Không có vật thể nào có thể nắm được trước mặt bạn
 nodamageablefollower=Không có triệu hồi nào có thể bị sát thương ở gần
+nodeathplayers=Không có người chơi nào đã chết có thể được hồi sinh ở cấp độ này
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Ô kỹ năng chủ động 1
 activeskillslot2=Ô kỹ năng chủ động 2
 activeskillslot3=Ô kỹ năng chủ động 3
 activeskillslot4=Ô kỹ năng chủ động 4
+activeskillslot5=Ô kỹ năng chủ động 5
+activeskillslot6=Ô kỹ năng chủ động 6

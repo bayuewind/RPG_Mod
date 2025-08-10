@@ -1,4 +1,4 @@
-package rpgclasses;
+package rpgclasses.utils;
 
 import aphorea.utils.AphColors;
 

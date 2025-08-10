@@ -14,7 +14,7 @@ public class PrincipalPassiveBuff extends PassiveSkillBuff {
     @Override
     public void loadTextures() {
         try {
-            this.iconTexture = GameTexture.fromFileRaw("ui/passives/" + skillID());
+            this.iconTexture = GameTexture.fromFileRaw("passives/" + skillID());
         } catch (FileNotFoundException var2) {
             this.iconTexture = GameTexture.fromFile("buffs/positive");
         }

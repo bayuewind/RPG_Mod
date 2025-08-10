@@ -19,8 +19,8 @@ public class RPGEnchantments {
         ));
 
         registerEnchantment(list, "stalking", new EquipmentItemEnchant(20,
-                new ModifierValue<>(RPGModifiers.FOCUS_CHANCE, 0.05F),
-                new ModifierValue<>(RPGModifiers.FOCUS_DAMAGE, 0.01F)
+                new ModifierValue<>(RPGModifiers.FOCUS_CHANCE, 0.01F),
+                new ModifierValue<>(RPGModifiers.FOCUS_DAMAGE, 0.05F)
         ));
 
         registerEnchantment(list, "regenerative", new EquipmentItemEnchant(20,

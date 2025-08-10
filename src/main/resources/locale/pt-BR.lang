@@ -18,6 +18,17 @@ focusdamage=<mod>% de dano de foco
 focuschance=<mod>% de chance de foco
 ignitedamage=<mod>% de dano de queimadura
 
+// Holy Damage
+holydamage=<mod>% de dano sagrado
+holycritchance=<mod>% de chance de acerto crítico sagrado
+holycritdamage=<mod>% de dano crítico sagrado
+holyeffect=<mod>% de efeito sagrado
+holyabilityspeed=<mod>% de velocidade de habilidade sagrada
+
+
+[stats]
+holy_damage=Dano sagrado
+
 
 [enchantment]
 evasive=Evasivo
@@ -33,6 +44,7 @@ markedbuff=Marcado
 darkcursebuff=Maldição das trevas
 magicpoisonbuff=Veneno Mágico
 ignitedbuff=Em Chamas
+holydamagedealtbuff=Dano Sagrado Causado
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elétrico
 flash=Flash
 dark=Sombrio
 legend=Lenda
+
+
+[mobtrait]
+undead=Morto-vivo
+demonic=Demoníaco
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Restos Necróticos
 endlesslegion=Legião Infinita
 lichborn=Nascido Lich
 
+// Cleric
+healer=Curandeiro
+shaman=Xamã
+vitalaura=Aura vital
+divinejudge=Juiz divino
+empoweredhealing=Cura fortalecida
+sanctifiedmind=Mente santificada
+sanctifiedarmor=Armadura santificada
+radiantexpansion=Expansão radiante
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Cause §a+[[10 x <skilllevel>]]%§0 de Dano de Invocador a inimigos 
 lifeleech=Recupera §a[[<skilllevel>]]%§0 do Dano de Invocador causado como Vida
 necroticremains=Quando uma invocação necrótica morre, ela explode, causando §i[[0.1 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos, envenenando-os por 20% do dano por segundo por 10 segundos
 endlesslegion=A cada 4 níveis desta habilidade, você ganha +1 invocação máxima
-lichborn=Quando você morre, você sobrevive e recupera §a[[10 x <skilllevel>]]%§0 de Vida se você ainda não for um lich\nPelos próximos §a[[120 - 6 x <skilllevel>]] segundos§0, você se torna um lich (um esqueleto) que só pode atirar ossos que causam Dano Mágico igual a [[Força]] e usar o resto de suas habilidades\nEnquanto estiver na forma de lich, você recebe o dobro do dano
+lichborn=Quando você morre, você sobrevive e recupera §a[[10 x <skilllevel>]]%§0 de Vida se você ainda não for um lich\nPelos próximos §a[[120 - 6 x <skilllevel>]] segundos§0, você se torna um lich (um esqueleto) que só pode atirar ossos que causam Dano de Invocador igual a [[Força]] e usar o resto de suas habilidades\nEnquanto estiver na forma de lich, você recebe o dobro do dano
+
+// Cleric
+vitalaura=A cada §a[[15 - <skilllevel>]] segundos§0, você libera uma aura de cura mágica ao seu redor que restaura §a[[10 + <grace>]] de vida§0\nEla também cura você pela metade desse valor
+divinejudge=Bônus de Dano Mágico afetam o Dano Sagrado em §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Quando você se cura magicamente ou a um aliado, aumenta o dano deles em §a[[5 x <skilllevel>]]%§0 por 3 segundos
+sanctifiedmind=A cura mágica também restaura mana igual a §a[[5 x <skilllevel>]]%§0 da cura realizada
+sanctifiedarmor=A cura mágica também restaura a resiliência igual a §a[[2 x <skilllevel>]]%§0 da cura realizada
+radiantexpansion=Quando você se cura magicamente ou a um aliado, causa §a[[5 x <skilllevel>]]%§0 da cura como Dano Sagrado a inimigos próximos do alvo curado
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Provocação Protetora
 unholyground=Solo Profano
 necroticbarrage=Barragem Necrótica
 
+// Cleric
+smite=Golpe divino
+divineblessing=Bênção divina
+purify=Purificar
+lightinfusion=Infusão de luz
+holyguard=Guarda sagrada
+judgment=Julgamento
+sanctuary=Santuário
+divineintervention=Intervenção divina
+resurrection=Ressurreição
+wrathoflight=Ira da luz
+
 
 [activeskillsdesc]
 
@@ -249,7 +296,7 @@ battlecry=Pelos próximos 10 segundos, aumente todo o seu dano e o de aliados pr
 ironguard=-50% de dano recebido por §a[[4 x <skilllevel>]] segundos
 intimidation=Pelos próximos §a[[<skilllevel>]] segundos§0, faça os inimigos próximos fugirem
 
-objectthrowing=Passo 1: Pegue um objeto à sua frente\nPasso 2: Jogue-o para frente causando §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de dano corpo a corpo§0\nAmbos os passos consomem todo o seu Vigor (pelo menos 100%)
+objectthrowing=Paso 1: Pegue um objeto à sua frente\nPaso 2: Jogue-o para frente causando §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de dano corpo a corpo§0\nAmbos os passos consomem todo o seu Vigor (pelo menos 100%)
 
 // Arqueiro
 shortdash=Execute uma corrida de 100 de <strength>\nConsome 15% de Vigor
@@ -294,6 +341,18 @@ wardingtaunt=A invocação danificável mais próxima força os inimigos próxim
 unholyground=Estende uma aura de corrupção ao seu redor por 10 segundos\nInimigos dentro desta área recebem §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Dano de Veneno§0 por segundo e são §7Restringidos
 necroticbarrage=Todas as invocações danificáveis explodem ao morrer, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos\ne envenenando-os por 10 segundos com 20% do dano original por segundo
 
+// Cleric
+smite=Convoque um feixe de luz sagrada sobre o inimigo mais próximo, causando §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Dano Sagrado§0\nCausa o dobro de dano a monstros Mortos-vivos e Demoníacos\nConsome §a[[10 + 2 x <skilllevel>]] de Mana§0
+divineblessing=Aura de cura mágica que restaura §a[[20 + 3 x <grace> x <skilllevel>]] de vida§0 para você e seus aliados\nConsome §a[[20 + 4 x <skilllevel>]] de Mana§0
+purify=Purifique a si mesmo e aos aliados próximos de todos os efeitos negativos\nConsome 10 de Mana
+lightinfusion=Pelos próximos 8 segundos, você ganha §a+[[20 x <skilllevel>]]%§0 de Cura Mágica e Dano Sagrado
+holyguard=Aplique a você e a todos os aliados próximos um Escudo Sagrado por até 30 segundos\nEles ganham §a+[[10 x <skilllevel>]]%§0 de Cura Mágica Recebida e o escudo bloqueia um acerto antes de quebrar\nConsome §a[[40 + 8 x <skilllevel>]] de Mana§0
+judgment=Libere uma onda de energia radiante, causando §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de Dano Sagrado§0 a todos os inimigos próximos\nMonstros Mortos-vivos e Demoníacos ficam Restringidos por 5 segundos\nConsome §a[[20 + 4 x <skilllevel>]] de Mana§0
+sanctuary=Crie uma zona sagrada por 8 segundos\nVocê e os aliados dentro são imunes a efeitos negativos e ganham §a[[0.2 x <grace> x <skilllevel>]]§0 de regeneração de vida por segundo\nMonstros Mortos-vivos e Demoníacos dentro são Restringidos\nConsome §a[[30 + 6 x <skilllevel>]] de Mana§0
+divineintervention=Cure instantaneamente o aliado próximo mais danificado até sua vida máxima e conceda imunidade a todos os danos por §a[[<skilllevel>]]§0 segundos\nConsome §a[[60 + 12 x <skilllevel>]] de Mana§0
+resurrection=Ressuscite o último aliado jogador morto em sua mesma ilha com §a[[10 x <skilllevel>]]%§0 de sua vida máxima em sua posição\nVocê não pode ressuscitar jogadores que poderiam ter reaparecido há mais de 10 segundos\nConsome §a[[100 - 10 x <skilllevel>]]%§0 de sua Mana (pelo menos §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Convoque uma coluna de luz sobre o inimigo mais próximo, causando §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Dano Sagrado§0 por segundo por 5 segundos na área\nMonstros Mortos-vivos e Demoníacos dentro são restringidos\nConsome §a[[40 + 8 x <skilllevel>]] de Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Nível de Habilidade
@@ -309,6 +368,7 @@ grace=Graça
 // Mecânicas Básicas
 manausage=Se você não tiver mana suficiente, o tempo de recarga é dobrado
 setmax=Efeitos negativos são definidos como máximos e não podem ser removidos por outros bônus
+holydamage=10% do dano sagrado causado será convertido em cura para monstros que você cura magicamente\nTambém incendeia monstros Mortos-vivos e Demoníacos por 10 segundos
 
 // Bônus
 marked=§hMarcado:§0 Cause +20% de dano (+ §hdano de foco§0) e +10% de chance de acerto crítico em monstros que você marcar\n"Inimigo mais próximo" prioriza inimigos marcados
@@ -316,7 +376,7 @@ constrained=§7Restringido:§0 -50% de Velocidade de Movimento
 
 // Modificadores de chance
 dodgechance=§7Chance de esquiva:§0 Chance de se esquivar de ataques recebidos. Não pode exceder 80%
-focuschance=§hChance de foco:§0 Chance de §hmarcar§0 um monstro por 5 segundos quando atacado com dano que não seja de invocador
+focuschance=§hChance de foco:§0 Chance de §hmarcar§0 um monstro por 5 segundos quando atacado diretamente por você
 
 // Modificadores fixos
 mobdetection=§9Detecção de monstros:§0 Exibe monstros próximos no mapa. Um alcance de detecção maior revela monstros de mais longe
@@ -370,6 +430,7 @@ gracegoldring=Anel de ouro de graça
 
 
 [itemtooltip]
+Dano sagrado: <value>
 scrollofoblivion=Concede 2 pontos de redefinição
 ringsboxtip=Pode armazenar anéis de atributo
 
@@ -393,6 +454,7 @@ notenoughstamina=Vigor insuficiente
 notarget=Não há alvos por perto
 nograbbableobject=Não há nenhum objeto que possa ser pego à sua frente
 nodamageablefollower=Não há invocações danificáveis por perto
+nodeathplayers=Nenhum jogador morto pode ser ressuscitado neste nível
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Slot de habilidade ativa 1
 activeskillslot2=Slot de habilidade ativa 2
 activeskillslot3=Slot de habilidade ativa 3
 activeskillslot4=Slot de habilidade ativa 4
+activeskillslot5=Slot de habilidade ativa 5
+activeskillslot6=Slot de habilidade ativa 6

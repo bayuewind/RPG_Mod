@@ -33,6 +33,7 @@ public class Attribute extends BasicPassive {
         registerAttribute(new Attribute(
                 "speed", "#FFD60A",
                 RPGModifiers.SPEED_ATTR_FLAT,
+                new String[]{"dodgechance"},
                 new FloatPercentModifierBuff(BuffModifiers.SPEED, 0.005F),
                 new FloatPercentModifierBuff(RPGModifiers.DODGE_CHANCE, 0.002F)
         ));
@@ -51,8 +52,10 @@ public class Attribute extends BasicPassive {
         registerAttribute(new Attribute(
                 "grace", "#2ECC71",
                 RPGModifiers.GRACE_ATTR_FLAT,
+                new String[]{"holydamage"},
                 new FloatPercentModifierBuff(AphModifiers.MAGIC_HEALING, 0.01F),
-                new FloatPercentModifierBuff(BuffModifiers.LIFE_ESSENCE_GAIN, 0.01F)
+                new FloatPercentModifierBuff(BuffModifiers.LIFE_ESSENCE_GAIN, 0.01F),
+                new FloatPercentModifierBuff(RPGModifiers.HOLY_DAMAGE, 0.01F)
         ));
     }
 
@@ -66,15 +69,21 @@ public class Attribute extends BasicPassive {
     }
 
     public Modifier<Integer> ownModifier;
+    public String[] extraTooltips;
 
-    public Attribute(String stringID, String color, Modifier<Integer> ownModifier, ModifierBuff<?>... modifierBuffs) {
+    public Attribute(String stringID, String color, Modifier<Integer> ownModifier, String[] extraTooltips, ModifierBuff<?>... modifierBuffs) {
         super(stringID, color, 0, 0, modifierBuffs);
         this.id = attributes.size();
         this.ownModifier = ownModifier;
+        this.extraTooltips = extraTooltips;
+    }
+
+    public Attribute(String stringID, String color, Modifier<Integer> ownModifier, ModifierBuff<?>... modifierBuffs) {
+        this(stringID, color, ownModifier, new String[0], modifierBuffs);
     }
 
     public void initResources() {
-        texture = GameTexture.fromFile("ui/attributes/" + stringID);
+        texture = GameTexture.fromFile("attributes/" + stringID);
     }
 
     public List<String> getToolTipsText() {

@@ -3,6 +3,7 @@ package rpgclasses.content.player;
 import necesse.engine.localization.Localization;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
+import rpgclasses.content.player.PlayerClasses.Cleric.ClericPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Necromancer.NecromancerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Ranger.RangerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.WarriorPlayerClass;
@@ -26,7 +27,7 @@ abstract public class PlayerClass {
         registerClass(new RangerPlayerClass());
         registerClass(new WizardPlayerClass());
         registerClass(new NecromancerPlayerClass());
-        registerClass(new UpcomingPlayerClass("cleric", "#FFD60A"));
+        registerClass(new ClericPlayerClass());
         registerClass(new UpcomingPlayerClass("rogue", "#8B0000"));
         registerClass(new UpcomingPlayerClass("warlock", "#B22222"));
         registerClass(new UpcomingPlayerClass("paladin", "#F1C40F"));
@@ -61,7 +62,7 @@ abstract public class PlayerClass {
     }
 
     public void initResources() {
-        texture = GameTexture.fromFile("ui/classes/" + stringID);
+        texture = GameTexture.fromFile("classes/" + stringID);
     }
 
     public ListGameTooltips getToolTips() {

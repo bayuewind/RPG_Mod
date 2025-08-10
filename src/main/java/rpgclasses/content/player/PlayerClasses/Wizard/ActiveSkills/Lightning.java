@@ -1,6 +1,5 @@
 package rpgclasses.content.player.PlayerClasses.Wizard.ActiveSkills;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
@@ -13,17 +12,17 @@ import necesse.entity.mobs.Attacker;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.entity.trails.LightningTrail;
 import necesse.entity.trails.TrailVector;
 import necesse.gfx.GameResources;
 import necesse.level.maps.regionSystem.RegionPosition;
-import rpgclasses.RPGColors;
 import rpgclasses.RPGResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.registry.RPGBuffs;
+import rpgclasses.utils.RPGColors;
+import rpgclasses.utils.RPGUtils;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -45,7 +44,7 @@ public class Lightning extends SimpleLevelEventActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 30 + activeSkillLevel * 6;
     }
 
@@ -141,8 +140,7 @@ public class Lightning extends SimpleLevelEventActiveSkill {
                     if (this.isServer()) {
                         target.isServerHit(damage, currentX, currentY, 50, owner);
 
-                        ActiveBuff ab = new ActiveBuff(AphBuffs.STUN, target, 2F, null);
-                        target.buffManager.addBuff(ab, true);
+                        RPGBuffs.applyStun(target, 2F);
 
                         SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(target).volume(2F));
                     }

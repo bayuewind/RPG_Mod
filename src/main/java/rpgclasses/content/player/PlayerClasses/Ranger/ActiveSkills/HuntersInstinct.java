@@ -7,12 +7,12 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.particle.Particle;
-import rpgclasses.RPGColors;
 import rpgclasses.buffs.Interfaces.DodgeClassBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
+import rpgclasses.utils.RPGColors;
 
 public class HuntersInstinct extends SimpleBuffActiveSkill {
 

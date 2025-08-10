@@ -163,9 +163,9 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
     }
 
     public void updateStats(int health, float damage) {
-        this.setMaxHealth(health);
-        this.setHealthHidden(health);
-        initialMaxHealth = health;
+        this.setMaxHealth(Math.max(1, health));
+        this.setHealthHidden(Math.max(1, health));
+        initialMaxHealth = Math.max(1, health);
         this.updateDamage(new GameDamage(damage));
     }
 

@@ -14,7 +14,11 @@ import rpgclasses.mobs.summons.passive.RangerWolfMob;
 
 public class RPGResources {
 
+    public static GameTexture emptyActiveSkill_texture;
+
     public static void initResources() {
+        emptyActiveSkill_texture = GameTexture.fromFile("activeskills/empty");
+
         initUIResources();
         initParticleResources();
         initMobResources();
@@ -22,7 +26,6 @@ public class RPGResources {
     }
 
     public static class UI_TEXTURES {
-        public static GameTexture emptyActiveSkill_texture;
         public static GameTexture rpgMenu_texture;
         public static GameTexture qr_texture;
         public static GameTexture[] star_textures;
@@ -39,9 +42,8 @@ public class RPGResources {
     }
 
     public static void initUIResources() {
-        UI_TEXTURES.emptyActiveSkill_texture = GameTexture.fromFile("ui/activeskills/empty");
         UI_TEXTURES.rpgMenu_texture = GameTexture.fromFile("ui/misc/rpgmenu");
-        UI_TEXTURES.qr_texture = GameTexture.fromFile("ui/qr");
+        UI_TEXTURES.qr_texture = GameTexture.fromFile("ui/misc/qr");
 
         UI_TEXTURES.star_textures = new GameTexture[4];
         UI_TEXTURES.star_textures[0] = GameTexture.fromFile("ui/misc/star");
@@ -101,11 +103,17 @@ public class RPGResources {
     public static class PARTICLE_TEXTURES {
         public static GameTexture bearTrapOpen;
         public static GameTexture bearTrapClosed;
+
+        public static GameTexture smite;
+        public static GameTexture wrathOfLight;
     }
 
     public static void initParticleResources() {
         PARTICLE_TEXTURES.bearTrapOpen = GameTexture.fromFile("particles/beartrap_open");
         PARTICLE_TEXTURES.bearTrapClosed = GameTexture.fromFile("particles/beartrap_closed");
+
+        PARTICLE_TEXTURES.smite = GameTexture.fromFile("particles/smite");
+        PARTICLE_TEXTURES.wrathOfLight = GameTexture.fromFile("particles/wrathoflight");
     }
 
     public static void initMobResources() {

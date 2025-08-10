@@ -19,7 +19,7 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
-import rpgclasses.RPGUtils;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.util.List;

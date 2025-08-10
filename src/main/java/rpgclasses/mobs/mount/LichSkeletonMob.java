@@ -43,10 +43,10 @@ import necesse.inventory.item.armorItem.ArmorItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import org.jetbrains.annotations.NotNull;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -119,7 +119,7 @@ public class LichSkeletonMob extends Mob implements MountAbility {
             targetY = target.y;
         }
 
-        return new AncientBoneProjectile(player.x, player.y, targetX, targetY, new GameDamage(DamageTypeRegistry.MAGIC, playerData.getStrength(player)), player);
+        return new AncientBoneProjectile(player.x, player.y, targetX, targetY, new GameDamage(DamageTypeRegistry.SUMMON, playerData.getStrength(player)), player);
     }
 
 

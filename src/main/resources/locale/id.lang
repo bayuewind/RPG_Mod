@@ -18,6 +18,17 @@ focusdamage=<mod>% kerusakan fokus
 focuschance=<mod>% peluang fokus
 ignitedamage=<mod>% kerusakan terbakar
 
+// Holy Damage
+holydamage=<mod>% kerusakan suci
+holycritchance=<mod>% peluang kritis suci
+holycritdamage=<mod>% kerusakan kritis suci
+holyeffect=<mod>% efek suci
+holyabilityspeed=<mod>% kecepatan kemampuan suci
+
+
+[stats]
+holy_damage=Kerusakan suci
+
 
 [enchantment]
 evasive=Menghindar
@@ -33,6 +44,7 @@ markedbuff=Ditandai
 darkcursebuff=Kutukan Kegelapan
 magicpoisonbuff=Racun Ajaib
 ignitedbuff=Terbakar
+holydamagedealtbuff=Kerusakan Suci yang Diberikan
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Listrik
 flash=Kilat
 dark=Gelap
 legend=Legenda
+
+
+[mobtrait]
+undead=Mayat Hidup
+demonic=Dahsyat
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Sisa-sisa Nekrotik
 endlesslegion=Legiun Tak Berujung
 lichborn=Lahir sebagai Lich
 
+// Cleric
+healer=Penyembuh
+shaman=Dukun
+vitalaura=Aura Vital
+divinejudge=Hakim Ilahi
+empoweredhealing=Penyembuhan yang Diberdayakan
+sanctifiedmind=Pikiran yang Disucikan
+sanctifiedarmor=Baju Besi yang Disucikan
+radiantexpansion=Ekspansi Radiant
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Menghasilkan §a+[[10 x <skilllevel>]]%§0 Kerusakan Pemanggil ke mu
 lifeleech=Memulihkan §a[[<skilllevel>]]%§0 dari Kerusakan Pemanggil yang diberikan sebagai Kesehatan
 necroticremains=Ketika panggilan nekrotik mati, ia meledak, menghasilkan §i[[0.1 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat, meracuni mereka dengan 20% dari kerusakan per detik selama 10 detik
 endlesslegion=Setiap 4 level keterampilan ini, Anda mendapatkan +1 panggilan maks
-lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi lich\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi lich (tengkorak) yang hanya bisa menembakkan tulang yang menghasilkan Kerusakan Sihir sama dengan [[Kekuatan]] dan menggunakan sisa keterampilan Anda\nSaat dalam bentuk lich, Anda menerima kerusakan ganda
+lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi lich\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi lich (tengkorak) yang hanya bisa menembakkan tulang yang menghasilkan Kerusakan Pemanggil sama dengan [[Kekuatan]] dan menggunakan sisa keterampilan Anda\nSaat dalam bentuk lich, Anda menerima kerusakan ganda
+
+// Cleric
+vitalaura=Setiap §a[[15 - <skilllevel>]] detik§0, Anda melepaskan aura penyembuhan ajaib di sekitar Anda yang memulihkan §a[[10 + <grace>]] kesehatan§0\nItu juga menyembuhkan Anda setengah dari jumlah itu
+divinejudge=Bonus Kerusakan Sihir mempengaruhi Kerusakan Suci sebesar §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Saat Anda secara ajaib menyembuhkan diri sendiri atau sekutu, tingkatkan kerusakan mereka sebesar §a[[5 x <skilllevel>]]%§0 selama 3 detik
+sanctifiedmind=Penyembuhan ajaib juga memulihkan mana yang setara dengan §a[[5 x <skilllevel>]]%§0 dari penyembuhan yang dilakukan
+sanctifiedarmor=Penyembuhan ajaib juga memulihkan ketahanan yang setara dengan §a[[2 x <skilllevel>]]%§0 dari penyembuhan yang dilakukan
+radiantexpansion=Saat Anda secara ajaib menyembuhkan diri sendiri atau sekutu, berikan §a[[5 x <skilllevel>]]%§0 dari penyembuhan sebagai Kerusakan Suci ke musuh terdekat dari target yang disembuhkan
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Ejekan Pelindung
 unholyground=Tanah Najis
 necroticbarrage=Rentetan Nekrotik
 
+// Cleric
+smite=Hantam
+divineblessing=Berkah Ilahi
+purify=Memurnikan
+lightinfusion=Infus Cahaya
+holyguard=Penjaga Suci
+judgment=Penghakiman
+sanctuary=Suaka
+divineintervention=Intervensi Ilahi
+resurrection=Kebangkitan
+wrathoflight=Murka Cahaya
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Panggilan yang dapat dirusak terdekat memaksa musuh terdekat dalam 
 unholyground=Memperluas aura korupsi di sekitar Anda selama 10 detik\nMusuh di dalam area ini menerima §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Kerusakan Racun§0 per detik dan §7Dibatasi
 necroticbarrage=Semua panggilan yang dapat dirusak meledak saat mati, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat\ndan meracuni mereka selama 10 detik dengan 20% dari kerusakan asli per detik
 
+// Cleric
+smite=Panggil seberkas cahaya suci ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0\nMenghasilkan kerusakan ganda pada monster Mayat Hidup dan Dahsyat\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Aura penyembuhan ajaib yang memulihkan §a[[20 + 3 x <grace> x <skilllevel>]] kesehatan§0 untuk Anda dan sekutu Anda\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Bersihkan diri Anda dan sekutu terdekat dari semua efek negatif\nMengkonsumsi 10 Mana
+lightinfusion=Selama 8 detik berikutnya, Anda mendapatkan §a+[[20 x <skilllevel>]]%§0 Penyembuhan Ajaib dan Kerusakan Suci
+holyguard=Terapkan Perisai Suci pada Anda dan semua sekutu terdekat hingga 30 detik\nMereka mendapatkan §a+[[10 x <skilllevel>]]%§0 Penyembuhan Ajaib yang Diterima dan perisai memblokir satu serangan sebelum pecah\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Lepaskan gelombang energi pancaran, menghasilkan §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kerusakan Suci§0 ke semua musuh terdekat\nMonster Mayat Hidup dan Dahsyat Dibatasi selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Buat zona suci selama 8 detik\nAnda dan sekutu di dalamnya kebal terhadap efek negatif dan mendapatkan regenerasi kesehatan §a[[0.2 x <grace> x <skilllevel>]]§0 per detik\nMonster Mayat Hidup dan Dahsyat di dalamnya Dibatasi\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Sembuhkan seketika sekutu dekat yang paling rusak ke kesehatan maksimum mereka dan berikan kekebalan terhadap semua kerusakan selama §a[[<skilllevel>]]§0 detik\nMengkonsumsi §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Hidupkan kembali sekutu pemain mati terakhir di pulau yang sama dengan §a[[10 x <skilllevel>]]%§0 dari kesehatan maksimum mereka di posisi Anda\nAnda tidak dapat menghidupkan kembali pemain yang bisa respawn lebih dari 10 detik yang lalu\nMengkonsumsi §a[[100 - 10 x <skilllevel>]]%§0 dari Mana Anda (setidaknya §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Panggil pilar cahaya ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0 per detik selama 5 detik di area tersebut\nMonster Mayat Hidup dan Dahsyat di dalamnya dibatasi\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Level Keterampilan
@@ -309,6 +368,7 @@ grace=Keanggunan
 // Mekanika Dasar
 manausage=Jika Anda tidak memiliki cukup mana, cooldown-nya digandakan
 setmax=Efek negatif diatur sebagai maks dan tidak dapat dihilangkan oleh buff lain
+holydamage=10% dari Kerusakan Suci yang diberikan akan diubah menjadi penyembuhan untuk monster yang Anda sembuhkan secara ajaib\nJuga membakar monster Mayat Hidup dan Dahsyat selama 10 detik
 
 // Buff
 marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\n"Musuh terdekat" memprioritaskan musuh yang ditandai
@@ -316,7 +376,7 @@ constrained=§7Dibatasi:§0 -50% Kecepatan Gerakan
 
 // Pengubah Peluang
 dodgechance=§7Peluang Menghindar:§0 Peluang untuk menghindari serangan yang masuk. Tidak dapat melebihi 80%
-focuschance=§hPeluang Fokus:§0 Peluang untuk §hMenandai§0 monster selama 5 detik saat diserang dengan kerusakan non-Pemanggil
+focuschance=§hPeluang Fokus:§0 Peluang untuk §hMenandai§0 monster selama 5 detik saat Anda menyerangnya secara langsung
 
 // Pengubah Datar
 mobdetection=§9Deteksi Monster:§0 Menampilkan monster terdekat di peta. Jangkauan deteksi yang lebih tinggi mengungkapkan monster dari jarak yang lebih jauh
@@ -370,6 +430,7 @@ gracegoldring=Cincin Emas Keanggunan
 
 
 [itemtooltip]
+Kerusakan suci: <value>
 scrollofoblivion=Memberikan 2 Poin Reset
 ringsboxtip=Dapat menyimpan Cincin Atribut
 
@@ -393,6 +454,7 @@ notenoughstamina=Stamina Tidak Cukup
 notarget=Tidak ada target di dekatnya
 nograbbableobject=Tidak ada objek yang dapat diambil di depan Anda
 nodamageablefollower=Tidak ada panggilan yang dapat dirusak di dekatnya
+nodeathplayers=Tidak ada pemain mati yang dapat dibangkitkan di level ini
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Slot Keterampilan Aktif 1
 activeskillslot2=Slot Keterampilan Aktif 2
 activeskillslot3=Slot Keterampilan Aktif 3
 activeskillslot4=Slot Keterampilan Aktif 4
+activeskillslot5=Slot Keterampilan Aktif 5
+activeskillslot6=Slot Keterampilan Aktif 6

@@ -12,12 +12,12 @@ import necesse.entity.projectile.Projectile;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
-import rpgclasses.RPGColors;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.ObjectProjectile;
 import rpgclasses.registry.RPGBuffs;
+import rpgclasses.utils.RPGColors;
 
 import java.awt.*;
 import java.awt.geom.Point2D;

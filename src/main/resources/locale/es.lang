@@ -19,6 +19,17 @@ focusdamage=<mod>% de daño de enfoque
 focuschance=<mod>% de probabilidad de enfoque
 ignitedamage=<mod>% de daño de quemadura
 
+// Holy Damage
+holydamage=<mod>% de daño sagrado
+holycritchance=<mod>% de probabilidad de crítico sagrado
+holycritdamage=<mod>% de daño crítico sagrado
+holyeffect=<mod>% de efecto sagrado
+holyabilityspeed=<mod>% de velocidad de habilidad sagrada
+
+
+[stats]
+holy_damage=Daño sagrado
+
 
 [enchantment]
 evasive=Evasivo
@@ -34,6 +45,7 @@ markedbuff=Marcado
 darkcursebuff=Maldición Oscura
 magicpoisonbuff=Veneno Mágico
 ignitedbuff=Quemado
+holydamagedealtbuff=Daño Sagrado Infligido
 
 
 [buffdesc]
@@ -67,6 +79,11 @@ electric=Eléctrico
 flash=Destello
 dark=Oscuro
 legend=Leyenda
+
+
+[mobtrait]
+undead=No-muerto
+demonic=Demoníaco
 
 
 [attributes]
@@ -140,6 +157,16 @@ necroticremains=Restos Necróticos
 endlesslegion=Legión Interminable
 lichborn=Nacido como Liche
 
+// Cleric
+healer=Sanador
+shaman=Chamán
+vitalaura=Aura vital
+divinejudge=Juez divino
+empoweredhealing=Curación potenciada
+sanctifiedmind=Mente santificada
+sanctifiedarmor=Armadura santificada
+radiantexpansion=Expansión radiante
+
 
 [passivesdesc]
 // Warrior
@@ -168,7 +195,15 @@ darksummons=Inflige un §a+[[10 x <skilllevel>]]%§0 de Daño de Invocador a los
 lifeleech=Recupera un §a[[<skilllevel>]]%§0 del Daño de Invocador infligido como Salud
 necroticremains=Cuando una invocación necrótica muere, explota, infligiendo §i[[0.1 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos, envenenándolos con un 20% del daño por segundo durante 10 segundos
 endlesslegion=Cada 4 niveles de esta habilidad, ganas +1 invocación máxima
-lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un liche\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un liche (un esqueleto) que solo puede disparar huesos que infligen Daño Mágico igual a [[Fuerza]] y usar el resto de tus habilidades\nMientras estás en forma de liche, recibes el doble de daño
+lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un liche\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un liche (un esqueleto) que solo puede disparar huesos que infligen Daño de Invocador igual a [[Fuerza]] y usar el resto de tus habilidades\nMientras estás en forma de liche, recibes el doble de daño
+
+// Cleric
+vitalaura=Cada §a[[15 - <skilllevel>]] segundos§0, liberas un aura de curación mágica a tu alrededor que restaura §a[[10 + <grace>]] de salud§0\nTambién te cura la mitad de esa cantidad
+divinejudge=Las bonificaciones de Daño Mágico afectan al Daño Sagrado en un §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Cuando te curas mágicamente a ti mismo o a un aliado, aumenta su daño en un §a[[5 x <skilllevel>]]%§0 durante 3 segundos
+sanctifiedmind=La curación mágica también restaura maná equivalente al §a[[5 x <skilllevel>]]%§0 de la curación realizada
+sanctifiedarmor=La curación mágica también restaura la resistencia equivalente al §a[[2 x <skilllevel>]]%§0 de la curación realizada
+radiantexpansion=Cuando te curas mágicamente a ti mismo o a un aliado, infliges un §a[[5 x <skilllevel>]]%§0 de la curación como Daño Sagrado a los enemigos cercanos del objetivo curado
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Provocación Protectora
 unholyground=Suelo Profano
 necroticbarrage=Andanada Necrótica
 
+// Cleric
+smite=Golpe divino
+divineblessing=Bendición divina
+purify=Purificar
+lightinfusion=Infusión de luz
+holyguard=Guardia sagrada
+judgment=Juicio
+sanctuary=Santuario
+divineintervention=Intervención divina
+resurrection=Resurrección
+wrathoflight=Ira de la luz
+
 
 [activeskillsdesc]
 // Warrior
@@ -294,6 +341,18 @@ wardingtaunt=La invocación dañable más cercana obliga a los enemigos cercanos
 unholyground=Extiende un aura de corrupción a tu alrededor durante 10 segundos\nLos enemigos dentro de esta área reciben §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Daño de Veneno§0 por segundo y están §7Restringidos
 necroticbarrage=Todas las invocaciones dañables explotan al morir, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos\ny envenenándolos durante 10 segundos con un 20% del daño original por segundo
 
+// Cleric
+smite=Invoca un rayo de luz sagrada sobre el enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Daño Sagrado§0\nInflige el doble de daño a los monstruos no-muertos y demoníacos\nConsume §a[[10 + 2 x <skilllevel>]] de Maná§0
+divineblessing=Aura de curación mágica que restaura §a[[20 + 3 x <grace> x <skilllevel>]] de salud§0 a ti y a tus aliados\nConsume §a[[20 + 4 x <skilllevel>]] de Maná§0
+purify=Purifícate a ti mismo y a los aliados cercanos de todos los efectos negativos\nConsume 10 de Maná
+lightinfusion=Durante los próximos 8 segundos, obtienes un §a+[[20 x <skilllevel>]]%§0 de Curación Mágica y Daño Sagrado
+holyguard=Aplica a ti y a todos los aliados cercanos un Escudo Sagrado durante un máximo de 30 segundos\nObtienen un §a+[[10 x <skilllevel>]]%§0 de Curación Mágica Recibida y el escudo bloquea un golpe antes de romperse\nConsume §a[[40 + 8 x <skilllevel>]] de Maná§0
+judgment=Libera una ola de energía radiante, infligiendo §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de Daño Sagrado§0 a todos los enemigos cercanos\nLos monstruos no-muertos y demoníacos quedan Restringidos durante 5 segundos\nConsume §a[[20 + 4 x <skilllevel>]] de Maná§0
+sanctuary=Crea una zona sagrada durante 8 segundos\nTú y los aliados dentro sois inmunes a los efectos negativos y ganáis §a[[0.2 x <grace> x <skilllevel>]]§0 de regeneración de salud por segundo\nLos monstruos no-muertos y demoníacos dentro están Restringidos\nConsume §a[[30 + 6 x <skilllevel>]] de Maná§0
+divineintervention=Cura instantáneamente al aliado cercano más dañado hasta su salud máxima y otorga inmunidad a todo el daño durante §a[[<skilllevel>]]§0 segundos\nConsume §a[[60 + 12 x <skilllevel>]] de Maná§0
+resurrection=Resucita al último aliado jugador muerto en tu misma isla con un §a[[10 x <skilllevel>]]%§0 de su salud máxima en tu posición\nNo puedes resucitar a jugadores que podrían haber reaparecido hace más de 10 segundos\nConsume un §a[[100 - 10 x <skilllevel>]]%§0 de tu Maná (al menos §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Invoca una columna de luz sobre el enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Daño Sagrado§0 por segundo durante 5 segundos en el área\nLos monstruos no-muertos y demoníacos dentro están restringidos\nConsume §a[[40 + 8 x <skilllevel>]] de Maná§0
+
 
 [skillsdesckeys]
 skilllevel=Nivel de Habilidad
@@ -309,6 +368,7 @@ grace=Gracia
 // Basic Mechanics
 manausage=Si no tienes suficiente maná, su enfriamiento se duplica
 setmax=Los efectos negativos se establecen como máximos y no se pueden eliminar con otras mejoras
+holydamage=El 10% del daño sagrado infligido se convertirá en curación para los monstruos que cures mágicamente\nTambién prende fuego a los monstruos no-muertos y demoníacos durante 10 segundos
 
 // Buffs
 marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\n"El enemigo más cercano" prioriza a los enemigos marcados
@@ -316,7 +376,7 @@ constrained=§7Restringido:§0 -50% de Velocidad de Movimiento
 
 // Chance Modifiers
 dodgechance=§7Probabilidad de Esquivar:§0 Probabilidad de esquivar los ataques entrantes. No puede exceder el 80%
-focuschance=§hProbabilidad de Enfoque:§0 Probabilidad de §hMarcar§0 durante 5 segundos a un monstruo cuando es atacado con daño que no sea de Invocador
+focuschance=§hProbabilidad de Enfoque:§0 Probabilidad de §hMarcar§0 durante 5 segundos a un monstruo cuando lo atacas directamente
 
 // Flat Modifiers
 mobdetection=§9Detección de Monstruos:§0 Muestra los monstruos cercanos en el mapa. Un rango de detección más alto revela monstruos desde más lejos
@@ -370,6 +430,7 @@ gracegoldring=Anillo de Oro de Gracia
 
 
 [itemtooltip]
+Daño sagrado: <value>
 scrollofoblivion=Otorga 2 Puntos de Restablecimiento
 ringsboxtip=Puede almacenar Anillos de Atributos
 
@@ -393,6 +454,7 @@ notenoughstamina=No hay Suficiente Resistencia
 notarget=No hay objetivos cerca
 nograbbableobject=No hay ningún objeto agarrable frente a ti
 nodamageablefollower=No hay invocaciones dañables cerca
+nodeathplayers=No se pueden resucitar jugadores muertos en este nivel
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Ranura de Habilidad Activa 1
 activeskillslot2=Ranura de Habilidad Activa 2
 activeskillslot3=Ranura de Habilidad Activa 3
 activeskillslot4=Ranura de Habilidad Activa 4
+activeskillslot5=Ranura de Habilidad Activa 5
+activeskillslot6=Ranura de Habilidad Activa 6

@@ -6,10 +6,10 @@ import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 
@@ -36,7 +36,7 @@ public class Inferno extends ActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 40 + activeSkillLevel * 8;
     }
 

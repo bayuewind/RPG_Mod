@@ -18,6 +18,17 @@ focusdamage=<mod>% keskittymisvaurio
 focuschance=<mod>% keskittymismahdollisuus
 ignitedamage=<mod>% sytytysvahinko
 
+// Holy Damage
+holydamage=<mod>% pyhää vahinkoa
+holycritchance=<mod>% pyhän kriittisen osuman mahdollisuus
+holycritdamage=<mod>% pyhää kriittistä vahinkoa
+holyeffect=<mod>% pyhää vaikutusta
+holyabilityspeed=<mod>% pyhän kyvyn nopeutta
+
+
+[stats]
+holy_damage=Pyhä vahinko
+
 
 [enchantment]
 evasive=Väistelevä
@@ -33,6 +44,7 @@ markedbuff=Merkitty
 darkcursebuff=Pimeä kirous
 magicpoisonbuff=Taikamyrkky
 ignitedbuff=Sytytetty
+holydamagedealtbuff=Tehty pyhä vahinko
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Sähköinen
 flash=Välähdys
 dark=Pimeä
 legend=Legenda
+
+
+[mobtrait]
+undead=Epäkuollut
+demonic=Demoninen
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekroottiset jäännökset
 endlesslegion=Loputon legioona
 lichborn=Lich-syntyinen
 
+// Cleric
+healer=Parantaja
+shaman=Shamaani
+vitalaura=Elintärkeä aura
+divinejudge=Jumalallinen tuomari
+empoweredhealing=Voimaantunut parannus
+sanctifiedmind=Pyhitetty mieli
+sanctifiedarmor=Pyhitetty panssari
+radiantexpansion=Säteilevä laajennus
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Tee §a+[[10 x <skilllevel>]]%§0 kutsujan vahinkoa myrkytetyille vi
 lifeleech=Palauttaa §a[[<skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
 necroticremains=Kun nekroottinen kutsu kuolee, se räjähtää ja tekee §i[[0.1 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille ja myrkyttää heidät 20% vahingosta sekunnissa 10 sekunnin ajan
 endlesslegion=Joka 4. tämän taidon taso saat +1 maksimikutsua
-lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo lich\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee lich (luuranko), joka voi ampua vain luita, jotka tekevät taikavahinkoa, joka on yhtä suuri kuin [[Voimakkuus]], ja käyttää loput taidoistasi\nLich-muodossa saat kaksinkertaista vahinkoa
+lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo lich\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee lich (luuranko), joka voi ampua vain luita, jotka tekevät kutsujan vahinkoa, joka on yhtä suuri kuin [[Voimakkuus]], ja käyttää loput taidoistasi\nLich-muodossa saat kaksinkertaista vahinkoa
+
+// Cleric
+vitalaura=Joka §a[[15 - <skilllevel>]] sekunti§0 vapautat ympärillesi maagisen parantavan auran, joka palauttaa §a[[10 + <grace>]] terveyttä§0\nSe parantaa myös sinut puolella siitä määrästä
+divinejudge=Taikavahingon bonukset vaikuttavat pyhään vahinkoon §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Kun parannat maagisesti itsesi tai liittolaisen, lisää heidän vahinkoaan §a[[5 x <skilllevel>]]%§0 3 sekunniksi
+sanctifiedmind=Maaginen parannus palauttaa myös manaa, joka vastaa §a[[5 x <skilllevel>]]%§0 tehdystä parannuksesta
+sanctifiedarmor=Maaginen parannus palauttaa myös sietokykyä, joka vastaa §a[[2 x <skilllevel>]]%§0 tehdystä parannuksesta
+radiantexpansion=Kun parannat maagisesti itsesi tai liittolaisen, tee §a[[5 x <skilllevel>]]%§0 parannuksesta pyhänä vahinkona parannetun kohteen lähellä oleville vihollisille
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Suojeleva pilkka
 unholyground=Epäpyhä maa
 necroticbarrage=Nekroottinen sulkutuli
 
+// Cleric
+smite=Iskeä
+divineblessing=Jumalallinen siunaus
+purify=Puhdistaa
+lightinfusion=Valon infuusio
+holyguard=Pyhä vartija
+judgment=Tuomio
+sanctuary=Pyhäkkö
+divineintervention=Jumalallinen väliintulo
+resurrection=Ylösnousemus
+wrathoflight=Valon viha
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Lähin vahingoitettavissa oleva kutsu pakottaa lähellä olevat vih
 unholyground=Laajentaa ympärillesi korruption auraa 10 sekunniksi\nTämän alueen sisällä olevat viholliset saavat §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] myrkkyvahinkoa§0 sekunnissa ja ovat §7Rajoitettuja
 necroticbarrage=Kaikki vahingoitettavissa olevat kutsut räjähtävät kuollessaan ja tekevät §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille\nja myrkyttävät heidät 10 sekunniksi 20% alkuperäisestä vahingosta sekunnissa
 
+// Cleric
+smite=Kutsu alas pyhän valon säde lähimpään viholliseen, tehden §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] pyhää vahinkoa§0\nTekee kaksinkertaista vahinkoa epäkuolleille ja demonisille mobeille\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa§0
+divineblessing=Maaginen parantava aura, joka palauttaa §a[[20 + 3 x <grace> x <skilllevel>]] terveyttä§0 sinulle ja liittolaisillesi\nKuluttaa §a[[20 + 4 x <skilllevel>]] manaa§0
+purify=Puhdista itsesi ja lähellä olevat liittolaiset kaikista negatiivisista vaikutuksista\nKuluttaa 10 manaa
+lightinfusion=Seuraavien 8 sekunnin ajan saat §a+[[20 x <skilllevel>]]%§0 maagista parannusta ja pyhää vahinkoa
+holyguard=Levitä sinulle ja kaikille lähellä oleville liittolaisille Pyhä kilpi enintään 30 sekunniksi\nHe saavat §a+[[10 x <skilllevel>]]%§0 vastaanotettua maagista parannusta ja kilpi estää yhden osuman ennen rikkoutumista\nKuluttaa §a[[40 + 8 x <skilllevel>]] manaa§0
+judgment=Vapauta säteilevän energian aalto, joka tekee §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] pyhää vahinkoa§0 kaikille lähellä oleville vihollisille\nEpäkuolleet ja demoniset mobit ovat rajoitettuja 5 sekunnin ajan\nKuluttaa §a[[20 + 4 x <skilllevel>]] manaa§0
+sanctuary=Luo pyhä alue 8 sekunniksi\nSinä ja liittolaiset sisällä olette immuuneja negatiivisille vaikutuksille ja saatte §a[[0.2 x <grace> x <skilllevel>]]§0 terveyden palautumista sekunnissa\nEpäkuolleet ja demoniset mobit sisällä ovat rajoitettuja\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa§0
+divineintervention=Paranna välittömästi eniten vahingoittunut läheinen liittolainen heidän maksimiterveyteensä ja anna immuniteetti kaikelle vahingolle §a[[<skilllevel>]]§0 sekunniksi\nKuluttaa §a[[60 + 12 x <skilllevel>]] manaa§0
+resurrection=Herätä viimeisin kuollut pelaajaliittolainen samalla saarella §a[[10 x <skilllevel>]]%§0 heidän maksimiterveydestään asemassasi\nEt voi herättää pelaajia, jotka olisivat voineet syntyä uudelleen yli 10 sekuntia sitten\nKuluttaa §a[[100 - 10 x <skilllevel>]]%§0 manastasi (vähintään §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Kutsu valopylväs lähimpään viholliseen, tehden §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] pyhää vahinkoa§0 sekunnissa 5 sekunnin ajan alueella\nEpäkuolleet ja demoniset mobit sisällä ovat rajoitettuja\nKuluttaa §a[[40 + 8 x <skilllevel>]] manaa§0
+
 
 [skillsdesckeys]
 skilllevel=Taitotaso
@@ -309,6 +368,7 @@ grace=Sulo
 // Perusmekaniikat
 manausage=Jos sinulla ei ole tarpeeksi manaa, sen jäähtymisaika kaksinkertaistuu
 setmax=Negatiiviset vaikutukset asetetaan maksimiin, eikä niitä voi poistaa muilla buffeilla
+holydamage=10% tehdystä pyhästä vahingosta muunnetaan parannukseksi mobeille, jotka parannat maagisesti\nSytyttää myös epäkuolleet ja demoniset mobit tuleen 10 sekunniksi
 
 // Buffit
 marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\n"Lähin vihollinen" priorisoi merkittyjä vihollisia
@@ -316,7 +376,7 @@ constrained=§7Rajoitettu:§0 -50% liikkumisnopeutta
 
 // Mahdollisuusmuuntimet
 dodgechance=§7Väistömahdollisuus:§0 Mahdollisuus väistää saapuvia hyökkäyksiä. Ei voi ylittää 80%
-focuschance=§hKeskittymismahdollisuus:§0 Mahdollisuus §hmerkitä§0 mobi 5 sekunniksi, kun sitä vastaan hyökätään muulla kuin kutsujan vahingolla
+focuschance=§hKeskittymismahdollisuus:§0 Mahdollisuus §hmerkitä§0 mobi 5 sekunniksi, kun hyökkäät sitä suoraan
 
 // Tasaiset muuntimet
 mobdetection=§9Mobien havaitseminen:§0 Näyttää lähellä olevat mobit kartalla. Suurempi havaitsemisalue paljastaa mobit kauempaa
@@ -370,6 +430,7 @@ gracegoldring=Sulokultasormus
 
 
 [itemtooltip]
+Pyhä vahinko: <value>
 scrollofoblivion=Antaa 2 nollauspistettä
 ringsboxtip=Voi säilyttää ominaisuussormuksia
 
@@ -393,6 +454,7 @@ notenoughstamina=Ei tarpeeksi kestävyyttä
 notarget=Lähellä ei ole kohteita
 nograbbableobject=Edessäsi ei ole tartuttavaa esinettä
 nodamageablefollower=Lähellä ei ole vahingoitettavissa olevia kutsuja
+nodeathplayers=Tällä tasolla ei voi herättää kuolleita pelaajia
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktiivisen taidon paikka 1
 activeskillslot2=Aktiivisen taidon paikka 2
 activeskillslot3=Aktiivisen taidon paikka 3
 activeskillslot4=Aktiivisen taidon paikka 4
+activeskillslot5=Aktiivisen taidon paikka 5
+activeskillslot6=Aktiivisen taidon paikka 6

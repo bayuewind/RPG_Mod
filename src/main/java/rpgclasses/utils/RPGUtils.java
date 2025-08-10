@@ -1,7 +1,10 @@
-package rpgclasses;
+package rpgclasses.utils;
 
 import necesse.engine.network.NetworkClient;
+import necesse.engine.network.server.Server;
+import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
+import necesse.engine.util.LevelIdentifier;
 import necesse.engine.util.gameAreaSearch.GameAreaStream;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
@@ -15,10 +18,11 @@ import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
 
 import java.awt.geom.Line2D;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class RPGUtils {
 
-    // CUSTOM RUNABLES
+    // CUSTOM RUNNABLE INTERFACES
 
     @FunctionalInterface
     public interface TriRunnable<T, U, V> {
@@ -52,6 +56,46 @@ public class RPGUtils {
     public static GameAreaStream<PlayerMob> streamPlayers(Level level, float x, float y, int range) {
         return level.entityManager.players.streamArea(x, y, range)
                 .filter(isInRangeFilter(x, y, range));
+    }
+
+    // STREAM DEATH PLAYERS
+    public static Stream<ServerClient> streamDeathPlayers(Server server, LevelIdentifier levelIdentifier, Predicate<ServerClient> filter) {
+        return server == null ? Stream.empty() : server.streamClients().filter(
+                (c) -> c.playerMob != null && c.hasSpawned() && c.isDead() && c.isSamePlace(levelIdentifier)
+        ).filter(filter);
+    }
+
+    public static Stream<ServerClient> streamDeathPlayers(Server server, Level level, Predicate<ServerClient> filter) {
+        return streamDeathPlayers(server, level.getIdentifier(), filter);
+    }
+
+    public static Stream<ServerClient> streamDeathPlayers(Level level, Predicate<ServerClient> filter) {
+        return streamDeathPlayers(level.getServer(), level, filter);
+    }
+
+    // GET LAST DEATH PLAYER
+    public static ServerClient lastDeathPlayer(Server server, LevelIdentifier levelIdentifier, Predicate<ServerClient> filter) {
+        if (server == null) return null;
+
+        ServerClient[] bestHolder = new ServerClient[1];
+        float[] bestTime = {0};
+        streamDeathPlayers(server, levelIdentifier, filter)
+                .forEach(serverClient -> {
+                    if (serverClient.respawnTime > bestTime[0]) {
+                        bestTime[0] = serverClient.respawnTime;
+                        bestHolder[0] = serverClient;
+                    }
+                });
+
+        return bestHolder[0];
+    }
+
+    public static ServerClient lastDeathPlayer(Server server, Level level, Predicate<ServerClient> filter) {
+        return lastDeathPlayer(server, level.getIdentifier(), filter);
+    }
+
+    public static ServerClient lastDeathPlayer(Level level, Predicate<ServerClient> filter) {
+        return lastDeathPlayer(level.getServer(), level, filter);
     }
 
     // STREAM MOBS AND PLAYERS

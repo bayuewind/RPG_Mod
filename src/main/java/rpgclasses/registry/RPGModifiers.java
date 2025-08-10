@@ -19,6 +19,10 @@ public class RPGModifiers {
     public static final Modifier<Float> FOCUS_CHANCE;
     public static final Modifier<Float> IGNITE_DAMAGE;
 
+    public static final Modifier<Float> HOLY_DAMAGE;
+    public static final Modifier<Float> HOLY_CRIT_CHANCE;
+    public static final Modifier<Float> HOLY_CRIT_DAMAGE;
+
     static {
         ENDURANCE_ATTR_FLAT = new Modifier<>(BuffModifiers.LIST, "enduranceattrflat", 0, 0, Modifier.INT_ADD_APPEND, Modifier.NORMAL_FLAT_INT_PARSER("enduranceattrflat"), ModifierLimiter.NORMAL_FLAT_INT_LIMITER("enduranceattrflat"));
         SPEED_ATTR_FLAT = new Modifier<>(BuffModifiers.LIST, "speedattrflat", 0, 0, Modifier.INT_ADD_APPEND, Modifier.NORMAL_FLAT_INT_PARSER("speedattrflat"), ModifierLimiter.NORMAL_FLAT_INT_LIMITER("speedattrflat"));
@@ -33,6 +37,10 @@ public class RPGModifiers {
         FOCUS_DAMAGE = new Modifier<>(BuffModifiers.LIST, "focusdamage", 0.2F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("focusdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("focusdamage"));
         FOCUS_CHANCE = new Modifier<>(BuffModifiers.LIST, "focuschance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("focuschance"), ModifierLimiter.NORMAL_PERC_LIMITER("focuschance"));
         IGNITE_DAMAGE = new Modifier<>(BuffModifiers.LIST, "ignitedamage", 0.2F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("ignitedamage"), ModifierLimiter.NORMAL_PERC_LIMITER("ignitedamage"));
+
+        HOLY_DAMAGE = new Modifier<>(BuffModifiers.LIST, "holydamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holydamage"), ModifierLimiter.NORMAL_PERC_LIMITER("holydamage"));
+        HOLY_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "holycritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holycritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("holycritchance"));
+        HOLY_CRIT_DAMAGE = new Modifier<>(BuffModifiers.LIST, "holycritdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holycritdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("holycritdamage"));
     }
 
 }

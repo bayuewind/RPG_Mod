@@ -18,6 +18,17 @@ focusdamage=<mod>% poškození zaměření
 focuschance=<mod>% šance na zaměření
 ignitedamage=<mod>% poškození zapálením
 
+// Holy Damage
+holydamage=<mod>% svatého poškození
+holycritchance=<mod>% šance na svatý kritický zásah
+holycritdamage=<mod>% svatého kritického poškození
+holyeffect=<mod>% svatého účinku
+holyabilityspeed=<mod>% rychlosti svatých schopností
+
+
+[stats]
+holy_damage=Svaté poškození
+
 
 [enchantment]
 evasive=Vyhýbavý
@@ -33,6 +44,7 @@ markedbuff=Označený
 darkcursebuff=Temná kletba
 magicpoisonbuff=Magický jed
 ignitedbuff=Zapálený
+holydamagedealtbuff=Způsobené svaté poškození
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrický
 flash=Záblesk
 dark=Temný
 legend=Legenda
+
+
+[mobtrait]
+undead=Nemrtvý
+demonic=Démonický
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotické ostatky
 endlesslegion=Nekonečná legie
 lichborn=Zrozený jako lich
 
+// Cleric
+healer=Léčitel
+shaman=Šaman
+vitalaura=Vitální aura
+divinejudge=Božský soudce
+empoweredhealing=Posílené léčení
+sanctifiedmind=Posvěcená mysl
+sanctifiedarmor=Posvěcená zbroj
+radiantexpansion=Zářivá expanze
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Způsobte §a+[[10 x <skilllevel>]]%§0 poškození vyvolávače otr
 lifeleech=Obnoví §a[[<skilllevel>]]%§0 způsobeného poškození vyvolávače jako zdraví
 necroticremains=Když zemře nekrotické vyvolání, exploduje a způsobí §i[[0.1 x <intelligence> x <skilllevel>]] magického poškození§0 blízkým nepřátelům, otráví je 20% poškození za sekundu po dobu 10 sekund
 endlesslegion=Každé 4 úrovně této dovednosti získáte +1 maximální vyvolání
-lichborn=Když zemřete, přežijete a obnovíte §a[[10 x <skilllevel>]]%§0 zdraví, pokud již nejste lich\nNa dalších §a[[120 - 6 x <skilllevel>]] sekund§0 se stanete lichem (kostlivcem), který může střílet pouze kosti způsobující magické poškození rovné [[Síla]] a používat zbytek svých dovedností\nV podobě licha dostáváte dvojnásobné poškození
+lichborn=Když zemřete, přežijete a obnovíte §a[[10 x <skilllevel>]]%§0 zdraví, pokud již nejste lich\nNa dalších §a[[120 - 6 x <skilllevel>]] sekund§0 se stanete lichem (kostlivcem), který může střílet pouze kosti způsobující poškození vyvolávače rovné [[Síla]] a používat zbytek svých dovedností\nV podobě licha dostáváte dvojnásobné poškození
+
+// Cleric
+vitalaura=Každých §a[[15 - <skilllevel>]] sekund§0 uvolníte kolem sebe magickou léčivou auru, která obnoví §a[[10 + <grace>]] zdraví§0\nTaké vás vyléčí za polovinu této částky
+divinejudge=Bonusy k magickému poškození ovlivňují svaté poškození o §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Když magicky vyléčíte sebe nebo spojence, zvyšte jejich poškození o §a[[5 x <skilllevel>]]%§0 na 3 sekundy
+sanctifiedmind=Magické léčení také obnovuje manu rovnající se §a[[5 x <skilllevel>]]%§0 provedeného léčení
+sanctifiedarmor=Magické léčení také obnovuje odolnost rovnající se §a[[2 x <skilllevel>]]%§0 provedeného léčení
+radiantexpansion=Když magicky vyléčíte sebe nebo spojence, způsobte §a[[5 x <skilllevel>]]%§0 léčení jako svaté poškození blízkým nepřátelům vyléčeného cíle
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Ochranné posměšky
 unholyground=Znesvěcená půda
 necroticbarrage=Nekrotická baráž
 
+// Cleric
+smite=Udeřit
+divineblessing=Božské požehnání
+purify=Očistit
+lightinfusion=Světelná infuze
+holyguard=Svatá stráž
+judgment=Soud
+sanctuary=Svatyně
+divineintervention=Božský zásah
+resurrection=Vzkříšení
+wrathoflight=Hněv světla
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=Nejbližší poškoditelné vyvolání donutí blízké nepřátele
 unholyground=Rozšíří kolem vás auru korupce na 10 sekund\nNepřátelé v této oblasti utrpí §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] poškození jedem§0 za sekundu a jsou §7Omezeni
 necroticbarrage=Všechna poškoditelná vyvolání při smrti explodují a způsobí §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magického poškození§0 blízkým nepřátelům\na otráví je na 10 sekund 20% původního poškození za sekundu
 
+// Cleric
+smite=Svolejte paprsek svatého světla na nejbližšího nepřítele a způsobte §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svatého poškození§0\nZpůsobuje dvojnásobné poškození nemrtvým a démonickým mobům\nSpotřebuje §a[[10 + 2 x <skilllevel>]] many§0
+divineblessing=Magická léčivá aura, která obnoví §a[[20 + 3 x <grace> x <skilllevel>]] zdraví§0 vám a vašim spojencům\nSpotřebuje §a[[20 + 4 x <skilllevel>]] many§0
+purify=Očistěte sebe a blízké spojence od všech negativních účinků\nSpotřebuje 10 many
+lightinfusion=Na dalších 8 sekund získáte §a+[[20 x <skilllevel>]]%§0 magického léčení a svatého poškození
+holyguard=Aplikujte na sebe a všechny blízké spojence Svatý štít na dobu až 30 sekund\nZískají §a+[[10 x <skilllevel>]]%§0 přijatého magického léčení a štít zablokuje jeden zásah před rozbitím\nSpotřebuje §a[[40 + 8 x <skilllevel>]] many§0
+judgment=Uvolněte vlnu zářivé energie a způsobte §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svatého poškození§0 všem blízkým nepřátelům\nNemrtví a démoničtí mobové jsou na 5 sekund omezeni\nSpotřebuje §a[[20 + 4 x <skilllevel>]] many§0
+sanctuary=Vytvořte svatou zónu na 8 sekund\nVy a spojenci uvnitř jste imunní vůči negativním účinkům a získáte §a[[0.2 x <grace> x <skilllevel>]]§0 regenerace zdraví za sekundu\nNemrtví a démoničtí mobové uvnitř jsou omezeni\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many§0
+divineintervention=Okamžitě vyléčte nejvíce poškozeného blízkého spojence na jeho maximální zdraví a udělte imunitu vůči veškerému poškození na §a[[<skilllevel>]]§0 sekund\nSpotřebuje §a[[60 + 12 x <skilllevel>]] many§0
+resurrection=Oživte posledního mrtvého spojence na stejném ostrově s §a[[10 x <skilllevel>]]%§0 jejich maximálního zdraví na vaší pozici\nNemůžete oživit hráče, kteří se mohli znovu objevit před více než 10 sekundami\nSpotřebuje §a[[100 - 10 x <skilllevel>]]%§0 vaší many (alespoň §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Vyvolejte sloup světla na nejbližšího nepřítele a způsobte §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svatého poškození§0 za sekundu po dobu 5 sekund v oblasti\nNemrtví a démoničtí mobové uvnitř jsou omezeni\nSpotřebuje §a[[40 + 8 x <skilllevel>]] many§0
+
 
 [skillsdesckeys]
 skilllevel=Úroveň dovednosti
@@ -309,6 +368,7 @@ grace=Ladnost
 // Základní mechaniky
 manausage=Pokud nemáte dostatek many, její doba vychladnutí se zdvojnásobí
 setmax=Negativní účinky jsou nastaveny na maximum a nelze je odstranit jinými posíleními
+holydamage=10% způsobeného svatého poškození bude přeměněno na léčení pro moby, které magicky léčíte\nTaké zapálí nemrtvé a démonické moby na 10 sekund
 
 // Posílení
 marked=§hOznačený:§0 Způsobte +20% poškození (+ §hpoškození zaměření§0) a +10% šanci na kritický zásah mobům, které označíte\n"Nejbližší nepřítel" upřednostňuje označené nepřátele
@@ -316,7 +376,7 @@ constrained=§7Omezený:§0 -50% rychlosti pohybu
 
 // Modifikátory šance
 dodgechance=§7Šance na uhnutí:§0 Šance na uhnutí příchozím útokům. Nemůže překročit 80%
-focuschance=§hŠance na zaměření:§0 Šance na §hoznačení§0 moba na 5 sekund při útoku poškozením, které není od vyvolávače
+focuschance=§hŠance na zaměření:§0 Šance na §hoznačení§0 moba na 5 sekund při přímém útoku
 
 // Plošné modifikátory
 mobdetection=§9Detekce mobů:§0 Zobrazuje blízké moby na mapě. Vyšší dosah detekce odhaluje moby z větší dálky
@@ -325,7 +385,7 @@ ignitedamage=§iPoškození zapálením:§0 Zvyšuje poškození zapálením v p
 // Střely
 lethalarrow=§hSmrtící šíp:§0 Naváděný šíp, který zaručuje kritický zásah
 venomarrow=§bJedovatý šíp:§0 Naváděný šíp, který otráví nepřátele. Opakuje 10% svého původního poškození za sekundu po dobu 30 sekund
-explosivearrow=§iVýbušný šíp:§0 Naváděný šíp, který způsobí magickou explozi se stejným poškozením
+explosiveshot=§iVýbušný šíp:§0 Naváděný šíp, který způsobí magickou explozi se stejným poškozením
 iceball=§aLedová koule:§0 Magická střela, která exploduje a zmrazí moby na 5 sekund a také je úplně zmrazí na 1 sekundu
 fireball=§iOhnivá koule:§0 Magická střela, která exploduje a zapálí moby opakujíc 20% jejich původního poškození za sekundu po dobu 5 sekund
 
@@ -370,6 +430,7 @@ gracegoldring=Zlatý prsten ladnosti
 
 
 [itemtooltip]
+Svaté poškození: <value>
 scrollofoblivion=Poskytuje 2 body resetu
 ringsboxtip=Může ukládat prsteny atributů
 
@@ -393,6 +454,7 @@ notenoughstamina=Nedostatek výdrže
 notarget=V blízkosti nejsou žádné cíle
 nograbbableobject=Před vámi není žádný uchopitelný předmět
 nodamageablefollower=V blízkosti nejsou žádná poškoditelná vyvolání
+nodeathplayers=Na této úrovni nelze vzkřísit žádné mrtvé hráče
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Slot aktivní dovednosti 1
 activeskillslot2=Slot aktivní dovednosti 2
 activeskillslot3=Slot aktivní dovednosti 3
 activeskillslot4=Slot aktivní dovednosti 4
+activeskillslot5=Slot aktivní dovednosti 5
+activeskillslot6=Slot aktivní dovednosti 6

@@ -7,9 +7,9 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 

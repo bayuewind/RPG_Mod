@@ -18,6 +18,17 @@ focusdamage=<mod>% odaklanma hasarı
 focuschance=<mod>% odaklanma şansı
 ignitedamage=<mod>% yanma hasarı
 
+// Holy Damage
+holydamage=<mod>% kutsal hasar
+holycritchance=<mod>% kutsal kritik şansı
+holycritdamage=<mod>% kutsal kritik hasarı
+holyeffect=<mod>% kutsal etki
+holyabilityspeed=<mod>% kutsal yetenek hızı
+
+
+[stats]
+holy_damage=Kutsal hasar
+
 
 [enchantment]
 evasive=Kaçınma
@@ -33,6 +44,7 @@ markedbuff=İşaretli
 darkcursebuff=Karanlık Lanet
 magicpoisonbuff=Sihirli Zehir
 ignitedbuff=Yanıyor
+holydamagedealtbuff=Verilen Kutsal Hasar
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrik
 flash=Flaş
 dark=Karanlık
 legend=Efsane
+
+
+[mobtrait]
+undead=Ölümsüz
+demonic=Şeytani
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Nekrotik Kalıntılar
 endlesslegion=Sonsuz Lejyon
 lichborn=Lich Doğumlu
 
+// Cleric
+healer=İyileştirici
+shaman=Şaman
+vitalaura=Hayati Aura
+divinejudge=İlahi Yargıç
+empoweredhealing=Güçlendirilmiş İyileştirme
+sanctifiedmind=Kutsanmış Zihin
+sanctifiedarmor=Kutsanmış Zırh
+radiantexpansion=Parlak Genişleme
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Zehirli düşmanlara §a+[[10 x <skilllevel>]]%§0 Çağırıcı Has
 lifeleech=Verilen Çağırıcı Hasarının §a[[<skilllevel>]]%§0 kadarını Can olarak yeniler
 necroticremains=Bir nekrotik çağrı öldüğünde, patlar ve yakındaki düşmanlara §i[[0.1 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir, onları 10 saniye boyunca saniyede hasarın %20'si kadar zehirler
 endlesslegion=Bu yeteneğin her 4 seviyesinde, +1 maksimum çağrı kazanırsınız
-lichborn=Öldüğünüzde, hayatta kalırsınız ve zaten bir lich değilseniz, Canınızın §a[[10 x <skilllevel>]]%§0 kadarını yenilersiniz\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca, yalnızca [[Güç]]'e eşit Büyü Hasarı veren kemikler atabilen ve geri kalan yeteneklerinizi kullanabilen bir lich (iskelet) olursunuz\nLich formundayken, çift hasar alırsınız
+lichborn=Öldüğünüzde, hayatta kalırsınız ve zaten bir lich değilseniz, Canınızın §a[[10 x <skilllevel>]]%§0 kadarını yenilersiniz\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca, yalnızca [[Güç]]'e eşit Çağırıcı Hasarı veren kemikler atabilen ve geri kalan yeteneklerinizi kullanabilen bir lich (iskelet) olursunuz\nLich formundayken, çift hasar alırsınız
+
+// Cleric
+vitalaura=Her §a[[15 - <skilllevel>]] saniyede§0, etrafınıza §a[[10 + <grace>]] can§0 yenileyen sihirli bir iyileştirme aurası salarsınız\nAyrıca sizi bu miktarın yarısı kadar iyileştirir
+divinejudge=Büyü Hasarı bonusları Kutsal Hasarı §a[[5 x <skilllevel>]]%§0 oranında etkiler
+empoweredhealing=Kendinizi veya bir müttefiki sihirli bir şekilde iyileştirdiğinizde, hasarlarını 3 saniye boyunca §a[[5 x <skilllevel>]]%§0 artırırsınız
+sanctifiedmind=Sihirli iyileştirme ayrıca yapılan iyileştirmenin §a[[5 x <skilllevel>]]%§0 kadarına eşit mana yeniler
+sanctifiedarmor=Sihirli iyileştirme ayrıca yapılan iyileştirmenin §a[[2 x <skilllevel>]]%§0 kadarına eşit dayanıklılık yeniler
+radiantexpansion=Kendinizi veya bir müttefiki sihirli bir şekilde iyileştirdiğinizde, iyileştirilen hedefin yakındaki düşmanlarına iyileştirmenin §a[[5 x <skilllevel>]]%§0 kadarını Kutsal Hasar olarak verirsiniz
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Koruyucu Alay
 unholyground=Kutsal Olmayan Zemin
 necroticbarrage=Nekrotik Yaylım Ateşi
 
+// Cleric
+smite=Çarpma
+divineblessing=İlahi Lütuf
+purify=Arındırma
+lightinfusion=Işık İnfüzyonu
+holyguard=Kutsal Muhafız
+judgment=Yargı
+sanctuary=Sığınak
+divineintervention=İlahi Müdahale
+resurrection=Diriliş
+wrathoflight=Işığın Gazabı
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=En yakın hasar verilebilir çağrı, §a[[50 x <skilllevel>]] yar�
 unholyground=10 saniye boyunca etrafınızda bir bozulma aurası yayar\nBu alandaki düşmanlar saniyede §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Zehir Hasarı§0 alır ve §7Kısıtlanır
 necroticbarrage=Tüm hasar verilebilir çağrılar öldüğünde patlar ve yakındaki düşmanlara §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\nve onları 10 saniye boyunca saniyede orijinal hasarın %20'si kadar zehirler
 
+// Cleric
+smite=En yakın düşmana bir kutsal ışık hüzmesi indirerek, §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verir\nÖlümsüz ve Şeytani moblara çift hasar verir\n§a[[10 + 2 x <skilllevel>]] Mana§0 tüketir
+divineblessing=Size ve müttefiklerinize §a[[20 + 3 x <grace> x <skilllevel>]] can§0 yenileyen sihirli iyileştirme aurası\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
+purify=Kendinizi ve yakındaki müttefikleri tüm olumsuz etkilerden arındırın\n10 Mana tüketir
+lightinfusion=Sonraki 8 saniye boyunca, §a+[[20 x <skilllevel>]]%§0 Büyülü İyileştirme ve Kutsal Hasar kazanırsınız
+holyguard=Size ve yakındaki tüm müttefiklere 30 saniyeye kadar bir Kutsal Kalkan uygulayın\n§a+[[10 x <skilllevel>]]%§0 Alınan Büyülü İyileştirme kazanırlar ve kalkan kırılmadan önce bir darbeyi engeller\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
+judgment=Yakındaki tüm düşmanlara §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kutsal Hasar§0 veren bir parlak enerji dalgası salın\nÖlümsüz ve Şeytani moblar 5 saniye boyunca Kısıtlanır\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
+sanctuary=8 saniyeliğine kutsal bir bölge oluşturun\nİçerideki siz ve müttefikler olumsuz etkilere karşı bağışıksınız ve saniyede §a[[0.2 x <grace> x <skilllevel>]]§0 can yenilenmesi kazanırsınız\nİçerideki Ölümsüz ve Şeytani moblar Kısıtlanır\n§a[[30 + 6 x <skilllevel>]] Mana§0 tüketir
+divineintervention=En çok hasar görmüş yakın müttefiki anında maksimum canına kadar iyileştirin ve §a[[<skilllevel>]]§0 saniye boyunca tüm hasarlara karşı bağışıklık kazandırın\n§a[[60 + 12 x <skilllevel>]] Mana§0 tüketir
+resurrection=Aynı adadaki en son ölen oyuncu müttefikini, pozisyonunuzda maksimum canlarının §a[[10 x <skilllevel>]]%§0 kadarıyla diriltin\n10 saniyeden daha uzun süre önce yeniden doğmuş olabilecek oyuncuları diriltemezsiniz\nMananızın §a[[100 - 10 x <skilllevel>]]%§0 kadarını tüketir (en az §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=En yakın düşmanın üzerine bir ışık sütunu çağırarak, alanda 5 saniye boyunca saniyede §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verir\nİçerideki Ölümsüz ve Şeytani moblar kısıtlanır\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
+
 
 [skillsdesckeys]
 skilllevel=Beceri Seviyesi
@@ -309,6 +368,7 @@ grace=Nezaket
 // Temel Mekanik
 manausage=Yeterli mananız yoksa, bekleme süresi iki katına çıkar
 setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle kaldırılamaz
+holydamage=Verilen Kutsal hasarın %10'u, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir\nAyrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
 
 // Güçlendirmeler
 marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir
@@ -316,7 +376,7 @@ constrained=§7Kısıtlı:§0 -%50 Hareket Hızı
 
 // Şans Değiştiricileri
 dodgechance=§7Savunma Şansı:§0 Gelen saldırıları savunma şansı. %80'i geçemez
-focuschance=§hOdaklanma Şansı:§0 Çağırıcı olmayan hasarla saldırıldığında bir mobu 5 saniye boyunca §hişaretleme§0 şansı
+focuschance=§hOdaklanma Şansı:§0 Doğrudan saldırdığınızda bir mobu 5 saniye boyunca §hişaretleme§0 şansı
 
 // Düz Değiştiriciler
 mobdetection=§9Mob Tespiti:§0 Yakındaki mobları haritada gösterir. Daha yüksek bir tespit aralığı, mobları daha uzaktan ortaya çıkarır
@@ -370,6 +430,7 @@ gracegoldring=Nezaket Altın Yüzük
 
 
 [itemtooltip]
+holydamagetip=Kutsal hasar: <value>
 scrollofoblivion=2 Sıfırlama Puanı verir
 ringsboxtip=Nitelik Yüzüklerini saklayabilir
 
@@ -393,6 +454,7 @@ notenoughstamina=Yeterli Dayanıklılık Yok
 notarget=Yakında hedef yok
 nograbbableobject=Önünüzde tutulabilir bir nesne yok
 nodamageablefollower=Yakında hasar verilebilir çağrı yok
+nodeathplayers=Bu seviyede diriltilebilecek ölü oyuncu yok
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Aktif Beceri Yuvası 1
 activeskillslot2=Aktif Beceri Yuvası 2
 activeskillslot3=Aktif Beceri Yuvası 3
 activeskillslot4=Aktif Beceri Yuvası 4
+activeskillslot5=Aktif Beceri Yuvası 5
+activeskillslot6=Aktif Beceri Yuvası 6

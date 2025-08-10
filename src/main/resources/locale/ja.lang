@@ -18,6 +18,17 @@ focusdamage=<mod>% フォーカスダメージ
 focuschance=<mod>% フォーカスチャンス
 ignitedamage=<mod>% 燃焼ダメージ
 
+// Holy Damage
+holydamage=<mod>%の聖なるダメージ
+holycritchance=<mod>%の聖なるクリティカルチャンス
+holycritdamage=<mod>%の聖なるクリティカルダメージ
+holyeffect=<mod>%の聖なる効果
+holyabilityspeed=<mod>%の聖なる能力速度
+
+
+[stats]
+holy_damage=聖なるダメージ
+
 
 [enchantment]
 evasive=回避
@@ -33,6 +44,7 @@ markedbuff=マーク
 darkcursebuff=闇の呪い
 magicpoisonbuff=魔法の毒
 ignitedbuff=発火
+holydamagedealtbuff=与えられた聖なるダメージ
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=電気
 flash=フラッシュ
 dark=闇
 legend=伝説
+
+
+[mobtrait]
+undead=アンデッド
+demonic=悪魔的
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=壊死の残骸
 endlesslegion=無限の軍団
 lichborn=リッチボーン
 
+// Cleric
+healer=ヒーラー
+shaman=シャーマン
+vitalaura=バイタルオーラ
+divinejudge=神の裁き手
+empoweredhealing=強化された回復
+sanctifiedmind=聖別された心
+sanctifiedarmor=聖別された鎧
+radiantexpansion=輝く拡大
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=毒された敵に§a+[[10 x <skilllevel>]]%§0の召喚士ダメー
 lifeleech=与えられた召喚ダメージの§a[[<skilllevel>]]%§0を体力として回復します
 necroticremains=壊死した召喚が死ぬと爆発し、近くの敵に§i[[0.1 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、10秒間、毎秒ダメージの20%で毒を与えます
 endlesslegion=このスキルの4レベルごとに、最大召喚数が+1されます
-lichborn=死ぬと、まだリッチでない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは[[筋力]]に等しい魔法ダメージを与える骨を撃つことしかできず、残りのスキルを使用できるリッチ（スケルトン）になります\nリッチの形態では、2倍のダメージを受けます
+lichborn=死ぬと、まだリッチでない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは[[筋力]]に等しい召喚士ダメージを与える骨を撃つことしかできず、残りのスキルを使用できるリッチ（スケルトン）になります\nリッチの形態では、2倍のダメージを受けます
+
+// Cleric
+vitalaura=§a[[15 - <skilllevel>]]秒§0ごとに、あなたの周りに魔法の回復オーラを放ち、§a[[10 + <grace>]]の体力§0を回復します\nまた、その半分の量であなたを回復します
+divinejudge=魔法ダメージボーナスは聖なるダメージに§a[[5 x <skilllevel>]]%§0影響します
+empoweredhealing=あなた自身または味方を魔法で回復すると、3秒間、彼らのダメージが§a[[5 x <skilllevel>]]%§0増加します
+sanctifiedmind=魔法の回復は、行われた回復の§a[[5 x <skilllevel>]]%§0に等しいマナも回復します
+sanctifiedarmor=魔法の回復は、行われた回復の§a[[2 x <skilllevel>]]%§0に等しい回復力も回復します
+radiantexpansion=あなた自身または味方を魔法で回復すると、回復したターゲットの近くの敵に、回復の§a[[5 x <skilllevel>]]%§0を聖なるダメージとして与えます
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=ワーディングタウント
 unholyground=アンホーリーグラウンド
 necroticbarrage=ネクロティックバラージ
 
+// Cleric
+smite=スマイト
+divineblessing=神の祝福
+purify=浄化
+lightinfusion=光の注入
+holyguard=聖なる守護者
+judgment=審判
+sanctuary=聖域
+divineintervention=神の介入
+resurrection=復活
+wrathoflight=光の怒り
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=最も近いダメージ可能な召喚は、§a[[50 x <skilllevel>
 unholyground=10秒間、あなたの周りに腐敗のオーラを広げます\nこのエリア内の敵は、毎秒§i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]の毒ダメージ§0を受け、§7拘束§0されます
 necroticbarrage=すべてのダメージ可能な召喚は死ぬと爆発し、近くの敵に§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\nそして、10秒間、毎秒元のダメージの20%で毒を与えます
 
+// Cleric
+smite=最も近い敵に聖なる光のビームを呼び寄せ、§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブに2倍のダメージを与えます\n§a[[10 + 2 x <skilllevel>]]のマナ§0を消費します
+divineblessing=あなたとあなたの味方に§a[[20 + 3 x <grace> x <skilllevel>]]の体力§0を回復させる魔法の回復オーラ\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
+purify=あなた自身と近くの味方をすべての負の効果から浄化します\nマナを10消費します
+lightinfusion=次の8秒間、§a+[[20 x <skilllevel>]]%§0の魔法回復と聖なるダメージを得ます
+holyguard=あなたと近くのすべての味方に最大30秒間、聖なる盾を適用します\n彼らは§a+[[10 x <skilllevel>]]%§0の魔法回復を受け、盾は壊れる前に一撃をブロックします\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
+judgment=輝くエネルギーの波を解き放ち、近くのすべての敵に§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブは5秒間拘束されます\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
+sanctuary=8秒間、聖なるゾーンを作成します\nあなたと中の味方は負の効果に免疫があり、毎秒§a[[0.2 x <grace> x <skilllevel>]]§0の体力再生を得ます\n中のアンデッドと悪魔のモブは拘束されます\n§a[[30 + 6 x <skilllevel>]]のマナ§0を消費します
+divineintervention=最もダメージを受けた近くの味方を即座に最大体力まで回復させ、§a[[<skilllevel>]]§0秒間、すべてのダメージに対する免疫を与えます\n§a[[60 + 12 x <skilllevel>]]のマナ§0を消費します
+resurrection=あなたの同じ島で最後に死んだプレイヤーの味方を、あなたの位置で最大体力の§a[[10 x <skilllevel>]]%§0で復活させます\n10秒以上前にリスポーンできたプレイヤーを復活させることはできません\nあなたのマナの§a[[100 - 10 x <skilllevel>]]%§0を消費します（少なくとも§a[[60 + 12 x <skilllevel>]]§0）
+wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0をエリアに与えます\n中のアンデッドと悪魔のモブは拘束されます\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
+
 
 [skillsdesckeys]
 skilllevel=スキルレベル
@@ -309,6 +368,7 @@ grace=優雅さ
 // 基本的な仕組み
 manausage=マナが足りない場合、クールダウンは2倍になります
 setmax=負の効果は最大に設定され、他のバフで削除することはできません
+holydamage=与えられた聖なるダメージの10%は、あなたが魔法で回復するモブの回復に変換されます\nまた、アンデッドと悪魔のモブを10秒間燃やします
 
 // バフ
 marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます\n「最も近い敵」はマークされた敵を優先します
@@ -316,7 +376,7 @@ constrained=§7拘束：§0-50%の移動速度
 
 // チャンスモディファイア
 dodgechance=§7回避チャンス：§0飛来する攻撃を回避するチャンス。80%を超えることはできません
-focuschance=§hフォーカスチャンス：§0召喚士以外のダメージで攻撃されたときに、モブを5秒間§hマーク§0するチャンス
+focuschance=§hフォーカスチャンス：§0直接攻撃したときにモブを5秒間§hマーク§0するチャンス
 
 // フラットモディファイア
 mobdetection=§9モブ検出：§0近くのモブをマップに表示します。検出範囲が広いほど、遠くのモブが明らかになります
@@ -370,6 +430,7 @@ gracegoldring=優雅さの金の指輪
 
 
 [itemtooltip]
+聖なるダメージ：<value>
 scrollofoblivion=2つのリセットポイントを付与します
 ringsboxtip=属性リングを保管できます
 
@@ -393,6 +454,7 @@ notenoughstamina=スタミナが足りません
 notarget=近くにターゲットがいません
 nograbbableobject=目の前につかめるオブジェクトがありません
 nodamageablefollower=近くにダメージ可能な召喚獣がいません
+nodeathplayers=このレベルでは死んだプレイヤーを復活させることはできません
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=アクティブスキルスロット1
 activeskillslot2=アクティブスキルスロット2
 activeskillslot3=アクティブスキルスロット3
 activeskillslot4=アクティブスキルスロット4
+activeskillslot5=アクティブスキルスロット5
+activeskillslot6=アクティブスキルスロット6

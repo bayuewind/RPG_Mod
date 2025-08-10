@@ -19,6 +19,17 @@ focusdamage=<mod>% focus damage
 focuschance=<mod>% focus chance
 ignitedamage=<mod>% ignite damage
 
+// Holy Damage
+holydamage=<mod>% holy damage
+holy critchance=<mod>% holy crit chance
+holy critdamage=<mod>% holy crit damage
+holyeffect=<mod>% holy effect
+holyabilityspeed=<mod>% holy ability speed
+
+
+[stats]
+holy_damage=Holy damage
+
 
 [enchantment]
 evasive=Evasive
@@ -34,6 +45,7 @@ markedbuff=Marked
 darkcursebuff=Dark Curse
 magicpoisonbuff=Magic Poison
 ignitedbuff=Ignited
+holydamagedealtbuff=Holy Damage Dealt
 
 
 [buffdesc]
@@ -68,6 +80,11 @@ electric=Electric
 flash=Flash
 dark=Dark
 legend=Legend
+
+
+[mobtrait]
+undead=Undead
+demonic=Demonic
 
 
 [attributes]
@@ -141,6 +158,16 @@ necroticremains=Necrotic Remains
 endlesslegion=Endless Legion
 lichborn=Lichborn
 
+// Cleric
+healer=Healer
+shaman=Shaman
+vitalaura=Vital Aura
+divinejudge=Divine Judge
+empoweredhealing=Empowered Healing
+sanctifiedmind=Sanctified Mind
+sanctifiedarmor=Sanctified Armor
+radiantexpansion=Radiant Expansion
+
 
 [passivesdesc]
 // Warrior
@@ -169,7 +196,15 @@ darksummons=Deal §a+[[10 x <skilllevel>]]%§0 Summoner Damage to poisoned enemi
 lifeleech=Recovers §a[[<skilllevel>]]%§0 of the Summon Damage dealt as Health
 necroticremains=When a necrotic summon dies, it explodes, dealing §i[[0.1 x <intelligence> x <skilllevel>]] Magic Damage§0 to nearby enemies, poisoning them for 20% of the damage per second for 10 seconds
 endlesslegion=Every 4 levels of this skill, you gain +1 max summon
-lichborn=When you die, you survive and recover §a[[10 x <skilllevel>]]%§0 Health if you are not already a lich\nFor the next §a[[120 - 6 x <skilllevel>]] seconds§0, you become a lich (a skeleton) that can only shoot bones dealing Magic Damage equal to [[Strength]] and use the rest of your skills\nWhile in lich form, you take double damage
+lichborn=When you die, you survive and recover §a[[10 x <skilllevel>]]%§0 Health if you are not already a lich\nFor the next §a[[120 - 6 x <skilllevel>]] seconds§0, you become a lich (a skeleton) that can only shoot bones dealing Summoner Damage equal to [[Strength]] and use the rest of your skills\nWhile in lich form, you take double damage
+
+// Cleric
+vitalaura=Every §a[[15 - <skilllevel>]] seconds§0, you release a magic healing aura around you that restores §a[[10 + <grace>]] health§0\nIt also heals you for half that amount
+divinejudge=Magic Damage bonuses affect Holy Damage by §a[[5 x <skilllevel>]]%§0
+empoweredhealing=When you magically heal yourself or an ally, increase their damage by §a[[5 x <skilllevel>]]%§0 for 3 seconds
+sanctifiedmind=Magical healing also restores mana equal to §a[[5 x <skilllevel>]]%§0 of the healing done
+sanctifiedarmor=Magical healing also restores resilience equal to §a[[2 x <skilllevel>]]%§0 of the healing done
+radiantexpansion=When you magically heal yourself or an ally, deal §a[[5 x <skilllevel>]]%§0 of the healing as Holy Damage to nearby enemies of the healed target
 
 
 [activeskills]
@@ -234,6 +269,20 @@ wardingtaunt=Warding Taunt
 unholyground=Unholy Ground
 necroticbarrage=Necrotic Barrage
 
+// Cleric
+smite=Smite
+divineblessing=Divine Blessing
+purify=Purify
+lightinfusion=Light Infusion
+
+holyguard=Holy Guard
+judgment=Judgment
+sanctuary=Sanctuary
+
+divineintervention=Divine Intervention
+resurrection=Resurrection
+wrathoflight=Wrath Of Light
+
 
 [activeskillsdesc]
 // Warrior
@@ -295,6 +344,21 @@ wardingtaunt=The nearest damageable summon forces nearby enemies within a §a[[5
 unholyground=Extends an aura of corruption around you for 10 seconds\nEnemies within this area take §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Poison Damage§0 per second and are §7Constrained
 necroticbarrage=All damageable summons explode upon dying, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0 to nearby enemies\nand poisoning them for 10 seconds with 20% of the original damage per second
 
+// Cleric
+smite=Call down a beam of holy light on the closest enemy, dealing §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0\nDeals double damage to Undead and Demonic mobs\nConsumes §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Magic healing aura that restores §a[[20 + 3 x <grace> x <skilllevel>]] health§0 to you and your allies\nConsumes §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Cleanse yourself and nearby allies of all negative effects\nConsumes 10 Mana
+lightinfusion=For the next 8 seconds, you gain §a+[[20 x <skilllevel>]]%§0 Magic Healing and Holy Damage
+
+holyguard=Apply to you and all nearby allies a Holy Shield for up to 30 seconds\nThey gain §a+[[10 x <skilllevel>]]%§0 Magic Healing Received and the shield blocks one hit before breaking\nConsumes §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Unleash a wave of radiant energy, dealing §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Holy Damage§0 to all nearby enemies\nUndead and Demonic mobs are Constrained for 5 seconds\nConsumes §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Create a holy zone for 8 seconds\nYou and allies inside are immune to negative effects and gain §a[[0.2 x <grace> x <skilllevel>]]§0 health regen per second\nUndead and Demonic mobs inside are Constrained\nConsumes §a[[30 + 6 x <skilllevel>]] Mana§0
+
+divineintervention=Instantly heal the most damaged close ally to their maximum health and grant immunity to all damage for §a[[<skilllevel>]]§0 seconds\nConsumes §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Revive the lasted dead player ally in your same island with §a[[10 x <skilllevel>]]%§0 of their maximum health in your position\nYou cannot revive players who could have respawned more than 10 seconds ago\nConsumes §a[[100 - 10 x <skilllevel>]]%§0 of your Mana (at least §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Summon a column of light on the closest enemy, dealing §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0 per second for 5 seconds in area\nUndead and Demonic mobs inside are constrained\nConsumes §a[[40 + 8 x <skilllevel>]] Mana§0
+
+
 [skillsdesckeys]
 skilllevel=Skill Level
 playerlevel=Player Level
@@ -309,6 +373,7 @@ grace=Grace
 // Basic Mechanics
 manausage=If you don't have enough mana, its cooldown is doubled
 setmax=Negative effects are set as max and can't be removed by other buffs
+holydamage=10% of the Holy damage dealt will be converted into healing for mobs you magic heal\nAlso sets Undead and Demonic mobs on fire for 10 seconds
 
 // Buffs
 marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\n"Closest enemy" prioritize marked enemies
@@ -316,7 +381,7 @@ constrained=§7Constrained:§0 -50% Movement Speed
 
 // Chance Modifiers
 dodgechance=§7Dodge Chance:§0 Chance to dodge incoming attacks. Cannot exceed 80%
-focuschance=§hFocus Chance:§0 Chance to §hMark§0 5 seconds a mob when attacked with non-Summoner damage
+focuschance=§hFocus Chance:§0 Chance to §hMark§0 5 seconds a mob when attacked directly by you
 
 // Flat Modifiers
 mobdetection=§9Mob Detection:§0 Displays nearby mobs on the map. A higher detection range reveals mobs from farther away
@@ -370,6 +435,8 @@ gracegoldring=Grace Gold Ring
 
 
 [itemtooltip]
+holydamagetip=Holy damage: <value>
+
 scrollofoblivion=Grants 2 Reset Points
 ringsboxtip=Can store Attribute Rings
 
@@ -394,6 +461,7 @@ notenoughstamina=Not Enough Stamina
 notarget=There is no targets nearby
 nograbbableobject=There is no grabbable object in front of you
 nodamageablefollower=There is no damageable summons nearby
+nodeathplayers=No dead players can be resurrected on this level
 
 
 [ui]
@@ -448,5 +516,5 @@ activeskillslot1=Active Skill Slot 1
 activeskillslot2=Active Skill Slot 2
 activeskillslot3=Active Skill Slot 3
 activeskillslot4=Active Skill Slot 4
-activeskillslot3=Active Skill Slot 5
-activeskillslot4=Active Skill Slot 6
+activeskillslot5=Active Skill Slot 5
+activeskillslot6=Active Skill Slot 6

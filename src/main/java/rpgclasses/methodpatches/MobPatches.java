@@ -1,8 +1,10 @@
 package rpgclasses.methodpatches;
 
 
+import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
+import necesse.engine.localization.message.StaticMessage;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
@@ -18,7 +20,7 @@ import necesse.entity.mobs.hostile.SlimeWormBody;
 import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
 import net.bytebuddy.asm.Advice;
-import rpgclasses.Config;
+import rpgclasses.RPGConfig;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
@@ -89,7 +91,7 @@ public class MobPatches {
             MobData mobData = MobData.getMob(This);
             if (This.isServer() && mobData != null) {
 
-                float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * Config.getExperienceMod();
+                float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGConfig.getExperienceMod();
                 exp = (float) Math.pow(exp, 1.2F);
 
                 HashSet<PlayerMob> processedPlayers = new HashSet<>();
@@ -107,7 +109,7 @@ public class MobPatches {
 
                         final int finalExp;
                         if (serverClient.characterStats().mob_kills.getKills(This.getStringID()) == 0) {
-                            finalExp = (int) (exp * Config.getFirstKillBonus());
+                            finalExp = (int) (exp * RPGConfig.getFirstKillBonus());
                             serverClient.sendChatMessage(new LocalMessage("message", "newmobkill", "mob", mobData.realName(), "exp", finalExp));
                         } else {
                             finalExp = (int) exp;
@@ -123,13 +125,22 @@ public class MobPatches {
         }
     }
 
+    public static GameMessage getLocalization(Mob mob, MobData mobData, GameMessage gameMessage) {
+        String extra = "";
+        if (mobData.isUndead()) extra += Localization.translate("mobtrait", "undead") + " - ";
+        if (mobData.isDemonic()) extra += Localization.translate("mobtrait", "demonic") + " - ";
+        return new StaticMessage(
+                extra + Localization.translate("mob", mob.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color)
+        );
+    }
+
     @ModMethodPatch(target = Mob.class, name = "getLocalization", arguments = {})
     public static class getLocalization {
         @Advice.OnMethodExit
         static void onExit(@Advice.This Mob This, @Advice.Return(readOnly = false) GameMessage gameMessage) {
             MobData mobData = MobData.getMob(This);
             if (mobData != null) {
-                gameMessage = new LocalMessage("mob", This.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color);
+                gameMessage = getLocalization(This, mobData, gameMessage);
             }
         }
     }
@@ -140,7 +151,7 @@ public class MobPatches {
         static void onExit(@Advice.This SwampGuardianBody This, @Advice.Return(readOnly = false) GameMessage gameMessage) {
             MobData mobData = MobData.getMob(This);
             if (mobData != null) {
-                gameMessage = new LocalMessage("mob", This.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color);
+                gameMessage = getLocalization(This, mobData, gameMessage);
             }
         }
     }
@@ -151,7 +162,7 @@ public class MobPatches {
         static void onExit(@Advice.This SlimeWormBody This, @Advice.Return(readOnly = false) GameMessage gameMessage) {
             MobData mobData = MobData.getMob(This);
             if (mobData != null) {
-                gameMessage = new LocalMessage("mob", This.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color);
+                gameMessage = getLocalization(This, mobData, gameMessage);
             }
         }
     }
@@ -162,7 +173,7 @@ public class MobPatches {
         static void onExit(@Advice.This SandwormBody This, @Advice.Return(readOnly = false) GameMessage gameMessage) {
             MobData mobData = MobData.getMob(This);
             if (mobData != null) {
-                gameMessage = new LocalMessage("mob", This.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color);
+                gameMessage = getLocalization(This, mobData, gameMessage);
             }
         }
     }
@@ -173,7 +184,7 @@ public class MobPatches {
         static void onExit(@Advice.This PestWardenBody This, @Advice.Return(readOnly = false) GameMessage gameMessage) {
             MobData mobData = MobData.getMob(This);
             if (mobData != null) {
-                gameMessage = new LocalMessage("mob", This.isBoss() ? "rpgmobname" : "rpgmobnamecolor", "name", gameMessage.translate(), "level", mobData.level, "class", mobData.mobClass.getName(), "color", mobData.mobClass.color);
+                gameMessage = getLocalization(This, mobData, gameMessage);
             }
         }
     }

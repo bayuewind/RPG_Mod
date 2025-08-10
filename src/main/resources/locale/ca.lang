@@ -18,6 +18,17 @@ focusdamage=<mod>% de dany d'enfocament
 focuschance=<mod>% de probabilitat d'enfocament
 ignitedamage=<mod>% de dany per cremada
 
+// Holy Damage
+holydamage=<mod>% de dany sagrat
+holycritchance=<mod>% de probabilitat de crític sagrat
+holycritdamage=<mod>% de dany crític sagrat
+holyeffect=<mod>% d'efecte sagrat
+holyabilityspeed=<mod>% de velocitat d'habilitat sagrada
+
+
+[stats]
+holy_damage=Dany sagrat
+
 
 [enchantment]
 evasive=Evasiu
@@ -33,6 +44,7 @@ markedbuff=Marcat
 darkcursebuff=Maledicció Fosca
 magicpoisonbuff=Verí Màgic
 ignitedbuff=Cremat
+holydamagedealtbuff=Dany sagrat infligit
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elèctric
 flash=Llamp
 dark=Fosc
 legend=Llegenda
+
+
+[mobtrait]
+undead=No-mort
+demonic=Demoníac
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Restes Necròtiques
 endlesslegion=Legió Interminable
 lichborn=Nascut de Lich
 
+// Cleric
+healer=Sanador
+shaman=Xaman
+vitalaura=Aura vital
+divinejudge=Jutge diví
+empoweredhealing=Curació potenciada
+sanctifiedmind=Ment santificada
+sanctifiedarmor=Armadura santificada
+radiantexpansion=Expansió radiant
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Infligeix un §a+[[10 x <skilllevel>]]%§0 de dany d'invocador als e
 lifeleech=Recupera un §a[[<skilllevel>]]%§0 del dany d'invocador infligit com a salut
 necroticremains=Quan una invocació necròtica mor, explota, infligint §i[[0.1 x <intelligence> x <skilllevel>]] de dany màgic§0 als enemics propers, enverinant-los un 20% del dany per segon durant 10 segons
 endlesslegion=Cada 4 nivells d'aquesta habilitat, guanyes +1 invocació màxima
-lichborn=Quan mors, sobrevius i recuperes un §a[[10 x <skilllevel>]]%§0 de salut si no ets ja un lich\nDurant els propers §a[[120 - 6 x <skilllevel>]] segons§0, et converteixes en un lich (un esquelet) que només pot disparar ossos que infligeixen dany màgic igual a [[Força]] i utilitzar la resta de les teves habilitats\nMentre estiguis en forma de lich, reps el doble de dany
+lichborn=Quan mors, sobrevius i recuperes un §a[[10 x <skilllevel>]]%§0 de salut si no ets ja un lich\nDurant els propers §a[[120 - 6 x <skilllevel>]] segons§0, et converteixes en un lich (un esquelet) que només pot disparar ossos que infligeixen dany d'invocador igual a [[Força]] i utilitzar la resta de les teves habilitats\nMentre estiguis en forma de lich, reps el doble de dany
+
+// Cleric
+vitalaura=Cada §a[[15 - <skilllevel>]] segons§0, alliberes una aura de curació màgica al teu voltant que restaura §a[[10 + <grace>]] de salut§0\nTambé et cura la meitat d'aquesta quantitat
+divinejudge=Els bonus de dany màgic afecten el dany sagrat en un §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Quan et cures màgicament a tu mateix o a un aliat, augmenta el seu dany en un §a[[5 x <skilllevel>]]%§0 durant 3 segons
+sanctifiedmind=La curació màgica también restaura manà equivalent al §a[[5 x <skilllevel>]]%§0 de la curació realitzada
+sanctifiedarmor=La curació màgica también restaura resistència equivalent al §a[[2 x <skilllevel>]]%§0 de la curació realitzada
+radiantexpansion=Quan et cures màgicament a tu mateix o a un aliat, infligeixes un §a[[5 x <skilllevel>]]%§0 de la curació com a dany sagrat als enemics propers de l'objectiu curat
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Provocació de Guàrdia
 unholyground=Terra Profana
 necroticbarrage=Bombardeig Necròtic
 
+// Cleric
+smite=Cop diví
+divineblessing=Benedicció divina
+purify=Purificar
+lightinfusion=Infusió de llum
+holyguard=Guàrdia sagrada
+judgment=Judici
+sanctuary=Santuari
+divineintervention=Intervenció divina
+resurrection=Resurrecció
+wrathoflight=Ira de la llum
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=La invocació danyable més propera obliga els enemics propers en u
 unholyground=Estén una aura de corrupció al teu voltant durant 10 segons\nEls enemics dins d'aquesta àrea reben §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de dany de verí§0 per segon i queden §7Restringits
 necroticbarrage=Totes les invocacions danyables exploten en morir, infligint §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de dany màgic§0 als enemics propers\ni enverinant-los durant 10 segons amb un 20% del dany original per segon
 
+// Cleric
+smite=Invoca un raig de llum sagrada sobre l'enemic més proper, infligint §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dany sagrat§0\nInfligeix el doble de dany als monstres no-morts i demoníacs\nConsumeix §a[[10 + 2 x <skilllevel>]] de manà§0
+divineblessing=Aura de curació màgica que restaura §a[[20 + 3 x <grace> x <skilllevel>]] de salut§0 a tu i als teus aliats\nConsumeix §a[[20 + 4 x <skilllevel>]] de manà§0
+purify=Purifica't a tu mateix i als aliats propers de tots els efectes negatius\nConsumeix 10 de manà
+lightinfusion=Durant els propers 8 segons, guanyes un §a+[[20 x <skilllevel>]]%§0 de curació màgica i dany sagrat
+holyguard=Aplica a tu i a tots els aliats propers un escut sagrat durant un màxim de 30 segons\nGuanyen un §a+[[10 x <skilllevel>]]%§0 de curació màgica rebuda i l'escut bloqueja un cop abans de trencar-se\nConsumeix §a[[40 + 8 x <skilllevel>]] de manà§0
+judgment=Allibera una onada d'energia radiant, infligint §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de dany sagrat§0 a tots els enemics propers\nEls monstres no-morts i demoníacs queden restringits durant 5 segons\nConsumeix §a[[20 + 4 x <skilllevel>]] de manà§0
+sanctuary=Crea una zona sagrada durant 8 segons\nTu i els aliats a dins sou immunes als efectes negatius i guanyeu §a[[0.2 x <grace> x <skilllevel>]]§0 de regeneració de salut per segon\nEls monstres no-morts i demoníacs a dins queden restringits\nConsumeix §a[[30 + 6 x <skilllevel>]] de manà§0
+divineintervention=Cura a l'instant l'aliat proper més danyat fins a la seva salut màxima i atorga immunitat a tot el dany durant §a[[<skilllevel>]]§0 segons\nConsumeix §a[[60 + 12 x <skilllevel>]] de manà§0
+resurrection=Ressuscita l'últim aliat jugador mort a la teva mateixa illa amb un §a[[10 x <skilllevel>]]%§0 de la seva salut màxima a la teva posició\nNo pots ressuscitar jugadors que podrien haver reaparegut fa més de 10 segons\nConsumeix un §a[[100 - 10 x <skilllevel>]]%§0 del teu manà (almenys §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Invoca una columna de llum sobre l'enemic més proper, infligint §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dany sagrat§0 per segon durant 5 segons a l'àrea\nEls monstres no-morts i demoníacs a dins queden restringits\nConsumeix §a[[40 + 8 x <skilllevel>]] de manà§0
+
 
 [skillsdesckeys]
 skilllevel=Nivell d'habilitat
@@ -309,6 +368,7 @@ grace=Gràcia
 // Mecàniques Bàsiques
 manausage=Si no tens prou manà, el seu refredament es duplica
 setmax=Els efectes negatius s'estableixen com a màxims i no es poden eliminar amb altres millores
+holydamage=El 10% del dany sagrat infligit es convertirà en curació per als monstres que curis màgicament\nTambé cala foc als monstres no-morts i demoníacs durant 10 segons
 
 // Millores
 marked=§hMarcat:§0 Infligeix +20% de Dany (+ §hdany d'enfocament§0) i +10% de Probabilitat de Crític als monstres que marquis\n"L'enemic més proper" prioritza els enemics marcats
@@ -316,7 +376,7 @@ constrained=§7Restringit:§0 -50% de velocitat de moviment
 
 // Modificadors de probabilitat
 dodgechance=§7Probabilitat d'esquivar:§0 Probabilitat d'esquivar els atacs entrants. No pot superar el 80%
-focuschance=§hProbabilitat d'enfocament:§0 Probabilitat de §hmarcar§0 durant 5 segons un monstre quan és atacat amb dany que no sigui d'invocador
+focuschance=§hProbabilitat d'enfocament:§0 Probabilitat de §hmarcar§0 durant 5 segons un monstre quan l'ataques directament
 
 // Modificadors plans
 mobdetection=§9Detecció de monstres:§0 Mostra els monstres propers al mapa. Un rang de detecció més alt revela monstres des de més lluny
@@ -370,6 +430,7 @@ gracegoldring=Anell d'Or de Gràcia
 
 
 [itemtooltip]
+dany sagrat: <value>
 scrollofoblivion=Atorga 2 punts de restabliment
 ringsboxtip=Pot emmagatzemar anells d'atributs
 
@@ -393,6 +454,7 @@ notenoughstamina=No hi ha prou resistència
 notarget=No hi ha objectius a prop
 nograbbableobject=No hi ha cap objecte que es pugui agafar davant teu
 nodamageablefollower=No hi ha invocacions danyables a prop
+nodeathplayers=No es poden ressuscitar jugadors morts en aquest nivell
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Ranura d'habilitat activa 1
 activeskillslot2=Ranura d'habilitat activa 2
 activeskillslot3=Ranura d'habilitat activa 3
 activeskillslot4=Ranura d'habilitat activa 4
+activeskillslot5=Ranura d'habilitat activa 5
+activeskillslot6=Ranura d'habilitat activa 6

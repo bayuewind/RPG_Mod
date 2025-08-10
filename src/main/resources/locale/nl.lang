@@ -18,6 +18,17 @@ focusdamage=<mod>% focusschade
 focuschance=<mod>% focuskans
 ignitedamage=<mod>% brandschade
 
+// Holy Damage
+holydamage=<mod>% heilige schade
+holycritchance=<mod>% heilige kritieke kans
+holycritdamage=<mod>% heilige kritieke schade
+holyeffect=<mod>% heilig effect
+holyabilityspeed=<mod>% heilige vaardigheidssnelheid
+
+
+[stats]
+holy_damage=Heilige schade
+
 
 [enchantment]
 evasive=Ontwijkend
@@ -33,6 +44,7 @@ markedbuff=Gemarkeerd
 darkcursebuff=Donkere vloek
 magicpoisonbuff=Magisch Gif
 ignitedbuff=In Brand
+holydamagedealtbuff=Heilige schade toegebracht
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=Elektrisch
 flash=Flits
 dark=Donker
 legend=Legende
+
+
+[mobtrait]
+undead=Ondood
+demonic=Demonisch
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=Necrotische Overblijfselen
 endlesslegion=Eindeloze Legioen
 lichborn=Lich Geboren
 
+// Cleric
+healer=Genezer
+shaman=Sjamaan
+vitalaura=Vitale aura
+divinejudge=Goddelijke rechter
+empoweredhealing=Versterkte genezing
+sanctifiedmind=Geheiligde geest
+sanctifiedarmor=Geheiligd harnas
+radiantexpansion=Stralende uitbreiding
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=Richt §a+[[10 x <skilllevel>]]%§0 Oproeperschade aan vergiftigde v
 lifeleech=Herstelt §a[[<skilllevel>]]%§0 van de Oproeperschade die is aangericht als Gezondheid
 necroticremains=Wanneer een necrotische oproep sterft, explodeert deze en richt §i[[0.1 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden, waardoor ze gedurende 10 seconden worden vergiftigd voor 20% van de schade per seconde
 endlesslegion=Elke 4 niveaus van deze vaardigheid, krijg je +1 max oproep
-lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen lich bent\nDe komende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een lich (een skelet) die alleen botten kan schieten die Magische Schade aanrichten gelijk aan [[Kracht]] en de rest van je vaardigheden kan gebruiken\nIn lich-vorm, krijg je dubbele schade
+lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen lich bent\nDe komende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een lich (een skelet) die alleen botten kan schieten die Oproeperschade aanrichten gelijk aan [[Kracht]] en de rest van je vaardigheden kan gebruiken\nIn lich-vorm, krijg je dubbele schade
+
+// Cleric
+vitalaura=Elke §a[[15 - <skilllevel>]] seconden§0 laat je een magische genezingsaura om je heen los die §a[[10 + <grace>]] gezondheid§0 herstelt\nHet geneest je ook voor de helft van dat bedrag
+divinejudge=Magische schadebonussen beïnvloeden Heilige schade met §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Wanneer je jezelf of een bondgenoot magisch geneest, verhoog je hun schade met §a[[5 x <skilllevel>]]%§0 gedurende 3 seconden
+sanctifiedmind=Magische genezing herstelt ook mana gelijk aan §a[[5 x <skilllevel>]]%§0 van de genezing die is gedaan
+sanctifiedarmor=Magische genezing herstelt ook veerkracht gelijk aan §a[[2 x <skilllevel>]]%§0 van de genezing die is gedaan
+radiantexpansion=Wanneer je jezelf of een bondgenoot magisch geneest, richt je §a[[5 x <skilllevel>]]%§0 van de genezing aan als Heilige schade aan nabije vijanden van het genezen doelwit
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=Afwerende Bespotting
 unholyground=Onheilige Grond
 necroticbarrage=Necrotische Barrage
 
+// Cleric
+smite=Smite
+divineblessing=Goddelijke zegen
+purify=Zuiveren
+lightinfusion=Lichtinfusie
+holyguard=Heilige wacht
+judgment=Oordeel
+sanctuary=Heiligdom
+divineintervention=Goddelijke interventie
+resurrection=Wederopstanding
+wrathoflight=Toorn van het licht
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=De dichtstbijzijnde beschadigbare oproep dwingt nabije vijanden bin
 unholyground=Verlengt een aura van corruptie om je heen gedurende 10 seconden\nVijanden binnen dit gebied lopen §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Gifschade§0 per seconde op en zijn §7Beperkt
 necroticbarrage=Alle beschadigbare oproepen exploderen bij het sterven, en richten §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden\nen vergiftigen ze gedurende 10 seconden met 20% van de oorspronkelijke schade per seconde
 
+// Cleric
+smite=Roep een straal heilig licht neer op de dichtstbijzijnde vijand, die §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Heilige schade§0 aanricht\nRicht dubbele schade aan Ondode en Demonische mobs\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Magische genezingsaura die §a[[20 + 3 x <grace> x <skilllevel>]] gezondheid§0 herstelt voor jou en je bondgenoten\nVerbruikt §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Reinig jezelf en nabije bondgenoten van alle negatieve effecten\nVerbruikt 10 Mana
+lightinfusion=Gedurende de volgende 8 seconden krijg je §a+[[20 x <skilllevel>]]%§0 Magische genezing en Heilige schade
+holyguard=Pas een Heilig schild toe op jou en alle nabije bondgenoten voor maximaal 30 seconden\nZe krijgen §a+[[10 x <skilllevel>]]%§0 Magische genezing ontvangen en het schild blokkeert één treffer voordat het breekt\nVerbruikt §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Laat een golf van stralende energie los, die §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Heilige schade§0 aanricht aan alle nabije vijanden\nOndode en Demonische mobs zijn 5 seconden lang Beperkt\nVerbruikt §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Creëer een heilige zone voor 8 seconden\nJij en bondgenoten binnenin zijn immuun voor negatieve effecten en krijgen §a[[0.2 x <grace> x <skilllevel>]]§0 gezondheidsregeneratie per seconde\nOndode en Demonische mobs binnenin zijn Beperkt\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Genees onmiddellijk de meest beschadigde nabije bondgenoot tot hun maximale gezondheid en verleen immuniteit voor alle schade gedurende §a[[<skilllevel>]]§0 seconden\nVerbruikt §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Herleef de laatst overleden spelerbondgenoot op hetzelfde eiland met §a[[10 x <skilllevel>]]%§0 van hun maximale gezondheid op jouw positie\nJe kunt geen spelers doen herleven die meer dan 10 seconden geleden hadden kunnen respawnen\nVerbruikt §a[[100 - 10 x <skilllevel>]]%§0 van je Mana (minstens §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Roep een lichtkolom op de dichtstbijzijnde vijand op, die gedurende 5 seconden in een gebied §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Heilige schade§0 per seconde aanricht\nOndode en Demonische mobs binnenin zijn beperkt\nVerbruikt §a[[40 + 8 x <skilllevel>]] Mana§0
+
 
 [skillsdesckeys]
 skilllevel=Vaardigheidsniveau
@@ -309,6 +368,7 @@ grace=Gratie
 // Basisprincipes
 manausage=Als je niet genoeg mana hebt, wordt de afkoeltijd verdubbeld
 setmax=Negatieve effecten worden als maximaal ingesteld en kunnen niet worden verwijderd door andere buffs
+holydamage=10% van de aangerichte Heilige schade wordt omgezet in genezing voor mobs die je magisch geneest\nSteekt ook Ondode en Demonische mobs 10 seconden in brand
 
 // Buffs
 marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\n"Dichtstbijzijnde vijand" geeft voorrang aan gemarkeerde vijanden
@@ -316,7 +376,7 @@ constrained=§7Beperkt:§0 -50% Bewegingssnelheid
 
 // Kansenmodificatoren
 dodgechance=§7Ontwijkkans:§0 Kans om inkomende aanvallen te ontwijken. Kan niet hoger zijn dan 80%
-focuschance=§hFocuskans:§0 Kans om een mob 5 seconden te §hmarkeren§0 wanneer aangevallen met niet-oproeperschade
+focuschance=§hFocuskans:§0 Kans om een mob 5 seconden te §hmarkeren§0 wanneer je hem rechtstreeks aanvalt
 
 // Vlakke modificatoren
 mobdetection=§9Mobdetectie:§0 Toont nabije mobs op de kaart. Een hoger detectiebereik onthult mobs van verder weg
@@ -370,6 +430,7 @@ gracegoldring=Gouden ring van gratie
 
 
 [itemtooltip]
+Heilige schade: <value>
 scrollofoblivion=Geeft 2 resetpunten
 ringsboxtip=Kan attribuutringen opslaan
 
@@ -393,6 +454,7 @@ notenoughstamina=Niet genoeg uithoudingsvermogen
 notarget=Er zijn geen doelen in de buurt
 nograbbableobject=Er is geen grijpbaar object voor je
 nodamageablefollower=Er zijn geen beschadigbare oproepen in de buurt
+nodeathplayers=Op dit niveau kunnen geen dode spelers worden herrezen
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=Actief vaardigheidsslot 1
 activeskillslot2=Actief vaardigheidsslot 2
 activeskillslot3=Actief vaardigheidsslot 3
 activeskillslot4=Actief vaardigheidsslot 4
+activeskillslot5=Actief vaardigheidsslot 5
+activeskillslot6=Actief vaardigheidsslot 6

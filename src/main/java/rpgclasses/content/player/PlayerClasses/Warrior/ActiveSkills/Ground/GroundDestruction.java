@@ -1,7 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground;
 
 import aphorea.registry.AphBuffs;
-import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -10,9 +9,10 @@ import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGColors;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
+import rpgclasses.utils.RPGArea;
+import rpgclasses.utils.RPGColors;
 
 import java.awt.*;
 
@@ -36,7 +36,8 @@ public class GroundDestruction extends ActiveSkill {
         }
 
         AphAreaList areaList = new AphAreaList(
-                new AphArea(120, colorArea, RPGColors.dirt, RPGColors.red)
+                new RPGArea(120, colorArea, RPGColors.dirt, RPGColors.red)
+                        .setDebuffFilter(m -> !m.isBoss())
                         .setDebuffArea(2000, AphBuffs.STUN.getStringID())
                         .setDamageArea(new GameDamage(DamageTypeRegistry.MELEE, 5 * playerData.getLevel() + 5 * playerData.getStrength(player) * activeSkillLevel))
         );

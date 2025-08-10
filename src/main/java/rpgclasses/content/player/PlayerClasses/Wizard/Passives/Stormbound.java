@@ -1,6 +1,5 @@
 package rpgclasses.content.player.PlayerClasses.Wizard.Passives;
 
-import aphorea.registry.AphBuffs;
 import aphorea.utils.AphColors;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
@@ -20,12 +19,13 @@ import necesse.entity.trails.TrailVector;
 import necesse.gfx.GameResources;
 import necesse.gfx.gameFont.FontManager;
 import necesse.level.maps.Level;
-import rpgclasses.RPGColors;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
+import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGPackets;
+import rpgclasses.utils.RPGColors;
+import rpgclasses.utils.RPGUtils;
 
 public class Stormbound extends SimpleBuffPassive {
     public Stormbound(int levelMax, int requiredClassLevel) {
@@ -51,8 +51,7 @@ public class Stormbound extends SimpleBuffPassive {
                     if (target != null) {
                         target.isServerHit(new GameDamage(DamageTypeRegistry.MAGIC, 0.5F * getPlayerLevel(player) + 0.5F * getIntelligence(player) * getLevel(activeBuff)), player.x, player.y, 0, player);
 
-                        ActiveBuff ab = new ActiveBuff(AphBuffs.STUN, target, 1F, null);
-                        target.buffManager.addBuff(ab, true);
+                        RPGBuffs.applyStun(target, 1F);
 
                         player.getServer().network.sendToClientsAtEntireLevel(new LightningPacket(target.getX(), target.getY()), player.getLevel());
                     }

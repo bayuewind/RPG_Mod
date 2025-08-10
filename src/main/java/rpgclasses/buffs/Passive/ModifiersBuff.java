@@ -1,6 +1,5 @@
 package rpgclasses.buffs.Passive;
 
-import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.MobWasHitEvent;
@@ -54,12 +53,14 @@ public class ModifiersBuff extends PassiveBuff {
     @Override
     public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
         super.onHasAttacked(activeBuff, event);
-        if (event.damage > 0 && !event.wasPrevented && event.damageType != DamageTypeRegistry.SUMMON) {
-            float focusChance = activeBuff.owner.buffManager.getModifier(RPGModifiers.FOCUS_CHANCE);
-            if (focusChance >= 1F || (focusChance > 0 && GameRandom.globalRandom.getChance(focusChance))) {
-                ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, event.target, 5000, null);
-                ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
-                event.target.addBuff(ab, true);
+        if (event.damage > 0 && !event.wasPrevented) {
+            if (event.attacker.getAttackOwner() == activeBuff.owner) {
+                float focusChance = activeBuff.owner.buffManager.getModifier(RPGModifiers.FOCUS_CHANCE);
+                if (focusChance >= 1F || (focusChance > 0 && GameRandom.globalRandom.getChance(focusChance))) {
+                    ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, event.target, 5000, null);
+                    ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
+                    event.target.addBuff(ab, true);
+                }
             }
         }
     }

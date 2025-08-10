@@ -3,10 +3,10 @@ package rpgclasses.content.player.PlayerClasses.Necromancer.ActiveSkills;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
-import rpgclasses.RPGUtils;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.levelevents.NecroticExplosionLevelEvent;
+import rpgclasses.utils.RPGUtils;
 
 public class NecroticBarrage extends ActiveSkill {
 

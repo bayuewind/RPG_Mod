@@ -11,13 +11,13 @@ import necesse.gfx.GameResources;
 import necesse.gfx.drawOptions.human.HumanDrawOptions;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameTexture.GameTexture;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.registry.RPGPackets;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 

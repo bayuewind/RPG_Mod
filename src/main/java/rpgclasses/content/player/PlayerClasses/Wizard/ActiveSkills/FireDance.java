@@ -47,7 +47,7 @@ public class FireDance extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public float manaUsage(int activeSkillLevel) {
+    public float manaUsage(PlayerMob player, int activeSkillLevel) {
         return 30 + activeSkillLevel * 6;
     }
 

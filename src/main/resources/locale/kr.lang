@@ -18,6 +18,17 @@ focusdamage=<mod>% 집중 피해
 focuschance=<mod>% 집중 확률
 ignitedamage=<mod>% 점화 피해
 
+// Holy Damage
+holydamage=<mod>% 신성 피해
+holycritchance=<mod>% 신성 치명타 확률
+holycritdamage=<mod>% 신성 치명타 피해
+holyeffect=<mod>% 신성 효과
+holyabilityspeed=<mod>% 신성 능력 속도
+
+
+[stats]
+holy_damage=신성 피해
+
 
 [enchantment]
 evasive=회피
@@ -33,6 +44,7 @@ markedbuff=표식
 darkcursebuff=어둠의 저주
 magicpoisonbuff=마법 독
 ignitedbuff=점화됨
+holydamagedealtbuff=가한 신성 피해
 
 
 [buffdesc]
@@ -66,6 +78,11 @@ electric=전기
 flash=섬광
 dark=어둠
 legend=전설
+
+
+[mobtrait]
+undead=언데드
+demonic=악마
 
 
 [attributes]
@@ -139,6 +156,16 @@ necroticremains=괴저 잔해
 endlesslegion=끝없는 군단
 lichborn=리치본
 
+// Cleric
+healer=힐러
+shaman=주술사
+vitalaura=생명의 오라
+divinejudge=신성한 심판관
+empoweredhealing=강화된 치유
+sanctifiedmind=성스러운 마음
+sanctifiedarmor=성스러운 갑옷
+radiantexpansion=찬란한 확장
+
 
 [passivesdesc]
 
@@ -168,7 +195,15 @@ darksummons=중독된 적에게 §a+[[10 x <skilllevel>]]%§0의 소환사 피�
 lifeleech=입힌 소환사 피해의 §a[[<skilllevel>]]%§0를 체력으로 회복합니다.
 necroticremains=괴저 소환수가 죽으면 폭발하여 주변의 적에게 §i[[0.1 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 10초 동안 초당 피해의 20%만큼 중독시킵니다.
 endlesslegion=이 스킬의 4레벨마다 최대 소환수가 +1됩니다.
-lichborn=죽으면 아직 리치가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다.\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 [[힘]]과 동일한 마법 피해를 입히는 뼈만 쏠 수 있고 나머지 스킬을 사용할 수 있는 리치(해골)가 됩니다.\n리치 형태에서는 두 배의 피해를 받습니다.
+lichborn=죽으면 아직 리치가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 [[힘]]과 동일한 소환사 피해를 입히는 뼈만 쏠 수 있고 나머지 스킬을 사용할 수 있는 리치(해골)가 됩니다\n리치 형태에서는 두 배의 피해를 받습니다.
+
+// Cleric
+vitalaura=§a[[15 - <skilllevel>]]초§0마다 주변에 마법 치유 오라를 방출하여 §a[[10 + <grace>]]의 체력§0을 회복합니다\n또한 그 양의 절반만큼 당신을 치유합니다
+divinejudge=마법 피해 보너스는 신성 피해에 §a[[5 x <skilllevel>]]%§0만큼 영향을 미칩니다
+empoweredhealing=자신이나 아군을 마법으로 치유하면 3초 동안 피해량이 §a[[5 x <skilllevel>]]%§0 증가합니다
+sanctifiedmind=마법 치유는 또한 치유량의 §a[[5 x <skilllevel>]]%§0에 해당하는 마나를 회복합니다
+sanctifiedarmor=마법 치유는 또한 치유량의 §a[[2 x <skilllevel>]]%§0에 해당하는 탄력성을 회복합니다
+radiantexpansion=자신이나 아군을 마법으로 치유하면 치유량의 §a[[5 x <skilllevel>]]%§0를 치유된 대상의 주변 적에게 신성 피해로 입힙니다
 
 
 [activeskills]
@@ -233,6 +268,18 @@ wardingtaunt=보호 도발
 unholyground=부정한 땅
 necroticbarrage=괴저 포격
 
+// Cleric
+smite=강타
+divineblessing=신성한 축복
+purify=정화
+lightinfusion=빛 주입
+holyguard=신성한 수호자
+judgment=심판
+sanctuary=성역
+divineintervention=신성한 개입
+resurrection=부활
+wrathoflight=빛의 분노
+
 
 [activeskillsdesc]
 
@@ -294,6 +341,18 @@ wardingtaunt=가장 가까운 피해를 입힐 수 있는 소환수는 §a[[50 x
 unholyground=10초 동안 주변에 부패의 아우라를 퍼뜨립니다.\n이 지역 내의 적들은 초당 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]의 독 피해§0를 입고 §7속박§0됩니다.
 necroticbarrage=모든 피해를 입힐 수 있는 소환수는 죽을 때 폭발하여 주변의 적에게 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n그리고 10초 동안 초당 원래 피해의 20%만큼 중독시킵니다.
 
+// Cleric
+smite=가장 가까운 적에게 신성한 빛의 광선을 불러내어 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n언데드와 악마 몹에게 두 배의 피해를 입힙니다\n§a[[10 + 2 x <skilllevel>]]의 마나§0를 소모합니다
+divineblessing=당신과 아군에게 §a[[20 + 3 x <grace> x <skilllevel>]]의 체력§0을 회복시키는 마법 치유 오라\n§a[[20 + 4 x <skilllevel>]]의 마나§0를 소모합니다
+purify=자신과 주변 아군을 모든 부정적인 효과로부터 정화합니다\n마나 10을 소모합니다
+lightinfusion=다음 8초 동안 §a+[[20 x <skilllevel>]]%§0의 마법 치유 및 신성 피해를 얻습니다
+holyguard=당신과 모든 주변 아군에게 최대 30초 동안 신성한 보호막을 적용합니다\n그들은 §a+[[10 x <skilllevel>]]%§0의 받은 마법 치유를 얻고 보호막은 부서지기 전에 한 번의 공격을 막습니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
+judgment=찬란한 에너지의 파도를 방출하여 주변의 모든 적에게 §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n언데드와 악마 몹은 5초 동안 속박됩니다\n§a[[20 + 4 x <skilllevel>]]의 마나§0를 소모합니다
+sanctuary=8초 동안 신성한 구역을 만듭니다\n당신과 안의 아군은 부정적인 효과에 면역이 되고 초당 §a[[0.2 x <grace> x <skilllevel>]]§0의 체력 재생을 얻습니다\n안의 언데드와 악마 몹은 속박됩니다\n§a[[30 + 6 x <skilllevel>]]의 마나§0를 소모합니다
+divineintervention=가장 큰 피해를 입은 가까운 아군을 즉시 최대 체력으로 치유하고 §a[[<skilllevel>]]§0초 동안 모든 피해에 대한 면역을 부여합니다\n§a[[60 + 12 x <skilllevel>]]의 마나§0를 소모합니다
+resurrection=같은 섬에 있는 마지막으로 죽은 플레이어 아군을 당신의 위치에서 최대 체력의 §a[[10 x <skilllevel>]]%§0로 부활시킵니다\n10초 이상 전에 부활할 수 있었던 플레이어는 부활시킬 수 없습니다\n마나의 §a[[100 - 10 x <skilllevel>]]%§0를 소모합니다(최소 §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=가장 가까운 적에게 빛의 기둥을 소환하여 5초 동안 해당 지역에 초당 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n안의 언데드와 악마 몹은 속박됩니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
+
 
 [skillsdesckeys]
 skilllevel=스킬 레벨
@@ -309,6 +368,7 @@ grace=우아함
 // 기본 메커니즘
 manausage=마나가 부족하면 재사용 대기 시간이 두 배가 됩니다.
 setmax=부정적인 효과는 최대로 설정되며 다른 버프로 제거할 수 없습니다.
+holydamage=가한 신성 피해의 10%는 마법으로 치유하는 몹의 치유로 전환됩니다\n또한 언데드와 악마 몹을 10초 동안 불태웁니다
 
 // 버프
 marked=§h표식:§0 표식이 있는 몹에게 +20% 피해(+§h집중 피해§0) 및 +10% 치명타 확률을 부여합니다.\n"가장 가까운 적"은 표식이 있는 적을 우선적으로 공격합니다.
@@ -316,7 +376,7 @@ constrained=§7속박됨:§0 -50% 이동 속도
 
 // 확률 수정자
 dodgechance=§7회피 확률:§0 들어오는 공격을 회피할 확률. 80%를 초과할 수 없습니다.
-focuschance=§h집중 확률:§0 소환사 피해가 아닌 피해로 공격받았을 때 5초 동안 몹을 §h표식§0할 확률
+focuschance=§h집중 확률:§0 직접 공격했을 때 5초 동안 몹을 §h표식§0할 확률
 
 // 고정 수정자
 mobdetection=§9몹 감지:§0 주변의 몹을 지도에 표시합니다. 감지 범위가 높을수록 더 멀리 있는 몹을 드러냅니다.
@@ -370,6 +430,7 @@ gracegoldring=우아함의 금 반지
 
 
 [itemtooltip]
+신성 피해: <value>
 scrollofoblivion=2개의 초기화 포인트를 부여합니다.
 ringsboxtip=속성 반지를 보관할 수 있습니다.
 
@@ -393,6 +454,7 @@ notenoughstamina=체력이 부족합니다.
 notarget=주변에 대상이 없습니다.
 nograbbableobject=앞에 잡을 수 있는 물건이 없습니다.
 nodamageablefollower=주변에 피해를 입힐 수 있는 소환수가 없습니다.
+nodeathplayers=이 레벨에서는 죽은 플레이어를 부활시킬 수 없습니다.
 
 
 [ui]
@@ -447,3 +509,5 @@ activeskillslot1=액티브 스킬 슬롯 1
 activeskillslot2=액티브 스킬 슬롯 2
 activeskillslot3=액티브 스킬 슬롯 3
 activeskillslot4=액티브 스킬 슬롯 4
+activeskillslot5=액티브 스킬 슬롯 5
+activeskillslot6=액티브 스킬 슬롯 6

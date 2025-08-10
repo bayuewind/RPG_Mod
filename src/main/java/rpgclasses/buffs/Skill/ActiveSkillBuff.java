@@ -20,7 +20,7 @@ public class ActiveSkillBuff extends SkillBuff {
     @Override
     public void loadTextures() {
         try {
-            this.iconTexture = GameTexture.fromFileRaw("ui/activeskills/" + skillID());
+            this.iconTexture = GameTexture.fromFileRaw("activeskills/" + skillID());
         } catch (FileNotFoundException var2) {
             this.iconTexture = GameTexture.fromFile("buffs/positive");
         }

@@ -14,7 +14,7 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.*;
 import necesse.level.gameObject.furniture.RoomFurniture;
 import necesse.level.maps.Level;
-import rpgclasses.Config;
+import rpgclasses.RPGConfig;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
@@ -159,7 +159,7 @@ public class PlayerData {
     }
 
     public int getExp() {
-        return this.exp + Config.getStartingExperience();
+        return this.exp + RPGConfig.getStartingExperience();
     }
 
     public int[] getAttributeLevels() {
@@ -228,7 +228,7 @@ public class PlayerData {
     }
 
     public int getExpRequiredForLevel(int level) {
-        return level * Config.getFirstExperienceReq() + Config.getExperienceReqInc() * (level * (level - 1)) / 2 + Config.getSquareExperienceReqInc() * (level * (level - 1) * (2 * level - 1)) / 6 + Config.getCubeExperienceReqInc() * (int) Math.pow((double) (level * (level - 1)) / 2, 2);
+        return level * RPGConfig.getFirstExperienceReq() + RPGConfig.getExperienceReqInc() * (level * (level - 1)) / 2 + RPGConfig.getSquareExperienceReqInc() * (level * (level - 1) * (2 * level - 1)) / 6 + RPGConfig.getCubeExperienceReqInc() * (int) Math.pow((double) (level * (level - 1)) / 2, 2);
     }
 
     public int getLevel() {
@@ -241,6 +241,9 @@ public class PlayerData {
 
     public void updateAllBuffs(PlayerMob player) {
         updateModifiersBuff(player);
+
+        if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HolyDamage))
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HolyDamage, player, 1000, null), true);
 
         boolean someOverlevel = false;
         for (PlayerClassData classesDatum : classesData) {
@@ -290,7 +293,7 @@ public class PlayerData {
 
         int oldLevel = this.getLevel();
 
-        int maxExp = MAX_EXP - Config.getStartingExperience();
+        int maxExp = MAX_EXP - RPGConfig.getStartingExperience();
         if (amount > 0) {
             if (this.exp > maxExp - amount) {
                 amount = maxExp - this.exp;

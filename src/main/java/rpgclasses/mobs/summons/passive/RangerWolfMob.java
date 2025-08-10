@@ -16,10 +16,10 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.RPGUtils;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.ai.PassiveSummonCollisionChaserAI;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.util.List;

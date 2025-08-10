@@ -17,8 +17,8 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.level.maps.Level;
 import necesse.level.maps.LevelObjectHit;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.MagicPoisonBuff;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 import java.util.List;

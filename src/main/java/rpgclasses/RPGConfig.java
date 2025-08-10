@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Objects;
 
-public class Config {
+public class RPGConfig {
 
     public static class ConfigOption<T> {
         private final String name;

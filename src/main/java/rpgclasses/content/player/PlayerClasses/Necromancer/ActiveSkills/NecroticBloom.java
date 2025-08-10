@@ -7,11 +7,11 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.GameResources;
-import rpgclasses.RPGUtils;
 import rpgclasses.buffs.MagicPoisonBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
+import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 
