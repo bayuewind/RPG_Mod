@@ -42,7 +42,7 @@ public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingF
             addDamageDealt(activeBuff, -used, true);
         } else {
             float passiveReduction = activeBuff.getGndData().getFloat("passiveReduction", 0);
-            passiveReduction += 0.2F;
+            passiveReduction += 0.1F;
             if (passiveReduction >= 1) {
                 int reduction = (int) passiveReduction;
                 passiveReduction -= reduction;
@@ -63,7 +63,7 @@ public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingF
     @Override
     public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
         super.onHasAttacked(activeBuff, event);
-        int holyDamage = event.damage / 10;
+        int holyDamage = event.damage / 4;
         if (holyDamage > 0 && !event.wasPrevented) {
             if (event.damageType == RPGDamageType.HOLY) {
                 addDamageDealt(activeBuff, holyDamage, false);

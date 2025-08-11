@@ -317,7 +317,7 @@ arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x <playerleve
 
 // Wizard
 arcaneoverload=While active, increases your Magic Attack Speed by §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEnds when you run out of mana, or if used again\nConsumes §a[[10 + 2 x <skilllevel>]] Mana per second
-manarecharge=While active, increases your Mana Regen in +1 and by §a[[50 x <skilllevel>]]%§0, but you will be paralyzed and take double damage\nEnds when used again
+manarecharge=While active, increases your Mana Regen in +1.4 and by §a[[50 x <skilllevel>]]%§0, but you will be paralyzed and take double damage\nEnds when used again
 firedance=Summons 4 §bDancing Flames§0, each dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nSummon another one every 5 seconds\nAll summons disappear 20 seconds after the skill is activated\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Throw an §aIce Ball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start a zap that jumps between mobs for 2 seconds, dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 1 second\nConsumes §a[[10 + 2 x <skilllevel>]] Mana
@@ -373,7 +373,7 @@ grace=Grace
 // Basic Mechanics
 manausage=If you don't have enough mana, its cooldown is doubled
 setmax=Negative effects are set as max and can't be removed by other buffs
-holydamage=10% of the Holy damage dealt will be converted into healing for mobs you magic heal\nAlso sets Undead and Demonic mobs on fire for 10 seconds
+holydamage=25% of the Holy damage dealt will be converted into healing for mobs you magic heal\nAlso sets Undead and Demonic mobs on fire for 10 seconds
 
 // Buffs
 marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\n"Closest enemy" prioritize marked enemies

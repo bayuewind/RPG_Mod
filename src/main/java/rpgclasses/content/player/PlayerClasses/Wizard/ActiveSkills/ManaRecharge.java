@@ -44,7 +44,7 @@ public class ManaRecharge extends SimplePassiveBuffActiveSkill {
         public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {
             super.init(activeBuff, buffEventSubscriber);
             int level = getLevel(activeBuff);
-            activeBuff.setModifier(BuffModifiers.COMBAT_MANA_REGEN_FLAT, 1F);
+            activeBuff.setModifier(BuffModifiers.COMBAT_MANA_REGEN_FLAT, 1.4F);
             activeBuff.setModifier(BuffModifiers.COMBAT_MANA_REGEN, level * 0.5F);
             new ModifierValue<>(BuffModifiers.SLOW, 1.0F).min(1F).apply(activeBuff);
             new ModifierValue<>(BuffModifiers.SPEED, -1.0F).max(-1F).apply(activeBuff);

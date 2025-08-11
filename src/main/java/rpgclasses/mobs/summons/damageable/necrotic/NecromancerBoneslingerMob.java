@@ -42,7 +42,6 @@ public class NecromancerBoneslingerMob extends NecroticFollowingMob {
 
         this.setSpeed(60.0F);
         this.setFriction(3.0F);
-        this.setKnockbackModifier(0.4F);
 
         this.collision = new Rectangle(-10, -7, 20, 14);
         this.hitBox = new Rectangle(-14, -12, 28, 24);

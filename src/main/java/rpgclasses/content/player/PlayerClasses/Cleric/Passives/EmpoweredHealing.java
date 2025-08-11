@@ -28,7 +28,7 @@ public class EmpoweredHealing extends SimpleBuffPassive {
         @Override
         public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             ActiveBuff activeBuff = healer.buffManager.getBuff(this);
-            giveSecondaryPassiveBuff((PlayerMob) target, PlayerDataList.getPlayerData((PlayerMob) healer), getLevel(activeBuff), 5000);
+            giveSecondaryPassiveBuff((PlayerMob) healer, target, PlayerDataList.getPlayerData((PlayerMob) healer), getLevel(activeBuff), 5000);
         }
     }
 

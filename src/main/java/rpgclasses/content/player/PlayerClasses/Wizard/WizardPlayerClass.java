@@ -30,7 +30,7 @@ public class WizardPlayerClass extends PlayerClass {
 
         skillsList.addSkill(new ArcaneOverload(5, requiredLevel));
 
-        skillsList.addSkill(new ManaRecharge(5, requiredLevel));
+        skillsList.addSkill(new ManaRecharge(3, requiredLevel));
 
         skillsList.addSkill(new FireDance(5, requiredLevel));
 

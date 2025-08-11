@@ -1,6 +1,7 @@
 package rpgclasses.content.player.SkillsAndAttributes.Passives;
 
 import necesse.engine.registries.BuffRegistry;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
@@ -39,7 +40,7 @@ abstract public class SimpleBuffPassive extends Passive {
         player.buffManager.addBuff(ab, true);
     }
 
-    public void giveSecondaryPassiveBuff(PlayerMob player, PlayerData playerData, int passiveLevel, int duration) {
+    public void giveSecondaryPassiveBuff(PlayerMob player, Mob target, PlayerData playerData, int passiveLevel, int duration) {
         ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), player, duration, null);
         ab.getGndData().setInt("skillLevel", passiveLevel);
         ab.getGndData().setInt("playerLevel", passiveLevel);
