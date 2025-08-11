@@ -314,7 +314,7 @@ arrowstorm=Skyt en basispil mot hver nære fiende, og gi §i[[2 x <playerlevel> 
 
 // Trollmann
 arcaneoverload=Mens aktiv, øker din Magiske Angrepshastighet med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevege deg\nAvsluttes når du går tom for mana, eller hvis den brukes igjen\nForbruker §a[[10 + 2 x <skilllevel>]] Mana per sekund
-manarecharge=Mens aktiv, øker din Mana-regenerering med +1 og med §a[[50 x <skilllevel>]]%§0, men du vil bli lammet og motta dobbel skade\nAvsluttes når den brukes igjen
+manarecharge=Mens aktiv, øker din Mana-regenerering med +1.4 og med §a[[50 x <skilllevel>]]%§0, men du vil bli lammet og motta dobbel skade[LINE_BREAK]Avsluttes når den brukes igjen
 firedance=Kaller frem 4 §bDansende Flammer§0, som hver gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nKaller frem en til hvert 5. sekund\nAlle tilkallinger forsvinner 20 sekunder etter at evnen er aktivert\nForbruker §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kast en §aIskule§0 mot nærmeste fiende, som gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruker §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start et støt som hopper mellom mobs i 2 sekunder, gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund\nForbruker §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Nåde
 // Grunnleggende Mekanikk
 manausage=Hvis du ikke har nok mana, dobles nedkjølingen
 setmax=Negative effekter er satt som maks og kan ikke fjernes av andre buffs
-holydamage=10% av den påførte hellige skaden vil bli konvertert til helbredelse for mobs du magisk helbreder\nSetter også udøde og demoniske mobs i brann i 10 sekunder
+holydamage=25% av den påførte hellige skaden vil bli konvertert til helbredelse for mobs du magisk helbreder\nSetter også udøde og demoniske mobs i brann i 10 sekunder
 
 // Buffs
 marked=§hMerket:§0 Gi +20% Skade (+ §hFokusskade§0) og +10% Kritisk Sjanse til mobs du merker\n"Nærmeste fiende" prioriterer merkede fiender

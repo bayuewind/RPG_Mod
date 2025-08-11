@@ -314,7 +314,7 @@ arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x <p
 
 // Penyihir
 arcaneoverload=Saat aktif, tingkatkan Kecepatan Serangan Sihir Anda sebesar §a[[30 x <skilllevel>]]%§0, tetapi Anda tidak akan bisa bergerak\nBerakhir saat Anda kehabisan mana, atau jika digunakan lagi\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana per detik
-manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda\nBerakhir saat digunakan lagi
+manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1.4 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda[LINE_BREAK]Berakhir saat digunakan lagi
 firedance=Memanggil 4 §bApi Menari§0, masing-masing menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMemanggil satu lagi setiap 5 detik\nSemua panggilan menghilang 20 detik setelah kemampuan diaktifkan\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Lemparkan §aBola Es§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[50 + 10 x <skilllevel>]] Mana
 zap=Mulai sengatan yang melompat di antara monster selama 2 detik, menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 1 detik\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Keanggunan
 // Mekanika Dasar
 manausage=Jika Anda tidak memiliki cukup mana, cooldown-nya digandakan
 setmax=Efek negatif diatur sebagai maks dan tidak dapat dihilangkan oleh buff lain
-holydamage=10% dari Kerusakan Suci yang diberikan akan diubah menjadi penyembuhan untuk monster yang Anda sembuhkan secara ajaib\nJuga membakar monster Mayat Hidup dan Dahsyat selama 10 detik
+holydamage=25% dari Kerusakan Suci yang diberikan akan diubah menjadi penyembuhan untuk monster yang Anda sembuhkan secara ajaib\nJuga membakar monster Mayat Hidup dan Dahsyat selama 10 detik
 
 // Buff
 marked=§hDitandai:§0 Menghasilkan +20% Kerusakan (+ §hKerusakan Fokus§0) dan +10% Peluang Kritis ke monster yang Anda tandai\n"Musuh terdekat" memprioritaskan musuh yang ditandai

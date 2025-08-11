@@ -314,7 +314,7 @@ arrowstorm=Atire uma flecha básica em cada inimigo próximo, causando §i[[2 x 
 
 // Mago
 arcaneoverload=Enquanto ativo, aumenta sua Velocidade de Ataque Mágico em §a[[30 x <skilllevel>]]%§0, mas você não poderá se mover\nTermina quando você fica sem mana, ou se usado novamente\nConsome §a[[10 + 2 x <skilllevel>]] de Mana por segundo
-manarecharge=Enquanto ativo, aumenta sua Regeneração de Mana em +1 e em §a[[50 x <skilllevel>]]%§0, mas você ficará paralisado e receberá o dobro do dano\nTermina quando usado novamente
+manarecharge=Enquanto ativo, aumenta sua Regeneração de Mana em +1.4 e em §a[[50 x <skilllevel>]]%§0, mas você ficará paralisado e receberá o dobro do dano[LINE_BREAK]Termina quando usado novamente
 firedance=Invoca 4 §bChamas Dançantes§0, cada uma causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\nInvoca outra a cada 5 segundos\nTodas as invocações desaparecem 20 segundos após a ativação da habilidade\nConsome §a[[30 + 6 x <skilllevel>]] de Mana
 iceball=Atire uma §aBola de Gelo§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0\nConsome §a[[50 + 10 x <skilllevel>]] de Mana
 zap=Inicia um zap que salta entre monstros por 2 segundos, causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoando por 1 segundo\nConsome §a[[10 + 2 x <skilllevel>]] de Mana
@@ -368,7 +368,7 @@ grace=Graça
 // Mecânicas Básicas
 manausage=Se você não tiver mana suficiente, o tempo de recarga é dobrado
 setmax=Efeitos negativos são definidos como máximos e não podem ser removidos por outros bônus
-holydamage=10% do dano sagrado causado será convertido em cura para monstros que você cura magicamente\nTambém incendeia monstros Mortos-vivos e Demoníacos por 10 segundos
+holydamage=25% do dano sagrado causado será convertido em cura para monstros que você cura magicamente\nTambém incendeia monstros Mortos-vivos e Demoníacos por 10 segundos
 
 // Bônus
 marked=§hMarcado:§0 Cause +20% de dano (+ §hdano de foco§0) e +10% de chance de acerto crítico em monstros que você marcar\n"Inimigo mais próximo" prioriza inimigos marcados

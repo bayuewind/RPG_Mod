@@ -314,7 +314,7 @@ arrowstorm=Dispara una flecha básica a cada enemigo cercano, infligiendo §i[[2
 
 // Wizard
 arcaneoverload=Mientras está activo, aumenta tu Velocidad de Ataque Mágico en un §a[[30 x <skilllevel>]]%§0, pero no podrás moverte\nTermina cuando te quedas sin maná, o si se usa de nuevo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná por segundo
-manarecharge=Mientras está activo, aumenta tu Regeneración de Maná en +1 y en un §a[[50 x <skilllevel>]]%§0, pero estarás paralizado y recibirás el doble de daño\nTermina cuando se usa de nuevo
+manarecharge=Mientras está activo, aumenta tu Regeneración de Maná en +1.4 y en un §a[[50 x <skilllevel>]]%§0, pero estarás paralizado y recibirás el doble de daño[LINE_BREAK]Termina cuando se usa de nuevo
 firedance=Invoca 4 §bLlamas Danzantes§0, cada una inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\nInvoca otra cada 5 segundos\nTodas las invocaciones desaparecen 20 segundos después de activar la habilidad\nConsume §a[[30 + 6 x <skilllevel>]] de Maná
 iceball=Lanza una §aBola de Hielo§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\nConsume §a[[50 + 10 x <skilllevel>]] de Maná
 zap=Inicia un chispazo que salta entre los monstruos durante 2 segundos, infligiendo §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturdiendo durante 1 segundo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná
@@ -368,7 +368,7 @@ grace=Gracia
 // Basic Mechanics
 manausage=Si no tienes suficiente maná, su enfriamiento se duplica
 setmax=Los efectos negativos se establecen como máximos y no se pueden eliminar con otras mejoras
-holydamage=El 10% del daño sagrado infligido se convertirá en curación para los monstruos que cures mágicamente\nTambién prende fuego a los monstruos no-muertos y demoníacos durante 10 segundos
+holydamage=El 25% del daño sagrado infligido se convertirá en curación para los monstruos que cures mágicamente\nTambién prende fuego a los monstruos no-muertos y demoníacos durante 10 segundos
 
 // Buffs
 marked=§hMarcado:§0 Inflige +20% de Daño (+ §hDaño de Enfoque§0) y +10% de Probabilidad de Crítico a los monstruos que marques\n"El enemigo más cercano" prioriza a los enemigos marcados

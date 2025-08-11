@@ -314,7 +314,7 @@ arrowstorm=Vystřelte základní šíp na každého blízkého nepřítele a zp�
 
 // Kouzelník
 arcaneoverload=Když je aktivní, zvýší vaši rychlost magického útoku o §a[[30 x <skilllevel>]]%§0, ale nebudete se moci hýbat\nSkončí, když vám dojde mana, nebo pokud se použije znovu\nSpotřebuje §a[[10 + 2 x <skilllevel>]] many za sekundu
-manarecharge=Když je aktivní, zvýší vaši regeneraci many o +1 a o §a[[50 x <skilllevel>]]%§0, ale budete paralyzováni a budete dostávat dvojnásobné poškození\nSkončí, když se použije znovu
+manarecharge=Když je aktivní, zvýší vaši regeneraci many o +1.4 a o §a[[50 x <skilllevel>]]%§0, ale budete paralyzováni a budete dostávat dvojnásobné poškození[LINE_BREAK]Skončí, když se použije znovu
 firedance=Vyvolá 4 §bTančící plameny§0, z nichž každý způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\nKaždých 5 sekund vyvolá další\nVšechna vyvolání zmizí 20 sekund po aktivaci dovednosti\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many
 iceball=Hoďte §aLedovou kouli§0 na nejbližšího nepřítele a způsobte §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magického poškození§0\nSpotřebuje §a[[50 + 10 x <skilllevel>]] many
 zap=Spusťte zásah, který po dobu 2 sekund skáče mezi moby, způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0 a na 1 sekundu omráčí\nSpotřebuje §a[[10 + 2 x <skilllevel>]] many
@@ -368,7 +368,7 @@ grace=Ladnost
 // Základní mechaniky
 manausage=Pokud nemáte dostatek many, její doba vychladnutí se zdvojnásobí
 setmax=Negativní účinky jsou nastaveny na maximum a nelze je odstranit jinými posíleními
-holydamage=10% způsobeného svatého poškození bude přeměněno na léčení pro moby, které magicky léčíte\nTaké zapálí nemrtvé a démonické moby na 10 sekund
+holydamage=25% způsobeného svatého poškození bude přeměněno na léčení pro moby, které magicky léčíte\nTaké zapálí nemrtvé a démonické moby na 10 sekund
 
 // Posílení
 marked=§hOznačený:§0 Způsobte +20% poškození (+ §hpoškození zaměření§0) a +10% šanci na kritický zásah mobům, které označíte\n"Nejbližší nepřítel" upřednostňuje označené nepřátele

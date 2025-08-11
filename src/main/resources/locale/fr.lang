@@ -314,7 +314,7 @@ arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2
 
 // Sorcier
 arcaneoverload=Lorsqu'il est actif, augmente votre Vitesse d'Attaque Magique de §a[[30 x <skilllevel>]]%§0, mais vous ne pourrez pas bouger\nSe termine lorsque vous n'avez plus de mana, ou s'il est utilisé à nouveau\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana par seconde
-manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts\nSe termine lorsqu'il est utilisé à nouveau
+manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1.4 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts[LINE_BREAK]Se termine lorsqu'il est utilisé à nouveau
 firedance=Invoque 4 §bFlammes Dansantes§0, chacune infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nInvoque une autre toutes les 5 secondes\nToutes les invocations disparaissent 20 secondes après l'activation de la compétence\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
 iceball=Lance une §aBoule de Glace§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[50 + 10 x <skilllevel>]] de Mana
 zap=Lance un zapping qui saute entre les monstres pendant 2 secondes, infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 1 seconde\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana
@@ -368,7 +368,7 @@ grace=Grâce
 // Mécaniques de base
 manausage=Si vous n'avez pas assez de mana, son temps de recharge est doublé
 setmax=Les effets négatifs sont définis au maximum et ne peuvent pas être supprimés par d'autres améliorations
-holydamage=10% des dégâts sacrés infligés seront convertis en guérison pour les monstres que vous soignez par magie\nMet également le feu aux monstres morts-vivants et démoniaques pendant 10 secondes
+holydamage=25% des dégâts sacrés infligés seront convertis en guérison pour les monstres que vous soignez par magie\nMet également le feu aux monstres morts-vivants et démoniaques pendant 10 secondes
 
 // Améliorations
 marked=§hMarqué:§0 Infligez +20% de Dégâts (+ §hDégâts de Focalisation§0) et +10% de Chance de Critique aux monstres que vous marquez\n"L'ennemi le plus proche" donne la priorité aux ennemis marqués

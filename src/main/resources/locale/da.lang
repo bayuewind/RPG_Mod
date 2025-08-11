@@ -314,7 +314,7 @@ arrowstorm=Skyd en basispil mod hver nær fjende og giv §i[[2 x <playerlevel> +
 
 // Troldmand
 arcaneoverload=Mens aktiv, øger din Magiske Angrebshastighed med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevæge dig\nSlutter, når du løber tør for mana, eller hvis den bruges igen\nForbruger §a[[10 + 2 x <skilllevel>]] Mana pr. sekund
-manarecharge=Mens aktiv, øger din Mana Regeneration med +1 og med §a[[50 x <skilllevel>]]%§0, men du vil være lammet og modtage dobbelt skade\nSlutter, når den bruges igen
+manarecharge=Mens aktiv, øger din Mana Regeneration med +1.4 og med §a[[50 x <skilllevel>]]%§0, men du vil være lammet og modtage dobbelt skade[LINE_BREAK]Slutter, når den bruges igen
 firedance=Tilkald 4 §bDansende Flammer§0, der hver giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nTilkald en mere hvert 5. sekund\nAlle tilkaldelser forsvinder 20 sekunder efter, at færdigheden er aktiveret\nForbruger §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kast en §aIskugle§0 mod den nærmeste fjende, der giver §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruger §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start et stød, der hopper mellem pøbler i 2 sekunder, giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund\nForbruger §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Ynde
 // Grundlæggende Mekanik
 manausage=Hvis du ikke har nok mana, fordobles dens nedkøling
 setmax=Negative effekter er sat som maks. og kan ikke fjernes af andre buffs
-holydamage=10% af den påførte hellige skade vil blive omdannet til helbredelse for pøbler, du magisk helbreder\nSætter også udøde og dæmoniske pøbler i brand i 10 sekunder
+holydamage=25% af den påførte hellige skade vil blive omdannet til helbredelse for pøbler, du magisk helbreder\nSætter også udøde og dæmoniske pøbler i brand i 10 sekunder
 
 // Buffs
 marked=§hMærket:§0 Giv +20% Skade (+ §hFokusskade§0) og +10% Kritisk Chance til pøbler, du mærker\n"Nærmeste fjende" prioriterer mærkede fjender

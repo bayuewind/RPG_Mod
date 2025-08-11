@@ -314,7 +314,7 @@ arrowstorm=Iššaukite paprastą strėlę į kiekvieną artimą priešą, padary
 
 // Burtininkas
 arcaneoverload=Kol aktyvus, padidina jūsų Magiškos Atakos Greitį §a[[30 x <skilllevel>]]%§0, bet negalėsite judėti\nBaigiasi, kai baigiasi mana, arba jei naudojamas dar kartą\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos per sekundę
-manarecharge=Kol aktyvus, padidina jūsų Manos Regeneraciją +1 ir §a[[50 x <skilllevel>]]%§0, bet būsite paralyžiuotas ir gausite dvigubą žalą\nBaigiasi, kai naudojamas dar kartą
+manarecharge=Kol aktyvus, padidina jūsų Manos Regeneraciją +1.4 ir §a[[50 x <skilllevel>]]%§0, bet būsite paralyžiuotas ir gausite dvigubą žalą[LINE_BREAK]Baigiasi, kai naudojamas dar kartą
 firedance=Iškviečia 4 §bŠokančias Liepsnas§0, kurių kiekviena padaro §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nKas 5 sekundes iškviečia dar vieną\nVisi iškvietimai išnyksta praėjus 20 sekundžių po sugebėjimo aktyvavimo\nSunaudoja §a[[30 + 6 x <skilllevel>]] Manos
 iceball=Meskite §aLedo Kamuolį§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0\nSunaudoja §a[[50 + 10 x <skilllevel>]] Manos
 zap=Pradėkite žaibą, kuris 2 sekundes šokinėja tarp mobų, padarydamas §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigindamas 1 sekundei\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos
@@ -368,7 +368,7 @@ grace=Gracingumas
 // Pagrindinė Mechanika
 manausage=Jei neturite pakankamai manos, jos atsistatymo laikas padvigubėja
 setmax=Neigiami efektai nustatomi kaip maksimalūs ir negali būti pašalinti kitais stiprinimais
-holydamage=10% padarytos šventos žalos bus paversta gydymu mobams, kuriuos magiškai gydote\nTaip pat uždega nemirėlius ir demoniškus mobus 10 sekundžių
+holydamage=25% padarytos šventos žalos bus paversta gydymu mobams, kuriuos magiškai gydote\nTaip pat uždega nemirėlius ir demoniškus mobus 10 sekundžių
 
 // Stiprinimai
 marked=§hPažymėtas:§0 Padarykite +20% Žalos (+ §hFokusavimo Žalos§0) ir +10% Kritinės Tikimybės mobams, kuriuos pažymite\n"Artimiausias priešas" teikia pirmenybę pažymėtiems priešams

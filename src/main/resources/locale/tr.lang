@@ -314,7 +314,7 @@ arrowstorm=Her yakın düşmana temel bir ok atarak, her ok için §i[[2 x <play
 
 // Büyücü
 arcaneoverload=Aktifken, Büyü Saldırı Hızınızı §a[[30 x <skilllevel>]]%§0 artırır, ancak hareket edemezsiniz\nMananız bittiğinde veya tekrar kullanıldığında sona erer\nSaniyede §a[[10 + 2 x <skilllevel>]] Mana tüketir
-manarecharge=Aktifken, Mana Yenilenmenizi +1 ve §a[[50 x <skilllevel>]]%§0 artırır, ancak felç olursunuz ve çift hasar alırsınız\nTekrar kullanıldığında sona erer
+manarecharge=Aktifken, Mana Yenilenmenizi +1.4 ve §a[[50 x <skilllevel>]]%§0 artırır, ancak felç olursunuz ve çift hasar alırsınız\nTekrar kullanıldığında sona erer
 firedance=Her biri §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren 4 §bDans Eden Alev§0 çağırır\nHer 5 saniyede bir tane daha çağırır\nTüm çağrılar, yetenek etkinleştirildikten 20 saniye sonra kaybolur\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
 iceball=En yakın düşmana bir §aBuz Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\n§a[[50 + 10 x <skilllevel>]] Mana tüketir
 zap=Moblar arasında 2 saniye boyunca zıplayan, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren ve 1 saniye sersemleten bir çarpma başlatır\n§a[[10 + 2 x <skilllevel>]] Mana tüketir
@@ -368,7 +368,7 @@ grace=Nezaket
 // Temel Mekanik
 manausage=Yeterli mananız yoksa, bekleme süresi iki katına çıkar
 setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle kaldırılamaz
-holydamage=Verilen Kutsal hasarın %10'u, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir\nAyrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
+holydamage=Verilen Kutsal hasarın %25'i, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir[LINE_BREAK]Ayrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
 
 // Güçlendirmeler
 marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir

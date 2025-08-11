@@ -314,7 +314,7 @@ arrowstorm=Spara una freccia base a ogni nemico vicino, infliggendo §i[[2 x <pl
 
 // Mago
 arcaneoverload=Mentre è attivo, aumenta la tua Velocità d'Attacco Magico del §a[[30 x <skilllevel>]]%§0, ma non potrai muoverti\nTermina quando finisci il mana, o se viene usato di nuovo\nConsuma §a[[10 + 2 x <skilllevel>]] Mana al secondo
-manarecharge=Mentre è attivo, aumenta la tua Rigenerazione di Mana di +1 e del §a[[50 x <skilllevel>]]%§0, ma sarai paralizzato e subirai il doppio dei danni\nTermina quando viene usato di nuovo
+manarecharge=Mentre è attivo, aumenta la tua Rigenerazione di Mana di +1.4 e del §a[[50 x <skilllevel>]]%§0, ma sarai paralizzato e subirai il doppio dei danni\nTermina quando viene usato di nuovo
 firedance=Evoca 4 §bFiamme Danzanti§0, ognuna delle quali infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\nEvoca un'altra ogni 5 secondi\nTutte le evocazioni scompaiono 20 secondi dopo l'attivazione dell'abilità\nConsuma §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Lancia una §aPalla di Ghiaccio§0 al nemico più vicino, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0\nConsuma §a[[50 + 10 x <skilllevel>]] Mana
 zap=Inizia uno zap che salta tra i mob per 2 secondi, infliggendo §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0 e stordendo per 1 secondo\nConsuma §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Grazia
 // Meccaniche di base
 manausage=Se non hai abbastanza mana, il suo tempo di ricarica è raddoppiato
 setmax=Gli effetti negativi sono impostati al massimo e non possono essere rimossi da altri buff
-holydamage=Il 10% dei danni sacri inflitti verrà convertito in guarigione per i mob che guarisci magicamente\nInoltre, dà fuoco ai mob non morti e demoniaci per 10 secondi
+holydamage=Il 25% dei danni sacri inflitti verrà convertito in guarigione per i mob che guarisci magicamente[LINE_BREAK]Inoltre, dà fuoco ai mob non morti e demoniaci per 10 secondi
 
 // Buff
 marked=§hMarcato:§0 Infliggi +20% di danni (+ §hdanno da concentrazione§0) e +10% di probabilità di colpo critico ai mob che marchi\n"Nemico più vicino" dà la priorità ai nemici marchiati

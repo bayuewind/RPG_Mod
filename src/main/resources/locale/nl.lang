@@ -314,7 +314,7 @@ arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i
 
 // Tovenaar
 arcaneoverload=Verhoogt, terwijl actief, je Magische Aanvalssnelheid met §a[[30 x <skilllevel>]]%§0, maar je kunt niet bewegen\nEindigt wanneer je mana op is, of als het opnieuw wordt gebruikt\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana per seconde
-manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen\nEindigt wanneer opnieuw gebruikt
+manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1.4 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen[LINE_BREAK]Eindigt wanneer opnieuw gebruikt
 firedance=Roept 4 §bDansende Vlammen§0 op, die elk §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanrichten\nRoept elke 5 seconden een nieuwe op\nAlle oproepen verdwijnen 20 seconden nadat de vaardigheid is geactiveerd\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Gooi een §aIJsbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start een zap die 2 seconden tussen mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht en 1 seconde verdooft\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Gratie
 // Basisprincipes
 manausage=Als je niet genoeg mana hebt, wordt de afkoeltijd verdubbeld
 setmax=Negatieve effecten worden als maximaal ingesteld en kunnen niet worden verwijderd door andere buffs
-holydamage=10% van de aangerichte Heilige schade wordt omgezet in genezing voor mobs die je magisch geneest\nSteekt ook Ondode en Demonische mobs 10 seconden in brand
+holydamage=25% van de aangerichte Heilige schade wordt omgezet in genezing voor mobs die je magisch geneest\nSteekt ook Ondode en Demonische mobs 10 seconden in brand
 
 // Buffs
 marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\n"Dichtstbijzijnde vijand" geeft voorrang aan gemarkeerde vijanden

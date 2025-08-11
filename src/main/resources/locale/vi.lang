@@ -314,7 +314,7 @@ arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây 
 
 // Pháp sư
 arcaneoverload=Khi đang hoạt động, tăng Tốc độ Tấn công Phép của bạn lên §a[[30 x <skilllevel>]]%§0, nhưng bạn sẽ không thể di chuyển\nKết thúc khi bạn hết mana, hoặc nếu được sử dụng lại\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana mỗi giây
-manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi\nKết thúc khi sử dụng lại
+manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1.4 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi[LINE_BREAK]Kết thúc khi sử dụng lại
 firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt kỹ năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Ném một §aQuả cầu băng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[50 + 10 x <skilllevel>]] Mana
 zap=Bắt đầu một cú giật nhảy giữa các mob trong 2 giây, gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Duyên dáng
 // Cơ chế cơ bản
 manausage=Nếu bạn không có đủ mana, thời gian hồi chiêu của nó sẽ được nhân đôi
 setmax=Các hiệu ứng tiêu cực được đặt ở mức tối đa và không thể bị loại bỏ bởi các bùa lợi khác
-holydamage=10% sát thương thần thánh gây ra sẽ được chuyển thành hồi máu cho các mob bạn chữa bệnh bằng phép thuật\nCũng đốt cháy mob Bất tử và Ma quỷ trong 10 giây
+holydamage=25% sát thương thần thánh gây ra sẽ được chuyển thành hồi máu cho các mob bạn chữa bệnh bằng phép thuật\nCũng đốt cháy mob Bất tử và Ma quỷ trong 10 giây
 
 // Bùa lợi
 marked=§hĐược đánh dấu:§0 Gây thêm +20% Sát thương (+ §hSát thương tập trung§0) và +10% Cơ hội chí mạng cho các mob bạn đánh dấu\n"Kẻ thù gần nhất" ưu tiên các kẻ thù được đánh dấu

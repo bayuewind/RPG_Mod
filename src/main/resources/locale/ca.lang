@@ -314,7 +314,7 @@ arrowstorm=Dispara una fletxa bàsica a cada enemic proper, infligint §i[[2 x <
 
 // Mag
 arcaneoverload=Mentre estigui actiu, augmenta la teva Velocitat d'Atac Màgic en un §a[[30 x <skilllevel>]]%§0, però no et podràs moure\nAcaba quan et quedes sense manà, o si es torna a utilitzar\nConsumeix §a[[10 + 2 x <skilllevel>]] de Manà per segon
-manarecharge=Mentre estigui actiu, augmenta la teva Regeneració de Manà en +1 i en un §a[[50 x <skilllevel>]]%§0, però estaràs paralitzat i rebràs el doble de dany\nAcaba quan es torna a utilitzar
+manarecharge=Mentre estigui actiu, augmenta la teva Regeneració de Manà en +1.4 i en un §a[[50 x <skilllevel>]]%§0, però estaràs paralitzat i rebràs el doble de dany[LINE_BREAK]Acaba quan es torna a utilitzar
 firedance=Invoca 4 §bFlames Dansaires§0, cadascuna infligeix §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dany Màgic§0\nInvoca'n una altra cada 5 segons\nTotes les invocacions desapareixen 20 segons després d'activar l'habilitat\nConsumeix §a[[30 + 6 x <skilllevel>]] de Manà
 iceball=Llença una §aBola de Gel§0 a l'enemic més proper, infligint §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dany Màgic§0\nConsumeix §a[[50 + 10 x <skilllevel>]] de Manà
 zap=Inicia una espurna que salta entre els monstres durant 2 segons, infligint §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dany Màgic§0 i atordint durant 1 segon\nConsumeix §a[[10 + 2 x <skilllevel>]] de Manà
@@ -368,7 +368,7 @@ grace=Gràcia
 // Mecàniques Bàsiques
 manausage=Si no tens prou manà, el seu refredament es duplica
 setmax=Els efectes negatius s'estableixen com a màxims i no es poden eliminar amb altres millores
-holydamage=El 10% del dany sagrat infligit es convertirà en curació per als monstres que curis màgicament\nTambé cala foc als monstres no-morts i demoníacs durant 10 segons
+holydamage=El 25% del dany sagrat infligit es convertirà en curació per als monstres que curis màgicament\nTambé cala foc als monstres no-morts i demoníacs durant 10 segons
 
 // Millores
 marked=§hMarcat:§0 Infligeix +20% de Dany (+ §hdany d'enfocament§0) i +10% de Probabilitat de Crític als monstres que marquis\n"L'enemic més proper" prioritza els enemics marcats

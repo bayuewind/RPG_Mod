@@ -314,7 +314,7 @@ arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći �
 
 // Čarobnjak
 arcaneoverload=Dok je aktivno, povećava vašu brzinu magičnog napada za §a[[30 x <skilllevel>]]%§0, ali se nećete moći kretati\nZavršava kada ostanete bez mane, ili ako se ponovno koristi\nTroši §a[[10 + 2 x <skilllevel>]] mane u sekundi
-manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu\nZavršava kada se ponovno koristi
+manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1.4 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu[LINE_BREAK]Završava kada se ponovno koristi
 firedance=Priziva 4 §bPlešuća plamena§0, od kojih svaki nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nPrizovite još jedan svakih 5 sekundi\nSvi prizivi nestaju 20 sekundi nakon aktivacije sposobnosti\nTroši §a[[30 + 6 x <skilllevel>]] mane
 iceball=Bacite §aLedenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[50 + 10 x <skilllevel>]] mane
 zap=Pokrenite strujni udar koji skače između mobova 2 sekunde, nanoseći §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 1 sekundu\nTroši §a[[10 + 2 x <skilllevel>]] mane
@@ -368,7 +368,7 @@ grace=Gracioznost
 // Osnovne mehanike
 manausage=Ako nemate dovoljno mane, vrijeme hlađenja se udvostručuje
 setmax=Negativni učinci postavljeni su na maksimum i ne mogu se ukloniti drugim pojačanjima
-holydamage=10% nanesene svete štete pretvorit će se u iscjeljivanje za mobove koje magično liječite\nTakođer zapali nemrtve i demonske mobove na 10 sekundi
+holydamage=25% nanesene svete štete pretvorit će se u iscjeljivanje za mobove koje magično liječite\nTakođer zapali nemrtve i demonske mobove na 10 sekundi
 
 // Pojačanja
 marked=§hOznačen:§0 Nanesite +20% štete (+ §hšteta od fokusa§0) i +10% šanse za kritični udarac mobovima koje označite\n"Najbliži neprijatelj" daje prednost označenim neprijateljima

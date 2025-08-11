@@ -314,7 +314,7 @@ arrowstorm=Schieße einen einfachen Pfeil auf jeden nahen Gegner und verursache 
 
 // Zauberer
 arcaneoverload=Solange aktiv, erhöht deine magische Angriffsgeschwindigkeit um §a[[30 x <skilllevel>]]%§0, aber du kannst dich nicht bewegen\nEndet, wenn du kein Mana mehr hast oder wenn es erneut verwendet wird\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana pro Sekunde
-manarecharge=Solange aktiv, erhöht deine Manaregeneration um +1 und um §a[[50 x <skilllevel>]]%§0, aber du bist gelähmt und erleidest doppelten Schaden\nEndet, wenn es erneut verwendet wird
+manarecharge=Solange aktiv, erhöht deine Manaregeneration um +1.4 und um §a[[50 x <skilllevel>]]%§0, aber du bist gelähmt und erleidest doppelten Schaden[LINE_BREAK]Endet, wenn es erneut verwendet wird
 firedance=Beschwört 4 §bTanzende Flammen§0, die jeweils §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursachen\nBeschwöre alle 5 Sekunden eine weitere\nAlle Beschwörungen verschwinden 20 Sekunden nach Aktivierung der Fertigkeit\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Wirf einen §aEisball§0 auf den nächsten Gegner und verursache §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nVerbraucht §a[[50 + 10 x <skilllevel>]] Mana
 zap=Starte einen Zappen, der 2 Sekunden lang zwischen Mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht und 1 Sekunde lang betäubt\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Anmut
 // Grundlegende Mechanik
 manausage=Wenn du nicht genug Mana hast, wird die Abklingzeit verdoppelt
 setmax=Negative Effekte werden als Maximum festgelegt und können nicht durch andere Buffs entfernt werden
-holydamage=10% des verursachten heiligen Schadens werden in Heilung für Mobs umgewandelt, die du magisch heilst\nSetzt auch untote und dämonische Mobs für 10 Sekunden in Brand
+holydamage=25% des verursachten heiligen Schadens werden in Heilung für Mobs umgewandelt, die du magisch heilst\nSetzt auch untote und dämonische Mobs für 10 Sekunden in Brand
 
 // Buffs
 marked=§hMarkiert:§0 Verursache +20% Schaden (+ §hFokusschaden§0) und +10% kritische Trefferchance bei Mobs, die du markierst\n"Nächster Gegner" priorisiert markierte Gegner

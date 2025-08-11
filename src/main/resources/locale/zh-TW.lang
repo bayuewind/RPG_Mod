@@ -314,7 +314,7 @@ arrowstorm=向每個附近的敵人發射一支基本箭，每支箭造成 §i[[
 
 // 巫師
 arcaneoverload=激活時，你的魔法攻擊速度提高 §a[[30 x <skilllevel>]]%§0，但你將無法移動\n當你的法力耗盡或再次使用時結束\n每秒消耗 §a[[10 + 2 x <skilllevel>]] 法力
-manarecharge=激活時，你的法力恢復提高 +1 和 §a[[50 x <skilllevel>]]%§0，但你將被麻痺並受到雙倍傷害\n再次使用時結束
+manarecharge=激活時，你的法力恢復提高 +1.4 和 §a[[50 x <skilllevel>]]%§0，但你將被麻痺並受到雙倍傷害\n再次使用時結束
 firedance=召喚 4 個 §b舞動之焰§0，每個造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0\n每 5 秒召喚一個\n所有召喚物在技能激活 20 秒後消失\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
 iceball=向最近的敵人投擲一個 §a冰球§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n消耗 §a[[50 + 10 x <skilllevel>]] 法力
 zap=開始一次電擊，在生物之間跳躍 2 秒，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0 並眩暈 1 秒\n消耗 §a[[10 + 2 x <skilllevel>]] 法力
@@ -368,7 +368,7 @@ grace=優雅
 // 基本機制
 manausage=如果你的法力不足，其冷卻時間將加倍
 setmax=負面效果被設置為最大值，不能被其他增益移除
-holydamage=造成的神聖傷害的10%將轉化為對你魔法治療的生物的治療\n還會讓亡靈和惡魔生物著火10秒
+holydamage=造成的神聖傷害的25%將轉化為對你魔法治療的生物的治療[LINE_BREAK]還會讓亡靈和惡魔生物著火10秒
 
 // 增益
 marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率\n“最近的敵人”優先攻擊被標記的敵人

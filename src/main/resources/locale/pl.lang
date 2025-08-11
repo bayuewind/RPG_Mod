@@ -314,7 +314,7 @@ arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając
 
 // Czarodziej
 arcaneoverload=Gdy aktywne, zwiększa twoją Prędkość Ataku Magicznego o §a[[30 x <skilllevel>]]%§0, ale nie będziesz mógł się poruszać\nKończy się, gdy skończy ci się mana, lub jeśli zostanie użyte ponownie\nZużywa §a[[10 + 2 x <skilllevel>]] Many na sekundę
-manarecharge=Gdy aktywne, zwiększa twoją Regenerację Many o +1 i o §a[[50 x <skilllevel>]]%§0, ale zostaniesz sparaliżowany i będziesz otrzymywać podwójne obrażenia\nKończy się po ponownym użyciu
+manarecharge=Gdy aktywne, zwiększa twoją Regenerację Many o +1.4 i o §a[[50 x <skilllevel>]]%§0, ale zostaniesz sparaliżowany i będziesz otrzymywać podwójne obrażenia[LINE_BREAK]Kończy się po ponownym użyciu
 firedance=Przywołuje 4 §bTańczące Płomienie§0, z których każdy zadaje §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nPrzywołuj kolejny co 5 sekund\nWszystkie przywołania znikają 20 sekund po aktywacji umiejętności\nZużywa §a[[30 + 6 x <skilllevel>]] Many
 iceball=Rzuć §aKulą Lodu§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nZużywa §a[[50 + 10 x <skilllevel>]] Many
 zap=Rozpocznij porażenie, które przeskakuje między mobami przez 2 sekundy, zadając §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłuszając na 1 sekundę\nZużywa §a[[10 + 2 x <skilllevel>]] Many
@@ -368,7 +368,7 @@ grace=Wdzięk
 // Podstawowe mechaniki
 manausage=Jeśli nie masz wystarczająco dużo many, czas odnowienia jest podwojony
 setmax=Negatywne efekty są ustawione jako maksymalne i nie mogą być usunięte przez inne wzmocnienia
-holydamage=10% zadanych obrażeń świętych zostanie zamienione na leczenie dla mobów, które leczysz magicznie\nPodpala również nieumarłych i demonicznych mobów na 10 sekund
+holydamage=25% zadanych obrażeń świętych zostanie zamienione na leczenie dla mobów, które leczysz magicznie\nPodpala również nieumarłych i demonicznych mobów na 10 sekund
 
 // Wzmocnienia
 marked=§hOznaczony:§0 Zadaj +20% obrażeń (+ §hobrażeń od skupienia§0) i +10% szansy na trafienie krytyczne mobom, które oznaczysz\n"Najbliższy wróg" priorytetowo traktuje oznaczone wrogów

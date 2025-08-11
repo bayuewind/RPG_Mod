@@ -314,7 +314,7 @@ arrowstorm=Ammu perusnuoli jokaiseen lähellä olevaan viholliseen tehden §i[[2
 
 // Velho
 arcaneoverload=Aktiivisena ollessaan lisää taikahyökkäysnopeutta §a[[30 x <skilllevel>]]%§0, mutta et voi liikkua\nLoppuu, kun mana loppuu tai jos sitä käytetään uudelleen\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa sekunnissa
-manarecharge=Aktiivisena ollessaan lisää manan palautumista +1 ja §a[[50 x <skilllevel>]]%§0, mutta olet halvaantunut ja saat kaksinkertaista vahinkoa\nLoppuu, kun sitä käytetään uudelleen
+manarecharge=Aktiivisena ollessaan lisää manan palautumista +1.4 ja §a[[50 x <skilllevel>]]%§0, mutta olet halvaantunut ja saat kaksinkertaista vahinkoa[LINE_BREAK]Loppuu, kun sitä käytetään uudelleen
 firedance=Kutsuu 4 §bTanssivaa liekkiä§0, joista kukin tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nKutsuu uuden 5 sekunnin välein\nKaikki kutsut katoavat 20 sekunnin kuluttua taidon aktivoinnista\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
 iceball=Heitä §aJääpallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[50 + 10 x <skilllevel>]] manaa
 zap=Aloita sähköisku, joka hyppii mobien välillä 2 sekunnin ajan, tehden §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 1 sekunniksi\nKuluttaa §a[[10 + 2 x <skilllevel>]] manaa
@@ -368,7 +368,7 @@ grace=Sulo
 // Perusmekaniikat
 manausage=Jos sinulla ei ole tarpeeksi manaa, sen jäähtymisaika kaksinkertaistuu
 setmax=Negatiiviset vaikutukset asetetaan maksimiin, eikä niitä voi poistaa muilla buffeilla
-holydamage=10% tehdystä pyhästä vahingosta muunnetaan parannukseksi mobeille, jotka parannat maagisesti\nSytyttää myös epäkuolleet ja demoniset mobit tuleen 10 sekunniksi
+holydamage=25% tehdystä pyhästä vahingosta muunnetaan parannukseksi mobeille, jotka parannat maagisesti\nSytyttää myös epäkuolleet ja demoniset mobit tuleen 10 sekunniksi
 
 // Buffit
 marked=§hMerkitty:§0 Tee +20% vahinkoa (+ §hkeskittymisvaurio§0) ja +10% kriittisen osuman mahdollisuutta merkitsemillesi mobeille\n"Lähin vihollinen" priorisoi merkittyjä vihollisia

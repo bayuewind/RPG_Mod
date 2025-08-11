@@ -314,7 +314,7 @@ arrowstorm=Lőj egy alap nyilat minden közeli ellenségre, §i[[2 x <playerleve
 
 // Varázsló
 arcaneoverload=Amíg aktív, növeli a Mágikus Támadási Sebességedet §a[[30 x <skilllevel>]]%-kal§0, de nem tudsz mozogni\nLejár, ha kifogysz a manából, vagy ha újra használod\n§a[[10 + 2 x <skilllevel>]] Manát§0 fogyaszt másodpercenként
-manarecharge=Amíg aktív, növeli a Mana Regenerációdat +1-gyel és §a[[50 x <skilllevel>]]%-kal§0, de lebénulsz és dupla sebzést szenvedsz\nÚjrahasználatkor lejár
+manarecharge=Amíg aktív, növeli a Mana Regenerációdat +1.4-gyel és §a[[50 x <skilllevel>]]%-kal§0, de lebénulsz és dupla sebzést szenvedsz[LINE_BREAK]Újrahasználatkor lejár
 firedance=Megidéz 4 §bTáncoló Lángot§0, amelyek mindegyike §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\n5 másodpercenként megidéz egy másikat\nMinden idézés eltűnik 20 másodperccel a képesség aktiválása után\n§a[[30 + 6 x <skilllevel>]] Manát§0 fogyaszt
 iceball=Dobj egy §aJéggolyót§0 a legközelebbi ellenségre, §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva\n§a[[50 + 10 x <skilllevel>]] Manát§0 fogyaszt
 zap=Indíts egy szikrát, amely 2 másodpercig ugrál a mobok között, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva és 1 másodpercre elkábítva\n§a[[10 + 2 x <skilllevel>]] Manát§0 fogyaszt
@@ -368,7 +368,7 @@ grace=Kecsesség
 // Alapvető mechanikák
 manausage=Ha nincs elég manád, a hűlési ideje megduplázódik
 setmax=A negatív hatások maximálisra vannak állítva, és más buffokkal nem távolíthatók el
-holydamage=Az okozott szent sebzés 10%-a gyógyítássá alakul a mágikusan gyógyított mobok számára\n10 másodpercre lángra lobbantja az élőhalott és démoni mobokat is
+holydamage=Az okozott szent sebzés 25%-a gyógyítássá alakul a mágikusan gyógyított mobok számára\n10 másodpercre lángra lobbantja az élőhalott és démoni mobokat is
 
 // Buffok
 marked=§hMegjelölt:§0 +20% sebzést (+ §hfókusz sebzést§0) és +10% kritikus esélyt okoz a megjelölt moboknak\n"Legközelebbi ellenség" a megjelölt ellenségeket részesíti előnyben

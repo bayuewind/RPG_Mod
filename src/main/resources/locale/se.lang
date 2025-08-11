@@ -314,7 +314,7 @@ arrowstorm=Skjut en grundläggande pil mot varje nära fiende och ge §i[[2 x <p
 
 // Trollkarl
 arcaneoverload=Medan aktiv, ökar din Magiska Attackhastighet med §a[[30 x <skilllevel>]]%§0, men du kommer inte att kunna röra dig\nAvslutas när du får slut på mana, eller om den används igen\nFörbrukar §a[[10 + 2 x <skilllevel>]] Mana per sekund
-manarecharge=Medan aktiv, ökar din Mana-regenerering med +1 och med §a[[50 x <skilllevel>]]%§0, men du blir förlamad och tar dubbel skada\nAvslutas när den används igen
+manarecharge=Medan aktiv, ökar din Mana-regenerering med +1.4 och med §a[[50 x <skilllevel>]]%§0, men du blir förlamad och tar dubbel skada[LINE_BREAK]Avslutas när den används igen
 firedance=Kallar fram 4 §bDansande Lågor§0, var och en ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\nKallar fram en till var 5:e sekund\nAlla framkallningar försvinner 20 sekunder efter att förmågan aktiverats\nFörbrukar §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kasta ett §aIsklot§0 mot närmaste fiende, som ger §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skada§0\nFörbrukar §a[[50 + 10 x <skilllevel>]] Mana
 zap=Starta en stöt som hoppar mellan mobbar i 2 sekunder, ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0 och bedövar i 1 sekund\nFörbrukar §a[[10 + 2 x <skilllevel>]] Mana
@@ -368,7 +368,7 @@ grace=Nåd
 // Grundläggande Mekanik
 manausage=Om du inte har tillräckligt med mana, fördubblas dess nedkylning
 setmax=Negativa effekter är inställda på max och kan inte tas bort av andra buffar
-holydamage=10% av den utdelade Heliga skadan kommer att omvandlas till läkning för mobbar du magiskt läker\nSätter också odöda och demoniska mobbar i brand i 10 sekunder
+holydamage=25% av den utdelade Heliga skadan kommer att omvandlas till läkning för mobbar du magiskt läker\nSätter också odöda och demoniska mobbar i brand i 10 sekunder
 
 // Buffar
 marked=§hMärkt:§0 Ge +20% Skada (+ §hFokusskada§0) och +10% Kritisk Chans till mobbar du märker\n"Närmaste fiende" prioriterar märkta fiender

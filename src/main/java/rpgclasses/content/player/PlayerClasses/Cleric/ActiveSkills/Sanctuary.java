@@ -134,7 +134,7 @@ public class Sanctuary extends SimpleLevelEventActiveSkill {
                             .forEach(
                                     mob -> {
                                         if (mob == owner || mob.isSameTeam(owner)) {
-                                            RPGBuffs.purify(owner, true);
+                                            RPGBuffs.purify(mob, true);
                                             ActiveBuff ab = new ActiveBuff(buffStringID, mob, 100, null);
                                             ab.getGndData().setFloat("healthRegen", healthRegen);
                                             mob.buffManager.addBuff(ab, true);
