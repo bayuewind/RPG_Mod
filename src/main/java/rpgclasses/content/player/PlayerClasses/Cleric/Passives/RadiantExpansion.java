@@ -2,7 +2,7 @@ package rpgclasses.content.player.PlayerClasses.Cleric.Passives;
 
 import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -25,10 +25,9 @@ public class RadiantExpansion extends SimpleBuffPassive {
         return new SanctifiedMindBuff();
     }
 
-    public static class SanctifiedMindBuff extends PrincipalPassiveBuff implements AphMagicHealingFunctions {
+    public static class SanctifiedMindBuff extends PrincipalPassiveBuff implements AphMagicHealingBuff {
         @Override
-        public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-            ActiveBuff activeBuff = healer.buffManager.getBuff(this);
+        public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             int level = getLevel(activeBuff);
             int damage = (int) (realHealing * 0.05F * level);
 

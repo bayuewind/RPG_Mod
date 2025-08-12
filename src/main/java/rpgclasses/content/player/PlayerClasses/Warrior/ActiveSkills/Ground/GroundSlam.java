@@ -1,6 +1,7 @@
 package rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground;
 
 import aphorea.registry.AphBuffs;
+import aphorea.utils.area.AphArea;
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.sound.SoundEffect;
@@ -36,8 +37,7 @@ public class GroundSlam extends ActiveSkill {
         }
 
         AphAreaList areaList = new AphAreaList(
-                new RPGArea(120, colorArea)
-                        .setDebuffFilter(m -> !m.isBoss())
+                new AphArea(120, colorArea)
                         .setDebuffArea(1000 * activeSkillLevel, AphBuffs.STUN.getStringID())
                         .setDamageArea(new GameDamage(DamageTypeRegistry.MELEE, 5 * playerData.getStrength(player)))
         );

@@ -1,6 +1,6 @@
 package rpgclasses.buffs.Passive;
 
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.engine.network.NetworkPacket;
 import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
@@ -23,7 +23,7 @@ import rpgclasses.data.MobData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGDamageType;
 
-public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingFunctions {
+public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingBuff {
     public HolyDamageDealtBuff() {
         isVisible = true;
     }
@@ -76,8 +76,7 @@ public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingF
     }
 
     @Override
-    public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-        ActiveBuff activeBuff = getActiveBuff(healer);
+    public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
         int extraHeal = Math.min(target.getMaxHealth() - target.getHealth(), getDamageDealt(activeBuff));
         if (extraHeal > 0) {
             target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, extraHeal));

@@ -68,7 +68,7 @@ public class DivineIntervention extends SimpleBuffActiveSkill {
 
         Mob target = targetContainer[0];
         int healing = target.getMaxHealth() - target.getHealth();
-        if(healing > 0) {
+        if (healing > 0) {
             target.getLevel().entityManager.addLevelEvent(new MobHealthChangeEvent(target, healing));
         }
         giveBuff(player, target, playerData, activeSkillLevel);

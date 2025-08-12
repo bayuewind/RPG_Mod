@@ -1,6 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Cleric.Passives;
 
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobManaChangeEvent;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -20,11 +20,10 @@ public class SanctifiedArmor extends SimpleBuffPassive {
         return new SanctifiedArmorBuff();
     }
 
-    public static class SanctifiedArmorBuff extends PrincipalPassiveBuff implements AphMagicHealingFunctions {
+    public static class SanctifiedArmorBuff extends PrincipalPassiveBuff implements AphMagicHealingBuff {
         @Override
-        public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
+        public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             if (healer.isServer()) {
-                ActiveBuff activeBuff = healer.buffManager.getBuff(this);
                 int level = getLevel(activeBuff);
                 target.getLevel().entityManager.addLevelEvent(new MobManaChangeEvent(target, realHealing * 0.02F * level));
             }

@@ -1,6 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Cleric.Passives;
 
-import aphorea.utils.magichealing.AphMagicHealingFunctions;
+import aphorea.utils.magichealing.AphMagicHealingBuff;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
@@ -24,10 +24,9 @@ public class EmpoweredHealing extends SimpleBuffPassive {
         return new EmpoweredHealingBuff();
     }
 
-    public class EmpoweredHealingBuff extends PrincipalPassiveBuff implements AphMagicHealingFunctions {
+    public class EmpoweredHealingBuff extends PrincipalPassiveBuff implements AphMagicHealingBuff {
         @Override
-        public void onMagicalHealing(Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
-            ActiveBuff activeBuff = healer.buffManager.getBuff(this);
+        public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             giveSecondaryPassiveBuff((PlayerMob) healer, target, PlayerDataList.getPlayerData((PlayerMob) healer), getLevel(activeBuff), 5000);
         }
     }
