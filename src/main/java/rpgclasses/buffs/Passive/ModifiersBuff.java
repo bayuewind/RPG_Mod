@@ -76,7 +76,7 @@ public class ModifiersBuff extends PassiveBuff {
     }
 
     private boolean preventDamage(ActiveBuff activeBuff, MobBeforeHitEvent event) {
-        String prevent = this.shouldPreventDamage(activeBuff);
+        String prevent = this.shouldPreventDamage(activeBuff, event);
         if (prevent != null && activeBuff.owner.isServer()) {
             if (prevent.equals("dodge")) {
                 activeBuff.owner.getServer().network.sendToClientsAtEntireLevel(new ShowDodgePacket(activeBuff.owner.getX(), activeBuff.owner.getY()), activeBuff.owner.getLevel());
@@ -93,9 +93,9 @@ public class ModifiersBuff extends PassiveBuff {
         }
     }
 
-    public String shouldPreventDamage(ActiveBuff activeBuff) {
+    public String shouldPreventDamage(ActiveBuff activeBuff, MobBeforeHitEvent event) {
         float reduceChance = Math.min(1.0F, activeBuff.owner.buffManager.getModifier(BuffModifiers.SPEED));
-        if (GameRandom.globalRandom.getChance(activeBuff.owner.buffManager.getModifier(RPGModifiers.DODGE_CHANCE) * reduceChance)) {
+        if (event.attacker.getAttackOwner() != null && GameRandom.globalRandom.getChance(activeBuff.owner.buffManager.getModifier(RPGModifiers.DODGE_CHANCE) * reduceChance)) {
             return "dodge";
         }
         return null;

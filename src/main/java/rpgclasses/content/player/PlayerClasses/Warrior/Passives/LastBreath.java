@@ -43,7 +43,7 @@ public class LastBreath extends SimpleBuffPassive {
 
             private boolean runLogic(ActiveBuff activeBuff, int expectedHealth) {
                 Level level = activeBuff.owner.getLevel();
-                if (level.isServer() && expectedHealth <= 0) {
+                if (!activeBuff.owner.buffManager.hasBuff(getSecondaryBuffStringID()) && level.isServer() && expectedHealth <= 0) {
                     activeBuff.owner.setHealth(1);
                     giveDatalessSecondaryPassiveBuff((PlayerMob) activeBuff.owner, getLevel(activeBuff) * 3000);
                     level.getServer().network.sendToClientsWithEntity(new PacketLifelineEvent(activeBuff.owner.getUniqueID()), activeBuff.owner);
@@ -80,7 +80,7 @@ public class LastBreath extends SimpleBuffPassive {
 
             @Override
             public void serverTick(ActiveBuff activeBuff) {
-                activeBuff.owner.setHealth(1);
+                if(activeBuff.owner.getHealth() > 1) activeBuff.owner.setHealth(1);
             }
 
             @Override
@@ -90,7 +90,7 @@ public class LastBreath extends SimpleBuffPassive {
                     owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), GameRandom.globalRandom.nextInt(2) == 0 ? Particle.GType.COSMETIC : Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(GameRandom.globalRandom.getOneOf(RPGColors.red, RPGColors.black)).height(16.0F);
                 }
 
-                owner.setHealth(1);
+                if(activeBuff.owner.getHealth() > 1) owner.setHealth(1);
             }
         };
     }

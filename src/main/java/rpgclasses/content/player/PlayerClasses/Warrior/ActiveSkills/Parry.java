@@ -43,12 +43,12 @@ public class Parry extends SimpleBuffActiveSkill {
             @Override
             public void onBeforeHit(ActiveBuff activeBuff, MobBeforeHitEvent event) {
                 super.onBeforeHit(activeBuff, event);
-                if (!event.isPrevented() && event.damage.damage > 0 && activeBuff.owner.isServer()) {
+                if (!event.isPrevented() && event.damage.damage > 0 && activeBuff.owner.isServer() && event.attacker.getAttackOwner() != null) {
                     event.attacker.getAttackOwner().isServerHit(new GameDamage(DamageTypeRegistry.TRUE, 5F * event.damage.damage), activeBuff.owner.x, activeBuff.owner.y, 100, activeBuff.owner);
+                    event.prevent();
+                    event.showDamageTip = false;
+                    event.playHitSound = false;
                 }
-                event.prevent();
-                event.showDamageTip = false;
-                event.playHitSound = false;
             }
         };
     }
