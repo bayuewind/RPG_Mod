@@ -232,6 +232,14 @@ public class MobData {
         return MobRegistry.getLocalization(mob.getID()).translate();
     }
 
+    public int levelScaling() {
+        return 4 + level;
+    }
+
+    public static int levelScaling(int level) {
+        return 4 + level;
+    }
+
     public boolean isUndead() {
         return isUndead(mob);
     }

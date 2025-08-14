@@ -22,11 +22,11 @@ public class MobClass {
     public static List<MobClass> mythicClasses = new ArrayList<>();
 
     public static void registerCore() {
-        registerBossClass(new MobClass("boss", "0", 0.06F, RPGConfig.getBossKillBonus(), BossMobClassBuff.class));
-        registerMobClass(basicClasses, new MobClass("warrior", "#993333", 0.04F, WarriorMobClassBuff.class));
-        registerMobClass(basicClasses, new MobClass("tank", "#666666", 0.08F, TankMobClassBuff.class));
-        registerMobClass(basicClasses, new MobClass("runner", "#339966", 0.02F, RunnerMobClassBuff.class));
-        registerMobClass(uncommonClasses, new MobClass("healer", "#00ff00", 0.05F, 1.2F, HealerMobClassBuff.class));
+        registerBossClass(new MobClass("boss", "0", 0.04F, RPGConfig.getBossKillBonus(), BossMobClassBuff.class));
+        registerMobClass(basicClasses, new MobClass("warrior", "#993333", 0.02F, WarriorMobClassBuff.class));
+        registerMobClass(basicClasses, new MobClass("tank", "#666666", 0.05F, TankMobClassBuff.class));
+        registerMobClass(basicClasses, new MobClass("runner", "#339966", 0.01F, RunnerMobClassBuff.class));
+        registerMobClass(uncommonClasses, new MobClass("healer", "#00ff00", 0.04F, 1.2F, HealerMobClassBuff.class));
         registerMobClass(uncommonClasses, new MobClass("explosive", "#ff0000", 0.03F, 1.2F, ExplosiveMobClassBuff.class));
         registerMobClass(uncommonClasses, new MobClass("glacial", "#00ffff", 0.03F, 1.2F, GlacialMobClassBuff.class));
         registerMobClass(rareClasses, new MobClass("flash", "#ffff00", 0.01F, 2F, FlashMobClassBuff.class));
@@ -83,6 +83,8 @@ public class MobClass {
     public final float expMod;
     public final Class<? extends MobClassBuff> classBuff;
 
+    public float baseHealthMod;
+
     public MobClass(String stringID, String color, float healthPerLevel, float expMod, Class<? extends MobClassBuff> classBuff) {
         this.id = allClasses.size();
         this.stringID = stringID;
@@ -90,10 +92,17 @@ public class MobClass {
         this.healthPerLevel = healthPerLevel;
         this.expMod = expMod;
         this.classBuff = classBuff;
+
+        this.baseHealthMod = healthPerLevel * 4;
     }
 
     public MobClass(String stringID, String color, float healthPerLevel, Class<? extends MobClassBuff> classBuff) {
         this(stringID, color, healthPerLevel, 1, classBuff);
+    }
+
+    public MobClass setBaseHealthMod(float baseHealthMod) {
+        this.baseHealthMod = baseHealthMod;
+        return this;
     }
 
     public String getName() {

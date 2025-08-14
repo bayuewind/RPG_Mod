@@ -12,8 +12,8 @@ import java.awt.*;
 public class FlashMobClassBuff extends MobClassBuff {
     @Override
     public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, level * 0.04F);
-        activeBuff.setModifier(BuffModifiers.SPEED, level * 0.15F);
+        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, 0.08F + level * 0.02F);
+        activeBuff.setModifier(BuffModifiers.SPEED, 0.4F + level * 0.1F);
     }
 
     @Override

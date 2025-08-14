@@ -6,7 +6,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 public class RunnerMobClassBuff extends MobClassBuff {
     @Override
     public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, level * 0.025F);
-        activeBuff.setModifier(BuffModifiers.SPEED, level * 0.05F);
+        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, 0.06F + level * 0.015F);
+        activeBuff.setModifier(BuffModifiers.SPEED, 0.2F + level * 0.05F);
     }
 }

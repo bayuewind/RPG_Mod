@@ -27,7 +27,7 @@ public class HealerMobClassBuff extends MobClassBuff {
         if (mobData != null) {
             long lastArea = cooldowns.getOrDefault(owner, 0L);
             long now = owner.getTime();
-            float cooldown = getCooldown(mobData.level);
+            float cooldown = getCooldown(mobData.levelScaling());
             if (owner.isVisible() && GameRandom.globalRandom.getChance(Math.min(cooldown, (now - lastArea) / cooldown))) {
                 owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 255, 0)).givesLight(120F, 1F).height(16.0F);
             }
@@ -41,10 +41,10 @@ public class HealerMobClassBuff extends MobClassBuff {
         if (mobData != null) {
             long lastArea = cooldowns.getOrDefault(owner, 0L);
             long now = owner.getTime();
-            long cooldown = getCooldown(mobData.level);
+            long cooldown = getCooldown(mobData.levelScaling());
             if ((now - lastArea) > cooldown) {
-                int range = 200 + mobData.level * 10;
-                int heal = mobData.level * 5;
+                int range = 200 + mobData.levelScaling() * 8;
+                int heal = mobData.levelScaling() * 5;
 
                 AphAreaList areaList = new AphAreaList(
                         new AphArea(range, new Color(0, 255, 0, 102)).setHealingArea(heal)
