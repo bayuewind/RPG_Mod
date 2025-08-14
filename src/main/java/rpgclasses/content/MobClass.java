@@ -79,25 +79,25 @@ public class MobClass {
     public final int id;
     public final String stringID;
     public final String color;
-    public final float healthPerLevel;
+    public final float healthModPerLevel;
     public final float expMod;
     public final Class<? extends MobClassBuff> classBuff;
 
     public float baseHealthMod;
 
-    public MobClass(String stringID, String color, float healthPerLevel, float expMod, Class<? extends MobClassBuff> classBuff) {
+    public MobClass(String stringID, String color, float healthModPerLevel, float expMod, Class<? extends MobClassBuff> classBuff) {
         this.id = allClasses.size();
         this.stringID = stringID;
         this.color = color;
-        this.healthPerLevel = healthPerLevel;
+        this.healthModPerLevel = healthModPerLevel;
         this.expMod = expMod;
         this.classBuff = classBuff;
 
-        this.baseHealthMod = healthPerLevel * 4;
+        this.baseHealthMod = healthModPerLevel * 4;
     }
 
-    public MobClass(String stringID, String color, float healthPerLevel, Class<? extends MobClassBuff> classBuff) {
-        this(stringID, color, healthPerLevel, 1, classBuff);
+    public MobClass(String stringID, String color, float healthModPerLevel, Class<? extends MobClassBuff> classBuff) {
+        this(stringID, color, healthModPerLevel, 1, classBuff);
     }
 
     public MobClass setBaseHealthMod(float baseHealthMod) {
@@ -116,8 +116,8 @@ public class MobClass {
     }
 
     public void setMaxHealth(Mob mob, int classLevel) {
-        if (healthPerLevel > 0) {
-            mob.setMaxHealth((int) (mob.getMaxHealth() * (1F + healthPerLevel * classLevel)));
+        if (healthModPerLevel > 0) {
+            mob.setMaxHealth((int) (mob.getMaxHealth() * (1F + baseHealthMod + healthModPerLevel * classLevel)));
             mob.setHealthHidden(mob.getMaxHealth());
         }
     }
