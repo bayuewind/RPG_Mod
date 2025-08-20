@@ -142,7 +142,7 @@ manaproficiency=Competencia de Maná
 firepower=Poder de Fuego
 arcaneshield=Escudo Arcano
 fireshield=Escudo de Fuego
-iceshield=Escudo de Hielo
+iceshield=Escudo de Gel
 flamingsteps=Pasos Llameantes
 stormbound=Atado a la Tormenta
 
@@ -195,7 +195,7 @@ darksummons=Inflige un §a+[[10 x <skilllevel>]]%§0 de Daño de Invocador a los
 lifeleech=Recupera un §a[[<skilllevel>]]%§0 del Daño de Invocador infligido como Salud
 necroticremains=Cuando una invocación necrótica muere, explota, infligiendo §i[[0.1 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos, envenenándolos con un 20% del daño por segundo durante 10 segundos
 endlesslegion=Cada 4 niveles de esta habilidad, ganas +1 invocación máxima
-lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un liche\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un liche (un esqueleto) que solo puede disparar huesos que infligen Daño de Invocador igual a [[Fuerza]] y usar el resto de tus habilidades\nMientras estás en forma de liche, recibes el doble de daño
+lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un §bLich§0\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un §bLich§0 (un esqueleto)
 
 // Cleric
 vitalaura=Cada §a[[15 - <skilllevel>]] segundos§0, liberas un aura de curación mágica a tu alrededor que restaura §a[[10 + <grace>]] de salud§0\nTambién te cura la mitad de esa cantidad
@@ -249,7 +249,7 @@ manarecharge=Recarga de Maná
 teleport=Teletransporte
 inferno=Infierno
 fireenchantment=Encantamiento de Fuego
-iceenchantment=Encantamiento de Hielo
+iceenchantment=Encantamiento de Gel
 
 fireball=Bola de Fuego
 lightning=Rayo
@@ -314,7 +314,7 @@ arrowstorm=Dispara una flecha básica a cada enemigo cercano, infligiendo §i[[2
 
 // Wizard
 arcaneoverload=Mientras está activo, aumenta tu Velocidad de Ataque Mágico en un §a[[30 x <skilllevel>]]%§0, pero no podrás moverte\nTermina cuando te quedas sin maná, o si se usa de nuevo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná por segundo
-manarecharge=Mientras está activo, aumenta tu Regeneración de Maná en +1.4 y en un §a[[50 x <skilllevel>]]%§0, pero estarás paralizado y recibirás el doble de daño[LINE_BREAK]Termina cuando se usa de nuevo
+manarecharge=Mientras está activo, aumenta tu Regeneración de Maná en +1.4 y en un §a[[50 x <skilllevel>]]%§0, pero estarás paralizado y recibirás el doble de daño\nTermina cuando se usa de nuevo
 firedance=Invoca 4 §bLlamas Danzantes§0, cada una inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\nInvoca otra cada 5 segundos\nTodas las invocaciones desaparecen 20 segundos después de activar la habilidad\nConsume §a[[30 + 6 x <skilllevel>]] de Maná
 iceball=Lanza una §aBola de Hielo§0 al enemigo más cercano, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\nConsume §a[[50 + 10 x <skilllevel>]] de Maná
 zap=Inicia un chispazo que salta entre los monstruos durante 2 segundos, infligiendo §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturdiendo durante 1 segundo\nConsume §a[[10 + 2 x <skilllevel>]] de Maná
@@ -330,16 +330,16 @@ lightning=Inicia un rayo que salta entre los monstruos durante 1 segundo, inflig
 // Nigromante
 skeletonhorde=Invoca §a[[1 + <skilllevel>]] §bEsqueletos§0
 skeletonwarrior=Invoca un §bGuerrero Esqueleto§0 con un §a+[[20 x <skilllevel>]]%§0 de Salud y Daño
-sacrifice=La invocación dañable más cercana muere, y luego recuperas §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Salud§0 como curación mágica
+sacrifice=La invocación necrótica más cercana muere, y luego recuperas §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Salud§0 como curación mágica
 siegecry=Gana un §a+[[50 x <skilllevel>]]%§0 de Velocidad de Invocación durante 6 segundos
 
 boneslingerhorde=Invoca §a[[1 + <skilllevel>]]§0 §bLanzahuesos§0
 tomb=Genera una estructura que invoca un §bEsqueleto§0 cada §a[[10 - <skilllevel>]] segundos§0\nLa Tumba tiene una Salud igual a §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tumba pierde un 2% de su Salud Total por segundo
 necroticbloom=Acelera el efecto del veneno en todos los enemigos cercanos reduciendo su duración al 10%, pero aumentando su daño por segundo para mantener el daño total
-wardingtaunt=La invocación dañable más cercana obliga a los enemigos cercanos en un radio de §a[[50 x <skilllevel>]]§0 a atacarla
+wardingtaunt=La invocación necrótica más cercana obliga a los enemigos cercanos en un radio de §a[[50 x <skilllevel>]]§0 a atacarla
 
 unholyground=Extiende un aura de corrupción a tu alrededor durante 10 segundos\nLos enemigos dentro de esta área reciben §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Daño de Veneno§0 por segundo y están §7Restringidos
-necroticbarrage=Todas las invocaciones dañables explotan al morir, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos\ny envenenándolos durante 10 segundos con un 20% del daño original por segundo
+necroticbarrage=Todas las invocaciones necróticas explotan al morir, infligiendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos\ny envenenándolos durante 10 segundos con un 20% del daño original por segundo
 
 // Cleric
 smite=Invoca un rayo de luz sagrada sobre el enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Daño Sagrado§0\nInflige el doble de daño a los monstruos no-muertos y demoníacos\nConsume §a[[10 + 2 x <skilllevel>]] de Maná§0
@@ -347,11 +347,11 @@ divineblessing=Aura de curación mágica que restaura §a[[20 + 3 x <grace> x <s
 purify=Purifícate a ti mismo y a los aliados cercanos de todos los efectos negativos\nConsume 10 de Maná
 lightinfusion=Durante los próximos 8 segundos, obtienes un §a+[[20 x <skilllevel>]]%§0 de Curación Mágica y Daño Sagrado
 holyguard=Aplica a ti y a todos los aliados cercanos un Escudo Sagrado durante un máximo de 30 segundos\nObtienen un §a+[[10 x <skilllevel>]]%§0 de Curación Mágica Recibida y el escudo bloquea un golpe antes de romperse\nConsume §a[[40 + 8 x <skilllevel>]] de Maná§0
-judgment=Libera una ola de energía radiante, infligiendo §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de Daño Sagrado§0 a todos los enemigos cercanos\nLos monstruos no-muertos y demoníacos quedan Restringidos durante 5 segundos\nConsume §a[[20 + 4 x <skilllevel>]] de Maná§0
-sanctuary=Crea una zona sagrada durante 8 segundos\nTú y los aliados dentro sois inmunes a los efectos negativos y ganáis §a[[0.2 x <grace> x <skilllevel>]]§0 de regeneración de salud por segundo\nLos monstruos no-muertos y demoníacos dentro están Restringidos\nConsume §a[[30 + 6 x <skilllevel>]] de Maná§0
+judgment=Libera una ola de energía radiante, que inflige §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de Daño Sagrado§0 a todos los enemigos cercanos\nLos monstruos no-muertos y demoníacos quedan §7Restringidos§0 durante 5 segundos\nConsume §a[[20 + 4 x <skilllevel>]] de Maná§0
+sanctuary=Crea una zona sagrada durante 8 segundos\nTú y los aliados dentro sois inmunes a los efectos negativos y ganáis §a[[0.2 x <grace> x <skilllevel>]]§0 de regeneración de salud por segundo\nLos monstruos no-muertos y demoníacos dentro están §7Restringidos§0\nConsume §a[[30 + 6 x <skilllevel>]] de Maná§0
 divineintervention=Cura instantáneamente al aliado cercano más dañado hasta su salud máxima y otorga inmunidad a todo el daño durante §a[[<skilllevel>]]§0 segundos\nConsume §a[[60 + 12 x <skilllevel>]] de Maná§0
 resurrection=Resucita al último aliado jugador muerto en tu misma isla con un §a[[10 x <skilllevel>]]%§0 de su salud máxima en tu posición\nNo puedes resucitar a jugadores que podrían haber reaparecido hace más de 10 segundos\nConsume un §a[[100 - 10 x <skilllevel>]]%§0 de tu Maná (al menos §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Invoca una columna de luz sobre el enemigo más cercano, infligiendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Daño Sagrado§0 por segundo durante 5 segundos en el área\nLos monstruos no-muertos y demoníacos dentro están restringidos\nConsume §a[[40 + 8 x <skilllevel>]] de Maná§0
+wrathoflight=Invoca una columna de luz sobre el enemigo más cercano, que inflige §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de Daño Sagrado§0 por segundo durante 5 segundos en el área\nLos monstruos no-muertos y demoníacos dentro están §7Restringidos§0\nConsume §a[[40 + 8 x <skilllevel>]] de Maná§0
 
 
 [skillsdesckeys]
@@ -396,6 +396,9 @@ dancingflame=§bLlama Danzante:§0 Invocación que actúa como un proyectil. Que
 necromancerskeleton=§bEsqueleto:§0 Invocación necrótica dañable\nSalud: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
 necromancerskeletonwarrior=§bGuerrero Esqueleto:§0 Invocación necrótica dañable\nSalud: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDaño: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
 necromancerboneslinger=§bLanzahuesos:§0 Invocación necrótica dañable\nSalud: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distancia 320)\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
+
+// Tranformations
+necromancerlich=§bLich:§0 Transformación de no-muerto\n\nNo se pueden usar objetos\n+100% de Daño Recibido\n\nPulsa [input=trinketability] para disparar un hueso que inflige §i[[<strength>]] de Daño de Invocador§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=En Enfriamiento
 notenoughstamina=No hay Suficiente Resistencia
 notarget=No hay objetivos cerca
 nograbbableobject=No hay ningún objeto agarrable frente a ti
-nodamageablefollower=No hay invocaciones dañables cerca
+notargetfollower=No hay invocaciones objetivo cerca
 nodeathplayers=No se pueden resucitar jugadores muertos en este nivel
 
 

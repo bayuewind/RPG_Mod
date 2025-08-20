@@ -195,7 +195,7 @@ darksummons=Infligez §a+[[10 x <skilllevel>]]%§0 de dégâts d'invocateur aux 
 lifeleech=Récupère §a[[<skilllevel>]]%§0 des dégâts d'invocateur infligés sous forme de santé
 necroticremains=Lorsqu'une invocation nécrotique meurt, elle explose, infligeant §i[[0.1 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches, les empoisonnant pour 20% des dégâts par seconde pendant 10 secondes
 endlesslegion=Tous les 4 niveaux de cette compétence, vous gagnez +1 invocation maximale
-lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de santé si vous n'êtes pas déjà une liche\nPendant les §a[[120 - 6 x <skilllevel>]] prochaines secondes§0, vous devenez une liche (un squelette) qui ne peut que tirer des os infligeant des dégâts d'invocateur égaux à [[Force]] et utiliser le reste de vos compétences\nSous forme de liche, vous subissez le double de dégâts
+lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de santé si vous n'êtes pas déjà une §bLiche§0\nPendant les §a[[120 - 6 x <skilllevel>]] secondes suivantes§0, vous devenez une §bLiche§0 (un squelette)
 
 // Cleric
 vitalaura=Toutes les §a[[15 - <skilllevel>]] secondes§0, vous libérez une aura de guérison magique autour de vous qui restaure §a[[10 + <grace>]] de santé§0\nElle vous guérit également de la moitié de ce montant
@@ -219,6 +219,7 @@ groundslam=Frappe au sol
 grounddestruction=Destruction du sol
 parry=Parade
 battlecry=Cri de guerre
+
 
 ironguard=Garde de fer
 intimidation=Intimidation
@@ -248,8 +249,8 @@ manarecharge=Recharge de Mana
 
 teleport=Téléportation
 inferno=Enfer
-fireenchantment=Enchantement de Feu
-iceenchantment=Enchantement de Glace
+fireenchantment=Encantement de Feu
+iceenchantment=Encantement de Glace
 
 fireball=Boule de Feu
 lightning=Éclair
@@ -291,7 +292,7 @@ berserkercharge=Foncez sur une courte distance, infligeant §i[[10 x <playerleve
 groundslam=Attaque de zone qui inflige §i[[5 x <strength>]] de dégâts de mêlée§0 et §9étourdit§0 pendant §a[[1 x <skilllevel>]] secondes§0
 grounddestruction=Attaque de zone qui inflige §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] de dégâts de mêlée§0 et §9étourdit§0 pendant 2 secondes
 parry=Devenez invulnérable pendant 0,5 seconde et renvoyez 500% des dégâts d'origine reçus\nConsomme 100% de l'endurance
-battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de vos alliés proches, ainsi que leur vitesse de déplacement de §a[[10 x <skilllevel>]]%
+battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de vos alliés proches, ainsi que leur vitesse de déplacement de §a[[10 x <skilllevel>]]%§0
 
 ironguard=-50% de dégâts entrants pendant §a[[4 x <skilllevel>]] secondes
 intimidation=Pendant les §a[[<skilllevel>]] prochaines secondes§0, faites fuir les ennemis proches
@@ -314,7 +315,7 @@ arrowstorm=Tirez une flèche de base sur chaque ennemi proche, infligeant §i[[2
 
 // Sorcier
 arcaneoverload=Lorsqu'il est actif, augmente votre Vitesse d'Attaque Magique de §a[[30 x <skilllevel>]]%§0, mais vous ne pourrez pas bouger\nSe termine lorsque vous n'avez plus de mana, ou s'il est utilisé à nouveau\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana par seconde
-manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1.4 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts[LINE_BREAK]Se termine lorsqu'il est utilisé à nouveau
+manarecharge=Lorsqu'il est actif, augmente votre Régénération de Mana de +1.4 et de §a[[50 x <skilllevel>]]%§0, mais vous serez paralysé et subirez le double de dégâts\nSe termine lorsqu'il est utilisé à nouveau
 firedance=Invoque 4 §bFlammes Dansantes§0, chacune infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nInvoque une autre toutes les 5 secondes\nToutes les invocations disparaissent 20 secondes après l'activation de la compétence\nConsomme §a[[30 + 6 x <skilllevel>]] de Mana
 iceball=Lance une §aBoule de Glace§0 sur l'ennemi le plus proche, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0\nConsomme §a[[50 + 10 x <skilllevel>]] de Mana
 zap=Lance un zapping qui saute entre les monstres pendant 2 secondes, infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdissant pendant 1 seconde\nConsomme §a[[10 + 2 x <skilllevel>]] de Mana
@@ -330,16 +331,16 @@ lightning=Lance un éclair qui saute entre les monstres pendant 1 seconde, infli
 // Nécromancien
 skeletonhorde=Invoque §a[[1 + <skilllevel>]] §bSquelettes§0
 skeletonwarrior=Invoque un §bGuerrier squelette§0 avec §a+[[20 x <skilllevel>]]%§0 de santé et de dégâts
-sacrifice=L'invocation vulnérable la plus proche meurt, et vous récupérez alors §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de santé§0 sous forme de guérison magique
+sacrifice=L'invocation nécrotique la plus proche meurt, et vous récupérez alors §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de santé§0 sous forme de guérison magique
 siegecry=Gagnez §a+[[50 x <skilllevel>]]%§0 de vitesse d'invocation pendant 6 secondes
 
 boneslingerhorde=Invoque §a[[1 + <skilllevel>]]§0 §bLanceurs d'os§0
 tomb=Génère une structure qui invoque un §bSquelette§0 toutes les §a[[10 - <skilllevel>]] secondes§0\nLa Tombe a une santé égale à §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tombe perd 2% de sa santé totale par seconde
 necroticbloom=Accélère l'effet du poison sur tous les ennemis proches en réduisant sa durée à 10%, mais en augmentant ses dégâts par seconde pour maintenir les dégâts totaux
-wardingtaunt=L'invocation vulnérable la plus proche force les ennemis proches dans un rayon de §a[[50 x <skilllevel>]]§0 à la cibler
+wardingtaunt=L'invocation nécrotique la plus proche force les ennemis proches dans un rayon de §a[[50 x <skilllevel>]]§0 à la cibler
 
 unholyground=Étend une aura de corruption autour de vous pendant 10 secondes\nLes ennemis dans cette zone subissent §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de dégâts de poison§0 par seconde et sont §7Contraints
-necroticbarrage=Toutes les invocations vulnérables explosent à leur mort, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches\net les empoisonnant pendant 10 secondes avec 20% des dégâts d'origine par seconde
+necroticbarrage=Toutes les invocations nécrotiques explosent à leur mort, infligeant §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de dégâts magiques§0 aux ennemis proches\net les empoisonnant pendant 10 secondes avec 20% des dégâts d'origine par seconde
 
 // Cleric
 smite=Faites tomber un rayon de lumière sacrée sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dégâts sacrés§0\nInflige le double de dégâts aux monstres morts-vivants et démoniaques\nConsomme §a[[10 + 2 x <skilllevel>]] de mana§0
@@ -347,11 +348,11 @@ divineblessing=Aura de guérison magique qui vous restaure, à vous et à vos al
 purify=Purifiez-vous et vos alliés proches de tous les effets négatifs\nConsomme 10 de mana
 lightinfusion=Pendant les 8 prochaines secondes, vous gagnez §a+[[20 x <skilllevel>]]%§0 de guérison magique et de dégâts sacrés
 holyguard=Appliquez à vous et à tous les alliés proches un bouclier sacré pendant 30 secondes maximum\nIls gagnent §a+[[10 x <skilllevel>]]%§0 de guérison magique reçue et le bouclier bloque un coup avant de se briser\nConsomme §a[[40 + 8 x <skilllevel>]] de mana§0
-judgment=Libérez une vague d'énergie radiante, infligeant §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de dégâts sacrés§0 à tous les ennemis proches\nLes monstres morts-vivants et démoniaques sont contraints pendant 5 secondes\nConsomme §a[[20 + 4 x <skilllevel>]] de mana§0
-sanctuary=Créez une zone sacrée pendant 8 secondes\nVous et vos alliés à l'intérieur êtes immunisés contre les effets négatifs et gagnez §a[[0.2 x <grace> x <skilllevel>]]§0 de régénération de santé par seconde\nLes monstres morts-vivants et démoniaques à l'intérieur sont contraints\nConsomme §a[[30 + 6 x <skilllevel>]] de mana§0
+judgment=Libérez une vague d'énergie radiante, infligeant §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] de dégâts sacrés§0 à tous les ennemis proches\nLes monstres morts-vivants et démoniaques sont §7Contraints§0 pendant 5 secondes\nConsomme §a[[20 + 4 x <skilllevel>]] de mana§0
+sanctuary=Créez une zone sacrée pendant 8 secondes\nVous et vos alliés à l'intérieur êtes immunisés contre les effets négatifs et gagnez §a[[0.2 x <grace> x <skilllevel>]]§0 de régénération de santé par seconde\nLes monstres morts-vivants et démoniaques à l'intérieur sont §7Contraints§0\nConsomme §a[[30 + 6 x <skilllevel>]] de mana§0
 divineintervention=Soignez instantanément l'allié proche le plus endommagé à sa santé maximale et accordez-lui l'immunité à tous les dégâts pendant §a[[<skilllevel>]]§0 secondes\nConsomme §a[[60 + 12 x <skilllevel>]] de mana§0
 resurrection=Ressuscitez le dernier allié joueur mort sur votre même île avec §a[[10 x <skilllevel>]]%§0 de sa santé maximale à votre position\nVous ne pouvez pas ressusciter les joueurs qui auraient pu réapparaître il y a plus de 10 secondes\nConsomme §a[[100 - 10 x <skilllevel>]]%§0 de votre mana (au moins §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Invoquez une colonne de lumière sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dégâts sacrés§0 par seconde pendant 5 secondes dans la zone\nLes monstres morts-vivants et démoniaques à l'intérieur sont contraints\nConsomme §a[[40 + 8 x <skilllevel>]] de mana§0
+wrathoflight=Invoquez une colonne de lumière sur l'ennemi le plus proche, infligeant §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dégâts sacrés§0 par seconde pendant 5 secondes dans la zone\nLes monstres morts-vivants et démoniaques à l'intérieur sont §7Contraints§0\nConsomme §a[[40 + 8 x <skilllevel>]] de mana§0
 
 
 [skillsdesckeys]
@@ -396,6 +397,9 @@ dancingflame=§bFlamme Dansante:§0 Invocation qui agit comme un projectile. Enf
 necromancerskeleton=§bSquelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
 necromancerskeletonwarrior=§bGuerrier squelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDégâts: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
 necromancerboneslinger=§bLanceur d'os:§0 Invocation nécrotique vulnérable\nSanté: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distance 320)\nVitesse: 60\nPerd 2% de sa santé totale par seconde
+
+// Tranformations
+necromancerlich=§bLich:§0 Transformation de mort-vivant\n\nNe peut pas utiliser d'objets\n+100% de dégâts subis\n\nAppuyez sur [input=trinketability] pour tirer un os qui inflige §i[[<strength>]] de dégâts d'invocateur§0
 
 
 [item]
@@ -451,9 +455,9 @@ activeskillinuse=Cette compétence est déjà en cours d'utilisation
 anotheractiveskillinuse=Vous avez déjà une autre compétence en cours d'utilisation
 incooldown=En recharge
 notenoughstamina=Pas assez d'endurance
-notarget=Il n'y a pas de cibles à proximité
+notarget=Il n'y pas de cibles à proximité
 nograbbableobject=Il n'y a aucun objet saisissable devant vous
-nodamageablefollower=Il n'y a pas d'invocations vulnérables à proximité
+notargetfollower=Il n'y a pas d'invocations cibles à proximité
 nodeathplayers=Aucun joueur mort ne peut être ressuscité à ce niveau
 
 

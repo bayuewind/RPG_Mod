@@ -24,12 +24,12 @@ abstract public class SimpleBuffActiveSkill extends ActiveSkill {
 
     public void giveBuff(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
         ActiveBuff ab = getActiveBuff(buffOwner, target, playerData, activeSkillLevel);
-        target.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, buffOwner.isServer());
     }
 
     public void giveBuff2(PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {
         ActiveBuff ab = getActiveBuff2(buffOwner, target, playerData, activeSkillLevel);
-        target.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, buffOwner.isServer());
     }
 
     public ActiveBuff getActiveBuff(String buffID, int duration, PlayerMob buffOwner, Mob target, PlayerData playerData, int activeSkillLevel) {

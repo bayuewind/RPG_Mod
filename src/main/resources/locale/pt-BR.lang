@@ -137,7 +137,7 @@ wolfcompanion=Lobo companheiro
 // Mago
 arcanepower=Poder Arcano
 manapower=Poder de Mana
-manaproficiency=Proficiência em Mana
+manoproficiency=Proficiência em Mana
 firepower=Poder de Fogo
 arcaneshield=Escudo Arcano
 fireshield=Escudo de Fogo
@@ -195,7 +195,7 @@ darksummons=Cause §a+[[10 x <skilllevel>]]%§0 de Dano de Invocador a inimigos 
 lifeleech=Recupera §a[[<skilllevel>]]%§0 do Dano de Invocador causado como Vida
 necroticremains=Quando uma invocação necrótica morre, ela explode, causando §i[[0.1 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos, envenenando-os por 20% do dano por segundo por 10 segundos
 endlesslegion=A cada 4 níveis desta habilidade, você ganha +1 invocação máxima
-lichborn=Quando você morre, você sobrevive e recupera §a[[10 x <skilllevel>]]%§0 de Vida se você ainda não for um lich\nPelos próximos §a[[120 - 6 x <skilllevel>]] segundos§0, você se torna um lich (um esqueleto) que só pode atirar ossos que causam Dano de Invocador igual a [[Força]] e usar o resto de suas habilidades\nEnquanto estiver na forma de lich, você recebe o dobro do dano
+lichborn=Quando você morre, você sobrevive e recupera §a[[10 x <skilllevel>]]%§0 de Vida se você ainda não for um §bLich§0\nPelos próximos §a[[120 - 6 x <skilllevel>]] segundos§0, você se torna um §bLich§0 (um esqueleto)
 
 // Cleric
 vitalaura=A cada §a[[15 - <skilllevel>]] segundos§0, você libera uma aura de cura mágica ao seu redor que restaura §a[[10 + <grace>]] de vida§0\nEla também cura você pela metade desse valor
@@ -314,7 +314,7 @@ arrowstorm=Atire uma flecha básica em cada inimigo próximo, causando §i[[2 x 
 
 // Mago
 arcaneoverload=Enquanto ativo, aumenta sua Velocidade de Ataque Mágico em §a[[30 x <skilllevel>]]%§0, mas você não poderá se mover\nTermina quando você fica sem mana, ou se usado novamente\nConsome §a[[10 + 2 x <skilllevel>]] de Mana por segundo
-manarecharge=Enquanto ativo, aumenta sua Regeneração de Mana em +1.4 e em §a[[50 x <skilllevel>]]%§0, mas você ficará paralisado e receberá o dobro do dano[LINE_BREAK]Termina quando usado novamente
+manarecharge=Enquanto ativo, aumenta sua Regeneração de Mana em +1.4 e em §a[[50 x <skilllevel>]]%§0, mas você ficará paralisado e receberá o dobro do dano\nTermina quando usado novamente
 firedance=Invoca 4 §bChamas Dançantes§0, cada uma causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0\nInvoca outra a cada 5 segundos\nTodas as invocações desaparecem 20 segundos após a ativação da habilidade\nConsome §a[[30 + 6 x <skilllevel>]] de Mana
 iceball=Atire uma §aBola de Gelo§0 no inimigo mais próximo, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0\nConsome §a[[50 + 10 x <skilllevel>]] de Mana
 zap=Inicia um zap que salta entre monstros por 2 segundos, causando §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dano Mágico§0 e atordoando por 1 segundo\nConsome §a[[10 + 2 x <skilllevel>]] de Mana
@@ -330,13 +330,13 @@ lightning=Inicia um relâmpago que salta entre monstros por 1 segundo, causando 
 // Necromante
 skeletonhorde=Invoca §a[[1 + <skilllevel>]] §bEsqueletos§0
 skeletonwarrior=Invoca um §bGuerreiro Esqueleto§0 com §a+[[20 x <skilllevel>]]%§0 de Vida e Dano
-sacrifice=A invocação danificável mais próxima morre, e você então recupera §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Vida§0 como cura mágica
+sacrifice=A invocação necrótica mais próxima morre, e você então recupera §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Vida§0 como cura mágica
 siegecry=Ganhe §a+[[50 x <skilllevel>]]%§0 de Velocidade de Invocação por 6 segundos
 
 boneslingerhorde=Invoca §a[[1 + <skilllevel>]]§0 §bLançadores de Ossos§0
 tomb=Gera uma estrutura que invoca um §bEsqueleto§0 a cada §a[[10 - <skilllevel>]] segundos§0\nA Tumba tem Vida igual a §a[[5 x <playerlevel> x <skilllevel>]]§0\nA Tumba perde 2% de sua Vida Total por segundo
 necroticbloom=Acelera o efeito do veneno em todos os inimigos próximos, reduzindo sua duração para 10%, mas aumentando seu dano por segundo para manter o dano total
-wardingtaunt=A invocação danificável mais próxima força os inimigos próximos em um raio de §a[[50 x <skilllevel>]]§0 a alvejá-la
+wardingtaunt=A invocação necrótica mais próxima força os inimigos próximos em um raio de §a[[50 x <skilllevel>]]§0 a alvejá-la
 
 unholyground=Estende uma aura de corrupção ao seu redor por 10 segundos\nInimigos dentro desta área recebem §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] de Dano de Veneno§0 por segundo e são §7Restringidos
 necroticbarrage=Todas as invocações danificáveis explodem ao morrer, causando §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] de Dano Mágico§0 a inimigos próximos\ne envenenando-os por 10 segundos com 20% do dano original por segundo
@@ -397,6 +397,9 @@ necromancerskeleton=§bEsqueleto:§0 Invocação necrótica danificável\nVida: 
 necromancerskeletonwarrior=§bGuerreiro Esqueleto:§0 Invocação necrótica danificável\nVida: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDano: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocidade: 60\nPerde 2% da Vida Total por segundo
 necromancerboneslinger=§bLançador de Ossos:§0 Invocação necrótica danificável\nVida: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDano: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distância 320)\nVelocidade: 60\nPerde 2% da Vida Total por segundo
 
+// Tranformations
+necromancerlich=§bLich:§0 Transformação de morto-vivo\n\nNão pode usar itens\n+100% de dano recebido\n\nPressione [input=trinketability] para atirar um osso que causa §i[[<strength>]] de dano de invocador§0
+
 
 [item]
 scrollofoblivion=Pergaminho do esquecimento
@@ -453,7 +456,7 @@ incooldown=Em recarga
 notenoughstamina=Vigor insuficiente
 notarget=Não há alvos por perto
 nograbbableobject=Não há nenhum objeto que possa ser pego à sua frente
-nodamageablefollower=Não há invocações danificáveis por perto
+notargetfollower=Não há invocações alvo por perto
 nodeathplayers=Nenhum jogador morto pode ser ressuscitado neste nível
 
 

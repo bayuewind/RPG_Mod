@@ -19,8 +19,8 @@ public class ExplosiveMobClassBuff extends MobClassBuff {
 
     @Override
     public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, 0.04F + level * 0.01F);
-        activeBuff.setModifier(BuffModifiers.SPEED, 0.02F + level * 0.005F);
+        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, MobData.levelScaling(level) * 0.01F);
+        activeBuff.setModifier(BuffModifiers.SPEED, MobData.levelScaling(level) * 0.005F);
     }
 
     @Override

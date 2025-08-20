@@ -183,7 +183,7 @@ public class Sanctuary extends SimpleLevelEventActiveSkill {
 
     public void giveBuff(Mob target, int duration) {
         ActiveBuff ab = getActiveBuff(target, duration);
-        target.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, target.isServer());
     }
 
     public ActiveBuff getActiveBuff(Mob target, int duration) {

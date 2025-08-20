@@ -137,7 +137,7 @@ wolfcompanion=Wilczy towarzysz
 // Czarodziej
 arcanepower=Tajemna Moc
 manapower=Moc Many
-manaproficiency=Biegłość w Manie
+manoproficiency=Biegłość w Manie
 firepower=Siła Ognia
 arcaneshield=Tajemna Tarcza
 fireshield=Tarcza Ognia
@@ -195,7 +195,7 @@ darksummons=Zadaj §a+[[10 x <skilllevel>]]%§0 obrażeń przywoływacza zatruty
 lifeleech=Odzyskuje §a[[<skilllevel>]]%§0 zadanych obrażeń przywoływacza jako zdrowie
 necroticremains=Gdy nekrotyczne przywołanie umiera, wybucha, zadając §i[[0.1 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom, zatruwając ich na 20% obrażeń na sekundę przez 10 sekund
 endlesslegion=Co 4 poziomy tej umiejętności, zyskujesz +1 maksymalne przywołanie
-lichborn=Gdy umierasz, przeżywasz i odzyskujesz §a[[10 x <skilllevel>]]%§0 zdrowia, jeśli nie jesteś już liszem\nPrzez następne §a[[120 - 6 x <skilllevel>]] sekund§0 stajesz się liszem (szkieletem), który może strzelać tylko kośćmi zadającymi obrażenia przywoływacza równe [[Siła]] i używać reszty swoich umiejętności\nW formie lisza otrzymujesz podwójne obrażenia
+lichborn=Gdy umierasz, przeżywasz i odzyskujesz §a[[10 x <skilllevel>]]%§0 zdrowia, jeśli nie jesteś już liszem\nPrzez następne §a[[120 - 6 x <skilllevel>]] sekund§0 stajesz się liszem (szkieletem)
 
 // Cleric
 vitalaura=Co §a[[15 - <skilllevel>]] sekund§0 uwalniasz wokół siebie magiczną aurę leczniczą, która przywraca §a[[10 + <grace>]] zdrowia§0\nLeczy cię również za połowę tej kwoty
@@ -314,7 +314,7 @@ arrowstorm=Wystrzel podstawową strzałę w każdego pobliskiego wroga, zadając
 
 // Czarodziej
 arcaneoverload=Gdy aktywne, zwiększa twoją Prędkość Ataku Magicznego o §a[[30 x <skilllevel>]]%§0, ale nie będziesz mógł się poruszać\nKończy się, gdy skończy ci się mana, lub jeśli zostanie użyte ponownie\nZużywa §a[[10 + 2 x <skilllevel>]] Many na sekundę
-manarecharge=Gdy aktywne, zwiększa twoją Regenerację Many o +1.4 i o §a[[50 x <skilllevel>]]%§0, ale zostaniesz sparaliżowany i będziesz otrzymywać podwójne obrażenia[LINE_BREAK]Kończy się po ponownym użyciu
+manarecharge=Gdy aktywne, zwiększa twoją Regenerację Many o +1.4 i o §a[[50 x <skilllevel>]]%§0, ale zostaniesz sparaliżowany i będziesz otrzymywać podwójne obrażenia\nKończy się po ponownym użyciu
 firedance=Przywołuje 4 §bTańczące Płomienie§0, z których każdy zadaje §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nPrzywołuj kolejny co 5 sekund\nWszystkie przywołania znikają 20 sekund po aktywacji umiejętności\nZużywa §a[[30 + 6 x <skilllevel>]] Many
 iceball=Rzuć §aKulą Lodu§0 w najbliższego wroga, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0\nZużywa §a[[50 + 10 x <skilllevel>]] Many
 zap=Rozpocznij porażenie, które przeskakuje między mobami przez 2 sekundy, zadając §i[[<playerlevel> + <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłuszając na 1 sekundę\nZużywa §a[[10 + 2 x <skilllevel>]] Many
@@ -330,16 +330,16 @@ lightning=Rozpocznij piorun, który przeskakuje między mobami przez 1 sekundę,
 // Nekromanta
 skeletonhorde=Przywołaj §a[[1 + <skilllevel>]] §bSzkieletów§0
 skeletonwarrior=Przywołaj §bWojownika Szkielet§0 z §a+[[20 x <skilllevel>]]%§0 zdrowia i obrażeń
-sacrifice=Najbliższe możliwe do zranienia przywołanie umiera, a ty odzyskujesz §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdrowia§0 jako magiczne uzdrowienie
+sacrifice=Najbliższe nekrotyczne przywołanie umiera, a ty odzyskujesz §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdrowia§0 jako magiczne uzdrowienie
 siegecry=Zyskaj §a+[[50 x <skilllevel>]]%§0 prędkości przywoływania na 6 sekund
 
 boneslingerhorde=Przywołaj §a[[1 + <skilllevel>]]§0 §bRzucaczy Kości§0
 tomb=Generuje strukturę, która co §a[[10 - <skilllevel>]] sekund§0 przywołuje §bSzkielet§0\nGrób ma zdrowie równe §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrób traci 2% swojego całkowitego zdrowia na sekundę
 necroticbloom=Przyspiesza działanie trucizny na wszystkich pobliskich wrogach, skracając jej czas trwania do 10%, ale zwiększając obrażenia na sekundę, aby utrzymać całkowite obrażenia
-wardingtaunt=Najbliższe możliwe do zranienia przywołanie zmusza pobliskich wrogów w promieniu §a[[50 x <skilllevel>]]§0 do atakowania go
+wardingtaunt=Najbliższe nekrotyczne przywołanie zmusza pobliskich wrogów w promieniu §a[[50 x <skilllevel>]]§0 do atakowania go
 
 unholyground=Rozszerza wokół ciebie aurę zepsucia na 10 sekund\nWrogowie w tym obszarze otrzymują §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] obrażeń od trucizny§0 na sekundę i są §7Ograniczeni
-necroticbarrage=Wszystkie możliwe do zranienia przywołania wybuchają po śmierci, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom\ni zatruwając ich na 10 sekund 20% pierwotnych obrażeń na sekundę
+necroticbarrage=Wszystkie nekrotyczne przywołania wybuchają po śmierci, zadając §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom\ni zatruwając ich na 10 sekund 20% pierwotnych obrażeń na sekundę
 
 // Cleric
 smite=Zesłaj promień świętego światła na najbliższego wroga, zadając §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] obrażeń świętych§0\nZadaje podwójne obrażenia nieumarłym i demonicznym mobom\nZużywa §a[[10 + 2 x <skilllevel>]] many§0
@@ -397,6 +397,9 @@ necromancerskeleton=§bSzkielet:§0 Nekrotyczne możliwe do zranienia przywołan
 necromancerskeletonwarrior=§bWojownik Szkielet:§0 Nekrotyczne możliwe do zranienia przywołanie\nZdrowie: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nObrażenia: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nPrędkość: 60\nTraci 2% całkowitego zdrowia na sekundę
 necromancerboneslinger=§bRzucacz Kości:§0 Nekrotyczne możliwe do zranienia przywołanie\nZdrowie: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (zasięg 320)\nPrędkość: 60\nTraci 2% całkowitego zdrowia na sekundę
 
+// Tranformations
+necromancerlich=§bLich:§0 Nieumarła transformacja\n\nNie można używać przedmiotów\n+100% otrzymywanych obrażeń\n\nNaciśnij [input=trinketability], aby wystrzelić kość, która zadaje §i[[<strength>]] obrażeń przywoływacza§0
+
 
 [item]
 scrollofoblivion=Zwój zapomnienia
@@ -453,7 +456,7 @@ incooldown=W trakcie odnawiania
 notenoughstamina=Za mało wytrzymałości
 notarget=W pobliżu nie ma celów
 nograbbableobject=Przed tobą nie ma żadnego przedmiotu do chwycenia
-nodamageablefollower=W pobliżu nie ma możliwych do zranienia przywołań
+notargetfollower=Brak przywołań celu w pobliżu
 nodeathplayers=Na tym poziomie nie można wskrzesić żadnych martwych graczy
 
 

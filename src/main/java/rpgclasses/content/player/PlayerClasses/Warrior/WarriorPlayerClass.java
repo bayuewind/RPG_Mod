@@ -97,7 +97,7 @@ public class WarriorPlayerClass extends PlayerClass {
 
         skillsList.addSkill(new BasicPassive(
                 "ironskin", RPGColors.HEX.iron, 5, 10,
-                new FloatPercentModifierBuff(BuffModifiers.INCOMING_DAMAGE_MOD, 0.04F, false)
+                new FloatPercentModifierBuff(BuffModifiers.INCOMING_DAMAGE_MOD, 0.02F, false)
         ));
 
         skillsList.addSkill(new UnleashingRage(10, 15));

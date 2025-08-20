@@ -195,7 +195,7 @@ darksummons=Menghasilkan §a+[[10 x <skilllevel>]]%§0 Kerusakan Pemanggil ke mu
 lifeleech=Memulihkan §a[[<skilllevel>]]%§0 dari Kerusakan Pemanggil yang diberikan sebagai Kesehatan
 necroticremains=Ketika panggilan nekrotik mati, ia meledak, menghasilkan §i[[0.1 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat, meracuni mereka dengan 20% dari kerusakan per detik selama 10 detik
 endlesslegion=Setiap 4 level keterampilan ini, Anda mendapatkan +1 panggilan maks
-lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi lich\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi lich (tengkorak) yang hanya bisa menembakkan tulang yang menghasilkan Kerusakan Pemanggil sama dengan [[Kekuatan]] dan menggunakan sisa keterampilan Anda\nSaat dalam bentuk lich, Anda menerima kerusakan ganda
+lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi §bLich§0\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi §bLich§0 (tengkorak)
 
 // Cleric
 vitalaura=Setiap §a[[15 - <skilllevel>]] detik§0, Anda melepaskan aura penyembuhan ajaib di sekitar Anda yang memulihkan §a[[10 + <grace>]] kesehatan§0\nItu juga menyembuhkan Anda setengah dari jumlah itu
@@ -314,7 +314,7 @@ arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x <p
 
 // Penyihir
 arcaneoverload=Saat aktif, tingkatkan Kecepatan Serangan Sihir Anda sebesar §a[[30 x <skilllevel>]]%§0, tetapi Anda tidak akan bisa bergerak\nBerakhir saat Anda kehabisan mana, atau jika digunakan lagi\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana per detik
-manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1.4 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda[LINE_BREAK]Berakhir saat digunakan lagi
+manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1.4 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda\nBerakhir saat digunakan lagi
 firedance=Memanggil 4 §bApi Menari§0, masing-masing menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMemanggil satu lagi setiap 5 detik\nSemua panggilan menghilang 20 detik setelah kemampuan diaktifkan\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Lemparkan §aBola Es§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[50 + 10 x <skilllevel>]] Mana
 zap=Mulai sengatan yang melompat di antara monster selama 2 detik, menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 1 detik\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,16 +330,16 @@ lightning=Mulai petir yang melompat di antara monster selama 1 detik, menghasilk
 // Ahli Nujum
 skeletonhorde=Memanggil §a[[1 + <skilllevel>]] §bTengkorak§0
 skeletonwarrior=Memanggil §bPrajurit Tengkorak§0 dengan §a+[[20 x <skilllevel>]]%§0 Kesehatan dan Kerusakan
-sacrifice=Panggilan yang dapat dirusak terdekat mati, dan Anda kemudian memulihkan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Kesehatan§0 sebagai penyembuhan sihir
+sacrifice=Panggilan nekrotik terdekat mati, dan Anda kemudian memulihkan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Kesehatan§0 sebagai penyembuhan sihir
 siegecry=Dapatkan §a+[[50 x <skilllevel>]]%§0 Kecepatan Panggilan selama 6 detik
 
 boneslingerhorde=Memanggil §a[[1 + <skilllevel>]]§0 §bPelempar Tulang§0
 tomb=Menghasilkan struktur yang memanggil §bTengkorak§0 setiap §a[[10 - <skilllevel>]] detik§0\nMakam memiliki Kesehatan sama dengan §a[[5 x <playerlevel> x <skilllevel>]]§0\nMakam kehilangan 2% dari Total Kesehatannya per detik
 necroticbloom=Mempercepat efek racun pada semua musuh terdekat dengan mengurangi durasinya menjadi 10%, tetapi meningkatkan kerusakannya per detik untuk mempertahankan kerusakan total
-wardingtaunt=Panggilan yang dapat dirusak terdekat memaksa musuh terdekat dalam radius §a[[50 x <skilllevel>]]§0 untuk menargetkannya
+wardingtaunt=Panggilan nekrotik terdekat memaksa musuh terdekat dalam radius §a[[50 x <skilllevel>]]§0 untuk menargetkannya
 
 unholyground=Memperluas aura korupsi di sekitar Anda selama 10 detik\nMusuh di dalam area ini menerima §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Kerusakan Racun§0 per detik dan §7Dibatasi
-necroticbarrage=Semua panggilan yang dapat dirusak meledak saat mati, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat\ndan meracuni mereka selama 10 detik dengan 20% dari kerusakan asli per detik
+necroticbarrage=Semua panggilan nekrotik meledak saat mati, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat\ndan meracuni mereka selama 10 detik dengan 20% dari kerusakan asli per detik
 
 // Cleric
 smite=Panggil seberkas cahaya suci ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0\nMenghasilkan kerusakan ganda pada monster Mayat Hidup dan Dahsyat\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -347,11 +347,11 @@ divineblessing=Aura penyembuhan ajaib yang memulihkan §a[[20 + 3 x <grace> x <s
 purify=Bersihkan diri Anda dan sekutu terdekat dari semua efek negatif\nMengkonsumsi 10 Mana
 lightinfusion=Selama 8 detik berikutnya, Anda mendapatkan §a+[[20 x <skilllevel>]]%§0 Penyembuhan Ajaib dan Kerusakan Suci
 holyguard=Terapkan Perisai Suci pada Anda dan semua sekutu terdekat hingga 30 detik\nMereka mendapatkan §a+[[10 x <skilllevel>]]%§0 Penyembuhan Ajaib yang Diterima dan perisai memblokir satu serangan sebelum pecah\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Lepaskan gelombang energi pancaran, menghasilkan §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kerusakan Suci§0 ke semua musuh terdekat\nMonster Mayat Hidup dan Dahsyat Dibatasi selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
-sanctuary=Buat zona suci selama 8 detik\nAnda dan sekutu di dalamnya kebal terhadap efek negatif dan mendapatkan regenerasi kesehatan §a[[0.2 x <grace> x <skilllevel>]]§0 per detik\nMonster Mayat Hidup dan Dahsyat di dalamnya Dibatasi\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana§0
+judgment=Lepaskan gelombang energi pancaran, menghasilkan §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kerusakan Suci§0 ke semua musuh terdekat\nMonster Mayat Hidup dan Dahsyat §7Dibatasi§0 selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Buat zona suci selama 8 detik\nAnda dan sekutu di dalamnya kebal terhadap efek negatif dan mendapatkan regenerasi kesehatan §a[[0.2 x <grace> x <skilllevel>]]§0 per detik\nMonster Mayat Hidup dan Dahsyat di dalamnya §7Dibatasi§0\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana§0
 divineintervention=Sembuhkan seketika sekutu dekat yang paling rusak ke kesehatan maksimum mereka dan berikan kekebalan terhadap semua kerusakan selama §a[[<skilllevel>]]§0 detik\nMengkonsumsi §a[[60 + 12 x <skilllevel>]] Mana§0
 resurrection=Hidupkan kembali sekutu pemain mati terakhir di pulau yang sama dengan §a[[10 x <skilllevel>]]%§0 dari kesehatan maksimum mereka di posisi Anda\nAnda tidak dapat menghidupkan kembali pemain yang bisa respawn lebih dari 10 detik yang lalu\nMengkonsumsi §a[[100 - 10 x <skilllevel>]]%§0 dari Mana Anda (setidaknya §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Panggil pilar cahaya ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0 per detik selama 5 detik di area tersebut\nMonster Mayat Hidup dan Dahsyat di dalamnya dibatasi\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
+wrathoflight=Panggil pilar cahaya ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0 per detik selama 5 detik di area tersebut\nMonster Mayat Hidup dan Dahsyat di dalamnya §7Dibatasi§0\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
 [skillsdesckeys]
@@ -396,6 +396,9 @@ dancingflame=§bApi Menari:§0 Panggilan yang bertindak seperti proyektil. Memba
 necromancerskeleton=§bTengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
 necromancerskeletonwarrior=§bPrajurit Tengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nKerusakan: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
 necromancerboneslinger=§bPelempar Tulang:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (jarak 320)\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+
+// Tranformations
+necromancerlich=§bLich:§0 Transformasi mayat hidup\n\nTidak dapat menggunakan item\n+100% Kerusakan yang Diterima\n\nTekan [input=trinketability] untuk menembakkan tulang yang menghasilkan §i[[<strength>]] Kerusakan Pemanggil§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=Dalam Cooldown
 notenoughstamina=Stamina Tidak Cukup
 notarget=Tidak ada target di dekatnya
 nograbbableobject=Tidak ada objek yang dapat diambil di depan Anda
-nodamageablefollower=Tidak ada panggilan yang dapat dirusak di dekatnya
+notargetfollower=Tidak ada panggilan target di dekatnya
 nodeathplayers=Tidak ada pemain mati yang dapat dibangkitkan di level ini
 
 

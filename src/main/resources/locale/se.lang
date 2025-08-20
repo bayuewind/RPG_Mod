@@ -34,7 +34,7 @@ holy_damage=Helig skada
 evasive=Undvikande
 stalking=Förföljelse
 regenerative=Regenerativ
-energetic=Energisk
+energetic=Energetisk
 depleted=Utarmad
 
 
@@ -195,7 +195,7 @@ darksummons=Ge §a+[[10 x <skilllevel>]]%§0 Framkallarskada till förgiftade fi
 lifeleech=Återställer §a[[<skilllevel>]]%§0 av den utdelade Framkallarskadan som Hälsa
 necroticremains=När en nekrotisk framkallning dör, exploderar den och ger §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skada§0 till närliggande fiender, och förgiftar dem med 20% av skadan per sekund i 10 sekunder
 endlesslegion=Var 4:e nivå av denna färdighet, får du +1 max framkallning
-lichborn=När du dör, överlever du och återställer §a[[10 x <skilllevel>]]%§0 Hälsa om du inte redan är en lich\nUnder de kommande §a[[120 - 6 x <skilllevel>]] sekunderna§0, blir du en lich (ett skelett) som bara kan skjuta ben som ger Framkallarskada lika med [[Styrka]] och använda resten av dina färdigheter\nI lich-form, tar du dubbel skada
+lichborn=När du dör, överlever du och återställer §a[[10 x <skilllevel>]]%§0 Hälsa om du inte redan är en §bLich§0\nUnder de kommande §a[[120 - 6 x <skilllevel>]] sekunderna§0, blir du en §bLich§0 (ett skelett)
 
 // Cleric
 vitalaura=Var §a[[15 - <skilllevel>]] sekund§0, släpper du lös en magisk läkande aura runt dig som återställer §a[[10 + <grace>]] hälsa§0\nDen läker dig också för halva det beloppet
@@ -314,7 +314,7 @@ arrowstorm=Skjut en grundläggande pil mot varje nära fiende och ge §i[[2 x <p
 
 // Trollkarl
 arcaneoverload=Medan aktiv, ökar din Magiska Attackhastighet med §a[[30 x <skilllevel>]]%§0, men du kommer inte att kunna röra dig\nAvslutas när du får slut på mana, eller om den används igen\nFörbrukar §a[[10 + 2 x <skilllevel>]] Mana per sekund
-manarecharge=Medan aktiv, ökar din Mana-regenerering med +1.4 och med §a[[50 x <skilllevel>]]%§0, men du blir förlamad och tar dubbel skada[LINE_BREAK]Avslutas när den används igen
+manarecharge=Medan aktiv, ökar din Mana-regenerering med +1.4 och med §a[[50 x <skilllevel>]]%§0, men du blir förlamad och tar dubbel skada\nAvslutas när den används igen
 firedance=Kallar fram 4 §bDansande Lågor§0, var och en ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\nKallar fram en till var 5:e sekund\nAlla framkallningar försvinner 20 sekunder efter att förmågan aktiverats\nFörbrukar §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kasta ett §aIsklot§0 mot närmaste fiende, som ger §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skada§0\nFörbrukar §a[[50 + 10 x <skilllevel>]] Mana
 zap=Starta en stöt som hoppar mellan mobbar i 2 sekunder, ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0 och bedövar i 1 sekund\nFörbrukar §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,16 +330,16 @@ lightning=Starta en blixt som hoppar mellan mobbar i 1 sekund, ger §i[[4 x <pla
 // Nekromantiker
 skeletonhorde=Kallar fram §a[[1 + <skilllevel>]] §bSkelett§0
 skeletonwarrior=Kallar fram en §bSkelettkrigare§0 med §a+[[20 x <skilllevel>]]%§0 Hälsa och Skada
-sacrifice=Den närmaste skadbara framkallningen dör, och du återställer sedan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Hälsa§0 som magisk läkning
+sacrifice=Den närmaste nekrotiska framkallningen dör, och du återställer sedan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Hälsa§0 som magisk läkning
 siegecry=Få §a+[[50 x <skilllevel>]]%§0 Framkallningshastighet i 6 sekunder
 
 boneslingerhorde=Kallar fram §a[[1 + <skilllevel>]]§0 §bBenkastare§0
-tomb=Genererar en struktur som kallar fram ett §bSkelett§0 var §a[[10 - <skilllevel>]] sekund§0\nGraven har Hälsa lika med §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven förlorar 2% av sin Totala Hälsa per sekund
+tomb=Genererar en struktur som kallar fram ett §bSkelett§0 var §a[[10 - <skilllevel>]] sekund§0\nGraven har Hälsa lika med §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven förlorar 2% av sin Totale Hälsa per sekund
 necroticbloom=Påskyndar effekten av gift på alla närliggande fiender genom att minska dess varaktighet till 10%, men öka dess skada per sekund för att bibehålla den totala skadan
-wardingtaunt=Den närmaste skadbara framkallningen tvingar närliggande fiender inom en radie på §a[[50 x <skilllevel>]]§0 att rikta in sig på den
+wardingtaunt=Den närmaste nekrotiska framkallningen tvingar närliggande fiender inom en radie på §a[[50 x <skilllevel>]]§0 att rikta in sig på den
 
 unholyground=Utvidgar en aura av korruption runt dig i 10 sekunder\nFiender inom detta område tar §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftskada§0 per sekund och är §7Begränsade
-necroticbarrage=Alla skadbara framkallningar exploderar vid döden, och ger §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skada§0 till närliggande fiender\noch förgiftar dem i 10 sekunder med 20% av den ursprungliga skadan per sekund
+necroticbarrage=Alla nekrotiska framkallningar exploderar vid döden, och ger §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skada§0 till närliggande fiender\noch förgiftar dem i 10 sekunder med 20% av den ursprungliga skadan per sekund
 
 // Cleric
 smite=Kalla ner en stråle av heligt ljus på närmaste fiende, som ger §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Helig skada§0\nGer dubbel skada på odöda och demoniska mobbar\nFörbrukar §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -376,7 +376,7 @@ constrained=§7Begränsad:§0 -50% Rörelsehastighet
 
 // Chansmodifierare
 dodgechance=§7Undvikandeschans:§0 Chans att undvika inkommande attacker. Kan inte överstiga 80%
-focuschance=§hFokuschans:§0 Chans att §hmärka§0 en mobb i 5 sekunder när du attackerar den direkt
+focuschance=§hFokuschans:§0 Chans att §hmarkera§0 en mobb i 5 sekunder när du attackerar den direkt
 
 // Platta modifierare
 mobdetection=§9Mobbdetektering:§0 Visar närliggande mobbar på kartan. En högre detekteringsräckvidd avslöjar mobbar från längre bort
@@ -390,12 +390,15 @@ iceball=§aIsklot:§0 Magisk projektil som exploderar och fryser mobbar i 5 seku
 fireball=§iEldklot:§0 Magisk projektil som exploderar och antänder mobbar som upprepar 20% av sin ursprungliga skada per sekund i 5 sekunder
 
 // Framkallningar
-dancingflame=§bDansande Låga:§0 Framkallning som fungerar som en projektil. Antänder fiender vid träff. Upprepar 20% av sin ursprungliga skada per sekund i 5 sekunder
+dancingflame=§bDansande Låga:§0 Framkallning som fungerar som ett projektil. Antänder fiender vid träff. Upprepar 20% av sin ursprungliga skada per sekund i 5 sekunder
 
 // Skadbara Framkallningar
 necromancerskeleton=§bSkelett:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerskeletonwarrior=§bSkelettkrigare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkada: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerboneslinger=§bBenkastare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 avstånd)\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
+
+// Tranformations
+necromancerlich=§bLich:§0 Odöd transformering\n\nKan inte använda föremål\n+100% Skada Mottagen\n\nTryck på [input=trinketability] för att skjuta ett ben som ger §i[[<strength>]] Framkallarskada§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=På nedkylning
 notenoughstamina=Inte tillräckligt med uthållighet
 notarget=Det finns inga mål i närheten
 nograbbableobject=Det finns inget gripbart föremål framför dig
-nodamageablefollower=Det finns inga skadbara framkallningar i närheten
+notargetfollower=Det finns inga målframkallningar i närheten
 nodeathplayers=Inga döda spelare kan återupplivas på denna nivå
 
 

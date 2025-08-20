@@ -195,7 +195,7 @@ darksummons=Verursache §a+[[10 x <skilllevel>]]%§0 Beschwörerschaden bei verg
 lifeleech=Stellt §a[[<skilllevel>]]%§0 des verursachten Beschwörerschadens als Gesundheit wieder her
 necroticremains=Wenn eine nekrotische Beschwörung stirbt, explodiert sie und verursacht bei nahen Gegnern §i[[0.1 x <intelligence> x <skilllevel>]] Magieschaden§0 und vergiftet sie für 10 Sekunden mit 20% des Schadens pro Sekunde
 endlesslegion=Alle 4 Stufen dieser Fähigkeit erhältst du +1 maximale Beschwörung
-lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein Lich bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein Lich (ein Skelett), das nur Knochen schießen kann, die Beschwörerschaden in Höhe von [[Stärke]] verursachen, und den Rest deiner Fähigkeiten einsetzen kann\nIn Lichform erleidest du doppelten Schaden
+lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein §bLich§0 bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein §bLich§0 (ein Skelett)
 
 // Cleric
 vitalaura=Alle §a[[15 - <skilllevel>]] Sekunden§0 setzt du eine magische Heilungsaura um dich herum frei, die §a[[10 + <grace>]] Gesundheit§0 wiederherstellt\nSie heilt dich auch um die Hälfte dieses Betrags
@@ -314,7 +314,7 @@ arrowstorm=Schieße einen einfachen Pfeil auf jeden nahen Gegner und verursache 
 
 // Zauberer
 arcaneoverload=Solange aktiv, erhöht deine magische Angriffsgeschwindigkeit um §a[[30 x <skilllevel>]]%§0, aber du kannst dich nicht bewegen\nEndet, wenn du kein Mana mehr hast oder wenn es erneut verwendet wird\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana pro Sekunde
-manarecharge=Solange aktiv, erhöht deine Manaregeneration um +1.4 und um §a[[50 x <skilllevel>]]%§0, aber du bist gelähmt und erleidest doppelten Schaden[LINE_BREAK]Endet, wenn es erneut verwendet wird
+manarecharge=Solange aktiv, erhöht deine Manaregeneration um +1.4 und um §a[[50 x <skilllevel>]]%§0, aber du bist gelähmt und erleidest doppelten Schaden\nEndet, wenn es erneut verwendet wird
 firedance=Beschwört 4 §bTanzende Flammen§0, die jeweils §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursachen\nBeschwöre alle 5 Sekunden eine weitere\nAlle Beschwörungen verschwinden 20 Sekunden nach Aktivierung der Fertigkeit\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Wirf einen §aEisball§0 auf den nächsten Gegner und verursache §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nVerbraucht §a[[50 + 10 x <skilllevel>]] Mana
 zap=Starte einen Zappen, der 2 Sekunden lang zwischen Mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht und 1 Sekunde lang betäubt\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,16 +330,16 @@ lightning=Starte einen Blitz, der 1 Sekunde lang zwischen Mobs springt, §i[[4 x
 // Nekromant
 skeletonhorde=Beschwört §a[[1 + <skilllevel>]] §bSkelette§0
 skeletonwarrior=Beschwört einen §bSkelettkrieger§0 mit §a+[[20 x <skilllevel>]]%§0 Gesundheit und Schaden
-sacrifice=Die nächste beschädigbare Beschwörung stirbt und du stellst dann §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gesundheit§0 als magische Heilung wieder her
+sacrifice=Die nächste nekrotische Beschwörung stirbt, und du stellst dann §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gesundheit§0 als magische Heilung wieder her
 siegecry=Erhalte für 6 Sekunden §a+[[50 x <skilllevel>]]%§0 Beschwörungsgeschwindigkeit
 
 boneslingerhorde=Beschwört §a[[1 + <skilllevel>]]§0 §bKnochenschleuderer§0
 tomb=Erzeugt eine Struktur, die alle §a[[10 - <skilllevel>]] Sekunden§0 ein §bSkelett§0 beschwört\nDas Grab hat Gesundheit in Höhe von §a[[5 x <playerlevel> x <skilllevel>]]§0\nDas Grab verliert pro Sekunde 2% seiner gesamten Gesundheit
 necroticbloom=Beschleunigt die Wirkung von Gift auf alle nahen Gegner, indem die Dauer auf 10% reduziert wird, aber der Schaden pro Sekunde erhöht wird, um den Gesamtschaden aufrechtzuerhalten
-wardingtaunt=Die nächste beschädigbare Beschwörung zwingt nahe Gegner in einem Radius von §a[[50 x <skilllevel>]]§0, sie anzugreifen
+wardingtaunt=Die nächste nekrotische Beschwörung zwingt nahe Gegner in einem Radius von §a[[50 x <skilllevel>]]§0, sie anzugreifen
 
 unholyground=Verbreitet für 10 Sekunden eine Aura der Verderbnis um dich herum\nGegner in diesem Bereich erleiden pro Sekunde §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftschaden§0 und sind §7Eingeschränkt
-necroticbarrage=Alle beschädigbaren Beschwörungen explodieren beim Tod und verursachen bei nahen Gegnern §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nund vergiften sie für 10 Sekunden mit 20% des ursprünglichen Schadens pro Sekunde
+necroticbarrage=Alle nekrotischen Beschwörungen explodieren beim Tod und verursachen bei nahen Gegnern §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magieschaden§0\nund vergiften sie für 10 Sekunden mit 20% des ursprünglichen Schadens pro Sekunde
 
 // Cleric
 smite=Rufe einen Strahl heiligen Lichts auf den nächsten Gegner herab, der §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] heiligen Schaden§0 verursacht\nVerursacht doppelten Schaden bei untoten und dämonischen Mobs\nVerbraucht §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -347,11 +347,11 @@ divineblessing=Magische Heilungsaura, die dir und deinen Verbündeten §a[[20 + 
 purify=Reinige dich und nahe Verbündete von allen negativen Effekten\nVerbraucht 10 Mana
 lightinfusion=Für die nächsten 8 Sekunden erhältst du §a+[[20 x <skilllevel>]]%§0 magische Heilung und heiligen Schaden
 holyguard=Wende auf dich und alle nahen Verbündeten einen heiligen Schild für bis zu 30 Sekunden an\nSie erhalten §a+[[10 x <skilllevel>]]%§0 erhaltene magische Heilung und der Schild blockiert einen Treffer, bevor er bricht\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Entfessle eine Welle strahlender Energie, die allen nahen Gegnern §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] heiligen Schaden§0 zufügt\nUntote und dämonische Mobs sind für 5 Sekunden eingeschränkt\nVerbraucht §a[[20 + 4 x <skilllevel>]] Mana§0
-sanctuary=Erstelle eine heilige Zone für 8 Sekunden\nDu und Verbündete im Inneren sind immun gegen negative Effekte und erhalten §a[[0.2 x <grace> x <skilllevel>]]§0 Gesundheitsregeneration pro Sekunde\nUntote und dämonische Mobs im Inneren sind eingeschränkt\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana§0
+judgment=Entfessle eine Welle strahlender Energie, die allen nahen Gegnern §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] heiligen Schaden§0 zufügt\nUntote und dämonische Mobs sind für 5 Sekunden §7Eingeschränkt§0\nVerbraucht §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Erstelle eine heilige Zone für 8 Sekunden\nDu und Verbündete im Inneren sind immun gegen negative Effekte und erhalten §a[[0.2 x <grace> x <skilllevel>]]§0 Gesundheitsregeneration pro Sekunde\nUntote und dämonische Mobs im Inneren sind §7Eingeschränkt§0\nVerbraucht §a[[30 + 6 x <skilllevel>]] Mana§0
 divineintervention=Heile sofort den am meisten beschädigten nahen Verbündeten auf seine maximale Gesundheit und gewähre Immunität gegen allen Schaden für §a[[<skilllevel>]]§0 Sekunden\nVerbraucht §a[[60 + 12 x <skilllevel>]] Mana§0
 resurrection=Belebe den letzten toten Spieler-Verbündeten auf deiner Insel mit §a[[10 x <skilllevel>]]%§0 seiner maximalen Gesundheit an deiner Position wieder\nDu kannst keine Spieler wiederbeleben, die vor mehr als 10 Sekunden wiederbelebt werden konnten\nVerbraucht §a[[100 - 10 x <skilllevel>]]%§0 deines Manas (mindestens §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Beschwöre eine Lichtsäule auf den nächsten Gegner, die 5 Sekunden lang in einem Gebiet §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] heiligen Schaden§0 pro Sekunde verursacht\nUntote und dämonische Mobs im Inneren sind eingeschränkt\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana§0
+wrathoflight=Beschwöre eine Lichtsäule auf den nächsten Gegner, die 5 Sekunden lang in einem Gebiet §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] heiligen Schaden§0 pro Sekunde verursacht\nUntote und dämonische Mobs im Inneren sind §7Eingeschränkt§0\nVerbraucht §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
 [skillsdesckeys]
@@ -396,6 +396,9 @@ dancingflame=§bTanzende Flamme:§0 Beschwörung, die wie ein Projektil wirkt. E
 necromancerskeleton=§bSkelett:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSchaden: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
 necromancerskeletonwarrior=§bSkelettkrieger:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchaden: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
 necromancerboneslinger=§bKnochenschleuderer:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchaden: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 Entfernung)\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
+
+// Tranformations
+necromancerlich=§bLich:§0 Untote Transformation\n\nKann keine Gegenstände benutzen\n+100% erlittener Schaden\n\nDrücke [input=trinketability], um einen Knochen zu schießen, der §i[[<strength>]] Beschwörerschaden§0 verursacht
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=Abklingzeit
 notenoughstamina=Nicht genügend Ausdauer
 notarget=Es sind keine Ziele in der Nähe
 nograbbableobject=Es befindet sich kein greifbares Objekt vor dir
-nodamageablefollower=Es sind keine beschädigbaren Beschwörungen in der Nähe
+notargetfollower=Es sind keine Zielbeschwörungen in der Nähe
 nodeathplayers=Auf dieser Ebene können keine toten Spieler wiederbelebt werden
 
 

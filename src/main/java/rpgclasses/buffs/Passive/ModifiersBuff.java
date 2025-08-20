@@ -59,7 +59,7 @@ public class ModifiersBuff extends PassiveBuff {
                 if (focusChance >= 1F || (focusChance > 0 && GameRandom.globalRandom.getChance(focusChance))) {
                     ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, event.target, 5000, null);
                     ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
-                    event.target.addBuff(ab, true);
+                    event.target.addBuff(ab, activeBuff.owner.isServer());
                 }
             }
         }

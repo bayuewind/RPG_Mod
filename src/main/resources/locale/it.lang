@@ -137,7 +137,7 @@ wolfcompanion=Compagno lupo
 // Mago
 arcanepower=Potere Arcano
 manapower=Potere del Mana
-manaproficiency=Competenza nel Mana
+manaprofiency=Competenza nel Mana
 firepower=Potenza di Fuoco
 arcaneshield=Scudo Arcano
 fireshield=Scudo di Fuoco
@@ -195,7 +195,7 @@ darksummons=Infliggi il §a+[[10 x <skilllevel>]]%§0 di Danni da Evocatore ai n
 lifeleech=Recupera il §a[[<skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
 necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per il 20% dei danni al secondo per 10 secondi
 endlesslegion=Ogni 4 livelli di questa abilità, ottieni +1 evocazione massima
-lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un lich\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un lich (uno scheletro) che può solo sparare ossa che infliggono Danni da Evocatore pari a [[Forza]] e usare il resto delle tue abilità\nMentre sei in forma di lich, subisci il doppio dei danni
+lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un §bLich§0\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un §bLich§0 (uno scheletro)
 
 // Cleric
 vitalaura=Ogni §a[[15 - <skilllevel>]] secondi§0, rilasci un'aura di guarigione magica intorno a te che ripristina §a[[10 + <grace>]] salute§0\nTi guarisce anche per la metà di tale importo
@@ -330,16 +330,16 @@ lightning=Inizia un fulmine che salta tra i mob per 1 secondo, infliggendo §i[[
 // Negromante
 skeletonhorde=Evoca §a[[1 + <skilllevel>]] §bScheletri§0
 skeletonwarrior=Evoca un §bGuerriero Scheletro§0 con il §a+[[20 x <skilllevel>]]%§0 di Salute e Danni
-sacrifice=L'evocazione danneggiabile più vicina muore, e tu recuperi §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Salute§0 come guarigione magica
+sacrifice=L'evocazione necrotica più vicina muore, e tu recuperi §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Salute§0 come guarigione magica
 siegecry=Ottieni il §a+[[50 x <skilllevel>]]%§0 di Velocità di Evocazione per 6 secondi
 
 boneslingerhorde=Evoca §a[[1 + <skilllevel>]]§0 §bLanciaossa§0
 tomb=Genera una struttura che evoca uno §bScheletro§0 ogni §a[[10 - <skilllevel>]] secondi§0\nLa Tomba ha Salute pari a §a[[5 x <playerlevel> x <skilllevel>]]§0\nLa Tomba perde il 2% della sua Salute Totale al secondo
 necroticbloom=Accelera l'effetto del veleno su tutti i nemici vicini riducendone la durata al 10%, ma aumentandone i danni al secondo per mantenere i danni totali
-wardingtaunt=L'evocazione danneggiabile più vicina costringe i nemici vicini entro un raggio di §a[[50 x <skilllevel>]]§0 a bersagliarla
+wardingtaunt=L'evocazione necrotica più vicina costringe i nemici vicini entro un raggio di §a[[50 x <skilllevel>]]§0 a bersagliarla
 
 unholyground=Estende un'aura di corruzione intorno a te per 10 secondi\nI nemici all'interno di quest'area subiscono §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Danni da Veleno§0 al secondo e sono §7Vincolati
-necroticbarrage=Tutte le evocazioni danneggiabili esplodono alla morte, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini\ne avvelenandoli per 10 secondi con il 20% dei danni originali al secondo
+necroticbarrage=Tutte le evocazioni necrotiche esplodono alla morte, infliggendo §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini\ne avvelenandoli per 10 secondi con il 20% dei danni originali al secondo
 
 // Cleric
 smite=Chiama un raggio di luce sacra sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0\nInfligge il doppio dei danni ai mob Non Morti e Demonici\nConsuma §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -347,11 +347,11 @@ divineblessing=Aura di guarigione magica che ripristina §a[[20 + 3 x <grace> x 
 purify=Purifica te stesso e gli alleati vicini da tutti gli effetti negativi\nConsuma 10 Mana
 lightinfusion=Per i prossimi 8 secondi, ottieni il §a+[[20 x <skilllevel>]]%§0 di Guarigione Magica e Danni Sacri
 holyguard=Applica a te e a tutti gli alleati vicini uno Scudo Sacro per un massimo di 30 secondi\nOttengono il §a+[[10 x <skilllevel>]]%§0 di Guarigione Magica Ricevuta e lo scudo blocca un colpo prima di rompersi\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Scatena un'ondata di energia radiosa, infliggendo §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Danni Sacri§0 a tutti i nemici vicini\nI mob Non Morti e Demonici sono Vincolati per 5 secondi\nConsuma §a[[20 + 4 x <skilllevel>]] Mana§0
-sanctuary=Crea una zona sacra per 8 secondi\nTu e gli alleati all'interno siete immuni agli effetti negativi e guadagnate §a[[0.2 x <grace> x <skilllevel>]]§0 rigenerazione della salute al secondo\nI mob Non Morti e Demonici all'interno sono Vincolati\nConsuma §a[[30 + 6 x <skilllevel>]] Mana§0
+judgment=Scatena un'ondata di energia radiosa, infliggendo §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Danni Sacri§0 a tutti i nemici vicini\nI mob Non Morti e Demonici sono §7Vincolati§0 per 5 secondi\nConsuma §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Crea una zona sacra per 8 secondi\nTu e gli alleati all'interno siete immuni agli effetti negativi e guadagnate §a[[0.2 x <grace> x <skilllevel>]]§0 rigenerazione della salute al secondo\nI mob Non Morti e Demonici all'interno sono §7Vincolati§0\nConsuma §a[[30 + 6 x <skilllevel>]] Mana§0
 divineintervention=Guarisci istantaneamente l'alleato vicino più danneggiato alla sua salute massima e concedi l'immunità a tutti i danni per §a[[<skilllevel>]]§0 secondi\nConsuma §a[[60 + 12 x <skilllevel>]] Mana§0
 resurrection=Rianima l'ultimo alleato giocatore morto sulla tua stessa isola con il §a[[10 x <skilllevel>]]%§0 della loro salute massima nella tua posizione\nNon puoi rianimare i giocatori che potrebbero essere rinati più di 10 secondi fa\nConsuma il §a[[100 - 10 x <skilllevel>]]%§0 del tuo Mana (almeno §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Evoca una colonna di luce sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0 al secondo per 5 secondi nell'area\nI mob Non Morti e Demonici all'interno sono vincolati\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
+wrathoflight=Evoca una colonna di luce sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0 al secondo per 5 secondi nell'area\nI mob Non Morti e Demonici all'interno sono §7Vincolati§0\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
 [skillsdesckeys]
@@ -368,7 +368,7 @@ grace=Grazia
 // Meccaniche di base
 manausage=Se non hai abbastanza mana, il suo tempo di ricarica è raddoppiato
 setmax=Gli effetti negativi sono impostati al massimo e non possono essere rimossi da altri buff
-holydamage=Il 25% dei danni sacri inflitti verrà convertito in guarigione per i mob che guarisci magicamente[LINE_BREAK]Inoltre, dà fuoco ai mob non morti e demoniaci per 10 secondi
+holydamage=Il 25% dei danni sacri inflitti verrà convertito in guarigione per i mob che guarisci magicamente\nInoltre, dà fuoco ai mob non morti e demoniaci per 10 secondi
 
 // Buff
 marked=§hMarcato:§0 Infliggi +20% di danni (+ §hdanno da concentrazione§0) e +10% di probabilità di colpo critico ai mob che marchi\n"Nemico più vicino" dà la priorità ai nemici marchiati
@@ -396,6 +396,9 @@ dancingflame=§bFiamma Danzante:§0 Evocazione che agisce come un proiettile. In
 necromancerskeleton=§bScheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerskeletonwarrior=§bGuerriero Scheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDanno: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerboneslinger=§bLanciaossa:§0 Evocazione necrotica danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distanza 320)\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
+
+// Tranformations
+necromancerlich=§bLich:§0 Trasformazione in non morto\n\nNon puoi usare oggetti\n+100% Danni Subiti\n\nPremi [input=trinketability] per sparare un osso che infligge §i[[<strength>]] Danni da Evocatore§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=In ricarica
 notenoughstamina=Resistenza insufficiente
 notarget=Non ci sono bersagli nelle vicinanze
 nograbbableobject=Non c'è nessun oggetto afferrabile di fronte a te
-nodamageablefollower=Non ci sono evocazioni danneggiabili nelle vicinanze
+notargetfollower=Non ci sono evocazioni bersaglio nelle vicinanze
 nodeathplayers=Nessun giocatore morto può essere resuscitato a questo livello
 
 

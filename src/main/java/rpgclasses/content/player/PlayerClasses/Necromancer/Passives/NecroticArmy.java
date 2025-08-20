@@ -40,7 +40,7 @@ public class NecroticArmy extends SimpleBuffPassive {
                     PlayerData playerData = PlayerDataList.getPlayerData(player);
 
                     DamageableFollowingMob mob = (DamageableFollowingMob) MobRegistry.getMob("necromancerskeleton", player.getLevel());
-                    player.serverFollowersManager.addFollower(stringID, mob, FollowPosition.WALK_CLOSE, null, 1, Integer.MAX_VALUE, null, true);
+                    player.serverFollowersManager.addFollower(stringID, mob, FollowPosition.WALK_CLOSE, null, 1, Integer.MAX_VALUE, null, activeBuff.owner.isServer());
 
                     mob.updateStats(player, playerData, getLevel(activeBuff) * 0.03F);
 

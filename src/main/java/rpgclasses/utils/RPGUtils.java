@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
+import rpgclasses.mobs.summons.damageable.necrotic.NecroticFollowingMob;
 
 import java.awt.geom.Line2D;
 import java.util.function.Predicate;
@@ -197,6 +198,14 @@ public class RPGUtils {
         return m -> isDamageableFollower(owner, m);
     }
 
+    // NECROTIC DAMAGEABLE FOLLOWER
+    public static boolean isNecroticFollower(Mob owner, Mob target) {
+        return isFollower(owner, target) && target instanceof NecroticFollowingMob;
+    }
+
+    public static Predicate<Mob> isNecroticFollowerFilter(Mob owner) {
+        return m -> isNecroticFollower(owner, m);
+    }
 
     // FIND BEST TARGET
     public static Mob findBestTarget(@NotNull Mob mob, int distance) {
@@ -332,9 +341,7 @@ public class RPGUtils {
                 });
     }
 
-
     // ANY DAMAGEABLE FOLLOWER
-
     public static boolean anyDamageableFollower(@NotNull Mob attacker, int maxDistance) {
         return anyDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, null);
     }
@@ -354,9 +361,7 @@ public class RPGUtils {
                 });
     }
 
-
     // FIND CLOSEST DAMAGEABLE FOLLOWER
-
     public static Mob findClosestDamageableFollower(@NotNull Mob attacker, int maxDistance) {
         return findClosestDamageableFollower(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, null);
     }
@@ -371,14 +376,7 @@ public class RPGUtils {
         int[] bestPriority = {-1};
         boolean attackerIsPlayer = attacker.isPlayer;
 
-        boolean hasFilter = filter != null;
-
-        streamMobs(level, x, y, maxDistance)
-                .filter(m -> {
-                    if (!isDamageableFollower(attacker, m)) return false;
-
-                    return (!hasFilter || filter.test(m));
-                })
+        getAllDamageableFollowers(level, attacker, x, y, maxDistance, filter)
                 .forEach(m -> {
                     float dx = m.getX() - x, dy = m.getY() - y;
                     float distSq = dx * dx + dy * dy;
@@ -396,5 +394,26 @@ public class RPGUtils {
 
         return bestHolder[0];
     }
+
+    // GET ALL DAMAGEABLE FOLLOWERS
+    public static GameAreaStream<Mob> getAllDamageableFollowers(@NotNull Mob attacker, int maxDistance) {
+        return getAllDamageableFollowers(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, null);
+    }
+
+    public static GameAreaStream<Mob> getAllDamageableFollowers(@NotNull Mob attacker, int maxDistance, @Nullable Predicate<Mob> filter) {
+        return getAllDamageableFollowers(attacker.getLevel(), attacker, attacker.x, attacker.y, maxDistance, filter);
+    }
+
+    public static GameAreaStream<Mob> getAllDamageableFollowers(@NotNull Level level, @NotNull Mob attacker, float x, float y, int maxDistance, @Nullable Predicate<Mob> filter) {
+        boolean hasFilter = filter != null;
+
+        return streamMobs(level, x, y, maxDistance)
+                .filter(m -> {
+                    if (!isDamageableFollower(attacker, m)) return false;
+
+                    return (!hasFilter || filter.test(m));
+                });
+    }
+
 
 }

@@ -20,7 +20,7 @@ public class Sacrifice extends ActiveSkill {
     public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
 
-        Mob sacrifice = RPGUtils.findClosestDamageableFollower(player, 1024);
+        Mob sacrifice = RPGUtils.findClosestDamageableFollower(player, 1024, RPGUtils.isNecroticFollowerFilter(player));
         if (sacrifice != null) {
             sacrifice.remove(0, 0, null, true);
             AphMagicHealing.healMob(player, player, 10 + activeSkillLevel * (playerData.getEndurance(player) + playerData.getIntelligence(player)) - playerData.getGrace(player));
@@ -29,7 +29,7 @@ public class Sacrifice extends ActiveSkill {
 
     @Override
     public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyDamageableFollower(player, 1024) ? null : "nodamageablefollower";
+        return RPGUtils.anyDamageableFollower(player, 1024, RPGUtils.isNecroticFollowerFilter(player)) ? null : "notargetfollower";
     }
 
     @Override

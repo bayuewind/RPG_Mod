@@ -137,7 +137,7 @@ wolfcompanion=Vilkas kompanionas
 // Burtininkas
 arcanepower=Slėpininga Galia
 manapower=Manos Galia
-manaproficiency=Manos Įgūdis
+manoproficiency=Manos Įgūdis
 firepower=Ugnies Galia
 arcaneshield=Slėpiningas Skydas
 fireshield=Ugnies Skydas
@@ -195,7 +195,7 @@ darksummons=Padarykite §a+[[10 x <skilllevel>]]%§0 šauklio žalos nuodytiems 
 lifeleech=Atkuria §a[[<skilllevel>]]%§0 padarytos šauklio žalos kaip sveikatą
 necroticremains=Kai miršta nekrotinis iškvietimas, jis sprogsta, padarydamas §i[[0.1 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams, nuodydamas juos 20% žalos per sekundę 10 sekundžių
 endlesslegion=Kas 4 šio įgūdžio lygius, gaunate +1 maksimalų iškvietimą
-lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu), kuris gali šaudyti tik kaulus, darančius šauklio žalą, lygią [[Jėga]], ir naudoti likusius savo įgūdžius\nBūdami licho formoje, gaunate dvigubą žalą
+lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu)
 
 // Cleric
 vitalaura=Kas §a[[15 - <skilllevel>]] sekundes§0, jūs išlaisvinate magišką gydomąją aurą aplink save, kuri atkuria §a[[10 + <grace>]] sveikatos§0\nJi taip pat išgydo jus puse tos sumos
@@ -314,7 +314,7 @@ arrowstorm=Iššaukite paprastą strėlę į kiekvieną artimą priešą, padary
 
 // Burtininkas
 arcaneoverload=Kol aktyvus, padidina jūsų Magiškos Atakos Greitį §a[[30 x <skilllevel>]]%§0, bet negalėsite judėti\nBaigiasi, kai baigiasi mana, arba jei naudojamas dar kartą\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos per sekundę
-manarecharge=Kol aktyvus, padidina jūsų Manos Regeneraciją +1.4 ir §a[[50 x <skilllevel>]]%§0, bet būsite paralyžiuotas ir gausite dvigubą žalą[LINE_BREAK]Baigiasi, kai naudojamas dar kartą
+manarecharge=Kol aktyvus, padidina jūsų Manos Regeneraciją +1.4 ir §a[[50 x <skilllevel>]]%§0, bet būsite paralyžiuotas ir gausite dvigubą žalą\nBaigiasi, kai naudojamas dar kartą
 firedance=Iškviečia 4 §bŠokančias Liepsnas§0, kurių kiekviena padaro §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nKas 5 sekundes iškviečia dar vieną\nVisi iškvietimai išnyksta praėjus 20 sekundžių po sugebėjimo aktyvavimo\nSunaudoja §a[[30 + 6 x <skilllevel>]] Manos
 iceball=Meskite §aLedo Kamuolį§0 į artimiausią priešą, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0\nSunaudoja §a[[50 + 10 x <skilllevel>]] Manos
 zap=Pradėkite žaibą, kuris 2 sekundes šokinėja tarp mobų, padarydamas §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigindamas 1 sekundei\nSunaudoja §a[[10 + 2 x <skilllevel>]] Manos
@@ -330,16 +330,16 @@ lightning=Pradėkite žaibą, kuris 1 sekundę šokinėja tarp mobų, padarydama
 // Nekromantas
 skeletonhorde=Iškviečia §a[[1 + <skilllevel>]] §bSkeletų§0
 skeletonwarrior=Iškviečia §bKarį Skeletą§0 su §a+[[20 x <skilllevel>]]%§0 sveikatos ir žalos
-sacrifice=Artimiausias pažeidžiamas iškvietimas miršta, o jūs atgaunate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] sveikatos§0 kaip magišką gydymą
+sacrifice=Artimiausias nekrotinis iškvietimas miršta, o jūs atgaunate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] sveikatos§0 kaip magišką gydymą
 siegecry=Gaukite §a+[[50 x <skilllevel>]]%§0 iškvietimo greičio 6 sekundėms
 
 boneslingerhorde=Iškviečia §a[[1 + <skilllevel>]]§0 §bKaulų Mėtytojų§0
 tomb=Sukuria struktūrą, kuri kas §a[[10 - <skilllevel>]] sekundes§0 iškviečia §bSkeletą§0\nKapo sveikata lygi §a[[5 x <playerlevel> x <skilllevel>]]§0\nKapas per sekundę praranda 2% savo bendros sveikatos
 necroticbloom=Pagreitina nuodų poveikį visiems netoliese esantiems priešams, sutrumpindamas jo trukmę iki 10%, bet padidindamas jo žalą per sekundę, kad išlaikytų bendrą žalą
-wardingtaunt=Artimiausias pažeidžiamas iškvietimas priverčia netoliese esančius priešus §a[[50 x <skilllevel>]] spinduliu§0 jį pulti
+wardingtaunt=Artimiausias nekrotinis iškvietimas priverčia netoliese esančius priešus §a[[50 x <skilllevel>]] spinduliu§0 jį pulti
 
 unholyground=10 sekundžių aplink jus išplečia korupcijos aurą\nŠioje srityje esantys priešai per sekundę gauna §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] nuodų žalos§0 ir yra §7Susaistyti
-necroticbarrage=Visi pažeidžiami iškvietimai mirę sprogsta, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams\nir nuodydami juos 10 sekundžių 20% pradinės žalos per sekundę
+necroticbarrage=Visi nekrotiniai iškvietimai mirę sprogsta, padarydami §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams\nir nuodydami juos 10 sekundžių 20% pradinės žalos per sekundę
 
 // Cleric
 smite=Nuleiskite šventos šviesos spindulį ant artimiausio priešo, padarydami §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] šventos žalos§0\nPadaro dvigubą žalą nemirėliams ir demoniškiems mobams\nSunaudoja §a[[10 + 2 x <skilllevel>]] manos§0
@@ -397,6 +397,9 @@ necromancerskeleton=§bSkeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSvei
 necromancerskeletonwarrior=§bKarys Skeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŽala: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
 necromancerboneslinger=§bKaulų Mėtytojas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 atstumas)\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
 
+// Tranformations
+necromancerlich=§bLich:§0 Nemirėlių transformacija\n\nNegalima naudoti daiktų\n+100% gautos žalos\n\nPaspauskite [input=trinketability], kad iššautumėte kaulą, kuris padaro §i[[<strength>]] šauklio žalos§0
+
 
 [item]
 scrollofoblivion=Užmaršties ritinys
@@ -453,7 +456,7 @@ incooldown=Atsistatymas
 notenoughstamina=Nepakanka ištvermės
 notarget=Netoliese nėra taikinių
 nograbbableobject=Priešais jus nėra paimamo objekto
-nodamageablefollower=Netoliese nėra pažeidžiamų iškvietimų
+notargetfollower=Netoliese nėra taikinių iškvietimų
 nodeathplayers=Šiame lygyje negalima prikelti mirusių žaidėjų
 
 

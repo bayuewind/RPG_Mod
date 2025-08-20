@@ -45,6 +45,11 @@ public class UnholyGround extends SimpleLevelEventActiveSkill {
         return 60000;
     }
 
+    @Override
+    public String[] getExtraTooltips() {
+        return new String[]{"constrained"};
+    }
+
     public static class UnholyGroundLevelEvent extends MobAbilityLevelEvent implements Attacker {
         private int lifeTime = 0;
         public int nextHit = 0;

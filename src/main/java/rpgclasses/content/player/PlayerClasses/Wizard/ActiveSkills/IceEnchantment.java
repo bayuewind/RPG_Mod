@@ -68,7 +68,7 @@ public class IceEnchantment extends SimpleBuffActiveSkill {
                 super.onHasAttacked(activeBuff, event);
                 if (event.damage > 0 && !event.wasPrevented) {
                     ActiveBuff ab = new ActiveBuff(BuffRegistry.Debuffs.FREEZING, event.target, 2F * getLevel(activeBuff), activeBuff.owner);
-                    event.target.buffManager.addBuff(ab, true);
+                    event.target.buffManager.addBuff(ab, activeBuff.owner.isServer());
                 }
             }
         };

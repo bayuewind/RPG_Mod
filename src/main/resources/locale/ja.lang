@@ -195,7 +195,7 @@ darksummons=毒された敵に§a+[[10 x <skilllevel>]]%§0の召喚士ダメー
 lifeleech=与えられた召喚ダメージの§a[[<skilllevel>]]%§0を体力として回復します
 necroticremains=壊死した召喚が死ぬと爆発し、近くの敵に§i[[0.1 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、10秒間、毎秒ダメージの20%で毒を与えます
 endlesslegion=このスキルの4レベルごとに、最大召喚数が+1されます
-lichborn=死ぬと、まだリッチでない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは[[筋力]]に等しい召喚士ダメージを与える骨を撃つことしかできず、残りのスキルを使用できるリッチ（スケルトン）になります\nリッチの形態では、2倍のダメージを受けます
+lichborn=死ぬと、まだ§bリッチ§0でない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは§bリッチ§0（スケルトン）になります
 
 // Cleric
 vitalaura=§a[[15 - <skilllevel>]]秒§0ごとに、あなたの周りに魔法の回復オーラを放ち、§a[[10 + <grace>]]の体力§0を回復します\nまた、その半分の量であなたを回復します
@@ -330,16 +330,16 @@ lightning=1秒間モブ間をジャンプするライトニングを開始し、
 // ネクロマンサー
 skeletonhorde=§a[[1 + <skilllevel>]]体の§bスケルトン§0を召喚します
 skeletonwarrior=§a+[[20 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトンウォリアー§0を召喚します
-sacrifice=最も近いダメージ可能な召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]の体力§0を回復します
+sacrifice=最も近い壊死性の召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]の体力§0を回復します
 siegecry=6秒間、召喚速度が§a+[[50 x <skilllevel>]]%§0増加します
 
 boneslingerhorde=§a[[1 + <skilllevel>]]§0体の§bボーンスリンガー§0を召喚します
 tomb=§a[[10 - <skilllevel>]]秒§0ごとに§bスケルトン§0を召喚する構造物を生成します\n墓の体力は§a[[5 x <playerlevel> x <skilllevel>]]§0です\n墓は毎秒総体力の2%を失います
 necroticbloom=近くのすべての敵の毒の効果を加速させ、持続時間を10%に短縮しますが、総ダメージを維持するために毎秒のダメージを増加させます
-wardingtaunt=最も近いダメージ可能な召喚は、§a[[50 x <skilllevel>]]の半径§0内の近くの敵にそれをターゲットさせます
+wardingtaunt=最も近い壊死性の召喚は、§a[[50 x <skilllevel>]]の半径§0内の近くの敵にそれをターゲットさせます
 
 unholyground=10秒間、あなたの周りに腐敗のオーラを広げます\nこのエリア内の敵は、毎秒§i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]の毒ダメージ§0を受け、§7拘束§0されます
-necroticbarrage=すべてのダメージ可能な召喚は死ぬと爆発し、近くの敵に§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\nそして、10秒間、毎秒元のダメージの20%で毒を与えます
+necroticbarrage=すべての壊死性の召喚は死ぬと爆発し、近くの敵に§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\nそして、10秒間、毎秒元のダメージの20%で毒を与えます
 
 // Cleric
 smite=最も近い敵に聖なる光のビームを呼び寄せ、§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブに2倍のダメージを与えます\n§a[[10 + 2 x <skilllevel>]]のマナ§0を消費します
@@ -347,11 +347,11 @@ divineblessing=あなたとあなたの味方に§a[[20 + 3 x <grace> x <skillle
 purify=あなた自身と近くの味方をすべての負の効果から浄化します\nマナを10消費します
 lightinfusion=次の8秒間、§a+[[20 x <skilllevel>]]%§0の魔法回復と聖なるダメージを得ます
 holyguard=あなたと近くのすべての味方に最大30秒間、聖なる盾を適用します\n彼らは§a+[[10 x <skilllevel>]]%§0の魔法回復を受け、盾は壊れる前に一撃をブロックします\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
-judgment=輝くエネルギーの波を解き放ち、近くのすべての敵に§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブは5秒間拘束されます\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
-sanctuary=8秒間、聖なるゾーンを作成します\nあなたと中の味方は負の効果に免疫があり、毎秒§a[[0.2 x <grace> x <skilllevel>]]§0の体力再生を得ます\n中のアンデッドと悪魔のモブは拘束されます\n§a[[30 + 6 x <skilllevel>]]のマナ§0を消費します
+judgment=輝くエネルギーの波を解き放ち、近くのすべての敵に§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブは5秒間§7拘束§0されます\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
+sanctuary=8秒間、聖なるゾーンを作成します\nあなたと中の味方は負の効果に免疫があり、毎秒§a[[0.2 x <grace> x <skilllevel>]]§0の体力再生を得ます\n中のアンデッドと悪魔のモブは§7拘束§0されます\n§a[[30 + 6 x <skilllevel>]]のマナ§0を消費します
 divineintervention=最もダメージを受けた近くの味方を即座に最大体力まで回復させ、§a[[<skilllevel>]]§0秒間、すべてのダメージに対する免疫を与えます\n§a[[60 + 12 x <skilllevel>]]のマナ§0を消費します
 resurrection=あなたの同じ島で最後に死んだプレイヤーの味方を、あなたの位置で最大体力の§a[[10 x <skilllevel>]]%§0で復活させます\n10秒以上前にリスポーンできたプレイヤーを復活させることはできません\nあなたのマナの§a[[100 - 10 x <skilllevel>]]%§0を消費します（少なくとも§a[[60 + 12 x <skilllevel>]]§0）
-wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0をエリアに与えます\n中のアンデッドと悪魔のモブは拘束されます\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
+wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0をエリアに与えます\n中のアンデッドと悪魔のモブは§7拘束§0されます\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
 
 
 [skillsdesckeys]
@@ -368,7 +368,7 @@ grace=優雅さ
 // 基本的な仕組み
 manausage=マナが足りない場合、クールダウンは2倍になります
 setmax=負の効果は最大に設定され、他のバフで削除することはできません
-holydamage=与えられた聖なるダメージの25%は、あなたが魔法で回復するモブの回復に変換されます[LINE_BREAK]また、アンデッドと悪魔のモブを10秒間燃やします
+holydamage=与えられた聖なるダメージの25%は、あなたが魔法で回復するモブの回復に変換されます\nまた、アンデッドと悪魔のモブを10秒間燃やします
 
 // バフ
 marked=§hマーク：§0マークしたモブに+20%のダメージ（+§hフォーカスダメージ§0）と+10%のクリティカルチャンスを与えます\n「最も近い敵」はマークされた敵を優先します
@@ -396,6 +396,9 @@ dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒッ�
 necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
+
+// Tranformations
+necromancerlich=§bリッチ:§0 アンデッドへの変身\n\nアイテム使用不可\n+100% 被ダメージ\n\n[input=trinketability]を押して、§i[[<strength>]]の召喚士ダメージ§0を与える骨を撃つ
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=クールダウン中
 notenoughstamina=スタミナが足りません
 notarget=近くにターゲットがいません
 nograbbableobject=目の前につかめるオブジェクトがありません
-nodamageablefollower=近くにダメージ可能な召喚獣がいません
+notargetfollower=近くにターゲット召喚獣がいません
 nodeathplayers=このレベルでは死んだプレイヤーを復活させることはできません
 
 

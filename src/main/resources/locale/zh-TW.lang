@@ -195,7 +195,7 @@ darksummons=對中毒的敵人造成§a+[[10 x <skilllevel>]]%§0的召喚師傷
 lifeleech=將造成的召喚師傷害的§a[[<skilllevel>]]%§0恢復為生命值
 necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，並在10秒內每秒對它們造成20%的傷害
 endlesslegion=此技能每升4級，你將獲得+1最大召喚物
-lichborn=當你死亡時，如果你還不是巫妖，你將存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個巫妖（一個骷髏），只能發射造成相當於[[力量]]的召喚師傷害的骨頭，並使用你其餘的技能\n在巫妖形態下，你受到的傷害加倍
+lichborn=當你死亡時，如果你還不是一個§b巫妖§0，你會存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個§b巫妖§0（一個骷髏）
 
 // Cleric
 vitalaura=每§a[[15 - <skilllevel>]]秒§0，你會在周圍釋放一個魔法治療光環，恢復§a[[10 + <grace>]]點生命值§0\n它還會為你恢復該數值的一半
@@ -330,16 +330,16 @@ lightning=開始一道閃電，在生物之間跳躍 1 秒，造成 §i[[4 x <pl
 // 死靈法師
 skeletonhorde=召喚 §a[[1 + <skilllevel>]] 個 §b骷髏§0
 skeletonwarrior=召喚一個擁有 §a+[[20 x <skilllevel>]]%§0 生命值和傷害的 §b骷髏戰士§0
-sacrifice=最近的可受傷害召喚物死亡，然後你以魔法治療的形式恢復 §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] 生命值§0
+sacrifice=最近的亡靈召喚物死亡，然後你以魔法治療的形式恢復§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]生命值§0
 siegecry=在 6 秒內獲得 §a+[[50 x <skilllevel>]]%§0 的召喚速度
 
 boneslingerhorde=召喚 §a[[1 + <skilllevel>]]§0 個 §b投骨者§0
 tomb=生成一個每 §a[[10 - <skilllevel>]] 秒§0 召喚一個 §b骷髏§0 的結構\n墳墓的生命值等於 §a[[5 x <playerlevel> x <skilllevel>]]§0\n墳墓每秒損失總生命值的 2%
 necroticbloom=加速附近所有敵人的毒藥效果，將其持續時間縮短至 10%，但增加其每秒傷害以維持總傷害
-wardingtaunt=最近的可受傷害召喚物會強迫附近 §a[[50 x <skilllevel>]]§0 半徑內的敵人以其為目標
+wardingtaunt=最近的亡靈召喚物會強迫附近 §a[[50 x <skilllevel>]]§0 半徑內的敵人以其為目標
 
 unholyground=在你周圍擴散一個腐敗光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒藥傷害§0 並被 §7束縛
-necroticbarrage=所有可受傷害的召喚物在死亡時爆炸，對附近的敵人造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n並在 10 秒內每秒對它們造成 20% 的原始傷害
+necroticbarrage=所有亡靈召喚物在死亡時爆炸，對附近的敵人造成§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]魔法傷害§0\n並在10秒內每秒對它們造成20%的原始傷害
 
 // Cleric
 smite=在最近的敵人身上召喚一道聖光，造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]點神聖傷害§0\n對亡靈和惡魔生物造成雙倍傷害\n消耗§a[[10 + 2 x <skilllevel>]]點法力§0
@@ -347,11 +347,11 @@ divineblessing=恢復你和你的盟友§a[[20 + 3 x <grace> x <skilllevel>]]點
 purify=淨化你自己和附近盟友的所有負面效果\n消耗10點法力
 lightinfusion=在接下來的8秒內，你獲得§a+[[20 x <skilllevel>]]%§0的魔法治療和神聖傷害
 holyguard=為你和所有附近的盟友施加一個持續長達30秒的神聖護盾\n他們獲得§a+[[10 x <skilllevel>]]%§0的魔法治療，護盾在破裂前阻擋一次攻擊\n消耗§a[[40 + 8 x <skilllevel>]]點法力§0
-judgment=釋放一道輻射能量波，對附近所有敵人造成§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]點神聖傷害§0\n亡靈和惡魔生物被束縛5秒\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
-sanctuary=創建一個持續8秒的神聖區域\n你和裡面的盟友對負面效果免疫，每秒獲得§a[[0.2 x <grace> x <skilllevel>]]§0的生命恢復\n裡面的亡靈和惡魔生物被束縛\n消耗§a[[30 + 6 x <skilllevel>]]點法力§0
+judgment=釋放一道輻射能量波，對附近所有敵人造成§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]神聖傷害§0\n亡靈和惡魔生物被§7束縛§0 5秒\n消耗§a[[20 + 4 x <skilllevel>]]法力§0
+sanctuary=創建一個持續8秒的神聖區域\n你和裡面的盟友對負面效果免疫，每秒獲得§a[[0.2 x <grace> x <skilllevel>]]§0的生命恢復\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗§a[[30 + 6 x <skilllevel>]]法力§0
 divineintervention=立即將受損最嚴重的附近盟友治療至其最大生命值，並使其在§a[[<skilllevel>]]§0秒內對所有傷害免疫\n消耗§a[[60 + 12 x <skilllevel>]]點法力§0
 resurrection=在你所在的位置用他們最大生命值的§a[[10 x <skilllevel>]]%§0復活你同一島嶼上最後死亡的玩家盟友\n你不能復活10秒前就可以重生的玩家\n消耗你法力的§a[[100 - 10 x <skilllevel>]]%§0（至少§a[[60 + 12 x <skilllevel>]]§0）
-wrathoflight=在最近的敵人身上召喚一道光柱，在區域內每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]點神聖傷害§0，持續5秒\n裡面的亡靈和惡魔生物被束縛\n消耗§a[[40 + 8 x <skilllevel>]]點法力§0
+wrathoflight=在最近的敵人身上召喚一道光柱，在區域內每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]神聖傷害§0，持續5秒\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗§a[[40 + 8 x <skilllevel>]]法力§0
 
 
 [skillsdesckeys]
@@ -368,7 +368,7 @@ grace=優雅
 // 基本機制
 manausage=如果你的法力不足，其冷卻時間將加倍
 setmax=負面效果被設置為最大值，不能被其他增益移除
-holydamage=造成的神聖傷害的25%將轉化為對你魔法治療的生物的治療[LINE_BREAK]還會讓亡靈和惡魔生物著火10秒
+holydamage=造成的神聖傷害的25%將轉化為對你魔法治療的生物的治療\n還會讓亡靈和惡魔生物著火10秒
 
 // 增益
 marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率\n“最近的敵人”優先攻擊被標記的敵人
@@ -396,6 +396,9 @@ dancingflame=§b舞動之焰：§0 像射彈一樣行動的召喚物。擊中時
 necromancerskeleton=§b骷髏：§0 可受傷害的亡靈召喚物\n生命值：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n傷害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
 necromancerskeletonwarrior=§b骷髏戰士：§0 可受傷害的亡靈召喚物\n生命值：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n傷害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
 necromancerboneslinger=§b投骨者：§0 可受傷害的亡靈召喚物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n傷害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320 距離）\n速度：60\n每秒損失總生命值的 2%
+
+// Tranformations
+extraskilldesc.necromancerlich=§b巫妖:§0 亡靈轉變\n\n無法使用物品\n+100% 承受傷害\n\n按 [input=trinketability] 發射一根骨頭，造成 §i[[<strength>]] 召喚師傷害§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=冷卻中
 notenoughstamina=耐力不足
 notarget=附近沒有目標
 nograbbableobject=你面前沒有可抓取的物體
-nodamageablefollower=附近沒有可受傷害的召喚物
+notargetfollower=附近沒有目標召喚物
 nodeathplayers=此級別沒有可復活的死亡玩家
 
 

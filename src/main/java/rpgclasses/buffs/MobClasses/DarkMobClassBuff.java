@@ -16,7 +16,7 @@ import java.awt.*;
 public class DarkMobClassBuff extends MobClassBuff {
     @Override
     public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE,  0.2F + level * 0.05F);
+        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, MobData.levelScaling(level) * 0.05F);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DarkMobClassBuff extends MobClassBuff {
                     new AphArea(range, new Color(0, 0, 0, 102)).setDebuffArea(duration, RPGBuffs.DarkCurse.getStringID())
             ).setOnlyVision(false);
 
-            areaList.execute(owner, true);
+            areaList.execute(owner, activeBuff.owner.isServer());
         }
     }
 
@@ -52,7 +52,7 @@ public class DarkMobClassBuff extends MobClassBuff {
         if (mobData != null) {
             int duration = 10000 + mobData.level * 500;
             ActiveBuff ab = new ActiveBuff(RPGBuffs.DarkCurse, event.target, duration, null);
-            event.target.buffManager.addBuff(ab, true);
+            event.target.buffManager.addBuff(ab, activeBuff.owner.isServer());
         }
     }
 }

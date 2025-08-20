@@ -12,8 +12,8 @@ import java.awt.*;
 public class LegendMobClassBuff extends MobClassBuff {
     @Override
     public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, 0.4F + level * 0.1F);
-        activeBuff.setModifier(BuffModifiers.SPEED, 0.2F + level * 0.05F);
+        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, MobData.levelScaling(level) * 0.1F);
+        activeBuff.setModifier(BuffModifiers.SPEED, MobData.levelScaling(level) * 0.05F);
     }
 
     @Override

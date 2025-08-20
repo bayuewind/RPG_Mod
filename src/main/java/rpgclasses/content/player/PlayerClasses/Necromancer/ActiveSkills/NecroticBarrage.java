@@ -24,8 +24,7 @@ public class NecroticBarrage extends ActiveSkill {
         super.run(player, playerData, activeSkillLevel, seed, isInUSe);
         int damage = 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel;
         float poisonDamage = damage * 0.2F;
-        RPGUtils.streamMobs(player.getLevel(), player.x, player.y, 2048)
-                .filter(RPGUtils.isDamageableFollowerFilter(player))
+        RPGUtils.getAllDamageableFollowers(player, 2048, RPGUtils.isNecroticFollowerFilter(player))
                 .forEach(
                         mob -> {
                             if (mob.isServer()) {
@@ -39,6 +38,6 @@ public class NecroticBarrage extends ActiveSkill {
 
     @Override
     public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyDamageableFollower(player, 2048) ? null : "nodamageablefollower";
+        return RPGUtils.anyDamageableFollower(player, 2048, RPGUtils.isNecroticFollowerFilter(player)) ? null : "notargetfollower";
     }
 }

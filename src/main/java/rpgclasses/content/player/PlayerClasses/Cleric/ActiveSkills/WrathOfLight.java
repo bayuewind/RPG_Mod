@@ -2,6 +2,7 @@ package rpgclasses.content.player.PlayerClasses.Cleric.ActiveSkills;
 
 import aphorea.utils.area.AphAreaList;
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.sound.SoundEffect;
@@ -81,7 +82,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
 
     @Override
     public String[] getExtraTooltips() {
-        return new String[]{"holydamage", "manausage"};
+        return new String[]{"holydamage", "constrained", "manausage"};
     }
 
     public static class WrathOfLightLevelEvent extends MobAbilityLevelEvent implements Attacker {
@@ -156,9 +157,9 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
             lifeTime += 50;
 
             if (hits < 10) {
-                if (lifeTime >= hits * 500) clientHit();
+                if (lifeTime >= hits * 500) serverHit();
             } else {
-                clientHit();
+                serverHit();
                 this.over();
             }
         }
@@ -183,6 +184,10 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
             new AphAreaList(
                     new RPGArea(200, new Color(255, 255, 102))
             ).setOnlyVision(false).executeClient(owner.getLevel(), targetX, targetY);
+        }
+
+        @Override
+        public void clientHit(Mob target, Packet content) {
         }
 
         @Override

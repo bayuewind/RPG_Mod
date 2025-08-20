@@ -41,7 +41,7 @@ public class MagicPoisonBuff extends Buff {
         setPoisonDamage(ab, damage);
 
         if (shouldApply(target, damage, duration)) {
-            target.buffManager.addBuff(ab, true);
+            target.buffManager.addBuff(ab, attacker.isServer());
         }
     }
 

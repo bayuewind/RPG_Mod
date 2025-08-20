@@ -62,7 +62,7 @@ public class HuntersInstinct extends SimpleBuffActiveSkill {
             if (mob != null) {
                 ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, mob, 5000, null);
                 ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
-                mob.addBuff(ab, true);
+                mob.addBuff(ab, activeBuff.owner.isServer());
             }
         }
     }

@@ -70,7 +70,7 @@ public class HuntersMark extends SimpleBuffActiveSkill {
                 PlayerMob player = (PlayerMob) activeBuff.owner;
                 if (!event.wasPrevented && MarkedBuff.isMarked(player, event.target) && 0 >= event.target.getHealth()) {
                     giveBuff2(player, player, PlayerDataList.getPlayerData(player), getLevel(activeBuff));
-                    player.buffManager.removeBuff(getBuffStringID(), true);
+                    player.buffManager.removeBuff(getBuffStringID(), activeBuff.owner.isServer());
                 }
             }
         };

@@ -49,7 +49,7 @@ public class IgnitedBuff extends Buff {
         IgnitedBuff.setIgniteDamage(ab, damage);
         if (isPurple) ab.getGndData().setBoolean("isPurple", true);
 
-        if (shouldApply(target, damage, duration)) target.buffManager.addBuff(ab, true);
+        if (shouldApply(target, damage, duration)) target.buffManager.addBuff(ab, attacker.isServer());
     }
 
     public static boolean shouldApply(Mob target, float damage, int duration) {

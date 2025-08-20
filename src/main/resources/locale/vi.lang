@@ -195,7 +195,7 @@ darksummons=Gây thêm §a+[[10 x <skilllevel>]]%§0 Sát thương của Ngườ
 lifeleech=Hồi phục §a[[<skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
 necroticremains=Khi một triệu hồi hoại tử chết, nó sẽ phát nổ, gây §i[[0.1 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó, đầu độc chúng bằng 20% sát thương mỗi giây trong 10 giây
 endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận được +1 triệu hồi tối đa
-lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một lich\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một lich (một bộ xương) chỉ có thể bắn xương gây Sát thương của Người triệu hồi bằng [[Sức mạnh]] và sử dụng các kỹ năng còn lại của mình\nKhi ở dạng lich, bạn nhận gấp đôi sát thương
+lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một §bLich§0\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một §bLich§0 (một bộ xương)
 
 // Cleric
 vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace>]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
@@ -314,7 +314,7 @@ arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây 
 
 // Pháp sư
 arcaneoverload=Khi đang hoạt động, tăng Tốc độ Tấn công Phép của bạn lên §a[[30 x <skilllevel>]]%§0, nhưng bạn sẽ không thể di chuyển\nKết thúc khi bạn hết mana, hoặc nếu được sử dụng lại\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana mỗi giây
-manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1.4 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi[LINE_BREAK]Kết thúc khi sử dụng lại
+manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1.4 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi\nKết thúc khi sử dụng lại
 firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt kỹ năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Ném một §aQuả cầu băng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[50 + 10 x <skilllevel>]] Mana
 zap=Bắt đầu một cú giật nhảy giữa các mob trong 2 giây, gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,16 +330,16 @@ lightning=Bắt đầu một tia sét nhảy giữa các mob trong 1 giây, gây
 // Thầy chiêu hồn
 skeletonhorde=Triệu hồi §a[[1 + <skilllevel>]] §bBộ xương§0
 skeletonwarrior=Triệu hồi một §bChiến binh xương§0 với §a+[[20 x <skilllevel>]]%§0 Máu và Sát thương
-sacrifice=Triệu hồi có thể bị sát thương gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
+sacrifice=Triệu hồi hoại tử gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
 siegecry=Nhận §a+[[50 x <skilllevel>]]%§0 Tốc độ Triệu hồi trong 6 giây
 
 boneslingerhorde=Triệu hồi §a[[1 + <skilllevel>]]§0 §bKẻ ném xương§0
 tomb=Tạo ra một cấu trúc triệu hồi một §bBộ xương§0 mỗi §a[[10 - <skilllevel>]] giây§0\nMộ có Máu bằng §a[[5 x <playerlevel> x <skilllevel>]]§0\nMộ mất 2% Tổng Máu mỗi giây
 necroticbloom=Tăng tốc hiệu ứng của độc trên tất cả kẻ thù gần đó bằng cách giảm thời gian của nó xuống 10%, nhưng tăng sát thương mỗi giây để duy trì tổng sát thương
-wardingtaunt=Triệu hồi có thể bị sát thương gần nhất buộc kẻ thù gần đó trong bán kính §a[[50 x <skilllevel>]]§0 phải nhắm vào nó
+wardingtaunt=Triệu hồi hoại tử gần nhất buộc kẻ thù gần đó trong bán kính §a[[50 x <skilllevel>]]§0 phải nhắm vào nó
 
 unholyground=Mở rộng một luồng khí ô uế xung quanh bạn trong 10 giây\nKẻ thù trong khu vực này nhận §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Sát thương độc§0 mỗi giây và bị §7Hạn chế
-necroticbarrage=Tất cả các triệu hồi có thể bị sát thương sẽ phát nổ khi chết, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó\nvà đầu độc chúng trong 10 giây với 20% sát thương ban đầu mỗi giây
+necroticbarrage=Tất cả các triệu hồi hoại tử sẽ phát nổ khi chết, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó\nvà đầu độc chúng trong 10 giây với 20% sát thương ban đầu mỗi giây
 
 // Cleric
 smite=Gọi xuống một chùm ánh sáng thần thánh lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0\nGây sát thương gấp đôi cho mob Bất tử và Ma quỷ\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -347,11 +347,11 @@ divineblessing=Hào quang chữa bệnh bằng phép thuật phục hồi §a[[2
 purify=Thanh tẩy bản thân và các đồng minh gần đó khỏi mọi hiệu ứng tiêu cực\nTiêu tốn 10 Mana
 lightinfusion=Trong 8 giây tiếp theo, bạn nhận được §a+[[20 x <skilllevel>]]%§0 Hồi máu phép và Sát thương thần thánh
 holyguard=Áp dụng cho bạn và tất cả các đồng minh gần đó một Khiên Thánh trong tối đa 30 giây\nHọ nhận được §a+[[10 x <skilllevel>]]%§0 Hồi máu phép đã nhận và khiên chặn một đòn đánh trước khi vỡ\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Giải phóng một làn sóng năng lượng rạng rỡ, gây §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Sát thương thần thánh§0 cho tất cả kẻ thù gần đó\nMob Bất tử và Ma quỷ bị Hạn chế trong 5 giây\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana§0
-sanctuary=Tạo một khu vực thần thánh trong 8 giây\nBạn và các đồng minh bên trong miễn nhiễm với các hiệu ứng tiêu cực và nhận được §a[[0.2 x <grace> x <skilllevel>]]§0 hồi máu mỗi giây\nMob Bất tử và Ma quỷ bên trong bị Hạn chế\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana§0
+judgment=Giải phóng một làn sóng năng lượng rạng rỡ, gây §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Sát thương thần thánh§0 cho tất cả kẻ thù gần đó\nMob Bất tử và Ma quỷ bị §7Hạn chế§0 trong 5 giây\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Tạo một khu vực thần thánh trong 8 giây\nBạn và các đồng minh bên trong miễn nhiễm với các hiệu ứng tiêu cực và nhận được §a[[0.2 x <grace> x <skilllevel>]]§0 hồi máu mỗi giây\nMob Bất tử và Ma quỷ bên trong bị §7Hạn chế§0\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana§0
 divineintervention=Hồi máu ngay lập tức cho đồng minh bị sát thương nặng nhất đến mức máu tối đa của họ và cấp quyền miễn nhiễm với mọi sát thương trong §a[[<skilllevel>]]§0 giây\nTiêu tốn §a[[60 + 12 x <skilllevel>]] Mana§0
 resurrection=Hồi sinh đồng minh người chơi đã chết trên cùng một hòn đảo của bạn với §a[[10 x <skilllevel>]]%§0 máu tối đa của họ ở vị trí của bạn\nBạn không thể hồi sinh những người chơi có thể đã hồi sinh hơn 10 giây trước\nTiêu tốn §a[[100 - 10 x <skilllevel>]]%§0 Mana của bạn (ít nhất §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Triệu hồi một cột ánh sáng lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0 mỗi giây trong 5 giây trong khu vực\nMob Bất tử và Ma quỷ bên trong bị hạn chế\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
+wrathoflight=Triệu hồi một cột ánh sáng lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0 mỗi giây trong 5 giây trong khu vực\nMob Bất tử và Ma quỷ bên trong bị §7Hạn chế§0\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
 [skillsdesckeys]
@@ -396,6 +396,9 @@ dancingflame=§bNgọn lửa nhảy múa:§0 Triệu hồi hoạt động giốn
 necromancerskeleton=§bBộ xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
 necromancerskeletonwarrior=§bChiến binh xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
 necromancerboneslinger=§bKẻ ném xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (khoảng cách 320)\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+
+// Tranformations
+extraskilldesc.necromancerlich=§bLich:§0 Biến đổi thành bất tử\n\nKhông thể sử dụng vật phẩm\n+100% Sát thương nhận vào\n\nNhấn [input=trinketability] để bắn một khúc xương gây §i[[<strength>]] Sát thương của Người triệu hồi§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=Đang hồi chiêu
 notenoughstamina=Không đủ thể lực
 notarget=Không có mục tiêu nào ở gần
 nograbbableobject=Không có vật thể nào có thể nắm được trước mặt bạn
-nodamageablefollower=Không có triệu hồi nào có thể bị sát thương ở gần
+notargetfollower=Không có triệu hồi mục tiêu nào ở gần
 nodeathplayers=Không có người chơi nào đã chết có thể được hồi sinh ở cấp độ này
 
 

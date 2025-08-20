@@ -24,7 +24,7 @@ public class Purify extends ActiveSkill {
         super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
         RPGUtils.streamMobsAndPlayers(player, 200)
                 .filter(m -> m == player || m.isSameTeam(player))
-                .forEach(m -> RPGBuffs.purify(m, true));
+                .forEach(m -> RPGBuffs.purify(m, player.isServer()));
     }
 
     @Override

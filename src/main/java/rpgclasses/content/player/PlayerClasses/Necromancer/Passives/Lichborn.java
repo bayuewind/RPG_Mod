@@ -23,6 +23,11 @@ public class Lichborn extends SimpleBuffPassive {
     }
 
     @Override
+    public String[] getExtraTooltips() {
+        return new String[]{"necromancerlich"};
+    }
+
+    @Override
     public PrincipalPassiveBuff getBuff() {
         return new PrincipalPassiveBuff() {
 

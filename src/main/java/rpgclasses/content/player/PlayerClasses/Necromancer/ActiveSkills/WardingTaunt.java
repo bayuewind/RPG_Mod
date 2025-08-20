@@ -27,7 +27,7 @@ public class WardingTaunt extends ActiveSkill {
     @Override
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         super.run(player, playerData, activeSkillLevel, seed, isInUSe);
-        Mob tauntSummon = RPGUtils.findClosestDamageableFollower(player, 1024);
+        Mob tauntSummon = RPGUtils.findClosestDamageableFollower(player, 1024, RPGUtils.isNecroticFollowerFilter(player));
         int distance = 50 * activeSkillLevel;
         if (tauntSummon != null) {
             if (player.isServer()) {
@@ -56,6 +56,6 @@ public class WardingTaunt extends ActiveSkill {
 
     @Override
     public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyDamageableFollower(player, 1024) ? null : "nodamageablefollower";
+        return RPGUtils.anyDamageableFollower(player, 1024, RPGUtils.isNecroticFollowerFilter(player)) ? null : "notargetfollower";
     }
 }

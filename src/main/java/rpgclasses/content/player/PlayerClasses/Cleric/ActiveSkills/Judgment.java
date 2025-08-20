@@ -49,7 +49,7 @@ public class Judgment extends SimpleLevelEventActiveSkill {
 
     @Override
     public String[] getExtraTooltips() {
-        return new String[]{"holydamage", "manausage"};
+        return new String[]{"holydamage", "constrained", "manausage"};
     }
 
     public static class JudgmentLevelEvent extends ExplosionEvent implements Attacker {
@@ -111,7 +111,7 @@ public class Judgment extends SimpleLevelEventActiveSkill {
             mob.isServerHit(this.getTotalMobDamage(mod), (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
 
             if (MobData.isWeakToHoly(mob)) {
-                mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 5000, null), true);
+                mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 5000, null), mob.isServer());
             }
         }
     }

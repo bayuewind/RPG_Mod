@@ -34,7 +34,7 @@ holy_damage=Heilige schade
 evasive=Ontwijkend
 stalking=Besluipen
 regenerative=Regeneratief
-energetic=Energiek
+energetic=Energetisch
 depleted=Uitgeput
 
 
@@ -195,7 +195,7 @@ darksummons=Richt §a+[[10 x <skilllevel>]]%§0 Oproeperschade aan vergiftigde v
 lifeleech=Herstelt §a[[<skilllevel>]]%§0 van de Oproeperschade die is aangericht als Gezondheid
 necroticremains=Wanneer een necrotische oproep sterft, explodeert deze en richt §i[[0.1 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden, waardoor ze gedurende 10 seconden worden vergiftigd voor 20% van de schade per seconde
 endlesslegion=Elke 4 niveaus van deze vaardigheid, krijg je +1 max oproep
-lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen lich bent\nDe komende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een lich (een skelet) die alleen botten kan schieten die Oproeperschade aanrichten gelijk aan [[Kracht]] en de rest van je vaardigheden kan gebruiken\nIn lich-vorm, krijg je dubbele schade
+lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen §bLich§0 bent\nDe komende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een §bLich§0 (een skelet)
 
 // Cleric
 vitalaura=Elke §a[[15 - <skilllevel>]] seconden§0 laat je een magische genezingsaura om je heen los die §a[[10 + <grace>]] gezondheid§0 herstelt\nHet geneest je ook voor de helft van dat bedrag
@@ -285,7 +285,7 @@ wrathoflight=Toorn van het licht
 
 // Krijger
 fury=Verhoog de komende 6 seconden je contactschade en aanvalssnelheid met §a[[20 x <skilllevel>]]%
-recovery=Verhoogt de komende 10 seconden de gevechtsgezondheidsregeneratie aanzienlijk, waardoor §a[[20 + <endurance> x <skilllevel>]] gezondheid§0 gedurende de duur wordt hersteld
+recovery=Verhoogt de komende 10 seconden je gevechtsgezondheidsregeneratie aanzienlijk, waardoor §a[[20 + <endurance> x <skilllevel>]] gezondheid§0 gedurende de duur wordt hersteld
 provocation=Dwing de komende §a[[2 x <skilllevel>]] seconden§0 nabije vijanden om hun aanvallen op jou te richten
 berserkercharge=Ren een korte afstand naar voren en richt §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] schade§0 aan alle gepasseerde vijanden\nVerbruikt 50% uithoudingsvermogen
 groundslam=Gebiedsaanval die §i[[5 x <strength>]] contactschade§0 aanricht en §a[[1 x <skilllevel>]] seconden§0 §9verdooft§0
@@ -314,7 +314,7 @@ arrowstorm=Schiet een basispijl op elke nabije vijand en richt met elke pijl §i
 
 // Tovenaar
 arcaneoverload=Verhoogt, terwijl actief, je Magische Aanvalssnelheid met §a[[30 x <skilllevel>]]%§0, maar je kunt niet bewegen\nEindigt wanneer je mana op is, of als het opnieuw wordt gebruikt\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana per seconde
-manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1.4 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen[LINE_BREAK]Eindigt wanneer opnieuw gebruikt
+manarecharge=Verhoogt, terwijl actief, je Mana Regeneratie met +1.4 en met §a[[50 x <skilllevel>]]%§0, maar je zult verlamd zijn en dubbele schade oplopen\nEindigt wanneer opnieuw gebruikt
 firedance=Roept 4 §bDansende Vlammen§0 op, die elk §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanrichten\nRoept elke 5 seconden een nieuwe op\nAlle oproepen verdwijnen 20 seconden nadat de vaardigheid is geactiveerd\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Gooi een §aIJsbal§0 naar de dichtstbijzijnde vijand, die §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aanricht\nVerbruikt §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start een zap die 2 seconden tussen mobs springt, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische Schade§0 aanricht en 1 seconde verdooft\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,16 +330,16 @@ lightning=Start een bliksem die 1 seconde tussen mobs springt, §i[[4 x <playerl
 // Necromancer
 skeletonhorde=Roept §a[[1 + <skilllevel>]] §bSkeletten§0 op
 skeletonwarrior=Roept een §bSkeletkrijger§0 op met §a+[[20 x <skilllevel>]]%§0 Gezondheid en Schade
-sacrifice=De dichtstbijzijnde beschadigbare oproep sterft, en je herstelt dan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gezondheid§0 als magische genezing
+sacrifice=De dichtstbijzijnde necrotische oproep sterft, en je herstelt dan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gezondheid§0 als magische genezing
 siegecry=Krijg §a+[[50 x <skilllevel>]]%§0 Oproepsnelheid gedurende 6 seconden
 
 boneslingerhorde=Roept §a[[1 + <skilllevel>]]§0 §bBottenwerpers§0 op
 tomb=Genereert een structuur die elke §a[[10 - <skilllevel>]] seconden§0 een §bSkelet§0 oproept\nHet Graf heeft Gezondheid gelijk aan §a[[5 x <playerlevel> x <skilllevel>]]§0\nHet Graf verliest 2% van zijn Totale Gezondheid per seconde
 necroticbloom=Versnelt het effect van gif op alle nabije vijanden door de duur ervan te verminderen tot 10%, maar de schade per seconde te verhogen om de totale schade te behouden
-wardingtaunt=De dichtstbijzijnde beschadigbare oproep dwingt nabije vijanden binnen een straal van §a[[50 x <skilllevel>]]§0 om het te targeten
+wardingtaunt=De dichtstbijzijnde necrotische oproep dwingt nabije vijanden binnen een straal van §a[[50 x <skilllevel>]]§0 om het te targeten
 
 unholyground=Verlengt een aura van corruptie om je heen gedurende 10 seconden\nVijanden binnen dit gebied lopen §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Gifschade§0 per seconde op en zijn §7Beperkt
-necroticbarrage=Alle beschadigbare oproepen exploderen bij het sterven, en richten §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden\nen vergiftigen ze gedurende 10 seconden met 20% van de oorspronkelijke schade per seconde
+necroticbarrage=Alle necrotische oproepen exploderen bij het sterven, en richten §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magische Schade§0 aan nabije vijanden\nen vergiftigen ze gedurende 10 seconden met 20% van de oorspronkelijke schade per seconde
 
 // Cleric
 smite=Roep een straal heilig licht neer op de dichtstbijzijnde vijand, die §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Heilige schade§0 aanricht\nRicht dubbele schade aan Ondode en Demonische mobs\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana§0
@@ -397,6 +397,9 @@ necromancerskeleton=§bSkelet:§0 Necrotische beschadigbare oproep\nGezondheid: 
 necromancerskeletonwarrior=§bSkeletkrijger:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
 necromancerboneslinger=§bBottenwerper:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
 
+// Tranformations
+necromancerlich=§bLich:§0 Ondode transformatie\n\nKan geen voorwerpen gebruiken\n+100% Schade Opgelopen\n\nDruk op [input=trinketability] om een bot te schieten dat §i[[<strength>]] Oproeperschade§0 aanricht
+
 
 [item]
 scrollofoblivion=Rol van vergetelheid
@@ -453,7 +456,7 @@ incooldown=Afkoelen
 notenoughstamina=Niet genoeg uithoudingsvermogen
 notarget=Er zijn geen doelen in de buurt
 nograbbableobject=Er is geen grijpbaar object voor je
-nodamageablefollower=Er zijn geen beschadigbare oproepen in de buurt
+notargetfollower=Er zijn geen doel-oproepen in de buurt
 nodeathplayers=Op dit niveau kunnen geen dode spelers worden herrezen
 
 

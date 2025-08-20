@@ -12,7 +12,6 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
-import rpgclasses.utils.RPGArea;
 import rpgclasses.utils.RPGColors;
 
 import java.awt.*;

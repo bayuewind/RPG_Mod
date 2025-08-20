@@ -161,7 +161,7 @@ public class MobData {
                     }
                 } else {
                     if (biome instanceof PlainsBiome) {
-                        mobData.level += 15;
+                        mobData.level += 16;
                     } else if (biome instanceof SnowBiome) {
                         mobData.level += 18;
                     } else if (biome instanceof SwampBiome) {

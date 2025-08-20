@@ -195,7 +195,7 @@ darksummons=Zehirli düşmanlara §a+[[10 x <skilllevel>]]%§0 Çağırıcı Has
 lifeleech=Verilen Çağırıcı Hasarının §a[[<skilllevel>]]%§0 kadarını Can olarak yeniler
 necroticremains=Bir nekrotik çağrı öldüğünde, patlar ve yakındaki düşmanlara §i[[0.1 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir, onları 10 saniye boyunca saniyede hasarın %20'si kadar zehirler
 endlesslegion=Bu yeteneğin her 4 seviyesinde, +1 maksimum çağrı kazanırsınız
-lichborn=Öldüğünüzde, hayatta kalırsınız ve zaten bir lich değilseniz, Canınızın §a[[10 x <skilllevel>]]%§0 kadarını yenilersiniz\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca, yalnızca [[Güç]]'e eşit Çağırıcı Hasarı veren kemikler atabilen ve geri kalan yeteneklerinizi kullanabilen bir lich (iskelet) olursunuz\nLich formundayken, çift hasar alırsınız
+lichborn=Öldüğünüzde, zaten bir §bLich§0 değilseniz hayatta kalırsınız ve §a[[10 x <skilllevel>]]%§0 Can kazanırsınız\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca bir §bLich§0 (iskelet) olursunuz
 
 // Cleric
 vitalaura=Her §a[[15 - <skilllevel>]] saniyede§0, etrafınıza §a[[10 + <grace>]] can§0 yenileyen sihirli bir iyileştirme aurası salarsınız\nAyrıca sizi bu miktarın yarısı kadar iyileştirir
@@ -330,16 +330,16 @@ lightning=Moblar arasında 1 saniye boyunca zıplayan, §i[[4 x <playerlevel> + 
 // Nekromanser
 skeletonhorde=§a[[1 + <skilllevel>]] §bİskelet§0 çağırır
 skeletonwarrior=§a+[[20 x <skilllevel>]]%§0 Can ve Hasara sahip bir §bİskelet Savaşçı§0 çağırır
-sacrifice=En yakın hasar verilebilir çağrı ölür ve ardından sihirli iyileştirme olarak §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Can§0 yenilersiniz
+sacrifice=En yakın nekrotik çağrı ölür ve ardından sihirli iyileştirme olarak §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Can§0 yenilersiniz
 siegecry=6 saniye boyunca §a+[[50 x <skilllevel>]]%§0 Çağırma Hızı kazanın
 
 boneslingerhorde=§a[[1 + <skilllevel>]]§0 §bKemik Atıcı§0 çağırır
 tomb=Her §a[[10 - <skilllevel>]] saniyede§0 bir §bİskelet§0 çağıran bir yapı oluşturur\nMezarın Canı §a[[5 x <playerlevel> x <skilllevel>]]§0 kadardır\nMezar saniyede Toplam Canının %2'sini kaybeder
 necroticbloom=Yakındaki tüm düşmanlardaki zehir etkisini süresini %10'a düşürerek hızlandırır, ancak toplam hasarı korumak için saniyedeki hasarını artırır
-wardingtaunt=En yakın hasar verilebilir çağrı, §a[[50 x <skilllevel>]] yarıçapındaki§0 yakındaki düşmanları onu hedeflemeye zorlar
+wardingtaunt=En yakın nekrotik çağrı, yakındaki düşmanları §a[[50 x <skilllevel>]] yarıçapı§0 içinde onu hedeflemeye zorlar
 
 unholyground=10 saniye boyunca etrafınızda bir bozulma aurası yayar\nBu alandaki düşmanlar saniyede §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Zehir Hasarı§0 alır ve §7Kısıtlanır
-necroticbarrage=Tüm hasar verilebilir çağrılar öldüğünde patlar ve yakındaki düşmanlara §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\nve onları 10 saniye boyunca saniyede orijinal hasarın %20'si kadar zehirler
+necroticbarrage=Tüm nekrotik çağrılar öldüğünde patlar ve yakındaki düşmanlara §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\nve onları 10 saniye boyunca orijinal hasarın %20'si ile zehirler
 
 // Cleric
 smite=En yakın düşmana bir kutsal ışık hüzmesi indirerek, §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verir\nÖlümsüz ve Şeytani moblara çift hasar verir\n§a[[10 + 2 x <skilllevel>]] Mana§0 tüketir
@@ -347,8 +347,8 @@ divineblessing=Size ve müttefiklerinize §a[[20 + 3 x <grace> x <skilllevel>]] 
 purify=Kendinizi ve yakındaki müttefikleri tüm olumsuz etkilerden arındırın\n10 Mana tüketir
 lightinfusion=Sonraki 8 saniye boyunca, §a+[[20 x <skilllevel>]]%§0 Büyülü İyileştirme ve Kutsal Hasar kazanırsınız
 holyguard=Size ve yakındaki tüm müttefiklere 30 saniyeye kadar bir Kutsal Kalkan uygulayın\n§a+[[10 x <skilllevel>]]%§0 Alınan Büyülü İyileştirme kazanırlar ve kalkan kırılmadan önce bir darbeyi engeller\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
-judgment=Yakındaki tüm düşmanlara §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kutsal Hasar§0 veren bir parlak enerji dalgası salın\nÖlümsüz ve Şeytani moblar 5 saniye boyunca Kısıtlanır\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
-sanctuary=8 saniyeliğine kutsal bir bölge oluşturun\nİçerideki siz ve müttefikler olumsuz etkilere karşı bağışıksınız ve saniyede §a[[0.2 x <grace> x <skilllevel>]]§0 can yenilenmesi kazanırsınız\nİçerideki Ölümsüz ve Şeytani moblar Kısıtlanır\n§a[[30 + 6 x <skilllevel>]] Mana§0 tüketir
+judgment=Yakındaki tüm düşmanlara §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kutsal Hasar§0 veren bir parlak enerji dalgası salın\nÖlümsüz ve Şeytani moblar 5 saniye boyunca §7Kısıtlanır§0\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
+sanctuary=8 saniyeliğine kutsal bir bölge oluşturun\nİçerideki siz ve müttefikler olumsuz etkilere karşı bağışıksınız ve saniyede §a[[0.2 x <grace> x <skilllevel>]]§0 can yenilenmesi kazanırsınız\nİçerideki Ölümsüz ve Şeytani moblar §7Kısıtlanır§0\n§a[[30 + 6 x <skilllevel>]] Mana§0 tüketir
 divineintervention=En çok hasar görmüş yakın müttefiki anında maksimum canına kadar iyileştirin ve §a[[<skilllevel>]]§0 saniye boyunca tüm hasarlara karşı bağışıklık kazandırın\n§a[[60 + 12 x <skilllevel>]] Mana§0 tüketir
 resurrection=Aynı adadaki en son ölen oyuncu müttefikini, pozisyonunuzda maksimum canlarının §a[[10 x <skilllevel>]]%§0 kadarıyla diriltin\n10 saniyeden daha uzun süre önce yeniden doğmuş olabilecek oyuncuları diriltemezsiniz\nMananızın §a[[100 - 10 x <skilllevel>]]%§0 kadarını tüketir (en az §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=En yakın düşmanın üzerine bir ışık sütunu çağırarak, alanda 5 saniye boyunca saniyede §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verir\nİçerideki Ölümsüz ve Şeytani moblar kısıtlanır\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
@@ -368,7 +368,7 @@ grace=Nezaket
 // Temel Mekanik
 manausage=Yeterli mananız yoksa, bekleme süresi iki katına çıkar
 setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle kaldırılamaz
-holydamage=Verilen Kutsal hasarın %25'i, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir[LINE_BREAK]Ayrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
+holydamage=Verilen Kutsal hasarın %25'i, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir\nAyrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
 
 // Güçlendirmeler
 marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir
@@ -396,6 +396,9 @@ dancingflame=§bDans Eden Alev:§0 Mermi gibi davranan bir çağrı. Vurulduğun
 necromancerskeleton=§bİskelet:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nHasar: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
 necromancerskeletonwarrior=§bİskelet Savaşçı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nHasar: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
 necromancerboneslinger=§bKemik Atıcı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHasar: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 menzil)\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
+
+// Tranformations
+extraskilldesc.necromancerlich=§bLich:§0 Ölümsüz dönüşüm\n\nEşya kullanamaz\n+100% Hasar Alımı\n\n§i[[<strength>]] Çağırıcı Hasarı§0 veren bir kemik atmak için [input=trinketability] tuşuna basın
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=Beklemede
 notenoughstamina=Yeterli Dayanıklılık Yok
 notarget=Yakında hedef yok
 nograbbableobject=Önünüzde tutulabilir bir nesne yok
-nodamageablefollower=Yakında hasar verilebilir çağrı yok
+notargetfollower=Yakında hedef çağrı yok
 nodeathplayers=Bu seviyede diriltilebilecek ölü oyuncu yok
 
 

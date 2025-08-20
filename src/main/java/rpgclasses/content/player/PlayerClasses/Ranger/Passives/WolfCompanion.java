@@ -36,7 +36,7 @@ public class WolfCompanion extends SimpleBuffPassive {
                 PlayerMob player = (PlayerMob) activeBuff.owner;
                 if (player.serverFollowersManager.getFollowerCount(buffStringID) == 0) {
                     PassiveFollowingMob mob = (PassiveFollowingMob) MobRegistry.getMob("rangerwolf", activeBuff.owner.getLevel());
-                    player.serverFollowersManager.addFollower(buffStringID, mob, FollowPosition.WALK_CLOSE, buffStringID, 1, 1, null, true);
+                    player.serverFollowersManager.addFollower(buffStringID, mob, FollowPosition.WALK_CLOSE, buffStringID, 1, 1, null, activeBuff.owner.isServer());
                     mob.setSkill(passive);
                     mob.getLevel().entityManager.addMob(mob, activeBuff.owner.x, activeBuff.owner.y);
                 }

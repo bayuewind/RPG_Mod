@@ -73,7 +73,7 @@ public class Smite extends ActiveSkill {
 
     @Override
     public String[] getExtraTooltips() {
-        return new String[]{"holydamage", "manausage"};
+        return new String[]{"holydamage", "constrained", "manausage"};
     }
 
     public static class SmiteParticle extends Particle {

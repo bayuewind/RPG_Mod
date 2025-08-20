@@ -195,7 +195,7 @@ darksummons=Nanesite §a+[[10 x <skilllevel>]]%§0 štete prizivača otrovanim n
 lifeleech=Oporavlja §a[[<skilllevel>]]%§0 nanesene štete prizivača kao zdravlje
 necroticremains=Kada nekrotični priziv umre, eksplodira, nanoseći §i[[0.1 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima, trujući ih s 20% štete u sekundi tijekom 10 sekundi
 endlesslegion=Svake 4 razine ove vještine, dobivate +1 maksimalni priziv
-lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste lič\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete lič (kostur) koji može samo ispaljivati kosti nanoseći štetu prizivača jednaku [[Snaga]] i koristiti ostatak svojih vještina\nDok ste u obliku liča, primate dvostruku štetu
+lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste §bLich§0\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete §bLich§0 (kostur)
 
 // Cleric
 vitalaura=Svakih §a[[15 - <skilllevel>]] sekundi§0 oslobađate magičnu iscjeljujuću auru oko sebe koja obnavlja §a[[10 + <grace>]] zdravlja§0\nTakođer vas liječi za polovicu tog iznosa
@@ -314,7 +314,7 @@ arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći �
 
 // Čarobnjak
 arcaneoverload=Dok je aktivno, povećava vašu brzinu magičnog napada za §a[[30 x <skilllevel>]]%§0, ali se nećete moći kretati\nZavršava kada ostanete bez mane, ili ako se ponovno koristi\nTroši §a[[10 + 2 x <skilllevel>]] mane u sekundi
-manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1.4 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu[LINE_BREAK]Završava kada se ponovno koristi
+manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1.4 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu\nZavršava kada se ponovno koristi
 firedance=Priziva 4 §bPlešuća plamena§0, od kojih svaki nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nPrizovite još jedan svakih 5 sekundi\nSvi prizivi nestaju 20 sekundi nakon aktivacije sposobnosti\nTroši §a[[30 + 6 x <skilllevel>]] mane
 iceball=Bacite §aLedenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[50 + 10 x <skilllevel>]] mane
 zap=Pokrenite strujni udar koji skače između mobova 2 sekunde, nanoseći §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 1 sekundu\nTroši §a[[10 + 2 x <skilllevel>]] mane
@@ -330,16 +330,16 @@ lightning=Pokrenite munju koja skače između mobova 1 sekundu, nanoseći §i[[4
 // Nekromant
 skeletonhorde=Priziva §a[[1 + <skilllevel>]] §bKostura§0
 skeletonwarrior=Priziva §bRatnika kostura§0 s §a+[[20 x <skilllevel>]]%§0 zdravlja i štete
-sacrifice=Najbliži oštetivi priziv umire, a vi zatim oporavljate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdravlja§0 kao magično iscjeljenje
+sacrifice=Najbliži nekrotični priziv umire, a vi zatim oporavljate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdravlja§0 kao magično iscjeljenje
 siegecry=Dobijte §a+[[50 x <skilllevel>]]%§0 brzine prizivanja na 6 sekundi
 
 boneslingerhorde=Priziva §a[[1 + <skilllevel>]]§0 §bBacača kostiju§0
 tomb=Stvara strukturu koja priziva §bKostura§0 svakih §a[[10 - <skilllevel>]] sekundi§0\nGrob ima zdravlje jednako §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrob gubi 2% svog ukupnog zdravlja u sekundi
 necroticbloom=Ubrzava učinak otrova na sve obližnje neprijatelje smanjujući njegovo trajanje na 10%, ali povećavajući njegovu štetu u sekundi kako bi se održala ukupna šteta
-wardingtaunt=Najbliži oštetivi priziv prisiljava obližnje neprijatelje unutar radijusa od §a[[50 x <skilllevel>]]§0 da ga ciljaju
+wardingtaunt=Najbliži nekrotični priziv prisiljava obližnje neprijatelje unutar radijusa od §a[[50 x <skilllevel>]]§0 da ga ciljaju
 
 unholyground=Širi auru korupcije oko vas 10 sekundi\nNeprijatelji unutar ovog područja primaju §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] štete od otrova§0 u sekundi i §7Ograničeni su
-necroticbarrage=Svi oštetivi prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
+necroticbarrage=Svi nekrotični prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
 
 // Cleric
 smite=Sazovite zraku svetog svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0\nNanosi dvostruku štetu nemrtvim i demonskim mobovima\nTroši §a[[10 + 2 x <skilllevel>]] mane§0
@@ -347,11 +347,11 @@ divineblessing=Magična iscjeljujuća aura koja obnavlja §a[[20 + 3 x <grace> x
 purify=Očistite sebe i obližnje saveznike od svih negativnih učinaka\nTroši 10 mane
 lightinfusion=Sljedećih 8 sekundi dobivate §a+[[20 x <skilllevel>]]%§0 magičnog iscjeljivanja i svete štete
 holyguard=Nanesite na sebe i sve obližnje saveznike Sveti štit do 30 sekundi\nOni dobivaju §a+[[10 x <skilllevel>]]%§0 primljenog magičnog iscjeljivanja, a štit blokira jedan udarac prije nego što se slomi\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
-judgment=Oslobodite val zračeće energije, nanoseći §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svete štete§0 svim obližnjim neprijateljima\nNemrtvi i demonski mobovi su ograničeni na 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
-sanctuary=Stvorite svetu zonu na 8 sekundi\nVi i saveznici unutra ste imuni na negativne učinke i dobivate §a[[0.2 x <grace> x <skilllevel>]]§0 regeneracije zdravlja u sekundi\nNemrtvi i demonski mobovi unutra su ograničeni\nTroši §a[[30 + 6 x <skilllevel>]] mane§0
+judgment=Oslobodite val zračeće energije, nanoseći §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svete štete§0 svim obližnjim neprijateljima\nNemrtvi i demonski mobovi su §7Ograničeni§0 na 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
+sanctuary=Stvorite svetu zonu na 8 sekundi\nVi i saveznici unutra ste imuni na negativne učinke i dobivate §a[[0.2 x <grace> x <skilllevel>]]§0 regeneracije zdravlja u sekundi\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[30 + 6 x <skilllevel>]] mane§0
 divineintervention=Trenutačno izliječite najviše oštećenog bliskog saveznika do njihovog maksimalnog zdravlja i dajte imunitet na svu štetu na §a[[<skilllevel>]]§0 sekundi\nTroši §a[[60 + 12 x <skilllevel>]] mane§0
 resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <skilllevel>]]%§0 njihovog maksimalnog zdravlja na vašoj poziciji\nNe možete oživjeti igrače koji su se mogli ponovno pojaviti prije više od 10 sekundi\nTroši §a[[100 - 10 x <skilllevel>]]%§0 vaše mane (najmanje §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su ograničeni\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
+wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
 
 
 [skillsdesckeys]
@@ -396,6 +396,9 @@ dancingflame=§bPlešući plamen:§0 Priziv koji djeluje kao projektil. Zapali n
 necromancerskeleton=§bKostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
 necromancerskeletonwarrior=§bRatnik kostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŠteta: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
 necromancerboneslinger=§bBacač kostiju:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 udaljenost)\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
+
+// Tranformations
+necromancerlich=§bLich:§0 Transformacija u nemrtvog\n\nNe može koristiti predmete\n+100% primljene štete\n\nPritisnite [input=trinketability] da ispalite kost koja nanosi §i[[<strength>]] štete prizivača§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=Na hlađenju
 notenoughstamina=Nema dovoljno izdržljivosti
 notarget=Nema ciljeva u blizini
 nograbbableobject=Ispred vas nema predmeta koji se može zgrabiti
-nodamageablefollower=Nema oštetivih priziva u blizini
+notargetfollower=Nema ciljanih priziva u blizini
 nodeathplayers=Na ovoj razini ne mogu se uskrsnuti mrtvi igrači
 
 

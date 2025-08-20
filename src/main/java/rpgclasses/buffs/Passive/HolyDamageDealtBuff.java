@@ -69,7 +69,7 @@ public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingB
                 addDamageDealt(activeBuff, holyDamage, false);
                 Mob target = event.target;
                 if (MobData.isWeakToHoly(target)) {
-                    target.buffManager.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, target, 10F, activeBuff.owner), true);
+                    target.buffManager.addBuff(new ActiveBuff(BuffRegistry.Debuffs.ON_FIRE, target, 10F, activeBuff.owner), activeBuff.owner.isServer());
                 }
             }
         }

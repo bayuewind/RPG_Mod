@@ -159,12 +159,12 @@ lichborn=Lichfødt
 // Cleric
 healer=Helbreder
 shaman=Sjaman
-vitalaura=Vital aura
-divinejudge=Guddommelig dommer
-empoweredhealing=Forsterket helbredelse
-sanctifiedmind=Helliggjort sinn
-sanctifiedarmor=Helliggjort rustning
-radiantexpansion=Strålende utvidelse
+vitalaura=생명의 오라
+divinejudge=신성한 심판관
+empoweredhealing=강화된 치유
+sanctifiedmind=성스러운 마음
+sanctifiedarmor=성스러운 갑옷
+radiantexpansion=찬란한 확장
 
 
 [passivesdesc]
@@ -195,7 +195,7 @@ darksummons=Gi §a+[[10 x <skilllevel>]]%§0 Tilkallerskade til forgiftede fiend
 lifeleech=Gjenoppretter §a[[<skilllevel>]]%§0 av den påførte Tilkallerskaden som Helse
 necroticremains=Når en nekrotisk tilkalling dør, eksploderer den og gir §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender, og forgifter dem med 20% av skaden per sekund i 10 sekunder
 endlesslegion=Hver 4. nivå av denne ferdigheten, får du +1 maks tilkalling
-lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§0 Helse hvis du ikke allerede er en lich\nI de neste §a[[120 - 6 x <skilllevel>]] sekundene§0, blir du en lich (et skjelett) som bare kan skyte bein som gir Tilkallerskade lik [[Styrke]] og bruke resten av ferdighetene dine\nMens du er i lich-form, tar du dobbel skade
+lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§0 Helse hvis du ikke allerede er en §bLich§0\nI de neste §a[[120 - 6 x <skilllevel>]] sekundene§0, blir du en §bLich§0 (et skjelett)
 
 // Cleric
 vitalaura=Hver §a[[15 - <skilllevel>]] sekund§0 frigjør du en magisk helbredende aura rundt deg som gjenoppretter §a[[10 + <grace>]] helse§0\nDen helbreder deg også for halvparten av det beløpet
@@ -293,7 +293,7 @@ grounddestruction=Områdeangrep som gir §i[[5 x <playerlevel> + 5 x <strength> 
 parry=Bli usårbar i 0,5 sekunder og returner 500% av den opprinnelige mottatte skaden\nForbruker 100% utholdenhet
 battlecry=I de neste 10 sekundene, øk din og nærliggende alliertes all skade og bevegelseshastighet med §a[[10 x <skilllevel>]]%
 
-ironguard=-50% innkommende skade i §a[[4 x <skilllevel>]] sekunder
+ironguard=§a[[4 x <skilllevel>]] sekunder§0, -50% innkommende skade
 intimidation=I de neste §a[[<skilllevel>]] sekundene§0, få nærliggende fiender til å flykte
 
 objectthrowing=Trinn 1: Grip en gjenstand foran deg\nTrinn 2: Kast den fremover og gi §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] nærkampsskade§0\nBegge trinnene bruker all utholdenheten din (minst 100%)
@@ -314,7 +314,7 @@ arrowstorm=Skyt en basispil mot hver nære fiende, og gi §i[[2 x <playerlevel> 
 
 // Trollmann
 arcaneoverload=Mens aktiv, øker din Magiske Angrepshastighet med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevege deg\nAvsluttes når du går tom for mana, eller hvis den brukes igjen\nForbruker §a[[10 + 2 x <skilllevel>]] Mana per sekund
-manarecharge=Mens aktiv, øker din Mana-regenerering med +1.4 og med §a[[50 x <skilllevel>]]%§0, men du vil bli lammet og motta dobbel skade[LINE_BREAK]Avsluttes når den brukes igjen
+manarecharge=Mens aktiv, øker din Mana-regenerering med +1.4 og med §a[[50 x <skilllevel>]]%§0, men du vil bli lammet og motta dobbel skade\nAvsluttes når den brukes igjen
 firedance=Kaller frem 4 §bDansende Flammer§0, som hver gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nKaller frem en til hvert 5. sekund\nAlle tilkallinger forsvinner 20 sekunder etter at evnen er aktivert\nForbruker §a[[30 + 6 x <skilllevel>]] Mana
 iceball=Kast en §aIskule§0 mot nærmeste fiende, som gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0\nForbruker §a[[50 + 10 x <skilllevel>]] Mana
 zap=Start et støt som hopper mellom mobs i 2 sekunder, gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund\nForbruker §a[[10 + 2 x <skilllevel>]] Mana
@@ -330,22 +330,22 @@ lightning=Start et lyn som hopper mellom mobs i 1 sekund, gir §i[[4 x <playerle
 // Nekromantiker
 skeletonhorde=Kaller frem §a[[1 + <skilllevel>]] §bSkjeletter§0
 skeletonwarrior=Kaller frem en §bSkjelettkriger§0 med §a+[[20 x <skilllevel>]]%§0 Helse og Skade
-sacrifice=Den nærmeste skadbare tilkallingen dør, og du gjenoppretter deretter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Helse§0 som magisk helbredelse
+sacrifice=Den nærmeste nekrotiske tilkallingen dør, og du gjenoppretter deretter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Helse§0 som magisk helbredelse
 siegecry=Få §a+[[50 x <skilllevel>]]%§0 Tilkallingshastighet i 6 sekunder
 
 boneslingerhorde=Kaller frem §a[[1 + <skilllevel>]]§0 §bBeinkastere§0
 tomb=Genererer en struktur som kaller frem et §bSkjelett§0 hvert §a[[10 - <skilllevel>]] sekund§0\nGraven har Helse lik §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven mister 2% av sin Totale Helse per sekund
 necroticbloom=Akselererer effekten av gift på alle nærliggende fiender ved å redusere varigheten til 10%, men øke skaden per sekund for å opprettholde den totale skaden
-wardingtaunt=Den nærmeste skadbare tilkallingen tvinger nærliggende fiender innenfor en radius på §a[[50 x <skilllevel>]]§0 til å angripe den
+wardingtaunt=Den nærmeste nekrotiske tilkallingen tvinger nærliggende fiender innenfor en radius på §a[[50 x <skilllevel>]]§0 til å angripe den
 
 unholyground=Utvider en aura av korrupsjon rundt deg i 10 sekunder\nFiender innenfor dette området tar §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftskade§0 per sekund og er §7Begrenset
-necroticbarrage=Alle skadbare tilkallinger eksploderer ved døden, og gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender\nog forgifter dem i 10 sekunder med 20% av den opprinnelige skaden per sekund
+necroticbarrage=Alle nekrotiske tilkallinger eksploderer ved døden, og gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender\nog forgifter dem i 10 sekunder med 20% av den opprinnelige skaden per sekund
 
 // Cleric
 smite=Kall ned en stråle av hellig lys på nærmeste fiende, som gir §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0\nGir dobbel skade til udøde og demoniske mobs\nForbruker §a[[10 + 2 x <skilllevel>]] mana§0
 divineblessing=Magisk helbredende aura som gjenoppretter §a[[20 + 3 x <grace> x <skilllevel>]] helse§0 til deg og dine allierte\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
 purify=Rens deg selv og nærliggende allierte for alle negative effekter\nForbruker 10 mana
-lightinfusion=I de neste 8 sekundene får du §a+[[20 x <skilllevel>]]%§0 magisk helbredelse og hellig skade
+lightinfusion=I de neste 8 sekundene får du §a+[[20 x <skilllevel>]]%§0 Magisk helbredelse og hellig skade
 holyguard=Påfør deg og alle nærliggende allierte et Hellig skjold i opptil 30 sekunder\nDe får §a+[[10 x <skilllevel>]]%§0 mottatt magisk helbredelse, og skjoldet blokkerer ett treff før det går i stykker\nForbruker §a[[40 + 8 x <skilllevel>]] mana§0
 judgment=Slipp løs en bølge av strålende energi, som gir §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] hellig skade§0 til alle nærliggende fiender\nUdøde og demoniske mobs er begrenset i 5 sekunder\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
 sanctuary=Opprett en hellig sone i 8 sekunder\nDu og allierte inne er immune mot negative effekter og får §a[[0.2 x <grace> x <skilllevel>]]§0 helse-regenerering per sekund\nUdøde og demoniske mobs inne er begrenset\nForbruker §a[[30 + 6 x <skilllevel>]] mana§0
@@ -396,6 +396,9 @@ dancingflame=§bDansende Flamme:§0 Tilkalling som fungerer som et prosjektil. A
 necromancerskeleton=§bSkjelett:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nMister 2% av Total Helse per sekund
 necromancerskeletonwarrior=§bSkjelettkriger:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighet: 60\nMister 2% av Total Helse per sekund
 necromancerboneslinger=§bBeinkaster:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 avstand)\nHastighet: 60\nMister 2% av Total Helse per sekund
+
+// Tranformations
+necromancerlich=§bLich:§0 Udød transformasjon\n\nKan ikke bruke gjenstander\n+100% Skade Modtaget\n\nTrykk på [input=trinketability] for å skyte et bein som gir §i[[<strength>]] Tilkallerskade§0
 
 
 [item]
@@ -453,7 +456,7 @@ incooldown=På nedkjøling
 notenoughstamina=Ikke nok utholdenhet
 notarget=Det er ingen mål i nærheten
 nograbbableobject=Det er ingen gripbar gjenstand foran deg
-nodamageablefollower=Det er ingen skadbare tilkallinger i nærheten
+notargetfollower=Det er ingen mål-tilkallinger i nærheten
 nodeathplayers=Ingen døde spillere kan gjenopplives på dette nivået
 
 

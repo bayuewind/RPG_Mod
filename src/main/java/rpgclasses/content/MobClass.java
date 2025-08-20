@@ -8,6 +8,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.RPGConfig;
 import rpgclasses.buffs.MobClasses.*;
+import rpgclasses.data.MobData;
 
 import java.util.*;
 
@@ -83,8 +84,6 @@ public class MobClass {
     public final float expMod;
     public final Class<? extends MobClassBuff> classBuff;
 
-    public float baseHealthMod;
-
     public MobClass(String stringID, String color, float healthModPerLevel, float expMod, Class<? extends MobClassBuff> classBuff) {
         this.id = allClasses.size();
         this.stringID = stringID;
@@ -92,17 +91,10 @@ public class MobClass {
         this.healthModPerLevel = healthModPerLevel;
         this.expMod = expMod;
         this.classBuff = classBuff;
-
-        this.baseHealthMod = healthModPerLevel * 4;
     }
 
     public MobClass(String stringID, String color, float healthModPerLevel, Class<? extends MobClassBuff> classBuff) {
         this(stringID, color, healthModPerLevel, 1, classBuff);
-    }
-
-    public MobClass setBaseHealthMod(float baseHealthMod) {
-        this.baseHealthMod = baseHealthMod;
-        return this;
     }
 
     public String getName() {
@@ -112,12 +104,12 @@ public class MobClass {
     public void giveBuff(Mob mob, int classLevel) {
         ActiveBuff ab = new ActiveBuff(buffStringID(), mob, 3600F, null);
         MobClassBuff.setMobLevel(ab, classLevel);
-        mob.buffManager.addBuff(ab, true);
+        mob.buffManager.addBuff(ab, mob.isServer());
     }
 
     public void setMaxHealth(Mob mob, int classLevel) {
         if (healthModPerLevel > 0) {
-            mob.setMaxHealth((int) (mob.getMaxHealth() * (1F + baseHealthMod + healthModPerLevel * classLevel)));
+            mob.setMaxHealth((int) (mob.getMaxHealth() * (1F + healthModPerLevel * MobData.levelScaling(classLevel))));
             mob.setHealthHidden(mob.getMaxHealth());
         }
     }

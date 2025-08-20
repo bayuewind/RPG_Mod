@@ -195,7 +195,7 @@ darksummons=중독된 적에게 §a+[[10 x <skilllevel>]]%§0의 소환사 피�
 lifeleech=입힌 소환사 피해의 §a[[<skilllevel>]]%§0를 체력으로 회복합니다.
 necroticremains=괴저 소환수가 죽으면 폭발하여 주변의 적에게 §i[[0.1 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 10초 동안 초당 피해의 20%만큼 중독시킵니다.
 endlesslegion=이 스킬의 4레벨마다 최대 소환수가 +1됩니다.
-lichborn=죽으면 아직 리치가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 [[힘]]과 동일한 소환사 피해를 입히는 뼈만 쏠 수 있고 나머지 스킬을 사용할 수 있는 리치(해골)가 됩니다\n리치 형태에서는 두 배의 피해를 받습니다.
+lichborn=죽으면 아직 §b리치§0가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 당신은 §b리치§0(해골)가 됩니다
 
 // Cleric
 vitalaura=§a[[15 - <skilllevel>]]초§0마다 주변에 마법 치유 오라를 방출하여 §a[[10 + <grace>]]의 체력§0을 회복합니다\n또한 그 양의 절반만큼 당신을 치유합니다
@@ -347,11 +347,11 @@ divineblessing=당신과 아군에게 §a[[20 + 3 x <grace> x <skilllevel>]]의 
 purify=자신과 주변 아군을 모든 부정적인 효과로부터 정화합니다\n마나 10을 소모합니다
 lightinfusion=다음 8초 동안 §a+[[20 x <skilllevel>]]%§0의 마법 치유 및 신성 피해를 얻습니다
 holyguard=당신과 모든 주변 아군에게 최대 30초 동안 신성한 보호막을 적용합니다\n그들은 §a+[[10 x <skilllevel>]]%§0의 받은 마법 치유를 얻고 보호막은 부서지기 전에 한 번의 공격을 막습니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
-judgment=찬란한 에너지의 파도를 방출하여 주변의 모든 적에게 §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n언데드와 악마 몹은 5초 동안 속박됩니다\n§a[[20 + 4 x <skilllevel>]]의 마나§0를 소모합니다
-sanctuary=8초 동안 신성한 구역을 만듭니다\n당신과 안의 아군은 부정적인 효과에 면역이 되고 초당 §a[[0.2 x <grace> x <skilllevel>]]§0의 체력 재생을 얻습니다\n안의 언데드와 악마 몹은 속박됩니다\n§a[[30 + 6 x <skilllevel>]]의 마나§0를 소모합니다
+judgment=찬란한 에너지의 파도를 방출하여 주변의 모든 적에게 §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n언데드와 악마 몹은 5초 동안 §7속박§0됩니다\n§a[[20 + 4 x <skilllevel>]]의 마나§0를 소모합니다
+sanctuary=8초 동안 신성한 구역을 만듭니다\n당신과 안의 아군은 부정적인 효과에 면역이 되고 초당 §a[[0.2 x <grace> x <skilllevel>]]§0의 체력 재생을 얻습니다\n안의 언데드와 악마 몹은 §7속박§0됩니다\n§a[[30 + 6 x <skilllevel>]]의 마나§0를 소모합니다
 divineintervention=가장 큰 피해를 입은 가까운 아군을 즉시 최대 체력으로 치유하고 §a[[<skilllevel>]]§0초 동안 모든 피해에 대한 면역을 부여합니다\n§a[[60 + 12 x <skilllevel>]]의 마나§0를 소모합니다
 resurrection=같은 섬에 있는 마지막으로 죽은 플레이어 아군을 당신의 위치에서 최대 체력의 §a[[10 x <skilllevel>]]%§0로 부활시킵니다\n10초 이상 전에 부활할 수 있었던 플레이어는 부활시킬 수 없습니다\n마나의 §a[[100 - 10 x <skilllevel>]]%§0를 소모합니다(최소 §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=가장 가까운 적에게 빛의 기둥을 소환하여 5초 동안 해당 지역에 초당 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n안의 언데드와 악마 몹은 속박됩니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
+wrathoflight=가장 가까운 적에게 빛의 기둥을 소환하여 5초 동안 해당 지역에 초당 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n안의 언데드와 악마 몹은 §7속박§0됩니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
 
 
 [skillsdesckeys]
@@ -368,7 +368,7 @@ grace=우아함
 // 기본 메커니즘
 manausage=마나가 부족하면 재사용 대기 시간이 두 배가 됩니다.
 setmax=부정적인 효과는 최대로 설정되며 다른 버프로 제거할 수 없습니다.
-holydamage=가한 신성 피해의 25%는 마법으로 치유하는 몹의 치유로 전환됩니다[LINE_BREAK]또한 언데드와 악마 몹을 10초 동안 불태웁니다
+holydamage=가한 신성 피해의 25%는 마법으로 치유하는 몹의 치유로 전환됩니다\n또한 언데드와 악마 몹을 10초 동안 불태웁니다
 
 // 버프
 marked=§h표식:§0 표식이 있는 몹에게 +20% 피해(+§h집중 피해§0) 및 +10% 치명타 확률을 부여합니다.\n"가장 가까운 적"은 표식이 있는 적을 우선적으로 공격합니다.
@@ -396,6 +396,9 @@ dancingflame=§b춤추는 불꽃:§0 발사체처럼 행동하는 소환수. 적
 necromancerskeleton=§b해골:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
 necromancerskeletonwarrior=§b해골 전사:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n피해: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
 necromancerboneslinger=§b뼈 투척병:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 거리)\n속도: 60\n초당 총 체력의 2%를 잃습니다.
+
+// Tranformations
+necromancerlich=§b리치:§0 언데드 변신\n\n아이템 사용 불가\n+100% 받는 피해\n\n[input=trinketability]를 눌러 §i[[<strength>]]의 소환사 피해§0를 입히는 뼈를 쏘세요
 
 
 [item]
