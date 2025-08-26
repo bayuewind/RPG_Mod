@@ -111,7 +111,7 @@ public class Lightning extends SimpleLevelEventActiveSkill {
             super.init();
             this.hitsObjects = false;
             if (this.isClient()) {
-                SoundManager.playSound(RPGResources.SOUNDS.Zap, SoundEffect.effect(this.owner).volume(2F));
+                SoundManager.playSound(RPGResources.SOUNDS.Zap, SoundEffect.effect(this.owner).volume(1.5F));
             }
         }
 
@@ -142,7 +142,7 @@ public class Lightning extends SimpleLevelEventActiveSkill {
 
                         RPGBuffs.applyStun(target, 2F);
 
-                        SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(target).volume(2F));
+                        SoundManager.playSound(GameResources.electricExplosion, SoundEffect.effect(target).volume(1.5F));
                     }
                     if (this.isClient()) {
                         float currentPosX = currentX;

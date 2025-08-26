@@ -18,7 +18,7 @@ public class LifeLeech extends SimpleBuffPassive {
             public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
                 super.onHasAttacked(activeBuff, event);
                 if (event.damage > 0 && !event.wasPrevented && event.damageType == DamageTypeRegistry.SUMMON) {
-                    float healing = event.damage * 0.01F * getLevel(activeBuff) + activeBuff.getGndData().getFloat("healthDot");
+                    float healing = event.damage * 0.001F * getLevel(activeBuff) + activeBuff.getGndData().getFloat("healthDot");
                     int trueHealing = (int) healing;
 
                     activeBuff.getGndData().setFloat("healthDot", healing - trueHealing);

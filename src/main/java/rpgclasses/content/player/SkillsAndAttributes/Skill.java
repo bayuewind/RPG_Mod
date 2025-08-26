@@ -1,6 +1,7 @@
 package rpgclasses.content.player.SkillsAndAttributes;
 
 import necesse.engine.localization.Localization;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
@@ -9,7 +10,9 @@ import rpgclasses.content.player.PlayerClass;
 import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.utils.RPGColors;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +63,8 @@ abstract public class Skill {
         return classData.getPassiveLevels()[id];
     }
 
-    abstract public void registerSkillBuffs();
+    public void registry() {
+    }
 
     public ListGameTooltips getFinalToolTips(PlayerMob player, int skillLevel, boolean onlyChanges) {
         if (!containsComplexTooltips() || skillLevel <= 0) {
@@ -120,7 +124,19 @@ abstract public class Skill {
             for (int i = 0; i < parts.size(); i++) {
                 String part = parts.get(i);
                 if (part.startsWith("[[") && part.endsWith("]]")) {
-                    String expr = part.substring(2, part.length() - 2)
+                    int removeEnd = 2;
+                    int round = -1;
+                    if (part.endsWith("↓]]")) {
+                        round = 0;
+                        removeEnd++;
+                    } else if (part.endsWith("→]]")) {
+                        round = 1;
+                        removeEnd++;
+                    } else if (part.endsWith("↑]]")) {
+                        round = 2;
+                        removeEnd++;
+                    }
+                    String expr = part.substring(2, part.length() - removeEnd)
                             .replaceAll("<skilllevel>", String.valueOf(skillLevel))
                             .replaceAll("<playerlevel>", String.valueOf(playerLevel))
                             .replaceAll("<endurance>", String.valueOf(endurance))
@@ -130,9 +146,18 @@ abstract public class Skill {
                             .replaceAll("<grace>", String.valueOf(grace));
 
                     float val = calculateValue(expr);
-                    String text = (val == (int) val)
-                            ? String.valueOf((int) val)
-                            : String.format("%.1f", val);
+                    String text;
+                    if(round == 0) {
+                        text = String.valueOf((int) Math.floor(val));
+                    } else if(round == 1) {
+                        text = String.valueOf(Math.round(val));
+                    } else if(round == 2) {
+                        text = String.valueOf((int) Math.ceil(val));
+                    } else {
+                        text = (val == (int) val)
+                                ? String.valueOf((int) val)
+                                : String.format("%.1f", val);
+                    }
                     parts.set(i, text);
                 }
             }
@@ -224,16 +249,16 @@ abstract public class Skill {
         return result;
     }
 
-    public static Point2D.Float getDir(PlayerMob player) {
+    public static Point2D.Float getDir(Mob mob) {
         float dirX, dirY;
 
-        if (player.dx == 0 && player.dy == 0) {
-            Point2D.Float dir = getDirFromFacing(player.getDir());
+        if (mob.dx == 0 && mob.dy == 0) {
+            Point2D.Float dir = getDirFromFacing(mob.getDir());
             dirX = dir.x;
             dirY = dir.y;
         } else {
-            dirX = player.dx;
-            dirY = player.dy;
+            dirX = mob.dx;
+            dirY = mob.dy;
 
             float magnitude = (float) Math.sqrt(dirX * dirX + dirY * dirY);
             if (magnitude != 0) {
@@ -241,7 +266,7 @@ abstract public class Skill {
                 dirY /= magnitude;
             }
 
-            Point2D.Float expected = getDirFromFacing(player.getDir());
+            Point2D.Float expected = getDirFromFacing(mob.getDir());
 
             if (expected.x != 0 && dirX > 0 != expected.x > 0) {
                 dirX = expected.x;
@@ -268,5 +293,13 @@ abstract public class Skill {
             default:
                 return new Point2D.Float(0, 0);
         }
+    }
+
+    public int getColorInt() {
+        return RPGColors.getColorInt(color);
+    }
+
+    public Color getColor() {
+        return RPGColors.getColor(color);
     }
 }

@@ -25,6 +25,8 @@ holycritdamage=<mod>% szent kritikus sebzés
 holyeffect=<mod>% szent hatás
 holyabilityspeed=<mod>% szent képesség sebesség
 
+transformationdelay=<mod>% átalakulási késleltetés
+noskills=Nem használhat képességeket
 
 [stats]
 holy_damage=Szent sebzés
@@ -166,6 +168,16 @@ sanctifiedmind=Megszentelt elme
 sanctifiedarmor=Megszentelt páncél
 radiantexpansion=Sugárzó terjeszkedés
 
+// Druid
+quickshift=Gyors váltás
+feralinstinct=Vad ösztön
+ironfur=Vaspáncél
+naturesfavor=Természet kegye
+beastpace=Szörnyeteg tempó
+primalburst=Ősi kitörés
+elementalguard=Elemi őr
+phoenixspirit=Főnix szellem
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=Egy farkas társ megtámadja a megjelölt ellenségeket, §i[[<pla
 
 // Varázsló
 manapower=Minden szint biztosít:\n\n+1% Mágikus Sebzést minden 10% fel nem használt Mana után
-flamingsteps=Aktív csecsebecsével futva lángokat hagysz a földön\nA lángok 2 másodpercre meggyújtják az ellenséget, §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva másodpercenként
+flamingsteps=Aktív csecsebecsével vagy átalakulással futva lángokat hagysz a földön\nA lángok 2 másodpercre meggyújtják az ellenséget, §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okozva másodpercenként
 stormbound=Minden §a[[9 - 0.5 x <skilllevel>]] másodpercben§0 egy villámcsapás ér egy véletlenszerű ellenséget a látótereden belül\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz és 1 másodpercre elkábít
 arcaneshield=Egy pajzs, amely egyetlen találatot hárít\nA pajzs §a[[20 - <skilllevel>]] másodperc§0 múlva regenerálódik használat után
 fireshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy robbanást bocsátasz ki, amely §i[[<playerlevel> + <intelligence> x <skilllevel>]] Mágikus Sebzést§0 okoz\nés meggyújtja a mobokat, 5 másodpercen keresztül másodpercenként megismételve eredeti sebzésük 20%-át\nA pajzs 26 másodperc múlva regenerálódik használat után
@@ -191,8 +203,8 @@ iceshield=Egy pajzs, amely egyetlen találatot hárít\nHasználatakor egy jéga
 necroticpower=Minden mágikus és idéző támadásod megmérgezi az ellenfelet a sebzésének 5%-ával §a[[2 x <skilllevel>]] másodpercre§0, amíg azokat nem egy idézés okozza
 darkmagic=Az idéző sebzés bónuszai §a[[5 x <skilllevel>]]%-kal§0 befolyásolják a mágikus sebzést
 necroticarmy=A legyőzött ellenséges ellenfelek §bCsontvázakká§0 válnak §a-[[100 - 3 x <skilllevel>]]%§0 életerővel és sebzéssel
-darksummons=§a+[[10 x <skilllevel>]]%§0 idéző sebzést okoz a megmérgezett ellenségeknek
-lifeleech=Visszaállítja az okozott idéző sebzés §a[[<skilllevel>]]%-át§0 életerőként
+darksummons=§a+[[8 x <skilllevel>]]%§0 idéző sebzést okoz a megmérgezett ellenségeknek
+lifeleech=Visszaállítja az okozott idéző sebzés §a[[0.1 x <skilllevel>]]%-át§0 életerőként
 necroticremains=Amikor egy nekrotikus idézés meghal, felrobban, §i[[0.1 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva a közeli ellenségeknek, megmérgezve őket a sebzés 20%-ával másodpercenként 10 másodpercig
 endlesslegion=Ennek a képességnek minden 4. szintje után +1 maximális idézést kapsz
 lichborn=Amikor meghalsz, túléled és visszaállítod az életerőd §a[[10 x <skilllevel>]]%-át§0, ha még nem vagy §bLich§0\nA következő §a[[120 - 6 x <skilllevel>]] másodpercre§0 §bLich§0-cské (csontvázzá) válsz
@@ -204,6 +216,11 @@ empoweredhealing=Amikor mágikusan meggyógyítod magad vagy egy szövetségest,
 sanctifiedmind=A mágikus gyógyítás a gyógyítás §a[[5 x <skilllevel>]]%-ának§0 megfelelő manát is visszaállít
 sanctifiedarmor=A mágikus gyógyítás a gyógyítás §a[[2 x <skilllevel>]]%-ának§0 megfelelő rugalmasságot is visszaállít
 radiantexpansion=Amikor mágikusan meggyógyítod magad vagy egy szövetségest, a gyógyítás §a[[5 x <skilllevel>]]%-át§0 szent sebzésként okozod a meggyógyított célpont közeli ellenségeinek
+
+// Druid
+naturesfavor=+[[<skilllevel>]] életerő-regenerációt kapsz másodpercenként, miközben füvön állsz
+primalburst=Növeli a sebzést és a sebességet [[6 x <skillevel>]]%-kal az átalakulás utáni első 5 másodpercben
+phoenixspirit=Legalább 4 pont szükséges a működéshez:\n\nHa meghalnál átalakulva egy aktív képességgel, akkor helyette §a[4 + 8 x <skilllevel>]]%§0 életerővel túléled, és az a képesség 1 órás töltési időre kerül\n\nNem aktiválódik, ha már van legalább §a[[0.25 x <skilllevel> ↓]] átalakulási képesség(ed)§0 1 percnél hosszabb töltési idővel
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=Isteni beavatkozás
 resurrection=Feltámadás
 wrathoflight=A fény haragja
 
+// Druid
+wolftransformation=Farkas átalakulás
+queenbeetransformation=Méhkirálynő átalakulás
+beartransformation=Medve átalakulás
+foxtransformation=Róka átalakulás
+rattransformation=Patkány átalakulás
+treanttransformation=Faszellem átalakulás
+
 
 [activeskillsdesc]
 
@@ -346,12 +371,21 @@ smite=Hívj le egy szent fénysugarat a legközelebbi ellenségre, §i[[4 x <pla
 divineblessing=Mágikus gyógyító aura, amely §a[[20 + 3 x <grace> x <skilllevel>]] életerőt§0 állít vissza neked és szövetségeseidnek\n§a[[20 + 4 x <skilllevel>]] manát§0 fogyaszt
 purify=Tisztítsd meg magad és a közeli szövetségeseket minden negatív hatástól\n10 manát fogyaszt
 lightinfusion=A következő 8 másodpercben §a+[[20 x <skilllevel>]]%§0 mágikus gyógyítást és szent sebzést kapsz
-holyguard=Alkalmazz magadra és minden közeli szövetségesre egy Szent Pajzsot legfeljebb 30 másodpercre\n§a+[[10 x <skilllevel>]]%§0 kapott mágikus gyógyítást kapnak, és a pajzs egy találatot blokkol, mielőtt eltörne\n§a[[40 + 8 x <skilllevel>]] manát§0 fogyaszt
+holyguard=Alkalmazz magadra és minden közeli szövetségesre egy Szent Pajzsot legfeljebb 30 másodpercre\n§a[[10 x <skilllevel>]]%§0 kapott mágikus gyógyítást kapnak, és a pajzs egy találatot blokkol, mielőtt eltörne\n§a[[40 + 8 x <skilllevel>]] manát§0 fogyaszt
 judgment=Engedj szabadjára egy sugárzó energia hullámot, amely §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] szent sebzést§0 okoz minden közeli ellenségnek\nAz élőhalott és démoni mobok 5 másodpercre §7Korlátozottak§0\n§a[[20 + 4 x <skilllevel>]] manát§0 fogyaszt
 sanctuary=Hozz létre egy szent zónát 8 másodpercre\nTe és a szövetségesek benne immunisak a negatív hatásokra, és másodpercenként §a[[0.2 x <grace> x <skilllevel>]]§0 életerő-regenerációt kapnak\nAz élőhalott és démoni mobok benne §7Korlátozottak§0\n§a[[30 + 6 x <skilllevel>]] manát§0 fogyaszt
 divineintervention=Azonnal gyógyítsd meg a leginkább sérült közeli szövetségest a maximális életerejére, és adj immunitást minden sebzés ellen §a[[<skilllevel>]]§0 másodpercre\n§a[[60 + 12 x <skilllevel>]] manát§0 fogyaszt
 resurrection=Éleszd újra az utolsó halott játékos szövetségest ugyanazon a szigeten a maximális életerejük §a[[10 x <skilllevel>]]%-ával§0 a te pozíciódban\nNem éleszthetsz újra olyan játékosokat, akik több mint 10 másodperce újraéledhettek volna\nA manád §a[[100 - 10 x <skilllevel>]]%-át§0 fogyasztja (legalább §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=Idézz egy fényoszlopot a legközelebbi ellenségre, amely 5 másodpercen keresztül másodpercenként §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] szent sebzést§0 okoz egy területen\nAz élőhalott és démoni mobok benne §7Korlátozottak§0\n§a[[40 + 8 x <skilllevel>]] manát§0 fogyaszt
+
+
+// Druid
+wolftransformation=3 másodpercbe telik, amíg farkassá alakulsz\n\nMozgási sebesség: 60\n\nNyomd meg az [input=transformationability1] gombot a Rohamharapáshoz: Ugorj előre és harapj, zadając §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] közelharci sebzést§0\n\nNyomd meg az [input=transformationability2] gombot az Ugatáshoz: Kényszerítsd a közeli ellenségeket, hogy 2 másodpercig rád koncentrálják támadásaikat\n\nTartsd lenyomva az [input=trinketability] gombot a Sprinteléshez
+queenbeetransformation=2 másodpercbe telik, amíg méhkirálynővé alakulsz\n\nMozgási sebesség: 30\n-50% Ellenségérzékelés\n§6+1000% Bejövő sebzés§0\n\nNyomd meg az [input=transformationability1] gombot a Mézlövéshez: §i[[2 x <playerlevel> + <strength> x <skilllevel>]] távolsági sebzést§0 okozva\n\nNyomd meg az [input=transformationability2] gombot, hogy §9Méhet§0 idézz §a[[2 x <skilllevel>]]-ig§0\n\nTartsd lenyomva az [input=trinketability] gombot, hogy parancsolj a méheidnek támadni
+beartransformation=4 másodpercbe telik, amíg medvévé alakulsz\n\nMozgási sebesség: 20\n-50% Bejövő sebzés\n\nNyomd meg az [input=transformationability1] gombot a Földcsapáshoz: Területi támadás, amely §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] közelharci sebzést§0 okoz és §9elkábít§0 §a[[0.5 x <skilllevel>]] másodpercre§0\n\nNyomd meg az [input=transformationability2] gombot a Morgáshoz: Kényszerítsd a közeli ellenségeket, hogy 1 másodpercig meneküljenek\n\nTartsd lenyomva az [input=trinketability] gombot a Sprinteléshez
+foxtransformation=3 másodpercbe telik, amíg rókává alakulsz\n\nMozgási sebesség: 50\n§6+50% Bejövő sebzés§0\n\nNyomd meg az [input=transformationability1] gombot a Tűzgolyók lövéséhez: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] mágikus sebzést§0 okozva\n\nNyomd meg az [input=transformationability2] gombot, hogy §bTáncoló Lángot§0 idézz §a[[2 + <skilllevel>]]-ig§0, mindegyik ugyanannyi sebzést okoz, mint egy Tűzgolyó\n\nNyomd meg az [input=trinketability] gombot a Rohamhoz\n§!Vulpes Nova fox!
+rattransformation=2 másodpercbe telik, amíg patkánnyá alakulsz\n\nMozgási sebesség: 25\n-50% Ellenségérzékelés\nMaximális kitérési esélyt biztosít\n§6+1000% Bejövő sebzés§0\n\nNyomd meg az [input=transformationability1] gombot a Harapáshoz: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] közelharci sebzést§0 okoz és megmérgezi a célpontot az okozott sebzés 100%-ával másodpercenként 10 másodpercig\n\nTartsd lenyomva az [input=trinketability] gombot a Sprinteléshez
+treanttransformation=4 másodpercbe telik, amíg faszellemmé alakulsz\n\nMozgási sebesség: 0\n-§a[50 + 5 <skilllevel>]%§0 Bejövő sebzés\nAz ellenségek figyelmen kívül hagynak, ha 3 másodpercig rejtőzködsz\n\nNyomd meg az [input=transformationability1] gombot felfedve, hogy véletlenszerű magokat lőj: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] távolsági sebzést§0 okozva véletlenszerű hatásokkal\n\nNyomd meg az [input=transformationability2] gombot, hogy §9Dryad Saplinget§0 idézz\n\nTartsd lenyomva az [input=trinketability] gombot a felfedéshez és sprinteléshez, ha mozogsz
 
 
 [skillsdesckeys]
@@ -396,10 +430,8 @@ dancingflame=§bTáncoló Láng:§0 Idézés, amely lövedékként működik. Ta
 necromancerskeleton=§bCsontváz:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSebzés: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
 necromancerskeletonwarrior=§bCsontvázharcos:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSebzés: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
 necromancerboneslinger=§bCsontdobáló:§0 Nekrotikus sebezhető idézés\nÉleterő: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSebzés: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 távolság)\nSebesség: 60\nMásodpercenként elveszíti teljes életerejének 2%-át
-
-// Tranformations
-necromancerlich=§bLich:§0 Élőhalott átalakulás\n\nNem használhat tárgyakat\n+100% elszenvedett sebzés\n\nNyomd meg a [input=trinketability] gombot egy csont kilövéséhez, amely §i[[<strength>]] idéző sebzést§0 okoz
-
+bee=§9Méh:§0 Sebezhető idézés\nÉleterő: 1\nSebzés: §a[[<playerlevel> + <intelligence>]]§0\nSebesség: 40\n\nTámadáskor meghal, de megmérgezi a célpontot az okozott sebzés 20%-ával másodpercenként 10 másodpercig
+dryadsapling=§9Dryad Sapling:§0 Sebezhető idézés\nÉleterő: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSebzés: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nSebesség: 65\nMásodpercenként elveszíti teljes életerejének 2%-át
 
 [item]
 scrollofoblivion=Felejtés tekercse
@@ -454,6 +486,8 @@ activeskillinuse=Ez a képesség már használatban van
 anotheractiveskillinuse=Már van egy másik képességed használatban
 incooldown=Hűlési idő
 notenoughstamina=Nincs elég állóképesség
+canotusemounted=Nem használható felülve vagy átalakulva
+
 notarget=Nincsenek célpontok a közelben
 nograbbableobject=Nincs megragadható tárgy előtted
 notargetfollower=Nincsenek célzott idézések a közelben
@@ -472,6 +506,7 @@ lvl=Sz <level>
 eachlevel=Minden szint biztosít:
 experience=TP: <exp> / <nextexp>
 totalexperience=Összes TP: <exp>
+onlytranformed=Csak átalakulva
 
 resetpoints=Visszaállítási pontok: <points>
 attrpoints=Attribútum pontok: <points>
@@ -514,3 +549,5 @@ activeskillslot3=Aktív képességhely 3
 activeskillslot4=Aktív képességhely 4
 activeskillslot5=Aktív képességhely 5
 activeskillslot6=Aktív képességhely 6
+transformationability1=Átalakulási képesség 1
+transformationability2=Átalakulási képesség 2

@@ -19,6 +19,8 @@ import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 
+import java.util.function.Consumer;
+
 public class EquipActiveSkillComponent extends FormContentBox {
     public static int height = 54;
     public static int width = 300;
@@ -27,7 +29,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
     public final PlayerClass playerClass;
     public final ActiveSkill activeSkill;
 
-    public EquipActiveSkillComponent(int x, int y, ActiveSkill activeSkill, PlayerClass playerClass, PlayerMob player, EquippedActiveSkill[] newEquippedActiveSkills, int skillLevel, Runnable onClick) {
+    public EquipActiveSkillComponent(int x, int y, ActiveSkill activeSkill, PlayerClass playerClass, PlayerMob player, int skillLevel, Consumer<EquippedActiveSkill[]> onClick) {
         super(x, y, width, height);
 
         PlayerData playerData = PlayerDataList.getPlayerData(player);
@@ -43,8 +45,10 @@ public class EquipActiveSkillComponent extends FormContentBox {
 
         for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             int finalI = i;
-            buttons[i] = (FormContentIconButton) this.addComponent(new FormContentIconButton(34 + 10 + (32 + 4) * i, 16 + 6, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][i])
+            buttons[i] = (FormContentIconButton) this.addComponent(new FormContentIconButton(34 + 10 + (32 + 4) * i, 16 + 6, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][i], new StaticMessage("[input=activeskillslot" + (i + 1) + "]"))
                     .onClicked(c -> {
+                        EquippedActiveSkill[] newEquippedActiveSkills = playerData.equippedActiveSkills.clone();
+
                         // Only if it has not equipped another skill with the same family, and it's not the same
                         boolean sameFamily = false;
                         for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
@@ -59,37 +63,39 @@ public class EquipActiveSkillComponent extends FormContentBox {
 
                         EquippedActiveSkill oldEquippedActiveSkill = newEquippedActiveSkills[finalI];
 
-                        int activeSkillLevel = playerData.getClassesData()[playerClass.id].getActiveSkillLevels()[activeSkill.id];
+                        // Only if the player is not in combat and both skills can change
+                        if (!player.isInCombat() && oldEquippedActiveSkill.canChange(player.getTime())) {
 
-                        // Only if the player is not in combat nor the skill in cooldown
-                        if (!player.isInCombat() && (oldEquippedActiveSkill.isEmpty() || !oldEquippedActiveSkill.isInCooldown(activeSkillLevel, player.getTime()))) {
                             if (oldEquippedActiveSkill.isSameSkill(playerClass, activeSkill)) {
-                                newEquippedActiveSkills[finalI].empty();
+                                oldEquippedActiveSkill.empty();
                             } else {
-                                newEquippedActiveSkills[finalI].playerClass = playerClass;
-                                newEquippedActiveSkills[finalI].activeSkill = activeSkill;
-
-                                // If this skill is in cooldown in any other slot, then apply that lastUse to this slot if higher and remove the last one
-                                long maxLastUse = 0;
+                                boolean canChange = true;
                                 for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
-                                    EquippedActiveSkill equippedActiveSkill2 = newEquippedActiveSkills[j];
-                                    if (finalI != j && !equippedActiveSkill2.isEmpty() && equippedActiveSkill2.isSameSkill(newEquippedActiveSkills[finalI])) {
-                                        maxLastUse = Math.max(maxLastUse, equippedActiveSkill2.lastUse);
-                                        newEquippedActiveSkills[j].empty();
+                                    EquippedActiveSkill equippedActiveSkill = newEquippedActiveSkills[j];
+                                    if (finalI != j && equippedActiveSkill.isSameSkill(playerClass, activeSkill)) {
+                                        if (!equippedActiveSkill.canChange(player.getTime())) {
+                                            canChange = false;
+                                            break;
+                                        } else {
+                                            equippedActiveSkill.empty();
+                                        }
                                     }
                                 }
-                                newEquippedActiveSkills[finalI].lastUse = maxLastUse;
+
+                                if (canChange) {
+                                    oldEquippedActiveSkill.update(playerClass, activeSkill);
+                                }
                             }
 
-                            onClick.run();
+                            onClick.accept(newEquippedActiveSkills);
                         }
                     }));
         }
 
-        update(newEquippedActiveSkills);
+        update(playerData.equippedActiveSkills, playerData);
     }
 
-    public void update(EquippedActiveSkill[] newEquippedActiveSkills) {
+    public void update(EquippedActiveSkill[] newEquippedActiveSkills, PlayerData playerData) {
         for (int i = 0; i < newEquippedActiveSkills.length; i++) {
             boolean sameFamily = false;
             boolean sameSkill = false;
@@ -105,7 +111,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
                 }
             }
             EquippedActiveSkill equippedActiveSkill = newEquippedActiveSkills[i];
-            if (!equippedActiveSkill.isEmpty() && equippedActiveSkill.isSameSkill(playerClass, activeSkill)) {
+            if (equippedActiveSkill.isSameSkill(playerClass, activeSkill)) {
                 buttons[i].color = ButtonColor.GREEN;
             } else if (sameSkill) {
                 buttons[i].color = ButtonColor.BASE;
@@ -114,7 +120,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
             } else if (equippedActiveSkill.isEmpty()) {
                 buttons[i].color = ButtonColor.YELLOW;
             } else {
-                buttons[i].color = ButtonColor.BASE;
+                buttons[i].color = equippedActiveSkill.getActiveSkill().getLevel(playerData) > 0 ? ButtonColor.BASE : ButtonColor.YELLOW;
             }
         }
     }

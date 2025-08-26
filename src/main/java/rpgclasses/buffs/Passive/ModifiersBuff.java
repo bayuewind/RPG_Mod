@@ -41,8 +41,9 @@ public class ModifiersBuff extends PassiveBuff {
                     int passiveLevel = classesDatum.getPassiveLevels()[i];
                     if (passiveLevel > 0) {
                         Passive passive = classesDatum.playerClass.passivesList.get(i);
-                        if (passive.isBasic()) {
-                            ((BasicPassive) passive).applyBuff(activeBuff, passiveLevel);
+                        if (passive instanceof BasicPassive) {
+                            BasicPassive basicPassive = (BasicPassive) passive;
+                            if (!basicPassive.onlyTransformed) basicPassive.applyBuff(activeBuff, passiveLevel);
                         }
                     }
                 }
@@ -57,7 +58,7 @@ public class ModifiersBuff extends PassiveBuff {
             if (event.attacker.getAttackOwner() == activeBuff.owner) {
                 float focusChance = activeBuff.owner.buffManager.getModifier(RPGModifiers.FOCUS_CHANCE);
                 if (focusChance >= 1F || (focusChance > 0 && GameRandom.globalRandom.getChance(focusChance))) {
-                    ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, event.target, 5000, null);
+                    ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, event.target, 5000, null);
                     ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
                     event.target.addBuff(ab, activeBuff.owner.isServer());
                 }

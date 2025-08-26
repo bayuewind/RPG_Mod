@@ -25,6 +25,8 @@ holycritdamage=<mod>% svatého kritického poškození
 holyeffect=<mod>% svatého účinku
 holyabilityspeed=<mod>% rychlosti svatých schopností
 
+transformationdelay=<mod>% zpoždění transformace
+noskills=Nelze použít dovednosti
 
 [stats]
 holy_damage=Svaté poškození
@@ -167,6 +169,16 @@ sanctifiedmind=Posvěcená mysl
 sanctifiedarmor=Posvěcená zbroj
 radiantexpansion=Zářivá expanze
 
+// Druid
+quickshift=Rychlý přesun
+feralinstinct=Divoký instinkt
+ironfur=Železná srst
+naturesfavor=Přízeň přírody
+beastpace=Zvířecí tempo
+primalburst=Prvotní výbuch
+elementalguard=Elementární stráž
+phoenixspirit=Fénixův duch
+
 
 [passivesdesc]
 
@@ -182,7 +194,7 @@ wolfcompanion=Vlčí společník bude útočit na označené nepřátele a způs
 
 // Kouzelník
 manapower=Každá úroveň poskytuje:\n\n+1% magického poškození za každých 10% nevyužité many
-flamingsteps=Při běhu s aktivním přívěskem budete na zemi zanechávat plameny\nPlameny zapálí nepřátele na 2 sekundy a způsobí §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magického poškození§0 za sekundu
+flamingsteps=Při běhu s aktivním přívěskem nebo transformací budete na zemi zanechávat plameny\nPlameny zapálí nepřátele na 2 sekundy a způsobí §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magického poškození§0 za sekundu
 stormbound=Každých §a[[9 - 0.5 x <skilllevel>]] sekund§0 udeří blesk do náhodného nepřítele ve vašem dohledu\nZpůsobí §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magického poškození§0 a omráčí na 1 sekundu
 arcaneshield=Štít, který zabrání jednomu zásahu\nŠtít se obnoví za §a[[20 - <skilllevel>]] sekund§0 po použití
 fireshield=Štít, který zabrání jednomu zásahu\nPři použití uvolníte explozi, která způsobí §i[[<playerlevel> + <intelligence> x <skilllevel>]] magického poškození§0\na zapálí moby, opakujíc 20% jejich původního poškození za sekundu po dobu 5 sekund\nŠtít se obnoví za 26 sekund po použití
@@ -192,8 +204,8 @@ iceshield=Štít, který zabrání jednomu zásahu\nPři použití uvolníte led
 necroticpower=Všechny vaše magické a vyvolávačské útoky otráví za 5% jejich poškození na §a[[2 x <skilllevel>]] sekund§0, pokud nejsou způsobeny vyvoláním
 darkmagic=Bonusy k poškození vyvolávače ovlivňují magické poškození o §a[[5 x <skilllevel>]]%
 necroticarmy=Poražení nepřátelští nepřátelé se promění v §bKostlivce§0 s §a-[[100 - 3 x <skilllevel>]]%§0 zdraví a poškození
-darksummons=Způsobte §a+[[10 x <skilllevel>]]%§0 poškození vyvolávače otráveným nepřátelům
-lifeleech=Obnoví §a[[<skilllevel>]]%§0 způsobeného poškození vyvolávače jako zdraví
+darksummons=Způsobte §a+[[8 x <skilllevel>]]%§0 poškození vyvolávače otráveným nepřátelům
+lifeleech=Obnoví §a[[0.1 x <skilllevel>]]%§0 způsobeného poškození vyvolávače jako zdraví
 necroticremains=Když zemře nekrotické vyvolání, exploduje a způsobí §i[[0.1 x <intelligence> x <skilllevel>]] magického poškození§0 blízkým nepřátelům, otráví je 20% poškození za sekundu po dobu 10 sekund
 endlesslegion=Každé 4 úrovně této dovednosti získáte +1 maximální vyvolání
 lichborn=Když zemřete, přežijete a obnovíte §a[[10 x <skilllevel>]]%§0 zdraví, pokud již nejste §bLich§0\nNa dalších §a[[120 - 6 x <skilllevel>]] sekund§0 se stanete §bLich§0 (kostlivcem)
@@ -205,6 +217,11 @@ empoweredhealing=Když magicky vyléčíte sebe nebo spojence, zvyšte jejich po
 sanctifiedmind=Magické léčení také obnovuje manu rovnající se §a[[5 x <skilllevel>]]%§0 provedeného léčení
 sanctifiedarmor=Magické léčení také obnovuje odolnost rovnající se §a[[2 x <skilllevel>]]%§0 provedeného léčení
 radiantexpansion=Když magicky vyléčíte sebe nebo spojence, způsobte §a[[5 x <skilllevel>]]%§0 léčení jako svaté poškození blízkým nepřátelům vyléčeného cíle
+
+// Druid
+naturesfavor=Získáte +[[<skilllevel>]] regenerace zdraví za sekundu, když stojíte na trávě
+primalburst=Zvyšuje poškození a rychlost o [[6 x <skillevel>]]% po dobu prvních 5 sekund po transformaci
+phoenixspirit=Vyžaduje alespoň 4 body k fungování:\n\nPokud byste zemřeli během transformace s aktivní dovedností, místo toho přežijete s §a[4 + 8 x <skilllevel>]%§0 zdraví a tato dovednost je umístěna na 1hodinové vychladnutí\n\nNespustí se, pokud již máte alespoň §a[[0.25 x <skilllevel> ↓]] transformační dovednost(i)§0 na vychladnutí delší než 1 minutu
 
 
 [activeskills]
@@ -281,6 +298,14 @@ divineintervention=Božský zásah
 resurrection=Vzkříšení
 wrathoflight=Hněv světla
 
+// Druid
+wolftransformation=Vlčí transformace
+queenbeetransformation=Transformace na včelí královnu
+beartransformation=Medvědí transformace
+foxtransformation=Liščí transformace
+rattransformation=Krysí transformace
+treanttransformation=Stromová transformace
+
 
 [activeskillsdesc]
 
@@ -335,7 +360,7 @@ sacrifice=Nejbližší nekrotické vyvolání zemře a vy poté obnovíte §a[[1
 siegecry=Získejte §a+[[50 x <skilllevel>]]%§0 rychlosti vyvolávání na 6 sekund
 
 boneslingerhorde=Vyvolá §a[[1 + <skilllevel>]]§0 §bHazečů kostí§0
-tomb=Vytvoří strukturu, která každých §a[[10 - <skilllevel>]] sekund§0 vyvolá §bKostlivce§0\nHrobka má zdraví rovné §a[[5 x <playerlevel> x <skilllevel>]]§0\nHrobka ztrácí 2% svého celkového zdraví za sekundu
+tomb=Vytvoří strukturu, která každých §a[[10 - <skilllevel>]] sekund§0 vyvolá §bKostlivce§0\nHrobka má zdraví rovné §a[[5 x <playerlevel> x <skilllevel>]]§0\nHrobka ztrácí 2% celkového zdraví za sekundu
 necroticbloom=Zrychlí účinek jedu na všechny blízké nepřátele snížením jeho trvání na 10%, ale zvýšením jeho poškození za sekundu, aby se zachovalo celkové poškození
 wardingtaunt=Nejbližší nekrotické vyvolání donutí blízké nepřátele v okruhu §a[[50 x <skilllevel>]]§0, aby na něj zaměřili útok
 
@@ -347,12 +372,21 @@ smite=Svolejte paprsek svatého světla na nejbližšího nepřítele a způsobt
 divineblessing=Magická léčivá aura, která obnoví §a[[20 + 3 x <grace> x <skilllevel>]] zdraví§0 vám a vašim spojencům\nSpotřebuje §a[[20 + 4 x <skilllevel>]] many§0
 purify=Očistěte sebe a blízké spojence od všech negativních účinků\nSpotřebuje 10 many
 lightinfusion=Na dalších 8 sekund získáte §a+[[20 x <skilllevel>]]%§0 magického léčení a svatého poškození
-holyguard=Aplikujte na sebe a všechny blízké spojence Svatý štít na dobu až 30 sekund\nZískají §a+[[10 x <skilllevel>]]%§0 přijatého magického léčení a štít zablokuje jeden zásah před rozbitím\nSpotřebuje §a[[40 + 8 x <skilllevel>]] many§0
+holyguard=Aplikujte na sebe a všechny blízké spojence Svatý štít na dobu až 30 sekund\nZískáte §a+[[10 x <skilllevel>]]%§0 přijatého magického léčení a štít zablokuje jeden zásah před rozbitím\nSpotřebuje §a[[40 + 8 x <skilllevel>]] many§0
 judgment=Uvolněte vlnu zářivé energie, která způsobí §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svatého poškození§0 všem blízkým nepřátelům\nNemrtví a démoničtí mobové jsou na 5 sekund §7Omezeni§0\nSpotřebuje §a[[20 + 4 x <skilllevel>]] many§0
 sanctuary=Vytvořte svatou zónu na 8 sekund\nVy a spojenci uvnitř jste imunní vůči negativním účinkům a získáte §a[[0.2 x <grace> x <skilllevel>]]§0 regenerace zdraví za sekundu\nNemrtví a démoničtí mobové uvnitř jsou §7Omezeni§0\nSpotřebuje §a[[30 + 6 x <skilllevel>]] many§0
 divineintervention=Okamžitě vyléčte nejvíce poškozeného blízkého spojence na jeho maximální zdraví a udělte imunitu vůči veškerému poškození na §a[[<skilllevel>]]§0 sekund\nSpotřebuje §a[[60 + 12 x <skilllevel>]] many§0
 resurrection=Oživte posledního mrtvého spojence na stejném ostrově s §a[[10 x <skilllevel>]]%§0 jejich maximálního zdraví na vaší pozici\nNemůžete oživit hráče, kteří se mohli znovu objevit před více než 10 sekundami\nSpotřebuje §a[[100 - 10 x <skilllevel>]]%§0 vaší many (alespoň §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=Vyvolejte sloup světla na nejbližšího nepřítele, který v oblasti po dobu 5 sekund způsobuje §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svatého poškození§0 za sekundu\nNemrtví a démoničtí mobové uvnitř jsou §7Omezeni§0\nSpotřebuje §a[[40 + 8 x <skilllevel>]] many§0
+
+
+// Druid
+wolftransformation=Trvá 3 sekundy, než se proměníte ve Vlka\n\nRychlost pohybu: 60\n\nStiskněte [input=transformationability1] pro Útok s výpadem: Skočte vpřed a kousněte, způsobíte §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] poškození zblízka§0\n\nStiskněte [input=transformationability2] pro Štěkot: Přinutíte blízké nepřátele, aby na vás zaútočili po dobu 2 sekund\n\nPodržte [input=trinketability] pro Sprint
+queenbeetransformation=Trvá 2 sekundy, než se proměníte v Královnu včel\n\nRychlost pohybu: 30\n-50% Detekce nepřátel\n§6+1000% Příchozí poškození§0\n\nStiskněte [input=transformationability1] pro Střelbu medem: Způsobíte §i[[2 x <playerlevel> + <strength> x <skilllevel>]] poškození na dálku§0\n\nStiskněte [input=transformationability2] pro vyvolání §9Včely§0 až do §a[[2 x <skilllevel>]]§0\n\nPodržte [input=trinketability] pro ovládání vašich včel k útoku
+beartransformation=Trvá 4 sekundy, než se proměníte v Medvěda\n\nRychlost pohybu: 20\n-50% Příchozí poškození\n\nStiskněte [input=transformationability1] pro Úder do země: Plošný útok, který způsobí §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] poškození zblízka§0 a §9omráčí§0 na §a[[0.5 x <skilllevel>]] sekund§0\n\nStiskněte [input=transformationability2] pro Zavrčení: Přimějete blízké nepřátele k útěku po dobu 1 sekundy\n\nPodržte [input=trinketability] pro Sprint
+foxtransformation=Trvá 3 sekundy, než se proměníte v Lišku\n\nRychlost pohybu: 50\n§6+50% Příchozí poškození§0\n\nStiskněte [input=transformationability1] pro Střelbu ohnivými koulemi: Způsobíte §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magického poškození§0\n\nStiskněte [input=transformationability2] pro vyvolání §bTančícího plamene§0 až do §a[[2 + <skilllevel>]]§0, každý způsobí stejné poškození jako ohnivá koule\n\nStiskněte [input=trinketability] pro Úprk\n§!Vulpes Nova fox!
+rattransformation=Trvá 2 sekundy, než se proměníte v Krysu\n\nRychlost pohybu: 25\n-50% Detekce nepřátel\nPoskytuje maximální šanci na uhnutí\n§6+1000% Příchozí poškození§0\n\nStiskněte [input=transformationability1] pro Kousnutí: Způsobí §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] poškození zblízka§0 a otráví cíl za 100% způsobeného poškození za sekundu po dobu 10 sekund\n\nPodržte [input=trinketability] pro Sprint
+treanttransformation=Trvá 4 sekundy, než se proměníte v Stromovládce\n\nRychlost pohybu: 0\n-§a[50 + 5 <skilllevel>]%§0 Příchozí poškození\nNepřátelé vás ignorují, pokud jste skryti po dobu 3 sekund\n\nStiskněte [input=transformationability1] v odhalené podobě pro Střelbu náhodnými semeny: Způsobíte §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] poškození na dálku§0 s náhodnými efekty\n\nStiskněte [input=transformationability2] pro vyvolání §9Dryádího semenáčku§0\n\nPodržte [input=trinketability] pro Odhalení a Sprint, pokud se pohybujete
 
 
 [skillsdesckeys]
@@ -397,10 +431,8 @@ dancingflame=§bTančící plamen:§0 Vyvolání, které se chová jako střela.
 necromancerskeleton=§bKostlivec:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nPoškození: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
 necromancerskeletonwarrior=§bKostlivý válečník:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nPoškození: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
 necromancerboneslinger=§bHazeč kostí:§0 Nekrotické poškoditelné vyvolání\nZdraví: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nPoškození: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (vzdálenost 320)\nRychlost: 60\nZtrácí 2% celkového zdraví za sekundu
-
-// Tranformations
-necromancerlich=§bLich:§0 Nemrtvá transformace\n\nNelze používat předměty\n+100% utrpěného poškození\n\nStisknutím [input=trinketability] vystřelíte kost, která způsobí §i[[<strength>]] poškození vyvolávače§0
-
+bee=§9Včela:§0 Poškoditelné vyvolání\nZdraví: 1\nPoškození: §a[[<playerlevel> + <intelligence>]]§0\nRychlost: 40\n\nZemře při útoku, ale otráví cíl za 20% způsobeného poškození za sekundu po dobu 10 sekund
+dryadsapling=§9Dryad Sapling:§0 Poškoditelné vyvolání\nZdraví: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nPoškození: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nRychlost: 65\nZtrácí 2% celkového zdraví za sekundu
 
 [item]
 scrollofoblivion=Svitek zapomnění
@@ -455,6 +487,8 @@ activeskillinuse=Tato dovednost se již používá
 anotheractiveskillinuse=Již máte jinou dovednost v používání
 incooldown=Vychládá
 notenoughstamina=Nedostatek výdrže
+canotusemounted=Nelze použít v sedle nebo transformovaný
+
 notarget=V blízkosti nejsou žádné cíle
 nograbbableobject=Před vámi není žádný uchopitelný předmět
 notargetfollower=V blízkosti nejsou žádná cílová vyvolání
@@ -473,6 +507,7 @@ lvl=Úr <level>
 eachlevel=Každá úroveň poskytuje:
 experience=Zk: <exp> / <nextexp>
 totalexperience=Celkem Zk: <exp>
+onlytranformed=Pouze při transformaci
 
 resetpoints=Body resetu: <points>
 attrpoints=Body atributů: <points>
@@ -515,3 +550,5 @@ activeskillslot3=Slot aktivní dovednosti 3
 activeskillslot4=Slot aktivní dovednosti 4
 activeskillslot5=Slot aktivní dovednosti 5
 activeskillslot6=Slot aktivní dovednosti 6
+transformationability1=Transformační schopnost 1
+transformationability2=Transformační schopnost 2

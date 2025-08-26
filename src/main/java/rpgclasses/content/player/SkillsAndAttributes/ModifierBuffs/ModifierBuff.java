@@ -3,6 +3,7 @@ package rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs;
 import necesse.engine.modifiers.Modifier;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffModifiers;
 
 import java.util.Objects;
 
@@ -67,6 +68,8 @@ abstract public class ModifierBuff<T> {
             return "incdamage";
         } else if (Objects.equals(stringID, "staminacapacity")) {
             return "staminacap";
+        } else if (Objects.equals(stringID, "alldamage")) {
+            return "damage";
         }
         return stringID;
     }

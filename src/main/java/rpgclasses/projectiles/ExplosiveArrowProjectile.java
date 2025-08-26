@@ -114,7 +114,7 @@ public class ExplosiveArrowProjectile extends FollowingProjectile {
 
         @Override
         protected void playExplosionEffects() {
-            SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(2.5F).pitch(1.5F));
+            SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(1F).pitch(1.5F));
             this.level.getClient().startCameraShake(this.x, this.y, 300, 40, 3.0F, 3.0F, true);
         }
 

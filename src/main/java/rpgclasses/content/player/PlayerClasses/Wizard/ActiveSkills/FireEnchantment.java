@@ -18,8 +18,6 @@ import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActi
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class FireEnchantment extends SimpleBuffActiveSkill {
 
     public FireEnchantment(int levelMax, int requiredClassLevel) {
@@ -45,9 +43,9 @@ public class FireEnchantment extends SimpleBuffActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(1F));
+        SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y).volume(2F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(200, new Color(255, 51, 0))
+                new AphArea(200, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
@@ -59,7 +57,7 @@ public class FireEnchantment extends SimpleBuffActiveSkill {
             public void clientTick(ActiveBuff activeBuff) {
                 Mob owner = activeBuff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(255, 51, 0)).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(getColor()).height(16.0F);
                 }
             }
 

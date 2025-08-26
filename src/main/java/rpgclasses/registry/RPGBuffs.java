@@ -6,10 +6,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import rpgclasses.buffs.*;
-import rpgclasses.buffs.Passive.GrabbedObjectBuff;
-import rpgclasses.buffs.Passive.HolyDamageDealtBuff;
-import rpgclasses.buffs.Passive.ModifiersBuff;
-import rpgclasses.buffs.Passive.OverlevelClassBuff;
+import rpgclasses.buffs.Passive.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,33 +75,42 @@ public class RPGBuffs {
         );
     }
 
-    public static Buff Trapped;
-    public static Buff Marked;
-    public static Buff DarkCurse;
-    public static Buff MagicPoison;
-    public static Buff Ignited;
-    public static Buff Constrained;
+    public static Buff TRAPPED;
+    public static Buff MARKED;
+    public static Buff DARK_CURSE;
+    public static Buff MAGIC_POISON;
+    public static Buff IGNITED;
+    public static Buff CONSTRAINED;
+    public static Buff TRANSFORMING;
+    public static Buff AGGRESSIVE_BEES;
+    public static Buff TARGET_RANGE_TO_100;
 
     public static class PASSIVES {
-        public static ModifiersBuff Modifiers;
-        public static HolyDamageDealtBuff HolyDamage;
-        public static OverlevelClassBuff OverlevelClass;
-        public static GrabbedObjectBuff GrabbedObject;
+        public static ModifiersBuff MODIFIERS;
+        public static HolyDamageDealtBuff HOLY_DAMAGE;
+        public static OverlevelClassBuff OVERLEVEL_CLASS;
+        public static GrabbedObjectBuff GRABBED_OBJECT;
+        public static TransformedBuff TRANSFORMED;
     }
 
     public static void registerCore() {
-        BuffRegistry.registerBuff("trappedbuff", Trapped = new TrappedBuff());
-        BuffRegistry.registerBuff("markedbuff", Marked = new MarkedBuff());
-        BuffRegistry.registerBuff("darkcursebuff", DarkCurse = new DarkCurseBuff());
-        BuffRegistry.registerBuff("magicpoisonbuff", MagicPoison = new MagicPoisonBuff());
-        BuffRegistry.registerBuff("ignitedbuff", Ignited = new IgnitedBuff());
-        BuffRegistry.registerBuff("constrainedbuff", Constrained = new ConstrainedBuff());
+        BuffRegistry.registerBuff("trappedbuff", TRAPPED = new TrappedBuff());
+        BuffRegistry.registerBuff("markedbuff", MARKED = new MarkedBuff());
+        BuffRegistry.registerBuff("darkcursebuff", DARK_CURSE = new DarkCurseBuff());
+        BuffRegistry.registerBuff("magicpoisonbuff", MAGIC_POISON = new MagicPoisonBuff());
+        BuffRegistry.registerBuff("ignitedbuff", IGNITED = new IgnitedBuff());
+        BuffRegistry.registerBuff("constrainedbuff", CONSTRAINED = new ConstrainedBuff());
+        BuffRegistry.registerBuff("transformingbuff", TRANSFORMING = new TransformingBuff());
+        BuffRegistry.registerBuff("aggresivebeesbuff", AGGRESSIVE_BEES = new SimpleBuff());
+        BuffRegistry.registerBuff("targetrangeto100", TARGET_RANGE_TO_100 = new TargetRangeTo100Buff());
 
         // Passive Buffs
-        BuffRegistry.registerBuff("modifiersbuff", PASSIVES.Modifiers = new ModifiersBuff());
-        BuffRegistry.registerBuff("holydamagedealtbuff", PASSIVES.HolyDamage = new HolyDamageDealtBuff());
-        BuffRegistry.registerBuff("overlevelclassbuff", PASSIVES.OverlevelClass = new OverlevelClassBuff());
-        BuffRegistry.registerBuff("grabbedobjectbuff", PASSIVES.GrabbedObject = new GrabbedObjectBuff());
+        BuffRegistry.registerBuff("modifiersbuff", PASSIVES.MODIFIERS = new ModifiersBuff());
+        BuffRegistry.registerBuff("holydamagedealtbuff", PASSIVES.HOLY_DAMAGE = new HolyDamageDealtBuff());
+        BuffRegistry.registerBuff("overlevelclassbuff", PASSIVES.OVERLEVEL_CLASS = new OverlevelClassBuff());
+        BuffRegistry.registerBuff("grabbedobjectbuff", PASSIVES.GRABBED_OBJECT = new GrabbedObjectBuff());
+        BuffRegistry.registerBuff("transformedbuff", PASSIVES.TRANSFORMED = new TransformedBuff());
+
     }
 
     public static void applyStop(Mob target, float duration) {

@@ -48,7 +48,7 @@ public class ExplosiveMobClassBuff extends MobClassBuff {
             long cooldown = getCooldown(mobData.levelScaling());
             if ((now - lastExplosion) > cooldown) {
                 int range = 100 + mobData.levelScaling() * 3;
-                GameDamage damage = new GameDamage(mobData.levelScaling() * 3);
+                GameDamage damage = new GameDamage(mobData.levelScaling());
                 owner.getLevel().entityManager.addLevelEvent(new ExplosiveMobExplosionEvent(owner.x, owner.y, range, damage, 0, owner));
                 cooldowns.put(owner, now);
             }

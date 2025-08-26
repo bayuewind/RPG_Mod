@@ -28,7 +28,7 @@ public class ArcaneShield extends SimpleBuffPassive {
 
     @Override
     public PrincipalPassiveBuff getBuff() {
-        return new MagicShieldBuff(new Color(102, 51, 255), 22000, 1000, null);
+        return new MagicShieldBuff(getColor(), 22000, 1000, null);
     }
 
     public static class MagicShieldBuff extends PrincipalPassiveBuff implements HumanDrawBuff {

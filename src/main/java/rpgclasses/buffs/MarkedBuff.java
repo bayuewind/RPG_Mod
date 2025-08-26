@@ -62,10 +62,10 @@ public class MarkedBuff extends Buff {
         if (attacker == null || target == null) {
             return false;
         }
-        if (!target.buffManager.hasBuff(RPGBuffs.Marked)) {
+        if (!target.buffManager.hasBuff(RPGBuffs.MARKED)) {
             return false;
         }
-        ActiveBuff activeBuff = target.buffManager.getBuff(RPGBuffs.Marked);
+        ActiveBuff activeBuff = target.buffManager.getBuff(RPGBuffs.MARKED);
         return Objects.equals(attacker.playerName, activeBuff.getGndData().getString("playerAttacker"));
     }
 

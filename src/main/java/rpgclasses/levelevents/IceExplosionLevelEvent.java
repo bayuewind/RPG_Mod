@@ -36,7 +36,7 @@ public class IceExplosionLevelEvent extends ExplosionEvent implements Attacker {
 
     @Override
     protected void playExplosionEffects() {
-        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(3F).pitch(1F));
+        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(0.5F).pitch(0.5F));
         this.level.getClient().startCameraShake(this.x, this.y, 200, 40, 1F, 0.8F, true);
     }
 

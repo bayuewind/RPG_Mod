@@ -57,7 +57,7 @@ public class NecromancerPlayerClass extends PlayerClass {
                 "darkpower", "#666666", 10, 1,
                 new String[]{"setmax"},
                 new FloatPercentModifierBuff(BuffModifiers.SUMMON_DAMAGE, 0.1F),
-                new FloatPercentModifierBuff(BuffModifiers.SUMMON_CRIT_CHANCE, 0.1F),
+                new FloatPercentModifierBuff(BuffModifiers.SUMMON_CRIT_CHANCE, 0.06F),
                 new FloatPercentModifierBuff(BuffModifiers.SPEED, -0.02F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, -0.05F).doSetMax(1F),
                 new FloatPercentModifierBuff(BuffModifiers.ARMOR, -0.05F).doSetMax(1F)

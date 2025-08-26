@@ -13,8 +13,6 @@ import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 import rpgclasses.registry.RPGDamageType;
 
-import java.awt.*;
-
 public class RadiantExpansion extends SimpleBuffPassive {
     public RadiantExpansion(int levelMax, int requiredClassLevel) {
         super("radiantexpansion", "#ffff00", levelMax, requiredClassLevel);
@@ -25,7 +23,7 @@ public class RadiantExpansion extends SimpleBuffPassive {
         return new SanctifiedMindBuff();
     }
 
-    public static class SanctifiedMindBuff extends PrincipalPassiveBuff implements AphMagicHealingBuff {
+    public class SanctifiedMindBuff extends PrincipalPassiveBuff implements AphMagicHealingBuff {
         @Override
         public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             int level = getLevel(activeBuff);
@@ -33,7 +31,7 @@ public class RadiantExpansion extends SimpleBuffPassive {
 
             if (damage > 0) {
                 AphAreaList areaList = new AphAreaList(
-                        new AphArea(150, new Color(255, 255, 0))
+                        new AphArea(150, getColor())
                                 .setDamageArea(new GameDamage(RPGDamageType.HOLY, damage))
                 );
                 areaList.execute(healer, target.x, target.y, false);

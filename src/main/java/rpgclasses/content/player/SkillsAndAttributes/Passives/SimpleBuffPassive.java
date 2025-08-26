@@ -31,17 +31,17 @@ abstract public class SimpleBuffPassive extends Passive {
             ab.getGndData().setInt("skillLevel", passiveLevel);
             ab.getGndData().setString("playerName", playerData.playerName);
 
-            player.buffManager.addBuff(ab, true, oldAb != null);
+            player.buffManager.addBuff(ab, player.isServer(), oldAb != null);
         }
     }
 
     public void giveDatalessSecondaryPassiveBuff(PlayerMob player, int duration) {
         ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), player, duration, null);
-        player.buffManager.addBuff(ab, true);
+        player.buffManager.addBuff(ab, player.isServer());
     }
 
     public void giveSecondaryPassiveBuff(PlayerMob player, Mob target, PlayerData playerData, int passiveLevel, int duration) {
-        ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), player, duration, null);
+        ActiveBuff ab = new ActiveBuff(BuffRegistry.getBuff(getSecondaryBuffStringID()), target, duration, null);
         ab.getGndData().setInt("skillLevel", passiveLevel);
         ab.getGndData().setInt("playerLevel", passiveLevel);
         ab.getGndData().setInt("endurance", playerData.getEndurance(player));
@@ -49,7 +49,7 @@ abstract public class SimpleBuffPassive extends Passive {
         ab.getGndData().setInt("strength", playerData.getStrength(player));
         ab.getGndData().setInt("intelligence", playerData.getIntelligence(player));
         ab.getGndData().setInt("grace", playerData.getGrace(player));
-        player.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, player.isServer());
     }
 
     @Override
@@ -58,7 +58,8 @@ abstract public class SimpleBuffPassive extends Passive {
     }
 
     @Override
-    public void registerSkillBuffs() {
+    public void registry() {
+        super.registry();
         BuffRegistry.registerBuff(getBuffStringID(), getBuff());
         SecondaryPassiveBuff secondaryPassiveBuff = getSecondaryBuff();
         if (secondaryPassiveBuff != null) BuffRegistry.registerBuff(getSecondaryBuffStringID(), secondaryPassiveBuff);

@@ -11,8 +11,6 @@ import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class WardingTaunt extends ActiveSkill {
 
     public WardingTaunt(int levelMax, int requiredClassLevel) {
@@ -44,9 +42,9 @@ public class WardingTaunt extends ActiveSkill {
                         );
 
             } else if (player.isClient()) {
-                SoundManager.playSound(GameResources.jingle, SoundEffect.effect(tauntSummon).volume(2.5F).pitch(0.5F));
+                SoundManager.playSound(GameResources.jingle, SoundEffect.effect(tauntSummon).volume(2F).pitch(0.5F));
                 AphAreaList areaList = new AphAreaList(
-                        new AphArea(distance, new Color(153, 51, 51))
+                        new AphArea(distance, getColor())
                 ).setOnlyVision(false);
                 areaList.executeClient(player.getLevel(), tauntSummon.x, tauntSummon.y);
 

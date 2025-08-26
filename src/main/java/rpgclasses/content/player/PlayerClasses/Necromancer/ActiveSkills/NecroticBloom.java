@@ -13,8 +13,6 @@ import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class NecroticBloom extends ActiveSkill {
 
     public NecroticBloom(int levelMax, int requiredClassLevel) {
@@ -34,10 +32,10 @@ public class NecroticBloom extends ActiveSkill {
     @Override
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         super.run(player, playerData, activeSkillLevel, seed, isInUSe);
-        RPGUtils.getAllTargets(player, 300, mob -> mob.buffManager.hasBuff(RPGBuffs.MagicPoison))
+        RPGUtils.getAllTargets(player, 300, mob -> mob.buffManager.hasBuff(RPGBuffs.MAGIC_POISON))
                 .forEach(
                         mob -> {
-                            ActiveBuff ab = mob.buffManager.getBuff(RPGBuffs.MagicPoison);
+                            ActiveBuff ab = mob.buffManager.getBuff(RPGBuffs.MAGIC_POISON);
                             MagicPoisonBuff.setPoisonDamage(ab, MagicPoisonBuff.getPoisonDamage(ab) * 10);
                             MagicPoisonBuff.updateModifier(ab);
                             ab.setDurationLeft(ab.getDurationLeft() / 10);
@@ -48,9 +46,9 @@ public class NecroticBloom extends ActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(0.5F));
+        SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2F).pitch(0.5F));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(300, new Color(102, 153, 102))
+                new AphArea(300, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }

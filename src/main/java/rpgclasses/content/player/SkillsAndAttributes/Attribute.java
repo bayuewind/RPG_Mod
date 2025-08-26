@@ -7,6 +7,7 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.gfx.gameTexture.GameTexture;
+import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatModifierBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.IntModifierBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.ModifierBuff;
@@ -28,26 +29,29 @@ public class Attribute extends BasicPassive {
                 "endurance", "#4682B4",
                 RPGModifiers.ENDURANCE_ATTR_FLAT,
                 new IntModifierBuff(BuffModifiers.MAX_HEALTH_FLAT, 2),
-                new IntModifierBuff(BuffModifiers.ARMOR_FLAT, 1)
+                new IntModifierBuff(BuffModifiers.ARMOR_FLAT, 1),
+                new FloatModifierBuff(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.05F)
         ));
         registerAttribute(new Attribute(
                 "speed", "#FFD60A",
                 RPGModifiers.SPEED_ATTR_FLAT,
                 new String[]{"dodgechance"},
-                new FloatPercentModifierBuff(BuffModifiers.SPEED, 0.005F),
+                new FloatPercentModifierBuff(BuffModifiers.SPEED, 0.01F),
                 new FloatPercentModifierBuff(RPGModifiers.DODGE_CHANCE, 0.002F)
         ));
         registerAttribute(new Attribute(
                 "strength", "#D94F30",
                 RPGModifiers.STRENGTH_ATTR_FLAT,
                 new FloatPercentModifierBuff(BuffModifiers.MELEE_DAMAGE, 0.01F),
-                new FloatPercentModifierBuff(BuffModifiers.RANGED_DAMAGE, 0.01F)
+                new FloatPercentModifierBuff(BuffModifiers.RANGED_DAMAGE, 0.01F),
+                new IntModifierBuff(BuffModifiers.MAX_HEALTH_FLAT, 1)
         ));
         registerAttribute(new Attribute(
                 "intelligence", "#9D4EDD",
                 RPGModifiers.INTELLIGENCE_ATTR_FLAT,
                 new FloatPercentModifierBuff(BuffModifiers.MAGIC_DAMAGE, 0.01F),
-                new FloatPercentModifierBuff(BuffModifiers.SUMMON_DAMAGE, 0.01F)
+                new FloatPercentModifierBuff(BuffModifiers.SUMMON_DAMAGE, 0.01F),
+                new FloatPercentModifierBuff(BuffModifiers.MANA_REGEN, 0.01F)
         ));
         registerAttribute(new Attribute(
                 "grace", "#2ECC71",

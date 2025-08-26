@@ -11,8 +11,6 @@ import rpgclasses.registry.RPGBuffs;
 import rpgclasses.utils.RPGArea;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class Purify extends ActiveSkill {
 
     public Purify(int levelMax, int requiredClassLevel) {
@@ -33,7 +31,7 @@ public class Purify extends ActiveSkill {
         SoundManager.playSound(GameResources.cling, SoundEffect.effect(player.x, player.y).volume(1F).pitch(2F));
 
         new AphAreaList(
-                new RPGArea(200, new Color(204, 255, 204))
+                new RPGArea(200, getColor())
         ).setOnlyVision(false).executeClient(player.getLevel(), player.x, player.y);
     }
 

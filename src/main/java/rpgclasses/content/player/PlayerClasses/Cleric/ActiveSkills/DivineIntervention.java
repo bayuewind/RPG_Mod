@@ -19,8 +19,6 @@ import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGArea;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class DivineIntervention extends SimpleBuffActiveSkill {
 
     public DivineIntervention(int levelMax, int requiredClassLevel) {
@@ -80,7 +78,7 @@ public class DivineIntervention extends SimpleBuffActiveSkill {
         SoundManager.playSound(GameResources.cling, SoundEffect.effect(player.x, player.y).volume(1F).pitch(2F));
 
         new AphAreaList(
-                new RPGArea(200, new Color(255, 255, 0))
+                new RPGArea(200, getColor())
         ).setOnlyVision(false).executeClient(player.getLevel(), player.x, player.y);
     }
 
@@ -124,7 +122,7 @@ public class DivineIntervention extends SimpleBuffActiveSkill {
             public void clientTick(ActiveBuff activeBuff) {
                 Mob owner = activeBuff.owner;
                 if (owner.isVisible()) {
-                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), GameRandom.globalRandom.nextInt(2) == 0 ? Particle.GType.COSMETIC : Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(GameRandom.globalRandom.getOneOf(new Color(255, 255, 0))).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), GameRandom.globalRandom.nextInt(2) == 0 ? Particle.GType.COSMETIC : Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(GameRandom.globalRandom.getOneOf(getColor())).height(16.0F);
                 }
 
                 owner.setHealth(1);

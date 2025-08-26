@@ -45,7 +45,7 @@ public class IgnitedBuff extends Buff {
     }
 
     public static void apply(Mob attacker, Mob target, float damage, int duration, boolean isPurple) {
-        ActiveBuff ab = new ActiveBuff(RPGBuffs.Ignited, target, duration, attacker);
+        ActiveBuff ab = new ActiveBuff(RPGBuffs.IGNITED, target, duration, attacker);
         IgnitedBuff.setIgniteDamage(ab, damage);
         if (isPurple) ab.getGndData().setBoolean("isPurple", true);
 
@@ -53,11 +53,11 @@ public class IgnitedBuff extends Buff {
     }
 
     public static boolean shouldApply(Mob target, float damage, int duration) {
-        if (!target.buffManager.hasBuff(RPGBuffs.Ignited)) return true;
+        if (!target.buffManager.hasBuff(RPGBuffs.IGNITED)) return true;
 
         float finalDamage = damage * duration / 1000F;
 
-        ActiveBuff ab = target.buffManager.getBuff(RPGBuffs.Ignited);
+        ActiveBuff ab = target.buffManager.getBuff(RPGBuffs.IGNITED);
         float finalOldDamage = ab.getGndData().getFloat("igniteDamage") * ab.getDurationLeft() / 1000F;
 
         return finalDamage > finalOldDamage;

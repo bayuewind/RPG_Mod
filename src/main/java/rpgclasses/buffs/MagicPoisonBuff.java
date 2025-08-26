@@ -37,7 +37,7 @@ public class MagicPoisonBuff extends Buff {
     }
 
     public static void apply(Mob attacker, Mob target, float damage, int duration) {
-        ActiveBuff ab = new ActiveBuff(RPGBuffs.MagicPoison, target, duration, attacker);
+        ActiveBuff ab = new ActiveBuff(RPGBuffs.MAGIC_POISON, target, duration, attacker);
         setPoisonDamage(ab, damage);
 
         if (shouldApply(target, damage, duration)) {
@@ -46,11 +46,11 @@ public class MagicPoisonBuff extends Buff {
     }
 
     public static boolean shouldApply(Mob target, float damage, int duration) {
-        if (!target.buffManager.hasBuff(RPGBuffs.MagicPoison)) return true;
+        if (!target.buffManager.hasBuff(RPGBuffs.MAGIC_POISON)) return true;
 
         float finalDamage = damage * duration / 1000F;
 
-        ActiveBuff ab = target.buffManager.getBuff(RPGBuffs.MagicPoison);
+        ActiveBuff ab = target.buffManager.getBuff(RPGBuffs.MAGIC_POISON);
         float finalOldDamage = ab.getGndData().getFloat("poisonDamage") * ab.getDurationLeft() / 1000F;
 
         return finalDamage > finalOldDamage;

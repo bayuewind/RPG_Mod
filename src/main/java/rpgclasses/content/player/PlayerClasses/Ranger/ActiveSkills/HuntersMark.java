@@ -41,7 +41,7 @@ public class HuntersMark extends SimpleBuffActiveSkill {
             validMobs.sort(Comparator.comparingInt(Mob::getMaxHealth).reversed());
 
             Mob target = validMobs.get(0);
-            ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, target, getDuration(activeSkillLevel), null);
+            ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, target, getDuration(activeSkillLevel), null);
             ab.getGndData().setString("playerAttacker", player.playerName);
             target.addBuff(ab, true);
         }
@@ -56,7 +56,7 @@ public class HuntersMark extends SimpleBuffActiveSkill {
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         AphAreaList areaList = new AphAreaList(
-                new AphArea(400, new Color(0, 102, 0))
+                new AphArea(400, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }

@@ -180,7 +180,7 @@ public class BearTrap extends SimpleLevelEventActiveSkill {
         public void serverHit(Mob target, boolean clientSubmitted) {
             if (!trappedMob && ready) {
                 target.isServerHit(damage, target.x - targetX, target.y - targetY, 0, this.owner);
-                target.addBuff(new ActiveBuff(RPGBuffs.Trapped, target, 5000, this), true);
+                target.addBuff(new ActiveBuff(RPGBuffs.TRAPPED, target, 5000, this), true);
                 trappedMob = true;
                 target.setPos(targetX, targetY, true);
             }

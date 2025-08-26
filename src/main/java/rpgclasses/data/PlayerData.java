@@ -16,7 +16,9 @@ import necesse.level.gameObject.furniture.RoomFurniture;
 import necesse.level.maps.Level;
 import rpgclasses.RPGConfig;
 import rpgclasses.content.player.PlayerClass;
+import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.packets.ShowModExpPacket;
 import rpgclasses.packets.UpdateClientExpPacket;
@@ -242,8 +244,8 @@ public class PlayerData {
     public void updateAllBuffs(PlayerMob player) {
         updateModifiersBuff(player);
 
-        if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HolyDamage))
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HolyDamage, player, 1000, null), true);
+        if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE))
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE, player, 1000, null), true);
 
         boolean someOverlevel = false;
         for (PlayerClassData classesDatum : classesData) {
@@ -259,7 +261,7 @@ public class PlayerData {
 
             for (int i = 0; i < classesDatum.getPassiveLevels().length; i++) {
                 Passive passive = classesDatum.playerClass.passivesList.get(i);
-                if (!passive.isBasic()) {
+                if (!(passive instanceof BasicPassive)) {
                     if (validClass) {
                         int level = classesDatum.getPassiveLevels()[i];
                         if (level > 0) {
@@ -274,16 +276,16 @@ public class PlayerData {
             }
         }
 
-        boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OverlevelClass);
+        boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS);
         if (someOverlevel && !hasOverlevelBuff) {
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OverlevelClass, player, 1000, null), true);
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS, player, 1000, null), true);
         } else if (!someOverlevel && hasOverlevelBuff) {
-            player.buffManager.removeBuff(RPGBuffs.PASSIVES.OverlevelClass, true);
+            player.buffManager.removeBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS, true);
         }
     }
 
     public void updateModifiersBuff(PlayerMob player) {
-        player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.Modifiers, player, 1000, null), true, true);
+        player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.MODIFIERS, player, 1000, null), true, true);
     }
 
     public static int MAX_EXP = 2000000000;
@@ -402,4 +404,30 @@ public class PlayerData {
         return (object instanceof WallObject || object instanceof RockObject || object instanceof ColumnObject || object instanceof RoomFurniture || object instanceof CraftingStationObject || object instanceof StreetlampObject || object instanceof CandlePedestalObject || object instanceof TrainingDummyObject || object instanceof SnowManTrainingDummyObject || object instanceof TreeObject)
                 ? object : null;
     }
+
+    public int getInUseActiveSkillSlotIndex() {
+        for (int i = 0; i < equippedActiveSkills.length; i++) {
+            if (equippedActiveSkills[i].isInUse()) return i;
+        }
+        return -1;
+    }
+
+    public EquippedActiveSkill getInUseActiveSkillSlot() {
+        int index = getInUseActiveSkillSlotIndex();
+        return index != -1 ? equippedActiveSkills[index] : null;
+    }
+
+    public ActiveSkill getInUseActiveSkill() {
+        EquippedActiveSkill equippedActiveSkill = getInUseActiveSkillSlot();
+        return equippedActiveSkill == null ? null : equippedActiveSkill.getActiveSkill();
+    }
+
+    public void removeInUseActiveSkillSlot() {
+        EquippedActiveSkill equippedActiveSkill = getInUseActiveSkillSlot();
+        if (equippedActiveSkill != null) {
+            equippedActiveSkill.restartCooldown();
+        }
+    }
+
+
 }

@@ -20,7 +20,9 @@ import rpgclasses.RPGResources;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimplePassiveBuffActiveSkill;
+import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.packets.ActiveAbilityRunPacket;
+import rpgclasses.registry.RPGModifiers;
 
 import java.awt.*;
 import java.lang.reflect.Field;
@@ -28,9 +30,10 @@ import java.util.Objects;
 import java.util.function.BiConsumer;
 
 public class EquippedActiveSkill {
-    public PlayerClass playerClass;
-    public ActiveSkill activeSkill;
-    public long lastUse;
+    protected PlayerClass playerClass;
+    protected ActiveSkill activeSkill;
+    protected long lastUse;
+    protected int cooldown;
 
     public EquippedActiveSkill() {
         this.playerClass = null;
@@ -44,6 +47,14 @@ public class EquippedActiveSkill {
         }
     }
 
+    public PlayerClass getPlayerClass() {
+        return playerClass;
+    }
+
+    public ActiveSkill getActiveSkill() {
+        return activeSkill;
+    }
+
     public void modifyForm(FormExpressionWheel.Expression expression, Field drawIcon, Field displayName) throws IllegalAccessException {
         displayName.set(expression, new LocalMessage("activeskills", activeSkill == null ? "empty" : activeSkill.stringID));
         drawIcon.set(expression, new ActiveSkillDrawOptionsModifier());
@@ -55,6 +66,7 @@ public class EquippedActiveSkill {
         saveData.addInt(dataKeyPrefix + "class", playerClass == null ? -1 : playerClass.id);
         saveData.addInt(dataKeyPrefix + "activeSkill", activeSkill == null ? -1 : activeSkill.id);
         saveData.addLong(dataKeyPrefix + "lastUse", lastUse);
+        saveData.addInt(dataKeyPrefix + "cooldown", cooldown);
     }
 
     public static EquippedActiveSkill loadData(PlayerMob player, LoadData loadData, int position) {
@@ -66,11 +78,13 @@ public class EquippedActiveSkill {
 
         EquippedActiveSkill equippedActiveSkill = new EquippedActiveSkill(classID, activeSkillID);
 
-        if (lastUse == -100 && equippedActiveSkill.activeSkill instanceof SimplePassiveBuffActiveSkill) {
+        if (lastUse == -100 && (equippedActiveSkill.activeSkill instanceof SimplePassiveBuffActiveSkill || equippedActiveSkill.activeSkill instanceof SimpleTranformationActiveSkill)) {
             equippedActiveSkill.lastUse = player.getTime();
         } else {
             equippedActiveSkill.lastUse = lastUse;
         }
+
+        equippedActiveSkill.cooldown = loadData.getInt(dataKeyPrefix + "cooldown", 0);
 
         return equippedActiveSkill;
     }
@@ -79,15 +93,18 @@ public class EquippedActiveSkill {
         writer.putNextInt(playerClass == null ? -1 : playerClass.id);
         writer.putNextInt(activeSkill == null ? -1 : activeSkill.id);
         writer.putNextLong(lastUse);
+        writer.putNextInt(cooldown);
     }
 
     public static EquippedActiveSkill applySpawnPacket(PacketReader reader) {
         int classID = reader.getNextInt();
         int activeSkillID = reader.getNextInt();
         long lastUse = reader.getNextLong();
+        int addedCooldown = reader.getNextInt();
 
         EquippedActiveSkill equippedActiveSkill = new EquippedActiveSkill(classID, activeSkillID);
         equippedActiveSkill.lastUse = lastUse;
+        equippedActiveSkill.cooldown = addedCooldown;
 
         return equippedActiveSkill;
     }
@@ -106,9 +123,7 @@ public class EquippedActiveSkill {
             gameTexture.initDraw().pos(pos.x - size / 2, pos.y - size / 2 + 5).draw();
 
             if (playerClass != null && activeSkill != null) {
-                PlayerData playerData = PlayerDataList.getPlayerData(player);
-                int activeSkillLevel = playerData.getClassesData()[playerClass.id].getActiveSkillLevels()[activeSkill.id];
-                int cooldownLeft = getCooldownLeft(activeSkillLevel, player.getTime());
+                int cooldownLeft = getCooldownLeft(player.getTime());
                 if (cooldownLeft > 0) {
                     String cooldownLeftString = getCooldownLeftString(cooldownLeft);
 
@@ -118,7 +133,6 @@ public class EquippedActiveSkill {
                     FontManager.bit.drawString(pos.x + (float) size / 2 - width, pos.y + (float) size / 2 - 5 + 12, cooldownLeftString, options);
                 }
             }
-
         }
 
         @NotNull
@@ -151,9 +165,13 @@ public class EquippedActiveSkill {
 
     }
 
-    public int getCooldownLeft(int activeSkillLevel, long currentTime) {
+    public int getCooldown() {
+        return cooldown;
+    }
+
+    public int getCooldownLeft(long currentTime) {
         long lastUse = this.lastUse;
-        long cooldown = activeSkill.getCooldown(activeSkillLevel);
+        int cooldown = getCooldown();
 
         if (isInUse()) {
             return 1;
@@ -172,9 +190,9 @@ public class EquippedActiveSkill {
         return cooldownLeft;
     }
 
-    public boolean isInCooldown(int activeSkillLevel, long currentTime) {
+    public boolean isInCooldown(long currentTime) {
         long lastUse = this.lastUse;
-        long cooldown = activeSkill.getCooldown(activeSkillLevel);
+        int cooldown = getCooldown();
 
         return (cooldown - (currentTime - lastUse)) > 0;
     }
@@ -223,6 +241,47 @@ public class EquippedActiveSkill {
         playerClass = null;
         activeSkill = null;
         lastUse = 0;
+        cooldown = 0;
+    }
+
+    public void update(PlayerClass playerClass, ActiveSkill activeSkill) {
+        empty();
+        this.playerClass = playerClass;
+        this.activeSkill = activeSkill;
+    }
+
+    public void startCooldown(long currentTime, int skillLevel) {
+        this.startCooldown(currentTime, skillLevel, 0);
+    }
+
+    public void startCooldown(long currentTime, int skillLevel, int addedCooldown) {
+        this.lastUse = currentTime;
+        this.cooldown = activeSkill.getCooldown(skillLevel) + addedCooldown;
+    }
+
+    public void startCustomCooldown(long currentTime, int cooldown) {
+        this.lastUse = currentTime;
+        this.cooldown = cooldown;
+    }
+
+    public void restartCooldown() {
+        this.lastUse = 0;
+        this.cooldown = 0;
+    }
+
+    public void setInUse() {
+        this.lastUse = -100;
+        this.cooldown = 0;
+    }
+
+    public void setCooldown(EquippedActiveSkill equippedActiveSkill) {
+        startCustomCooldown(equippedActiveSkill.lastUse, equippedActiveSkill.cooldown);
+    }
+
+    public boolean canChange(long currentTime) {
+        if (isEmpty()) return true;
+        if (isInUse()) return false;
+        return !isInCooldown(currentTime);
     }
 
     public void tryRun(PlayerMob player, int skillSlot) {
@@ -230,16 +289,18 @@ public class EquippedActiveSkill {
             String canActiveError = this.canActive(player);
 
             if (canActiveError != null) {
-                FloatTextFade text = new UniqueFloatText(player.getX(), player.getY() - 20, Localization.translate("message", canActiveError), (new FontOptions(16)).outline().color(new Color(200, 100, 100)), "activeerror") {
-                    public int getAnchorX() {
-                        return player.getX();
-                    }
+                if (!canActiveError.isEmpty()) {
+                    FloatTextFade text = new UniqueFloatText(player.getX(), player.getY() - 20, Localization.translate("message", canActiveError), (new FontOptions(16)).outline().color(new Color(200, 100, 100)), "activeerror") {
+                        public int getAnchorX() {
+                            return player.getX();
+                        }
 
-                    public int getAnchorY() {
-                        return player.getY() - 20;
-                    }
-                };
-                player.getLevel().hudManager.addElement(text);
+                        public int getAnchorY() {
+                            return player.getY() - 20;
+                        }
+                    };
+                    player.getLevel().hudManager.addElement(text);
+                }
                 return;
             }
 
@@ -255,6 +316,8 @@ public class EquippedActiveSkill {
     }
 
     public String canActive(PlayerMob player) {
+        if (player.buffManager.getModifier(RPGModifiers.NO_SKILLS)) return "";
+
         if (this.isEmpty()) return "equipfirst";
         ActiveSkill activeSkill = this.activeSkill;
 
@@ -266,16 +329,9 @@ public class EquippedActiveSkill {
 
         boolean isInUseSkill = activeSkill.isInUseSkill();
         if (isInUseSkill) {
-            boolean otherInUse = false;
-            for (EquippedActiveSkill equippedActiveSkillP : playerData.equippedActiveSkills) {
-                if (!equippedActiveSkillP.isEmpty() && !equippedActiveSkillP.isSameSkill(this)) {
-                    if (equippedActiveSkillP.isInUse()) {
-                        otherInUse = true;
-                        break;
-                    }
-                }
-            }
-            if (otherInUse) return "anotheractiveskillinuse";
+            ActiveSkill inUseSkill = playerData.getInUseActiveSkill();
+            if (inUseSkill != null && !(this.activeSkill instanceof SimpleTranformationActiveSkill && inUseSkill instanceof SimpleTranformationActiveSkill))
+                return "anotheractiveskillinuse";
         }
 
         boolean isInUse = isInUseSkill && isInUse();
@@ -285,7 +341,7 @@ public class EquippedActiveSkill {
         long currentTime = player.getLevel().getTime();
 
         if (!isInUse) {
-            int cooldownLeft = getCooldownLeft(activeSkillLevel, currentTime);
+            int cooldownLeft = getCooldownLeft(currentTime);
             if (cooldownLeft > 0) return "incooldown";
         }
 

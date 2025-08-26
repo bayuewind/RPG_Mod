@@ -25,6 +25,8 @@ holycritdamage=<mod>% hellig kritisk skade
 holyeffect=<mod>% hellig effekt
 holyabilityspeed=<mod>% hellig evnehastighet
 
+transformationdelay=<mod>% transformasjonsforsinkelse
+noskills=Kan ikke bruke ferdigheter
 
 [stats]
 holy_damage=Hellig skade
@@ -166,6 +168,16 @@ sanctifiedmind=성스러운 마음
 sanctifiedarmor=성스러운 갑옷
 radiantexpansion=찬란한 확장
 
+// Druid
+quickshift=Raskt Skift
+feralinstinct=Villdyrinstinkt
+ironfur=Jernpels
+naturesfavor=Naturens Gunst
+beastpace=Dyrets Tempo
+primalburst=Urkraftutbrudd
+elementalguard=Elementær Vakt
+phoenixspirit=Føniksånd
+
 
 [passivesdesc]
 
@@ -181,18 +193,15 @@ wolfcompanion=En ulvefølgesvenn vil angripe merkede fiender og gi §i[[<playerl
 
 // Trollmann
 manapower=Hvert nivå gir:\n\n+1% Magisk Skade for hver 10% ubrukt Mana
-flamingsteps=Når du løper med en aktiv pyntegjenstand, vil du etterlate flammer på bakken\nFlammene vil antenne fiender i 2 sekunder, og gi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 per sekund
+flamingsteps=Når du løper med en aktiv pyntegjenstand eller transformasjon, vil du etterlate flammer på bakken\nFlammene vil antenne fiender i 2 sekunder, og gi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 per sekund
 stormbound=Hver §a[[9 - 0.5 x <skilllevel>]] sekund§0, slår et lyn ned på en tilfeldig fiende i synsfeltet ditt\nGir §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund
 arcaneshield=Et skjold som forhindrer ett treff\nSkjoldet vil komme seg §a[[20 - <skilllevel>]] sekunder§0 etter bruk
 fireshield=Et skjold som forhindrer ett treff\nNår det brukes, vil du slippe løs en eksplosjon som gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nog antenner mobs, og gjentar 20% av deres opprinnelige skade per sekund i 5 sekunder\nSkjoldet vil komme seg 26 sekunder etter bruk
 iceshield=Et skjold som forhindrer ett treff\nNår det brukes, vil du slippe løs en is-aura som gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nfryser mobs i 5 sekunder, og fryser dem helt i 1 sekund\nSkjoldet vil komme seg 22 sekunder etter bruk
 
 // Nekromantiker
-necroticpower=Alle dine Magiske og Tilkaller-angrep forgifter for 5% av deres Skade i §a[[2 x <skilllevel>]] sekunder§0, så lenge de ikke er forårsaket av en tilkalling
-darkmagic=Tilkallerskadebonuser påvirker Magisk Skade med §a[[5 x <skilllevel>]]%
-necroticarmy=Beseirede fiendtlige fiender vil bli til §bSkjeletter§0 med §a-[[100 - 3 x <skilllevel>]]%§0 Helse og Skade
-darksummons=Gi §a+[[10 x <skilllevel>]]%§0 Tilkallerskade til forgiftede fiender
-lifeleech=Gjenoppretter §a[[<skilllevel>]]%§0 av den påførte Tilkallerskaden som Helse
+darksummons=Gi §a+[[8 x <skilllevel>]]%§0 Tilkallerskade til forgiftede fiender
+lifeleech=Gjenoppretter §a[[0.1 x <skilllevel>]]%§0 av den påførte Tilkallerskaden som Helse
 necroticremains=Når en nekrotisk tilkalling dør, eksploderer den og gir §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender, og forgifter dem med 20% av skaden per sekund i 10 sekunder
 endlesslegion=Hver 4. nivå av denne ferdigheten, får du +1 maks tilkalling
 lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§0 Helse hvis du ikke allerede er en §bLich§0\nI de neste §a[[120 - 6 x <skilllevel>]] sekundene§0, blir du en §bLich§0 (et skjelett)
@@ -200,10 +209,15 @@ lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§
 // Cleric
 vitalaura=Hver §a[[15 - <skilllevel>]] sekund§0 frigjør du en magisk helbredende aura rundt deg som gjenoppretter §a[[10 + <grace>]] helse§0\nDen helbreder deg også for halvparten av det beløpet
 divinejudge=Magisk skadebonus påvirker hellig skade med §a[[5 x <skilllevel>]]%§0
-empoweredhealing=Når du magisk helbreder deg selv eller en alliert, øker du skaden deres med §a[[5 x <skilllevel>]]%§0 i 3 sekunder
-sanctifiedmind=Magisk helbredelse gjenoppretter også mana tilsvarende §a[[5 x <skilllevel>]]%§0 av den utførte helbredelsen
-sanctifiedarmor=Magisk helbredelse gjenoppretter også motstandskraft tilsvarende §a[[2 x <skilllevel>]]%§0 av den utførte helbredelsen
-radiantexpansion=Når du magisk helbreder deg selv eller en alliert, gir du §a[[5 x <skilllevel>]]%§0 av helbredelsen som hellig skade til nærliggende fiender av det helbredte målet
+empoweredhealing=Når du magisk helbreder deg selv eller en alliert, øker du deres skade med §a[[5 x <skilllevel>]]%§0 gedurende 3 seconden
+sanctifiedmind=Magisk helbredelse gjenoppretter også mana lik §a[[5 x <skilllevel>]]%§0 av den utførte helbredelsen
+sanctifiedarmor=Magisk helbredelse gjenoppretter også motstandskraft lik §a[[2 x <skilllevel>]]%§0 av den utførte helbredelsen
+radiantexpansion=Når du magisk helbreder deg selv eller en alliert, gir du §a[[5 x <skilllevel>]]%§0 av helbredelsen som Heilige skade til nærliggende fiender av det helbredede mål
+
+// Druid
+naturesfavor=Få +[[<skilllevel>]] Helse Regenerering per sekund mens du står på gress
+primalburst=Øker Skade og Hastighet med [[6 x <skillevel>]]% de første 5 sekundene etter transformasjon
+phoenixspirit=Krever minst 4 poeng for å fungere:\n\nHvis du skulle dø mens du er transformert med en aktiv ferdighet, overlever du i stedet med §a[4 + 8 x <skilllevel>]]%§0 helse, og den ferdigheten settes på en 1-times nedkjøling\n\nUtløses ikke hvis du allerede har minst §a[[0.25 x <skilllevel> ↓]] transformasjonsferdighet(er)§0 på en nedkjøling lengre enn 1 minutt
 
 
 [activeskills]
@@ -213,72 +227,80 @@ empty=Tom
 fury=Raseri
 recovery=Gjenoppretting
 provocation=Provokasjon
-berserkercharge=Berserkerangrep
+berserkercharge=Berserker aanval
 
-groundslam=Jordslag
-grounddestruction=Jordødeleggelse
-parry=Parering
-battlecry=Kamprop
+groundslam=Grondslag
+grounddestruction=Grondvernietiging
+parry=Pareren
+battlecry=Strijdkreet
 
-ironguard=Jernvakt
-intimidation=Trussel
+ironguard=IJzeren garde
+intimidation=Intimidatie
 
-objectthrowing=Objektkasting
+objectthrowing=Object gooien
 
 // Ranger
-shortdash=Kort spurt
-longdash=Lang spurt
-lethalshot=Dødelig skudd
-venomshot=Giftskudd
-explosiveshot=Eksplosivt skudd
+shortdash=Korte sprint
+longdash=Lange sprint
+lethalshot=Dodelijke schot
+venomshot=Gifschot
+explosiveshot=Explosief schot
 
-shotsrampage=Skuddraseri
-huntersmark=Jegerens merke
-beartrap=Bjørnefelle
+shotsrampage=Schoten razernij
+huntersmark=Jagersmerk
+beartrap=Berenval
 
-huntersinstinct=Jegerinstinkt
-arrowstorm=Pilregn
+huntersinstinct=Jagersinstinct
+arrowstorm=Pijlenstorm
 
-// Trollmann
-arcaneoverload=Arkane Overbelastning
-firedance=Ilddans
-iceball=Iskule
-zap=Støt
-manarecharge=Mana-lading
+// Tovenaar
+arcaneoverload=Arcane Overload
+firedance=Vuurdans
+iceball=IJsbal
+zap=Zap
+manarecharge=Mana Opladen
 
-teleport=Teleporter
+teleport=Teleporteren
 inferno=Inferno
-fireenchantment=Ildfortryllelse
-iceenchantment=Isfortryllelse
+fireenchantment=Vuur Betovering
+iceenchantment=IJs Betovering
 
-fireball=Ildkule
-lightning=Lyn
+fireball=Vuurbal
+lightning=Bliksem
 
-// Nekromantiker
-skeletonhorde=Skjeletthorde
-skeletonwarrior=Skjelettkriger
+// Necromancer
+skeletonhorde=Skelettenhorde
+skeletonwarrior=Skeletkrijger
 sacrifice=Offer
-siegecry=Beleiringsrop
+siegecry=Belegeringskreet
 
-boneslingerhorde=Beinkasterhorde
-tomb=Grav
-necroticbloom=Nekrotisk Blomstring
-wardingtaunt=Avvergende Hån
+boneslingerhorde=Bottenwerperhorde
+tomb=Graf
+necroticbloom=Necrotische Bloei
+wardingtaunt=Afwerende Bespotting
 
-unholyground=Uhellig Jord
-necroticbarrage=Nekrotisk Sperreild
+unholyground=Onheilige Grond
+necroticbarrage=Necrotische Barrage
 
 // Cleric
 smite=Smite
-divineblessing=Guddommelig velsignelse
-purify=Rens
-lightinfusion=Lysinfusjon
-holyguard=Hellig vakt
-judgment=Dom
-sanctuary=Helligdom
-divineintervention=Guddommelig inngripen
-resurrection=Gjenoppstandelse
-wrathoflight=Lysets vrede
+divineblessing=Goddelijke zegen
+purify=Zuiveren
+lightinfusion=Lichtinfusie
+holyguard=Heilige wacht
+judgment=Oordeel
+sanctuary=Heiligdom
+divineintervention=Goddelijke interventie
+resurrection=Wederopstanding
+wrathoflight=Toorn van het licht
+
+// Druid
+wolftransformation=Ulvetransformasjon
+queenbeetransformation=Dronningbietransformasjon
+beartransformation=Bjørnetransformasjon
+foxtransformation=Revetransformasjon
+rattransformation=Rottetransformasjon
+treanttransformation=Treanttransformasjon
 
 
 [activeskillsdesc]
@@ -336,181 +358,193 @@ siegecry=Få §a+[[50 x <skilllevel>]]%§0 Tilkallingshastighet i 6 sekunder
 boneslingerhorde=Kaller frem §a[[1 + <skilllevel>]]§0 §bBeinkastere§0
 tomb=Genererer en struktur som kaller frem et §bSkjelett§0 hvert §a[[10 - <skilllevel>]] sekund§0\nGraven har Helse lik §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven mister 2% av sin Totale Helse per sekund
 necroticbloom=Akselererer effekten av gift på alle nærliggende fiender ved å redusere varigheten til 10%, men øke skaden per sekund for å opprettholde den totale skaden
-wardingtaunt=Den nærmeste nekrotiske tilkallingen tvinger nærliggende fiender innenfor en radius på §a[[50 x <skilllevel>]]§0 til å angripe den
+wardingtaunt=Den nærmeste nekrotiske tilkallingen tvinger nærliggende fiender innenfor en radius av §a[[50 x <skilllevel>]]§0 til å angripe den
 
-unholyground=Utvider en aura av korrupsjon rundt deg i 10 sekunder\nFiender innenfor dette området tar §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftskade§0 per sekund og er §7Begrenset
+unholyground=Utvider en aura av korrupsjon om deg i 10 sekunder\nFiender innenfor dette området tar §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Giftskade§0 per sekund og er §7Begrenset
 necroticbarrage=Alle nekrotiske tilkallinger eksploderer ved døden, og gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender\nog forgifter dem i 10 sekunder med 20% av den opprinnelige skaden per sekund
 
 // Cleric
-smite=Kall ned en stråle av hellig lys på nærmeste fiende, som gir §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0\nGir dobbel skade til udøde og demoniske mobs\nForbruker §a[[10 + 2 x <skilllevel>]] mana§0
-divineblessing=Magisk helbredende aura som gjenoppretter §a[[20 + 3 x <grace> x <skilllevel>]] helse§0 til deg og dine allierte\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
-purify=Rens deg selv og nærliggende allierte for alle negative effekter\nForbruker 10 mana
-lightinfusion=I de neste 8 sekundene får du §a+[[20 x <skilllevel>]]%§0 Magisk helbredelse og hellig skade
-holyguard=Påfør deg og alle nærliggende allierte et Hellig skjold i opptil 30 sekunder\nDe får §a+[[10 x <skilllevel>]]%§0 mottatt magisk helbredelse, og skjoldet blokkerer ett treff før det går i stykker\nForbruker §a[[40 + 8 x <skilllevel>]] mana§0
-judgment=Slipp løs en bølge av strålende energi, som gir §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] hellig skade§0 til alle nærliggende fiender\nUdøde og demoniske mobs er begrenset i 5 sekunder\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
-sanctuary=Opprett en hellig sone i 8 sekunder\nDu og allierte inne er immune mot negative effekter og får §a[[0.2 x <grace> x <skilllevel>]]§0 helse-regenerering per sekund\nUdøde og demoniske mobs inne er begrenset\nForbruker §a[[30 + 6 x <skilllevel>]] mana§0
-divineintervention=Helbred øyeblikkelig den mest skadede nære allierte til deres maksimale helse og gi immunitet mot all skade i §a[[<skilllevel>]]§0 sekunder\nForbruker §a[[60 + 12 x <skilllevel>]] mana§0
-resurrection=Gjenoppliv den sist døde spillerallierte på samme øy med §a[[10 x <skilllevel>]]%§0 av deres maksimale helse på din posisjon\nDu kan ikke gjenopplive spillere som kunne ha respawnet for mer enn 10 sekunder siden\nForbruker §a[[100 - 10 x <skilllevel>]]%§0 av manaen din (minst §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Tilkall en lyssøyle på nærmeste fiende, som gir §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0 per sekund i 5 sekunder i området\nUdøde og demoniske mobs inne er begrenset\nForbruker §a[[40 + 8 x <skilllevel>]] mana§0
+smite=Roep een straal heilig licht neer op de dichtstbijzijnde vijand, die §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Heilige schade§0 aanricht\nRicht dubbele schade aan Ondode en Demonische mobs\nVerbruikt §a[[10 + 2 x <skilllevel>]] Mana§0
+divineblessing=Magische genezingsaura die §a[[20 + 3 x <grace> x <skilllevel>]] gezondheid§0 herstelt voor jou en je bondgenoten\nVerbruikt §a[[20 + 4 x <skilllevel>]] Mana§0
+purify=Reinig jezelf en nabije bondgenoten van alle negatieve effecten\nVerbruikt 10 Mana
+lightinfusion=Gedurende de volgende 8 seconden krijg je §a+[[20 x <skilllevel>]]%§0 Magische genezing en Heilige schade
+holyguard=Pas een Heilig schild toe op jou en alle nabije bondgenoten voor maximaal 30 seconden\nZe krijgen §a+[[10 x <skilllevel>]]%§0 Magische genezing ontvangen en het schild blokkeert één treffer voordat het breekt\nVerbruikt §a[[40 + 8 x <skilllevel>]] Mana§0
+judgment=Laat een golf van stralende energie los, die §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Heilige schade§0 aanricht aan alle nabije vijanden\nOndode en Demonische mobs zijn 5 seconden lang Beperkt\nVerbruikt §a[[20 + 4 x <skilllevel>]] Mana§0
+sanctuary=Creëer een heilige zone voor 8 seconden\nJij en bondgenoten binnenin zijn immuun voor negatieve effecten en krijgen §a[[0.2 x <grace> x <skilllevel>]]§0 gezondheidsregeneratie per seconde\nOndode en Demonische mobs binnenin zijn Beperkt\nVerbruikt §a[[30 + 6 x <skilllevel>]] Mana§0
+divineintervention=Genees onmiddellijk de meest beschadigde nabije bondgenoot tot hun maximale gezondheid en verleen immuniteit voor alle schade gedurende §a[[<skilllevel>]]§0 seconden\nVerbruikt §a[[60 + 12 x <skilllevel>]] Mana§0
+resurrection=Herleef de laatst overleden spelerbondgenoot op hetzelfde eiland met §a[[10 x <skilllevel>]]%§0 van hun maximale gezondheid op jouw positie\nJe kunt geen spelers doen herleven die meer dan 10 seconden geleden hadden kunnen respawnen\nVerbruikt §a[[100 - 10 x <skilllevel>]]%§0 van je Mana (minstens §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Roep een lichtkolom op de dichtstbijzijnde vijand op, die gedurende 5 seconden in een gebied §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Heilige schade§0 per seconde aanricht\nOndode en Demonische mobs binnenin zijn beperkt\nVerbruikt §a[[40 + 8 x <skilllevel>]] Mana§0
+
+
+// Druid
+wolftransformation=Tar 3 sekunder å transformere til en Ulv\n\nBevegelseshastighet: 60\n\nTrykk [input=transformationability1] for Dash Bite: Hopp fremover og bit, påfører §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Nærkampskade§0\n\nTrykk [input=transformationability2] for Bjeff: Tving nærliggende fiender til å fokusere angrepene sine på deg i 2 sekunder\n\nHold [input=trinketability] for å sprinte
+queenbeetransformation=Tar 2 sekunder å transformere til en Dronningbie\n\nBevegelseshastighet: 30\n-50% Fiendedeteksjon\n§6+1000% Innkommende Skade§0\n\nTrykk [input=transformationability1] for Skyt Honning: Påfør §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Avstandsskade§0\n\nTrykk [input=transformationability2] for å tilkalle en §9Bie§0 opp til §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] for å beordre biene dine til å angripe
+beartransformation=Tar 4 sekunder å transformere til en Bjørn\n\nBevegelseshastighet: 20\n-50% Innkommende Skade\n\nTrykk [input=transformationability1] for Jordslag: Områdeangrep som påfører §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Nærkampskade§0 og §9lammer§0 i §a[[0.5 x <skilllevel>]] sekunder§0\n\nTrykk [input=transformationability2] for Knurr: Få nærliggende fiender til å flykte i 1 sekund\n\nHold [input=trinketability] for å sprinte
+foxtransformation=Tar 3 sekunder å transformere til en Rev\n\nBevegelseshastighet: 50\n§6+50% Innkommende Skade§0\n\nTrykk [input=transformationability1] for Skyt Ildkuler: Påfør §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0\n\nTrykk [input=transformationability2] for å tilkalle en §bDansende Flamme§0 opp til §a[[2 + <skilllevel>]]§0, hver påfører samme skade som en Ildkule\n\nTrykk [input=trinketability] for å sprinte\n§!Vulpes Nova fox!
+rattransformation=Tar 2 sekunder å transformere til en Rotte\n\nBevegelseshastighet: 25\n-50% Fiendedeteksjon\nGir maks. Unnvikelsessjanse\n§6+1000% Innkommende Skade§0\n\nTrykk [input=transformationability1] for Bitt: Påfører §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Nærkampskade§0 og forgifter målet for 100% av den påførte skaden per sekund i 10 sekunder\n\nHold [input=trinketability] for å sprinte
+treanttransformation=Tar 4 sekunder å transformere til en Treant\n\nBevegelseshastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 Innkommende Skade\nFiender ignorerer deg hvis du er skjult i 3 sekunder\n\nTrykk [input=transformationability1] mens avslørt for å skyte tilfeldige frø: Påfør §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Avstandsskade§0 med tilfeldige effekter\n\nTrykk [input=transformationability2] for å tilkalle en §9Dryad Sapling§0\n\nHold [input=trinketability] for å avsløre og sprinte hvis du beveger deg
 
 
 [skillsdesckeys]
-skilllevel=Ferdighetsnivå
-playerlevel=Spillernivå
-endurance=Utholdenhet
-speed=Hastighet
-strength=Styrke
-intelligence=Intelligens
-grace=Nåde
+skilllevel=Vaardigheidsniveau
+playerlevel=Spelersniveau
+endurance=Uithoudingsvermogen
+speed=Snelheid
+strength=Kracht
+intelligence=Intelligentie
+grace=Gratie
 
 
 [extraskilldesc]
-// Grunnleggende Mekanikk
-manausage=Hvis du ikke har nok mana, dobles nedkjølingen
-setmax=Negative effekter er satt som maks og kan ikke fjernes av andre buffs
-holydamage=25% av den påførte hellige skaden vil bli konvertert til helbredelse for mobs du magisk helbreder\nSetter også udøde og demoniske mobs i brann i 10 sekunder
+// Basisprincipes
+manausage=Als je niet genoeg mana hebt, wordt de afkoeltijd verdubbeld
+setmax=Negatieve effecten worden als maximaal ingesteld en kunnen niet worden verwijderd door andere buffs
+holydamage=25% van de aangerichte Heilige schade wordt omgezet in genezing voor mobs die je magisch geneest\nSteekt ook Ondode en Demonische mobs 10 seconden in brand
 
 // Buffs
-marked=§hMerket:§0 Gi +20% Skade (+ §hFokusskade§0) og +10% Kritisk Sjanse til mobs du merker\n"Nærmeste fiende" prioriterer merkede fiender
-constrained=§7Begrenset:§0 -50% Bevegelseshastighet
+marked=§hGemarkeerd:§0 Richt +20% schade (+ §hfocusschade§0) en +10% kritieke kans aan op mobs die je markeert\n"Dichtstbijzijnde vijand" geeft voorrang aan gemarkeerde vijanden
+constrained=§7Beperkt:§0 -50% Bewegingssnelheid
 
-// Sjanse-modifikatorer
-dodgechance=§7Unnvikelsessjanse:§0 Sjanse til å unnvike innkommende angrep. Kan ikke overstige 80%
-focuschance=§hFokussjanse:§0 Sjanse til å §hmerke§0 en mob i 5 sekunder når du angriper den direkte
+// Kansenmodificatoren
+dodgechance=§7Ontwijkkans:§0 Kans om inkomende aanvallen te ontwijken. Kan niet hoger zijn dan 80%
+focuschance=§hFocuskans:§0 Kans om een mob 5 seconden te §hmarkeren§0 wanneer je hem rechtstreeks aanvalt
 
-// Flate modifikatorer
-mobdetection=§9Mob-deteksjon:§0 Viser nærliggende mobs på kartet. En høyere deteksjonsrekkevidde avslører mobs fra lenger unna
-ignitedamage=§iBrannskade:§0 Øker brannskade over tid, men påvirker ikke direkte treffskade
+// Vlakke modificatoren
+mobdetection=§9Mobdetectie:§0 Toont nabije mobs op de kaart. Een hoger detectiebereik onthult mobs van verder weg
+ignitedamage=§iBrandschade:§0 Verhoogt brandschade na verloop van tijd, maar heeft geen invloed op directe trefferschade
 
-// Prosjektiler
-lethalarrow=§hDødelig pil:§0 Styrt pil som gir et kritisk treff
-venomarrow=§bGiftpil:§0 Styrt pil som forgifter fiender. Gjenntar 10% av den opprinnelige skaden per sekund i 30 sekunder
-explosivearrow=§iEksplosiv pil:§0 Styrt pil som forårsaker en magisk eksplosjon med lik skade
-iceball=§aIskule:§0 Magisk prosjektil som eksploderer og fryser mobs i 5 sekunder, og fryser dem også helt i 1 sekund
-fireball=§iIldkule:§0 Magisk prosjektil som eksploderer og antenner mobs som gjentar 20% av deres opprinnelige skade per sekund i 5 sekunder
+// Projectielen
+lethalarrow=§hDodelijke pijl:§0 Geleide pijl die een kritieke treffer garandeert
+venomarrow=§bGifpijl:§0 Geleide pijl die vijanden vergiftigt. Herhaalt 10% van de oorspronkelijke schade per seconde gedurende 30 seconden
+explosivearrow=§iExplosieve pijl:§0 Geleide pijl die een magische explosie met gelijke schade veroorzaakt
+iceball=§aIJsbal:§0 Magisch projectiel dat explodeert en mobs 5 seconden bevriest, en ze ook 1 seconde volledig bevriest
+fireball=§iVuurbal:§0 Magisch projectiel dat explodeert en mobs in brand steekt en 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden herhaalt
 
-// Tilkallinger
-dancingflame=§bDansende Flamme:§0 Tilkalling som fungerer som et prosjektil. Antenner fiender ved treff. Gjenntar 20% av den opprinnelige skaden per sekund i 5 sekunder
+// Oproepen
+dancingflame=§bDansende Vlam:§0 Oproep die fungeert als een projectiel. Steekt vijanden in brand bij een treffer. Herhaalt 20% van de oorspronkelijke schade per seconde gedurende 5 seconden
 
-// Skadbare Tilkallinger
-necromancerskeleton=§bSkjelett:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nMister 2% av Total Helse per sekund
-necromancerskeletonwarrior=§bSkjelettkriger:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighet: 60\nMister 2% av Total Helse per sekund
-necromancerboneslinger=§bBeinkaster:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 avstand)\nHastighet: 60\nMister 2% av Total Helse per sekund
-
-// Tranformations
-necromancerlich=§bLich:§0 Udød transformasjon\n\nKan ikke bruke gjenstander\n+100% Skade Modtaget\n\nTrykk på [input=trinketability] for å skyte et bein som gir §i[[<strength>]] Tilkallerskade§0
-
+// Beschadigbare Oproepen
+necromancerskeleton=§bSkelet:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
+necromancerskeletonwarrior=§bSkeletkrijger:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
+necromancerboneslinger=§bBottenwerper:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
+bee=§9Bij:§0 Beschadigbare oproep\nGezondheid: 1\nSchade: §a[[<playerlevel> + <intelligence>]]§0\nSnelheid: 40\n\nSterft bij aanval, maar vergiftigt het doelwit voor 20% van de aangerichte schade per seconde gedurende 10 seconden
+dryadsapling=§9Dryad Sapling:§0 Beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nSnelheid: 65\nVerliest 2% van de Totale Gezondheid per seconde
 
 [item]
-scrollofoblivion=Glemselsrull
-ringsbox=Ringboks
+scrollofoblivion=Rol van vergetelheid
+ringsbox=Ringendoos
 
-// Attributtringer
-endurancewoodring=Utholdenhetstrering
-endurancecopperring=Utholdenhetskobberring
-enduranceironring=Utholdenhetsjernring
-endurancegoldring=Utholdenhetsgullring
+// Attribuutringen
+endurancewoodring=Houten ring van uithoudingsvermogen
+endurancecopperring=Koperen ring van uithoudingsvermogen
+enduranceironring=IJzeren ring van uithoudingsvermogen
+endurancegoldring=Gouden ring van uithoudingsvermogen
 
-speedwoodring=Hastighetstrering
-speedcopperring=Hastighetskobberring
-speedgoldring=Hastighetsgullring
-speedironring=Hastighetsjernring
+speedwoodring=Houten ring van snelheid
+speedcopperring=Koperen ring van snelheid
+speedgoldring=Gouden ring van snelheid
+speedironring=IJzeren ring van snelheid
 
-strengthwoodring=Styrketrering
-strengthcopperring=Styrkekobberring
-strengthgoldring=Styrkegullring
-strengthironring=Styrkejernring
+strengthwoodring=Houten ring van kracht
+strengthcopperring=Koperen ring van kracht
+strengthgoldring=Gouden ring van kracht
+strengthironring=IJzeren ring van kracht
 
-intelligencewoodring=Intelligenstrering
-intelligencecopperring=Intelligenskobberring
-intelligencegoldring=Intelligensgullring
-intelligenceironring=Intelligensjernring
+intelligencewoodring=Houten ring van intelligentie
+intelligencecopperring=Koperen ring van intelligentie
+intelligencegoldring=Gouden ring van intelligentie
+intelligenceironring=IJzeren ring van intelligentie
 
-gracetrering=Nådetrering
-gracecopperring=Nådekobberring
-graceironring=Nådejernring
-gracegoldring=Nådegullring
+gracewoodring=Houten ring van gratie
+gracecopperring=Koperen ring van gratie
+graceironring=IJzeren ring van gratie
+gracegoldring=Gouden ring van gratie
 
 
 [itemtooltip]
-Hellig skade: <value>
-scrollofoblivion=Gir 2 tilbakestillingspoeng
-ringsboxtip=Kan lagre attributtringer
+Heilige schade: <value>
+scrollofoblivion=Geeft 2 resetpunten
+ringsboxtip=Kan attribuutringen opslaan
 
 
 [message]
 xp=XP
-levelup=Nivå opp!
-dodge=Unnvik!
+levelup=Niveau omhoog!
+dodge=Ontwijken!
 
-newmobkill=Du fikk <exp> erfaring for å drepe <mob> for første gang
-newlevel=Gratulerer! Du har nådd nivå <level>. Trykk [input=openrpgmenu] for å åpne RPG-menyen
+newmobkill=Je hebt <exp> ervaring gekregen voor het voor de eerste keer doden van <mob>
+newlevel=Gefeliciteerd! Je hebt niveau <level> bereikt. Druk op [input=openrpgmenu] om het RPG-menu te openen
 
-noupdatesincombat=Du kan ikke endre attributter, klasser eller ferdigheter under kamp
-noactiveskill=Du har ikke lenger den aktive ferdigheten, nivå den opp igjen hvis du vil bruke den
+noupdatesincombat=Je kunt je attributen, klassen of vaardigheden niet wijzigen tijdens een gevecht
+noactiveskill=Je hebt die actieve vaardigheid niet meer, level hem opnieuw als je hem wilt gebruiken
 
-equipfirst=Du må først utstyre en aktiv ferdighet i dette sporet
-activeskillinuse=Denne ferdigheten er allerede i bruk
-anotheractiveskillinuse=Du har allerede en annen ferdighet i bruk
-incooldown=På nedkjøling
-notenoughstamina=Ikke nok utholdenhet
-notarget=Det er ingen mål i nærheten
-nograbbableobject=Det er ingen gripbar gjenstand foran deg
-notargetfollower=Det er ingen mål-tilkallinger i nærheten
-nodeathplayers=Ingen døde spillere kan gjenopplives på dette nivået
+equipfirst=Je moet eerst een actieve vaardigheid in dit slot uitrusten
+activeskillinuse=Deze vaardigheid is al in gebruik
+anotheractiveskillinuse=Je hebt al een andere vaardigheid in gebruik
+incooldown=Afkoelen
+notenoughstamina=Niet genoeg uithoudingsvermogen
+canotusemounted=Kan niet gebruikt worden te paard of getransformeerd
+
+notarget=Er zijn geen doelen in de buurt
+nograbbableobject=Er is geen grijpbaar object voor je
+notargetfollower=Er is geen doel-oproepen in de buurt
+nodeathplayers=Op dit niveau kunnen geen dode spelers worden herrezen
 
 
 [ui]
-menutitle=RPG-MOD av Save
-attributes=Attributter
-activeskills=Aktive ferdigheter
-classes=Klasser
+menutitle=RPG MOD door Save
+attributes=Attributen
+activeskills=Actieve vaardigheden
+classes=Klassen
 
-level=Nivå <level>
-classlevel=<class> nivå <level>
+level=Niveau <level>
+classlevel=<class> niveau <level>
 lvl=Niv <level>
-eachlevel=Hvert nivå gir:
+eachlevel=Elk niveau biedt:
 experience=XP: <exp> / <nextexp>
-totalexperience=Total XP: <exp>
+totalexperience=Totaal XP: <exp>
+onlytranformed=Kun når transformert
 
-resetpoints=Tilbakestillingspoeng: <points>
-attrpoints=Attributtpoeng: <points>
-classpoints=Klassepoeng: <points>
-passivepoints=Passive poeng: <points>
-activeskillpoints=Aktive ferdighetspoeng: <points>
+resetpoints=Resetpunten: <points>
+attrpoints=Attribuutpunten: <points>
+classpoints=Klassenpunten: <points>
+passivepoints=Passieve punten: <points>
+activeskillpoints=Aktieve vaardigheidspunten: <points>
 
-activeskillsuse=Denne moden gjør uttrykkshjulet (T-tasten som standard) om til hjulet for aktive ferdigheter
-activeskillsusetip1=Det anbefales å endre kontrollen for uttrykkshjulet til en lett tilgjengelig tast
-activeskillsusetip2=Du kan også tilordne en tast til hvert aktive ferdighetsspor (ideelt for ferdigheter med lav nedkjøling)
-activeskillsequipinstructions=Klikk på et spor for å utstyre en aktiv ferdighet. Du kan ikke fjerne en aktiv ferdighet som er på nedkjøling
-noactiveskills=Du har ingen aktive ferdigheter. Lås dem opp gjennom klassene
+activeskillsuse=Deze mod verandert het expressiewiel (standaard T-toets) in het actieve vaardighedenwiel
+activeskillsusetip1=Het wordt aanbevolen om de bediening van het expressiewiel te wijzigen in een gemakkelijk toegankelijke toets
+activeskillsusetip2=Je kunt ook een toets toewijzen aan elk actief vaardigheidsslot (ideaal voor vaardigheden met een lage afkoeling)
+activeskillsequipinstructions=Klik op een slot om een actieve vaardigheid uit te rusten. Je kunt een actieve vaardigheid niet uitrusten tijdens het afkoelen
+noactiveskills=Je hebt geen actieve vaardigheden. Ontgrendel ze via de klassen
 
-activeskillcooldown=§9Nedkjøling: <seconds>s
-activeskillcooldownmod=§9Nedkjøling: [[<seconds> <sign> <mod> x <skilllevel>]]s
-requiredclasslevel=§bKlassenivå <level> kreves
-requiredactiveskill=§bKrever '<skill>' nivå <level>
-maxlevel=§aMaks nivå: <level>
+activeskillcooldown=§9Afkoelen: <seconds>s
+activeskillcooldownmod=§9Afkoelen: [[<seconds> <sign> <mod> x <skilllevel>]]s
+requiredclasslevel=§bKlasseniveau <level> vereist
+requiredactiveskill=§bVereist '<skill>' niveau <level>
+maxlevel=§aMaximaal niveau: <level>
 
-clicktoseebase=[input=mouse1] for å se base
-clicktoseelevel=[input=mouse1] for å se nivå <level>
+clicktoseebase=[input=mouse1] om basis te zien
+clicktoseelevel=[input=mouse1] om niveau <level> te zien
 
-classlevelseparation=- Klassenivå <level> -
+classlevelseparation=- Klasseniveau <level> -
 
 inuse=I bruk
 
 upcomingclass=§6Kommende klasse\n§9Denne klassen er for øyeblikket under utvikling\nog vil være tilgjengelig i en fremtidig oppdatering
 
-addcolumn=Legg til kolonne
-removecolumn=Fjern kolonne
+addcolumn=Kolom toevoegen
+removecolumn=Kolom verwijderen
 
-rate=Vurder RPG Mod!
+rate=Beoordeel RPG Mod!
 
 
 [controls]
-openrpgmenu=Åpne RPG-meny
-activeskillslot1=Aktiv ferdighetsplass 1
-activeskillslot2=Aktiv ferdighetsplass 2
-activeskillslot3=Aktiv ferdighetsplass 3
-activeskillslot4=Aktiv ferdighetsplass 4
-activeskillslot5=Aktiv ferdighetsplass 5
-activeskillslot6=Aktiv ferdighetsplass 6
+openrpgmenu=Open RPG-menu
+activeskillslot1=Aktief vaardigheidsslot 1
+activeskillslot2=Aktief vaardigheidsslot 2
+activeskillslot3=Aktief vaardigheidsslot 3
+activeskillslot4=Aktief vaardigheidsslot 4
+activeskillslot5=Aktief vaardigheidsslot 5
+activeskillslot6=Aktief vaardigheidsslot 6
+transformationability1=Transformasjonsferdighet 1
+transformationability2=Transformasjonsferdighet 2

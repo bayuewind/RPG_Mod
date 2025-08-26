@@ -13,6 +13,17 @@ public class RPGRecipes {
                         new Ingredient("ironbar", 1)
                 )
         );
+
+        AphRecipes.addCraftingList("lifespinel", RecipeTechRegistry.FALLEN_WORKSTATION,
+                AphRecipes.AphCraftingRecipe.showBefore("scrollofoblivion", 1,
+                        new Ingredient("upgradeshard", 50),
+                        new Ingredient("recallscroll", 2)
+                ),
+                AphRecipes.AphCraftingRecipe.showAfter("scrollofoblivion", 1,
+                        new Ingredient("upgradeshard", 50),
+                        new Ingredient("travelscroll", 1)
+                )
+        );
     }
 
 }

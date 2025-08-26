@@ -139,7 +139,7 @@ public class Sanctuary extends SimpleLevelEventActiveSkill {
                                             ab.getGndData().setFloat("healthRegen", healthRegen);
                                             mob.buffManager.addBuff(ab, true);
                                         } else if (MobData.isWeakToHoly(mob)) {
-                                            mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 100, null), true);
+                                            mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 100, null), true);
                                         }
                                     }
                             );
@@ -172,7 +172,8 @@ public class Sanctuary extends SimpleLevelEventActiveSkill {
     }
 
     @Override
-    public void registerSkillBuffs() {
+    public void registry() {
+        super.registry();
         BuffRegistry.registerBuff(getBuffStringID(), new ActiveSkillBuff() {
             @Override
             public void init(ActiveBuff activeBuff, BuffEventSubscriber buffEventSubscriber) {

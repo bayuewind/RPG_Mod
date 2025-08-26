@@ -8,7 +8,6 @@ import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.EquipActiveSkillComponent;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerClassData;
 
 import java.awt.*;
@@ -23,8 +22,6 @@ public class ActiveSkillsEntry extends MenuEntry {
     @Override
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container) {
         super.updateContent(mainForm, entryForm, container);
-
-        EquippedActiveSkill[] newEquippedActiveSkills = playerData.equippedActiveSkills.clone();
 
         entryForm.addComponent(new FormLocalLabel(
                 "ui", "activeskillsuse",
@@ -88,9 +85,9 @@ public class ActiveSkillsEntry extends MenuEntry {
                 int y = spacingY + row * (itemHeight + spacingY);
 
                 equipableActiveSkill.component = activeSkills.addComponent(
-                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, newEquippedActiveSkills, activeSkillLevel, () -> {
+                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, activeSkillLevel, (newEquippedActiveSkills) -> {
                             for (EquipableActiveSkill skill : equipableActiveSkills) {
-                                skill.component.update(newEquippedActiveSkills);
+                                skill.component.update(newEquippedActiveSkills, playerData);
                             }
                             container.updateEquippedActiveSkills.runAndSend(newEquippedActiveSkills);
                         })

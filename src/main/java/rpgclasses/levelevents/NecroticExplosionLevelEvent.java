@@ -67,7 +67,7 @@ public class NecroticExplosionLevelEvent extends ExplosionEvent implements Attac
 
     @Override
     protected void playExplosionEffects() {
-        SoundManager.playSound(GameResources.explosionLight, SoundEffect.effect(this.x, this.y).volume(1.5F).pitch(1F));
+        SoundManager.playSound(GameResources.explosionLight, SoundEffect.effect(this.x, this.y).volume(1F).pitch(1F));
         this.level.getClient().startCameraShake(this.x, this.y, 200, 40, 1F, 0.8F, true);
     }
 

@@ -12,6 +12,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
+import rpgclasses.buffs.IgnitedBuff;
 
 import java.awt.*;
 
@@ -37,7 +38,7 @@ public class ExplosiveMobExplosionEvent extends ExplosionEvent implements Attack
 
     @Override
     protected void playExplosionEffects() {
-        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(2.5F).pitch(1.5F));
+        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(1F).pitch(1.5F));
         this.level.getClient().startCameraShake(this.x, this.y, 300, 40, 3.0F, 3.0F, true);
     }
 
@@ -73,5 +74,6 @@ public class ExplosiveMobExplosionEvent extends ExplosionEvent implements Attack
         super.onMobWasHit(mob, distance);
         float duration = distance <= 32 ? 10F : Math.max(10F / (distance / 32), 2F);
         mob.buffManager.addBuff(new ActiveBuff(BuffRegistry.Debuffs.BROKEN_ARMOR, mob, duration, null), true);
+        IgnitedBuff.apply(getAttackOwner(), mob, damage.damage * 0.2F, 10F, false);
     }
 }

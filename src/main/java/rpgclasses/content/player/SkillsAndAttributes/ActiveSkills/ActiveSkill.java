@@ -101,12 +101,6 @@ abstract public class ActiveSkill extends Skill {
         texture = GameTexture.fromFile("activeskills/" + stringID);
     }
 
-    public void registerSkillBuffs() {
-    }
-
-    public void registerSkillLevelEvents() {
-    }
-
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         float consumedStamina = consumedStamina(player);
         if (consumedStamina > 0) {
@@ -122,10 +116,14 @@ abstract public class ActiveSkill extends Skill {
 
         int addedCooldown = enoughMana ? 0 : getCooldown(activeSkillLevel);
 
-        long useTime = player.getTime() + addedCooldown;
+        long useTime = player.getTime();
         for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-            if (equippedActiveSkill.activeSkill == this) {
-                equippedActiveSkill.lastUse = equippedActiveSkill.activeSkill.isInUseSkill() && !equippedActiveSkill.isInUse() ? -100 : useTime;
+            if (equippedActiveSkill.getActiveSkill() == this) {
+                if (equippedActiveSkill.getActiveSkill().isInUseSkill() && !equippedActiveSkill.isInUse()) {
+                    equippedActiveSkill.setInUse();
+                } else {
+                    equippedActiveSkill.startCooldown(useTime, addedCooldown);
+                }
             }
         }
     }
@@ -227,5 +225,9 @@ abstract public class ActiveSkill extends Skill {
                 player.x + GameMath.cos(angle) * distance,
                 player.y + GameMath.sin(angle) * distance
         );
+    }
+
+    public int getLevel(PlayerData playerData) {
+        return playerData.getClassesData()[playerClass.id].getActiveSkillLevels()[id];
     }
 }

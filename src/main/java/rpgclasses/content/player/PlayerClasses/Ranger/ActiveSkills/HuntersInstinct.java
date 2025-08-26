@@ -60,7 +60,7 @@ public class HuntersInstinct extends SimpleBuffActiveSkill {
         public void onDodge(ActiveBuff activeBuff, MobBeforeHitEvent event) {
             Mob mob = event.attacker.getFirstAttackOwner();
             if (mob != null) {
-                ActiveBuff ab = new ActiveBuff(RPGBuffs.Marked, mob, 5000, null);
+                ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, mob, 5000, null);
                 ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
                 mob.addBuff(ab, activeBuff.owner.isServer());
             }

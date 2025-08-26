@@ -25,6 +25,8 @@ holycritdamage=<mod>% pyhää kriittistä vahinkoa
 holyeffect=<mod>% pyhää vaikutusta
 holyabilityspeed=<mod>% pyhän kyvyn nopeutta
 
+transformationdelay=<mod>% muodonmuutoksen viive
+noskills=Ei voi käyttää taitoja
 
 [stats]
 holy_damage=Pyhä vahinko
@@ -166,6 +168,16 @@ sanctifiedmind=Pyhitetty mieli
 sanctifiedarmor=Pyhitetty panssari
 radiantexpansion=Säteilevä laajennus
 
+// Druid
+quickshift=Nopea vaihto
+feralinstinct=Villieläimen vaisto
+ironfur=Rautaturkki
+naturesfavor=Luonnon suosio
+beastpace=Pedon askel
+primalburst=Alkukantainen purkaus
+elementalguard=Elementaalivartija
+phoenixspirit=Feeniksin henki
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden �
 
 // Velho
 manapower=Jokainen taso antaa:\n\n+1% taikavahinkoa jokaista 10% käyttämätöntä manaa kohden
-flamingsteps=Kun juokset aktiivisen helyen kanssa, jätät maahan liekkejä\nLiekit sytyttävät viholliset tuleen 2 sekunniksi, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 sekunnissa
+flamingsteps=Kun juokset aktiivisen helyen tai muodonmuutoksen kanssa, jätät maahan liekkejä\nLiekit sytyttävät viholliset tuleen 2 sekunniksi, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 sekunnissa
 stormbound=Joka §a[[9 - 0.5 x <skilllevel>]] sekunti§0, salama iskee satunnaiseen viholliseen näkökentässäsi\nTekee §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaa 1 sekunniksi
 arcaneshield=Kilpi, joka estää yhden osuman\nKilpi palautuu §a[[20 - <skilllevel>]] sekunnin§0 kuluttua käytöstä
 fireshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat räjähdyksen, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nja sytyttää mobit tuleen, toistaen 20% niiden alkuperäisestä vahingosta sekunnissa 5 sekunnin ajan\nKilpi palautuu 26 sekunnin kuluttua käytöstä
@@ -191,8 +203,8 @@ iceshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat jää-auran
 necroticpower=Kaikki taika- ja kutsujahyökkäyksesi myrkyttävät 5% niiden vahingosta §a[[2 x <skilllevel>]] sekunnin§0 ajan, kunhan ne eivät ole kutsun aiheuttamia
 darkmagic=Kutsujan vahinkobonukset vaikuttavat taikavahinkoon §a[[5 x <skilllevel>]]%
 necroticarmy=Voitetut vihamieliset viholliset muuttuvat §bLuurangoiksi§0, joilla on §a-[[100 - 3 x <skilllevel>]]%§0 terveyttä ja vahinkoa
-darksummons=Tee §a+[[10 x <skilllevel>]]%§0 kutsujan vahinkoa myrkytetyille vihollisille
-lifeleech=Palauttaa §a[[<skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
+darksummons=Tee §a+[[8 x <skilllevel>]]%§0 kutsujan vahinkoa myrkytetyille vihollisille
+lifeleech=Palauttaa §a[[0.1 x <skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
 necroticremains=Kun nekroottinen kutsu kuolee, se räjähtää ja tekee §i[[0.1 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille ja myrkyttää heidät 20% vahingosta sekunnissa 10 sekunnin ajan
 endlesslegion=Joka 4. tämän taidon taso saat +1 maksimikutsua
 lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo §bLich§0\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee §bLich§0 (luuranko)
@@ -204,6 +216,11 @@ empoweredhealing=Kun parannat maagisesti itsesi tai liittolaisen, lisää heidä
 sanctifiedmind=Maaginen parannus palauttaa myös manaa, joka vastaa §a[[5 x <skilllevel>]]%§0 tehdystä parannuksesta
 sanctifiedarmor=Maaginen parannus palauttaa myös sietokykyä, joka vastaa §a[[2 x <skilllevel>]]%§0 tehdystä parannuksesta
 radiantexpansion=Kun parannat maagisesti itsesi tai liittolaisen, tee §a[[5 x <skilllevel>]]%§0 parannuksesta pyhänä vahinkona parannetun kohteen lähellä oleville vihollisille
+
+// Druid
+naturesfavor=Saat +[[<skilllevel>]] terveyden palautumista sekunnissa seisoessasi ruohikolla
+primalburst=Lisää vahinkoa ja nopeutta [[6 x <skillevel>]]% ensimmäisten 5 sekunnin ajan muodonmuutoksen jälkeen
+phoenixspirit=Vaatii vähintään 4 pistettä toimiakseen:\n\nJos kuolisit muodonmuutoksen aikana aktiivisen taidon kanssa, selviydyt sen sijaan §a[4 + 8 x <skilllevel>]]%§0 terveydellä, ja kyseinen taito asetetaan 1 tunnin jäähtymisaikaan\n\nEi laukea, jos sinulla on jo vähintään §a[[0.25 x <skilllevel> ↓]] muodonmuutostaito(ja)§0 yli 1 minuutin jäähtymisajalla
 
 
 [activeskills]
@@ -240,7 +257,7 @@ huntersinstinct=Metsästäjän vaisto
 arrowstorm=Nuolimyrsky
 
 // Velho
-arcaneoverload=Salaperäinen ylikuormitus
+arcaneload=Salaperäinen ylikuormitus
 firedance=Tulitanssi
 iceball=Jääpallo
 zap=Sähköisku
@@ -279,6 +296,14 @@ sanctuary=Pyhäkkö
 divineintervention=Jumalallinen väliintulo
 resurrection=Ylösnousemus
 wrathoflight=Valon viha
+
+// Druid
+wolftransformation=Suden muodonmuutos
+queenbeetransformation=Kuningatarmehiläisen muodonmuutos
+beartransformation=Karhun muodonmuutos
+foxtransformation=Ketun muodonmuutos
+rattransformation=Rotan muodonmuutos
+treanttransformation=Puun muodonmuutos
 
 
 [activeskillsdesc]
@@ -354,6 +379,15 @@ resurrection=Herätä viimeisin kuollut pelaajaliittolainen samalla saarella §a
 wrathoflight=Kutsu valopylväs lähimpään viholliseen, tehden §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] pyhää vahinkoa§0 sekunnissa 5 sekunnin ajan alueella\nEpäkuolleet ja demoniset mobit sisällä ovat §7Rajoitettuja§0\nKuluttaa §a[[40 + 8 x <skilllevel>]] manaa§0
 
 
+// Druid
+wolftransformation=Kestää 3 sekuntia muuttua Sudeksi\n\nLiikkumisnopeus: 60\n\nPaina [input=transformationability1] syöksyä ja purra: Hyppää eteenpäin ja pure, tehden §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] lähitaisteluvahinkoa§0\n\nPaina [input=transformationability2] haukkua: Pakota lähellä olevat viholliset kohdistamaan hyökkäyksensä sinuun 2 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
+queenbeetransformation=Kestää 2 sekuntia muuttua Kuningatarmehiläiseksi\n\nLiikkumisnopeus: 30\n-50% Vihollisen havaitseminen\n§6+1000% Saapuva vahinko§0\n\nPaina [input=transformationability1] ampua hunajaa: Tee §i[[2 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0\n\nPaina [input=transformationability2] kutsua §9Mehiläinen§0 jopa §a[[2 x <skilllevel>]]§0\n\nPidä [input=trinketability] painettuna komentaaksesi mehiläisiäsi hyökkäämään
+beartransformation=Kestää 4 sekuntia muuttua Karhuksi\n\nLiikkumisnopeus: 20\n-50% Saapuva vahinko\n\nPaina [input=transformationability1] maaiskuun: Aluehyökkäys, joka tekee §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 §a[[0.5 x <skilllevel>]] sekunniksi§0\n\nPaina [input=transformationability2] murista: Saa lähellä olevat viholliset pakenemaan 1 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
+foxtransformation=Kestää 3 sekuntia muuttua Ketuksi\n\nLiikkumisnopeus: 50\n§6+50% Saapuva vahinko§0\n\nPaina [input=transformationability1] ampua tulipalloja: Tee §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\n\nPaina [input=transformationability2] kutsua §bTanssiva liekki§0 jopa §a[[2 + <skilllevel>]]§0, jokainen tekee saman vahingon kuin tulipallo\n\nPaina [input=trinketability] syöksyä\n§!Vulpes Nova fox!
+rattransformation=Kestää 2 sekuntia muuttua Rotaksi\n\nLiikkumisnopeus: 25\n-50% Vihollisen havaitseminen\nAntaa maksimaalisen väistömahdollisuuden\n§6+1000% Saapuva vahinko§0\n\nPaina [input=transformationability1] purra: Tekee §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] lähitaisteluvahinkoa§0 ja myrkyttää kohteen 100% tehdystä vahingosta sekunnissa 10 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
+treanttransformation=Kestää 4 sekuntia muuttua Puuksi\n\nLiikkumisnopeus: 0\n-§a[50 + 5 <skilllevel>]%§0 Saapuva vahinko\nViholliset jättävät sinut huomiotta, jos olet piilossa 3 sekunnin ajan\n\nPaina [input=transformationability1] paljastettuna ampuaksesi satunnaisia siemeniä: Tee §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0 satunnaisilla vaikutuksilla\n\nPaina [input=transformationability2] kutsua §9Dryad Sapling§0\n\nPidä [input=trinketability] painettuna paljastaaksesi ja sprintataksesi, jos liikut
+
+
 [skillsdesckeys]
 skilllevel=Taitotaso
 playerlevel=Pelaajan taso
@@ -396,10 +430,8 @@ dancingflame=§bTanssiva liekki:§0 Kutsu, joka toimii kuin ammus. Sytyttää vi
 necromancerskeleton=§bLuuranko:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
 necromancerskeletonwarrior=§bLuurankosoturi:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nVahinko: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
 necromancerboneslinger=§bLuunheittäjä:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 etäisyys)\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
-
-// Tranformations
-necromancerlich=§bLich:§0 Epäkuollut muodonmuutos\n\nEi voi käyttää esineitä\n+100% Vahingonotto\n\nPaina [input=trinketability] ampuaksesi luun, joka tekee §i[[<strength>]] kutsujan vahinkoa§0
-
+bee=§9Mehiläinen:§0 Vahingoitettavissa oleva kutsu\nTerveys: 1\nVahinko: §a[[<playerlevel> + <intelligence>]]§0\nNopeus: 40\n\nKuolee hyökätessään, mutta myrkyttää kohteen 20% tehdystä vahingosta sekunnissa 10 sekunnin ajan
+dryadsapling=§9Dryad Sapling:§0 Vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nNopeus: 65\nMenettää 2% kokonaisterveydestään sekunnissa
 
 [item]
 scrollofoblivion=Unohduksen käärö
@@ -425,7 +457,6 @@ intelligencewoodring=Älykkyyspuusormus
 intelligencecopperring=Älykkyyskuparisormus
 intelligencegoldring=Älykkyyskultasormus
 intelligenceironring=Älykkyysrautasormus
-
 
 gracewoodring=Sulopuusormus
 gracecopperring=Sulokuparisormus
@@ -455,6 +486,8 @@ activeskillinuse=Tämä taito on jo käytössä
 anotheractiveskillinuse=Sinulla on jo toinen taito käytössä
 incooldown=Jäähtymässä
 notenoughstamina=Ei tarpeeksi kestävyyttä
+canotusemounted=Ei voi käyttää ratsastettuna tai muodonmuutettuna
+
 notarget=Lähellä ei ole kohteita
 nograbbableobject=Edessäsi ei ole tartuttavaa esinettä
 notargetfollower=Lähellä ei ole kohdekutsuja
@@ -473,6 +506,7 @@ lvl=T <level>
 eachlevel=Jokainen taso antaa:
 experience=XP: <exp> / <nextexp>
 totalexperience=Kokonais-XP: <exp>
+onlytranformed=Vain muodonmuutettuna
 
 resetpoints=Nollauspisteet: <points>
 attrpoints=Ominaisuuspisteet: <points>
@@ -515,3 +549,5 @@ activeskillslot3=Aktiivisen taidon paikka 3
 activeskillslot4=Aktiivisen taidon paikka 4
 activeskillslot5=Aktiivisen taidon paikka 5
 activeskillslot6=Aktiivisen taidon paikka 6
+transformationability1=Muodonmuutostaito 1
+transformationability2=Muodonmuutostaito 2

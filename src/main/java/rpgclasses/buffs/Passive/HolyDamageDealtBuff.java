@@ -126,7 +126,7 @@ public class HolyDamageDealtBuff extends PassiveBuff implements AphMagicHealingB
     }
 
     public static ActiveBuff getActiveBuff(Mob mob) {
-        return mob.buffManager.getBuff(RPGBuffs.PASSIVES.HolyDamage);
+        return mob.buffManager.getBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE);
     }
 
     public static void addDamageDealt(ActiveBuff activeBuff, int amount, boolean sendPacket) {

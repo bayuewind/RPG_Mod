@@ -12,7 +12,12 @@ import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.mobs.summons.damageable.NecromancerTombMob;
 import rpgclasses.mobs.summons.passive.RangerWolfMob;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RPGResources {
+
+    public static Map<String, GameTexture> mobsTexture = new HashMap<>();
 
     public static GameTexture emptyActiveSkill_texture;
 
@@ -124,9 +129,13 @@ public class RPGResources {
 
     public static class SOUNDS {
         public static GameSound Zap;
+        public static GameSound Bark;
+        public static GameSound Rat;
 
         public static void initSoundResources() {
             Zap = GameSound.fromFile("zap");
+            Bark = GameSound.fromFile("bark");
+            Rat = GameSound.fromFile("rat");
         }
     }
 }

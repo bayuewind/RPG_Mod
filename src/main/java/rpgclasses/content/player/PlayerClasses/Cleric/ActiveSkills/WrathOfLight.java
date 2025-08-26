@@ -172,7 +172,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
                             mob -> {
                                 mob.isServerHit(new GameDamage(RPGDamageType.HOLY, damage), targetX, targetY, -20, owner);
                                 if (MobData.isWeakToHoly(mob)) {
-                                    mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 1100, null), true);
+                                    mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 1100, null), true);
                                 }
                             }
                     );

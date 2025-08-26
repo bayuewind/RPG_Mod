@@ -21,9 +21,15 @@ import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
 import net.bytebuddy.asm.Advice;
 import rpgclasses.RPGConfig;
+import rpgclasses.buffs.Interfaces.TransformationClassBuff;
+import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.mobs.mount.SkillTransformationMountMob;
+import rpgclasses.mobs.mount.TransformationMountMob;
+import rpgclasses.packets.UpdateClientEquippedActiveSkillsPacket;
 
 import java.util.HashSet;
 
@@ -120,6 +126,27 @@ public class MobPatches {
                             playerData.modExpSendPacket(serverClient, finalExp);
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @ModMethodPatch(target = Mob.class, name = "mount", arguments = {Mob.class, boolean.class, float.class, float.class, boolean.class})
+    public static class mount {
+        @Advice.OnMethodExit
+        public static void onExit(@Advice.This Mob This, @Advice.Argument(0) Mob mount) {
+            if (This.isPlayer) {
+                PlayerMob player = (PlayerMob) This;
+                PlayerData playerData = PlayerDataList.getPlayerData(player);
+                EquippedActiveSkill equippedActiveSkill = playerData.getInUseActiveSkillSlot();
+
+                if (equippedActiveSkill != null && equippedActiveSkill.getActiveSkill() instanceof SimpleTranformationActiveSkill && (!(mount instanceof SkillTransformationMountMob) || !((SimpleTranformationActiveSkill) equippedActiveSkill.getActiveSkill()).getMobStringID().equals(mount.getStringID()))) {
+                    equippedActiveSkill.startCooldown(player.getTime(), equippedActiveSkill.getActiveSkill().getLevel(playerData));
+                    This.getServer().network.sendToAllClients(new UpdateClientEquippedActiveSkillsPacket(playerData));
+                }
+
+                if (mount instanceof TransformationMountMob) {
+                    TransformationClassBuff.apply(player);
                 }
             }
         }

@@ -87,7 +87,7 @@ public class UnholyGround extends SimpleLevelEventActiveSkill {
             super.init();
             this.hitsObjects = false;
             if (this.isClient()) {
-                SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(this.owner).volume(2F));
+                SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(this.owner).volume(1.5F));
             }
         }
 
@@ -124,7 +124,7 @@ public class UnholyGround extends SimpleLevelEventActiveSkill {
                     RPGUtils.getAllTargets(owner, range, null)
                             .forEach(
                                     mob -> {
-                                        mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 100, null), true);
+                                        mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 100, null), true);
                                         MagicPoisonBuff.apply(owner, mob, poisonDamage, 1000);
                                     }
                             );

@@ -25,6 +25,8 @@ holycritdamage=<mod>%神圣暴击伤害
 holyeffect=<mod>%神圣效果
 holyabilityspeed=<mod>%神圣技能速度
 
+transformationdelay=<mod>% 变身延迟
+noskills=无法使用技能
 
 [stats]
 holy_damage=神圣伤害
@@ -166,6 +168,16 @@ sanctifiedmind=圣化心智
 sanctifiedarmor=圣化护甲
 radiantexpansion=光辉扩张
 
+// Druid
+quickshift=快速切换
+feralinstinct=野性本能
+ironfur=铁皮
+naturesfavor=自然恩惠
+beastpace=野兽步伐
+primalburst=原始爆发
+elementalguard=元素守护
+phoenixspirit=凤凰之魂
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=狼伙伴会攻击被标记的敌人，造成 §i[[<playerlevel> +
 
 // 巫师
 manapower=每级提供：\n\n每 10% 未使用的法力，魔法伤害 +1%
-flamingsteps=当佩戴活动饰品奔跑时，你会在地上留下火焰\n火焰会点燃敌人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0
+flamingsteps=当佩戴活动饰品或变身时奔跑，你会在地上留下火焰\n火焰会点燃敌人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0
 stormbound=每 §a[[9 - 0.5 x <skilllevel>]] 秒§0，一道闪电会击中你视野内的一个随机敌人\n造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 1 秒
 arcaneshield=一个可以抵挡一次攻击的护盾\n护盾将在使用后 §a[[20 - <skilllevel>]] 秒§0 后恢复
 fireshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一次爆炸，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n并点燃生物，在 5 秒内每秒重复其原始伤害的 20%\n护盾将在使用后 26 秒后恢复
@@ -191,8 +203,8 @@ iceshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一�
 necroticpower=你的所有魔法和召唤师攻击都会在§a[[2 x <skilllevel>]]秒§0内造成其伤害的5%的毒素伤害，只要它们不是由召唤物造成的
 darkmagic=召唤师伤害加成会影响魔法伤害§a[[5 x <skilllevel>]]%
 necroticarmy=被击败的敌对敌人将变成§b骷髅§0，其生命值和伤害为§a-[[100 - 3 x <skilllevel>]]%§0
-darksummons=对中毒的敌人造成§a+[[10 x <skilllevel>]]%§0的召唤师伤害
-lifeleech=将造成的召唤师伤害的§a[[<skilllevel>]]%§0恢复为生命值
+darksummons=对中毒的敌人造成§a+[[8 x <skilllevel>]]%§0的召唤师伤害
+lifeleech=将造成的召唤师伤害的§a[[0.1 x <skilllevel>]]%§0恢复为生命值
 necroticremains=当一个亡灵召唤物死亡时，它会爆炸，对附近的敌人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法伤害§0，并在10秒内每秒对它们造成20%的伤害
 endlesslegion=此技能每升4级，你将获得+1最大召唤物
 lichborn=当你死亡时，如果你还不是一个§b巫妖§0，你会存活下来并恢复§a[[10 x <skilllevel>]]%§0的生命值\n在接下来的§a[[120 - 6 x <skilllevel>]]秒§0内，你将成为一个§b巫妖§0（一个骷髅）
@@ -204,6 +216,11 @@ empoweredhealing=当你魔法治疗自己或盟友时，他们的伤害会在3�
 sanctifiedmind=魔法治疗还会恢复相当于治疗量§a[[5 x <skilllevel>]]%§0的法力值
 sanctifiedarmor=魔法治疗还会恢复相当于治疗量§a[[2 x <skilllevel>]]%§0的韧性
 radiantexpansion=当你魔法治疗自己或盟友时，对被治疗目标附近的敌人造成相当于治疗量§a[[5 x <skilllevel>]]%§0的神圣伤害
+
+// Druid
+naturesfavor=站在草地上时，每秒获得 +[[<skilllevel>]] 生命恢复
+primalburst=变身后的前 5 秒内，伤害和速度提高 [[6 x <skillevel>]]%
+phoenixspirit=至少需要 4 点才能生效：\n\n如果你在变身状态下使用主动技能死亡，你将以 §a[4 + 8 x <skilllevel>]]%§0 的生命值存活，并且该技能将进入 1 小时冷却\n\n如果你已经有至少 §a[[0.25 x <skilllevel> ↓]] 个变身技能§0 冷却时间超过 1 分钟，则不会触发
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=神圣干预
 resurrection=复活
 wrathoflight=光之怒
 
+// Druid
+wolftransformation=狼人变身
+queenbeetransformation=蜂后变身
+beartransformation=熊人变身
+foxtransformation=狐狸变身
+rattransformation=老鼠变身
+treanttransformation=树人变身
+
 
 [activeskillsdesc]
 
@@ -354,6 +379,15 @@ resurrection=在你所在的位置用他们最大生命值的§a[[10 x <skilllev
 wrathoflight=在最近的敌人身上召唤一道光柱，在区域内每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]神圣伤害§0，持续5秒\n里面的亡灵和恶魔生物被§7束缚§0\n消耗§a[[40 + 8 x <skilllevel>]]法力§0
 
 
+// Druid
+wolftransformation=需要 3 秒才能变身为狼\n\n移动速度：60\n\n按 [input=transformationability1] 进行冲刺撕咬：向前跳跃并撕咬，造成 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] 近战伤害§0\n\n按 [input=transformationability2] 进行吠叫：强制附近的敌人将攻击集中在你身上 2 秒\n\n按住 [input=trinketability] 进行冲刺
+queenbeetransformation=需要 2 秒才能变身为蜂后\n\n移动速度：30\n-50% 敌人侦测\n§6+1000% 受到伤害§0\n\n按 [input=transformationability1] 进行射击蜂蜜：造成 §i[[2 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0\n\n按 [input=transformationability2] 召唤 §9蜜蜂§0，最多 §a[[2 x <skilllevel>]] 只§0\n\n按住 [input=trinketability] 命令你的蜜蜂攻击
+beartransformation=需要 4 秒才能变身为熊\n\n移动速度：20\n-50% 受到伤害\n\n按 [input=transformationability1] 进行地面猛击：区域攻击，造成 §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] 近战伤害§0 并 §9眩晕§0 §a[[0.5 x <skilllevel>]] 秒§0\n\n按 [input=transformationability2] 进行咆哮：使附近的敌人逃跑 1 秒\n\n按住 [input=trinketability] 进行冲刺
+foxtransformation=需要 3 秒才能变身为狐狸\n\n移动速度：50\n§6+50% 受到伤害§0\n\n按 [input=transformationability1] 进行射击火球：造成 §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0\n\n按 [input=transformationability2] 召唤 §b舞动之焰§0，最多 §a[[2 + <skilllevel>]] 个§0，每个造成与火球相同的伤害\n\n按 [input=trinketability] 进行冲刺\n§!Vulpes Nova fox!
+rattransformation=需要 2 秒才能变身为老鼠\n\n移动速度：25\n-50% 敌人侦测\n获得最大闪避几率\n§6+1000% 受到伤害§0\n\n按 [input=transformationability1] 进行撕咬：造成 §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] 近战伤害§0 并使目标中毒，每秒造成 100% 的伤害，持续 10 秒\n\n按住 [input=trinketability] 进行冲刺
+treanttransformation=需要 4 秒才能变身为树人\n\n移动速度：0\n-§a[50 + 5 <skilllevel>]%§0 受到伤害\n如果隐藏 3 秒，敌人会忽略你\n\n按 [input=transformationability1] 在显形时射击随机种子：造成 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0，带有随机效果\n\n按 [input=transformationability2] 召唤 §9德鲁伊树苗§0\n\n按住 [input=trinketability] 显形并在移动时冲刺
+
+
 [skillsdesckeys]
 skilllevel=技能等级
 playerlevel=玩家等级
@@ -396,10 +430,7 @@ dancingflame=§b舞动之焰：§0 像射弹一样行动的召唤物。击中时
 necromancerskeleton=§b骷髅：§0 可受伤害的亡灵召唤物\n生命值：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n每秒损失总生命值的 2%
 necromancerskeletonwarrior=§b骷髅战士：§0 可受伤害的亡灵召唤物\n生命值：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n伤害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n每秒损失总生命值的 2%
 necromancerboneslinger=§b投骨者：§0 可受伤害的亡灵召唤物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320 距离）\n速度：60\n每秒损失总生命值的 2%
-
-// Tranformations
-extraskilldesc.necromancerlich=§b巫妖:§0 亡灵转变\n\n无法使用物品\n+100% 承受伤害\n\n按 [input=trinketability] 发射一根骨头，造成 §i[[<strength>]] 召唤师伤害§0
-
+bee=§9蜜蜂：§0 可受伤害的召唤物\n生命值：1\n伤害：§a[[<playerlevel> + <intelligence>]]§0\n速度：40\n\n攻击时死亡，但在 10 秒内每秒对目标造成 20% 的伤害\n德鲁伊树苗：§0 可受伤害的召唤物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n速度：65\n每秒损失总生命值的 2%
 
 [item]
 scrollofoblivion=遗忘卷轴
@@ -454,6 +485,8 @@ activeskillinuse=此技能已在使用中
 anotheractiveskillinuse=你已经有另一个技能在使用中
 incooldown=冷却中
 notenoughstamina=耐力不足
+canotusemounted=骑乘或变身时无法使用
+
 notarget=附近没有目标
 nograbbableobject=你面前没有可抓取的物体
 notargetfollower=附近没有目标召唤物
@@ -472,6 +505,7 @@ lvl=等 <level>
 eachlevel=每级提供：
 experience=经验值：<exp> / <nextexp>
 totalexperience=总经验值：<exp>
+onlytranformed=仅在变身时
 
 resetpoints=重置点：<points>
 attrpoints=属性点：<points>

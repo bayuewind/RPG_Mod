@@ -55,9 +55,9 @@ public class Intimidation extends SimpleBuffActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(0.5F));
+        SoundManager.playSound(GameResources.roar, SoundEffect.effect(player.x, player.y).volume(2F).pitch(0.5F));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(300, new Color(153, 0, 204))
+                new AphArea(300, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }

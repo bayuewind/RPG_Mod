@@ -37,7 +37,7 @@ public class GlacialMobExplosionEvent extends ExplosionEvent implements Attacker
 
     @Override
     protected void playExplosionEffects() {
-        SoundManager.playSound(GameResources.iceHit, SoundEffect.effect(this.x, this.y).volume(2.5F).pitch(1.5F));
+        SoundManager.playSound(GameResources.iceHit, SoundEffect.effect(this.x, this.y).volume(2F).pitch(1.5F));
     }
 
     @Override

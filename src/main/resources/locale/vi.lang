@@ -354,6 +354,15 @@ resurrection=Hồi sinh đồng minh người chơi đã chết trên cùng mộ
 wrathoflight=Triệu hồi một cột ánh sáng lên kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Sát thương thần thánh§0 mỗi giây trong 5 giây trong khu vực\nMob Bất tử và Ma quỷ bên trong bị §7Hạn chế§0\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
+// Druid
+wolftransformation=Mất 3 giây để biến thành Sói\n\nTốc độ di chuyển: 60\n\nNhấn [input=transformationability1] để Cắn lao: Nhảy về phía trước và cắn, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Sát thương cận chiến§0\n\nNhấn [input=transformationability2] để Sủa: Buộc kẻ thù gần đó tập trung tấn công vào bạn trong 2 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+queenbeetransformation=Mất 2 giây để biến thành Ong chúa\n\nTốc độ di chuyển: 30\n-50% Phát hiện kẻ thù\n§6+1000% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Bắn mật ong: Gây §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0\n\nNhấn [input=transformationability2] để triệu hồi §9Ong§0 lên đến §a[[2 x <skilllevel>]]§0\n\nGiữ [input=trinketability] để ra lệnh cho Ong của bạn tấn công
+beartransformation=Mất 4 giây để biến thành Gấu\n\nTốc độ di chuyển: 20\n-50% Sát thương nhận vào\n\nNhấn [input=transformationability1] để Đập đất: Tấn công khu vực gây §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Sát thương cận chiến§0 và §9làm choáng§0 trong §a[[0.5 x <skilllevel>]] giây§0\n\nNhấn [input=transformationability2] để Gầm gừ: Khiến kẻ thù gần đó bỏ chạy trong 1 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+foxtransformation=Mất 3 giây để biến thành Cáo\n\nTốc độ di chuyển: 50\n§6+50% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Bắn cầu lửa: Gây §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0\n\nNhấn [input=transformationability2] để triệu hồi §bNgọn lửa nhảy múa§0 lên đến §a[[2 + <skilllevel>]]§0, mỗi ngọn lửa gây sát thương tương tự như Cầu lửa\n\nNhấn [input=trinketability] để Lướt\n§!Vulpes Nova fox!
+rattransformation=Mất 2 giây để biến thành Chuột\n\nTốc độ di chuyển: 25\n-50% Phát hiện kẻ thù\nTăng tối đa Cơ hội né tránh\n§6+1000% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Cắn: Gây §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương cận chiến§0 và đầu độc mục tiêu bằng 100% sát thương gây ra mỗi giây trong 10 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+treanttransformation=Mất 4 giây để biến thành Treant\n\nTốc độ di chuyển: 0\n-§a[50 + 5 <skilllevel>]%§0 Sát thương nhận vào\nKẻ thù bỏ qua bạn nếu ẩn nấp trong 3 giây\n\nNhấn [input=transformationability1] khi Hiện hình để Bắn hạt ngẫu nhiên: Gây §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0 với hiệu ứng ngẫu nhiên\n\nNhấn [input=transformationability2] để triệu hồi §9Cây con Dryad§0\n\nGiữ [input=trinketability] để Hiện hình và Chạy nước rút nếu di chuyển
+
+
 [skillsdesckeys]
 skilllevel=Cấp độ kỹ năng
 playerlevel=Cấp độ người chơi

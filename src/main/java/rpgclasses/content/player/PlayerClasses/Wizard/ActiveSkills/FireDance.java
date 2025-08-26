@@ -9,13 +9,13 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
-import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.mobs.summons.DancingFlameMob;
 
 import java.util.ArrayList;
 
@@ -110,9 +110,10 @@ public class FireDance extends SimpleBuffActiveSkill {
     }
 
     public static void summonDancingFlame(PlayerMob player, PlayerData playerData, int activeSkillLevel, String skillStringID) {
-        AttackingFollowingMob mob = (AttackingFollowingMob) MobRegistry.getMob("dancingflame", player.getLevel());
+        DancingFlameMob mob = (DancingFlameMob) MobRegistry.getMob("dancingflame", player.getLevel());
         player.serverFollowersManager.addFollower(skillStringID, mob, FollowPosition.FLYING_CIRCLE_FAST, null, 1, 7, null, true);
         mob.updateDamage(new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() * activeSkillLevel + playerData.getIntelligence(player) * activeSkillLevel));
+        mob.setPurple();
         mob.getLevel().entityManager.addMob(mob, player.x, player.y);
     }
 }

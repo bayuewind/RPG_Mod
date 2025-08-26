@@ -42,6 +42,9 @@ public class RPGPackets {
 
         PacketRegistry.registerPacket(Stormbound.LightningPacket.class);
 
+        // Transformations
+        PacketRegistry.registerPacket(TransformationAbility1Packet.class);
+        PacketRegistry.registerPacket(TransformationAbility2Packet.class);
     }
 
     public static class ResetSkillTime extends Packet {

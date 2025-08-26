@@ -15,6 +15,8 @@ abstract public class CustomUIManager<T extends Form> {
     public static RPGMenuUIManager rpgMenu;
     public static List<RPGSkillUIManager> rpgSkills = new ArrayList<>();
 
+    public static CursorCenterUIManager cursorCenter;
+
     public static void setupAll(MainGameFormManager mainGameFormManager) {
         CustomUIManager.mainGameFormManager = mainGameFormManager;
 
@@ -23,6 +25,7 @@ abstract public class CustomUIManager<T extends Form> {
         for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
             rpgSkills.add((RPGSkillUIManager) addCustomForm(new RPGSkillUIManager(i)));
         }
+        cursorCenter = (CursorCenterUIManager) addCustomForm(new CursorCenterUIManager());
     }
 
     public static CustomUIManager<? extends Form> addCustomForm(CustomUIManager<? extends Form> formManager) {

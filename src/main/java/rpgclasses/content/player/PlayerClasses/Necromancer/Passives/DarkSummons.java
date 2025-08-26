@@ -17,8 +17,8 @@ public class DarkSummons extends SimpleBuffPassive {
             @Override
             public void onBeforeAttacked(ActiveBuff activeBuff, MobBeforeHitEvent event) {
                 super.onBeforeAttacked(activeBuff, event);
-                if (event.target.buffManager.hasBuff(RPGBuffs.MagicPoison)) {
-                    event.damage = event.damage.modDamage(1 + getLevel(activeBuff) * 0.1F);
+                if (event.target.buffManager.hasBuff(RPGBuffs.MAGIC_POISON)) {
+                    event.damage = event.damage.modDamage(1 + getLevel(activeBuff) * 0.08F);
                 }
             }
         };

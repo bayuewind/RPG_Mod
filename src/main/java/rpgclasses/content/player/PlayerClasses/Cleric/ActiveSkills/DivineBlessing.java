@@ -8,7 +8,6 @@ import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGArea;
-import rpgclasses.utils.RPGColors;
 
 public class DivineBlessing extends ActiveSkill {
 
@@ -21,7 +20,7 @@ public class DivineBlessing extends ActiveSkill {
         super.run(player, playerData, activeSkillLevel, seed, isInUse);
 
         AphAreaList areaList = new AphAreaList(
-                new RPGArea(300, RPGColors.green)
+                new RPGArea(300, getColor())
                         .setHealingArea(20 + 3 * playerData.getGrace(player) * activeSkillLevel)
         ).setOnlyVision(false);
         areaList.execute(player, false);

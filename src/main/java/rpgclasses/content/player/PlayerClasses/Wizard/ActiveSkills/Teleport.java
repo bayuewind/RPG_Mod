@@ -10,7 +10,6 @@ import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Teleport extends ActiveSkill {
@@ -51,12 +50,12 @@ public class Teleport extends ActiveSkill {
             int i;
             if (lastPosX != newPosX || lastPosY != newPosY) {
                 for (i = 0; i < 15; ++i) {
-                    player.getLevel().entityManager.addParticle((float) lastPosX + (float) GameRandom.globalRandom.nextGaussian() * 10.0F + player.dx / 2.0F, (float) lastPosY + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + player.dy / 2.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, player.dy * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(new Color(204, 153, 255)).height(18.0F).lifeTime(700);
+                    player.getLevel().entityManager.addParticle((float) lastPosX + (float) GameRandom.globalRandom.nextGaussian() * 10.0F + player.dx / 2.0F, (float) lastPosY + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + player.dy / 2.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, player.dy * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(getColor()).height(18.0F).lifeTime(700);
                 }
             }
 
             for (i = 0; i < 15; ++i) {
-                player.getLevel().entityManager.addParticle(player.x + (float) GameRandom.globalRandom.nextGaussian() * 10.0F + player.dx / 2.0F, player.y + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + player.dy / 2.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, player.dy * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(new Color(204, 153, 255)).height(18.0F).lifeTime(700);
+                player.getLevel().entityManager.addParticle(player.x + (float) GameRandom.globalRandom.nextGaussian() * 10.0F + player.dx / 2.0F, player.y + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + player.dy / 2.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(player.dx * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, player.dy * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(getColor()).height(18.0F).lifeTime(700);
             }
         }
     }

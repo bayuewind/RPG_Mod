@@ -89,9 +89,9 @@ public class BerserkerCharge extends SimpleLevelEventActiveSkill {
             }
 
             float width = 40.0F;
-            float frontOffset = 20.0F;
-            float range = 80.0F;
-            float rangeOffset = -40.0F;
+            float frontOffset = 60.0F;
+            float range = 40.0F;
+            float rangeOffset = -30.0F;
             return new LineHitbox(this.owner.x + dir.x * rangeOffset + this.dirX * frontOffset, this.owner.y + dir.y * rangeOffset + this.dirY * frontOffset, dir.x, dir.y, range, width);
         }
     }

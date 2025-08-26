@@ -57,9 +57,9 @@ public class Provocation extends SimpleBuffActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(1F));
+        SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(player.x, player.y).volume(2F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(500, new Color(255, 0, 0))
+                new AphArea(500, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
@@ -100,7 +100,7 @@ public class Provocation extends SimpleBuffActiveSkill {
             public PlayerMob getPlayerTarget(ActiveBuff activeBuff) {
                 String playerName = activeBuff.getGndData().getString("playerTarget");
                 if (playerName == null) return null;
-                return RPGUtils.streamPlayers(activeBuff.owner, 200)
+                return RPGUtils.streamPlayers(activeBuff.owner, 600)
                         .filter(player -> Objects.equals(player.playerName, playerName))
                         .findFirst().orElse(null);
             }

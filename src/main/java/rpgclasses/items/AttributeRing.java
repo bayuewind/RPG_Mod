@@ -3,6 +3,7 @@ package rpgclasses.items;
 import necesse.engine.localization.Localization;
 import necesse.engine.util.GameBlackboard;
 import necesse.entity.mobs.PlayerMob;
+import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.trinketItem.SimpleTrinketItem;
@@ -18,5 +19,10 @@ public class AttributeRing extends SimpleTrinketItem {
         ListGameTooltips tooltips = super.getPostEnchantmentTooltips(item, perspective, blackboard);
         tooltips.add(Localization.translate("global", "rpgmod"));
         return tooltips;
+    }
+
+    @Override
+    protected void loadItemTextures() {
+        this.itemTexture = GameTexture.fromFile("items/rings/" + this.getStringID());
     }
 }

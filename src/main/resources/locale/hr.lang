@@ -25,6 +25,8 @@ holycritdamage=<mod>% svete kritične štete
 holyeffect=<mod>% svetog učinka
 holyabilityspeed=<mod>% brzine svetih sposobnosti
 
+transformationdelay=<mod>% kašnjenje transformacije
+noskills=Ne može koristiti vještine
 
 [stats]
 holy_damage=Sveta šteta
@@ -166,6 +168,16 @@ sanctifiedmind=Posvećeni um
 sanctifiedarmor=Posvećeni oklop
 radiantexpansion=Zračeće širenje
 
+// Druid
+quickshift=Brza promjena
+feralinstinct=Divlji instinkt
+ironfur=Željezno krzno
+naturesfavor=Naklonost prirode
+beastpace=Zvijerski korak
+primalburst=Primalni prasak
+elementalguard=Elementarna straža
+phoenixspirit=Feniksov duh
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=Vuk pratilac će napadati označene neprijatelje nanoseći §i[[<p
 
 // Čarobnjak
 manapower=Svaka razina pruža:\n\n+1% magične štete za svakih 10% neiskorištene mane
-flamingsteps=Kada trčite s aktivnim privjeskom, ostavljat ćete plamenove na tlu\nPlamenovi će zapaliti neprijatelje na 2 sekunde, nanoseći §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0 u sekundi
+flamingsteps=Kada trčite s aktivnim privjeskom ili transformacijom, ostavljat ćete plamenove na tlu\nPlamenovi će zapaliti neprijatelje na 2 sekunde, nanoseći §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0 u sekundi
 stormbound=Svakih §a[[9 - 0.5 x <skilllevel>]] sekundi§0, munja udari nasumičnog neprijatelja u vašem vidokrugu\nNanosi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0 i omamljuje na 1 sekundu
 arcaneshield=Štit koji sprječava jedan udarac\nŠtit će se oporaviti §a[[20 - <skilllevel>]] sekundi§0 nakon upotrebe
 fireshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete eksploziju koja nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\ni zapaliti mobove, ponavljajući 20% njihove izvorne štete u sekundi tijekom 5 sekundi\nŠtit će se oporaviti 26 sekundi nakon upotrebe
@@ -191,8 +203,8 @@ iceshield=Štit koji sprječava jedan udarac\nKada se koristi, oslobodit ćete l
 necroticpower=Svi vaši magični i prizivački napadi truju za 5% njihove štete tijekom §a[[2 x <skilllevel>]] sekundi§0, sve dok ih ne uzrokuje priziv
 darkmagic=Bonusi na štetu prizivača utječu na magičnu štetu za §a[[5 x <skilllevel>]]%
 necroticarmy=Poraženi neprijateljski neprijatelji pretvorit će se u §bKosture§0 s §a-[[100 - 3 x <skilllevel>]]%§0 zdravlja i štete
-darksummons=Nanesite §a+[[10 x <skilllevel>]]%§0 štete prizivača otrovanim neprijateljima
-lifeleech=Oporavlja §a[[<skilllevel>]]%§0 nanesene štete prizivača kao zdravlje
+darksummons=Nanesite §a+[[8 x <skilllevel>]]%§0 štete prizivača otrovanim neprijateljima
+lifeleech=Oporavlja §a[[0.1 x <skilllevel>]]%§0 nanesene štete prizivača kao zdravlje
 necroticremains=Kada nekrotični priziv umre, eksplodira, nanoseći §i[[0.1 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima, trujući ih s 20% štete u sekundi tijekom 10 sekundi
 endlesslegion=Svake 4 razine ove vještine, dobivate +1 maksimalni priziv
 lichborn=Kada umrete, preživite i oporavite §a[[10 x <skilllevel>]]%§0 zdravlja ako već niste §bLich§0\nSljedećih §a[[120 - 6 x <skilllevel>]] sekundi§0, postajete §bLich§0 (kostur)
@@ -204,6 +216,11 @@ empoweredhealing=Kada magično izliječite sebe ili saveznika, povećajte njihov
 sanctifiedmind=Magično iscjeljivanje također obnavlja manu jednaku §a[[5 x <skilllevel>]]%§0 izvršenog iscjeljivanja
 sanctifiedarmor=Magično iscjeljivanje također obnavlja otpornost jednaku §a[[2 x <skilllevel>]]%§0 izvršenog iscjeljivanja
 radiantexpansion=Kada magično izliječite sebe ili saveznika, nanesite §a[[5 x <skilllevel>]]%§0 iscjeljivanja kao svetu štetu obližnjim neprijateljima izliječenog cilja
+
+// Druid
+naturesfavor=Dobivate +[[<skilllevel>]] regeneracije zdravlja u sekundi dok stojite na travi
+primalburst=Povećava štetu i brzinu za [[6 x <skillevel>]]% tijekom prvih 5 sekundi nakon transformacije
+phoenixspirit=Zahtijeva najmanje 4 boda za rad:\n\nAko biste umrli dok ste transformirani s aktivnom vještinom, umjesto toga preživite s §a[4 + 8 x <skilllevel>]]%§0 zdravlja, a ta vještina se stavlja na 1-satno hlađenje\n\nNe aktivira se ako već imate najmanje §a[[0.25 x <skilllevel> ↓]] vještinu(e) transformacije§0 na hlađenju duljem od 1 minute
 
 
 [activeskills]
@@ -255,30 +272,38 @@ fireball=Vatrena kugla
 lightning=Munja
 
 // Nekromant
-skeletonhorde=Horda kostura
-skeletonwarrior=Ratnik kostur
-sacrifice=Žrtva
-siegecry=Krik opsade
+skeletonhorde=Priziva §a[[1 + <skilllevel>]] §bKostura§0
+skeletonwarrior=Priziva §bRatnika kostura§0 s §a+[[20 x <skilllevel>]]%§0 zdravlja i štete
+sacrifice=Najbliži nekrotični priziv umire, a vi zatim oporavljate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdravlja§0 kao magično iscjeljenje
+siegecry=Dobijte §a+[[50 x <skilllevel>]]%§0 brzine prizivanja na 6 sekundi
 
-boneslingerhorde=Horda bacača kostiju
-tomb=Grob
-necroticbloom=Nekrotični cvat
-wardingtaunt=Zaštitna provokacija
+boneslingerhorde=Priziva §a[[1 + <skilllevel>]]§0 §bBacača kostiju§0
+tomb=Stvara strukturu koja priziva §bKostura§0 svakih §a[[10 - <skilllevel>]] sekundi§0\nGrob ima zdravlje jednako §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrob gubi 2% svog ukupnog zdravlja u sekundi
+necroticbloom=Ubrzava učinak otrova na sve obližnje neprijatelje smanjujući njegovo trajanje na 10%, ali povećavajući njegovu štetu u sekundi kako bi se održala ukupna šteta
+wardingtaunt=Najbliži nekrotični priziv prisiljava obližnje neprijatelje unutar radijusa od §a[[50 x <skilllevel>]]§0 da ga ciljaju
 
-unholyground=Nečisto tlo
-necroticbarrage=Nekrotična baraža
+unholyground=Širi auru korupcije oko vas 10 sekundi\nNeprijatelji unutar ovog područja primaju §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] štete od otrova§0 u sekundi i §7Ograničeni su
+necroticbarrage=Svi nekrotični prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
 
 // Cleric
-smite=Udariti
-divineblessing=Božanski blagoslov
-purify=Pročistiti
-lightinfusion=Svjetlosna infuzija
-holyguard=Sveti čuvar
-judgment=Presuda
-sanctuary=Svetište
-divineintervention=Božanska intervencija
-resurrection=Uskrsnuće
-wrathoflight=Gnjev svjetla
+smite=Sazovite zraku svetog svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0\nNanosi dvostruku štetu nemrtvim i demonskim mobovima\nTroši §a[[10 + 2 x <skilllevel>]] mane§0
+divineblessing=Magična iscjeljujuća aura koja obnavlja §a[[20 + 3 x <grace> x <skilllevel>]] zdravlja§0 vama i vašim saveznicima\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
+purify=Očistite sebe i obližnje saveznike od svih negativnih učinaka\nTroši 10 mane
+lightinfusion=Sljedećih 8 sekundi dobivate §a+[[20 x <skilllevel>]]%§0 magičnog iscjeljivanja i svete štete
+holyguard=Nanesite na sebe i sve obližnje saveznike Sveti štit do 30 sekundi\nOni dobivaju §a+[[10 x <skilllevel>]]%§0 primljenog magičnog iscjeljivanja, a štit blokira jedan udarac prije nego što se slomi\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
+judgment=Oslobodite val zračeće energije, nanoseći §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svete štete§0 svim obližnjim neprijateljima\nNemrtvi i demonski mobovi su §7Ograničeni§0 na 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
+sanctuary=Stvorite svetu zonu na 8 sekundi\nVi i saveznici unutra ste imuni na negativne učinke i dobivate §a[[0.2 x <grace> x <skilllevel>]]§0 regeneracije zdravlja u sekundi\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[30 + 6 x <skilllevel>]] mane§0
+divineintervention=Trenutačno izliječite najviše oštećenog bliskog saveznika do njihovog maksimalnog zdravlja i dajte imunitet na svu štetu na §a[[<skilllevel>]]§0 sekundi\nTroši §a[[60 + 12 x <skilllevel>]] mane§0
+resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <skilllevel>]]%§0 njihovog maksimalnog zdravlja na vašoj poziciji\nNe možete oživjeti igrače koji su se mogli ponovno pojaviti prije više od 10 sekundi\nTroši §a[[100 - 10 x <skilllevel>]]%§0 vaše mane (najmanje §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
+
+// Druid
+wolftransformation=Transformacija u vuka
+queenbeetransformation=Transformacija u maticu pčela
+beartransformation=Transformacija u medvjeda
+foxtransformation=Transformacija u lisicu
+rattransformation=Transformacija u štakora
+treanttransformation=Transformacija u treanta
 
 
 [activeskillsdesc]
@@ -354,6 +379,15 @@ resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <s
 wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
 
 
+// Druid
+wolftransformation=Potrebno je 3 sekunde za transformaciju u Vuka\n\nBrzina kretanja: 60\n\nPritisnite [input=transformationability1] za Udarac ugrizom: Skočite naprijed i ugrizite, nanoseći §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] štetu u bliskoj borbi§0\n\nPritisnite [input=transformationability2] za Lajanje: Prisilite obližnje neprijatelje da usredotoče svoje napade na vas 2 sekunde\n\nDržite [input=trinketability] za Sprint
+queenbeetransformation=Potrebno je 2 sekunde za transformaciju u Kraljicu pčela\n\nBrzina kretanja: 30\n-50% Detekcija neprijatelja\n§6+1000% Dolazna šteta§0\n\nPritisnite [input=transformationability1] za Pucanje medom: Nanesite §i[[2 x <playerlevel> + <strength> x <skilllevel>]] štetu iz daljine§0\n\nPritisnite [input=transformationability2] za prizivanje §9Pčele§0 do §a[[2 x <skilllevel>]]§0\n\nDržite [input=trinketability] za zapovijedanje svojim Pčelama da napadnu
+beartransformation=Potrebno je 4 sekunde za transformaciju u Medvjeda\n\nBrzina kretanja: 20\n-50% Dolazna šteta\n\nPritisnite [input=transformationability1] za Udarac o tlo: Područni napad koji nanosi §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] štetu u bliskoj borbi§0 i §9omamljuje§0 na §a[[0.5 x <skilllevel>]] sekundi§0\n\nPritisnite [input=transformationability2] za Režanje: Natjerajte obližnje neprijatelje da pobjegnu 1 sekundu\n\nDržite [input=trinketability] za Sprint
+foxtransformation=Potrebno je 3 sekunde za transformaciju u Lisicu\n\nBrzina kretanja: 50\n§6+50% Dolazna šteta§0\n\nPritisnite [input=transformationability1] za Pucanje vatrenim kuglama: Nanesite §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magične štete§0\n\nPritisnite [input=transformationability2] za prizivanje §bPlešućeg plamena§0 do §a[[2 + <skilllevel>]]§0, svaki nanosi istu štetu kao vatrena kugla\n\nPritisnite [input=trinketability] za Dash\n§!Vulpes Nova fox!
+rattransformation=Potrebno je 2 sekunde za transformaciju u Štakora\n\nBrzina kretanja: 25\n-50% Detekcija neprijatelja\nDaje maksimalnu šansu za izbjegavanje\n§6+1000% Dolazna šteta§0\n\nPritisnite [input=transformationability1] za Ugriz: Nanosi §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] štetu u bliskoj borbi§0 i truje metu za 100% nanesene štete u sekundi tijekom 10 sekundi\n\nDržite [input=trinketability] za Sprint
+treanttransformation=Potrebno je 4 sekunde za transformaciju u Treanta\n\nBrzina kretanja: 0\n-§a[50 + 5 <skilllevel>]%§0 Dolazna šteta\nNeprijatelji vas ignoriraju ako ste skriveni 3 sekunde\n\nPritisnite [input=transformationability1] dok ste otkriveni za Pucanje nasumičnim sjemenkama: Nanesite §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] štetu iz daljine§0 s nasumičnim učincima\n\nPritisnite [input=transformationability2] za prizivanje §9Dryad Saplinga§0\n\nDržite [input=trinketability] za otkrivanje i sprint ako se krećete
+
+
 [skillsdesckeys]
 skilllevel=Razina vještine
 playerlevel=Razina igrača
@@ -396,10 +430,8 @@ dancingflame=§bPlešući plamen:§0 Priziv koji djeluje kao projektil. Zapali n
 necromancerskeleton=§bKostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
 necromancerskeletonwarrior=§bRatnik kostur:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŠteta: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
 necromancerboneslinger=§bBacač kostiju:§0 Nekrotični oštetivi priziv\nZdravlje: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 udaljenost)\nBrzina: 60\nGubi 2% ukupnog zdravlja u sekundi
-
-// Tranformations
-necromancerlich=§bLich:§0 Transformacija u nemrtvog\n\nNe može koristiti predmete\n+100% primljene štete\n\nPritisnite [input=trinketability] da ispalite kost koja nanosi §i[[<strength>]] štete prizivača§0
-
+bee=§9Pčela:§0 Oštetivi priziv\nZdravlje: 1\nŠteta: §a[[<playerlevel> + <intelligence>]]§0\nBrzina: 40\n\nUmire pri napadu, ali truje metu za 20% nanesene štete u sekundi tijekom 10 sekundi
+dryadsapling=§9Dryad Sapling:§0 Oštetivi priziv\nZdravlje: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŠteta: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nBrzina: 65\nGubi 2% ukupnog zdravlja u sekundi
 
 [item]
 scrollofoblivion=Svitak zaborava
@@ -454,6 +486,8 @@ activeskillinuse=Ova vještina je već u upotrebi
 anotheractiveskillinuse=Već imate drugu vještinu u upotrebi
 incooldown=Na hlađenju
 notenoughstamina=Nema dovoljno izdržljivosti
+canotusemounted=Ne može se koristiti montiran ili transformiran
+
 notarget=Nema ciljeva u blizini
 nograbbableobject=Ispred vas nema predmeta koji se može zgrabiti
 notargetfollower=Nema ciljanih priziva u blizini
@@ -472,6 +506,7 @@ lvl=Raz <level>
 eachlevel=Svaka razina pruža:
 experience=XP: <exp> / <nextexp>
 totalexperience=Ukupno XP: <exp>
+onlytranformed=Samo kada je transformiran
 
 resetpoints=Bodovi za resetiranje: <points>
 attrpoints=Bodovi atributa: <points>
@@ -514,3 +549,5 @@ activeskillslot3=Utor za aktivnu vještinu 3
 activeskillslot4=Utor za aktivnu vještinu 4
 activeskillslot5=Utor za aktivnu vještinu 5
 activeskillslot6=Utor za aktivnu vještinu 6
+transformationability1=Sposobnost transformacije 1
+transformationability2=Sposobnost transformacije 2

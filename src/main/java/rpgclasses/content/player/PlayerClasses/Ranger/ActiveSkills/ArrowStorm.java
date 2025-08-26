@@ -18,8 +18,6 @@ import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class ArrowStorm extends ActiveSkill {
 
     public ArrowStorm(int levelMax, int requiredClassLevel) {
@@ -53,7 +51,7 @@ public class ArrowStorm extends ActiveSkill {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
         SoundManager.playSound(GameResources.bow, SoundEffect.effect(player));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(400, new Color(0, 102, 0))
+                new AphArea(400, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }

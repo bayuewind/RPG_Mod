@@ -30,7 +30,7 @@ public class GrabbedObjectBuff extends PassiveBuff implements HumanDrawBuff {
 
     @Override
     public void addHumanDraw(ActiveBuff activeBuff, HumanDrawOptions drawOptions) {
-        if (activeBuff.owner.buffManager.hasBuff(RPGBuffs.PASSIVES.GrabbedObject) && activeBuff.owner.isPlayer) {
+        if (activeBuff.owner.buffManager.hasBuff(RPGBuffs.PASSIVES.GRABBED_OBJECT) && activeBuff.owner.isPlayer) {
             PlayerMob playerMob = (PlayerMob) activeBuff.owner;
             PlayerData playerData = PlayerDataList.getPlayerData(playerMob);
             if (playerData.grabbedObject != null) {

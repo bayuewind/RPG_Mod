@@ -14,4 +14,15 @@ public class RPGColors extends AphColors {
 
     public static Color dirt = new Color(90, 62, 43);
 
+    public static int getColorInt(String color) {
+        String processedColor = color;
+        if (color.startsWith("#")) {
+            processedColor = color.substring(1);
+        }
+        return Integer.parseInt(processedColor, 16);
+    }
+
+    public static Color getColor(String color) {
+        return new Color(getColorInt(color));
+    }
 }

@@ -30,8 +30,8 @@ public class PlayerClassData {
         this.activeSkillLevels = new int[playerClass.activeSkillsList.size()];
 
         prefixDataName = "rpgmod_" + playerClass.stringID + "_";
-        passivesDataName = prefixDataName + "passives";
-        activeSkillsDataName = prefixDataName + "actives";
+        passivesDataName = prefixDataName + "passive" + "-";
+        activeSkillsDataName = prefixDataName + "active" + "-";
     }
 
     public PlayerData getPlayerData(boolean isServer) {
@@ -59,23 +59,24 @@ public class PlayerClassData {
     }
 
     public void loadData(LoadData loadData) {
-        loadData(
-                loadData.getIntArray(passivesDataName, new int[playerClass.passivesList.size()]),
-                loadData.getIntArray(activeSkillsDataName, new int[playerClass.activeSkillsList.size()])
-        );
-    }
-
-    public void loadData(int[] passiveLevels, int[] activeSkillLevels) {
-        loadDataPassives(passiveLevels);
-        loadDataActiveSkills(activeSkillLevels);
-    }
-
-    public void loadDataPassives(int[] passiveLevels) {
-        this.passiveLevels = passiveLevels.length != playerClass.passivesList.size() ? new int[playerClass.passivesList.size()] : passiveLevels;
-    }
-
-    public void loadDataActiveSkills(int[] activeSkillLevels) {
-        this.activeSkillLevels = activeSkillLevels.length != playerClass.activeSkillsList.size() ? new int[playerClass.activeSkillsList.size()] : activeSkillLevels;
+        int[] oldSavePassives = loadData.getIntArray(prefixDataName + "passives", null);
+        int[] oldSaveActiveSkills = loadData.getIntArray(prefixDataName + "actives", null);
+        if (oldSavePassives != null) {
+            this.passiveLevels = oldSavePassives.length != playerClass.passivesList.size() ? new int[playerClass.passivesList.size()] : oldSavePassives;
+        } else {
+            this.passiveLevels = new int[playerClass.passivesList.size()];
+            for (int i = 0; i < playerClass.passivesList.getList().size(); i++) {
+                passiveLevels[i] = loadData.getInt(passivesDataName + playerClass.passivesList.get(i).stringID, 0);
+            }
+        }
+        if (oldSaveActiveSkills != null) {
+            this.activeSkillLevels = oldSaveActiveSkills.length != playerClass.activeSkillsList.size() ? new int[playerClass.activeSkillsList.size()] : oldSaveActiveSkills;
+        } else {
+            this.activeSkillLevels = new int[playerClass.activeSkillsList.size()];
+            for (int i = 0; i < playerClass.activeSkillsList.getList().size(); i++) {
+                activeSkillLevels[i] = loadData.getInt(activeSkillsDataName + playerClass.activeSkillsList.get(i).stringID, 0);
+            }
+        }
     }
 
     public int[] getPassiveLevels() {
@@ -103,8 +104,15 @@ public class PlayerClassData {
     }
 
     public void saveData(SaveData saveData) {
-        saveData.addIntArray(passivesDataName, passiveLevels);
-        saveData.addIntArray(activeSkillsDataName, activeSkillLevels);
+        for (int i = 0; i < playerClass.passivesList.getList().size(); i++) {
+            if (passiveLevels[i] > 0)
+                saveData.addInt(passivesDataName + playerClass.passivesList.get(i).stringID, passiveLevels[i]);
+        }
+
+        for (int i = 0; i < playerClass.activeSkillsList.getList().size(); i++) {
+            if (activeSkillLevels[i] > 0)
+                saveData.addInt(activeSkillsDataName + playerClass.activeSkillsList.get(i).stringID, activeSkillLevels[i]);
+        }
     }
 
     public static PlayerClassData applySpawnPacket(PacketReader reader) {

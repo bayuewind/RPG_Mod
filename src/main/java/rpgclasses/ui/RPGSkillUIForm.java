@@ -33,8 +33,8 @@ public class RPGSkillUIForm extends Form {
         fontOptions.color(Settings.UI.activeTextColor);
         FontManager.bit.drawString(getX() + 2, getY() + 2, String.valueOf(slot + 1), fontOptions);
 
-        if (!this.equippedActiveSkill.isEmpty() && this.activeSkillLevel > 0) {
-            int cooldownLeft = this.equippedActiveSkill.getCooldownLeft(this.activeSkillLevel, perspective.getTime());
+        if (!this.equippedActiveSkill.isEmpty()) {
+            int cooldownLeft = this.equippedActiveSkill.getCooldownLeft(perspective.getTime());
             if (cooldownLeft > 0) {
                 String cooldownLeftString = equippedActiveSkill.getCooldownLeftString(cooldownLeft);
 
@@ -55,7 +55,7 @@ public class RPGSkillUIForm extends Form {
             this.skillIconComponent = null;
             if (!this.equippedActiveSkill.isEmpty()) {
                 updateLevel(playerData);
-                this.skillIconComponent = this.addComponent(new SkillIconComponent(this.equippedActiveSkill.activeSkill, this.activeSkillLevel, 0, 0, getWidth(), getHeight()));
+                this.skillIconComponent = this.addComponent(new SkillIconComponent(this.equippedActiveSkill.getActiveSkill(), this.activeSkillLevel, 0, 0, getWidth(), getHeight()));
             }
         }
     }
@@ -64,7 +64,7 @@ public class RPGSkillUIForm extends Form {
         if (this.equippedActiveSkill.isEmpty()) {
             this.activeSkillLevel = 0;
         } else {
-            int newActiveSkillLevel = playerData.getClassesData()[this.equippedActiveSkill.playerClass.id].getActiveSkillLevels()[equippedActiveSkill.activeSkill.id];
+            int newActiveSkillLevel = equippedActiveSkill.getActiveSkill().getLevel(playerData);
 
             if (this.skillIconComponent != null) {
                 this.skillIconComponent.setSkillLevel(newActiveSkillLevel);

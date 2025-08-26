@@ -16,6 +16,7 @@ public class RPGProjectiles {
 
         ProjectileRegistry.registerProjectile("iceball", IceBallProjectile.class, null, null);
         ProjectileRegistry.registerProjectile("fireball", FireballProjectile.class, null, null);
+        ProjectileRegistry.registerProjectile("minifireball", MiniFireballProjectile.class, null, null);
     }
 
 }

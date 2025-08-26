@@ -137,14 +137,14 @@ public class MobData {
 
             if (mapLevel.isIncursionLevel) {
                 IncursionLevel incursionLevel = (IncursionLevel) mapLevel;
-                mobData.level += 20 + 5 * incursionLevel.incursionData.getTabletTier();
+                mobData.level += 22 + 4 * incursionLevel.incursionData.getTabletTier();
             } else {
                 int dimension = mapLevel.getIslandDimension();
 
                 if (mapLevel instanceof DungeonLevel) {
                     mobData.level += 5;
                 } else if (mapLevel instanceof TempleLevel) {
-                    mobData.level += 25;
+                    mobData.level += 24;
                 } else if (dimension != -2) {
                     if (biome instanceof SnowBiome) {
                         mobData.level += 3;

@@ -12,8 +12,6 @@ import necesse.entity.particle.Particle;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
 
-import java.awt.*;
-
 public class ShotsRampage extends SimpleBuffActiveSkill {
 
     public ShotsRampage(int levelMax, int requiredClassLevel) {
@@ -45,7 +43,7 @@ public class ShotsRampage extends SimpleBuffActiveSkill {
             public void clientTick(ActiveBuff activeBuff) {
                 Mob owner = activeBuff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt((getStackSize(activeBuff) + 1) - activeBuff.getStacks()) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 255, 255)).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(getColor()).height(16.0F);
                 }
             }
 

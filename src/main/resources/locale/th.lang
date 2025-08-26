@@ -4,345 +4,370 @@
 rpgmod=§!RPG Mod
 
 [buffmodifiers]
-enduranceattrflat=<mod> คุณสมบัติความทนทาน
-speedattrflat=<mod> คุณสมบัติความเร็ว
-strengthattrflat=<mod> คุณสมบัติความแข็งแกร่ง
-intelligenceattrflat=<mod> คุณสมบัติสติปัญญา
-graceattrflat=<mod> คุณสมบัติความสง่างาม
+enduranceattrflat=<mod> thuộc tính sức bền
+speedattrflat=<mod> thuộc tính tốc độ
+strengthattrflat=<mod> thuộc tính sức mạnh
+intelligenceattrflat=<mod> thuộc tính trí tuệ
+graceattrflat=<mod> thuộc tính duyên dáng
 
-dodgechance=<mod>% โอกาสหลบหลีก
-rangedweaponszoom=<mod> การซูมอาวุธระยะไกล
-rangedweaponsrange=<mod>% ระยะอาวุธระยะไกล
-mobdetectionrange=<mod> ระยะการตรวจจับม็อบ
-focusdamage=<mod>% ความเสียหายจากการโฟกัส
-focuschance=<mod>% โอกาสในการโฟกัส
-ignitedamage=<mod>% ความเสียหายจากการเผาไหม้
+dodgechance=<mod>% cơ hội né tránh
+rangedweaponszoom=<mod> thu phóng vũ khí tầm xa
+rangedweaponsrange=<mod>% tầm bắn của vũ khí tầm xa
+mobdetectionrange=<mod> phạm vi phát hiện mob
+focusdamage=<mod>% sát thương tập trung
+focuschance=<mod>% cơ hội tập trung
+ignitedamage=<mod>% sát thương đốt cháy
 
 // Holy Damage
-holydamage=<mod>% ความเสียหายศักดิ์สิทธิ์
-holycritchance=<mod>% โอกาสคริติคอลศักดิ์สิทธิ์
-holycritdamage=<mod>% ความเสียหายคริติคอลศักดิ์สิทธิ์
-holyeffect=<mod>% ผลศักดิ์สิทธิ์
-holyabilityspeed=<mod>% ความเร็วความสามารถศักดิ์สิทธิ์
+holydamage=<mod>% sát thương thần thánh
+holycritchance=<mod>% cơ hội chí mạng thần thánh
+holycritdamage=<mod>% sát thương chí mạng thần thánh
+holyeffect=<mod>% hiệu ứng thần thánh
+holyabilityspeed=<mod>% tốc độ kỹ năng thần thánh
 
+transformationdelay=<mod>% trì hoãn biến hình
+noskills=Không thể sử dụng kỹ năng
 
 [stats]
-holy_damage=ความเสียหายศักดิ์สิทธิ์
+holy_damage=Sát thương thần thánh
 
 
 [enchantment]
-evasive=หลบหลีก
-stalking=การย่องตาม
-regenerative=ฟื้นฟู
-energetic=กระฉับกระเฉง
-depleted=หมดสิ้น
+evasive=Né tránh
+stalking=Rình rập
+regenerative=Tái tạo
+energetic=Năng động
+depleted=Cạn kiệt
 
 
 [buff]
-overlevelclassbuff=คลาสเลเวลเกิน
-markedbuff=ถูกทำเครื่องหมาย
-darkcursebuff=คำสาปแห่งความมืด
-magicpoisonbuff=พิษเวทมนตร์
-ignitedbuff=ติดไฟ
-holydamagedealtbuff=สร้างความเสียหายศักดิ์สิทธิ์
+overlevelclassbuff=Lớp vượt cấp
+markedbuff=Được đánh dấu
+darkcursebuff=Lời nguyền bóng tối
+magicpoisonbuff=Độc ma thuật
+ignitedbuff=Bị đốt cháy
+holydamagedealtbuff=Sát thương thần thánh đã gây ra
 
 
 [buffdesc]
-overlevelclassbuff1=§9หนึ่งในคลาสของคุณเกินขีดจำกัดคะแนน
-overlevelclassbuff2=§6คุณจะไม่สามารถดำเนินการต่อได้จนกว่าจะได้รับการแก้ไข
-darkcursebuff1=+25% ความเสียหายที่ได้รับ
-darkcursebuff2=ความเสียหายทั้งหมดจะลดพลังชีวิตสูงสุดด้วย
+overlevelclassbuff1=§9Một trong các lớp của bạn vượt quá giới hạn điểm
+overlevelclassbuff2=§6Bạn sẽ không thể tiếp tục cho đến khi nó được sửa
+darkcursebuff1=+25% sát thương nhận vào
+darkcursebuff2=Tất cả sát thương cũng làm giảm Máu tối đa
 
 
 [mob]
-rpgmobname=[<class>] <name> เลเวล <level>
-rpgmobnamecolor=§<color>[<class>]§0 <name> §9เลเวล <level>§0
+rpgmobname=[<class>] <name> cấp <level>
+rpgmobnamecolor=§<color>[<class>]§0 <name> §9cấp <level>§0
 
-rangerwolf=หมาป่าเรนเจอร์
-dancingflame=เปลวไฟเต้นระบำ
-necromancerskeleton=โครงกระดูก
-necromancerskeletonwarrior=นักรบโครงกระดูก
-necromancerboneslinger=คนขว้างกระดูก
-necromancertomb=สุสาน
+rangerwolf=Sói kiểm lâm
+dancingflame=Ngọn lửa nhảy múa
+necromancerskeleton=Bộ xương
+necromancerskeletonwarrior=Chiến binh xương
+boneslinger=Kẻ ném xương
+necromancertomb=Mộ
 
 
 [mobclass]
-boss=บอส
-warrior=นักรบ
-tank=แทงค์
-runner=นักวิ่ง
-healer=ผู้รักษา
-explosive=ระเบิด
-glacial=น้ำแข็ง
-electric=ไฟฟ้า
-flash=แสงวาบ
-dark=มืด
-legend=ตำนาน
+boss=Trùm
+warrior=Chiến binh
+tank=Đỡ đòn
+runner=Người chạy
+healer=Người chữa lành
+explosive=Chất nổ
+glacial=Băng giá
+electric=Điện
+flash=Tia chớp
+dark=Bóng tối
+legend=Huyền thoại
 
 
 [mobtrait]
-undead=อมตะ
-demonic=ปีศาจ
+undead=Bất tử
+demonic=Ma quỷ
 
 
 [attributes]
-endurance=ความทนทาน
-strength=ความแข็งแกร่ง
-speed=ความเร็ว
-intelligence=สติปัญญา
-grace=ความสง่างาม
+endurance=Sức bền
+strength=Sức mạnh
+speed=Tốc độ
+intelligence=Trí tuệ
+grace=Duyên dáng
 
 
 [classes]
-warrior=นักรบ
-ranger=เรนเจอร์
-wizard=พ่อมด
-necromancer=เนโครแมนเซอร์
-cleric=นักบวช
-rogue=โจร
-warlock=วอร์ล็อค
-paladin=พาลาดิน
-druid=ดรูอิด
+warrior=Chiến binh
+ranger=Kiểm lâm
+wizard=Pháp sư
+necromancer=Thầy chiêu hồn
+cleric=Giáo sĩ
+rogue=Kẻ lừa đảo
+warlock=Pháp sư
+paladin=Hiệp sĩ
+druid=Druid
 
 
 [passives]
-passives=พาสซีฟ
+passives=Bị động
 
-// นักรบ
-regeneration=การฟื้นฟู
-muscles=กล้ามเนื้อ
-legs=ขา
-force=พลัง
-unstoppable=หยุดไม่ได้
-vigor=ความแข็งแรง
-ironskin=ผิวเหล็ก
-unleashingrage=ปลดปล่อยความโกรธ
-unleashinghaste=ปลดปล่อยความเร่งรีบ
-unyielding=ไม่ยอมแพ้
-lastbreath=ลมหายใจสุดท้าย
+// Chiến binh
+regeneration=Tái tạo
+muscles=Cơ bắp
+legs=Chân
+force=Lực lượng
+unstoppable=Không thể ngăn cản
+vigor=Sức sống
+ironskin=Da sắt
+unleashingrage=Giải phóng cơn thịnh nộ
+unleashinghaste=Giải phóng sự vội vàng
+unyielding=Không khuất phục
+lastbreath=Hơi thở cuối cùng
 
-// เรนเจอร์
-aim=การเล็ง
-agility=ความคล่องแคล่ว
-criticalshots=การยิงคริติคอล
-energy=พลังงาน
-recovery=การฟื้นตัว
-eagleeye=ตาเหยี่ยว
-focus=การโฟกัส
-erradication=การกำจัด
-predatorsense=สัญชาตญาณนักล่า
-plasmagrenade=ระเบิดพลาสม่า
-wolfcompanion=สหายหมาป่า
+// Kiểm lâm
+aim=Mục tiêu
+agility=Nhanh nhẹn
+criticalshots=Phát bắn chí mạng
+energy=Năng lượng
+recovery=Phục hồi
+eagleeye=Mắt đại bàng
+focus=Tập trung
+erradication=Diệt trừ
+predatorsense=Giác quan của kẻ săn mồi
+plasmagrenade=Lựu đạn plasma
+wolfcompanion=Bạn đồng hành sói
 
-// พ่อมด
-arcanepower=พลังลึกลับ
-manapower=พลังมานา
-manaproficiency=ความชำนาญมานา
-firepower=พลังไฟ
-arcaneshield=โล่ลึกลับ
-fireshield=โล่ไฟ
-iceshield=โล่น้ำแข็ง
-flamingsteps=ก้าวเดินแห่งเปลวไฟ
-stormbound=ถูกผูกมัดด้วยพายุ
+// Pháp sư
+arcanepower=Sức mạnh bí ẩn
+manapower=Sức mạnh mana
+manaproficiency=Thành thạo mana
+firepower=Sức mạnh lửa
+arcaneshield=Khiên bí ẩn
+fireshield=Khiên lửa
+iceshield=Khiên băng
+flamingsteps=Bước chân rực lửa
+stormbound=Bị bão tố trói buộc
 
-// เนโครแมนเซอร์
-darkpower=พลังมืด
-necroticpower=พลังเนโครติก
-darkmagic=เวทมนตร์มืด
-necroticarmy=กองทัพเนโครติก
-darksummons=การอัญเชิญมืด
-lifeleech=การดูดเลือด
-necroticremains=ซากเนโครติก
-endlesslegion=กองทัพที่ไม่มีที่สิ้นสุด
-lichborn=เกิดเป็นลิช
+// Thầy chiêu hồn
+darkpower=Sức mạnh bóng tối
+necroticpower=Sức mạnh hoại tử
+darkmagic=Ma thuật bóng tối
+necroticarmy=Đội quân hoại tử
+darksummons=Triệu hồi bóng tối
+lifeleech=Hút máu
+necroticremains=Tàn dư hoại tử
+endlesslegion=Quân đoàn vô tận
+lichborn=Sinh ra từ Lich
 
 // Cleric
-healer=ผู้รักษา
-shaman=หมอผี
-vitalaura=ออร่าพลังชีวิต
-divinejudge=ผู้พิพากษาศักดิ์สิทธิ์
-empoweredhealing=การรักษามอบพลัง
-sanctifiedmind=จิตใจศักดิ์สิทธิ์
-sanctifiedarmor=เกราะศักดิ์สิทธิ์
-radiantexpansion=การขยายตัวของรัศมี
+healer=Người chữa lành
+shaman=Pháp sư
+vitalaura=Hào quang sinh khí
+divinejudge=Thẩm phán thần thánh
+empoweredhealing=Hồi máu được trao quyền
+sanctifiedmind=Tâm trí được thánh hóa
+sanctifiedarmor=Áo giáp được thánh hóa
+radiantexpansion=Mở rộng rạng rỡ
+
+// Druid
+quickshift=Chuyển đổi nhanh
+feralinstinct=Bản năng hoang dã
+ironfur=Lông sắt
+naturesfavor=Ân huệ của tự nhiên
+beastpace=Tốc độ thú
+primalburst=Bùng nổ nguyên thủy
+elementalguard=Hộ vệ nguyên tố
+phoenixspirit=Linh hồn phượng hoàng
 
 
 [passivesdesc]
 
-// นักรบ
-unleashingrage=แต่ละระดับให้:\n\n+1% ความเสียหายทั้งหมดสำหรับทุกๆ 10% ของพลังชีวิตที่หายไป
-unleashinghaste=แต่ละระดับให้:\n\n+1% ความเร็วในการเคลื่อนที่สำหรับทุกๆ 10% ของพลังชีวิตที่หายไป
-unyielding=แต่ละระดับให้:\n\n+5% ความเร็วในการโจมตีและ -5% ความเสียหายที่ได้รับเมื่อพลังชีวิตต่ำกว่า 20%
-lastbreath=แทนที่จะตาย จะกลายเป็นอมตะเป็นเวลา §a[[3 x <skilllevel>]] วินาที§0\nเมื่อหมดเวลา คุณจะตาย
+// Chiến binh
+unleashingrage=Mỗi cấp độ cung cấp:\n\n+1% tất cả sát thương cho mỗi 10% Máu bị mất
+unleashinghaste=Mỗi cấp độ cung cấp:\n\n+1% tốc độ di chuyển cho mỗi 10% Máu bị mất
+unyielding=Mỗi cấp độ cung cấp:\n\n+5% tốc độ tấn công và -5% sát thương nhận vào khi dưới 20% Máu
+lastbreath=Thay vì chết, trở nên bất khả xâm phạm trong §a[[3 x <skilllevel>]] giây§0\nKhi hết thời gian, bạn sẽ chết
 
-// เรนเจอร์
-plasmagrenade=ทุกๆ 8 การจู่โจมระยะไกล, ยิงกระสุนระเบิดนำวิถีที่สร้างความเสียหาย §i[[30 x <skilllevel>]]%§0 ของความเสียหายของอาวุธ
-wolfcompanion=สหายหมาป่าจะโจมตีศัตรูที่ถูกทำเครื่องหมาย สร้างความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel>]] Summoner Damage
+// Kiểm lâm
+plasmagrenade=Cứ sau 8 đòn tấn công tầm xa, bắn ra một quả đạn nổ có điều khiển gây §i[[30 x <skilllevel>]]%§0 sát thương của vũ khí
+wolfcompanion=Một bạn đồng hành sói sẽ tấn công những kẻ thù được đánh dấu gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] sát thương của người triệu hồi§0
 
-// พ่อมด
-manapower=แต่ละระดับให้:\n\n+1% ความเสียหายเวทมนตร์สำหรับทุกๆ 10% ของมานาที่ไม่ได้ใช้
-flamingsteps=เมื่อวิ่งโดยมีเครื่องประดับที่ใช้งานอยู่ คุณจะทิ้งเปลวไฟไว้บนพื้น\nเปลวไฟจะเผาศัตรูเป็นเวลา 2 วินาที สร้างความเสียหาย §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] ความเสียหายเวทมนตร์§0 ต่อวินาที
-stormbound=ทุกๆ §a[[9 - 0.5 x <skilllevel>]] วินาที§0, สายฟ้าจะฟาดใส่ศัตรูแบบสุ่มในสายตาของคุณ\nสร้างความเสียหาย §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] ความเสียหายเวทมนตร์§0 และทำให้มึนงง 1 วินาที
-arcaneshield=โล่ที่ป้องกันการโจมตีหนึ่งครั้ง\nโล่จะฟื้นตัวใน §a[[20 - <skilllevel>]] วินาที§0 หลังจากใช้งาน
-fireshield=โล่ที่ป้องกันการโจมตีหนึ่งครั้ง\nเมื่อใช้งาน คุณจะปล่อยการระเบิดที่สร้างความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel>]] ความเสียหายเวทมนตร์§0\nและเผาม็อบ, สร้างความเสียหายซ้ำ 20% ของความเสียหายดั้งเดิมต่อวินาทีเป็นเวลา 5 วินาที\nโล่จะฟื้นตัวใน 26 วินาทีหลังจากใช้งาน
-iceshield=โล่ที่ป้องกันการโจมตีหนึ่งครั้ง\nเมื่อใช้งาน คุณจะปล่อยออร่าน้ำแข็งที่สร้างความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel>]] ความเสียหายเวทมนตร์§0\nทำให้ม็อบแข็งตัวเป็นเวลา 5 วินาที, และทำให้แข็งตัวสนิทเป็นเวลา 1 วินาที\nโล่จะฟื้นตัวใน 22 วินาทีหลังจากใช้งาน
+// Pháp sư
+manapower=Mỗi cấp độ cung cấp:\n\n+1% Sát thương phép cho mỗi 10% Mana không sử dụng
+flamingsteps=Khi chạy với một món đồ trang sức đang hoạt động hoặc biến hình, bạn sẽ để lại ngọn lửa trên mặt đất\nNgọn lửa sẽ đốt cháy kẻ thù trong 2 giây, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 mỗi giây
+stormbound=Cứ sau §a[[9 - 0.5 x <skilllevel>]] giây§0, một tia sét đánh vào một kẻ thù ngẫu nhiên trong tầm nhìn của bạn\nGây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây
+arcaneshield=Một chiếc khiên ngăn chặn một đòn đánh\nChiếc khiên sẽ phục hồi sau §a[[20 - <skilllevel>]] giây§0 sau khi sử dụng
+fireshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một vụ nổ gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nvà đốt cháy mob, lặp lại 20% sát thương ban đầu của chúng mỗi giây trong 5 giây\nChiếc khiên sẽ phục hồi sau 26 giây sau khi sử dụng
+iceshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một luồng khí băng gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nlàm đóng băng mob trong 5 giây và đóng băng hoàn toàn chúng trong 1 giây\nChiếc khiên sẽ phục hồi sau 22 giây sau khi sử dụng
 
-// เนโครแมนเซอร์
-necroticpower=การโจมตีด้วยเวทมนตร์และผู้เรียกทั้งหมดของคุณจะวางยาพิษ 5% ของความเสียหายเป็นเวลา §a[[2 x <skilllevel>]] วินาที§0, ตราบใดที่ไม่ได้เกิดจากการเรียก
-darkmagic=โบนัสความเสียหายของผู้เรียกส่งผลต่อความเสียหายเวทมนตร์ §a[[5 x <skilllevel>]]%
-necroticarmy=ศัตรูที่พ่ายแพ้จะกลายเป็น §bโครงกระดูก§0 ที่มีพลังชีวิตและความเสียหาย §a-[[100 - 3 x <skilllevel>]]%§0
-darksummons=สร้างความเสียหาย §a+[[10 x <skilllevel>]]%§0 Summoner Damage ให้กับศัตรูที่ถูกวางยาพิษ
-lifeleech=ฟื้นฟู §a[[<skilllevel>]]%§0 ของความเสียหาย Summon ที่สร้างขึ้นเป็นพลังชีวิต
-necroticremains=เมื่อการเรียกเนโครติกตาย, มันจะระเบิด, สร้างความเสียหาย §i[[0.1 x <intelligence> x <skilllevel>]] ความเสียหายเวทมนตร์§0 ให้กับศัตรูที่อยู่ใกล้เคียง, วางยาพิษพวกเขาด้วยความเสียหาย 20% ต่อวินาทีเป็นเวลา 10 วินาที
-endlesslegion=ทุกๆ 4 ระดับของทักษะนี้, คุณจะได้รับการเรียกสูงสุด +1
-lichborn=เมื่อคุณตาย คุณจะรอดชีวิตและฟื้นฟู §a[[10 x <skilllevel>]]%§0 พลังชีวิตหากคุณยังไม่ได้เป็น §bลิช§0\nในอีก §a[[120 - 6 x <skilllevel>]] วินาที§0 ข้างหน้า คุณจะกลายเป็น §bลิช§0 (โครงกระดูก)
+// Thầy chiêu hồn
+necroticpower=Tất cả các đòn tấn công Phép và Triệu hồi của bạn đều gây độc bằng 5% Sát thương của chúng trong §a[[2 x <skilllevel>]] giây§0, miễn là chúng không phải do triệu hồi gây ra
+darkmagic=Tiền thưởng Sát thương của Người triệu hồi ảnh hưởng đến Sát thương Phép bằng §a[[5 x <skilllevel>]]%
+necroticarmy=Kẻ thù bị đánh bại sẽ biến thành §bBộ xương§0 với §a-[[100 - 3 x <skilllevel>]]%§0 Máu và Sát thương
+darksummons=Gây thêm §a+[[8 x <skilllevel>]]%§0 Sát thương của Người triệu hồi cho kẻ thù bị nhiễm độc
+lifeleech=Hồi phục §a[[0.1 x <skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
+necroticremains=Khi một triệu hồi hoại tử chết, nó sẽ phát nổ, gây §i[[0.1 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó, đầu độc chúng bằng 20% sát thương mỗi giây trong 10 giây
+endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận được +1 triệu hồi tối đa
+lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một §bLich§0\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một §bLich§0 (một bộ xương)
 
 // Cleric
-vitalaura=ทุกๆ §a[[15 - <skilllevel>]] วินาที§0, คุณจะปล่อยออร่าการรักษาเวทมนตร์รอบตัวคุณซึ่งจะฟื้นฟูพลังชีวิต §a[[10 + <grace>]]§0\nและยังรักษาคุณเป็นครึ่งหนึ่งของจำนวนนั้น
-divinejudge=โบนัสความเสียหายเวทมนตร์ส่งผลต่อความเสียหายศักดิ์สิทธิ์ §a[[5 x <skilllevel>]]%§0
-empoweredhealing=เมื่อคุณรักษาตัวเองหรือพันธมิตรด้วยเวทมนตร์, เพิ่มความเสียหายของพวกเขาขึ้น §a[[5 x <skilllevel>]]%§0 เป็นเวลา 3 วินาที
-sanctifiedmind=การรักษาด้วยเวทมนตร์ยังฟื้นฟูมานาเท่ากับ §a[[5 x <skilllevel>]]%§0 ของการรักษาที่ทำได้
-sanctifiedarmor=การรักษาด้วยเวทมนตร์ยังฟื้นฟูความยืดหยุ่นเท่ากับ §a[[2 x <skilllevel>]]%§0 ของการรักษาที่ทำได้
-radiantexpansion=เมื่อคุณรักษาตัวเองหรือพันธมิตรด้วยเวทมนตร์, สร้างความเสียหาย §a[[5 x <skilllevel>]]%§0 ของการรักษาเป็นความเสียหายศักดิ์สิทธิ์แก่ศัตรูที่อยู่ใกล้เคียงของเป้าหมายที่ได้รับการรักษา
+vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace>]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
+divinejudge=Tiền thưởng Sát thương phép ảnh hưởng đến Sát thương thần thánh bằng §a[[5 x <skilllevel>]]%§0
+empoweredhealing=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, tăng sát thương của họ lên §a[[5 x <skilllevel>]]%§0 trong 3 giây
+sanctifiedmind=Hồi máu bằng phép thuật cũng phục hồi mana bằng §a[[5 x <skilllevel>]]%§0 lượng máu đã hồi
+sanctifiedarmor=Hồi máu bằng phép thuật cũng phục hồi khả năng phục hồi bằng §a[[2 x <skilllevel>]]%§0 lượng máu đã hồi
+radiantexpansion=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, gây §a[[5 x <skilllevel>]]%§0 lượng máu hồi phục thành Sát thương thần thánh cho những kẻ thù gần đó của mục tiêu được chữa lành
+
+// Druid
+naturesfavor=Nhận +[[<skilllevel>]] Hồi máu mỗi giây khi đứng trên cỏ
+primalburst=Tăng Sát thương và Tốc độ lên [[6 x <skillevel>]]% trong 5 giây đầu tiên sau khi biến hình
+phoenixspirit=Yêu cầu ít nhất 4 điểm để hoạt động:\n\nNếu bạn chết khi biến hình với một kỹ năng đang hoạt động, bạn sẽ sống sót với §a[4 + 8 x <skilllevel>]]%§0 máu, và kỹ năng đó sẽ bị đặt vào thời gian hồi chiêu 1 giờ\n\nKhông kích hoạt nếu bạn đã có ít nhất §a[[0.25 x <skilllevel> ↓]] kỹ năng biến hình§0 đang trong thời gian hồi chiêu hơn 1 phút
 
 
 [activeskills]
-empty=ว่างเปล่า
+empty=Trống
 
-// นักรบ
-fury=ความโกรธ
-recovery=การฟื้นตัว
-provocation=การยั่วยุ
-berserkercharge=การชาร์จของเบอร์เซิร์กเกอร์
+// Chiến binh
+fury=Thịnh nộ
+recovery=Phục hồi
+provocation=Khiêu khích
+berserkercharge=Cú húc của Berserker
 
-groundslam=การกระแทกพื้น
-grounddestruction=การทำลายพื้น
-parry=การปัดป้อง
-battlecry=เสียงโห่ร้องในสนามรบ
+groundslam=Đập đất
+grounddestruction=Phá hủy mặt đất
+parry=Đỡ đòn
+battlecry=Tiếng hét xung trận
 
-ironguard=เกราะเหล็ก
-intimidation=การข่มขู่
+ironguard=Vệ binh sắt
+intimidation=Dọa nạt
 
-objectthrowing=การขว้างวัตถุ
+objectthrowing=Ném đồ vật
 
-// เรนเจอร์
-shortdash=การพุ่งระยะสั้น
-longdash=การพุ่งระยะไกล
-lethalshot=การยิงสังหาร
-venomshot=การยิงพิษ
-explosiveshot=การยิงระเบิด
+// Kiểm lâm
+shortdash=Lướt ngắn
+longdash=Lướt dài
+lethalshot=Phát bắn chí mạng
+venomshot=Phát bắn độc
+explosiveshot=Phát bắn nổ
 
-shotsrampage=การอาละวาดของการยิง
-huntersmark=เครื่องหมายของนักล่า
-beartrap=กับดักหมี
+shotsrampage=Cơn thịnh nộ của những phát bắn
+huntersmark=Dấu ấn của thợ săn
+beartrap=Bẫy gấu
 
-huntersinstinct=สัญชาตญาณของนักล่า
-arrowstorm=พายุลูกศร
+huntersinstinct=Bản năng của thợ săn
+arrowstorm=Bão tên
 
-// พ่อมด
-arcaneoverload=การโอเวอร์โหลดลึกลับ
-firedance=ระบำไฟ
-iceball=ลูกบอลน้ำแข็ง
-zap=ช็อต
-manarecharge=การชาร์จมานา
+// Pháp sư
+arcaneoverload=Quá tải bí ẩn
+firedance=Vũ điệu lửa
+iceball=Quả cầu băng
+zap=Giật
+manarecharge=Nạp mana
 
-teleport=การเทเลพอร์ต
-inferno=นรก
-fireenchantment=การร่ายมนตร์ไฟ
-iceenchantment=การร่ายมนตร์น้ำแข็ง
+teleport=Dịch chuyển
+inferno=Địa ngục
+fireenchantment=Phép thuật lửa
+iceenchantment=Phép thuật băng
 
-fireball=ลูกไฟ
-lightning=สายฟ้า
+fireball=Quả cầu lửa
+lightning=Sét
 
-// เนโครแมนเซอร์
-skeletonhorde=ฝูงโครงกระดูก
-skeletonwarrior=นักรบโครงกระดูก
-sacrifice=การเสียสละ
-siegecry=เสียงโห่ร้องปิดล้อม
+// Thầy chiêu hồn
+skeletonhorde=Đám đông bộ xương
+skeletonwarrior=Chiến binh xương
+sacrifice=Sự hy sinh
+siegecry=Tiếng hét bao vây
 
-boneslingerhorde=ฝูงคนขว้างกระดูก
-tomb=สุสาน
-necroticbloom=การเบ่งบานของเนโครติก
-wardingtaunt=การยั่วยุป้องกัน
+boneslingerhorde=Đám đông kẻ ném xương
+tomb=Mộ
+necroticbloom=Sự nở hoa hoại tử
+wardingtaunt=Lời chế nhạo phòng thủ
 
-unholyground=ดินแดนที่ไม่ศักดิ์สิทธิ์
-necroticbarrage=การระดมยิงเนโครติก
+unholyground=Vùng đất ô uế
+necroticbarrage=Cơn mưa hoại tử
 
 // Cleric
-smite=ทุบตี
-divineblessing=พรศักดิ์สิทธิ์
-purify=ชำระล้าง
-lightinfusion=การผสมแสง
-holyguard=ผู้พิทักษ์ศักดิ์สิทธิ์
-judgment=การพิพากษา
-sanctuary=สถานที่ศักดิ์สิทธิ์
-divineintervention=การแทรกแซงของพระเจ้า
-resurrection=การฟื้นคืนชีพ
-wrathoflight=ความโกรธของแสง
+smite=Trừng phạt
+divineblessing=Phước lành thiêng liêng
+purify=Thanh tẩy
+lightinfusion=Truyền ánh sáng
+holyguard=Vệ binh thần thánh
+judgment=Phán quyết
+sanctuary=Thánh địa
+divineintervention=Sự can thiệp của thần thánh
+resurrection=Sự hồi sinh
+wrathoflight=Cơn thịnh nộ của ánh sáng
+
+// Druid
+wolftransformation=Biến hình sói
+queenbeetransformation=Biến hình ong chúa
+beartransformation=Biến hình gấu
+foxtransformation=Biến hình cáo
+rattransformation=Biến hình chuột
+treanttransformation=Biến hình cây
 
 
 [activeskillsdesc]
 
-// นักรบ
-fury=ในอีก 6 วินาทีข้างหน้า, เพิ่มความเสียหายระยะประชิดและความเร็วในการโจมตีของคุณขึ้น §a[[20 x <skilllevel>]]%
-recovery=ในอีก 10 วินาทีข้างหน้า, เพิ่มการฟื้นฟูพลังชีวิตในการต่อสู้อย่างมาก, ฟื้นฟูพลังชีวิต §a[[20 + <endurance> x <skilllevel>]]§0 ตลอดระยะเวลา
-provocation=ในอีก §a[[2 x <skilllevel>]] วินาที§0 ข้างหน้า, บังคับให้ศัตรูที่อยู่ใกล้เคียงมุ่งเป้าการโจมตีมาที่คุณ
-berserkercharge=พุ่งไปข้างหน้าระยะสั้น, สร้างความเสียหาย §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]]§0 ให้กับศัตรูทั้งหมดที่ผ่านไป\nใช้ความแข็งแกร่ง 50%
-groundslam=การโจมตีเป็นพื้นที่ที่สร้างความเสียหายระยะประชิด §i[[5 x <strength>]]§0 และ §9ทำให้มึนงง§0 เป็นเวลา §a[[1 x <skilllevel>]] วินาที§0
-grounddestruction=การโจมตีเป็นพื้นที่ที่สร้างความเสียหายระยะประชิด §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]]§0 และ §9ทำให้มึนงง§0 เป็นเวลา 2 วินาที
-parry=กลายเป็นอมตะเป็นเวลา 0.5 วินาทีและคืนความเสียหายดั้งเดิมที่ได้รับ 500%\nใช้ความแข็งแกร่ง 100%
-battlecry=ในอีก 10 วินาทีข้างหน้า, เพิ่มความเสียหายทั้งหมดและความเร็วในการเคลื่อนที่ของคุณและพันธมิตรที่อยู่ใกล้เคียงขึ้น §a[[10 x <skilllevel>]]%
+// Chiến binh
+fury=Trong 6 giây tiếp theo, tăng sát thương cận chiến và tốc độ tấn công của bạn lên §a[[20 x <skilllevel>]]%
+recovery=Trong 10 giây tiếp theo, tăng cường đáng kể khả năng hồi máu khi chiến đấu, phục hồi §a[[20 + <endurance> x <skilllevel>]] máu§0 trong suốt thời gian
+provocation=Trong §a[[2 x <skilllevel>]] giây§0 tiếp theo, buộc kẻ thù gần đó tập trung các đòn tấn công của chúng vào bạn
+berserkercharge=Lao về phía trước một khoảng cách ngắn, gây §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] sát thương§0 cho tất cả kẻ thù đi qua\nTiêu tốn 50% thể lực
+groundslam=Đòn tấn công khu vực gây §i[[5 x <strength>]] sát thương cận chiến§0 và §9làm choáng§0 trong §a[[1 x <skilllevel>]] giây§0
+grounddestruction=Đòn tấn công khu vực gây §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] sát thương cận chiến§0 và §9làm choáng§0 trong 2 giây
+parry=Trở nên bất khả xâm phạm trong 0,5 giây và trả lại 500% sát thương ban đầu nhận được\nTiêu tốn 100% thể lực
+battlecry=Trong 10 giây tiếp theo, tăng tất cả sát thương và tốc độ di chuyển của bạn và các đồng minh gần đó lên §a[[10 x <skilllevel>]]%
 
-ironguard=-50% ความเสียหายที่ได้รับเป็นเวลา §a[[4 x <skilllevel>]] วินาที
-intimidation=ในอีก §a[[<skilllevel>]] วินาที§0 ข้างหน้า, ทำให้ศัตรูที่อยู่ใกล้เคียงวิ่งหนีไป
+ironguard=-50% sát thương nhận vào trong §a[[4 x <skilllevel>]] giây
+intimidation=Trong §a[[<skilllevel>]] giây§0 tiếp theo, khiến kẻ thù gần đó bỏ chạy
 
-objectthrowing=ขั้นตอนที่ 1: หยิบวัตถุที่อยู่ข้างหน้าคุณ\nขั้นตอนที่ 2: ขว้างไปข้างหน้า, สร้างความเสียหายระยะประชิด §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]§0\nทั้งสองขั้นตอนใช้ความแข็งแกร่งทั้งหมดของคุณ (อย่างน้อย 100%)
+objectthrowing=Bước 1: Nắm lấy một vật thể trước mặt bạn\nBước 2: Ném nó về phía trước gây §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] sát thương cận chiến§0\nCả hai bước đều tiêu tốn toàn bộ thể lực của bạn (ít nhất 100%)
 
-// เรนเจอร์
-shortdash=ทำการพุ่ง 100-<strength>\nใช้ความแข็งแกร่ง 15%
-longdash=ทำการพุ่ง 150-<strength>\nใช้ความแข็งแกร่ง 25%
-lethalshot=ยิง §hลูกศรสังหาร§0 ไปยังศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Ranger Damage§0
-venomshot=ยิง §bลูกศรพิษ§0 ไปยังศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger Damage§0
-explosiveshot=ยิง §iลูกศรระเบิด§0 ไปยังศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger Damage§0
+// Kiểm lâm
+shortdash=Thực hiện một cú lướt 100-<strength>\nTiêu tốn 15% thể lực
+longdash=Thực hiện một cú lướt 150-<strength>\nTiêu tốn 25% thể lực
+lethalshot=Bắn một §hmũi tên chí mạng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] sát thương của kiểm lâm§0
+venomshot=Bắn một §bmũi tên độc§0 vào kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] sát thương của kiểm lâm§0
+explosiveshot=Bắn một §imũi tên nổ§0 vào kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] sát thương của kiểm lâm§0
 
-shotsrampage=ในขณะที่คุณมีสแต็คของการอาละวาดของการยิงอย่างน้อย 1 สแต็ค, การโจมตีศัตรูด้วยการโจมตีระยะไกลจะให้สแต็คเพิ่มเติม 1 สแต็คเป็นเวลา 5 วินาที\nแต่ละสแต็คของการอาละวาดของการยิงจะเพิ่มความเร็วในการโจมตี 5%, สูงสุด 30 สแต็ค
-huntersmark=§hทำเครื่องหมาย§0 ศัตรูที่อยู่ใกล้เคียงที่มีพลังชีวิตสูงสุดเป็นเวลา 10 วินาที\nหากคุณฆ่าเป้าหมายที่ถูกทำเครื่องหมาย, จะได้รับ §a+[[20 x <skilllevel>]]%§0 ความเร็วในการโจมตีระยะไกลและความเร็วในการเคลื่อนที่เป็นเวลา 5 วินาที
-beartrap=วางกับดักหมีบนพื้นซึ่งจะหายไปหากถูกกระตุ้นหรือหลังจาก 20 วินาที\nหากศัตรูกระตุ้นมัน, พวกเขาจะได้รับความเสียหาย §i[[10 x <playerlevel>]]§0 และถูกดักจับเป็นเวลา 5 วินาที
+shotsrampage=Khi bạn có ít nhất 1 điểm cộng dồn của Cơn thịnh nộ của những phát bắn, đánh trúng kẻ thù bằng đòn tấn công tầm xa sẽ cấp thêm 1 điểm cộng dồn trong 5 giây\nMỗi điểm cộng dồn của Cơn thịnh nộ của những phát bắn sẽ tăng tốc độ tấn công thêm 5%, tối đa 30 điểm cộng dồn
+huntersmark=§hĐánh dấu§0 kẻ thù gần đó có lượng máu cao nhất trong 10 giây\nNếu bạn giết một mục tiêu được đánh dấu, nhận §a+[[20 x <skilllevel>]]%§0 tốc độ tấn công tầm xa và tốc độ di chuyển trong 5 giây
+beartrap=Đặt một cái bẫy gấu trên mặt đất sẽ biến mất nếu được kích hoạt hoặc sau 20 giây\nNếu kẻ thù kích hoạt nó, chúng sẽ nhận §i[[10 x <playerlevel>]] sát thương§0 và bị mắc kẹt trong 5 giây
 
-huntersinstinct=ในอีก 12 วินาทีข้างหน้า, เพิ่ม §7โอกาสหลบหลีก§0 ของคุณขึ้น §a[[10 x <skilllevel>]]%\n§hทำเครื่องหมาย§0 เป็นเวลา 5 วินาทีสำหรับศัตรูที่คุณหลบหลีก
-arrowstorm=ยิงลูกศรพื้นฐานไปยังศัตรูที่อยู่ใกล้เคียงแต่ละตัว, สร้างความเสียหาย §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Ranger Damage§0 ต่อลูกศรแต่ละลูก
+huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[10 x <skilllevel>]]%\n§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
+arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] sát thương của kiểm lâm§0 cho mỗi mũi tên
 
-// พ่อมด
-arcaneoverload=ในขณะที่ใช้งานอยู่, เพิ่มความเร็วในการโจมตีเวทมนตร์ของคุณขึ้น §a[[30 x <skilllevel>]]%§0, แต่คุณจะไม่สามารถเคลื่อนที่ได้\nสิ้นสุดเมื่อคุณหมดมานา, หรือหากใช้งานอีกครั้ง\nใช้ §a[[10 + 2 x <skilllevel>]] มานาต่อวินาที
-manarecharge=ในขณะที่ใช้งานอยู่, เพิ่มการฟื้นฟูมานาของคุณขึ้น +1.4 และ §a[[50 x <skilllevel>]]%§0, แต่คุณจะเป็นอัมพาตและได้รับความเสียหายสองเท่า\nสิ้นสุดเมื่อใช้งานอีกครั้ง
-firedance=เรียก §bเปลวไฟเต้นระบำ§0 4 อัน, ซึ่งแต่ละอันจะสร้างความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nเรียกอีกอันทุกๆ 5 วินาที\nการเรียกทั้งหมดจะหายไป 20 วินาทีหลังจากเปิดใช้งานทักษะ\nใช้ §a[[30 + 6 x <skilllevel>]] มานา
-iceball=ขว้าง §aลูกบอลน้ำแข็ง§0 ไปยังศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nใช้ §a[[50 + 10 x <skilllevel>]] มานา
-zap=เริ่มการช็อตที่กระโดดไปมาระหว่างม็อบเป็นเวลา 2 วินาที, สร้างความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0 และทำให้มึนงง 1 วินาที\nใช้ §a[[10 + 2 x <skilllevel>]] มานา
+// Pháp sư
+arcaneoverload=Khi đang hoạt động, tăng Tốc độ Tấn công Phép của bạn lên §a[[30 x <skilllevel>]]%§0, nhưng bạn sẽ không thể di chuyển\nKết thúc khi bạn hết mana, hoặc nếu được sử dụng lại\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana mỗi giây
+manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1.4 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi\nKết thúc khi sử dụng lại
+firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt kỹ năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
+iceball=Ném một §aQuả cầu băng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[50 + 10 x <skilllevel>]] Mana
+zap=Bắt đầu một cú giật nhảy giữa các mob trong 2 giây, gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana
 
-teleport=เทเลพอร์ตไปข้างหน้าคุณ\nใช้ 10 มานา
-inferno=เผาศัตรูที่อยู่ใกล้เคียงทั้งหมด, สร้างความเสียหาย §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Fire Damage§0 ต่อวินาทีเป็นเวลา 10 วินาที\nใช้ §a[[40 + 8 x <skilllevel>]] มานา
-fireenchantment=ในอีก 10 วินาทีข้างหน้า, การโจมตีจากคุณและพันธมิตรที่อยู่ใกล้เคียงจะเผาศัตรู, สร้างความเสียหาย §a[[5 x <skilllevel>]]%§0 ของความเสียหายต่อวินาทีเป็นเวลา 5 วินาที\nใช้ §a[[20 + 4 x <skilllevel>]] มานา
-iceenchantment=ในอีก 10 วินาทีข้างหน้า, การโจมตีจากคุณและพันธมิตรที่อยู่ใกล้เคียงจะทำให้ศัตรูแข็งตัวเป็นเวลา §a[[2 x <skilllevel>]] วินาที§0\nใช้ 20 มานา
+teleport=Dịch chuyển bạn ra phía trước\nTiêu tốn 10 Mana
+inferno=Đốt cháy tất cả kẻ thù gần đó, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương lửa§0 mỗi giây trong 10 giây\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana
+fireenchantment=Trong 10 giây tiếp theo, các đòn tấn công từ bạn và các đồng minh gần đó sẽ đốt cháy kẻ thù, gây §a[[5 x <skilllevel>]]%§0 sát thương mỗi giây trong 5 giây\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana
+iceenchantment=Trong 10 giây tiếp theo, các đòn tấn công từ bạn và các đồng minh gần đó sẽ đóng băng kẻ thù trong §a[[2 x <skilllevel>]] giây§0\nTiêu tốn 20 Mana
 
-fireball=ขว้าง §iลูกไฟ§0 ไปยังศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nใช้ §a[[80 + 16 x <skilllevel>]] มานา
-lightning=เริ่มสายฟ้าที่กระโดดไปมาระหว่างม็อบเป็นเวลา 1 วินาที, สร้างความเสียหาย §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magic Damage§0 และทำให้มึนงง 2 วินาที\nไม่สามารถโจมตีเป้าหมายเดียวกันได้หลายครั้ง\nใช้ §a[[30 + 6 x <skilllevel>]] มานา
+fireball=Ném một §iQuả cầu lửa§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[80 + 16 x <skilllevel>]] Mana
+lightning=Bắt đầu một tia sét nhảy giữa các mob trong 1 giây, gây §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 2 giây\nKhông thể đánh trúng cùng một mục tiêu nhiều lần\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
 
-// เนโครแมนเซอร์
-skeletonhorde=เรียก §a[[1 + <skilllevel>]] §bโครงกระดูก§0
-skeletonwarrior=เรียก §bนักรบโครงกระดูก§0 ที่มีพลังชีวิตและความเสียหาย §a+[[20 x <skilllevel>]]%§0
-sacrifice=ซัมมอนเนโครติกที่ใกล้ที่สุดจะตาย, และคุณจะฟื้นฟู §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] พลังชีวิต§0 เป็นการรักษาด้วยเวทมนตร์
-siegecry=รับ §a+[[50 x <skilllevel>]]%§0 ความเร็วในการเรียกเป็นเวลา 6 วินาที
+// Thầy chiêu hồn
+skeletonhorde=Triệu hồi §a[[1 + <skilllevel>]] §bBộ xương§0
+skeletonwarrior=Triệu hồi §bChiến binh xương§0 ที่มีพลังชีวิตและความเสียหาย §a+[[20 x <skilllevel>]]%§0
+sacrifice=Triệu hồi hoại tử gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
+siegecry=Nhận §a+[[50 x <skilllevel>]]%§0 Tốc độ Triệu hồi trong 6 giây
 
-boneslingerhorde=เรียก §a[[1 + <skilllevel>]]§0 §bคนขว้างกระดูก§0
-tomb=สร้างโครงสร้างที่เรียก §bโครงกระดูก§0 ทุกๆ §a[[10 - <skilllevel>]] วินาที§0\nสุสานมีพลังชีวิตเท่ากับ §a[[5 x <playerlevel> x <skilllevel>]]§0\nสุสานจะสูญเสียพลังชีวิตทั้งหมด 2% ต่อวินาที
-necroticbloom=เร่งผลของพิษต่อศัตรูที่อยู่ใกล้เคียงทั้งหมดโดยลดระยะเวลาลงเหลือ 10%, แต่เพิ่มความเสียหายต่อวินาทีเพื่อรักษาความเสียหายทั้งหมด
-wardingtaunt=ซัมมอนเนโครติกที่ใกล้ที่สุดจะบังคับให้ศัตรูที่อยู่ใกล้เคียงในรัศมี §a[[50 x <skilllevel>]]§0 มาโจมตีมัน
+boneslingerhorde=Triệu hồi §a[[1 + <skilllevel>]]§0 §bKẻ ném xương§0
+tomb=Tạo ra một cấu trúc triệu hồi một §bBộ xương§0 mỗi §a[[10 - <skilllevel>]] giây§0\nMộ có Máu bằng §a[[5 x <playerlevel> x <skilllevel>]]§0\nMộ mất 2% Tổng Máu mỗi giây
+necroticbloom=Tăng tốc hiệu ứng của độc trên tất cả kẻ thù gần đóโดยลดระยะเวลาลงเหลือ 10%, แต่เพิ่มความเสียหายต่อวินาทีเพื่อรักษาความเสียหายทั้งหมด
+wardingtaunt=Triệu hồi hoại tử gần nhất buộc kẻ thù gần đóในรัศมี §a[[50 x <skilllevel>]]§0 ต้องโจมตีมัน
 
-unholyground=ขยายออร่าแห่งความเสื่อมทรามรอบตัวคุณเป็นเวลา 10 วินาที\nศัตรูภายในพื้นที่นี้จะได้รับความเสียหาย §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Poison Damage§0 ต่อวินาทีและถูก §7จำกัด
-necroticbarrage=ซัมมอนเนโครติกทั้งหมดจะระเบิดเมื่อตาย, สร้างความเสียหาย §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0 ให้กับศัตรูที่อยู่ใกล้เคียง\nและวางยาพิษพวกเขาเป็นเวลา 10 วินาทีด้วยความเสียหาย 20% ของความเสียหายดั้งเดิมต่อวินาที
+unholyground=Mở rộng một luồng khí ô uế xung quanh bạn trong 10 giây\nKẻ thù trong khu vực này nhận §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Sát thương độc§0 mỗi giây và bị §7Hạn chế
+necroticbarrage=Tất cả các triệu hồi hoại tửจะระเบิดเมื่อตาย, สร้างความเสียหาย §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 ให้กับ kẻ thùที่อยู่ใกล้เคียง\nและวางยาพิษพวกเขาเป็นเวลา 10 วินาทีด้วยความเสียหาย 20% ของความเสียหายดั้งเดิมต่อวินาที
 
 // Cleric
-smite=เรียกสายแสงศักดิ์สิทธิ์ลงมาที่ศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0\nสร้างความเสียหายสองเท่าแก่ม็อบอมตะและปีศาจ\nใช้ §a[[10 + 2 x <skilllevel>]] มานา§0
+smite=Gọiสายแสงศักดิ์สิทธิ์ลงมาที่ศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0\nสร้างความเสียหายสองเท่าแก่ม็อบอมตะและปีศาจ\nใช้ §a[[10 + 2 x <skilllevel>]] มานา§0
 divineblessing=ออร่าการรักษาเวทมนตร์ที่ฟื้นฟูพลังชีวิต §a[[20 + 3 x <grace> x <skilllevel>]]§0 ให้กับคุณและพันธมิตรของคุณ\nใช้ §a[[20 + 4 x <skilllevel>]] มานา§0
 purify=ชำระล้างตัวเองและพันธมิตรที่อยู่ใกล้เคียงจากผลกระทบเชิงลบทั้งหมด\nใช้ 10 มานา
 lightinfusion=ในอีก 8 วินาทีข้างหน้า, คุณจะได้รับการรักษาเวทมนตร์และความเสียหายศักดิ์สิทธิ์เพิ่มขึ้น §a+[[20 x <skilllevel>]]%§0
@@ -352,6 +377,15 @@ sanctuary=สร้างโซนศักดิ์สิทธิ์เป็�
 divineintervention=รักษาพันธมิตรที่ใกล้ที่สุดที่ได้รับความเสียหายมากที่สุดให้มีพลังชีวิตสูงสุดทันทีและให้การป้องกันความเสียหายทั้งหมดเป็นเวลา §a[[<skilllevel>]]§0 วินาที\nใช้ §a[[60 + 12 x <skilllevel>]] มานา§0
 resurrection=ชุบชีวิตพันธมิตรผู้เล่นที่ตายล่าสุดบนเกาะเดียวกับคุณด้วยพลังชีวิตสูงสุด §a[[10 x <skilllevel>]]%§0 ในตำแหน่งของคุณ\nคุณไม่สามารถชุบชีวิตผู้เล่นที่สามารถเกิดใหม่ได้นานกว่า 10 วินาทีแล้ว\nใช้ §a[[100 - 10 x <skilllevel>]]%§0 ของมานาของคุณ (อย่างน้อย §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=เรียกเสาแสงมาที่ศัตรูที่ใกล้ที่สุด, สร้างความเสียหาย §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0 ต่อวินาทีเป็นเวลา 5 วินาทีในพื้นที่\nม็อบอมตะและปีศาจที่อยู่ข้างในจะถูก §7จำกัด§0\nใช้ §a[[40 + 8 x <skilllevel>]] มานา§0
+
+
+// Druid
+wolftransformation=ใช้เวลา 3 วินาทีในการแปลงร่างเป็นหมาป่า\n\nความเร็วในการเคลื่อนที่: 60\n\nกด [input=transformationability1] เพื่อพุ่งกัด: กระโดดไปข้างหน้าและกัด สร้างความเสียหายระยะประชิด §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]§0\n\nกด [input=transformationability2] เพื่อเห่า: บังคับศัตรูที่อยู่ใกล้เคียงให้โจมตีคุณเป็นเวลา 2 วินาที\n\nกด [input=trinketability] ค้างไว้เพื่อวิ่ง
+queenbeetransformation=ใช้เวลา 2 วินาทีในการแปลงร่างเป็นราชินีผึ้ง\n\nความเร็วในการเคลื่อนที่: 30\n-50% การตรวจจับศัตรู\n§6+1000% ความเสียหายที่ได้รับ§0\n\nกด [input=transformationability1] เพื่อยิงน้ำผึ้ง: สร้างความเสียหายระยะไกล §i[[2 x <playerlevel> + <strength> x <skilllevel>]]§0\n\nกด [input=transformationability2] เพื่อเรียก §9ผึ้ง§0 สูงสุด §a[[2 x <skilllevel>]]§0\n\nกด [input=trinketability] ค้างไว้เพื่อสั่งให้ผึ้งของคุณโจมตี
+beartransformation=ใช้เวลา 4 วินาทีในการแปลงร่างเป็นหมี\n\nความเร็วในการเคลื่อนที่: 20\n-50% ความเสียหายที่ได้รับ\n\nกด [input=transformationability1] เพื่อทุบพื้น: โจมตีพื้นที่สร้างความเสียหายระยะประชิด §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]§0 และ §9สตัน§0 เป็นเวลา §a[[0.5 x <skilllevel>]] วินาที§0\n\nกด [input=transformationability2] เพื่อคำราม: ทำให้ศัตรูที่อยู่ใกล้เคียงวิ่งหนีเป็นเวลา 1 วินาที\n\nกด [input=trinketability] ค้างไว้เพื่อวิ่ง
+foxtransformation=ใช้เวลา 3 วินาทีในการแปลงร่างเป็นสุนัขจิ้งจอก\n\nความเร็วในการเคลื่อนที่: 50\n§6+50% ความเสียหายที่ได้รับ§0\n\nกด [input=transformationability1] เพื่อยิงลูกไฟ: สร้างความเสียหายเวทมนตร์ §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]§0\n\nกด [input=transformationability2] เพื่อเรียก §bเปลวไฟเต้นรำ§0 สูงสุด §a[[2 + <skilllevel>]]§0 แต่ละอันสร้างความเสียหายเท่ากับลูกไฟ\n\nกด [input=trinketability] เพื่อพุ่ง\n§!Vulpes Nova fox!
+rattransformation=ใช้เวลา 2 วินาทีในการแปลงร่างเป็นหนู\n\nความเร็วในการเคลื่อนที่: 25\n-50% การตรวจจับศัตรู\nให้โอกาสหลบหลีกสูงสุด\n§6+1000% ความเสียหายที่ได้รับ§0\n\nกด [input=transformationability1] เพื่อกัด: สร้างความเสียหายระยะประชิด §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]§0 และวางยาพิษเป้าหมายเป็นเวลา 10 วินาทีด้วยความเสียหาย 100% ของความเสียหายที่สร้างขึ้นต่อวินาที\n\nกด [input=trinketability] ค้างไว้เพื่อวิ่ง
+treanttransformation=ใช้เวลา 4 วินาทีในการแปลงร่างเป็น Treant\n\nความเร็วในการเคลื่อนที่: 0\n-§a[50 + 5 <skilllevel>]%§0 ความเสียหายที่ได้รับ\nศัตรูจะเพิกเฉยต่อคุณหากซ่อนตัวเป็นเวลา 3 วินาที\n\nกด [input=transformationability1] ขณะเปิดเผยเพื่อยิงเมล็ดสุ่ม: สร้างความเสียหายระยะไกล §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]§0 พร้อมเอฟเฟกต์สุ่ม\n\nกด [input=transformationability2] เพื่อเรียก §9ต้นกล้า Dryad§0\n\nกด [input=trinketability] ค้างไว้เพื่อเปิดเผยและวิ่งหากเคลื่อนที่
 
 
 [skillsdesckeys]
@@ -385,7 +419,7 @@ ignitedamage=§iความเสียหายจากการเผาไ�
 // กระสุน
 lethalarrow=§hลูกศรสังหาร:§0 ลูกศรนำวิถีที่ให้การโจมตีคริติคอล
 venomarrow=§bลูกศรพิษ:§0 ลูกศรนำวิถีที่ทำให้ศัตรูติดพิษ. สร้างความเสียหายซ้ำ 10% ของความเสียหายดั้งเดิมต่อวินาทีเป็นเวลา 30 วินาที
-explosivearrow=§iลูกศรระเบิด:§0 ลูกศรนำวิถีที่ทำให้เกิดการระเบิดเวทมนตร์ที่มีความเสียหายเท่ากัน
+explosiveshot=§iลูกศรระเบิด:§0 ลูกศรนำวิถีที่ทำให้เกิดการระเบิดเวทมนตร์ที่มีความเสียหายเท่ากัน
 iceball=§aลูกบอลน้ำแข็ง:§0 กระสุนเวทมนตร์ที่ระเบิดและทำให้ม็อบแข็งตัวเป็นเวลา 5 วินาที, และยังทำให้แข็งตัวสนิทเป็นเวลา 1 วินาที
 fireball=§iลูกไฟ:§0 กระสุนเวทมนตร์ที่ระเบิดและเผาม็อบ, สร้างความเสียหายซ้ำ 20% ของความเสียหายดั้งเดิมต่อวินาทีเป็นเวลา 5 วินาที
 
@@ -396,10 +430,8 @@ dancingflame=§bเปลวไฟเต้นระบำ:§0 การเร�
 necromancerskeleton=§bโครงกระดูก:§0 การเรียกเนโครติกที่สามารถสร้างความเสียหายได้\nพลังชีวิต: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nความเสียหาย: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nความเร็ว: 60\nสูญเสียพลังชีวิตทั้งหมด 2% ต่อวินาที
 necromancerskeletonwarrior=§bนักรบโครงกระดูก:§0 การเรียกเนโครติกที่สามารถสร้างความเสียหายได้\nพลังชีวิต: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nความเสียหาย: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nความเร็ว: 60\nสูญเสียพลังชีวิตทั้งหมด 2% ต่อวินาที
 necromancerboneslinger=§bคนขว้างกระดูก:§0 การเรียกเนโครติกที่สามารถสร้างความเสียหายได้\nพลังชีวิต: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nความเสียหาย: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (ระยะ 320)\nความเร็ว: 60\nสูญเสียพลังชีวิตทั้งหมด 2% ต่อวินาที
-
-// Tranformations
-extraskilldesc.necromancerlich=§bลิช:§0 การแปลงร่างเป็นอมตะ\n\nไม่สามารถใช้ไอเท็มได้\n+100% ความเสียหายที่ได้รับ\n\nกด [input=trinketability] เพื่อยิงกระดูกที่สร้างความเสียหาย §i[[<strength>]] Summoner Damage§0
-
+bee=§9ผึ้ง:§0 ซัมมอนที่สามารถสร้างความเสียหายได้\nพลังชีวิต: 1\nความเสียหาย: §a[[<playerlevel> + <intelligence>]]§0\nความเร็ว: 40\n\nตายเมื่อโจมตี, แต่จะวางยาพิษเป้าหมายเป็นเวลา 10 วินาทีด้วยความเสียหาย 20% ของความเสียหายที่สร้างขึ้นต่อวินาที
+dryadsapling=§9ต้นกล้าดรายแอด:§0 ซัมมอนที่สามารถสร้างความเสียหายได้\nพลังชีวิต: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nความเสียหาย: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nความเร็ว: 65\nสูญเสียพลังชีวิตทั้งหมด 2% ต่อวินาที
 
 [item]
 scrollofoblivion=ม้วนคัมภีร์แห่งการลืมเลือน
@@ -454,6 +486,7 @@ activeskillinuse=ทักษะนี้ใช้งานอยู่แล้
 anotheractiveskillinuse=คุณมีทักษะอื่นใช้งานอยู่แล้ว
 incooldown=กำลังคูลดาวน์
 notenoughstamina=ความแข็งแกร่งไม่เพียงพอ
+canotusemounted=ไม่สามารถใช้ขณะขี่หรือแปลงร่างได้
 
 notarget=ไม่มีเป้าหมายในบริเวณใกล้เคียง
 nograbbableobject=ไม่มีวัตถุที่สามารถหยิบได้อยู่ข้างหน้าคุณ
@@ -473,6 +506,7 @@ lvl=เลเวล <level>
 eachlevel=แต่ละระดับให้:
 experience=ค่าประสบการณ์: <exp> / <nextexp>
 totalexperience=ค่าประสบการณ์: <exp>
+onlytranformed=เฉพาะเมื่อแปลงร่าง
 
 resetpoints=คะแนนรีเซ็ต: <points>
 attrpoints=คะแนนคุณสมบัติ: <points>

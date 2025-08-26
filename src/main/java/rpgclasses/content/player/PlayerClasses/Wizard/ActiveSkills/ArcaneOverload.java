@@ -14,8 +14,6 @@ import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 
-import java.awt.*;
-
 public class ArcaneOverload extends SimplePassiveBuffActiveSkill {
 
     public ArcaneOverload(int levelMax, int requiredClassLevel) {
@@ -32,7 +30,7 @@ public class ArcaneOverload extends SimplePassiveBuffActiveSkill {
         return new ArcaneOverloadBuff(this, getBuffStringID());
     }
 
-    public static class ArcaneOverloadBuff extends PassiveActiveSkillBuff {
+    public class ArcaneOverloadBuff extends PassiveActiveSkillBuff {
         public ActiveSkill skill;
         public String buffStringID;
 
@@ -53,7 +51,7 @@ public class ArcaneOverload extends SimplePassiveBuffActiveSkill {
         @Override
         public void clientTick(ActiveBuff activeBuff) {
             this.tick(activeBuff);
-            activeBuff.owner.getLevel().entityManager.addParticle(activeBuff.owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), activeBuff.owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).color(new Color(102, 51, 255)).givesLight(0.0F, 0.5F).height(16.0F);
+            activeBuff.owner.getLevel().entityManager.addParticle(activeBuff.owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), activeBuff.owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).color(getColor()).givesLight(0.0F, 0.5F).height(16.0F);
         }
 
         @Override
@@ -75,7 +73,7 @@ public class ArcaneOverload extends SimplePassiveBuffActiveSkill {
                 PlayerData playerData = PlayerDataList.getPlayerData(player);
                 for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
                     if (equippedActiveSkill.isSameSkill(skill)) {
-                        equippedActiveSkill.lastUse = player.getTime();
+                        equippedActiveSkill.startCooldown(player.getTime(), level);
                     }
                 }
             }

@@ -18,7 +18,7 @@ import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.mobs.ai.PassiveSummonCollisionChaserAI;
+import rpgclasses.mobs.ai.CustomSummonCollisionChaserAI;
 import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
@@ -46,9 +46,10 @@ public class RangerWolfMob extends PassiveFollowingMob {
     @Override
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new PassiveSummonCollisionChaserAI<RangerWolfMob>(1024, getDamage(), 30, 500, 640, 64, false) {
+        this.ai = new BehaviourTreeAI<>(this, new CustomSummonCollisionChaserAI<RangerWolfMob>(1024, getDamage(), 30, 500, 640, 64, null) {
             @Override
             public Mob getCustomFocus(RangerWolfMob mob, int searchDistance) {
+                if (!(getFollowingMob() instanceof PlayerMob)) return null;
                 PlayerMob player = (PlayerMob) getFollowingMob();
                 return RPGUtils.findBestTarget(player, mob.x, mob.y, 1000, RPGUtils.isMarkedFilter(player));
             }

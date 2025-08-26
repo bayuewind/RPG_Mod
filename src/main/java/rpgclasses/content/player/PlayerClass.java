@@ -4,6 +4,7 @@ import necesse.engine.localization.Localization;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import rpgclasses.content.player.PlayerClasses.Cleric.ClericPlayerClass;
+import rpgclasses.content.player.PlayerClasses.Druid.DruidPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Necromancer.NecromancerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Ranger.RangerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.WarriorPlayerClass;
@@ -31,7 +32,7 @@ abstract public class PlayerClass {
         registerClass(new UpcomingPlayerClass("rogue", "#8B0000"));
         registerClass(new UpcomingPlayerClass("warlock", "#B22222"));
         registerClass(new UpcomingPlayerClass("paladin", "#F1C40F"));
-        registerClass(new UpcomingPlayerClass("druid", "#27AE60"));
+        registerClass(new DruidPlayerClass());
     }
 
     public static void registerClass(PlayerClass playerClass) {

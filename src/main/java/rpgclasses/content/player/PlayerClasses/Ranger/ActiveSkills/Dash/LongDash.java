@@ -11,7 +11,6 @@ import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class LongDash extends ActiveSkill {
@@ -41,7 +40,7 @@ public class LongDash extends ActiveSkill {
 
         if (player.isClient() && player.getLevel() != null) {
             for (int i = 0; i < 30; ++i) {
-                player.getLevel().entityManager.addParticle(player.x + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + forceX / 10.0F, player.y + (float) GameRandom.globalRandom.nextGaussian() * 20.0F + forceY / 10.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(forceX * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, forceY * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(new Color(153, 255, 153)).height(18.0F).lifeTime(700);
+                player.getLevel().entityManager.addParticle(player.x + (float) GameRandom.globalRandom.nextGaussian() * 15.0F + forceX / 10.0F, player.y + (float) GameRandom.globalRandom.nextGaussian() * 20.0F + forceY / 10.0F, Particle.GType.IMPORTANT_COSMETIC).movesConstant(forceX * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F, forceY * GameRandom.globalRandom.getFloatBetween(0.8F, 1.2F) / 10.0F).color(getColor()).height(18.0F).lifeTime(700);
             }
         }
     }

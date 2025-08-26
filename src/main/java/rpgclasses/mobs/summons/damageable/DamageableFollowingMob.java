@@ -117,31 +117,35 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
     @Override
     public void serverTick() {
         super.serverTick();
-        int maxHealth = getMaxHealthFlat();
-        if (maxHealth <= 1) {
-            this.remove(0, 0, null, true);
-        } else {
-            float decrease = initialMaxHealth * getHealthDecreasePerSecond() / 20 + keepDecrease;
-            int trueDecrease = (int) decrease;
-            float keeping = decrease - trueDecrease;
-            if (keeping > 0) keepDecrease = keeping;
-            this.setHealth(getHealth() - trueDecrease);
-            this.setMaxHealth(maxHealth - trueDecrease);
+        if (getHealthDecreasePerSecond() > 0) {
+            int maxHealth = getMaxHealthFlat();
+            if (maxHealth <= 1) {
+                this.remove(0, 0, null, true);
+            } else {
+                float decrease = initialMaxHealth * getHealthDecreasePerSecond() / 20 + keepDecrease;
+                int trueDecrease = (int) decrease;
+                float keeping = decrease - trueDecrease;
+                if (keeping > 0) keepDecrease = keeping;
+                this.setHealth(getHealth() - trueDecrease);
+                this.setMaxHealth(maxHealth - trueDecrease);
+            }
         }
     }
 
     @Override
     public void clientTick() {
         super.clientTick();
-        int maxHealth = getMaxHealthFlat();
-        if (maxHealth <= 1) {
-            this.remove(0, 0, null, true);
-        } else {
-            float decrease = initialMaxHealth * getHealthDecreasePerSecond() / 20 + keepDecrease;
-            int trueDecrease = (int) decrease;
-            float keeping = decrease - trueDecrease;
-            if (keeping > 0) keepDecrease = keeping;
-            this.setMaxHealth(maxHealth - trueDecrease);
+        if (getHealthDecreasePerSecond() > 0) {
+            int maxHealth = getMaxHealthFlat();
+            if (maxHealth <= 1) {
+                this.remove(0, 0, null, true);
+            } else {
+                float decrease = initialMaxHealth * getHealthDecreasePerSecond() / 20 + keepDecrease;
+                int trueDecrease = (int) decrease;
+                float keeping = decrease - trueDecrease;
+                if (keeping > 0) keepDecrease = keeping;
+                this.setMaxHealth(maxHealth - trueDecrease);
+            }
         }
     }
 
@@ -189,22 +193,23 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
     public void addStatusBarDrawable(OrderableDrawables list, Level level, int x, int y, TickManager tickManager, GameCamera camera, PlayerMob perspective) {
         super.addStatusBarDrawable(list, level, x, y, tickManager, camera, perspective);
 
-        int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
+        if (getHealthDecreasePerSecond() > 0) {
+            int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
 
-        Rectangle bounds = this.getTimeBarBounds(x, y, style);
+            Rectangle bounds = this.getTimeBarBounds(x, y, style);
 
-        int maxHealth = this.getMaxHealth();
-        float perc = GameMath.limit((maxHealth - 1f) / (initialMaxHealth - 1f), 0f, 1f);
-        int drawX = camera.getDrawX(bounds.x);
-        int drawY = camera.getDrawY(bounds.y);
-        GameLight light = level.getLightLevel((bounds.x + bounds.width / 2) / 32, (bounds.y + 4) / 32);
-        float alphaMod = GameMath.lerp(light.getFloatLevel(), 0.2F, 1.0F);
-        Color statusColor = getStatusColorOrangePref(perc, 0.75F, 0.7F, 2.2F);
-        Color finalFillColor = new Color(statusColor.getRed(), statusColor.getGreen(), statusColor.getBlue(), (int) (240.0F * alphaMod));
-        Color finalBackgroundColor = new Color(statusColor.getRed(), statusColor.getGreen(), statusColor.getBlue(), (int) (190.0F * alphaMod));
-        DrawOptions options = (new ProgressBarDrawOptions(Settings.UI.healthbar_small_fill, bounds.width)).color(finalBackgroundColor).addBar(RPGResources.UI_TEXTURES.timebar_texture[style], perc).color(finalFillColor).minWidth(4).end().pos(drawX, drawY);
-        list.add((tm) -> options.draw());
-
+            int maxHealth = this.getMaxHealth();
+            float perc = GameMath.limit((maxHealth - 1f) / (initialMaxHealth - 1f), 0f, 1f);
+            int drawX = camera.getDrawX(bounds.x);
+            int drawY = camera.getDrawY(bounds.y);
+            GameLight light = level.getLightLevel((bounds.x + bounds.width / 2) / 32, (bounds.y + 4) / 32);
+            float alphaMod = GameMath.lerp(light.getFloatLevel(), 0.2F, 1.0F);
+            Color statusColor = getStatusColorOrangePref(perc, 0.75F, 0.7F, 2.2F);
+            Color finalFillColor = new Color(statusColor.getRed(), statusColor.getGreen(), statusColor.getBlue(), (int) (240.0F * alphaMod));
+            Color finalBackgroundColor = new Color(statusColor.getRed(), statusColor.getGreen(), statusColor.getBlue(), (int) (190.0F * alphaMod));
+            DrawOptions options = (new ProgressBarDrawOptions(Settings.UI.healthbar_small_fill, bounds.width)).color(finalBackgroundColor).addBar(RPGResources.UI_TEXTURES.timebar_texture[style], perc).color(finalFillColor).minWidth(4).end().pos(drawX, drawY);
+            list.add((tm) -> options.draw());
+        }
     }
 
     public static Color getStatusColorOrangePref(float percent, float saturation, float brightness, float exponent) {

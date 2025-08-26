@@ -16,8 +16,6 @@ import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
 
-import java.awt.*;
-
 public class LightInfusion extends SimpleBuffActiveSkill {
 
     public LightInfusion(int levelMax, int requiredClassLevel) {
@@ -53,7 +51,7 @@ public class LightInfusion extends SimpleBuffActiveSkill {
             public void clientTick(ActiveBuff activeBuff) {
                 Mob owner = activeBuff.owner;
                 if (owner.isVisible() && GameRandom.globalRandom.nextInt(2) == 0) {
-                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(255, 255, 102)).height(16.0F);
+                    owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(getColor()).height(16.0F);
                 }
             }
         };

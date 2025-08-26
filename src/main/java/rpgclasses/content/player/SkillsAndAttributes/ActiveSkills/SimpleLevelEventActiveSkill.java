@@ -26,7 +26,8 @@ abstract public class SimpleLevelEventActiveSkill extends ActiveSkill {
     }
 
     @Override
-    public void registerSkillLevelEvents() {
+    public void registry() {
+        super.registry();
         LevelEventRegistry.registerEvent(getLevelEventID(), getLevelEventClass());
     }
 

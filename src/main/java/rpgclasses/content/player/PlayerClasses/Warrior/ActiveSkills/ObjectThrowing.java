@@ -45,13 +45,13 @@ public class ObjectThrowing extends ActiveSkill {
                 playerData.grabbedObject = null;
             }
 
-            player.buffManager.removeBuff(RPGBuffs.PASSIVES.GrabbedObject, player.isServer());
+            player.buffManager.removeBuff(RPGBuffs.PASSIVES.GRABBED_OBJECT, player.isServer());
         } else {
             Point objectPoint = getObject(player);
             if (objectPoint == null) {
                 for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                    if (equippedActiveSkill.activeSkill == this) {
-                        equippedActiveSkill.lastUse = 0;
+                    if (equippedActiveSkill.getActiveSkill() == this) {
+                        equippedActiveSkill.restartCooldown();
                     }
                 }
                 return;
@@ -61,7 +61,7 @@ public class ObjectThrowing extends ActiveSkill {
 
             player.getLevel().setObject(objectPoint.x, objectPoint.y, 0);
 
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.GrabbedObject, player, 1000, null), player.isServer());
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.GRABBED_OBJECT, player, 1000, null), player.isServer());
         }
     }
 

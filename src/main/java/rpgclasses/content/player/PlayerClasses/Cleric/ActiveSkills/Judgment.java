@@ -111,7 +111,7 @@ public class Judgment extends SimpleLevelEventActiveSkill {
             mob.isServerHit(this.getTotalMobDamage(mod), (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
 
             if (MobData.isWeakToHoly(mob)) {
-                mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.Constrained, mob, 5000, null), mob.isServer());
+                mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 5000, null), mob.isServer());
             }
         }
     }

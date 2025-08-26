@@ -25,6 +25,8 @@ holycritdamage=<mod>% helig kritskada
 holyeffect=<mod>% helig effekt
 holyabilityspeed=<mod>% helig förmågehastighet
 
+transformationdelay=<mod>% transformationsfördröjning
+noskills=Kan inte använda färdigheter
 
 [stats]
 holy_damage=Helig skada
@@ -77,7 +79,7 @@ glacial=Glaciär
 electric=Elektrisk
 flash=Blixt
 dark=Mörk
-legend=Legend
+legend=Legende
 
 
 [mobtrait]
@@ -131,7 +133,7 @@ eagleeye=Örnöga
 focus=Fokus
 erradication=Utrotning
 predatorsense=Rovdjurssinne
-plasmagrenade=Plasmagranat
+plasmagranade=Plasmagranat
 wolfcompanion=Vargkompanjon
 
 // Trollkarl
@@ -166,6 +168,16 @@ sanctifiedmind=Helgat sinne
 sanctifiedarmor=Helgad rustning
 radiantexpansion=Strålande expansion
 
+// Druid
+quickshift=Snabbt Skifte
+feralinstinct=Vild instinkt
+ironfur=Järnpäls
+naturesfavor=Naturens Gunst
+beastpace=Odjurssteg
+primalburst=Primal Utbrott
+elementalguard=Elementär Vakt
+phoenixspirit=Fenixande
+
 
 [passivesdesc]
 
@@ -181,18 +193,15 @@ wolfcompanion=En vargkompanjon kommer att attackera märkta fiender och ge §i[[
 
 // Trollkarl
 manapower=Varje nivå ger:\n\n+1% Magisk Skada för varje 10% oanvänd Mana
-flamingsteps=När du springer med en aktiv prydnadssak lämnar du flammor på marken\nFlammorna kommer att antända fiender i 2 sekunder och ge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 per sekund
+flamingsteps=När du springer med en aktiv prydnadssak eller transformering lämnar du flammor på marken\nFlammorna kommer att antända fiender i 2 sekunder och ge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 per sekund
 stormbound=Var §a[[9 - 0.5 x <skilllevel>]] sekund§0, slår en blixt ner på en slumpmässig fiende i ditt synfält\nGer §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 och bedövar i 1 sekund
 arcaneshield=En sköld som förhindrar en träff\nSkölden återhämtar sig §a[[20 - <skilllevel>]] sekunder§0 efter användning
 fireshield=En sköld som förhindrar en träff\nNär den används, släpper du lös en explosion som ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\noch antänder mobbar, som upprepar 20% av sin ursprungliga skada per sekund i 5 sekunder\nSkölden återhämtar sig 26 sekunder efter användning
 iceshield=En sköld som förhindrar en träff\nNär den används, släpper du lös en is-aura som ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\nfryser mobbar i 5 sekunder och fryser dem helt i 1 sekund\nSkölden återhämtar sig 22 sekunder efter användning
 
 // Nekromantiker
-necroticpower=Alla dina Magiska och Framkallare-attacker förgiftar för 5% av deras Skada i §a[[2 x <skilllevel>]] sekunder§0, så länge de inte orsakas av en framkallning
-darkmagic=Framkallarskadebonusar påverkar Magisk Skada med §a[[5 x <skilllevel>]]%
-necroticarmy=Besegrade fientliga fiender kommer att förvandlas till §bSkelett§0 med §a-[[100 - 3 x <skilllevel>]]%§0 Hälsa och Skada
-darksummons=Ge §a+[[10 x <skilllevel>]]%§0 Framkallarskada till förgiftade fiender
-lifeleech=Återställer §a[[<skilllevel>]]%§0 av den utdelade Framkallarskadan som Hälsa
+darksummons=Ge §a+[[8 x <skilllevel>]]%§0 Framkallarskada till förgiftade fiender
+lifeleech=Återställer §a[[0.1 x <skilllevel>]]%§0 av den utdelade Framkallarskadan som Hälsa
 necroticremains=När en nekrotisk framkallning dör, exploderar den och ger §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skada§0 till närliggande fiender, och förgiftar dem med 20% av skadan per sekund i 10 sekunder
 endlesslegion=Var 4:e nivå av denna färdighet, får du +1 max framkallning
 lichborn=När du dör, överlever du och återställer §a[[10 x <skilllevel>]]%§0 Hälsa om du inte redan är en §bLich§0\nUnder de kommande §a[[120 - 6 x <skilllevel>]] sekunderna§0, blir du en §bLich§0 (ett skelett)
@@ -204,6 +213,11 @@ empoweredhealing=När du magiskt läker dig själv eller en allierad, öka deras
 sanctifiedmind=Magisk läkning återställer också mana motsvarande §a[[5 x <skilllevel>]]%§0 av den utförda läkningen
 sanctifiedarmor=Magisk läkning återställer också motståndskraft motsvarande §a[[2 x <skilllevel>]]%§0 av den utförda läkningen
 radiantexpansion=När du magiskt läker dig själv eller en allierad, utdela §a[[5 x <skilllevel>]]%§0 av läkningen som Helig skada till närliggande fiender till det läkta målet
+
+// Druid
+naturesfavor=Få +[[<skilllevel>]] Hälsoåterhämtning per sekund när du står på gräs
+primalburst=Ökar Skada och Hastighet med [[6 x <skillevel>]]% under de första 5 sekunderna efter transformering
+phoenixspirit=Kräver minst 4 poäng för att fungera:\n\nOm du skulle dö medan du är transformerad med en aktiv färdighet, överlever du istället med §a[4 + 8 x <skilllevel>]]%§0 hälsa, och den färdigheten placeras på en 1-timmes nedkylning\n\nUtlöses inte om du redan har minst §a[[0.25 x <skilllevel> ↓]] transformationsfärdighet(er)§0 på en nedkylning längre än 1 minut
 
 
 [activeskills]
@@ -280,6 +294,14 @@ divineintervention=Gudomligt ingripande
 resurrection=Återuppståndelse
 wrathoflight=Ljusets vrede
 
+// Druid
+wolftransformation=Vargtransformering
+queenbeetransformation=Drottningbietransformering
+beartransformation=Björntransformering
+foxtransformation=Rävtransformering
+rattransformation=Råtttransformering
+treanttransformation=Trädmanstransformering
+
 
 [activeskillsdesc]
 
@@ -354,6 +376,15 @@ resurrection=Återuppliva den senast döda spelarallierade på samma ö med §a[
 wrathoflight=Kalla fram en ljuskolonn på närmaste fiende, som ger §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Helig skada§0 per sekund i 5 sekunder i området\nOdöda och demoniska mobbar inuti är begränsade\nFörbrukar §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
+// Druid
+wolftransformation=Tar 3 sekunder att transformera till en Varg\n\nRörelsehastighet: 60\n\nTryck [input=transformationability1] för Dash Bite: Hoppa framåt och bit, vilket ger §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] närstridsskada§0\n\nTryck [input=transformationability2] för Skall: Tvinga närliggande fiender att fokusera sina attacker på dig i 2 sekunder\n\nHåll [input=trinketability] för att sprinta
+queenbeetransformation=Tar 2 sekunder att transformera till en Drottningbi\n\nRörelsehastighet: 30\n-50% Fiendedetektering\n§6+1000% Inkommande Skada§0\n\nTryck [input=transformationability1] för Skjut Honung: Ge §i[[2 x <playerlevel> + <strength> x <skilllevel>]] avståndsskada§0\n\nTryck [input=transformationability2] för att framkalla ett §9Bi§0 upp till §a[[2 x <skilllevel>]]§0\n\nHåll [input=trinketability] för att beordra dina Bin att attackera
+beartransformation=Tar 4 sekunder att transformera till en Björn\n\nRörelsehastighet: 20\n-50% Inkommande Skada\n\nTryck [input=transformationability1] för Markslag: Områdesattack som ger §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] närstridsskada§0 och §9bedövar§0 i §a[[0.5 x <skilllevel>]] sekunder§0\n\nTryck [input=transformationability2] för Morra: Få närliggande fiender att fly i 1 sekund\n\nHåll [input=trinketability] för att sprinta
+foxtransformation=Tar 3 sekunder att transformera till en Räv\n\nRörelsehastighet: 50\n§6+50% Inkommande Skada§0\n\nTryck [input=transformationability1] för Skjut Eldklot: Ge §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magisk skada§0\n\nTryck [input=transformationability2] för att framkalla en §bDansande Låga§0 upp till §a[[2 + <skilllevel>]]§0, var och en ger samma skada som ett Eldklot\n\nTryck [input=trinketability] för att sprinta\n§!Vulpes Nova fox!
+rattransformation=Tar 2 sekunder att transformera till en Råtta\n\nRörelsehastighet: 25\n-50% Fiendedetektering\nGer maximal undvikandeschans\n§6+1000% Inkommande Skada§0\n\nTryck [input=transformationability1] för Bett: Ger §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] närstridsskada§0 och förgiftar målet för 100% av den utdelade skadan per sekund i 10 sekunder\n\nHåll [input=trinketability] för att sprinta
+treanttransformation=Tar 4 sekunder att transformera till en Trädman\n\nRörelsehastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 Inkommande Skada\nFiender ignorerar dig om du är dold i 3 sekunder\n\nTryck [input=transformationability1] när avslöjad för att skjuta slumpmässiga frön: Ge §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] avståndsskada§0 med slumpmässiga effekter\n\nTryck [input=transformationability2] för att framkalla en §9Dryad Sapling§0\n\nHåll [input=trinketability] för att avslöja och sprinta om du rör dig
+
+
 [skillsdesckeys]
 skilllevel=Färdighetsnivå
 playerlevel=Spelarnivå
@@ -396,10 +427,8 @@ dancingflame=§bDansande Låga:§0 Framkallning som fungerar som ett projektil. 
 necromancerskeleton=§bSkelett:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerskeletonwarrior=§bSkelettkrigare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkada: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerboneslinger=§bBenkastare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 avstånd)\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
-
-// Tranformations
-necromancerlich=§bLich:§0 Odöd transformering\n\nKan inte använda föremål\n+100% Skada Mottagen\n\nTryck på [input=trinketability] för att skjuta ett ben som ger §i[[<strength>]] Framkallarskada§0
-
+bee=§9Bi:§0 Skadbar framkallning\nHälsa: 1\nSkada: §a[[<playerlevel> + <intelligence>]]§0\nHastighet: 40\n\nDör vid attack, men förgiftar målet för 20% av den utdelade skadan per sekund i 10 sekunder
+dryadsapling=§9Dryad Sapling:§0 Skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nHastighet: 65\nFörlorar 2% av Total Hälsa per sekund
 
 [item]
 scrollofoblivion=Glömskans rulle
@@ -454,6 +483,8 @@ activeskillinuse=Denna färdighet används redan
 anotheractiveskillinuse=Du har redan en annan färdighet i bruk
 incooldown=På nedkylning
 notenoughstamina=Inte tillräckligt med uthållighet
+canotusemounted=Kan inte användas monterad eller transformerad
+
 notarget=Det finns inga mål i närheten
 nograbbableobject=Det finns inget gripbart föremål framför dig
 notargetfollower=Det finns inga målframkallningar i närheten

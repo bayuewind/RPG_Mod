@@ -14,6 +14,8 @@ public class BasicPassive extends Passive {
     public List<ModifierBuff<?>> attributeModifiers = new ArrayList<>();
     public String[] extraTooltips;
 
+    public boolean onlyTransformed = false;
+
     public BasicPassive(String stringID, String color, int levelMax, int requiredClassLevel, String[] extraTooltips, ModifierBuff<?>... modifierBuffs) {
         super(stringID, color, levelMax, requiredClassLevel);
         Collections.addAll(attributeModifiers, modifierBuffs);
@@ -24,6 +26,11 @@ public class BasicPassive extends Passive {
         this(stringID, color, levelMax, requiredClassLevel, new String[0], modifierBuffs);
     }
 
+    public BasicPassive setOnlyTransformed() {
+        this.onlyTransformed = true;
+        return this;
+    }
+
     public List<String> getToolTipsText() {
         List<String> tooltips = new ArrayList<>();
         tooltips.add("§" + color + Localization.translate("passives", stringID));
@@ -32,6 +39,10 @@ public class BasicPassive extends Passive {
         tooltips.add(" ");
         for (ModifierBuff<?> attributeModifier : attributeModifiers) {
             tooltips.add(attributeModifier.getTooltip());
+        }
+        if (this.onlyTransformed) {
+            tooltips.add(" ");
+            tooltips.add(Localization.translate("ui", "onlytranformed"));
         }
         if (requiredClassLevel > 1) {
             tooltips.add(" ");
@@ -47,15 +58,6 @@ public class BasicPassive extends Passive {
         for (ModifierBuff<?> attributeModifier : attributeModifiers) {
             attributeModifier.applyBuff(activeBuff, level);
         }
-    }
-
-    @Override
-    public boolean isBasic() {
-        return true;
-    }
-
-    @Override
-    public void registerSkillBuffs() {
     }
 
     @Override

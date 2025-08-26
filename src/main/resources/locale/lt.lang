@@ -25,6 +25,8 @@ holycritdamage=<mod>% šventos kritinės žalos
 holyeffect=<mod>% švento poveikio
 holyabilityspeed=<mod>% šventų sugebėjimų greičio
 
+transformationdelay=<mod>% transformacijos vėlavimas
+noskills=Negalima naudoti įgūdžių
 
 [stats]
 holy_damage=Šventa žala
@@ -166,6 +168,16 @@ sanctifiedmind=Pašventinta sąmonė
 sanctifiedarmor=Pašventinti šarvai
 radiantexpansion=Spinduliuojanti plėtra
 
+// Druid
+quickshift=Greitas perjungimas
+feralinstinct=Laukinis instinktas
+ironfur=Geležinis kailis
+naturesfavor=Gamtos palankumas
+beastpace=Žvėries tempas
+primalburst=Pirminis sprogimas
+elementalguard=Elementinė apsauga
+phoenixspirit=Fenikso dvasia
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=Vilkas kompanionas atakuos pažymėtus priešus, padarydamas §i[[
 
 // Burtininkas
 manapower=Kiekvienas lygis suteikia:\n\n+1% Magiškos Žalos už kiekvieną 10% nepanaudotos Manos
-flamingsteps=Bėgdami su aktyviu niekučiu, paliksite ant žemės liepsnas\nLiepsnos uždegs priešus 2 sekundėms, padarydamos §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 per sekundę
+flamingsteps=Bėgdami su aktyviu niekučiu ar transformacija, paliksite ant žemės liepsnas\nLiepsnos uždegs priešus 2 sekundėms, padarydamos §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 per sekundę
 stormbound=Kas §a[[9 - 0.5 x <skilllevel>]] sekundes§0, žaibas trenkia į atsitiktinį priešą jūsų regėjimo lauke\nPadaro §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magiškos Žalos§0 ir apsvaigina 1 sekundei
 arcaneshield=Skydas, kuris apsaugo nuo vieno smūgio\nSkydas atsistatys po §a[[20 - <skilllevel>]] sekundžių§0 po panaudojimo
 fireshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite sprogimą, padarantį §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magiškos Žalos§0\nir uždegantį mobus, 5 sekundes kartojant 20% jų pradinės žalos per sekundę\nSkydas atsistatys po 26 sekundžių po panaudojimo
@@ -191,8 +203,8 @@ iceshield=Skydas, kuris apsaugo nuo vieno smūgio\nPanaudojus, išlaisvinsite le
 necroticpower=Visi jūsų magiški ir šauklio išpuoliai nuodija 5% jų žalos §a[[2 x <skilllevel>]] sekundes§0, kol juos sukelia ne iškvietimas
 darkmagic=Šauklio žalos premijos veikia magišką žalą §a[[5 x <skilllevel>]]%
 necroticarmy=Nugalėti priešiški priešai pavirs §bSkeletais§0 su §a-[[100 - 3 x <skilllevel>]]%§0 sveikatos ir žalos
-darksummons=Padarykite §a+[[10 x <skilllevel>]]%§0 šauklio žalos nuodytiems priešams
-lifeleech=Atkuria §a[[<skilllevel>]]%§0 padarytos šauklio žalos kaip sveikatą
+darksummons=Padarykite §a+[[8 x <skilllevel>]]%§0 šauklio žalos nuodytiems priešams
+lifeleech=Atkuria §a[[0.1 x <skilllevel>]]%§0 padarytos šauklio žalos kaip sveikatą
 necroticremains=Kai miršta nekrotinis iškvietimas, jis sprogsta, padarydamas §i[[0.1 x <intelligence> x <skilllevel>]] magiškos žalos§0 netoliese esantiems priešams, nuodydamas juos 20% žalos per sekundę 10 sekundžių
 endlesslegion=Kas 4 šio įgūdžio lygius, gaunate +1 maksimalų iškvietimą
 lichborn=Kai mirštate, išgyvenate ir atkuriate §a[[10 x <skilllevel>]]%§0 sveikatos, jei dar nesate lichas\nKitoms §a[[120 - 6 x <skilllevel>]] sekundėms§0 tampate lichu (skeletu)
@@ -204,6 +216,11 @@ empoweredhealing=Kai magiškai išgydote save ar sąjungininką, padidinkite jų
 sanctifiedmind=Magiškas gydymas taip pat atkuria maną, lygią §a[[5 x <skilllevel>]]%§0 atlikto gydymo
 sanctifiedarmor=Magiškas gydymas taip pat atkuria atsparumą, lygų §a[[2 x <skilllevel>]]%§0 atlikto gydymo
 radiantexpansion=Kai magiškai išgydote save ar sąjungininką, padarykite §a[[5 x <skilllevel>]]%§0 gydymo kaip šventą žalą netoliese esantiems išgydyto taikinio priešams
+
+// Druid
+naturesfavor=Gaukite +[[<skilllevel>]] sveikatos regeneracijos per sekundę stovėdami ant žolės
+primalburst=Padidina žalą ir greitį [[6 x <skillevel>]]% per pirmąsias 5 sekundes po transformacijos
+phoenixspirit=Reikalingi bent 4 taškai, kad veiktų:\n\nJei mirtumėte transformuotas su aktyviu įgūdžiu, vietoj to išgyvenate su §a[4 + 8 x <skilllevel>]]%§0 sveikatos, o tas įgūdis įjungiamas 1 valandos atvėsimui\n\nNeaktyvuojasi, jei jau turite bent §a[[0.25 x <skilllevel> ↓]] transformacijos įgūdį(-ius)§0, kurio atvėsimas ilgesnis nei 1 minutė
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=Dieviškas įsikišimas
 resurrection=Prisikėlimas
 wrathoflight=Šviesos pyktis
 
+// Druid
+wolftransformation=Vilko transformacija
+queenbeetransformation=Bičių karalienės transformacija
+beartransformation=Meškos transformacija
+foxtransformation=Lapės transformacija
+rattransformation=Žiurkės transformacija
+treanttransformation=Medžio transformacija
+
 
 [activeskillsdesc]
 
@@ -354,6 +379,15 @@ resurrection=Atgaivinkite paskutinį mirusį žaidėjo sąjungininką toje pači
 wrathoflight=Iškvieskite šviesos stulpą ant artimiausio priešo, padarydami §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] šventos žalos§0 per sekundę 5 sekundes srityje\nNemirėliai ir demoniški mobai viduje yra suvaržyti\nSunaudoja §a[[40 + 8 x <skilllevel>]] manos§0
 
 
+// Druid
+wolftransformation=Užtrunka 3 sekundes, kad transformuotumėtės į Vilką\n\nJudėjimo greitis: 60\n\nPaspauskite [input=transformationability1] norėdami atlikti Šuolį su įkandimu: Šokite į priekį ir įkąskite, padarydami §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] artimos kovos žalos§0\n\nPaspauskite [input=transformationability2] norėdami Loti: Priverskite netoliese esančius priešus sutelkti savo atakas į jus 2 sekundėms\n\nLaikykite [input=trinketability] norėdami bėgti
+queenbeetransformation=Užtrunka 2 sekundes, kad transformuotumėtės į Bičių Karalienę\n\nJudėjimo greitis: 30\n-50% Priešų aptikimas\n§6+1000% Gaunama žala§0\n\nPaspauskite [input=transformationability1] norėdami Šaudyti medumi: Padarykite §i[[2 x <playerlevel> + <strength> x <skilllevel>]] nuotolinės žalos§0\n\nPaspauskite [input=transformationability2] norėdami iškviesti §9Bitę§0 iki §a[[2 x <skilllevel>]]§0\n\nLaikykite [input=trinketability] norėdami įsakyti savo Bitėms pulti
+beartransformation=Užtrunka 4 sekundes, kad transformuotumėtės į Mešką\n\nJudėjimo greitis: 20\n-50% Gaunama žala\n\nPaspauskite [input=transformationability1] norėdami atlikti Žemės smūgį: Srities ataka, kuri padaro §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] artimos kovos žalos§0 ir §9apsvaigina§0 §a[[0.5 x <skilllevel>]] sekundėms§0\n\nPaspauskite [input=transformationability2] norėdami Urgzti: Priverskite netoliese esančius priešus bėgti 1 sekundei\n\nLaikykite [input=trinketability] norėdami bėgti
+foxtransformation=Užtrunka 3 sekundes, kad transformuotumėtės į Lapę\n\nJudėjimo greitis: 50\n§6+50% Gaunama žala§0\n\nPaspauskite [input=transformationability1] norėdami Šaudyti ugnies kamuoliais: Padarykite §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magiškos žalos§0\n\nPaspauskite [input=transformationability2] norėdami iškviesti §bŠokančią Liepsną§0 iki §a[[2 + <skilllevel>]]§0, kiekviena padaro tokią pat žalą kaip ugnies kamuolys\n\nPaspauskite [input=trinketability] norėdami šokti\n§!Vulpes Nova fox!
+rattransformation=Užtrunka 2 sekundes, kad transformuotumėtės į Žiurkę\n\nJudėjimo greitis: 25\n-50% Priešų aptikimas\nSuteikia maksimalią išsisukimo tikimybę\n§6+1000% Gaunama žala§0\n\nPaspauskite [input=transformationability1] norėdami Įkąsti: Padaro §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] artimos kovos žalos§0 ir nuodija taikinį 100% padarytos žalos per sekundę 10 sekundžių\n\nLaikykite [input=trinketability] norėdami bėgti
+treanttransformation=Užtrunka 4 sekundes, kad transformuotumėtės į Medį\n\nJudėjimo greitis: 0\n-§a[50 + 5 <skilllevel>]%§0 Gaunama žala\nPriešai ignoruoja jus, jei esate pasislėpę 3 sekundes\n\nPaspauskite [input=transformationability1] būdami atskleisti, norėdami Šaudyti atsitiktinėmis sėklomis: Padarykite §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] nuotolinės žalos§0 su atsitiktiniais efektais\n\nPaspauskite [input=transformationability2] norėdami iškviesti §9Driados sodinuką§0\n\nLaikykite [input=trinketability] norėdami atskleisti ir bėgti, jei judate
+
+
 [skillsdesckeys]
 skilllevel=Įgūdžių lygis
 playerlevel=Žaidėjo lygis
@@ -396,10 +430,8 @@ dancingflame=§bŠokanti Liepsna:§0 Iškvietimas, kuris veikia kaip sviedinys. 
 necromancerskeleton=§bSkeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
 necromancerskeletonwarrior=§bKarys Skeletas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nŽala: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
 necromancerboneslinger=§bKaulų Mėtytojas:§0 Nekrotinis pažeidžiamas iškvietimas\nSveikata: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 atstumas)\nGreitis: 60\nPer sekundę praranda 2% savo bendros sveikatos
-
-// Tranformations
-necromancerlich=§bLich:§0 Nemirėlių transformacija\n\nNegalima naudoti daiktų\n+100% gautos žalos\n\nPaspauskite [input=trinketability], kad iššautumėte kaulą, kuris padaro §i[[<strength>]] šauklio žalos§0
-
+bee=§9Bitė:§0 Pažeidžiamas iškvietimas\nSveikata: 1\nŽala: §a[[<playerlevel> + <intelligence>]]§0\nGreitis: 40\n\nMiršta atakuodama, bet nuodija taikinį 20% padarytos žalos per sekundę 10 sekundžių
+dryadsapling=§9Driados sodinukas:§0 Pažeidžiamas iškvietimas\nSveikata: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nŽala: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nGreitis: 65\nPer sekundę praranda 2% savo bendros sveikatos
 
 [item]
 scrollofoblivion=Užmaršties ritinys
@@ -454,6 +486,8 @@ activeskillinuse=Šis įgūdis jau naudojamas
 anotheractiveskillinuse=Jūs jau naudojate kitą įgūdį
 incooldown=Atsistatymas
 notenoughstamina=Nepakanka ištvermės
+canotusemounted=Negalima naudoti jojant ar transformuotam
+
 notarget=Netoliese nėra taikinių
 nograbbableobject=Priešais jus nėra paimamo objekto
 notargetfollower=Netoliese nėra taikinių iškvietimų
@@ -472,6 +506,7 @@ lvl=Lyg <level>
 eachlevel=Kiekvienas lygis suteikia:
 experience=Patirtis: <exp> / <nextexp>
 totalexperience=Bendra patirtis: <exp>
+onlytranformed=Tik transformuotam
 
 resetpoints=Atstatymo taškai: <points>
 attrpoints=Atributų taškai: <points>
@@ -514,3 +549,5 @@ activeskillslot3=Aktyvaus įgūdžio vieta 3
 activeskillslot4=Aktyvaus įgūdžio vieta 4
 activeskillslot5=Aktyvaus įgūdžio vieta 5
 activeskillslot6=Aktyvaus įgūdžio vieta 6
+transformationability1=Transformacijos gebėjimas 1
+transformationability2=Transformacijos gebėjimas 2

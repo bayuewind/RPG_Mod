@@ -1,16 +1,19 @@
 package rpgclasses;
 
 import necesse.engine.modLoader.annotations.ModEntry;
+import necesse.engine.registries.TileRegistry;
+import necesse.level.gameTile.GameTile;
 import rpgclasses.content.MobClass;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
+import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.registry.*;
 
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.4.8";
+    public static String currentVersion = "v0.5";
 
     static {
         new RPGModifiers();
@@ -31,11 +34,8 @@ public class RPGMod {
 
         PlayerClass.registerCore();
 
-        PlayerClass.classesList.forEach(playerClass -> playerClass.passivesList.each(Passive::registerSkillBuffs));
-        PlayerClass.classesList.forEach(playerClass -> playerClass.activeSkillsList.each(activeSkill -> {
-            activeSkill.registerSkillBuffs();
-            activeSkill.registerSkillLevelEvents();
-        }));
+        PlayerClass.classesList.forEach(playerClass -> playerClass.passivesList.each(Passive::registry));
+        PlayerClass.classesList.forEach(playerClass -> playerClass.activeSkillsList.each(Skill::registry));
 
         // Containers
         RPGContainers.registerCore();
@@ -79,6 +79,12 @@ public class RPGMod {
 
         // Recipes
         RPGRecipes.initRecipes();
+
+        // Other
+        for (GameTile tile : TileRegistry.getTiles()) {
+            String tileStringID = tile.getStringID();
+            if (tileStringID.contains("grass")) RPGTiles.grassTiles.add(tileStringID);
+        }
 
     }
 

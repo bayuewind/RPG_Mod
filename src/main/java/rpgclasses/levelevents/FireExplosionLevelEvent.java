@@ -35,7 +35,7 @@ public class FireExplosionLevelEvent extends ExplosionEvent implements Attacker 
 
     @Override
     protected void playExplosionEffects() {
-        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(3F).pitch(1F));
+        SoundManager.playSound(GameResources.explosionHeavy, SoundEffect.effect(this.x, this.y).volume(1F).pitch(1F));
         this.level.getClient().startCameraShake(this.x, this.y, 200, 40, 1F, 0.8F, true);
     }
 

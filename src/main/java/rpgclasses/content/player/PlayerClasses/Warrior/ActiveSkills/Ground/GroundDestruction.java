@@ -46,7 +46,7 @@ public class GroundDestruction extends ActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.punch, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(0.5F));
+        SoundManager.playSound(GameResources.punch, SoundEffect.effect(player.x, player.y).volume(2F).pitch(0.5F));
         SoundManager.playSound(GameResources.explosionLight, SoundEffect.effect(player.x, player.y).volume(1F).pitch(0.5F));
         player.getClient().startCameraShake(player.x, player.y, 300, 40, 3.0F, 3.0F, true);
     }

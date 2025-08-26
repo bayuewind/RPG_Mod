@@ -25,6 +25,8 @@ holycritdamage=<mod>% 신성 치명타 피해
 holyeffect=<mod>% 신성 효과
 holyabilityspeed=<mod>% 신성 능력 속도
 
+transformationdelay=<mod>% 변신 지연
+noskills=스킬 사용 불가
 
 [stats]
 holy_damage=신성 피해
@@ -166,6 +168,16 @@ sanctifiedmind=성스러운 마음
 sanctifiedarmor=성스러운 갑옷
 radiantexpansion=찬란한 확장
 
+// Druid
+quickshift=빠른 변신
+feralinstinct=야성 본능
+ironfur=철갑 모피
+naturesfavor=자연의 은총
+beastpace=야수 걸음
+primalburst=원시 폭발
+elementalguard=원소 수호
+phoenixspirit=불사조 정신
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=늑대 동료가 표식이 있는 적을 공격하여 §i[[<player
 
 // 마법사
 manapower=각 레벨은 다음을 제공합니다:\n\n사용하지 않은 마나 10%당 마법 피해 +1%
-flamingsteps=활성화된 장신구를 착용하고 달릴 때, 땅에 불꽃을 남깁니다.\n불꽃은 적을 2초 동안 불태워 초당 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.
+flamingsteps=활성화된 장신구 또는 변신 상태로 달릴 때, 땅에 불꽃을 남깁니다.\n불꽃은 적을 2초 동안 불태워 초당 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.
 stormbound=§a[[9 - 0.5 x <skilllevel>]]초§0마다 시야에 있는 무작위 적에게 번개가 내리칩니다.\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 1초 동안 기절시킵니다.
 arcaneshield=한 번의 공격을 막는 보호막\n보호막은 사용 후 §a[[20 - <skilllevel>]]초§0 후에 회복됩니다.
 fireshield=한 번의 공격을 막는 보호막\n사용 시, §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 폭발을 일으키고\n몹을 불태워 5초 동안 초당 원래 피해의 20%를 반복합니다.\n보호막은 사용 후 26초 후에 회복됩니다.
@@ -191,8 +203,8 @@ iceshield=한 번의 공격을 막는 보호막\n사용 시, §i[[<playerlevel> 
 necroticpower=모든 마법 및 소환사 공격은 소환으로 인한 것이 아닌 한 §a[[2 x <skilllevel>]]초§0 동안 피해의 5%만큼 중독시킵니다.
 darkmagic=소환사 피해 보너스는 마법 피해에 §a[[5 x <skilllevel>]]%§0만큼 영향을 미칩니다.
 necroticarmy=패배한 적대적인 적은 §a-[[100 - 3 x <skilllevel>]]%§0의 체력과 피해를 가진 §b해골§0로 변합니다.
-darksummons=중독된 적에게 §a+[[10 x <skilllevel>]]%§0의 소환사 피해를 입힙니다.
-lifeleech=입힌 소환사 피해의 §a[[<skilllevel>]]%§0를 체력으로 회복합니다.
+darksummons=중독된 적에게 §a+[[8 x <skilllevel>]]%§0의 소환사 피해를 입힙니다.
+lifeleech=입힌 소환사 피해의 §a[[0.1 x <skilllevel>]]%§0를 체력으로 회복합니다.
 necroticremains=괴저 소환수가 죽으면 폭발하여 주변의 적에게 §i[[0.1 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 10초 동안 초당 피해의 20%만큼 중독시킵니다.
 endlesslegion=이 스킬의 4레벨마다 최대 소환수가 +1됩니다.
 lichborn=죽으면 아직 §b리치§0가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 당신은 §b리치§0(해골)가 됩니다
@@ -204,6 +216,11 @@ empoweredhealing=자신이나 아군을 마법으로 치유하면 3초 동안 �
 sanctifiedmind=마법 치유는 또한 치유량의 §a[[5 x <skilllevel>]]%§0에 해당하는 마나를 회복합니다
 sanctifiedarmor=마법 치유는 또한 치유량의 §a[[2 x <skilllevel>]]%§0에 해당하는 탄력성을 회복합니다
 radiantexpansion=자신이나 아군을 마법으로 치유하면 치유량의 §a[[5 x <skilllevel>]]%§0를 치유된 대상의 주변 적에게 신성 피해로 입힙니다
+
+// Druid
+naturesfavor=잔디 위에 서 있는 동안 초당 +[[<skilllevel>]] 체력 재생을 얻습니다
+primalburst=변신 후 첫 5초 동안 피해와 속도가 [[6 x <skillevel>]]% 증가합니다
+phoenixspirit=작동하려면 최소 4포인트가 필요합니다:\n\n활성 스킬로 변신 중에 죽을 경우, 대신 §a[4 + 8 x <skilllevel>]]%§0의 체력으로 살아남고, 해당 스킬은 1시간의 재사용 대기시간에 들어갑니다.\n\n이미 1분보다 긴 재사용 대기시간에 있는 §a[[0.25 x <skilllevel> ↓]] 변신 스킬§0이 있는 경우에는 발동하지 않습니다.
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=신성한 개입
 resurrection=부활
 wrathoflight=빛의 분노
 
+// Druid
+wolftransformation=늑대 변신
+queenbeetransformation=여왕벌 변신
+beartransformation=곰 변신
+foxtransformation=여우 변신
+rattransformation=쥐 변신
+treanttransformation=트렌트 변신
+
 
 [activeskillsdesc]
 
@@ -338,8 +363,8 @@ tomb=§a[[10 - <skilllevel>]]초§0마다 §b해골§0을 소환하는 구조물
 necroticbloom=주변의 모든 적의 독 효과를 가속화하여 지속 시간을 10%로 줄이지만, 총 피해를 유지하기 위해 초당 피해를 증가시킵니다.
 wardingtaunt=가장 가까운 피해를 입힐 수 있는 소환수는 §a[[50 x <skilllevel>]] 반경§0 내의 주변의 적들이 그것을 목표로 삼도록 강요합니다.
 
-unholyground=10초 동안 주변에 부패의 아우라를 퍼뜨립니다.\n이 지역 내의 적들은 초당 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]의 독 피해§0를 입고 §7속박§0됩니다.
-necroticbarrage=모든 피해를 입힐 수 있는 소환수는 죽을 때 폭발하여 주변의 적에게 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n그리고 10초 동안 초당 원래 피해의 20%만큼 중독시킵니다.
+unholyground=10초 동안 당신의 주변에 부패의 아우라를 퍼뜨립니다.\n이 지역 내의 적들은 초당 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]의 독 피해§0를 입고 §7속박§0됩니다.
+nnecroticbarrage=모든 피해를 입힐 수 있는 소환수는 죽을 때 폭발하여 주변의 적에게 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n그리고 10초 동안 초당 원래 피해의 20%만큼 중독시킵니다.
 
 // Cleric
 smite=가장 가까운 적에게 신성한 빛의 광선을 불러내어 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n언데드와 악마 몹에게 두 배의 피해를 입힙니다\n§a[[10 + 2 x <skilllevel>]]의 마나§0를 소모합니다
@@ -352,6 +377,15 @@ sanctuary=8초 동안 신성한 구역을 만듭니다\n당신과 안의 아군�
 divineintervention=가장 큰 피해를 입은 가까운 아군을 즉시 최대 체력으로 치유하고 §a[[<skilllevel>]]§0초 동안 모든 피해에 대한 면역을 부여합니다\n§a[[60 + 12 x <skilllevel>]]의 마나§0를 소모합니다
 resurrection=같은 섬에 있는 마지막으로 죽은 플레이어 아군을 당신의 위치에서 최대 체력의 §a[[10 x <skilllevel>]]%§0로 부활시킵니다\n10초 이상 전에 부활할 수 있었던 플레이어는 부활시킬 수 없습니다\n마나의 §a[[100 - 10 x <skilllevel>]]%§0를 소모합니다(최소 §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=가장 가까운 적에게 빛의 기둥을 소환하여 5초 동안 해당 지역에 초당 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]의 신성 피해§0를 입힙니다\n안의 언데드와 악마 몹은 §7속박§0됩니다\n§a[[40 + 8 x <skilllevel>]]의 마나§0를 소모합니다
+
+
+// Druid
+wolftransformation=늑대로 변신하는 데 3초가 걸립니다.\n\n이동 속도: 60\n\n[input=transformationability1]을 눌러 돌진 물기: 앞으로 도약하여 물어뜯어 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]의 근접 피해§0를 입힙니다.\n\n[input=transformationability2]을 눌러 짖기: 주변의 적들이 2초 동안 당신을 공격하도록 강요합니다.\n\n[input=trinketability]를 길게 눌러 질주합니다.
+queenbeetransformation=여왕벌로 변신하는 데 2초가 걸립니다.\n\n이동 속도: 30\n-50% 적 감지\n§6+1000% 받는 피해§0\n\n[input=transformationability1]을 눌러 꿀 발사: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 입힙니다.\n\n[input=transformationability2]을 눌러 §9벌§0을 최대 §a[[2 x <skilllevel>]]마리§0 소환합니다.\n\n[input=trinketability]를 길게 눌러 벌에게 공격을 명령합니다.
+beartransformation=곰으로 변신하는 데 4초가 걸립니다.\n\n이동 속도: 20\n-50% 받는 피해\n\n[input=transformationability1]을 눌러 지면 강타: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]의 근접 피해§0를 입히고 §a[[0.5 x <skilllevel>]]초§0 동안 §9기절§0시키는 지역 공격입니다.\n\n[input=transformationability2]을 눌러 으르렁거리기: 주변의 적들이 1초 동안 도망치도록 만듭니다.\n\n[input=trinketability]를 길게 눌러 질주합니다.
+foxtransformation=여우로 변신하는 데 3초가 걸립니다.\n\n이동 속도: 50\n§6+50% 받는 피해§0\n\n[input=transformationability1]을 눌러 화염구 발사: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다.\n\n[input=transformationability2]을 눌러 §b춤추는 불꽃§0을 최대 §a[[2 + <skilllevel>]]개§0 소환합니다. 각 불꽃은 화염구와 동일한 피해를 입힙니다.\n\n[input=trinketability]를 눌러 돌진합니다.\n§!Vulpes Nova fox!
+rattransformation=쥐로 변신하는 데 2초가 걸립니다.\n\n이동 속도: 25\n-50% 적 감지\n최대 회피 확률을 부여합니다.\n§6+1000% 받는 피해§0\n\n[input=transformationability1]을 눌러 물기: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]의 근접 피해§0를 입히고 10초 동안 초당 입힌 피해의 100%만큼 대상을 중독시킵니다.\n\n[input=trinketability]를 길게 눌러 질주합니다.
+treanttransformation=트렌트로 변신하는 데 4초가 걸립니다.\n\n이동 속도: 0\n-§a[50 + 5 <skilllevel>]%§0 받는 피해\n3초 동안 숨어 있으면 적들이 당신을 무시합니다.\n\n[input=transformationability1]을 눌러 무작위 씨앗 발사: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 무작위 효과와 함께 입힙니다.\n\n[input=transformationability2]을 눌러 §9드라이어드 묘목§0을 소환합니다.\n\n[input=trinketability]를 길게 눌러 드러내고 이동 중이면 질주합니다.
 
 
 [skillsdesckeys]
@@ -396,10 +430,8 @@ dancingflame=§b춤추는 불꽃:§0 발사체처럼 행동하는 소환수. 적
 necromancerskeleton=§b해골:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
 necromancerskeletonwarrior=§b해골 전사:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n피해: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다.
 necromancerboneslinger=§b뼈 투척병:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 거리)\n속도: 60\n초당 총 체력의 2%를 잃습니다.
-
-// Tranformations
-necromancerlich=§b리치:§0 언데드 변신\n\n아이템 사용 불가\n+100% 받는 피해\n\n[input=trinketability]를 눌러 §i[[<strength>]]의 소환사 피해§0를 입히는 뼈를 쏘세요
-
+bee=§9벌:§0 피해를 입힐 수 있는 소환수\n체력: 1\n피해: §a[[<playerlevel> + <intelligence>]]§0\n속도: 40\n\n공격 시 사망하지만, 10초 동안 초당 입힌 피해의 20%로 대상을 중독시킵니다.
+dryadsapling=§9드라이어드 묘목:§0 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n속도: 65\n초당 총 체력의 2%를 잃습니다.
 
 [item]
 scrollofoblivion=망각의 두루마리
@@ -454,9 +486,11 @@ activeskillinuse=이 스킬은 이미 사용 중입니다.
 anotheractiveskillinuse=이미 다른 스킬을 사용 중입니다.
 incooldown=재사용 대기 중
 notenoughstamina=체력이 부족합니다.
+canotusemounted=탑승 또는 변신 상태에서는 사용할 수 없습니다.
+
 notarget=주변에 대상이 없습니다.
 nograbbableobject=앞에 잡을 수 있는 물건이 없습니다.
-nodamageablefollower=주변에 피해를 입힐 수 있는 소환수가 없습니다.
+notargetfollower=주변에 피해를 입힐 수 있는 소환수가 없습니다.
 nodeathplayers=이 레벨에서는 죽은 플레이어를 부활시킬 수 없습니다.
 
 
@@ -472,6 +506,7 @@ lvl=레벨 <level>
 eachlevel=각 레벨은 다음을 제공합니다:
 experience=경험치: <exp> / <nextexp>
 totalexperience=총 경험치: <exp>
+onlytranformed=변신 시에만
 
 resetpoints=초기화 포인트: <points>
 attrpoints=속성 포인트: <points>
@@ -514,3 +549,5 @@ activeskillslot3=액티브 스킬 슬롯 3
 activeskillslot4=액티브 스킬 슬롯 4
 activeskillslot5=액티브 스킬 슬롯 5
 activeskillslot6=액티브 스킬 슬롯 6
+transformationability1=변신 능력 1
+transformationability2=변신 능력 2

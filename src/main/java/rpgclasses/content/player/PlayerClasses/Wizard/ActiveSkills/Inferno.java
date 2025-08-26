@@ -43,8 +43,8 @@ public class Inferno extends ActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y).volume(2F).pitch(0.5F));
-        SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(player.x, player.y).volume(2F).pitch(0.8F));
+        SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y).volume(1.5F).pitch(0.5F));
+        SoundManager.playSound(GameResources.croneLaugh, SoundEffect.effect(player.x, player.y).volume(1.5F).pitch(0.8F));
 
         AphAreaList areaList = new AphAreaList(
                 new AphArea(300,

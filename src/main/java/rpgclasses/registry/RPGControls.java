@@ -12,6 +12,9 @@ import rpgclasses.data.PlayerDataList;
 
 public class RPGControls {
 
+    public static Control TRANSFORMATION_ABILITY_1;
+    public static Control TRANSFORMATION_ABILITY_2;
+
     public static void registerCore() {
 
         Control.addModControl(new Control(InputID.KEY_K, "openrpgmenu") {
@@ -96,6 +99,9 @@ public class RPGControls {
             Control.EXPRESSION_WHEEL.changeKey(Control.EXPRESSION_WHEEL.defaultKey);
         }
 
+        TRANSFORMATION_ABILITY_1 = Control.addModControl(new Control(InputID.LEFT_CLICK, "transformationability1"));
+
+        TRANSFORMATION_ABILITY_2 = Control.addModControl(new Control(InputID.RIGHT_CLICK, "transformationability2"));
     }
 
 }

@@ -1,6 +1,10 @@
 package rpgclasses.mobs.summons;
 
 import necesse.engine.gameLoop.tickManager.TickManager;
+import necesse.engine.network.PacketReader;
+import necesse.engine.network.PacketWriter;
+import necesse.engine.save.LoadData;
+import necesse.engine.save.SaveData;
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.engine.util.GameMath;
@@ -32,6 +36,8 @@ import java.awt.geom.Point2D;
 import java.util.List;
 
 public class DancingFlameMob extends AttackingFollowingMob {
+    public boolean isPurple = false;
+
     public DancingFlameMob() {
         super(50);
 
@@ -49,6 +55,38 @@ public class DancingFlameMob extends AttackingFollowingMob {
 
     protected ParticleTypeSwitcher spinningTypeSwitcher;
 
+    public void setIsPurple(boolean isPurple) {
+        this.isPurple = isPurple;
+    }
+
+    public void setPurple() {
+        setIsPurple(true);
+    }
+
+    @Override
+    public void addSaveData(SaveData save) {
+        super.addSaveData(save);
+        save.addBoolean("isPurple", isPurple);
+    }
+
+    @Override
+    public void applyLoadData(LoadData load) {
+        super.applyLoadData(load);
+        isPurple = load.getBoolean("isPurple");
+    }
+
+    @Override
+    public void setupSpawnPacket(PacketWriter writer) {
+        super.setupSpawnPacket(writer);
+        writer.putNextBoolean(isPurple);
+    }
+
+    @Override
+    public void applySpawnPacket(PacketReader reader) {
+        super.applySpawnPacket(reader);
+        isPurple = reader.getNextBoolean();
+    }
+
     @Override
     public GameDamage getCollisionDamage(Mob target) {
         return summonDamage;
@@ -65,7 +103,7 @@ public class DancingFlameMob extends AttackingFollowingMob {
         if (owner != null && target != null) {
             target.isServerHit(damage, target.x - owner.x, target.y - owner.y, (float) knockback, this);
 
-            IgnitedBuff.apply(getFollowingMob(), target, damage.damage * 0.2F, 5F, true);
+            IgnitedBuff.apply(getFollowingMob(), target, damage.damage * 0.2F, 5F, isPurple);
 
             this.collisionHitCooldowns.startCooldown(target);
             this.remove(0.0F, 0.0F, null, true);
@@ -75,7 +113,7 @@ public class DancingFlameMob extends AttackingFollowingMob {
     @Override
     public void init() {
         super.init();
-        this.ai = new BehaviourTreeAI<>(this, new PlayerFlyingFollowerValidTargetCollisionChaserAI<DancingFlameMob>(448, null, 15, 500, 640, 64) {
+        this.ai = new BehaviourTreeAI<>(this, new PlayerFlyingFollowerValidTargetCollisionChaserAI<DancingFlameMob>(192, null, 15, 500, 640, 64) {
             public boolean isValidTarget(DancingFlameMob mob, ItemAttackerMob owner, Mob target) {
                 if (owner == null) {
                     return false;
@@ -90,7 +128,7 @@ public class DancingFlameMob extends AttackingFollowingMob {
         }, new FlyingAIMover());
         this.spinningTypeSwitcher = new ParticleTypeSwitcher(Particle.GType.COSMETIC);
         if (this.isClient()) {
-            this.trail = new Trail(this, this.getLevel(), new Color(102, 51, 204), 20.0F, 200, 18.0F);
+            this.trail = new Trail(this, this.getLevel(), isPurple ? new Color(102, 51, 204) : new Color(255, 51, 0), 20.0F, 200, 18.0F);
             this.trail.drawOnTop = true;
             this.trail.removeOnFadeOut = false;
             this.getLevel().entityManager.addTrail(this.trail);
@@ -120,13 +158,13 @@ public class DancingFlameMob extends AttackingFollowingMob {
     @Override
     public void clientTick() {
         super.clientTick();
-        this.getLevel().entityManager.addParticle(this.x + (float) (GameRandom.globalRandom.nextGaussian() * 4.0), this.y + (float) (GameRandom.globalRandom.nextGaussian() * 4.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.dx / 10.0F, this.dy / 10.0F).color(new Color(102, 51, 204));
+        this.getLevel().entityManager.addParticle(this.x + (float) (GameRandom.globalRandom.nextGaussian() * 4.0), this.y + (float) (GameRandom.globalRandom.nextGaussian() * 4.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(this.dx / 10.0F, this.dy / 10.0F).color(isPurple ? new Color(102, 51, 204) : new Color(255, 51, 0));
 
         this.refreshParticleLight();
     }
 
     public void refreshParticleLight() {
-        Color color = new Color(102, 51, 204);
+        Color color = isPurple ? new Color(102, 51, 204) : new Color(255, 51, 0);
         this.getLevel().lightManager.refreshParticleLightFloat(this.x, this.y, color, 0.75F);
     }
 

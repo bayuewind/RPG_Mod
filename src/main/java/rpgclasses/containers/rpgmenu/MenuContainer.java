@@ -155,9 +155,12 @@ public class MenuContainer extends Container {
 
                                     boolean someEquippedUpdate = false;
                                     for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                                        if (!equippedActiveSkill.isEmpty() && (playerData.getClassLevel(equippedActiveSkill.playerClass.id) < 1 || playerData.getClassesData()[equippedActiveSkill.playerClass.id].getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1)) {
-                                            equippedActiveSkill.empty();
-                                            someEquippedUpdate = true;
+                                        if(!equippedActiveSkill.isEmpty()) {
+                                            PlayerClassData playerClassData = playerData.getClassesData()[equippedActiveSkill.getPlayerClass().id];
+                                            if ( !equippedActiveSkill.isInCooldown(client.playerMob.getTime()) && (playerClassData.getLevel(true) < 1 || playerClassData.getActiveSkillLevels()[equippedActiveSkill.getActiveSkill().id] < 1)) {
+                                                equippedActiveSkill.empty();
+                                                someEquippedUpdate = true;
+                                            }
                                         }
                                     }
                                     if (someEquippedUpdate) {
@@ -205,7 +208,7 @@ public class MenuContainer extends Container {
                     @Override
                     protected void run(int classID, int[] passiveLevels, int[] activeSkillLevels) {
                         if (client.isServer()) {
-                            if (client.playerMob.isInCombat() && !client.playerMob.buffManager.hasBuff(RPGBuffs.PASSIVES.OverlevelClass)) {
+                            if (client.playerMob.isInCombat() && !client.playerMob.buffManager.hasBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS)) {
                                 client.playerMob.getServerClient().sendChatMessage(new LocalMessage("message", "noupdatesincombat"));
                                 System.out.println("updateClass: No updates in combat");
                                 return;
@@ -292,7 +295,7 @@ public class MenuContainer extends Container {
 
                                     boolean someEquippedUpdate = false;
                                     for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                                        if (!equippedActiveSkill.isEmpty() && equippedActiveSkill.sameClass(classData) && classData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
+                                        if (!equippedActiveSkill.isEmpty() && !equippedActiveSkill.isInCooldown(client.playerMob.getTime()) && equippedActiveSkill.sameClass(classData) && classData.getActiveSkillLevels()[equippedActiveSkill.getActiveSkill().id] < 1) {
                                             equippedActiveSkill.empty();
                                             someEquippedUpdate = true;
                                         }
@@ -318,15 +321,6 @@ public class MenuContainer extends Container {
                         if (client.isServer()) {
                             ServerClient serverClient = client.getServerClient();
 
-                            for (EquippedActiveSkill activeSkill : equippedActiveSkills) {
-                                if (activeSkill.isEmpty()) {
-                                    activeSkill.empty();
-                                } else {
-                                    activeSkill.playerClass = PlayerClass.classesList.get(activeSkill.playerClass.id);
-                                    activeSkill.activeSkill = activeSkill.playerClass.activeSkillsList.get(activeSkill.activeSkill.id);
-                                }
-                            }
-
                             // No continue if player is in combat
                             if (client.playerMob.isInCombat()) {
                                 serverClient.sendChatMessage(new LocalMessage("message", "noupdatesincombat"));
@@ -340,9 +334,9 @@ public class MenuContainer extends Container {
                             // No continue if player does not have some equipped skill
                             boolean allCorrect = true;
                             for (EquippedActiveSkill equippedActiveSkill : equippedActiveSkills) {
-                                if (equippedActiveSkill != null && equippedActiveSkill.playerClass != null && equippedActiveSkill.activeSkill != null) {
-                                    PlayerClassData playerClassData = playerData.getClassesData()[equippedActiveSkill.playerClass.id];
-                                    if (playerClassData.getLevel(true) < 1 || playerClassData.getActiveSkillLevels()[equippedActiveSkill.activeSkill.id] < 1) {
+                                if (equippedActiveSkill != null && equippedActiveSkill.getPlayerClass() != null && equippedActiveSkill.getActiveSkill() != null) {
+                                    PlayerClassData playerClassData = playerData.getClassesData()[equippedActiveSkill.getPlayerClass().id];
+                                    if (playerClassData.getLevel(true) < 1 || playerClassData.getActiveSkillLevels()[equippedActiveSkill.getActiveSkill().id] < 1) {
                                         allCorrect = false;
                                         break;
                                     }
@@ -353,26 +347,43 @@ public class MenuContainer extends Container {
                                 return;
                             }
 
-                            // No continue if any changed skill is in cooldown. Also sets lastUse to server's lastUse
+                            // No continue if there are duplicated skills
+                            boolean duplicated = false;
+                            for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
+                                for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
+                                    if (i != j && equippedActiveSkills[i].isSameSkill(equippedActiveSkills[j]))
+                                        duplicated = true;
+                                }
+                            }
+
+                            if (duplicated) {
+                                System.out.println("updateEquippedActiveSkills: Can't equip duplicated Active Skills");
+                                return;
+                            }
+
+                            // No continue if any changed skill is in cooldown or inUse. Also sets lastUse to server's lastUse
                             boolean changedInCooldown = false;
                             for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
                                 EquippedActiveSkill equippedActiveSkill = equippedActiveSkills[i];
                                 EquippedActiveSkill serverEquippedActiveSkill = playerData.equippedActiveSkills[i];
-                                if (equippedActiveSkill.isEmpty()) {
-                                    equippedActiveSkill.lastUse = 0;
-                                } else if (serverEquippedActiveSkill.isEmpty()) {
-                                    equippedActiveSkills[i].lastUse = 0;
-                                } else if (equippedActiveSkill.isSameSkill(serverEquippedActiveSkill)) {
-                                    equippedActiveSkill.lastUse = serverEquippedActiveSkill.lastUse;
-                                } else {
-                                    int activeSkillLevel = playerData.getClassesData()[serverEquippedActiveSkill.playerClass.id].getActiveSkillLevels()[serverEquippedActiveSkill.activeSkill.id];
-                                    if (serverEquippedActiveSkill.isInCooldown(activeSkillLevel, player.getTime())) {
-                                        changedInCooldown = true;
+                                if (equippedActiveSkill.isEmpty() || serverEquippedActiveSkill.isEmpty()) {
+                                    equippedActiveSkill.restartCooldown();
+                                }
+                                if (!serverEquippedActiveSkill.isEmpty()) {
+                                    if (equippedActiveSkill.isSameSkill(serverEquippedActiveSkill)) {
+                                        equippedActiveSkill.setCooldown(serverEquippedActiveSkill);
+                                    } else {
+                                        if (!serverEquippedActiveSkill.canChange(player.getTime())) {
+                                            changedInCooldown = true;
+                                        } else {
+                                            equippedActiveSkill.restartCooldown();
+                                        }
                                     }
                                 }
                             }
+
                             if (changedInCooldown) {
-                                System.out.println("updateEquippedActiveSkills: Can't change Active Skills in cooldown");
+                                System.out.println("updateEquippedActiveSkills: Can't change Active Skills in cooldown or in use");
                                 return;
                             }
 
@@ -382,7 +393,7 @@ public class MenuContainer extends Container {
                                 EquippedActiveSkill equippedActiveSkill = equippedActiveSkills[i];
                                 if (equippedActiveSkill != null && !equippedActiveSkill.isEmpty()) {
                                     for (int j = 0; j < equippedActiveSkills.length; j++) {
-                                        if (i != j && equippedActiveSkills[j] != null && !equippedActiveSkills[j].isEmpty() && equippedActiveSkills[j].isNotSameSkillButSameFamily(equippedActiveSkill)) {
+                                        if (i != j && equippedActiveSkills[j].isNotSameSkillButSameFamily(equippedActiveSkill)) {
                                             sameFamily = true;
                                             break;
                                         }
@@ -392,24 +403,6 @@ public class MenuContainer extends Container {
                             if (sameFamily) {
                                 System.out.println("updateEquippedActiveSkills: Can't use different Active Skills in same family");
                                 return;
-                            }
-
-                            // If any skill is in cooldown in any other slot, then apply that lastUse to its slot and remove the last one. If not, reset it to 0
-                            for (int i = 0; i < equippedActiveSkills.length; i++) {
-                                EquippedActiveSkill equippedActiveSkill = equippedActiveSkills[i];
-                                if (equippedActiveSkill != null) {
-                                    long maxLastUse = 0;
-                                    for (int j = 0; j < equippedActiveSkills.length; j++) {
-                                        if (i != j) {
-                                            EquippedActiveSkill equippedActiveSkill2 = equippedActiveSkills[j];
-                                            if (equippedActiveSkill2 != null && !equippedActiveSkill2.isEmpty() && equippedActiveSkill.isSameSkill(equippedActiveSkill2)) {
-                                                maxLastUse = Math.max(maxLastUse, equippedActiveSkill2.lastUse);
-                                                equippedActiveSkills[j].empty();
-                                            }
-                                        }
-                                    }
-                                    equippedActiveSkill.lastUse = maxLastUse;
-                                }
                             }
 
                             playerData.equippedActiveSkills = equippedActiveSkills;

@@ -7,8 +7,6 @@ import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
 import rpgclasses.levelevents.FireExplosionLevelEvent;
 
-import java.awt.*;
-
 public class FireShield extends SimpleBuffPassive {
     public FireShield(int levelMax, int requiredClassLevel) {
         super("fireshield", "#ff3300", levelMax, requiredClassLevel);
@@ -16,7 +14,7 @@ public class FireShield extends SimpleBuffPassive {
 
     @Override
     public PrincipalPassiveBuff getBuff() {
-        return new ArcaneShield.MagicShieldBuff(new Color(255, 51, 0), 26000, 0,
+        return new ArcaneShield.MagicShieldBuff(getColor(), 26000, 0,
                 (activeBuff, skillLevel, playerData) -> {
                     PlayerMob player = (PlayerMob) activeBuff.owner;
                     player.getLevel().entityManager.addLevelEvent(new FireExplosionLevelEvent(player.x, player.y, 250, new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() + playerData.getIntelligence(player) * skillLevel), 0, player, false));

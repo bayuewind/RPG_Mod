@@ -25,6 +25,8 @@ holycritdamage=<mod>% de dany crític sagrat
 holyeffect=<mod>% d'efecte sagrat
 holyabilityspeed=<mod>% de velocitat d'habilitat sagrada
 
+transformationdelay=<mod>% de retard de transformació
+noskills=No es poden utilitzar habilitats
 
 [stats]
 holy_damage=Dany sagrat
@@ -166,6 +168,16 @@ sanctifiedmind=Ment santificada
 sanctifiedarmor=Armadura santificada
 radiantexpansion=Expansió radiant
 
+// Druid
+quickshift=Canvi Ràpid
+feralinstinct=Instint Ferotge
+ironfur=Pell de Ferro
+naturesfavor=Favor de la Natura
+beastpace=Ritme de Bèstia
+primalburst=Esclat Primitiu
+elementalguard=Guàrdia Elemental
+phoenixspirit=Esperit Fènix
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=Un llop company atacarà els enemics marcats infligint §i[[<playe
 
 // Mag
 manapower=Cada nivell proporciona:\n\n+1% de Dany Màgic per cada 10% de Manà no utilitzat
-flamingsteps=En córrer amb una quincalla activa, deixaràs flames a terra\nLes flames cremaran els enemics durant 2 segons, infligint §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dany Màgic§0 per segon
+flamingsteps=En córrer amb una quincalla activa o transformació, deixaràs flames a terra\nLes flames cremaran els enemics durant 2 segons, infligint §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dany Màgic§0 per segon
 stormbound=Cada §a[[9 - 0.5 x <skilllevel>]] segons§0, un llamp colpeja un enemic aleatori a la teva vista\nInfligeix §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dany Màgic§0 i atordeix durant 1 segon
 arcaneshield=Un escut que evita un cop\nL'escut es recuperarà §a[[20 - <skilllevel>]] segons§0 després d'usar-lo
 fireshield=Un escut que evita un cop\nEn usar-lo, alliberaràs una explosió que infligeix §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dany Màgic§0\ni cremaràs els monstres, repetint el 20% del seu dany original per segon durant 5 segons\nL'escut es recuperarà 26 segons després d'usar-lo
@@ -191,8 +203,8 @@ iceshield=Un escut que evita un cop\nEn usar-lo, alliberaràs una aura de gel qu
 necroticpower=Tots els teus atacs màgics i d'invocador enverinen un 5% del seu dany durant §a[[2 x <skilllevel>]] segons§0, sempre que no siguin causats per una invocació
 darkmagic=Els bonus de dany d'invocador afecten el dany màgic en un §a[[5 x <skilllevel>]]%
 necroticarmy=Els enemics hostils derrotats es convertiran en §bEsquelets§0 amb un §a-[[100 - 3 x <skilllevel>]]%§0 de salut i dany
-darksummons=Infligeix un §a+[[10 x <skilllevel>]]%§0 de dany d'invocador als enemics enverinats
-lifeleech=Recupera un §a[[<skilllevel>]]%§0 del dany d'invocador infligit com a salut
+darksummons=Infligeix un §a+[[8 x <skilllevel>]]%§0 de dany d'invocador als enemics enverinats
+lifeleech=Recupera un §a[[0.1 x <skilllevel>]]%§0 del dany d'invocador infligit com a salut
 necroticremains=Quan una invocació necròtica mor, explota, infligint §i[[0.1 x <intelligence> x <skilllevel>]] de dany màgic§0 als enemics propers, enverinant-los un 20% del dany per segon durant 10 segons
 endlesslegion=Cada 4 nivells d'aquesta habilitat, guanyes +1 invocació màxima
 lichborn=Quan mors, sobrevius i recuperes un §a[[10 x <skilllevel>]]%§0 de salut si no ets ja un §bLich§0\nDurant els propers §a[[120 - 6 x <skilllevel>]] segons§0, et converteixes en un §bLich§0 (un esquelet)
@@ -204,6 +216,11 @@ empoweredhealing=Quan et cures màgicament a tu mateix o a un aliat, augmenta el
 sanctifiedmind=La curació màgica también restaura manà equivalent al §a[[5 x <skilllevel>]]%§0 de la curació realitzada
 sanctifiedarmor=La curació màgica también restaura resistència equivalent al §a[[2 x <skilllevel>]]%§0 de la curació realitzada
 radiantexpansion=Quan et cures màgicament a tu mateix o a un aliat, infligeixes un §a[[5 x <skilllevel>]]%§0 de la curació com a dany sagrat als enemics propers de l'objectiu curat
+
+// Druid
+naturesfavor=Guanya +[[<skilllevel>]] de Regeneració de Salut per segon mentre estàs sobre herba
+primalburst=Augmenta el Dany i la Velocitat en un [[6 x <skillevel>]]% durant els primers 5 segons després de transformar-te
+phoenixspirit=Requereix almenys 4 punts per funcionar:\n\nSi morissis mentre estàs transformat amb una habilitat activa, en comptes d'això sobrevius amb un §a[4 + 8 x <skilllevel>]%§0 de salut, i aquesta habilitat es posa en un refredament d'1 hora\n\nNo s'activa si ja tens almenys §a[[0.25 x <skilllevel> ↓]] habilitat(s) de transformació§0 en un refredament superior a 1 minut
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=Intervenció divina
 resurrection=Resurrecció
 wrathoflight=Ira de la llum
 
+// Druid
+wolftransformation=Transformació de Llop
+queenbeetransformation=Transformació de Reina Abella
+beartransformation=Transformació d'Ós
+foxtransformation=Transformació de Guineu
+rattransformation=Transformació de Rata
+treanttransformation=Transformació de Treant
+
 
 [activeskillsdesc]
 
@@ -354,6 +379,15 @@ resurrection=Ressuscita l'últim aliat jugador mort a la teva mateixa illa amb u
 wrathoflight=Invoca una columna de llum sobre l'enemic més proper, infligint §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] de dany sagrat§0 per segon durant 5 segons a l'àrea\nEls monstres no-morts i demoníacs a dins queden §7Restringits§0\nConsumeix §a[[40 + 8 x <skilllevel>]] de manà§0
 
 
+// Druid
+wolftransformation=Triga 3 segons a transformar-se en un Llop\n\nVelocitat de moviment: 60\n\nPrem [input=transformationability1] per Mossegada de Càrrega: Salta endavant i mossega, infligint §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] de Dany Cos a Cos§0\n\nPrem [input=transformationability2] per Lladruc: Obliga els enemics propers a atacar-te durant 2 segons\n\nMantén premut [input=trinketability] per Esprintar
+queenbeetransformation=Triga 2 segons a transformar-se en una Reina Abella\n\nVelocitat de moviment: 30\n-50% Detecció d'Enemics\n§6+1000% Dany Rebut§0\n\nPrem [input=transformationability1] per Disparar Mel: Infligeix §i[[2 x <playerlevel> + <strength> x <skilllevel>]] de Dany a Distància§0\n\nPrem [input=transformationability2] per invocar una §9Abella§0 fins a §a[[2 x <skilllevel>]]§0\n\nMantén premut [input=trinketability] per ordenar a les teves Abelles que ataquin
+beartransformation=Triga 4 segons a transformar-se en un Ós\n\nVelocitat de moviment: 20\n-50% Dany Rebut\n\nPrem [input=transformationability1] per Cop a Terra: Atac d'àrea que infligeix §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] de Dany Cos a Cos§0 i §9atordeix§0 durant §a[[0.5 x <skilllevel>]] segons§0\n\nPrem [input=transformationability2] per Grunyit: Fes que els enemics propers fugin durant 1 segon\n\nMantén premut [input=trinketability] per Esprintar
+foxtransformation=Triga 3 segons a transformar-se en una Guineu\n\nVelocitat de moviment: 50\n§6+50% Dany Rebut§0\n\nPrem [input=transformationability1] per Disparar Boles de Foc: Infligeix §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dany Màgic§0\n\nPrem [input=transformationability2] per invocar una §bFlama Dansaire§0 fins a §a[[2 + <skilllevel>]]§0, cadascuna infligint el mateix dany que una Bola de Foc\n\nPrem [input=trinketability] per Esprintar\n§!Vulpes Nova fox!
+rattransformation=Triga 2 segons a transformar-se en una Rata\n\nVelocitat de moviment: 25\n-50% Detecció d'Enemics\nAtorga màxima Probabilitat d'Esquivar\n§6+1000% Dany Rebut§0\n\nPrem [input=transformationability1] per Mossegada: Infligeix §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] de Dany Cos a Cos§0 i enverina l'objectiu amb el 100% del dany infligit per segon durant 10 segons\n\nMantén premut [input=trinketability] per Esprintar
+treanttransformation=Triga 4 segons a transformar-se en un Treant\n\nVelocitat de moviment: 0\n-§a[50 + 5 <skilllevel>]%§0 Dany Rebut\nEls enemics t'ignoren si estàs amagat durant 3 segons\n\nPrem [input=transformationability1] mentre Estàs Revelat per Disparar Llavors aleatòries: Infligeix §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] de Dany a Distància§0 amb efectes aleatoris\n\nPrem [input=transformationability2] per invocar un §9Brot de Dríada§0\n\nMantén premut [input=trinketability] per Revelar i Esprintar si et mous
+
+
 [skillsdesckeys]
 skilllevel=Nivell d'habilitat
 playerlevel=Nivell del jugador
@@ -396,10 +430,8 @@ dancingflame=§bFlama Dansaire:§0 Invocació que actua com un projectil. Crema 
 necromancerskeleton=§bEsquelet:§0 Invocació necròtica danyable\nSalut: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDany: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocitat: 60\nPerd un 2% de la salut total per segon
 necromancerskeletonwarrior=§bGuerrer Esquelet:§0 Invocació necròtica danyable\nSalut: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDany: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocitat: 60\nPerd un 2% de la salut total per segon
 necromancerboneslinger=§bLlançador d'ossos:§0 Invocació necròtica danyable\nSalut: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDany: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distància 320)\nVelocitat: 60\nPerd un 2% de la salut total per segon
-
-// Tranformations
-necromancerlich=§bLich:§0 Transformació de no-mort\n\nNo es poden utilitzar objectes\n+100% de dany rebut\n\nPremeu [input=trinketability] per disparar un os que infligeix §i[[<strength>]] de dany d'invocador§0
-
+bee=§9Abella:§0 Invocació danyable\nSalut: 1\nDany: §a[[<playerlevel> + <intelligence>]]§0\nVelocitat: 40\n\nMor en atacar, però enverina l'objectiu amb el 20% del dany infligit per segon durant 10 segons
+dryadsapling=§9Brot de Dríada:§0 Invocació danyable\nSalut: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDany: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nVelocitat: 65\nPerd un 2% de la Salut Total per segon
 
 [item]
 scrollofoblivion=Pergamí de l'Oblit
@@ -454,6 +486,8 @@ activeskillinuse=Aquesta habilitat ja està en ús
 anotheractiveskillinuse=Ja tens una altra habilitat en ús
 incooldown=En refredament
 notenoughstamina=No hi ha prou resistència
+canotusemounted=No es pot utilitzar muntat o transformat
+
 notarget=No hi ha objectius a prop
 nograbbableobject=No hi ha cap objecte que es pugui agafar davant teu
 notargetfollower=No hi ha invocacions objectiu a prop
@@ -472,6 +506,7 @@ lvl=Niv <level>
 eachlevel=Cada nivell proporciona:
 experience=EXP: <exp> / <nextexp>
 totalexperience=EXP total: <exp>
+onlytranformed=Només quan està transformat
 
 resetpoints=Punts de restabliment: <points>
 attrpoints=Punts d'atribut: <points>
@@ -514,3 +549,5 @@ activeskillslot3=Ranura d'habilitat activa 3
 activeskillslot4=Ranura d'habilitat activa 4
 activeskillslot5=Ranura d'habilitat activa 5
 activeskillslot6=Ranura d'habilitat activa 6
+transformationability1=Habilitat de Transformació 1
+transformationability2=Habilitat de Transformació 2

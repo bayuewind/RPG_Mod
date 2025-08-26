@@ -19,8 +19,6 @@ import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActi
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-import java.awt.*;
-
 public class HolyGuard extends SimpleBuffActiveSkill {
 
     public HolyGuard(int levelMax, int requiredClassLevel) {
@@ -46,9 +44,9 @@ public class HolyGuard extends SimpleBuffActiveSkill {
     @Override
     public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
-        SoundManager.playSound(GameResources.cling, SoundEffect.effect(player.x, player.y).volume(2.5F).pitch(1F));
+        SoundManager.playSound(GameResources.cling, SoundEffect.effect(player.x, player.y).volume(2F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
-                new AphArea(200, new Color(255, 255, 0))
+                new AphArea(200, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
@@ -83,7 +81,7 @@ public class HolyGuard extends SimpleBuffActiveSkill {
         return new HolyBuff();
     }
 
-    public static class HolyBuff extends ActiveSkillBuff implements HumanDrawBuff {
+    public class HolyBuff extends ActiveSkillBuff implements HumanDrawBuff {
         public GameTexture starBarrierTexture;
 
         public void loadTextures() {
@@ -110,7 +108,7 @@ public class HolyGuard extends SimpleBuffActiveSkill {
             if (activeBuff.getGndData().getBoolean("ready")) {
                 humanDrawOptions.addTopDraw(
                         (player, dir, spriteX, spriteY, spriteRes, drawX, drawY, width, height, mirrorX, mirrorY, light, alpha, mask) ->
-                                this.starBarrierTexture.initDraw().sprite((int) (player.getLocalTime() / 100L) % 4, 0, 64).color(new Color(255, 255, 0)).size(width, height).addMaskShader(mask).pos(drawX, drawY).alpha(0.4F)
+                                this.starBarrierTexture.initDraw().sprite((int) (player.getLocalTime() / 100L) % 4, 0, 64).color(getColor()).size(width, height).addMaskShader(mask).pos(drawX, drawY).alpha(0.4F)
                 );
             }
         }

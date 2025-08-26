@@ -25,6 +25,8 @@ holycritdamage=<mod>%の聖なるクリティカルダメージ
 holyeffect=<mod>%の聖なる効果
 holyabilityspeed=<mod>%の聖なる能力速度
 
+transformationdelay=<mod>% 変身遅延
+noskills=スキルを使用できません
 
 [stats]
 holy_damage=聖なるダメージ
@@ -166,6 +168,16 @@ sanctifiedmind=聖別された心
 sanctifiedarmor=聖別された鎧
 radiantexpansion=輝く拡大
 
+// Druid
+quickshift=クイックシフト
+feralinstinct=フェラルインスティンクト
+ironfur=アイアンファー
+naturesfavor=自然の恵み
+beastpace=ビーストペース
+primalburst=プライマルバースト
+elementalguard=エレメンタルガード
+phoenixspirit=フェニックススピリット
+
 
 [passivesdesc]
 
@@ -181,7 +193,7 @@ wolfcompanion=狼の仲間がマークされた敵を攻撃し、§i[[<playerlev
 
 // ウィザード
 manapower=各レベルで提供：\n\n未使用のマナ10%ごとに+1%の魔法ダメージ
-flamingsteps=アクティブな装身具を装備して走ると、地面に炎が残ります\n炎は敵を2秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
+flamingsteps=アクティブな装身具または変身状態で走ると、地面に炎が残ります\n炎は敵を2秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
 stormbound=§a[[9 - 0.5 x <skilllevel>]]秒§0ごとに、視界内のランダムな敵に雷が落ちます\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます
 arcaneshield=一撃を防ぐシールド\nシールドは使用後§a[[20 - <skilllevel>]]秒§0で回復します
 fireshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える爆発を放ち\nモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返します\nシールドは使用後26秒で回復します
@@ -190,9 +202,9 @@ iceshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <i
 // ネクロマンサー
 necroticpower=あなたのすべての魔法と召喚士の攻撃は、召喚によって引き起こされない限り、§a[[2 x <skilllevel>]]秒間§0、ダメージの5%で毒を与えます
 darkmagic=召喚士ダメージボーナスは、魔法ダメージに§a[[5 x <skilllevel>]]%§0影響します
-necroticarmy=倒された敵対的な敵は、§a-[[100 - 3 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトン§0に変わります
-darksummons=毒された敵に§a+[[10 x <skilllevel>]]%§0の召喚士ダメージを与えます
-lifeleech=与えられた召喚ダメージの§a[[<skilllevel>]]%§0を体力として回復します
+nnecroticarmy=倒された敵対的な敵は、§bスケルトン§0に変わり、§a-[[100 - 3 x <skilllevel>]]%§0の体力とダメージを持ちます
+darksummons=毒された敵に§a+[[8 x <skilllevel>]]%§0の召喚士ダメージを与えます
+lifeleech=与えられた召喚ダメージの§a[[0.1 x <skilllevel>]]%§0を体力として回復します
 necroticremains=壊死した召喚が死ぬと爆発し、近くの敵に§i[[0.1 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、10秒間、毎秒ダメージの20%で毒を与えます
 endlesslegion=このスキルの4レベルごとに、最大召喚数が+1されます
 lichborn=死ぬと、まだ§bリッチ§0でない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは§bリッチ§0（スケルトン）になります
@@ -204,6 +216,11 @@ empoweredhealing=あなた自身または味方を魔法で回復すると、3�
 sanctifiedmind=魔法の回復は、行われた回復の§a[[5 x <skilllevel>]]%§0に等しいマナも回復します
 sanctifiedarmor=魔法の回復は、行われた回復の§a[[2 x <skilllevel>]]%§0に等しい回復力も回復します
 radiantexpansion=あなた自身または味方を魔法で回復すると、回復したターゲットの近くの敵に、回復の§a[[5 x <skilllevel>]]%§0を聖なるダメージとして与えます
+
+// Druid
+naturesfavor=草の上に立っている間、毎秒+[[<skilllevel>]]の体力再生を得る
+primalburst=変身後最初の5秒間、ダメージと速度が[[6 x <skillevel>]]%増加する
+phoenixspirit=機能するには少なくとも4ポイント必要です:\n\nアクティブスキルで変身中に死亡した場合、代わりに§a[4 + 8 x <skilllevel>]]%§0の体力で生き残り、そのスキルは1時間のクールダウンに入ります\n\nすでに1分以上のクールダウン中の§a[[0.25 x <skilllevel> ↓]]変身スキル§0がある場合は発動しません
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=神の介入
 resurrection=復活
 wrathoflight=光の怒り
 
+// Druid
+wolftransformation=オオカミ変身
+queenbeetransformation=女王蜂変身
+beartransformation=クマ変身
+foxtransformation=キツネ変身
+rattransformation=ネズミ変身
+treanttransformation=トレント変身
+
 
 [activeskillsdesc]
 
@@ -354,6 +379,15 @@ resurrection=あなたの同じ島で最後に死んだプレイヤーの味方�
 wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0をエリアに与えます\n中のアンデッドと悪魔のモブは§7拘束§0されます\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
 
 
+// Druid
+wolftransformation=オオカミに変身するのに3秒かかります\n\n移動速度: 60\n\n[input=transformationability1]を押してダッシュバイト: 前方に跳躍して噛みつき、§i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]の近接ダメージ§0を与えます\n\n[input=transformationability2]を押して吠える: 近くの敵に2秒間攻撃を集中させます\n\n[input=trinketability]を長押ししてスプリント
+queenbeetransformation=女王蜂に変身するのに2秒かかります\n\n移動速度: 30\n-50% 敵検出\n§6+1000% 被ダメージ§0\n\n[input=transformationability1]を押してハニーショット: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0を与えます\n\n[input=transformationability2]を押して§9ハチ§0を最大§a[[2 x <skilllevel>]]体§0召喚します\n\n[input=trinketability]を長押ししてハチに攻撃を命令
+beartransformation=クマに変身するのに4秒かかります\n\n移動速度: 20\n-50% 被ダメージ\n\n[input=transformationability1]を押してグラウンドスラム: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]の近接ダメージ§0を与え、§a[[0.5 x <skilllevel>]]秒間§0§9スタン§0させる範囲攻撃\n\n[input=transformationability2]を押して唸る: 近くの敵を1秒間逃げさせます\n\n[input=trinketability]を長押ししてスプリント
+foxtransformation=キツネに変身するのに3秒かかります\n\n移動速度: 50\n§6+50% 被ダメージ§0\n\n[input=transformationability1]を押してファイアボールを撃つ: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n\n[input=transformationability2]を押して§b踊る炎§0を最大§a[[2 + <skilllevel>]]体§0召喚します。それぞれファイアボールと同じダメージを与えます\n\n[input=trinketability]を押してダッシュ\n§!Vulpes Nova fox!
+rattransformation=ネズミに変身するのに2秒かかります\n\n移動速度: 25\n-50% 敵検出\n最大回避チャンスを付与します\n§6+1000% 被ダメージ§0\n\n[input=transformationability1]を押して噛みつき: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]の近接ダメージ§0を与え、10秒間、毎秒与えたダメージの100%でターゲットを毒します\n\n[input=trinketability]を長押ししてスプリント
+treanttransformation=トレントに変身するのに4秒かかります\n\n移動速度: 0\n-§a[50 + 5 <skilllevel>]%§0 被ダメージ\n3秒間隠れていると敵はあなたを無視します\n\n[input=transformationability1]を押してランダムな種を撃つ: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0をランダムな効果で与えます\n\n[input=transformationability2]を押して§9ドライアドの苗木§0を召喚します\n\n[input=trinketability]を長押しして、移動中に表示してスプリント
+
+
 [skillsdesckeys]
 skilllevel=スキルレベル
 playerlevel=プレイヤーレベル
@@ -396,10 +430,8 @@ dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒッ�
 necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
-
-// Tranformations
-necromancerlich=§bリッチ:§0 アンデッドへの変身\n\nアイテム使用不可\n+100% 被ダメージ\n\n[input=trinketability]を押して、§i[[<strength>]]の召喚士ダメージ§0を与える骨を撃つ
-
+bee=§9蜂：§0ダメージ可能な召喚\n体力：1\nダメージ：§a[[<playerlevel> + <intelligence>]]§0\n速度：40\n\n攻撃時に死亡しますが、10秒間、毎秒与えたダメージの20%でターゲットを毒します
+dryadsapling=§9ドライアドの苗木：§0ダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n速度：65\n毎秒総体力の2%を失います
 
 [item]
 scrollofoblivion=忘却の巻物
@@ -454,6 +486,8 @@ activeskillinuse=このスキルはすでに使用中です
 anotheractiveskillinuse=すでに別のスキルを使用中です
 incooldown=クールダウン中
 notenoughstamina=スタミナが足りません
+canotusemounted=騎乗中または変身中は使用できません
+
 notarget=近くにターゲットがいません
 nograbbableobject=目の前につかめるオブジェクトがありません
 notargetfollower=近くにターゲット召喚獣がいません
@@ -472,6 +506,7 @@ lvl=Lv <level>
 eachlevel=各レベルで提供：
 experience=経験値：<exp> / <nextexp>
 totalexperience=合計経験値：<exp>
+onlytranformed=変身中のみ
 
 resetpoints=リセットポイント：<points>
 attrpoints=属性ポイント：<points>
@@ -514,3 +549,5 @@ activeskillslot3=アクティブスキルスロット3
 activeskillslot4=アクティブスキルスロット4
 activeskillslot5=アクティブスキルスロット5
 activeskillslot6=アクティブスキルスロット6
+transformationability1=変身能力1
+transformationability2=変身能力2

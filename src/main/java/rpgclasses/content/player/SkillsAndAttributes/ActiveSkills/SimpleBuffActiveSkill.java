@@ -53,7 +53,8 @@ abstract public class SimpleBuffActiveSkill extends ActiveSkill {
     }
 
     @Override
-    public void registerSkillBuffs() {
+    public void registry() {
+        super.registry();
         BuffRegistry.registerBuff(getBuffStringID(), getBuff());
         ActiveSkillBuff buff2 = getBuff2();
         if (buff2 != null) BuffRegistry.registerBuff(getBuff2StringID(), buff2);

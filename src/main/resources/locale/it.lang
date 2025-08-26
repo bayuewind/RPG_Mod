@@ -25,6 +25,8 @@ holycritdamage=<mod>% di danno critico sacro
 holyeffect=<mod>% di effetto sacro
 holyabilityspeed=<mod>% di velocità abilità sacra
 
+transformationdelay=<mod>% di ritardo di trasformazione
+noskills=Non è possibile usare le abilità
 
 [stats]
 holy_damage=Danno sacro
@@ -106,7 +108,7 @@ druid=Druido
 
 
 [passives]
-passives=Passive
+passives=Passivi
 
 // Guerriero
 regeneration=Rigenerazione
@@ -166,6 +168,16 @@ sanctifiedmind=Mente santificata
 sanctifiedarmor=Armatura santificata
 radiantexpansion=Espansione radiosa
 
+// Druid
+quickshift=Cambio Rapido
+feralinstinct=Istinto Ferale
+ironfur=Pelliccia di Ferro
+naturesfavor=Favore della Natura
+beastpace=Passo Bestiale
+primalburst=Esplosione Primordiale
+elementalguard=Guardia Elementale
+phoenixspirit=Spirito della Fenice
+
 
 [passivesdesc]
 
@@ -181,19 +193,19 @@ wolfcompanion=Un compagno lupo attaccherà i nemici marchiati infliggendo §i[[<
 
 // Mago
 manapower=Ogni livello fornisce:\n\n+1% di Danno Magico per ogni 10% di Mana non utilizzato
-flamingsteps=Correndo con un ninnolo attivo, lascerai fiamme a terra\nLe fiamme daranno fuoco ai nemici per 2 secondi, infliggendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 al secondo
+flamingsteps=Correndo con un ninnolo attivo o trasformazione, lascerai fiamme a terra\nLe fiamme daranno fuoco ai nemici per 2 secondi, infliggendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 al secondo
 stormbound=Ogni §a[[9 - 0.5 x <skilllevel>]] secondi§0, un fulmine colpisce un nemico casuale nella tua visuale\nInfligge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 e stordisce per 1 secondo
 arcaneshield=Uno scudo che previene un colpo\nLo scudo si ripristinerà §a[[20 - <skilllevel>]] secondi§0 dopo l'uso
-fireshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'esplosione che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ne darà fuoco ai mob, ripetendo il 20% del loro danno originale al secondo per 5 secondi\nLo scudo si ripristinerà 26 secondi dopo l'uso
+fireshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'esplosione che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ne darà fuoco ai mob, ripetendo 20% del loro danno originale al secondo per 5 secondi\nLo scudo si ripristinerà 26 secondi dopo l'uso
 iceshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'aura di ghiaccio che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ncongelando i mob per 5 secondi, e congelandoli totalmente per 1 secondo\nLo scudo si ripristinerà 22 secondi dopo l'uso
 
 // Negromante
 necroticpower=Tutti i tuoi attacchi Magici e da Evocatore avvelenano per il 5% del loro Danno per §a[[2 x <skilllevel>]] secondi§0, a condizione che non siano causati da un'evocazione
 darkmagic=I bonus ai Danni da Evocatore influenzano i Danni Magici del §a[[5 x <skilllevel>]]%
 necroticarmy=I nemici ostili sconfitti si trasformeranno in §bScheletri§0 con il §a-[[100 - 3 x <skilllevel>]]%§0 di Salute e Danni
-darksummons=Infliggi il §a+[[10 x <skilllevel>]]%§0 di Danni da Evocatore ai nemici avvelenati
-lifeleech=Recupera il §a[[<skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
-necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per il 20% dei danni al secondo per 10 secondi
+darksummons=Infliggi il §a+[[8 x <skilllevel>]]%§0 di Danni da Evocatore ai nemici avvelenati
+lifeleech=Recupera il §a[[0.1 x <skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
+necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per 20% dei danni al secondo per 10 secondi
 endlesslegion=Ogni 4 livelli di questa abilità, ottieni +1 evocazione massima
 lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un §bLich§0\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un §bLich§0 (uno scheletro)
 
@@ -204,6 +216,11 @@ empoweredhealing=Quando guarisci magicamente te stesso o un alleato, aumenta i l
 sanctifiedmind=La guarigione magica ripristina anche mana pari al §a[[5 x <skilllevel>]]%§0 della guarigione effettuata
 sanctifiedarmor=La guarigione magica ripristina anche la resilienza pari al §a[[2 x <skilllevel>]]%§0 della guarigione effettuata
 radiantexpansion=Quando guarisci magicamente te stesso o un alleato, infliggi il §a[[5 x <skilllevel>]]%§0 della guarigione come Danno Sacro ai nemici vicini del bersaglio guarito
+
+// Druid
+naturesfavor=Ottieni +[[<skilllevel>]] Rigenerazione Salute al secondo mentre sei sull'erba
+primalburst=Aumenta Danno e Velocità del [[6 x <skillevel>]]% per i primi 5 secondi dopo la trasformazione
+phoenixspirit=Richiede almeno 4 punti per funzionare:\n\nSe dovessi morire mentre sei trasformato con un'abilità attiva, sopravvivi invece con §a[4 + 8 x <skilllevel>]]%§0 di salute, e quell'abilità viene messa in cooldown per 1 ora\n\nNon si attiva se hai già almeno §a[[0.25 x <skilllevel> ↓]] abilità di trasformazione§0 in cooldown per più di 1 minuto
 
 
 [activeskills]
@@ -280,6 +297,14 @@ divineintervention=Intervento divino
 resurrection=Resurrezione
 wrathoflight=Ira della luce
 
+// Druid
+wolftransformation=Trasformazione in Lupo
+queenbeetransformation=Trasformazione in Ape Regina
+beartransformation=Trasformazione in Orso
+foxtransformation=Trasformazione in Volpe
+rattransformation=Trasformazione in Ratto
+treanttransformation=Trasformazione in Treant
+
 
 [activeskillsdesc]
 
@@ -354,6 +379,15 @@ resurrection=Rianima l'ultimo alleato giocatore morto sulla tua stessa isola con
 wrathoflight=Evoca una colonna di luce sul nemico più vicino, infliggendo §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Danni Sacri§0 al secondo per 5 secondi nell'area\nI mob Non Morti e Demonici all'interno sono §7Vincolati§0\nConsuma §a[[40 + 8 x <skilllevel>]] Mana§0
 
 
+// Druid
+wolftransformation=Richiede 3 secondi per trasformarsi in un Lupo\n\nVelocità di Movimento: 60\n\nPremi [input=transformationability1] per Morso Scattante: Salta in avanti e mordi, infliggendo §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Danni da Mischia§0\n\nPremi [input=transformationability2] per Abbaiare: Costringi i nemici vicini a concentrare i loro attacchi su di te per 2 secondi\n\nTieni premuto [input=trinketability] per Scattare
+queenbeetransformation=Richiede 2 secondi per trasformarsi in un'Ape Regina\n\nVelocità di Movimento: 30\n-50% Rilevamento Nemici\n§6+1000% Danni Subiti§0\n\nPremi [input=transformationability1] per Sparare Miele: Infliggi §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0\n\nPremi [input=transformationability2] per evocare un'§9Ape§0 fino a §a[[2 x <skilllevel>]]§0\n\nTieni premuto [input=trinketability] per comandare le tue Api ad attaccare
+beartransformation=Richiede 4 secondi per trasformarsi in un Orso\n\nVelocità di Movimento: 20\n-50% Danni Subiti\n\nPremi [input=transformationability1] per Schianto a Terra: Attacco ad area che infligge §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Danni da Mischia§0 e §9stordisce§0 per §a[[0.5 x <skilllevel>]] secondi§0\n\nPremi [input=transformationability2] per Ringhiare: Fai fuggire i nemici vicini per 1 secondo\n\nTieni premuto [input=trinketability] per Scattare
+foxtransformation=Richiede 3 secondi per trasformarsi in una Volpe\n\nVelocità di Movimento: 50\n§6+50% Danni Subiti§0\n\nPremi [input=transformationability1] per Sparare Palle di Fuoco: Infliggi §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0\n\nPremi [input=transformationability2] per evocare una §bFiamma Danzante§0 fino a §a[[2 + <skilllevel>]]§0, ognuna infligge lo stesso danno di una Palla di Fuoco\n\nPremi [input=trinketability] per Scattare\n§!Vulpes Nova fox!
+rattransformation=Richiede 2 secondi per trasformarsi in un Ratto\n\nVelocità di Movimento: 25\n-50% Rilevamento Nemici\nConferisce massima Probabilità di Schivata\n§6+1000% Danni Subiti§0\n\nPremi [input=transformationability1] per Morso: Infligge §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Danni da Mischia§0 e avvelena il bersaglio per il 100% dei danni inflitti al secondo per 10 secondi\n\nTieni premuto [input=trinketability] per Scattare
+treanttransformation=Richiede 4 secondi per trasformarsi in un Treant\n\nVelocità di Movimento: 0\n-§a[50 + 5 <skilllevel>]%§0 Danni Subiti\nI nemici ti ignorano se sei nascosto per 3 secondi\n\nPremi [input=transformationability1] mentre Rivelato per Sparare Semi casuali: Infliggi §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0 con effetti casuali\n\nPremi [input=transformationability2] per evocare un §9Brote di Driade§0\n\nTieni premuto [input=trinketability] per Rivelare e Scattare se ti muovi
+
+
 [skillsdesckeys]
 skilllevel=Livello abilità
 playerlevel=Livello giocatore
@@ -396,10 +430,8 @@ dancingflame=§bFiamma Danzante:§0 Evocazione che agisce come un proiettile. In
 necromancerskeleton=§bScheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerskeletonwarrior=§bGuerriero Scheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDanno: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerboneslinger=§bLanciaossa:§0 Evocazione necrotica danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distanza 320)\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
-
-// Tranformations
-necromancerlich=§bLich:§0 Trasformazione in non morto\n\nNon puoi usare oggetti\n+100% Danni Subiti\n\nPremi [input=trinketability] per sparare un osso che infligge §i[[<strength>]] Danni da Evocatore§0
-
+bee=§9Ape:§0 Evocazione danneggiabile\nSalute: 1\nDanno: §a[[<playerlevel> + <intelligence>]]§0\nVelocità: 40\n\nMuore all'attacco, ma avvelena il bersaglio per il 20% dei danni inflitti al secondo per 10 secondi
+dryadsapling=§9Brote di Driade:§0 Evocazione danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nVelocità: 65\nPerde il 2% della Salute Totale al secondo
 
 [item]
 scrollofoblivion=Pergamena dell'oblio
@@ -454,6 +486,8 @@ activeskillinuse=Questa abilità è già in uso
 anotheractiveskillinuse=Hai già un'altra abilità in uso
 incooldown=In ricarica
 notenoughstamina=Resistenza insufficiente
+canotusemounted=Non può essere usato montato o trasformato
+
 notarget=Non ci sono bersagli nelle vicinanze
 nograbbableobject=Non c'è nessun oggetto afferrabile di fronte a te
 notargetfollower=Non ci sono evocazioni bersaglio nelle vicinanze
@@ -472,6 +506,7 @@ lvl=Liv <level>
 eachlevel=Ogni livello fornisce:
 experience=ESP: <exp> / <nextexp>
 totalexperience=ESP totale: <exp>
+onlytranformed=Solo quando trasformato
 
 resetpoints=Punti di ripristino: <points>
 attrpoints=Punti attributo: <points>
@@ -514,3 +549,5 @@ activeskillslot3=Slot abilità attiva 3
 activeskillslot4=Slot abilità attiva 4
 activeskillslot5=Slot abilità attiva 5
 activeskillslot6=Slot abilità attiva 6
+transformationability1=Abilità di Trasformazione 1
+transformationability2=Abilità di Trasformazione 2

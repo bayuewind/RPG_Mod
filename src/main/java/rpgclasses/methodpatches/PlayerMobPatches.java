@@ -1,14 +1,18 @@
 package rpgclasses.methodpatches;
 
 import necesse.engine.GlobalData;
+import necesse.engine.input.Input;
+import necesse.engine.input.InputPosition;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.client.Client;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.state.MainGame;
 import necesse.entity.mobs.Attacker;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.pickup.ItemPickupEntity;
+import necesse.gfx.camera.GameCamera;
 import necesse.gfx.forms.components.FormExpressionWheel;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.placeableItem.objectItem.ObjectItem;
@@ -17,6 +21,10 @@ import net.bytebuddy.asm.Advice;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.mobs.mount.TransformationMountMob;
+import rpgclasses.packets.TransformationAbility1Packet;
+import rpgclasses.packets.TransformationAbility2Packet;
+import rpgclasses.registry.RPGControls;
 
 import java.util.HashSet;
 
@@ -52,7 +60,7 @@ public class PlayerMobPatches {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
             playerData.updateAllBuffs(This);
             for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                equippedActiveSkill.lastUse = 0;
+                equippedActiveSkill.restartCooldown();
             }
         }
 
@@ -109,5 +117,48 @@ public class PlayerMobPatches {
 
             return true;
         }
+    }
+
+    @ModMethodPatch(target = PlayerMob.class, name = "tickControls", arguments = {MainGame.class, boolean.class, GameCamera.class})
+    public static class tickControls {
+
+        @Advice.OnMethodExit
+        static void onExit(@Advice.This PlayerMob player, @Advice.Argument(0) MainGame mainGame, @Advice.Argument(1) boolean isGameTick, @Advice.Argument(2) GameCamera camera) {
+            if (RPGControls.TRANSFORMATION_ABILITY_1.isDown()) {
+                if (player != null) {
+                    Mob mount = player.getMount();
+                    if (mount instanceof TransformationMountMob) {
+                        TransformationMountMob transformation = (TransformationMountMob) mount;
+                        if (transformation.canRunClick(player)) {
+                            InputPosition inputPosition = Input.mousePos;
+                            int mouseLevelX = inputPosition.sceneX + camera.getX();
+                            int mouseLevelY = inputPosition.sceneY + camera.getY();
+
+                            transformation.clickRunClient(player.getLevel(), mouseLevelX, mouseLevelY, player);
+
+                            player.getClient().network.sendPacket(new TransformationAbility1Packet(player.getClient().getSlot(), mouseLevelX, mouseLevelY));
+                        }
+                    }
+                }
+            }
+            if (RPGControls.TRANSFORMATION_ABILITY_2.isDown()) {
+                if (player != null) {
+                    Mob mount = player.getMount();
+                    if (mount instanceof TransformationMountMob) {
+                        TransformationMountMob transformation = (TransformationMountMob) mount;
+                        if (transformation.canRunSecondaryClick(player)) {
+                            InputPosition inputPosition = Input.mousePos;
+                            int mouseLevelX = inputPosition.sceneX + camera.getX();
+                            int mouseLevelY = inputPosition.sceneY + camera.getY();
+
+                            transformation.secondaryClickRunClient(player.getLevel(), mouseLevelX, mouseLevelY, player);
+
+                            player.getClient().network.sendPacket(new TransformationAbility2Packet(player.getClient().getSlot(), mouseLevelX, mouseLevelY));
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
