@@ -3,7 +3,6 @@ package rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs;
 import necesse.engine.modifiers.Modifier;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.buffs.BuffModifiers;
 
 import java.util.Objects;
 
@@ -45,7 +44,9 @@ abstract public class ModifierBuff<T> {
 
     public void applyBuff(ActiveBuff activeBuff, int attributeLevel) {
         T value = scaledValue(attributeLevel);
-        ModifierValue<T> modifierValue = new ModifierValue<>(modifier, value);
+        activeBuff.addModifier(this.modifier, value);
+
+        ModifierValue<T> modifierValue = new ModifierValue<>(this.modifier);
         if (value instanceof Integer) {
             int base = (Integer) value;
             if (setMin) modifierValue.min((T) (Object) (base + (Integer) minMod));
@@ -55,7 +56,7 @@ abstract public class ModifierBuff<T> {
             if (setMin) modifierValue.min((T) (Object) (base + (Float) minMod));
             if (setMax) modifierValue.max((T) (Object) (base + (Float) maxMod));
         }
-        modifierValue.apply(activeBuff);
+        activeBuff.addModifierLimits(this.modifier, modifierValue.limits);
     }
 
     public String getLocalizationString() {

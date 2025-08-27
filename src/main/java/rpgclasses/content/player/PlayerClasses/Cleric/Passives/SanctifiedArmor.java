@@ -25,7 +25,7 @@ public class SanctifiedArmor extends SimpleBuffPassive {
         public void onMagicalHealing(ActiveBuff activeBuff, Mob healer, Mob target, int healing, int realHealing, @Nullable ToolItem toolItem, @Nullable InventoryItem item) {
             if (healer.isServer()) {
                 int level = getLevel(activeBuff);
-                target.getLevel().entityManager.addLevelEvent(new MobManaChangeEvent(target, realHealing * 0.02F * level));
+                target.addResilience(realHealing * 0.02F * level);
             }
         }
     }

@@ -13,7 +13,7 @@ import rpgclasses.registry.*;
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.5";
+    public static String currentVersion = "v0.5.1";
 
     static {
         new RPGModifiers();
