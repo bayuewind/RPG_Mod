@@ -10,7 +10,7 @@ public class RPGTiles {
     public static List<String> grassTiles = new ArrayList<>();
 
     public static boolean isInGrassTile(Mob mob) {
-        return RPGTiles.grassTiles.contains(mob.getLevel().getTile(mob.getTileX(), mob.getTileY()).getStringID());
+        return mob.getLevel() != null && RPGTiles.grassTiles.contains(mob.getLevel().getTile(mob.getTileX(), mob.getTileY()).getStringID());
     }
 
 }
