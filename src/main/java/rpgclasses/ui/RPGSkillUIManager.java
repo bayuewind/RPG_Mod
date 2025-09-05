@@ -26,8 +26,8 @@ public class RPGSkillUIManager extends CustomUIManager<RPGSkillUIForm> {
     public void updatePosition(MainGameFormManager mainGameFormManager) {
         GameWindow window = WindowManager.getWindow();
         mainForm.setPosition(
-                window.getWidth() - mainForm.getWidth() - (Settings.UI.formSpacing + 20),
-                window.getHeight() - mainForm.getHeight() - (Settings.UI.formSpacing + 20) - ((PlayerData.EQUIPPED_SKILLS_MAX - 1) - skillSlot) * (48 + 11)
+                window.getHudWidth() - mainForm.getWidth() - (Settings.UI.formSpacing + 20),
+                window.getHudHeight() - mainForm.getHeight() - (Settings.UI.formSpacing + 20) - ((PlayerData.EQUIPPED_SKILLS_MAX - 1) - skillSlot) * (48 + 11)
         );
     }
 

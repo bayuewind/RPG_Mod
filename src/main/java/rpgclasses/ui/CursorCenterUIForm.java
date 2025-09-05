@@ -109,7 +109,7 @@ public class CursorCenterUIForm extends Form {
 
     public Point getCursorCenter(int cursorWidth, int cursorHeight) {
         InputPosition mousePos = Input.mousePos;
-        return new Point(mousePos.windowX + cursorWidth / 2, mousePos.windowY + cursorHeight / 2);
+        return new Point(mousePos.hudX + cursorWidth / 2, mousePos.hudY + cursorHeight / 2);
     }
 
     public int getCursorWidth() {

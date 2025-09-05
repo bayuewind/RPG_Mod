@@ -41,7 +41,7 @@ depleted=Esgotat
 
 
 [buff]
-overlevelclassbuff=Classe de supernivell
+overlevelbuff=Supernivell
 markedbuff=Marcat
 darkcursebuff=Maledicció Fosca
 magicpoisonbuff=Verí Màgic
@@ -50,8 +50,8 @@ holydamagedealtbuff=Dany sagrat infligit
 
 
 [buffdesc]
-overlevelclassbuff1=§9Una de les teves classes supera el límit de punts
-overlevelclassbuff2=§6No podràs continuar fins que no s'arregli
+overlevelbuff1=§9Una de les teves classes o atributs supera el límit de punts
+overlevelbuff2=§6No podràs continuar fins que no s'arregli
 darkcursebuff1=+25% de dany rebut
 darkcursebuff2=Tot el dany també redueix la salut màxima
 
@@ -534,11 +534,16 @@ classlevelseparation=- Nivell de classe <level> -
 inuse=En ús
 
 upcomingclass=§6Pròxima classe\n§9Aquesta classe està actualment en desenvolupament\ni estarà disponible en una futura actualització
+disabledclass=Aquesta classe està desactivada en aquest món
 
 addcolumn=Afegeix una columna
 removecolumn=Elimina la columna
 
 rate=Valora el mod RPG!
+
+seeallclasses=Veure totes les entrades de classe
+
+clicktoopen=[input=mouse1] per obrir
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=Ranura d'habilitat activa 5
 activeskillslot6=Ranura d'habilitat activa 6
 transformationability1=Habilitat de Transformació 1
 transformationability2=Habilitat de Transformació 2
+
+
+[settingsui]
+// Experience
+experience_section=Experiència
+experience_text=Aquests paràmetres són del servidor, de manera que no es poden modificar després d'unir-se a un món. En cas de multijugador, els teus valors seran ignorats i es prendran els del servidor/amfitrió
+
+experienceMod=% Mod d'Experiència
+experienceMod_text=Modifica la quantitat d'experiència obtinguda en derrotar enemics
+
+firstKillBonus=% Bonificació per Primera Mort
+firstKillBonus_text=Un augment d'experiència en derrotar un enemic per primera vegada (no s'afegeix, es multiplica per altres modificadors)
+
+bossKillBonus=% Bonificació per Matar Caps
+bossKillBonus_text=Un augment d'experiència en derrotar un cap (no s'afegeix, es multiplica per altres modificadors)
+
+startingExperience=Experiència Inicial
+startingExperience_text=L'experiència amb la qual començaran els nous jugadors
+
+firstExperienceReq=Req Inicial
+experienceReqInc=Increment de Req
+squareExperienceReqInc=Increment Quadrat de Req
+cubeExperienceReqInc=Increment Cúbic de Req
+experience_calc=El requisit d'experiència per assolir el següent nivell és:\n\nReq Inicial + Increment de Req * nivell +\n+ Increment Quadrat de Req * (nivell ^ 2) +\n+ Increment Cúbic de Req * (nivell ^ 3)\n\nOn 'nivell' és el teu nivell actual
+
+// Classes
+classes_section=Classes
+
+multiClass=Multi Classe
+multiClass_text=Limita quantes classes diferents es poden tenir alhora. Estableix-ho a 0 per a cap límit
+
+classes_enabled=Pots desactivar les classes que no vols que estiguin disponibles

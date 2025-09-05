@@ -4,6 +4,7 @@ import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameBackground;
 import necesse.gfx.forms.components.FormButton;
+import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.GameTooltipManager;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.TooltipLocation;
@@ -30,9 +31,10 @@ public class ClassIconComponent extends FormButton {
 
     @Override
     public void draw(TickManager tickManager, PlayerMob playerMob, Rectangle rectangle) {
-        int textureWidth = playerClass.texture.getWidth();
-        int textureHeight = playerClass.texture.getWidth();
-        playerClass.texture.initDraw().draw(this.x + (this.width - textureWidth) / 2, this.y + (this.height - textureHeight) / 2);
+        GameTexture texture = playerClass.getTexture();
+        int textureWidth = texture.getWidth();
+        int textureHeight = texture.getWidth();
+        texture.initDraw().draw(this.x + (this.width - textureWidth) / 2, this.y + (this.height - textureHeight) / 2);
         if (isHovering()) {
             ListGameTooltips tooltips = playerClass.getToolTips();
             GameTooltipManager.addTooltip(tooltips, GameBackground.itemTooltip, TooltipLocation.FORM_FOCUS);

@@ -14,7 +14,6 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.*;
 import necesse.level.gameObject.furniture.RoomFurniture;
 import necesse.level.maps.Level;
-import rpgclasses.RPGConfig;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
@@ -25,6 +24,9 @@ import rpgclasses.packets.UpdateClientExpPacket;
 import rpgclasses.packets.UpdateClientResetsPacket;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
+import rpgclasses.settings.RPGSettings;
+
+import java.util.Arrays;
 
 public class PlayerData {
     public static int EQUIPPED_SKILLS_MAX = 6;
@@ -161,7 +163,7 @@ public class PlayerData {
     }
 
     public int getExp() {
-        return this.exp + RPGConfig.getStartingExperience();
+        return this.exp + RPGSettings.startingExperience();
     }
 
     public int[] getAttributeLevels() {
@@ -197,7 +199,11 @@ public class PlayerData {
     }
 
     public int[] getClassLevels() {
-        return classLevels;
+        int[] trueClassLevels = new int[classLevels.length];
+        for (int i = 0; i < classLevels.length; i++) {
+            trueClassLevels[i] = getClassLevel(i);
+        }
+        return trueClassLevels;
     }
 
     public void setClassLevels(int[] classLevels) {
@@ -205,7 +211,7 @@ public class PlayerData {
     }
 
     public int getClassLevel(int id) {
-        return (id < 0 || id >= classLevels.length) ? 0 : classLevels[id];
+        return (id < 0 || id >= classLevels.length) ? 0 : (PlayerClass.classesList.get(id).isEnabled() ? classLevels[id] : 0);
     }
 
     public PlayerClassData[] getClassesData() {
@@ -230,7 +236,7 @@ public class PlayerData {
     }
 
     public int getExpRequiredForLevel(int level) {
-        return level * RPGConfig.getFirstExperienceReq() + RPGConfig.getExperienceReqInc() * (level * (level - 1)) / 2 + RPGConfig.getSquareExperienceReqInc() * (level * (level - 1) * (2 * level - 1)) / 6 + RPGConfig.getCubeExperienceReqInc() * (int) Math.pow((double) (level * (level - 1)) / 2, 2);
+        return level * RPGSettings.firstExperienceReq() + RPGSettings.experienceReqInc() * (level * (level - 1)) / 2 + RPGSettings.squareExperienceReqInc() * (level * (level - 1) * (2 * level - 1)) / 6 + RPGSettings.cubeExperienceReqInc() * (int) Math.pow((double) (level * (level - 1)) / 2, 2);
     }
 
     public int getLevel() {
@@ -247,40 +253,42 @@ public class PlayerData {
         if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE))
             player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE, player, 1000, null), true);
 
-        boolean someOverlevel = false;
-        for (PlayerClassData classesDatum : classesData) {
-            boolean isServer = player.isServer();
-            boolean validClass = classesDatum.getLevel(isServer) > 0;
-            if (validClass) {
-                if (!someOverlevel) {
-                    if (classesDatum.usedPassivePoints() > classesDatum.totalPassivePoints(isServer) || classesDatum.usedActiveSkillPoints() > classesDatum.totalActiveSkillPoints(isServer)) {
-                        someOverlevel = true;
+        boolean someOverlevel = Arrays.stream(getClassLevels()).sum() > totalClassPoints() || Arrays.stream(getAttributeLevels()).sum() > totalAttributePoints();
+
+        if (!someOverlevel)
+            for (PlayerClassData classesDatum : classesData) {
+                boolean isServer = player.isServer();
+                boolean validClass = classesDatum.getLevel(isServer) > 0;
+                if (validClass) {
+                    if (!someOverlevel) {
+                        if (classesDatum.usedPassivePoints() > classesDatum.totalPassivePoints(isServer) || classesDatum.usedActiveSkillPoints() > classesDatum.totalActiveSkillPoints(isServer)) {
+                            someOverlevel = true;
+                        }
                     }
                 }
-            }
 
-            for (int i = 0; i < classesDatum.getPassiveLevels().length; i++) {
-                Passive passive = classesDatum.playerClass.passivesList.get(i);
-                if (!(passive instanceof BasicPassive)) {
-                    if (validClass) {
-                        int level = classesDatum.getPassiveLevels()[i];
-                        if (level > 0) {
-                            passive.givePassiveBuff(player, this, level);
+                for (int i = 0; i < classesDatum.getPassiveLevels().length; i++) {
+                    Passive passive = classesDatum.playerClass.passivesList.get(i);
+                    if (!(passive instanceof BasicPassive)) {
+                        if (validClass) {
+                            int level = classesDatum.getPassiveLevels()[i];
+                            if (level > 0) {
+                                passive.givePassiveBuff(player, this, level);
+                            } else {
+                                passive.removePassiveBuffs(player);
+                            }
                         } else {
                             passive.removePassiveBuffs(player);
                         }
-                    } else {
-                        passive.removePassiveBuffs(player);
                     }
                 }
             }
-        }
 
-        boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS);
+        boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OVER_LEVEL);
         if (someOverlevel && !hasOverlevelBuff) {
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS, player, 1000, null), true);
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OVER_LEVEL, player, 1000, null), true);
         } else if (!someOverlevel && hasOverlevelBuff) {
-            player.buffManager.removeBuff(RPGBuffs.PASSIVES.OVERLEVEL_CLASS, true);
+            player.buffManager.removeBuff(RPGBuffs.PASSIVES.OVER_LEVEL, true);
         }
     }
 
@@ -295,7 +303,7 @@ public class PlayerData {
 
         int oldLevel = this.getLevel();
 
-        int maxExp = MAX_EXP - RPGConfig.getStartingExperience();
+        int maxExp = MAX_EXP - RPGSettings.startingExperience();
         if (amount > 0) {
             if (this.exp > maxExp - amount) {
                 amount = maxExp - this.exp;

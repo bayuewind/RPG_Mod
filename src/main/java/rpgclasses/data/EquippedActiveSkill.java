@@ -307,8 +307,7 @@ public class EquippedActiveSkill {
             int seed = Item.getRandomAttackSeed(GameRandom.globalRandom);
 
             PlayerData playerData = PlayerDataList.getPlayerData(player);
-            PlayerClassData playerClassData = playerData.getClassesData()[playerClass.id];
-            int activeSkillLevel = playerClassData.getActiveSkillLevels()[activeSkill.id];
+            int activeSkillLevel = activeSkill.getLevel(playerData);
 
             activeSkill.runClient(player, playerData, activeSkillLevel, seed, isInUse());
             player.getClient().network.sendPacket(new ActiveAbilityRunPacket(player.getClient().getSlot(), skillSlot));
@@ -330,7 +329,7 @@ public class EquippedActiveSkill {
         boolean isInUseSkill = activeSkill.isInUseSkill();
         if (isInUseSkill) {
             ActiveSkill inUseSkill = playerData.getInUseActiveSkill();
-            if (inUseSkill != null && !(this.activeSkill instanceof SimpleTranformationActiveSkill && inUseSkill instanceof SimpleTranformationActiveSkill))
+            if (inUseSkill != null && inUseSkill != this.activeSkill && !(this.activeSkill instanceof SimpleTranformationActiveSkill && inUseSkill instanceof SimpleTranformationActiveSkill))
                 return "anotheractiveskillinuse";
         }
 

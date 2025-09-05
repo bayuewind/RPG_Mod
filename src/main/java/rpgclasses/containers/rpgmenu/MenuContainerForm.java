@@ -44,6 +44,8 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
 
     private final Form principalForm;
 
+    public static boolean showAllClassesEntries = false;
+
     public static final MenuEntry[] menuEntries = new MenuEntry[]{
             new AttributesEntry(),
             new ActiveSkillsEntry(),
@@ -107,11 +109,13 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
 
         ArrayList<MenuEntry> showEntries = Arrays.stream(menuEntries).collect(Collectors.toCollection(ArrayList::new));
         for (int i = 0; i < playerData.getClassLevels().length; i++) {
-            if ((classLevels == null ? playerData.getClassLevel(i) : classLevels[i]) > 0) {
-                PlayerClass playerClass = PlayerClass.classesList.get(i);
+            PlayerClass playerClass = PlayerClass.classesList.get(i);
+            if (playerClass.isEnabled() && (showAllClassesEntries || (classLevels == null ? playerData.getClassLevel(i) : classLevels[i]) > 0)) {
                 showEntries.add(new ClassEntry("classes." + playerClass.stringID, playerClass));
             }
         }
+
+        if(showEntries.stream().noneMatch(entry -> Objects.equals(entry.name, actualEntry.name))) showEntries.add(actualEntry);
 
         for (int i = 0; i < showEntries.size(); i++) {
             MenuEntry menuEntry = showEntries.get(i);
@@ -145,12 +149,27 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
                 }
 
             }).onClicked((e) -> {
-                actualEntry = menuEntry;
-                updateContent(container, player);
+                changeEntry(menuEntry, player);
             }));
         }
 
         entries.setContentBox(new Rectangle(0, 0, entries.getWidth(), 12 + showEntries.size() * 40));
+    }
+
+    public void changeEntry(String entryName, PlayerMob player) {
+        if(entryName.startsWith("classes.")) {
+            String playerClassStringID = entryName.replace("classes.", "");
+            PlayerClass playerClass = PlayerClass.classesList.stream().filter(pClass -> Objects.equals(pClass.stringID, playerClassStringID)).findFirst().orElse(null);
+            if(playerClass != null) changeEntry(new ClassEntry(entryName, playerClass), player);
+        } else {
+            changeEntry(Arrays.stream(menuEntries).filter(entry -> Objects.equals(entry.name, entryName)).findAny().orElse(null), player);
+        }
+    }
+
+    public void changeEntry(MenuEntry entry, PlayerMob player) {
+        if(entry != null) actualEntry = entry;
+        updateContent(container, player);
+        updateEntries(container, player, null);
     }
 
     public void updateContent(final MenuContainer container, PlayerMob player) {

@@ -137,7 +137,7 @@ public class PlayerClassData {
 
     public int getEffectiveSkillMaxLevel(Skill skill, int classLevel, int[] skillLevels) {
         boolean isPassive = skill instanceof Passive;
-        SkillsList<? extends Skill> skillsList = isPassive ? playerClass.getPassivesList() : playerClass.getActiveSkillsList();
+        SkillsList<? extends Skill> skillsList = isPassive ? playerClass.passivesList : playerClass.activeSkillsList;
 
         int availablePoints = getAvailableSkillPointsAtLevel(skill.requiredClassLevel, classLevel, isPassive, skillLevels, skillsList, skill.id);
 

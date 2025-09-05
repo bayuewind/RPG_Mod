@@ -4,8 +4,8 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Druid.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Druid.Passives.NaturesFavor;
-import rpgclasses.content.player.PlayerClasses.Druid.Passives.PrimalBurst;
 import rpgclasses.content.player.PlayerClasses.Druid.Passives.PhoenixSpirit;
+import rpgclasses.content.player.PlayerClasses.Druid.Passives.PrimalBurst;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
@@ -19,7 +19,7 @@ public class DruidPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<ActiveSkill> getActiveSkillsList() {
+    protected SkillsList<ActiveSkill> initActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
         int requiredLevel = 1;
@@ -42,7 +42,7 @@ public class DruidPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<Passive> getPassivesList() {
+    protected SkillsList<Passive> initPassivesList() {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(

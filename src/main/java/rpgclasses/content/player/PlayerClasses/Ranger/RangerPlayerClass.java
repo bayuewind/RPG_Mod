@@ -21,7 +21,7 @@ public class RangerPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<ActiveSkill> getActiveSkillsList() {
+    protected SkillsList<ActiveSkill> initActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
         String dashFamily = "ranger_dash";
@@ -55,7 +55,7 @@ public class RangerPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<Passive> getPassivesList() {
+    protected SkillsList<Passive> initPassivesList() {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(

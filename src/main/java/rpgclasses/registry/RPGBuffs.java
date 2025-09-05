@@ -88,7 +88,7 @@ public class RPGBuffs {
     public static class PASSIVES {
         public static ModifiersBuff MODIFIERS;
         public static HolyDamageDealtBuff HOLY_DAMAGE;
-        public static OverlevelClassBuff OVERLEVEL_CLASS;
+        public static OverLevelBuff OVER_LEVEL;
         public static GrabbedObjectBuff GRABBED_OBJECT;
         public static TransformedBuff TRANSFORMED;
     }
@@ -107,7 +107,7 @@ public class RPGBuffs {
         // Passive Buffs
         BuffRegistry.registerBuff("modifiersbuff", PASSIVES.MODIFIERS = new ModifiersBuff());
         BuffRegistry.registerBuff("holydamagedealtbuff", PASSIVES.HOLY_DAMAGE = new HolyDamageDealtBuff());
-        BuffRegistry.registerBuff("overlevelclassbuff", PASSIVES.OVERLEVEL_CLASS = new OverlevelClassBuff());
+        BuffRegistry.registerBuff("overlevelbuff", PASSIVES.OVER_LEVEL = new OverLevelBuff());
         BuffRegistry.registerBuff("grabbedobjectbuff", PASSIVES.GRABBED_OBJECT = new GrabbedObjectBuff());
         BuffRegistry.registerBuff("transformedbuff", PASSIVES.TRANSFORMED = new TransformedBuff());
 

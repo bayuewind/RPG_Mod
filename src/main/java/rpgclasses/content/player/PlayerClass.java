@@ -1,6 +1,7 @@
 package rpgclasses.content.player;
 
 import necesse.engine.localization.Localization;
+import necesse.engine.modLoader.LoadedMod;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import rpgclasses.content.player.PlayerClasses.Cleric.ClericPlayerClass;
@@ -13,13 +14,14 @@ import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.data.PlayerData;
+import rpgclasses.settings.RPGSettings;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-abstract public class PlayerClass {
+public class PlayerClass {
     public static Map<String, PlayerClass> classes = new HashMap<>();
     public static List<PlayerClass> classesList = new ArrayList<>();
 
@@ -39,6 +41,8 @@ abstract public class PlayerClass {
         classes.put(playerClass.stringID, playerClass);
         classesList.add(playerClass);
 
+        if (!(playerClass instanceof UpcomingPlayerClass)) RPGSettings.addClassSetting(playerClass);
+
         playerClass.activeSkillsList.each(
                 activeSkill -> activeSkill.playerClass = playerClass
         );
@@ -53,22 +57,35 @@ abstract public class PlayerClass {
     public final SkillsList<ActiveSkill> activeSkillsList;
     public final SkillsList<Passive> passivesList;
     public GameTexture texture;
+    public GameTexture textureDisabled;
+    public LoadedMod mod;
 
     public PlayerClass(String stringID, String color) {
         this.id = classes.size();
         this.stringID = stringID;
         this.color = color;
-        this.activeSkillsList = getActiveSkillsList();
-        this.passivesList = getPassivesList();
+        this.activeSkillsList = initActiveSkillsList();
+        this.passivesList = initPassivesList();
+        this.mod = LoadedMod.getRunningMod();
     }
 
     public void initResources() {
         texture = GameTexture.fromFile("classes/" + stringID);
+        textureDisabled = GameTexture.fromFile("classes/" + stringID + "_disabled");
     }
 
     public ListGameTooltips getToolTips() {
+        boolean enabled = isEnabled();
         ListGameTooltips tooltips = new ListGameTooltips();
-        tooltips.add("§" + color + Localization.translate("classes", stringID));
+        tooltips.add("§" + color + Localization.translate("classes", stringID) + " §0- " + mod.name);
+        if (!enabled) {
+            tooltips.add(" ");
+            tooltips.add(Localization.translate("ui", "disabledclass"));
+        }
+        if (enabled) {
+            tooltips.add(" ");
+            tooltips.add(Localization.translate("ui", "clicktoopen"));
+        }
         return tooltips;
     }
 
@@ -76,11 +93,19 @@ abstract public class PlayerClass {
         return playerData.getClassLevel(id);
     }
 
-    public boolean isAvailable() {
-        return true;
+    public boolean isEnabled() {
+        return RPGSettings.classEnabled(this);
     }
 
-    abstract public SkillsList<ActiveSkill> getActiveSkillsList();
+    protected SkillsList<ActiveSkill> initActiveSkillsList() {
+        return new SkillsList<>();
+    }
 
-    abstract public SkillsList<Passive> getPassivesList();
+    protected SkillsList<Passive> initPassivesList() {
+        return new SkillsList<>();
+    }
+
+    public GameTexture getTexture() {
+        return isEnabled() ? texture : textureDisabled;
+    }
 }

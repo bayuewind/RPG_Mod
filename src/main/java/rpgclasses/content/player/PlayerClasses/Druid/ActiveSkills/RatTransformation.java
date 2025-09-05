@@ -147,6 +147,7 @@ public class RatTransformation extends SimpleTranformationActiveSkill {
             float dirX = dx / length;
             float dirY = dy / length;
 
+            int skillLevel = getActualSkillLevel();
             LevelEvent event = new RatChargeLevelEvent(this, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 20, 100, new GameDamage(DamageTypeRegistry.MELEE, playerData.getLevel() + 0.5F * playerData.getStrength(player) * skillLevel + 0.5F * playerData.getIntelligence(player) * skillLevel));
             player.getLevel().entityManager.addLevelEventHidden(event);
             player.getServer().network.sendToClientsWithEntity(new PacketLevelEvent(event), event);

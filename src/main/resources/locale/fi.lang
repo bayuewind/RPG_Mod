@@ -41,7 +41,7 @@ depleted=Ehtynyt
 
 
 [buff]
-overlevelclassbuff=Ylitasoluokka
+overlevelbuff=Ylitason
 markedbuff=Merkitty
 darkcursebuff=Pimeä kirous
 magicpoisonbuff=Taikamyrkky
@@ -50,8 +50,8 @@ holydamagedealtbuff=Tehty pyhä vahinko
 
 
 [buffdesc]
-overlevelclassbuff1=§9Yksi luokistasi ylittää pisterajan
-overlevelclassbuff2=§6Et voi jatkaa, ennen kuin se on korjattu
+overlevelbuff1=§9Yksi luokistasi tai ominaisuuksistasi ylittää pisterajan
+overlevelbuff2=§6Et voi jatkaa, ennen kuin se on korjattu
 darkcursebuff1=+25% saapuvaa vahinkoa
 darkcursebuff2=Kaikki vahinko vähentää myös enimmäisterveyttä
 
@@ -347,7 +347,7 @@ zap=Aloita sähköisku, joka hyppii mobien välillä 2 sekunnin ajan, tehden §i
 teleport=Teleporttaa eteesi\nKuluttaa 10 manaa
 inferno=Sytytä kaikki lähellä olevat viholliset tuleen, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] tulivahinkoa§0 sekunnissa 10 sekunnin ajan\nKuluttaa §a[[40 + 8 x <skilllevel>]] manaa
 fireenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolaisten hyökkäykset sytyttävät viholliset tuleen, tehden §a[[5 x <skilllevel>]]%§0 vahingosta sekunnissa 5 sekunnin ajan\nKuluttaa §a[[20 + 4 x <skilllevel>]] manaa
-iceenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolaisten hyökkäykset jäädyttävät viholliset §a[[2 x <skilllevel>]] sekunniksi§0\nKuluttaa 20 manaa
+iceenchantment=Seuraavien 10 sekunnin ajan sinun ja lähellä olevien liittolaisten hyökkäyksset jäädyttävät viholliset §a[[2 x <skilllevel>]] sekunniksi§0\nKuluttaa 20 manaa
 
 fireball=Heitä §iTulipallo§0 lähimpään viholliseen, tehden §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\nKuluttaa §a[[80 + 16 x <skilllevel>]] manaa
 lightning=Aloita salama, joka hyppii mobien välillä 1 sekunnin ajan, tehden §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaen 2 sekunniksi\nEi voi osua samaan kohteeseen useita kertoja\nKuluttaa §a[[30 + 6 x <skilllevel>]] manaa
@@ -534,11 +534,16 @@ classlevelseparation=- Luokkataso <level> -
 inuse=Käytössä
 
 upcomingclass=§6Tuleva luokka\n§9Tämä luokka on parhaillaan kehitteillä\nja se on saatavilla tulevassa päivityksessä
+disabledclass=Tämä luokka on poistettu käytöstä tässä maailmassa
 
 addcolumn=Lisää sarake
 removecolumn=Poista sarake
 
 rate=Arvostele RPG Mod!
+
+seeallclasses=Näytä kaikki luokkamerkinnät
+
+clicktoopen=[input=mouse1] avataksesi
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=Aktiivisen taidon paikka 5
 activeskillslot6=Aktiivisen taidon paikka 6
 transformationability1=Muodonmuutostaito 1
 transformationability2=Muodonmuutostaito 2
+
+
+[settingsui]
+// Experience
+experience_section=Kokemus
+experience_text=Nämä asetukset ovat palvelinasetuksia, joten niitä ei voi muuttaa maailmaan liittymisen jälkeen. Moninpelissä arvosi ohitetaan ja palvelimen/isännän arvot otetaan käyttöön.
+
+experienceMod=% Kokemusmodi
+experienceMod_text=Muokkaa vihollisten voittamisesta saatavan kokemuksen määrää
+
+firstKillBonus=% Ensimmäisen tapon bonus
+firstKillBonus_text=Kokemuslisä, kun voitat vihollisen ensimmäistä kertaa (ei lisätä, kerrotaan muilla muokkaimilla)
+
+bossKillBonus=% Pomon tapon bonus
+bossKillBonus_text=Kokemuslisä, kun voitat pomon (ei lisätä, kerrotaan muilla muokkaimilla)
+
+startingExperience=Aloituskokemus
+startingExperience_text=Kokemus, jolla uudet pelaajat aloittavat
+
+firstExperienceReq=Alkuvaatimus
+experienceReqInc=Vaatimuksen lisäys
+squareExperienceReqInc=Neliöllinen vaatimuksen lisäys
+cubeExperienceReqInc=Kuutiollinen vaatimuksen lisäys
+experience_calc=Kokemusvaatimus seuraavalle tasolle pääsemiseksi on:\n\nAlkuvaatimus + Vaatimuksen lisäys * taso +\n+ Neliöllinen vaatimuksen lisäys * (taso ^ 2) +\n+ Kuutiollinen vaatimuksen lisäys * (taso ^ 3)\n\nMissä 'taso' on nykyinen tasosi
+
+// Classes
+classes_section=Luokat
+
+multiClass=Moniluokka
+multiClass_text=Rajoita, kuinka monta eri luokkaa voi olla samanaikaisesti. Aseta arvoksi 0, jos rajaa ei ole
+
+classes_enabled=Voit poistaa käytöstä luokat, joita et halua olevan saatavilla

@@ -41,7 +41,7 @@ depleted=Utarmet
 
 
 [buff]
-overlevelclassbuff=Overnivåklasse
+overlevelbuff=Overnivå
 markedbuff=Merket
 darkcursebuff=Mørk forbannelse
 magicpoisonbuff=Magisk Gift
@@ -50,8 +50,8 @@ holydamagedealtbuff=Hellig skade påført
 
 
 [buffdesc]
-overlevelclassbuff1=§9En av klassene dine overskrider en poenggrense
-overlevelclassbuff2=§6Du kan ikke fortsette før det er fikset
+overlevelbuff1=§9En av dine klasser eller attributter overskrider en poenggrense
+overlevelbuff2=§6Du kan ikke fortsette før det er fikset
 darkcursebuff1=+25% innkommende skade
 darkcursebuff2=All skade reduserer også maks helse
 
@@ -531,11 +531,16 @@ classlevelseparation=- Klasseniveau <level> -
 inuse=I bruk
 
 upcomingclass=§6Kommende klasse\n§9Denne klassen er for øyeblikket under utvikling\nog vil være tilgjengelig i en fremtidig oppdatering
+disabledclass=Denne klassen er deaktivert i denne verdenen
 
 addcolumn=Kolom toevoegen
 removecolumn=Kolom verwijderen
 
 rate=Beoordeel RPG Mod!
+
+seeallclasses=Se alle klasseoppføringer
+
+clicktoopen=[input=mouse1] for å åpne
 
 
 [controls]
@@ -548,3 +553,35 @@ activeskillslot5=Aktief vaardigheidsslot 5
 activeskillslot6=Aktief vaardigheidsslot 6
 transformationability1=Transformasjonsferdighet 1
 transformationability2=Transformasjonsferdighet 2
+
+
+[settingsui]
+// Experience
+experience_section=Erfaring
+experience_text=Disse innstillingene er serverinnstillinger, så de kan ikke endres etter at du har blitt med i en verden. I flerspillermodus vil verdiene dine bli ignorert, og serverens/vertens verdier vil bli brukt.
+
+experienceMod=% Erfaringsmodifikator
+experienceMod_text=Endrer mengden erfaring som opptjenes ved å beseire fiender
+
+firstKillBonus=% Første drapsbonus
+firstKillBonus_text=En erfaringsøkning ved å beseire en fiende for første gang (ikke lagt til, multiplisert med andre modifikatorer)
+
+bossKillBonus=% Bossdrapsbonus
+bossKillBonus_text=En erfaringsøkning ved å beseire en boss (ikke lagt til, multiplisert med andre modifikatorer)
+
+startingExperience=Starterfaring
+startingExperience_text=Erfaringen nye spillere vil starte med
+
+firstExperienceReq=Krav Initial
+experienceReqInc=Krav Økning
+squareExperienceReqInc=Krav Kvadratisk Økning
+cubeExperienceReqInc=Krav Kubisk Økning
+experience_calc=Erfaringskravet for å nå neste nivå er:\n\nKrav Initial + Krav Økning * nivå +\n+ Krav Kvadratisk Økning * (nivå ^ 2) +\n+ Krav Kubisk Økning * (nivå ^ 3)\n\nHvor 'nivå' er ditt faktiske nivå
+
+// Classes
+classes_section=Klasser
+
+multiClass=Multi-klasse
+multiClass_text=Begrens hvor mange forskjellige klasser som kan holdes samtidig. Sett til 0 for ingen grense
+
+classes_enabled=Du kan deaktivere klassene du ikke vil ha tilgjengelig

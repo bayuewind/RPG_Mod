@@ -142,6 +142,7 @@ public class QueenBeeTransformation extends SimpleTranformationActiveSkill {
             super.clickRunServer(level, x, y, player);
 
             PlayerData playerData = PlayerDataList.getPlayerData(player);
+            int skillLevel = getActualSkillLevel();
             Projectile projectile = new HoneyProjectile(level, player, player.x, player.y, x, y, 100, 200, new GameDamage(DamageTypeRegistry.RANGED, 2 * playerData.getLevel() + playerData.getStrength(player) * skillLevel), 20);
             projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
 
@@ -159,6 +160,7 @@ public class QueenBeeTransformation extends SimpleTranformationActiveSkill {
         public void secondaryClickRunServer(Level level, int x, int y, PlayerMob player) {
             super.secondaryClickRunServer(level, x, y, player);
             BeeDamageableSummonMob mob = (BeeDamageableSummonMob) MobRegistry.getMob("beedamageablesummon", player.getLevel());
+            int skillLevel = getActualSkillLevel();
             player.serverFollowersManager.addFollower(getStringID() + "follower", mob, FollowPosition.WALK_CLOSE, null, 1, 2 * skillLevel, null, true);
             mob.updateStats(player, PlayerDataList.getPlayerData(player));
 

@@ -12,7 +12,6 @@ import necesse.gfx.gameTexture.GameTexture;
 import rpgclasses.RPGResources;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
-import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
@@ -86,11 +85,8 @@ abstract public class SimpleTranformationActiveSkill extends ActiveSkill {
     public void transform(PlayerMob player) {
         player.dismount();
 
-        PlayerData playerData = PlayerDataList.getPlayerData(player);
-        int skillLevel = playerData.getClassesData()[this.playerClass.id].getActiveSkillLevels()[this.id];
-
         SkillTransformationMountMob transformationMob = (SkillTransformationMountMob) MobRegistry.getMob(getMobStringID(), player.getLevel());
-        transformationMob.skillLevel = skillLevel;
+        transformationMob.applyData(playerClass, this);
         transformationMob.colorInt = getColorInt();
         transformationMob.setPos(player.x, player.y, true);
         transformationMob.dx = player.dx;

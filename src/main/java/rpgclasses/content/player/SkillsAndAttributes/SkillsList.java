@@ -1,10 +1,8 @@
 package rpgclasses.content.player.SkillsAndAttributes;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class SkillsList<T extends Skill> {
     private final Map<String, T> map = new HashMap<>();
@@ -38,5 +36,9 @@ public class SkillsList<T extends Skill> {
 
     public List<T> getList() {
         return list;
+    }
+
+    public List<T> getDisplayOrderedList() {
+        return list.stream().sorted(Comparator.comparingInt(e -> e.levelMax)).collect(Collectors.toList());
     }
 }

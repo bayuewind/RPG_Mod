@@ -1,7 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Cleric.Passives;
 
 import aphorea.utils.magichealing.AphMagicHealingBuff;
-import necesse.entity.levelEvent.mobAbilityLevelEvent.MobManaChangeEvent;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.inventory.InventoryItem;

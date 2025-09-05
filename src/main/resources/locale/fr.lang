@@ -41,7 +41,7 @@ depleted=Epuisé
 
 
 [buff]
-overlevelclassbuff=Classe de sur-niveau
+overlevelbuff=Sur-niveau
 markedbuff=Marqué
 darkcursebuff=Malédiction des ténèbres
 magicpoisonbuff=Poison Magique
@@ -50,8 +50,8 @@ holydamagedealtbuff=Dégâts sacrés infligés
 
 
 [buffdesc]
-overlevelclassbuff1=§9Une de vos classes dépasse une limite de points
-overlevelclassbuff2=§6Vous ne pourrez pas continuer tant que ce ne sera pas corrigé
+overlevelbuff1=§9Une de vos classes ou attributs dépasse une limite de points
+overlevelbuff2=§6Vous ne pourrez pas continuer tant que ce ne sera pas corrigé
 darkcursebuff1=+25% de dégâts entrants
 darkcursebuff2=Tous les dégâts réduisent également la santé maximale
 
@@ -535,11 +535,16 @@ classlevelseparation=- Niveau de classe <level> -
 inuse=En cours d'utilisation
 
 upcomingclass=§6Classe à venir\n§9Cette classe est actuellement en développement\net sera disponible dans une future mise à jour
+disabledclass=Cette classe est désactivée dans ce monde
 
 addcolumn=Ajouter une colonne
 removecolumn=Supprimer la colonne
 
 rate=Évaluez le mod RPG !
+
+seeallclasses=Voir toutes les entrées de classe
+
+clicktoopen=[input=mouse1] pour ouvrir
 
 
 [controls]
@@ -552,3 +557,35 @@ activeskillslot5=Emplacement de compétence active 5
 activeskillslot6=Emplacement de compétence active 6
 transformationability1=Capacité de transformation 1
 transformationability2=Capacité de transformation 2
+
+
+[settingsui]
+// Experience
+experience_section=Expérience
+experience_text=Ces paramètres sont des paramètres de serveur et ne peuvent donc pas être modifiés après avoir rejoint un monde. En cas de multijoueur, vos valeurs seront ignorées et celles du serveur/hôte seront prises en compte.
+
+experienceMod=% Mod d'expérience
+experienceMod_text=Modifie la quantité d'expérience gagnée en battant des monstres
+
+firstKillBonus=% Bonus de première mise à mort
+firstKillBonus_text=Un bonus d'expérience lors de la défaite d'un monstre pour la première fois (non ajouté, multiplié par d'autres modificateurs)
+
+bossKillBonus=% Bonus de mise à mort de boss
+bossKillBonus_text=Un bonus d'expérience lors de la défaite d'un boss (non ajouté, multiplié par d'autres modificateurs)
+
+startingExperience=Expérience de départ
+startingExperience_text=L'expérience avec laquelle les nouveaux joueurs commenceront
+
+firstExperienceReq=Req initiale
+experienceReqInc=Incrément de req
+squareExperienceReqInc=Incrément de req carré
+cubeExperienceReqInc=Incrément de req cubique
+experience_calc=L'exigence d'expérience pour atteindre le niveau suivant est :\n\nReq initiale + Incrément de req * niveau +\n+ Incrément de req carré * (niveau ^ 2) +\n+ Incrément de req cubique * (niveau ^ 3)\n\nOù 'niveau' est votre niveau actuel
+
+// Classes
+classes_section=Classes
+
+multiClass=Multi-classe
+multiClass_text=Limitez le nombre de classes différentes pouvant être détenues en même temps. Mettez-le à 0 pour aucune limite
+
+classes_enabled=Vous pouvez désactiver les classes que vous ne voulez pas rendre disponibles

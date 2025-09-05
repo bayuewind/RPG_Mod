@@ -42,7 +42,7 @@ depleted=Agotado
 
 
 [buff]
-overlevelclassbuff=Clase sobrenivelada
+overlevelbuff=Sobrenivel
 markedbuff=Marcado
 darkcursebuff=Maldición Oscura
 magicpoisonbuff=Veneno Mágico
@@ -51,8 +51,8 @@ holydamagedealtbuff=Daño Sagrado Infligido
 
 
 [buffdesc]
-overlevelclassbuff1=§9Una de tus clases excede el límite de puntos
-overlevelclassbuff2=§6No podrás continuar hasta que se solucione
+overlevelbuff1=§9Una de tus clases o atributos excede algún límite de puntos
+overlevelbuff2=§6No podrás continuar hasta que se arregle
 darkcursebuff1=+25% de Daño Recibido
 darkcursebuff2=Todo el daño también reduce la Salud Máxima
 
@@ -419,7 +419,7 @@ ignitedamage=§iDaño de Quemadura:§0 Aumenta el daño de quemadura con el tiem
 // Projectiles
 lethalarrow=§hFlecha Letal:§0 Flecha guiada que otorga un golpe Crítico
 venomarrow=§bFlecha de Veneno:§0 Flecha guiada que envenena a los enemigos. Repite el 10% de su daño original por segundo durante 30 segundos
-explosiveshot=§iFlecha Explosiva:§0 Flecha guiada que causa una explosión mágica con el mismo daño
+explosivearrow=§iFlecha Explosiva:§0 Flecha guiada que causa una explosión mágica con el mismo daño
 iceball=§aBola de Hielo:§0 Proyectil mágico que explota y congela a los monstruos durante 5 segundos, también los congela totalmente durante 1 segundo
 fireball=§iBola de Fuego:§0 Proyectil mágico que explota y quema a los monstruos repitiendo el 20% de su daño original por segundo durante 5 segundos
 
@@ -534,11 +534,16 @@ classlevelseparation=- Nivel de clase <level> -
 inuse=En Uso
 
 upcomingclass=§6Próxima Clase\n§9Esta clase está actualmente en desarrollo\ny estará disponible en una futura actualización
+disabledclass=Esta clase está deshabilitada en este mundo
 
 addcolumn=Añadir columna
 removecolumn=Eliminar columna
 
 rate=¡Valora el Mod RPG!
+
+seeallclasses=Ver todas las entradas de clase
+
+clicktoopen=[input=mouse1] para abrir
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=Ranura de Habilidad Activa 5
 activeskillslot6=Ranura de Habilidad Activa 6
 transformationability1=Habilidad de Transformación 1
 transformationability2=Habilidad de Transformación 2
+
+
+[settingsui]
+// Experience
+experience_section=Experiencia
+experience_text=Estos ajustes son del servidor, por lo que no se pueden modificar después de unirse a un mundo. En caso de multijugador, tus valores serán ignorados y se tomarán los del servidor/anfitrión.
+
+experienceMod=% Mod de Experiencia
+experienceMod_text=Modifica la cantidad de experiencia obtenida al derrotar enemigos
+
+firstKillBonus=% Bonificación por Primera Muerte
+firstKillBonus_text=Un aumento de experiencia al derrotar a un enemigo por primera vez (no se suma, se multiplica por otros modificadores)
+
+bossKillBonus=% Bonificación por Matar Jefes
+bossKillBonus_text=Un aumento de experiencia al derrotar a un jefe (no se suma, se multiplica por otros modificadores)
+
+startingExperience=Experiencia Inicial
+startingExperience_text=La experiencia con la que comenzarán los nuevos jugadores
+
+firstExperienceReq=Req Inicial
+experienceReqInc=Incremento de Req
+squareExperienceReqInc=Incremento Cuadrado de Req
+cubeExperienceReqInc=Incremento Cúbico de Req
+experience_calc=El requisito de experiencia para alcanzar el siguiente nivel es:\n\nReq Inicial + Incremento de Req * nivel +\n+ Incremento Cuadrado de Req * (nivel ^ 2) +\n+ Incremento Cúbico de Req * (nivel ^ 3)\n\nDonde 'nivel' es tu nivel actual
+
+// Classes
+classes_section=Clases
+
+multiClass=Multi Clase
+multiClass_text=Limita cuántas clases diferentes se pueden tener al mismo tiempo. Establécelo en 0 para no tener límite
+
+classes_enabled=Puedes deshabilitar las clases que no quieres que estén disponibles

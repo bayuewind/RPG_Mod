@@ -59,6 +59,14 @@ abstract public class Skill {
 
     abstract public void initResources();
 
+    public int getLevel(PlayerMob player) {
+        return getLevel(PlayerDataList.getPlayerData(player));
+    }
+
+    public int getLevel(PlayerData playerData) {
+        return getLevel(playerData.getClassesData()[this.playerClass.id]);
+    }
+
     public int getLevel(PlayerClassData classData) {
         return classData.getPassiveLevels()[id];
     }
@@ -147,11 +155,11 @@ abstract public class Skill {
 
                     float val = calculateValue(expr);
                     String text;
-                    if(round == 0) {
+                    if (round == 0) {
                         text = String.valueOf((int) Math.floor(val));
-                    } else if(round == 1) {
+                    } else if (round == 1) {
                         text = String.valueOf(Math.round(val));
-                    } else if(round == 2) {
+                    } else if (round == 2) {
                         text = String.valueOf((int) Math.ceil(val));
                     } else {
                         text = (val == (int) val)

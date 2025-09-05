@@ -41,7 +41,7 @@ depleted=Kimerült
 
 
 [buff]
-overlevelclassbuff=Túlszintelt osztály
+overlevelbuff=Túlszint
 markedbuff=Megjelölt
 darkcursebuff=Sötét átok
 magicpoisonbuff=Mágikus Méreg
@@ -50,8 +50,8 @@ holydamagedealtbuff=Okozott szent sebzés
 
 
 [buffdesc]
-overlevelclassbuff1=§9Az egyik osztályod túllépett egy pontkorlátot
-overlevelclassbuff2=§6Nem tudsz továbblépni, amíg nem javítod ki
+overlevelbuff1=§9Az egyik osztályod vagy attribútumod túllép egy pontkorlátot
+overlevelbuff2=§6Nem tudsz továbblépni, amíg nem javítod ki
 darkcursebuff1=+25% bejövő sebzés
 darkcursebuff2=Minden sebzés csökkenti a maximális életerőt is
 
@@ -534,11 +534,16 @@ classlevelseparation=- <level> osztályszint -
 inuse=Használatban
 
 upcomingclass=§6Közelgő osztály\n§9Ez az osztály jelenleg fejlesztés alatt áll\nés egy jövőbeli frissítésben lesz elérhető
+disabledclass=Ez az osztály le van tiltva ebben a világban
 
 addcolumn=Oszlop hozzáadása
 removecolumn=Oszlop eltávolítása
 
 rate=Értékeld az RPG Modot!
+
+seeallclasses=Összes osztálybejegyzés megtekintése
+
+clicktoopen=[input=mouse1] a megnyitáshoz
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=Aktív képességhely 5
 activeskillslot6=Aktív képességhely 6
 transformationability1=Átalakulási képesség 1
 transformationability2=Átalakulási képesség 2
+
+
+[settingsui]
+// Experience
+experience_section=Tapasztalat
+experience_text=Ezek a beállítások szerverbeállítások, így nem módosíthatók a világhoz való csatlakozás után. Többjátékos módban az Ön értékei figyelmen kívül lesznek hagyva, és a szerver/gazda értékei lesznek figyelembe véve.
+
+experienceMod=% Tapasztalat módosító
+experienceMod_text=Módosítja a szörnyek legyőzésével szerzett tapasztalat mennyiségét
+
+firstKillBonus=% Első ölés bónusz
+firstKillBonus_text=Tapasztalatnövekedés egy szörny első legyőzésekor (nem hozzáadódik, hanem más módosítókkal szorzódik)
+
+bossKillBonus=% Főnökölés bónusz
+bossKillBonus_text=Tapasztalatnövekedés egy főnök legyőzésekor (nem hozzáadódik, hanem más módosítókkal szorzódik)
+
+startingExperience=Kezdő tapasztalat
+startingExperience_text=A tapasztalat, amellyel az új játékosok kezdenek
+
+firstExperienceReq=Kezdeti követelmény
+experienceReqInc=Követelmény növekedés
+squareExperienceReqInc=Négyzetes követelmény növekedés
+cubeExperienceReqInc=Köbös követelmény növekedés
+experience_calc=A következő szint eléréséhez szükséges tapasztalat:\n\nKezdeti követelmény + Követelmény növekedés * szint +\n+ Négyzetes követelmény növekedés * (szint ^ 2) +\n+ Köbös követelmény növekedés * (szint ^ 3)\n\nAhol a 'szint' a jelenlegi szinted
+
+// Classes
+classes_section=Osztályok
+
+multiClass=Több osztály
+multiClass_text=Korlátozza, hogy egyszerre hány különböző osztályt lehet tartani. Állítsa 0-ra a korlátlanhoz
+
+classes_enabled=Letilthatja azokat az osztályokat, amelyeket nem szeretne elérhetővé tenni

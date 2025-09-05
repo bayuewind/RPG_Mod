@@ -143,6 +143,7 @@ public class FoxTransformation extends SimpleTranformationActiveSkill {
 
         public GameDamage getDamage(PlayerMob player) {
             PlayerData playerData = PlayerDataList.getPlayerData(player);
+            int skillLevel = getActualSkillLevel();
             return new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() + 0.5F * playerData.getIntelligence(player) * skillLevel);
         }
 
@@ -183,6 +184,7 @@ public class FoxTransformation extends SimpleTranformationActiveSkill {
         public void secondaryClickRunServer(Level level, int x, int y, PlayerMob player) {
             super.secondaryClickRunServer(level, x, y, player);
             DancingFlameMob mob = (DancingFlameMob) MobRegistry.getMob("dancingflame", player.getLevel());
+            int skillLevel = getActualSkillLevel();
             player.serverFollowersManager.addFollower(getStringID() + "follower", mob, FollowPosition.FLYING_CIRCLE_FAST, null, 1, 2 + skillLevel, null, true);
             mob.updateDamage(getDamage(player));
             mob.getLevel().entityManager.addMob(mob, player.x, player.y);

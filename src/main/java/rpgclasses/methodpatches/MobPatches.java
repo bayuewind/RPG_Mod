@@ -20,7 +20,6 @@ import necesse.entity.mobs.hostile.SlimeWormBody;
 import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
 import net.bytebuddy.asm.Advice;
-import rpgclasses.RPGConfig;
 import rpgclasses.buffs.Interfaces.TransformationClassBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
@@ -30,6 +29,7 @@ import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
 import rpgclasses.mobs.mount.TransformationMountMob;
 import rpgclasses.packets.UpdateClientEquippedActiveSkillsPacket;
+import rpgclasses.settings.RPGSettings;
 
 import java.util.HashSet;
 
@@ -97,7 +97,7 @@ public class MobPatches {
             MobData mobData = MobData.getMob(This);
             if (This.isServer() && mobData != null) {
 
-                float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGConfig.getExperienceMod();
+                float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGSettings.experienceMod();
                 exp = (float) Math.pow(exp, 1.2F);
 
                 HashSet<PlayerMob> processedPlayers = new HashSet<>();
@@ -115,7 +115,7 @@ public class MobPatches {
 
                         final int finalExp;
                         if (serverClient.characterStats().mob_kills.getKills(This.getStringID()) == 0) {
-                            finalExp = (int) (exp * RPGConfig.getFirstKillBonus());
+                            finalExp = (int) (exp * RPGSettings.firstKillBonus());
                             serverClient.sendChatMessage(new LocalMessage("message", "newmobkill", "mob", mobData.realName(), "exp", finalExp));
                         } else {
                             finalExp = (int) exp;

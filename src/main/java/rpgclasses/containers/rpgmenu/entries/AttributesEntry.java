@@ -1,5 +1,6 @@
 package rpgclasses.containers.rpgmenu.entries;
 
+import necesse.engine.Settings;
 import necesse.engine.localization.Localization;
 import necesse.gfx.forms.components.FormButton;
 import necesse.gfx.forms.components.FormContentBox;
@@ -11,9 +12,11 @@ import necesse.gfx.ui.ButtonColor;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.AttributeComponent;
+import rpgclasses.containers.rpgmenu.components.ClassComponent;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.data.PlayerDataList;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -69,12 +72,35 @@ public class AttributesEntry extends MenuEntry {
                 }));
         confirmButton.setActive(false);
 
-        int totalComponentsWidth = (numItems - 1) * AttributeComponent.width;
-        int spacing = (entryForm.getWidth() - totalComponentsWidth) / (numItems + 1);
+        FormContentBox attributesForm = entryForm.addComponent(new FormContentBox(8, 52 + 8, entryForm.getWidth() - 16, entryForm.getHeight() - (52 + 8) - (32 + 8)));
+
+        int maxPerRow = 5;
+        int numRows = (numItems + maxPerRow - 1) / maxPerRow;
+
+        boolean hasScrollbar = numRows >= 3;
+
+        int contentWidth = attributesForm.getWidth() - (hasScrollbar ? Settings.UI.scrollbar.active.getHeight() + 2 : 0);
+
+        float verticalSpacing;
+
+        if (hasScrollbar) {
+            verticalSpacing = ClassComponent.height + 16;
+        } else {
+            verticalSpacing = (float) 1 / numRows;
+        }
+
         for (int i = 0; i < numItems; i++) {
-            int x = spacing + i * (AttributeComponent.width + spacing);
+            int row = i / maxPerRow;
+            int col = i % maxPerRow;
+
+            int numCols = Math.min(maxPerRow, numItems - row * maxPerRow);
+            float horizontalSpacing = (float) 1 / numCols;
+
+            int x = Math.round(contentWidth * (col + 0.5F) * horizontalSpacing);
+            int y = hasScrollbar ? Math.round(verticalSpacing * row + ClassComponent.height / 2F) : Math.round(attributesForm.getHeight() * (row + 0.5F) * verticalSpacing);
+
             int finalI = i;
-            AttributeComponent attributeComponent = entryForm.addComponent(new AttributeComponent(client, x, entryForm.getHeight() / 2, Attribute.attributesList.get(i), attributes[i]));
+            AttributeComponent attributeComponent = attributesForm.addComponent(new AttributeComponent(client, x, y, Attribute.attributesList.get(i), attributes[i]));
             attributeComponent.addOnMod(c -> {
                 int newLevel = attributeComponent.attributeLevel.get();
                 int oldLevel = mutableAttributes[finalI];
@@ -86,6 +112,9 @@ public class AttributesEntry extends MenuEntry {
                     updateFormAttributes(attributePointsLabel, resetPointsLabel, cancelButton, confirmButton, attributesTotal, currentAttributesTotal, maxAttributes, resetPoints, attributes, mutableAttributes);
                 }
             });
+        }
+        if (hasScrollbar) {
+            attributesForm.setContentBox(new Rectangle(0, 0, attributesForm.getWidth(), Math.round(verticalSpacing * numRows)));
         }
     }
 

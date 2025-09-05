@@ -41,7 +41,7 @@ depleted=Utarmad
 
 
 [buff]
-overlevelclassbuff=Övernivåklass
+overlevelbuff=Över nivå
 markedbuff=Märkt
 darkcursebuff=Mörk förbannelse
 magicpoisonbuff=Magiskt Gift
@@ -50,8 +50,8 @@ holydamagedealtbuff=Helig skada utdelad
 
 
 [buffdesc]
-overlevelclassbuff1=§9En av dina klasser överskrider en poänggräns
-overlevelclassbuff2=§6Du kan inte fortsätta förrän det är åtgärdat
+overlevelbuff1=§9En av dina klasser eller attribut överskrider en poänggräns
+overlevelbuff2=§6Du kan inte fortsätta förrän det är åtgärdat
 darkcursebuff1=+25% inkommande skada
 darkcursebuff2=All skada minskar också maxhälsa
 
@@ -133,7 +133,7 @@ eagleeye=Örnöga
 focus=Fokus
 erradication=Utrotning
 predatorsense=Rovdjurssinne
-plasmagranade=Plasmagranat
+plasmagrenade=Plasmagranat
 wolfcompanion=Vargkompanjon
 
 // Trollkarl
@@ -530,11 +530,16 @@ classlevelseparation=- Klassnivå <level> -
 inuse=I bruk
 
 upcomingclass=§6Kommande klass\n§9Denna klass är för närvarande under utveckling\noch kommer att finnas tillgänglig i en framtida uppdatering
+disabledclass=Denna klass är inaktiverad i denna värld
 
 addcolumn=Lägg till kolumn
 removecolumn=Ta bort kolumn
 
 rate=Betygsätt RPG Mod!
+
+seeallclasses=Se alla klassposter
+
+clicktoopen=[input=mouse1] för att öppna
 
 
 [controls]
@@ -545,3 +550,37 @@ activeskillslot3=Aktiv färdighetsplats 3
 activeskillslot4=Aktiv färdighetsplats 4
 activeskillslot5=Aktiv färdighetsplats 5
 activeskillslot6=Aktiv färdighetsplats 6
+transformationability1=Transformationsförmåga 1
+transformationability2=Transformationsförmåga 2
+
+
+[settingsui]
+// Experience
+experience_section=Erfarenhet
+experience_text=Dessa inställningar är serverinställningar så de kan inte ändras efter att ha anslutit till en värld. I flerspelarläge kommer dina värden att ignoreras och serverns/värdens värden kommer att användas.
+
+experienceMod=% Erfarenhetsmod
+experienceMod_text=Modifierar mängden erfarenhet som erhålls från att besegra fiender
+
+firstKillBonus=% Första dödsbonus
+firstKillBonus_text=En erfarenhetsboost när du besegrar en fiende för första gången (läggs inte till, multipliceras med andra modifierare)
+
+bossKillBonus=% Bossdödsbonus
+bossKillBonus_text=En erfarenhetsboost när du besegrar en boss (läggs inte till, multipliceras med andra modifierare)
+
+startingExperience=Starterfarenhet
+startingExperience_text=Erfarenheten som nya spelare kommer att börja med
+
+firstExperienceReq=Initialkrav
+experienceReqInc=Kravökning
+squareExperienceReqInc=Kvadratisk kravökning
+cubeExperienceReqInc=Kubisk kravökning
+experience_calc=Erfarenhetskravet för att nå nästa nivå är:\n\nInitialkrav + Kravökning * nivå +\n+ Kvadratisk kravökning * (nivå ^ 2) +\n+ Kubisk kravökning * (nivå ^ 3)\n\nDär "nivå" är din nuvarande nivå
+
+// Classes
+classes_section=Klasser
+
+multiClass=Multiklass
+multiClass_text=Begränsa hur många olika klasser som kan hållas samtidigt. Ställ in på 0 för ingen gräns
+
+classes_enabled=Du kan inaktivera de klasser du inte vill ha tillgängliga

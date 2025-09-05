@@ -42,7 +42,7 @@ depleted=مستنفد
 
 
 [buff]
-overlevelclassbuff=فئة ذات مستوى زائد
+overlevelbuff=فوق المستوى
 markedbuff=معلم
 darkcursebuff=لعنة الظلام
 magicpoisonbuff=سم سحري
@@ -51,8 +51,8 @@ holydamagedealtbuff=الضرر المقدس الملحق
 
 
 [buffdesc]
-overlevelclassbuff1=§9إحدى فئاتك تتجاوز حد النقاط
-overlevelclassbuff2=§6لن تتمكن من المتابعة حتى يتم إصلاحها
+overlevelbuff1=§9إحدى فئاتك أو سماتك تتجاوز حد النقاط
+overlevelbuff2=§6لن تتمكن من المتابعة حتى يتم إصلاحها
 darkcursebuff1=+25% ضرر وارد
 darkcursebuff2=كل الضرر يقلل أيضًا من الصحة القصوى
 
@@ -533,11 +533,16 @@ classlevelseparation=- مستوى الفئة <level> -
 inuse=قيد الاستخدام
 
 upcomingclass=§6الفئة القادمة\n§9هذه الفئة قيد التطوير حاليًا\nوستكون متاحة في تحديث مستقبلي
+disabledclass=هذه الفئة معطلة في هذا العالم
 
 addcolumn=إضافة عمود
 removecolumn=إزالة عمود
 
 rate=قيم تعديل RPG!
+
+seeallclasses=رؤية جميع إدخالات الفئة
+
+clicktoopen=[input=mouse1] للفتح
 
 
 [controls]
@@ -550,3 +555,35 @@ activeskillslot5=خانة المهارة النشطة 5
 activeskillslot6=خانة المهارة النشطة 6
 transformationability1=قدرة التحول 1
 transformationability2=قدرة التحول 2
+
+
+[settingsui]
+// Experience
+experience_section=الخبرة
+experience_text=هذه الإعدادات هي إعدادات الخادم لذا لا يمكن تعديلها بعد الانضمام إلى عالم. في حالة اللعب الجماعي ، سيتم تجاهل قيمك وسيتم أخذ قيم الخادم / المضيف
+
+experienceMod=٪ تعديل الخبرة
+experienceMod_text=يعدل مقدار الخبرة المكتسبة من هزيمة الوحوش
+
+firstKillBonus=٪ مكافأة القتل الأول
+firstKillBonus_text=زيادة في الخبرة عند هزيمة وحش لأول مرة (لا تضاف ، بل تضرب بالمعدلات الأخرى)
+
+bossKillBonus=٪ مكافأة قتل الزعيم
+bossKillBonus_text=زيادة في الخبرة عند هزيمة زعيم (لا تضاف ، بل تضرب بالمعدلات الأخرى)
+
+startingExperience=الخبرة الابتدائية
+startingExperience_text=الخبرة التي سيبدأ بها اللاعبون الجدد
+
+firstExperienceReq=المتطلبات الأولية
+experienceReqInc=زيادة المتطلبات
+squareExperienceReqInc=زيادة مربعة للمتطلبات
+cubeExperienceReqInc=زيادة مكعبة للمتطلبات
+experience_calc=متطلبات الخبرة للوصول إلى المستوى التالي هي:\n\nالمتطلبات الأولية + زيادة المتطلبات * المستوى +\n+ زيادة مربعة للمتطلبات * (المستوى ^ 2) +\n+ زيادة مكعبة للمتطلبات * (المستوى ^ 3)\n\nحيث 'المستوى' هو مستواك الفعلي
+
+// Classes
+classes_section=الفئات
+
+multiClass=متعدد الفئات
+multiClass_text=حدد عدد الفئات المختلفة التي يمكن الاحتفاظ بها في نفس الوقت. اضبطه على 0 بلا حدود
+
+classes_enabled=يمكنك تعطيل الفئات التي لا تريد أن تكون متاحة

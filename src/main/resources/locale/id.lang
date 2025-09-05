@@ -41,7 +41,7 @@ depleted=Habis
 
 
 [buff]
-overlevelclassbuff=Kelas Level Berlebih
+overlevelbuff=Lewati Level
 markedbuff=Ditandai
 darkcursebuff=Kutukan Kegelapan
 magicpoisonbuff=Racun Ajaib
@@ -50,8 +50,8 @@ holydamagedealtbuff=Kerusakan Suci yang Diberikan
 
 
 [buffdesc]
-overlevelclassbuff1=§9Salah satu kelas Anda melebihi batas poin
-overlevelclassbuff2=§6Anda tidak akan dapat melanjutkan sampai diperbaiki
+overlevelbuff1=§9Salah satu kelas atau atribut Anda melebihi batas poin
+overlevelbuff2=§6Anda tidak akan dapat melanjutkan sampai diperbaiki
 darkcursebuff1=+25% Kerusakan Masuk
 darkcursebuff2=Semua kerusakan juga mengurangi Kesehatan Maks
 
@@ -534,11 +534,16 @@ classlevelseparation=- Level kelas <level> -
 inuse=Digunakan
 
 upcomingclass=§6Kelas Mendatang\n§9Kelas ini saat ini sedang dalam pengembangan\ndan akan tersedia di pembaruan mendatang
+disabledclass=Kelas ini dinonaktifkan di dunia ini
 
 addcolumn=Tambahkan kolom
 removecolumn=Hapus kolom
 
 rate=Beri nilai MOD RPG!
+
+seeallclasses=Lihat semua entri kelas
+
+clicktoopen=[input=mouse1] untuk membuka
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=Slot Keterampilan Aktif 5
 activeskillslot6=Slot Keterampilan Aktif 6
 transformationability1=Kemampuan Transformasi 1
 transformationability2=Kemampuan Transformasi 2
+
+
+[settingsui]
+// Experience
+experience_section=Pengalaman
+experience_text=Pengaturan tersebut adalah pengaturan server sehingga tidak dapat diubah setelah bergabung dengan dunia. Dalam kasus multipemain, nilai Anda akan diabaikan dan nilai server/host yang akan diambil.
+
+experienceMod=% Mod Pengalaman
+experienceMod_text=Mengubah jumlah pengalaman yang diperoleh dari mengalahkan monster
+
+firstKillBonus=% Bonus Pembunuhan Pertama
+firstKillBonus_text=Peningkatan pengalaman saat mengalahkan monster untuk pertama kalinya (tidak ditambahkan, dikalikan dengan pengubah lain)
+
+bossKillBonus=% Bonus Pembunuhan Bos
+bossKillBonus_text=Peningkatan pengalaman saat mengalahkan bos (tidak ditambahkan, dikalikan dengan pengubah lain)
+
+startingExperience=Pengalaman Awal
+startingExperience_text=Pengalaman yang akan dimulai oleh pemain baru
+
+firstExperienceReq=Persyaratan Awal
+experienceReqInc=Peningkatan Persyaratan
+squareExperienceReqInc=Peningkatan Persyaratan Kuadrat
+cubeExperienceReqInc=Peningkatan Persyaratan Kubik
+experience_calc=Persyaratan pengalaman untuk mencapai level berikutnya adalah:\n\nPersyaratan Awal + Peningkatan Persyaratan * level +\n+ Peningkatan Persyaratan Kuadrat * (level ^ 2) +\n+ Peningkatan Persyaratan Kubik * (level ^ 3)\n\nDi mana 'level' adalah level Anda saat ini
+
+// Classes
+classes_section=Kelas
+
+multiClass=Multi Kelas
+multiClass_text=Batasi berapa banyak kelas berbeda yang dapat dipegang pada saat yang sama. Atur ke 0 untuk tanpa batas
+
+classes_enabled=Anda dapat menonaktifkan kelas yang tidak Anda inginkan tersedia

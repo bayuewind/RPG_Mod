@@ -41,7 +41,7 @@ depleted=Istrošen
 
 
 [buff]
-overlevelclassbuff=Klasa s prekomjernom razinom
+overlevelbuff=Prekomjerna razina
 markedbuff=Označen
 darkcursebuff=Mračna kletva
 magicpoisonbuff=Magični otrov
@@ -50,8 +50,8 @@ holydamagedealtbuff=Nanesena sveta šteta
 
 
 [buffdesc]
-overlevelclassbuff1=§9Jedna od vaših klasa premašuje ograničenje bodova
-overlevelclassbuff2=§6Nećete moći nastaviti dok se to ne popravi
+overlevelbuff1=§9Jedna od vaših klasa ili atributa premašuje ograničenje bodova
+overlevelbuff2=§6Nećete moći nastaviti dok se to ne popravi
 darkcursebuff1=+25% dolazne štete
 darkcursebuff2=Sva šteta također smanjuje maksimalno zdravlje
 
@@ -297,87 +297,6 @@ divineintervention=Trenutačno izliječite najviše oštećenog bliskog saveznik
 resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <skilllevel>]]%§0 njihovog maksimalnog zdravlja na vašoj poziciji\nNe možete oživjeti igrače koji su se mogli ponovno pojaviti prije više od 10 sekundi\nTroši §a[[100 - 10 x <skilllevel>]]%§0 vaše mane (najmanje §a[[60 + 12 x <skilllevel>]]§0)
 wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
 
-// Druid
-wolftransformation=Transformacija u vuka
-queenbeetransformation=Transformacija u maticu pčela
-beartransformation=Transformacija u medvjeda
-foxtransformation=Transformacija u lisicu
-rattransformation=Transformacija u štakora
-treanttransformation=Transformacija u treanta
-
-
-[activeskillsdesc]
-
-// Ratnik
-fury=Sljedećih 6 sekundi povećajte svoju štetu u bliskoj borbi i brzinu napada za §a[[20 x <skilllevel>]]%
-recovery=Sljedećih 10 sekundi uvelike pojačava regeneraciju zdravlja u borbi, obnavljajući §a[[20 + <endurance> x <skilllevel>]] zdravlja§0 tijekom trajanja
-provocation=Sljedećih §a[[2 x <skilllevel>]] sekundi§0, prisilite obližnje neprijatelje da usredotoče svoje napade na vas
-berserkercharge=Jurišajte naprijed na kratku udaljenost, nanoseći §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] štete§0 svim neprijateljima pored kojih prođete\nTroši 50% izdržljivosti
-groundslam=Područni napad koji nanosi §i[[5 x <strength>]] štete u bliskoj borbi§0 i §9omamljuje§0 na §a[[1 x <skilllevel>]] sekundi§0
-grounddestruction=Područni napad koji nanosi §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] štete u bliskoj borbi§0 i §9omamljuje§0 na 2 sekunde
-parry=Postanite neranjivi na 0,5 sekundi i vratite 500% izvorne primljene štete\nTroši 100% izdržljivosti
-battlecry=Sljedećih 10 sekundi povećajte svoju i štetu obližnjih saveznika te brzinu kretanja za §a[[10 x <skilllevel>]]%
-
-ironguard=-50% dolazne štete na §a[[4 x <skilllevel>]] sekundi
-intimidation=Sljedećih §a[[<skilllevel>]] sekundi§0, natjerajte obližnje neprijatelje da pobjegnu
-
-objectthrowing=Korak 1: Zgrabite predmet ispred sebe\nKorak 2: Bacite ga naprijed nanoseći §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] štete u bliskoj borbi§0\nOba koraka troše svu vašu izdržljivost (najmanje 100%)
-
-// Rendžer
-shortdash=Izvedite juriš snage 100 <strength>\nTroši 15% izdržljivosti
-longdash=Izvedite juriš snage 150 <strength>\nTroši 25% izdržljivosti
-lethalshot=Ispalite §hsmrtonosnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] štete rendžera§0
-venomshot=Ispalite §botrovnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] štete rendžera§0
-explosiveshot=Ispalite §ieksplozivnu strijelu§0 na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] štete rendžera§0
-
-shotsrampage=Dok imate barem 1 hrpu Pomame hitaca, pogađanje neprijatelja napadom iz daljine daje 1 dodatnu hrpu na 5 sekundi\nSvaka hrpa Pomame hitaca povećava brzinu napada za 5%, do najviše 30 hrpa
-huntersmark=§hOznačite§0 najbližeg neprijatelja s najviše zdravlja na 10 sekundi\nAko ubijete označenu metu, dobivate §a+[[20 x <skilllevel>]]%§0 brzine napada iz daljine i brzine kretanja na 5 sekundi
-beartrap=Postavite medvjeđu zamku na tlo koja nestaje ako se aktivira ili nakon 20 sekundi\nAko je neprijatelj aktivira, primit će §i[[10 x <playerlevel>]] štete§0 i bit će zarobljen 5 sekundi
-
-huntersinstinct=Sljedećih 12 sekundi povećajte svoju §7šansu za izbjegavanje§0 za §a[[10 x <skilllevel>]]%\n§hOznačite§0 na 5 sekundi neprijatelje koje izbjegnete
-arrowstorm=Ispalite osnovnu strijelu na svakog bliskog neprijatelja, nanoseći §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] štete rendžera§0 svakom strijelom
-
-// Čarobnjak
-arcaneoverload=Dok je aktivno, povećava vašu brzinu magičnog napada za §a[[30 x <skilllevel>]]%§0, ali se nećete moći kretati\nZavršava kada ostanete bez mane, ili ako se ponovno koristi\nTroši §a[[10 + 2 x <skilllevel>]] mane u sekundi
-manarecharge=Dok je aktivno, povećava vašu regeneraciju mane za +1.4 i za §a[[50 x <skilllevel>]]%§0, ali ćete biti paralizirani i primati dvostruku štetu\nZavršava kada se ponovno koristi
-firedance=Priziva 4 §bPlešuća plamena§0, od kojih svaki nanosi §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0\nPrizovite još jedan svakih 5 sekundi\nSvi prizivi nestaju 20 sekundi nakon aktivacije sposobnosti\nTroši §a[[30 + 6 x <skilllevel>]] mane
-iceball=Bacite §aLedenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[50 + 10 x <skilllevel>]] mane
-zap=Pokrenite strujni udar koji skače između mobova 2 sekunde, nanoseći §i[[<playerlevel> + <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 1 sekundu\nTroši §a[[10 + 2 x <skilllevel>]] mane
-
-teleport=Teleportira vas ispred vas\nTroši 10 mane
-inferno=Zapalite sve obližnje neprijatelje, nanoseći §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] vatrene štete§0 u sekundi tijekom 10 sekundi\nTroši §a[[40 + 8 x <skilllevel>]] mane
-fireenchantment=Sljedećih 10 sekundi, napadi od vas i obližnjih saveznika pale neprijatelje, nanoseći §a[[5 x <skilllevel>]]%§0 štete u sekundi tijekom 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane
-iceenchantment=Sljedećih 10 sekundi, napadi od vas i obližnjih saveznika zamrzavaju neprijatelje na §a[[2 x <skilllevel>]] sekundi§0\nTroši 20 mane
-
-fireball=Bacite §iVatrenu kuglu§0 na najbližeg neprijatelja, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0\nTroši §a[[80 + 16 x <skilllevel>]] mane
-lightning=Pokrenite munju koja skače između mobova 1 sekundu, nanoseći §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] magične štete§0 i omamljujući na 2 sekunde\nNe može pogoditi istu metu više puta\nTroši §a[[30 + 6 x <skilllevel>]] mane
-
-// Nekromant
-skeletonhorde=Priziva §a[[1 + <skilllevel>]] §bKostura§0
-skeletonwarrior=Priziva §bRatnika kostura§0 s §a+[[20 x <skilllevel>]]%§0 zdravlja i štete
-sacrifice=Najbliži nekrotični priziv umire, a vi zatim oporavljate §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdravlja§0 kao magično iscjeljenje
-siegecry=Dobijte §a+[[50 x <skilllevel>]]%§0 brzine prizivanja na 6 sekundi
-
-boneslingerhorde=Priziva §a[[1 + <skilllevel>]]§0 §bBacača kostiju§0
-tomb=Stvara strukturu koja priziva §bKostura§0 svakih §a[[10 - <skilllevel>]] sekundi§0\nGrob ima zdravlje jednako §a[[5 x <playerlevel> x <skilllevel>]]§0\nGrob gubi 2% svog ukupnog zdravlja u sekundi
-necroticbloom=Ubrzava učinak otrova na sve obližnje neprijatelje smanjujući njegovo trajanje na 10%, ali povećavajući njegovu štetu u sekundi kako bi se održala ukupna šteta
-wardingtaunt=Najbliži nekrotični priziv prisiljava obližnje neprijatelje unutar radijusa od §a[[50 x <skilllevel>]]§0 da ga ciljaju
-
-unholyground=Širi auru korupcije oko vas 10 sekundi\nNeprijatelji unutar ovog područja primaju §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] štete od otrova§0 u sekundi i §7Ograničeni su
-necroticbarrage=Svi nekrotični prizivi eksplodiraju nakon smrti, nanoseći §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magične štete§0 obližnjim neprijateljima\ni trujući ih 10 sekundi s 20% izvorne štete u sekundi
-
-// Cleric
-smite=Sazovite zraku svetog svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0\nNanosi dvostruku štetu nemrtvim i demonskim mobovima\nTroši §a[[10 + 2 x <skilllevel>]] mane§0
-divineblessing=Magična iscjeljujuća aura koja obnavlja §a[[20 + 3 x <grace> x <skilllevel>]] zdravlja§0 vama i vašim saveznicima\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
-purify=Očistite sebe i obližnje saveznike od svih negativnih učinaka\nTroši 10 mane
-lightinfusion=Sljedećih 8 sekundi dobivate §a+[[20 x <skilllevel>]]%§0 magičnog iscjeljivanja i svete štete
-holyguard=Nanesite na sebe i sve obližnje saveznike Sveti štit do 30 sekundi\nOni dobivaju §a+[[10 x <skilllevel>]]%§0 primljenog magičnog iscjeljivanja, a štit blokira jedan udarac prije nego što se slomi\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
-judgment=Oslobodite val zračeće energije, nanoseći §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] svete štete§0 svim obližnjim neprijateljima\nNemrtvi i demonski mobovi su §7Ograničeni§0 na 5 sekundi\nTroši §a[[20 + 4 x <skilllevel>]] mane§0
-sanctuary=Stvorite svetu zonu na 8 sekundi\nVi i saveznici unutra ste imuni na negativne učinke i dobivate §a[[0.2 x <grace> x <skilllevel>]]§0 regeneracije zdravlja u sekundi\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[30 + 6 x <skilllevel>]] mane§0
-divineintervention=Trenutačno izliječite najviše oštećenog bliskog saveznika do njihovog maksimalnog zdravlja i dajte imunitet na svu štetu na §a[[<skilllevel>]]§0 sekundi\nTroši §a[[60 + 12 x <skilllevel>]] mane§0
-resurrection=Oživite posljednjeg mrtvog saveznika na istom otoku s §a[[10 x <skilllevel>]]%§0 njihovog maksimalnog zdravlja na vašoj poziciji\nNe možete oživjeti igrače koji su se mogli ponovno pojaviti prije više od 10 sekundi\nTroši §a[[100 - 10 x <skilllevel>]]%§0 vaše mane (najmanje §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Prizovite stup svjetla na najbližeg neprijatelja, nanoseći §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] svete štete§0 u sekundi tijekom 5 sekundi u području\nNemrtvi i demonski mobovi unutra su §7Ograničeni§0\nTroši §a[[40 + 8 x <skilllevel>]] mane§0
-
 
 // Druid
 wolftransformation=Potrebno je 3 sekunde za transformaciju u Vuka\n\nBrzina kretanja: 60\n\nPritisnite [input=transformationability1] za Udarac ugrizom: Skočite naprijed i ugrizite, nanoseći §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] štetu u bliskoj borbi§0\n\nPritisnite [input=transformationability2] za Lajanje: Prisilite obližnje neprijatelje da usredotoče svoje napade na vas 2 sekunde\n\nDržite [input=trinketability] za Sprint
@@ -534,11 +453,16 @@ classlevelseparation=- Razina klase <level> -
 inuse=U upotrebi
 
 upcomingclass=§6Nadolazeća klasa\n§9Ova klasa je trenutno u razvoju\ni bit će dostupna u budućem ažuriranju
+disabledclass=Ova klasa je onemogućena u ovom svijetu
 
 addcolumn=Dodaj stupac
 removecolumn=Ukloni stupac
 
 rate=Ocijenite RPG Mod!
+
+seeallclasses=Vidi sve unose klasa
+
+clicktoopen=[input=mouse1] za otvaranje
 
 
 [controls]
@@ -551,3 +475,35 @@ activeskillslot5=Utor za aktivnu vještinu 5
 activeskillslot6=Utor za aktivnu vještinu 6
 transformationability1=Sposobnost transformacije 1
 transformationability2=Sposobnost transformacije 2
+
+
+[settingsui]
+// Experience
+experience_section=Iskustvo
+experience_text=Te su postavke postavke poslužitelja pa se ne mogu mijenjati nakon pridruživanja svijetu. U slučaju igre za više igrača, vaše će se vrijednosti zanemariti i preuzet će se vrijednosti poslužitelja/domaćina.
+
+experienceMod=% Mod iskustva
+experienceMod_text=Mijenja količinu iskustva stečenog pobjeđivanjem neprijatelja
+
+firstKillBonus=% Bonus za prvo ubojstvo
+firstKillBonus_text=Povećanje iskustva nakon prvog poraza neprijatelja (ne zbraja se, množi se s drugim modifikatorima)
+
+bossKillBonus=% Bonus za ubojstvo šefa
+bossKillBonus_text=Povećanje iskustva nakon poraza šefa (ne zbraja se, množi se s drugim modifikatorima)
+
+startingExperience=Početno iskustvo
+startingExperience_text=Iskustvo s kojim će novi igrači započeti
+
+firstExperienceReq=Početni zahtjev
+experienceReqInc=Povećanje zahtjeva
+squareExperienceReqInc=Kvadratno povećanje zahtjeva
+cubeExperienceReqInc=Kubično povećanje zahtjeva
+experience_calc=Zahtjev za iskustvom za dostizanje sljedeće razine je:\n\nPočetni zahtjev + Povećanje zahtjeva * razina +\n+ Kvadratno povećanje zahtjeva * (razina ^ 2) +\n+ Kubično povećanje zahtjeva * (razina ^ 3)\n\nGdje je 'razina' vaša stvarna razina
+
+// Classes
+classes_section=Klase
+
+multiClass=Više klasa
+multiClass_text=Ograničite koliko različitih klasa možete imati istovremeno. Postavite na 0 za bez ograničenja
+
+classes_enabled=Možete onemogućiti klase koje ne želite da budu dostupne

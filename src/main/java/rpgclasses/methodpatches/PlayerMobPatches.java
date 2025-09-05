@@ -124,6 +124,7 @@ public class PlayerMobPatches {
 
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob player, @Advice.Argument(0) MainGame mainGame, @Advice.Argument(1) boolean isGameTick, @Advice.Argument(2) GameCamera camera) {
+
             if (RPGControls.TRANSFORMATION_ABILITY_1.isDown()) {
                 if (player != null) {
                     Mob mount = player.getMount();

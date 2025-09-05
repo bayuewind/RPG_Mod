@@ -6,7 +6,6 @@ import aphorea.utils.area.AphAreaList;
 import necesse.engine.Settings;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.input.Control;
-import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.Packet;
 import necesse.engine.network.packet.PacketLevelEvent;
 import necesse.engine.registries.BuffRegistry;
@@ -22,7 +21,6 @@ import necesse.entity.levelEvent.LevelEvent;
 import necesse.entity.levelEvent.mobAbilityLevelEvent.MobDashLevelEvent;
 import necesse.entity.mobs.*;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.StaminaBuff;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
@@ -128,6 +126,7 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
             float dirX = dx / length;
             float dirY = dy / length;
 
+            int skillLevel = getActualSkillLevel();
             LevelEvent event = new WolfChargeLevelEvent(this, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 100, 200, new GameDamage(DamageTypeRegistry.MELEE, 2 * playerData.getLevel() + playerData.getStrength(player) * skillLevel + playerData.getSpeed(player) * skillLevel));
             player.getLevel().entityManager.addLevelEventHidden(event);
             player.getServer().network.sendToClientsWithEntity(new PacketLevelEvent(event), event);

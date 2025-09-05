@@ -42,7 +42,7 @@ depleted=Depleted
 
 
 [buff]
-overlevelclassbuff=Overlevel Class
+overlevelbuff=Over Level
 markedbuff=Marked
 darkcursebuff=Dark Curse
 magicpoisonbuff=Magic Poison
@@ -51,8 +51,8 @@ holydamagedealtbuff=Holy Damage Dealt
 
 
 [buffdesc]
-overlevelclassbuff1=§9One of your classes exceeds some points limit
-overlevelclassbuff2=§6You won't be able to proceed until it's fixed
+overlevelbuff1=§9One of your classes or attributes exceeds some points limit
+overlevelbuff2=§6You won't be able to proceed until it's fixed
 darkcursebuff1=+25% Incoming Damage
 darkcursebuff2=All damage also reduces Max Health
 
@@ -544,11 +544,16 @@ classlevelseparation=- Class level <level> -
 inuse=In Use
 
 upcomingclass=§6Upcoming Class\n§9This class is currently in development\nand will be available in a future update
+disabledclass=This class is disabled in this world
 
 addcolumn=Add column
 removecolumn=Remove column
 
 rate=Rate RPG Mod!
+
+seeallclasses=See all class entries
+
+clicktoopen=[input=mouse1] to open
 
 
 [controls]
@@ -561,3 +566,35 @@ activeskillslot5=Active Skill Slot 5
 activeskillslot6=Active Skill Slot 6
 transformationability1=Transformation Ability 1
 transformationability2=Transformation Ability 2
+
+
+[settingsui]
+// Experience
+experience_section=Experience
+experience_text=Those settings are server settings so they cannot be modified after joining a world. In case of multiplayer, Your values will be ignored and the server/host ones will be taken
+
+experienceMod=% Experience Mod
+experienceMod_text=Modifies the amount of experience gained from defeating mobs
+
+firstKillBonus=% First Kill Bonus
+firstKillBonus_text=An experience boost upon defeating a mob for the first time (not added, multiplied by other modifiers)
+
+bossKillBonus=% Boss Kill Bonus
+bossKillBonus_text=An experience boost upon defeating a boss (not added, multiplied by other modifiers)
+
+startingExperience=Starting Experience
+startingExperience_text=The experience new players will start with
+
+firstExperienceReq=Req Initial
+experienceReqInc=Req Increment
+squareExperienceReqInc=Req Square Increment
+cubeExperienceReqInc=Req Cube Increment
+experience_calc=The experience requirement to reach the next level is:\n\nReq Initial + Req Increment * level +\n+ Req Square Increment * (level ^ 2) +\n+ Req Cube Increment * (level ^ 3)\n\nWhere 'level' is your actual level
+
+// Classes
+classes_section=Classes
+
+multiClass=Multi Class
+multiClass_text=Limit how many different classes can be held at the same time. Set it to 0 for no limit
+
+classes_enabled=You can disable the classes you don't want to be available

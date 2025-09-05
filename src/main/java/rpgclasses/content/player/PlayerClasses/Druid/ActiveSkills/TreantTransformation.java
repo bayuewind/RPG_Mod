@@ -87,6 +87,7 @@ public class TreantTransformation extends SimpleTranformationActiveSkill {
         @Override
         public List<ModifierValue<?>> getRiderModifiers() {
             List<ModifierValue<?>> modifiers = super.getRiderModifiers();
+            int skillLevel = getActualSkillLevel();
             modifiers.add(new ModifierValue<>(BuffModifiers.INCOMING_DAMAGE_MOD, 0.5F - 0.05F * skillLevel));
             modifiers.add(new ModifierValue<>(BuffModifiers.TARGET_RANGE, -1F));
             return modifiers;
@@ -160,6 +161,7 @@ public class TreantTransformation extends SimpleTranformationActiveSkill {
             float newY = player.y + (float) Math.sin(angle) * distance;
 
             PlayerData playerData = PlayerDataList.getPlayerData(player);
+            int skillLevel = getActualSkillLevel();
             SeedBulletProjectile projectile = new SeedBulletProjectile(player.x, player.y, newX, newY, 150, 400, new GameDamage(DamageTypeRegistry.RANGED, 0.5F * playerData.getLevel() + playerData.getStrength(player) * skillLevel), 10, player);
             projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
             Item item = ItemRegistry.getItem(GameRandom.globalRandom.getOneOf(new ArrayList<>(SeedGunProjectileToolItem.SEED_AMMO_TYPES)));

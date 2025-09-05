@@ -41,7 +41,7 @@ depleted=Tükenmiş
 
 
 [buff]
-overlevelclassbuff=Aşırı Seviye Sınıfı
+overlevelbuff=Seviye Aşıldı
 markedbuff=İşaretli
 darkcursebuff=Karanlık Lanet
 magicpoisonbuff=Sihirli Zehir
@@ -50,8 +50,8 @@ holydamagedealtbuff=Verilen Kutsal Hasar
 
 
 [buffdesc]
-overlevelclassbuff1=§9Sınıflarınızdan biri puan sınırını aşıyor
-overlevelclassbuff2=§6Düzeltilene kadar devam edemezsiniz
+overlevelbuff1=§9Sınıflarınızdan veya niteliklerinizden biri puan sınırını aşıyor
+overlevelbuff2=§6Düzeltilene kadar devam edemezsiniz
 darkcursebuff1=+25% Gelen Hasar
 darkcursebuff2=Tüm hasarlar aynı zamanda Maksimum Canı da azaltır
 
@@ -313,8 +313,8 @@ fury=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızı
 recovery=Sonraki 10 saniye boyunca Savaş Canı Yenilenmesini büyük ölçüde artırır, süre boyunca §a[[20 + <endurance> x <skilllevel>]] can§0 yeniler
 provocation=Sonraki §a[[2 x <skilllevel>]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
 berserkercharge=Kısa bir mesafe ileri atılarak, geçilen tüm düşmanlara §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Hasar§0 verir\n%50 Dayanıklılık tüketir
-groundslam=§i[[5 x <strength>]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x <skilllevel>]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
-grounddestruction=§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
+groundslam=Alan saldırısı, §i[[5 x <strength>]] Yakın Dövüş Hasarı§0 verir ve §a[[1 x <skilllevel>]] saniye§0 boyunca §9Sersemletir§0
+grounddestruction=Alan saldırısı, §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 verir ve 2 saniye boyunca §9Sersemletir§0
 parry=0,5 saniye boyunca yenilmez olun ve alınan orijinal Hasarın %500'ünü iade edin\n%100 Dayanıklılık tüketir
 battlecry=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerinizin Tüm Hasarını ve Hareket Hızını §a[[10 x <skilllevel>]]%§0 artırın
 
@@ -458,7 +458,7 @@ intelligencecopperring=Zekâ Bakır Yüzük
 intelligencegoldring=Zekâ Altın Yüzük
 intelligenceironring=Zekâ Demir Yüzük
 
-gracedwoodring=Nezaket Ağaç Yüzük
+gracewoodring=Nezaket Ağaç Yüzük
 gracecopperring=Nezaket Bakır Yüzük
 graceironring=Nezaket Demir Yüzük
 gracegoldring=Nezaket Altın Yüzük
@@ -534,11 +534,16 @@ classlevelseparation=- Sınıf seviyesi <seviye> -
 inuse=Kullanımda
 
 upcomingclass=§6Yakında Sınıf\n§9Bu sınıf şu anda geliştirme aşamasındadır\nve gelecekteki bir güncellemede mevcut olacaktır
+disabledclass=Bu sınıf bu dünyada devre dışı bırakıldı
 
 addcolumn=Sütun ekle
 removecolumn=Sütun kaldır
 
 rate=RPG Modunu Değerlendir!
+
+seeallclasses=Tüm sınıf girişlerini gör
+
+clicktoopen=açmak için [input=mouse1]
 
 
 [controls]
@@ -549,3 +554,37 @@ activeskillslot3=Aktif Beceri Yuvası 3
 activeskillslot4=Aktif Beceri Yuvası 4
 activeskillslot5=Aktif Beceri Yuvası 5
 activeskillslot6=Aktif Beceri Yuvası 6
+transformationability1=Dönüşüm Yeteneği 1
+transformationability2=Dönüşüm Yeteneği 2
+
+
+[settingsui]
+// Experience
+experience_section=Deneyim
+experience_text=Bu ayarlar sunucu ayarlarıdır, bu nedenle bir dünyaya katıldıktan sonra değiştirilemezler. Çok oyunculu durumda, değerleriniz yok sayılır ve sunucu/ana bilgisayar değerleri alınır.
+
+experienceMod=% Deneyim Modu
+experienceMod_text=Canavarları yenerek kazanılan deneyim miktarını değiştirir
+
+firstKillBonus=% İlk Öldürme Bonusu
+firstKillBonus_text=Bir canavarı ilk kez yendiğinizde deneyim artışı (eklenmez, diğer değiştiricilerle çarpılır)
+
+bossKillBonus=% Patron Öldürme Bonusu
+bossKillBonus_text=Bir patronu yendiğinizde deneyim artışı (eklenmez, diğer değiştiricilerle çarpılır)
+
+startingExperience=Başlangıç Deneyimi
+startingExperience_text=Yeni oyuncuların başlayacağı deneyim
+
+firstExperienceReq=Gereken Başlangıç
+experienceReqInc=Gereken Artış
+squareExperienceReqInc=Gereken Karesel Artış
+cubeExperienceReqInc=Gereken Kübik Artış
+experience_calc=Bir sonraki seviyeye ulaşmak için gereken deneyim:\n\nGereken Başlangıç + Gereken Artış * seviye +\n+ Gereken Karesel Artış * (seviye ^ 2) +\n+ Gereken Kübik Artış * (seviye ^ 3)\n\nBurada 'seviye' mevcut seviyenizdir
+
+// Classes
+classes_section=Sınıflar
+
+multiClass=Çoklu Sınıf
+multiClass_text=Aynı anda kaç farklı sınıfın tutulabileceğini sınırlayın. Sınır olmaması için 0'a ayarlayın
+
+classes_enabled=Kullanılabilir olmasını istemediğiniz sınıfları devre dışı bırakabilirsiniz

@@ -41,7 +41,7 @@ depleted=枯竭
 
 
 [buff]
-overlevelclassbuff=超等级职业
+overlevelbuff=超等级
 markedbuff=已标记
 darkcursebuff=黑暗诅咒
 magicpoisonbuff=魔法毒药
@@ -50,8 +50,8 @@ holydamagedealtbuff=造成神圣伤害
 
 
 [buffdesc]
-overlevelclassbuff1=§9你的一个职业超过了点数限制
-overlevelclassbuff2=§6在修复之前你将无法继续
+overlevelbuff1=§9你的一个职业或属性超过了点数限制
+overlevelbuff2=§6在修复之前你将无法继续
 darkcursebuff1=+25% 受到伤害
 darkcursebuff2=所有伤害也会降低最大生命值
 
@@ -533,11 +533,16 @@ classlevelseparation=- 职业等级 <level> -
 inuse=使用中
 
 upcomingclass=§6即将推出的职业\n§9此职业目前正在开发中\n并将在未来的更新中提供
+disabledclass=该职业在此世界中被禁用
 
 addcolumn=添加列
 removecolumn=删除列
 
 rate=评价 RPG 模组！
+
+seeallclasses=查看所有职业条目
+
+clicktoopen=[input=mouse1] 打开
 
 
 [controls]
@@ -548,3 +553,37 @@ activeskillslot3=主动技能槽 3
 activeskillslot4=主动技能槽 4
 activeskillslot5=主动技能槽 5
 activeskillslot6=主动技能槽 6
+transformationability1=变身能力 1
+transformationability2=变身能力 2
+
+
+[settingsui]
+// Experience
+experience_section=经验
+experience_text=这些设置是服务器设置，因此加入世界后无法修改。在多人游戏中，您的值将被忽略，而将使用服务器/主机的设置。
+
+experienceMod=% 经验模组
+experienceMod_text=修改击败生物获得的经验值
+
+firstKillBonus=% 首次击杀奖励
+firstKillBonus_text=首次击败生物时的经验加成（不相加，与其他修正值相乘）
+
+bossKillBonus=% Boss击杀奖励
+bossKillBonus_text=击败首领时的经验加成（不相加，与其他修正值相乘）
+
+startingExperience=初始经验
+startingExperience_text=新玩家开始时的经验值
+
+firstExperienceReq=初始要求
+experienceReqInc=要求增量
+squareExperienceReqInc=要求平方增量
+cubeExperienceReqInc=要求立方增量
+experience_calc=达到下一级别所需的经验值为：\n\n初始要求 + 要求增量 * 等级 +\n+ 要求平方增量 * (等级 ^ 2) +\n+ 要求立方增量 * (等级 ^ 3)\n\n其中“等级”是您的当前等级
+
+// Classes
+classes_section=职业
+
+multiClass=多职业
+multiClass_text=限制可以同时拥有的不同职业的数量。设置为 0 表示没有限制
+
+classes_enabled=您可以禁用不希望可用的职业

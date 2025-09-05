@@ -8,8 +8,8 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 
-public class OverlevelClassBuff extends PassiveBuff {
-    public OverlevelClassBuff() {
+public class OverLevelBuff extends PassiveBuff {
+    public OverLevelBuff() {
         this.isVisible = true;
         this.isImportant = true;
     }
@@ -31,8 +31,8 @@ public class OverlevelClassBuff extends PassiveBuff {
     @Override
     public ListGameTooltips getTooltip(ActiveBuff ab, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltip(ab, blackboard);
-        tooltips.add(Localization.translate("buffdesc", "overlevelclassbuff1"));
-        tooltips.add(Localization.translate("buffdesc", "overlevelclassbuff2"));
+        tooltips.add(Localization.translate("buffdesc", "foverlevelbuff1"));
+        tooltips.add(Localization.translate("buffdesc", "overlevelbuff2"));
         return tooltips;
     }
 }

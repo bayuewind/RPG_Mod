@@ -26,6 +26,7 @@ import rpgclasses.data.PlayerDataList;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -103,8 +104,10 @@ public class ClassEntry extends MenuEntry {
         int passiveSeparations = 0;
 
         FormContentBox passives = entryForm.addComponent(new FormContentBox(startPassivesContainerX, 30, passivesContainerWidth, entryForm.getHeight() - 32 - 30 - 4));
+
+        List<Passive> passiveOrderedList = playerClass.passivesList.getDisplayOrderedList();
         for (int i = 0; i < numPassiveItems; i++) {
-            Passive passive = playerClass.passivesList.get(i);
+            Passive passive = passiveOrderedList.get(i);
 
             boolean newSeparation = false;
             if (i == 0) {
@@ -132,7 +135,7 @@ public class ClassEntry extends MenuEntry {
                 passiveSeparations++;
             }
 
-            int finalI = i;
+            int passiveID = passive.id;
             SkillComponent passiveSkillComponent = passives.addComponent(new SkillComponent(
                     6 + actualColumn * (SkillComponent.width + 2),
                     yPosition + passiveSeparations * 24,
@@ -145,7 +148,7 @@ public class ClassEntry extends MenuEntry {
             passiveSkillComponent.setOnAdd(
                     c -> {
                         int currentUsedPassives = mutableUsedPassivePoints.incrementAndGet();
-                        mutablePassiveLevels[finalI]++;
+                        mutablePassiveLevels[passiveID]++;
                         passiveSkillComponent.addSkillLevel(1);
 
                         updateForm(
@@ -158,7 +161,7 @@ public class ClassEntry extends MenuEntry {
             passiveSkillComponent.setOnRemove(
                     c -> {
                         int currentUsedPassives = mutableUsedPassivePoints.decrementAndGet();
-                        mutablePassiveLevels[finalI]--;
+                        mutablePassiveLevels[passiveID]--;
                         passiveSkillComponent.addSkillLevel(-1);
 
                         updateForm(
@@ -186,8 +189,10 @@ public class ClassEntry extends MenuEntry {
         int activeSeparations = 0;
 
         FormContentBox activeSkills = entryForm.addComponent(new FormContentBox(0, activeSkillsStartY, entryForm.getWidth() - 16 - 4 - passivesContainerWidth, entryForm.getHeight() - 32 - 4 - activeSkillsStartY));
+
+        List<ActiveSkill> activeOrderedList = playerClass.activeSkillsList.getDisplayOrderedList();
         for (int i = 0; i < numActiveItems; i++) {
-            ActiveSkill activeSkill = playerClass.activeSkillsList.get(i);
+            ActiveSkill activeSkill = activeOrderedList.get(i);
 
             int requiredLevel = activeSkill.requiredClassLevel;
             if (i != 0 && (activeSkill.newRow || lastActiveLevel != requiredLevel)) {
@@ -207,12 +212,12 @@ public class ClassEntry extends MenuEntry {
                 activeSeparations++;
             }
 
-            int finalI = i;
+            int activeSkillID = activeSkill.id;
             SkillComponent activeSkillComponent = activeSkills.addComponent(new SkillComponent(6 + (actualColumn - 1) * (SkillComponent.width + 2), yPosition + activeSeparations * 24, activeSkill, player, playerClassData, activeSkillLevels[i], mutableActiveSkillLevels));
             activeSkillComponent.setOnAdd(
                     c -> {
                         int currentUsedActiveSkills = mutableUsedActiveSkillsPoints.incrementAndGet();
-                        mutableActiveSkillLevels[finalI]++;
+                        mutableActiveSkillLevels[activeSkillID]++;
                         activeSkillComponent.addSkillLevel(1);
 
                         updateForm(
@@ -225,7 +230,7 @@ public class ClassEntry extends MenuEntry {
             activeSkillComponent.setOnRemove(
                     c -> {
                         int currentUsedActiveSkills = mutableUsedActiveSkillsPoints.decrementAndGet();
-                        mutableActiveSkillLevels[finalI]--;
+                        mutableActiveSkillLevels[activeSkillID]--;
                         activeSkillComponent.addSkillLevel(-1);
 
                         updateForm(

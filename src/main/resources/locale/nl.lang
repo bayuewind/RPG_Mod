@@ -41,7 +41,7 @@ depleted=Uitgeput
 
 
 [buff]
-overlevelclassbuff=Overlevel klasse
+overlevelbuff=Overniveau
 markedbuff=Gemarkeerd
 darkcursebuff=Donkere vloek
 magicpoisonbuff=Magisch Gif
@@ -50,8 +50,8 @@ holydamagedealtbuff=Heilige schade toegebracht
 
 
 [buffdesc]
-overlevelclassbuff1=§9Een van je klassen overschrijdt een puntenlimiet
-overlevelclassbuff2=§6Je kunt niet doorgaan totdat het is opgelost
+overlevelbuff1=§9Een van je klassen of attributen overschrijdt een puntenlimiet
+overlevelbuff2=§6Je kunt niet doorgaan totdat het is opgelost
 darkcursebuff1=+25% inkomende schade
 darkcursebuff2=Alle schade vermindert ook de maximale gezondheid
 
@@ -540,11 +540,16 @@ classlevelseparation=- Klasseniveau <level> -
 inuse=In gebruik
 
 upcomingclass=§6Aankomende klasse\n§9Deze klasse is momenteel in ontwikkeling\nen zal beschikbaar zijn in een toekomstige update
+disabledclass=Deze klasse is uitgeschakeld in deze wereld
 
 addcolumn=Kolom toevoegen
 removecolumn=Kolom verwijderen
 
 rate=Beoordeel RPG Mod!
+
+seeallclasses=Bekijk alle klassenvermeldingen
+
+clicktoopen=[input=mouse1] om te openen
 
 
 [controls]
@@ -557,3 +562,35 @@ activeskillslot5=Actief vaardigheidsslot 5
 activeskillslot6=Actief vaardigheidsslot 6
 transformationability1=Transformatie Vaardigheid 1
 transformationability2=Transformatie Vaardigheid 2
+
+
+[settingsui]
+// Experience
+experience_section=Ervaring
+experience_text=Deze instellingen zijn serverinstellingen en kunnen dus niet worden gewijzigd na het toetreden tot een wereld. In geval van multiplayer worden uw waarden genegeerd en worden die van de server/host overgenomen.
+
+experienceMod=% Ervaringsmod
+experienceMod_text=Wijzigt de hoeveelheid ervaring die wordt opgedaan door het verslaan van mobs
+
+firstKillBonus=% Eerste moordbonus
+firstKillBonus_text=Een ervaringsboost bij het voor de eerste keer verslaan van een mob (niet opgeteld, vermenigvuldigd met andere modifiers)
+
+bossKillBonus=% Baasmoordbonus
+bossKillBonus_text=Een ervaringsboost bij het verslaan van een baas (niet opgeteld, vermenigvuldigd met andere modifiers)
+
+startingExperience=Startervaring
+startingExperience_text=De ervaring waarmee nieuwe spelers beginnen
+
+firstExperienceReq=Vereiste Initieel
+experienceReqInc=Vereiste Toename
+squareExperienceReqInc=Vereiste Kwadratische Toename
+cubeExperienceReqInc=Vereiste Kubieke Toename
+experience_calc=De ervaringsvereiste om het volgende niveau te bereiken is:\n\nVereiste Initieel + Vereiste Toename * niveau +\n+ Vereiste Kwadratische Toename * (niveau ^ 2) +\n+ Vereiste Kubieke Toename * (niveau ^ 3)\n\nWaar 'niveau' je huidige niveau is
+
+// Classes
+classes_section=Klassen
+
+multiClass=Multi-klasse
+multiClass_text=Beperk hoeveel verschillende klassen tegelijkertijd kunnen worden gehouden. Stel in op 0 voor geen limiet
+
+classes_enabled=U kunt de klassen uitschakelen die u niet beschikbaar wilt hebben

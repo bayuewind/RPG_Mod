@@ -23,7 +23,7 @@ public class WarriorPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<ActiveSkill> getActiveSkillsList() {
+    protected SkillsList<ActiveSkill> initActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
         String groundFamily = "warrior_ground";
@@ -64,7 +64,7 @@ public class WarriorPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<Passive> getPassivesList() {
+    protected SkillsList<Passive> initPassivesList() {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         skillsList.addSkill(new BasicPassive(

@@ -1,7 +1,6 @@
 package rpgclasses.content.player.SkillsAndAttributes.Passives;
 
 import necesse.engine.localization.Localization;
-import necesse.engine.modifiers.Modifier;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.ModifierBuff;

@@ -41,7 +41,7 @@ depleted=Vyčerpaný
 
 
 [buff]
-overlevelclassbuff=Třída s nadúrovní
+overlevelbuff=Přes úroveň
 markedbuff=Označený
 darkcursebuff=Temná kletba
 magicpoisonbuff=Magický jed
@@ -50,8 +50,8 @@ holydamagedealtbuff=Způsobené svaté poškození
 
 
 [buffdesc]
-overlevelclassbuff1=§9Jedna z vašich tříd překračuje limit bodů
-overlevelclassbuff2=§6Nebudete moci pokračovat, dokud to nebude opraveno
+overlevelbuff1=§9Jedna z vašich tříd nebo atributů překračuje limit bodů
+overlevelbuff2=§6Nebudete moci pokračovat, dokud to nebude opraveno
 darkcursebuff1=+25% příchozího poškození
 darkcursebuff2=Všechno poškození také snižuje maximální zdraví
 
@@ -535,11 +535,16 @@ classlevelseparation=- Úroveň třídy <level> -
 inuse=Používá se
 
 upcomingclass=§6Připravovaná třída\n§9Tato třída je v současné době ve vývoji\na bude k dispozici v budoucí aktualizaci
+disabledclass=Tato třída je v tomto světě zakázána
 
 addcolumn=Přidat sloupec
 removecolumn=Odebrat sloupec
 
 rate=Ohodnoťte RPG Mod!
+
+seeallclasses=Zobrazit všechny položky třídy
+
+clicktoopen=[input=mouse1] pro otevření
 
 
 [controls]
@@ -552,3 +557,35 @@ activeskillslot5=Slot aktivní dovednosti 5
 activeskillslot6=Slot aktivní dovednosti 6
 transformationability1=Transformační schopnost 1
 transformationability2=Transformační schopnost 2
+
+
+[settingsui]
+// Experience
+experience_section=Zkušenosti
+experience_text=Tato nastavení jsou nastavení serveru, takže je nelze po připojení ke světu upravovat. V případě hry pro více hráčů budou vaše hodnoty ignorovány a budou převzaty hodnoty serveru/hostitele
+
+experienceMod=% Modifikátor zkušeností
+experienceMod_text=Upravuje množství zkušeností získaných poražením nepřátel
+
+firstKillBonus=% Bonus za první zabití
+firstKillBonus_text=Zvýšení zkušeností po prvním poražení nepřítele (nepřičítá se, násobí se ostatními modifikátory)
+
+bossKillBonus=% Bonus za zabití bosse
+bossKillBonus_text=Zvýšení zkušeností po poražení bosse (nepřičítá se, násobí se ostatními modifikátory)
+
+startingExperience=Počáteční zkušenosti
+startingExperience_text=Zkušenosti, se kterými začnou noví hráči
+
+firstExperienceReq=Počáteční požadavek
+experienceReqInc=Přírůstek požadavku
+squareExperienceReqInc=Čtvercový přírůstek požadavku
+cubeExperienceReqInc=Kubický přírůstek požadavku
+experience_calc=Požadavek na zkušenosti pro dosažení další úrovně je:\n\nPočáteční požadavek + Přírůstek požadavku * úroveň +\n+ Čtvercový přírůstek požadavku * (úroveň ^ 2) +\n+ Kubický přírůstek požadavku * (úroveň ^ 3)\n\nKde 'úroveň' je vaše aktuální úroveň
+
+// Classes
+classes_section=Třídy
+
+multiClass=Více tříd
+multiClass_text=Omezte, kolik různých tříd lze držet současně. Nastavte na 0 pro žádné omezení
+
+classes_enabled=Můžete zakázat třídy, které nechcete mít k dispozici

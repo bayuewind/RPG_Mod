@@ -23,7 +23,7 @@ public class WizardPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<ActiveSkill> getActiveSkillsList() {
+    protected SkillsList<ActiveSkill> initActiveSkillsList() {
         SkillsList<ActiveSkill> skillsList = new SkillsList<>();
 
         int requiredLevel = 1;
@@ -58,7 +58,7 @@ public class WizardPlayerClass extends PlayerClass {
     }
 
     @Override
-    public SkillsList<Passive> getPassivesList() {
+    protected SkillsList<Passive> initPassivesList() {
         SkillsList<Passive> skillsList = new SkillsList<>();
 
         String shieldFamily = "wizard_shield";

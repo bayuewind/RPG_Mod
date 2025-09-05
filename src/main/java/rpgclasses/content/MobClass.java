@@ -6,9 +6,9 @@ import necesse.engine.registries.BuffRegistry;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import rpgclasses.RPGConfig;
 import rpgclasses.buffs.MobClasses.*;
 import rpgclasses.data.MobData;
+import rpgclasses.settings.RPGSettings;
 
 import java.util.*;
 
@@ -23,7 +23,7 @@ public class MobClass {
     public static List<MobClass> mythicClasses = new ArrayList<>();
 
     public static void registerCore() {
-        registerBossClass(new MobClass("boss", "0", 0.04F, RPGConfig.getBossKillBonus(), BossMobClassBuff.class));
+        registerBossClass(new MobClass("boss", "0", 0.04F, RPGSettings.bossKillBonus(), BossMobClassBuff.class));
         registerMobClass(basicClasses, new MobClass("warrior", "#993333", 0.02F, WarriorMobClassBuff.class));
         registerMobClass(basicClasses, new MobClass("tank", "#666666", 0.05F, TankMobClassBuff.class));
         registerMobClass(basicClasses, new MobClass("runner", "#339966", 0.01F, RunnerMobClassBuff.class));

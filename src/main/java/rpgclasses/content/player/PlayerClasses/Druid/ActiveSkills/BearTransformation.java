@@ -145,6 +145,8 @@ public class BearTransformation extends SimpleTranformationActiveSkill {
 
             PlayerData playerData = PlayerDataList.getPlayerData(player);
 
+            int skillLevel = getActualSkillLevel();
+
             AphAreaList areaList = new AphAreaList(
                     new AphArea(120, colorArea)
                             .setDebuffArea(500 * skillLevel, AphBuffs.STUN.getStringID())

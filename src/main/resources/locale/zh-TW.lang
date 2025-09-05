@@ -13,15 +13,15 @@ graceattrflat=<mod> 優雅屬性
 dodgechance=<mod>% 閃避機率
 rangedweaponszoom=<mod> 遠程武器變焦
 rangedweaponsrange=<mod>% 遠程武器射程
-mobdetectionrange=<mod> 生物探測範圍
+mobdetectionrange=<mod> 生物偵測範圍
 focusdamage=<mod>% 專注傷害
 focuschance=<mod>% 專注機率
 ignitedamage=<mod>% 點燃傷害
 
 // Holy Damage
 holydamage=<mod>%神聖傷害
-holycritchance=<mod>%神聖暴擊率
-holycritdamage=<mod>%神聖暴擊傷害
+holycritchance=<mod>%神聖爆擊率
+holycritdamage=<mod>%神聖爆擊傷害
 holyeffect=<mod>%神聖效果
 holyabilityspeed=<mod>%神聖技能速度
 
@@ -41,7 +41,7 @@ depleted=枯竭
 
 
 [buff]
-overlevelclassbuff=超等級職業
+overlevelbuff=超過等級
 markedbuff=已標記
 darkcursebuff=黑暗詛咒
 magicpoisonbuff=魔法毒藥
@@ -50,8 +50,8 @@ holydamagedealtbuff=造成神聖傷害
 
 
 [buffdesc]
-overlevelclassbuff1=§9你的一個職業超過了點數限制
-overlevelclassbuff2=§6在修復之前你將無法繼續
+overlevelbuff1=§9您的一個職業或屬性超過了點數限制
+overlevelbuff2=§6在修復之前您將無法繼續
 darkcursebuff1=+25% 受到傷害
 darkcursebuff2=所有傷害也會降低最大生命值
 
@@ -93,6 +93,7 @@ strength=力量
 speed=速度
 intelligence=智力
 grace=優雅
+
 
 [classes]
 warrior=戰士
@@ -192,7 +193,7 @@ wolfcompanion=狼夥伴會攻擊被標記的敵人，造成 §i[[<playerlevel> +
 
 // 巫師
 manapower=每級提供：\n\n每 10% 未使用的法力，魔法傷害 +1%
-flamingsteps=當佩戴活動飾品或變身時奔跑，你​​會在地上留下火焰\n火焰會點燃敵人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法傷害§0
+flamingsteps=當佩戴活動飾品或變身時奔跑，你會在地上留下火焰\n火焰會點燃敵人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法傷害§0
 stormbound=每 §a[[9 - 0.5 x <skilllevel>]] 秒§0，一道閃電會擊中你視野內的一個隨機敵人\n造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法傷害§0 並眩暈 1 秒
 arcaneshield=一個可以抵擋一次攻擊的護盾\n護盾將在使用後 §a[[20 - <skilllevel>]] 秒§0 後恢復
 fireshield=一個可以抵擋一次攻擊的護盾\n使用時，你會釋放一次爆炸，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0\n並點燃生物，在 5 秒內每秒重複其原始傷害的 20%\n護盾將在使用後 26 秒後恢復
@@ -204,7 +205,7 @@ darkmagic=召喚師傷害加成會影響魔法傷害§a[[5 x <skilllevel>]]%
 necroticarmy=被擊敗的敵對敵人將變成§b骷髏§0，其生命值和傷害為§a-[[100 - 3 x <skilllevel>]]%§0
 darksummons=對中毒的敵人造成§a+[[8 x <skilllevel>]]%§0的召喚師傷害
 lifeleech=將造成的召喚師傷害的§a[[0.1 x <skilllevel>]]%§0恢復為生命值
-necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，並在10秒內每秒對它們造成20%的傷害
+necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，并在10秒內每秒對它們造成20%的傷害
 endlesslegion=此技能每升4級，你將獲得+1最大召喚物
 lichborn=當你死亡時，如果你還不是一個§b巫妖§0，你會存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個§b巫妖§0（一個骷髏）
 
@@ -214,12 +215,12 @@ divinejudge=魔法傷害加成會影響神聖傷害§a[[5 x <skilllevel>]]%§0
 empoweredhealing=當你魔法治療自己或盟友時，他們的傷害會在3秒內增加§a[[5 x <skilllevel>]]%§0
 sanctifiedmind=魔法治療還會恢復相當於治療量§a[[5 x <skilllevel>]]%§0的法力值
 sanctifiedarmor=魔法治療還會恢復相當於治療量§a[[2 x <skilllevel>]]%§0的韌性
-radiantexpansion=當你魔法治療自己或盟友時，對被治療目標附近的敵人造成相當於治療量§a[[5 x <skilllevel>]]%§0的神聖傷害
+radiantexpansion=当你魔法治疗自己或盟友时，对被治疗目标附近的敌人造成相当于治疗量§a[[5 x <skilllevel>]]%§0的神圣伤害
 
 // Druid
 naturesfavor=站在草地上時，每秒獲得 +[[<skilllevel>]] 生命恢復
 primalburst=變身後的前 5 秒內，傷害和速度提高 [[6 x <skillevel>]]%
-phoenixspirit=至少需要 4 點才能生效：\n\n如果你在變身狀態下使用主動技能死亡，你將以 §a[4 + 8 x <skilllevel>]]%§0 的生命值存活，並且該技能將進入 1 小時冷卻\n\n如果你已經有至少 §a[[0.25 x <skilllevel> ↓]] 個變身技能§0 冷却時間超過 1 分鐘，則不會觸發
+phoenixspirit=至少需要 4 點才能生效：\n\n如果你在變身狀態下使用主動技能死亡，你將以 §a[4 + 8 x <skilllevel>]]%§0 的生命值存活，並且該技能將進入 1 小時冷卻\n\n如果你已經有至少 §a[[0.25 x <skilllevel> ↓]] 個變身技能§0 冷卻時間超過 1 分鐘，則不會觸發
 
 
 [activeskills]
@@ -308,17 +309,17 @@ treanttransformation=樹人變身
 [activeskillsdesc]
 
 // 戰士
-fury=在接下来的 6 秒内，你的近战伤害和攻击速度提高 §a[[20 x <skilllevel>]]%
-recovery=在接下来的 10 秒内，大幅提升战斗生命恢复，在持续时间内恢复 §a[[20 x <endurance> x <skilllevel>]] 生命值§0
-provocation=在接下来的 §a[[2 x <skilllevel>]] 秒内§0，强迫附近的敌人将攻击集中在你身上
-berserkercharge=向前冲一小段距离，对所有经过的敌人造成 §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] 伤害§0\n消耗 50% 耐力
-groundslam=区域攻击，造成 §i[[5 x <strength>]] 近战伤害§0 并 §9眩晕§0 §a[[1 x <skilllevel>]] 秒§0
-grounddestruction=区域攻击，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 近战伤害§0 并 §9眩晕§0 2 秒
-parry=在 0.5 秒内变得无敌，并返还 500% 的原始伤害\n消耗 100% 耐力
-battlecry=在接下来的 10 秒内，你和附近盟友的所有伤害和移动速度提高 §a[[10 x <skilllevel>]]%
+fury=在接下來的 6 秒內，你的近戰傷害和攻擊速度提高 §a[[20 x <skilllevel>]]%
+recovery=在接下來的 10 秒內，大幅提升戰鬥生命恢復，在持續時間內恢復 §a[[20 + <endurance> x <skilllevel>]] 生命值§0
+provocation=在接下來的 §a[[2 x <skilllevel>]] 秒內§0，強迫附近的敵人將攻擊集中在你身上
+berserkercharge=向前衝一小段距離，對所有經過的敵人造成 §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] 傷害§0\n消耗 50% 耐力
+groundslam=區域攻擊，造成 §i[[5 x <strength>]] 近戰傷害§0 並 §9眩暈§0 §a[[1 x <skilllevel>]] 秒§0
+grounddestruction=區域攻擊，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 近戰傷害§0 並 §9眩暈§0 2 秒
+parry=在 0.5 秒內變得無敵，並返還 500% 的原始傷害\n消耗 100% 耐力
+battlecry=在接下來的 10 秒內，你和附近盟友的所有傷害和移動速度提高 §a[[10 x <skilllevel>]]%
 
-ironguard=在 §a[[4 x <skilllevel>]] 秒内§0，受到伤害 -50%
-intimidation=在接下来的 §a[[<skilllevel>]] 秒内§0，让附近的敌人逃跑
+ironguard=在 §a[[4 x <skilllevel>]] 秒內§0，受到傷害 -50%
+intimidation=在接下來的 §a[[<skilllevel>]] 秒內§0，讓附近的敵人逃跑
 
 objectthrowing=第 1 步：抓住你面前的一個物體\n第 2 步：向前投擲，造成 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] 近戰傷害§0\n兩個步驟都會消耗你所有的耐力（至少 100%）
 
@@ -358,24 +359,24 @@ sacrifice=最近的亡靈召喚物死亡，然後你以魔法治療的形式恢�
 siegecry=在 6 秒內獲得 §a+[[50 x <skilllevel>]]%§0 的召喚速度
 
 boneslingerhorde=召喚 §a[[1 + <skilllevel>]]§0 個 §b投骨者§0
-tomb=生成一個每 §a[[10 - <skilllevel>]] 秒§0 召喚一個 §b骷髏§0 的結構\n墳墓的生命值等於 §a[[5 x <playerlevel> x <skilllevel>]]§0\n墳墓每秒損失總生命值的 2%
-necroticbloom=加速附近所有敵人的毒藥效果，將其持續時間縮短至 10%，但增加其每秒傷害以維持總傷害
-wardingtaunt=最近的亡靈召喚物會強迫附近 §a[[50 x <skilllevel>]] 半徑內的敵人以其為目標
+tomb=生成一個每 §a[[10 - <skilllevel>]] 秒§0 召喚一個 §b骷髏§0 的建築\n墳墓的生命值等於 §a[[5 x <playerlevel> x <skilllevel>]]§0\n墳墓每秒損失其總生命值的 2%
+necroticbloom=通過將其持續時間縮短至 10% 來加速附近所有敵人身上的毒藥效果，但增加其每秒傷害以維持總傷害
+wardingtaunt=最近的亡靈召喚物會迫使半徑§a[[50 x <skilllevel>]]§0內的附近敵人以其為目標
 
-unholyground=在你周圍擴散一個腐敗光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒素傷害§0 並被 §7束縛
+unholyground=在你周圍展開一個腐化光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒素傷害§0 並被 §7束縛
 necroticbarrage=所有亡靈召喚物在死亡時爆炸，對附近的敵人造成§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]魔法傷害§0\n並在10秒內每秒對它們造成20%的原始傷害
 
 // Cleric
 smite=在最近的敵人身上召喚一道聖光，造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]點神聖傷害§0\n對亡靈和惡魔生物造成雙倍傷害\n消耗§a[[10 + 2 x <skilllevel>]]點法力§0
 divineblessing=恢復你和你的盟友§a[[20 + 3 x <grace> x <skilllevel>]]點生命值§0的魔法治療光環\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
 purify=淨化你自己和附近盟友的所有負面效果\n消耗10點法力
-lightinfusion=在接下来的8秒内，你获得§a+[[20 x <skilllevel>]]%§0的魔法治疗和神圣伤害
-holyguard=为你和所有附近的盟友施加一个持续长达30秒的神圣护盾\n他们获得§a+[[10 x <skilllevel>]]%§0的魔法治疗，护盾在破裂前阻挡一次攻击\n消耗§a[[40 + 8 x <skilllevel>]]点法力§0
-judgment=释放一道辐射能量波，对附近所有敌人造成§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]神圣伤害§0\n亡灵和恶魔生物被§7束缚§0 5秒\n消耗§a[[20 + 4 x <skilllevel>]]法力§0
-sanctuary=创建一个持续8秒的神圣区域\n你和里面的盟友对负面效果免疫，每秒获得§a[[0.2 x <grace> x <skilllevel>]]§0的生命恢复\n里面的亡灵和恶魔生物被§7束缚§0\n消耗§a[[30 + 6 x <skilllevel>]]法力§0
-divineintervention=立即将受损最严重的附近盟友治疗至其最大生命值，并使其在§a[[<skilllevel>]]§0秒内对所有伤害免疫\n消耗§a[[60 + 12 x <skilllevel>]]点法力§0
-resurrection=在你所在的位置用他们最大生命值的§a[[10 x <skilllevel>]]%§0复活你同一岛屿上最后死亡的玩家盟友\n你不能复活10秒前就可以重生的玩家\n消耗你法力的§a[[100 - 10 x <skilllevel>]]%§0（至少§a[[60 + 12 x <skilllevel>]]§0）
-wrathoflight=在最近的敌人身上召唤一道光柱，在区域内每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]神圣伤害§0，持续5秒\n里面的亡灵和恶魔生物被§7束缚§0\n消耗§a[[40 + 8 x <skilllevel>]]法力§0
+lightinfusion=在接下來的8秒內，你獲得§a+[[20 x <skilllevel>]]%§0的魔法治療和神聖傷害
+holyguard=為你和所有附近的盟友施加一個持續長達30秒的神聖護盾\n他們獲得§a+[[10 x <skilllevel>]]%§0的魔法治療，護盾在破裂前阻擋一次攻擊\n消耗§a[[40 + 8 x <skilllevel>]]點法力§0
+judgment=釋放一道輻射能量波，對附近所有敵人造成§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]神聖傷害§0\n亡靈和惡魔生物被§7束縛§0 5秒\n消耗§a[[20 + 4 x <skilllevel>]]法力§0
+sanctuary=創建一個持續8秒的神聖區域\n你和裡面的盟友對負面效果免疫，每秒獲得§a[[0.2 x <grace> x <skilllevel>]]§0的生命恢復\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗§a[[30 + 6 x <skilllevel>]]法力§0
+divineintervention=立即將受損最嚴重的附近盟友治療至其最大生命值，並使其在§a[[<skilllevel>]]§0秒內對所有傷害免疫\n消耗§a[[60 + 12 x <skilllevel>]]點法力§0
+resurrection=在你所在的位置用他們最大生命值的§a[[10 x <skilllevel>]]%§0復活你同一島嶼上最後死亡的玩家盟友\n你不能復活10秒前就可以重生的玩家\n消耗你法力的§a[[100 - 10 x <skilllevel>]]%§0（至少§a[[60 + 12 x <skilllevel>]]§0）
+wrathoflight=在最近的敵人身上召喚一道光柱，在區域內每秒造成§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]神聖傷害§0，持續5秒\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗§a[[40 + 8 x <skilllevel>]]法力§0
 
 
 // Druid
@@ -388,8 +389,8 @@ treanttransformation=需要 4 秒才能變身為樹人\n\n移動速度：0\n-§a
 
 
 [skillsdesckeys]
-skilllevel=技能等级
-playerlevel=玩家等级
+skilllevel=技能等級
+playerlevel=玩家等級
 endurance=耐力
 speed=速度
 strength=力量
@@ -412,7 +413,7 @@ dodgechance=§7閃避機率：§0 閃避來襲攻擊的機率。不能超過 80%
 focuschance=§h專注機率：§0直接攻擊時有機率§h標記§0一個生物5秒
 
 // 固定修正
-mobdetection=§9生物探測：§0 在地圖上顯示附近的生物。更高的探測範圍會顯示更遠的生物
+mobdetection=§9生物偵測：§0 在地圖上顯示附近的生物。更高的偵測範圍會顯示更遠的生物
 ignitedamage=§i點燃傷害：§0 隨時間增加點燃傷害，但不影響直接命中傷害
 
 // 射彈
@@ -479,7 +480,7 @@ newlevel=恭喜！你已達到 <level> 級。按 [input=openrpgmenu] 打開 RPG 
 noupdatesincombat=你在戰鬥中不能修改你的屬性、職業或技能
 noactiveskill=你不再擁有該主動技能，如果你想使用它，請重新升級
 
-equipfirst=你首先需要在此插槽中裝備一個主動技能
+equipfirst=你首先需要在該插槽中裝備一個主動技能
 activeskillinuse=此技能已在使用中
 anotheractiveskillinuse=你已經有另一個技能在使用中
 incooldown=冷卻中
@@ -532,11 +533,16 @@ classlevelseparation=- 職業等級 <level> -
 inuse=使用中
 
 upcomingclass=§6即將推出的職業\n§9此職業目前正在開發中\n並將在未來的更新中提供
+disabledclass=此職業在此世界中已禁用
 
 addcolumn=添加列
 removecolumn=刪除列
 
 rate=評價 RPG 模組！
+
+seeallclasses=查看所有職業條目
+
+clicktoopen=[input=mouse1] 開啟
 
 
 [controls]
@@ -547,3 +553,37 @@ activeskillslot3=主動技能槽 3
 activeskillslot4=主動技能槽 4
 activeskillslot5=主動技能槽 5
 activeskillslot6=主動技能槽 6
+transformationability1=變身能力 1
+transformationability2=變身能力 2
+
+
+[settingsui]
+// Experience
+experience_section=經驗
+experience_text=這些設定是伺服器設定，因此加入世界後無法修改。在多人遊戲中，您的值將被忽略，而將使用伺服器/主機的設定。
+
+experienceMod=% 經驗模組
+experienceMod_text=修改擊敗生物獲得的經驗值
+
+firstKillBonus=% 首次擊殺獎勵
+firstKillBonus_text=首次擊敗生物時的經驗加成（不相加，與其他修正值相乘）
+
+bossKillBonus=% Boss擊殺獎勵
+bossKillBonus_text=擊敗首領時的經驗加成（不相加，與其他修正值相乘）
+
+startingExperience=初始經驗
+startingExperience_text=新玩家開始時的經驗值
+
+firstExperienceReq=初始需求
+experienceReqInc=需求增量
+squareExperienceReqInc=需求平方增量
+cubeExperienceReqInc=需求立方增量
+experience_calc=達到下一等級所需的經驗值為：\n\n初始需求 + 需求增量 * 等級 +\n+ 需求平方增量 * (等級 ^ 2) +\n+ 需求立方增量 * (等級 ^ 3)\n\n其中「等級」是您目前的等級
+
+// Classes
+classes_section=職業
+
+multiClass=多職業
+multiClass_text=限制可以同時擁有的不同職業的數量。設定為 0 表示沒有限制
+
+classes_enabled=您可以禁用不希望可用的職業

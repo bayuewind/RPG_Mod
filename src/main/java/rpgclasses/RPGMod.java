@@ -1,5 +1,6 @@
 package rpgclasses;
 
+import necesse.engine.modLoader.ModSettings;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.TileRegistry;
 import necesse.level.gameTile.GameTile;
@@ -9,20 +10,15 @@ import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.registry.*;
+import rpgclasses.settings.RPGSettings;
 
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.5.2";
+    public static String currentVersion = "v0.5.4";
 
     static {
         new RPGModifiers();
-    }
-
-    public void preInit() {
-
-        RPGConfig.startConfig();
-
     }
 
     public void init() {
@@ -89,9 +85,11 @@ public class RPGMod {
     }
 
     public void initResources() {
-
         RPGResources.initResources();
+    }
 
+    public ModSettings initSettings() {
+        return RPGSettings.init();
     }
 
 }

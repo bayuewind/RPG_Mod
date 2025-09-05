@@ -41,7 +41,7 @@ depleted=枯渇
 
 
 [buff]
-overlevelclassbuff=オーバーレベルクラス
+overlevelbuff=オーバーレベル
 markedbuff=マーク
 darkcursebuff=闇の呪い
 magicpoisonbuff=魔法の毒
@@ -50,8 +50,8 @@ holydamagedealtbuff=与えられた聖なるダメージ
 
 
 [buffdesc]
-overlevelclassbuff1=§9あなたのクラスの1つがポイント制限を超えています
-overlevelclassbuff2=§6修正されるまで続行できません
+overlevelbuff1=§9あなたのクラスまたは属性のいずれかがポイント制限を超えています
+overlevelbuff2=§6修正されるまで続行できません
 darkcursebuff1=+25% 被ダメージ
 darkcursebuff2=すべてのダメージは最大体力も減少させます
 
@@ -534,11 +534,16 @@ classlevelseparation=- クラスレベル<level> -
 inuse=使用中
 
 upcomingclass=§6今後のクラス\n§9このクラスは現在開発中です\n今後のアップデートで利用可能になります
+disabledclass=このクラスはこのワールドでは無効になっています
 
 addcolumn=列を追加
 removecolumn=列を削除
 
 rate=RPG Modを評価してください！
+
+seeallclasses=すべてのクラスエントリを表示
+
+clicktoopen=[input=mouse1]で開く
 
 
 [controls]
@@ -551,3 +556,35 @@ activeskillslot5=アクティブスキルスロット5
 activeskillslot6=アクティブスキルスロット6
 transformationability1=変身能力1
 transformationability2=変身能力2
+
+
+[settingsui]
+// Experience
+experience_section=経験値
+experience_text=これらの設定はサーバー設定であるため、ワールドに参加した後は変更できません。マルチプレイヤーの場合、あなたの値は無視され、サーバー/ホストの値が使用されます。
+
+experienceMod=% 経験値MOD
+experienceMod_text=モブを倒して得られる経験値の量を変更します
+
+firstKillBonus=% 初回討伐ボーナス
+firstKillBonus_text=モブを初めて倒したときの経験値ブースト（加算されず、他の修飾子で乗算されます）
+
+bossKillBonus=% ボス討伐ボーナス
+bossKillBonus_text=ボスを倒したときの経験値ブースト（加算されず、他の修飾子で乗算されます）
+
+startingExperience=開始経験値
+startingExperience_text=新規プレイヤーが開始する経験値
+
+firstExperienceReq=初期要件
+experienceReqInc=要件増分
+squareExperienceReqInc=要件の2乗増分
+cubeExperienceReqInc=要件の3乗増分
+experience_calc=次のレベルに到達するための経験値要件は次のとおりです。\n\n初期要件 + 要件増分 * レベル +\n+ 要件の2乗増分 * (レベル ^ 2) +\n+ 要件の3乗増分 * (レベル ^ 3)\n\nここで、「レベル」は現在のレベルです
+
+// Classes
+classes_section=クラス
+
+multiClass=マルチクラス
+multiClass_text=同時に保持できる異なるクラスの数を制限します。制限なしの場合は0に設定します
+
+classes_enabled=利用可能にしたくないクラスを無効にできます

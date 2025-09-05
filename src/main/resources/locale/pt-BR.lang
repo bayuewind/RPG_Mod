@@ -41,7 +41,7 @@ depleted=Esgotado
 
 
 [buff]
-overlevelclassbuff=Classe de nível superior
+overlevelbuff=Nível Excedido
 markedbuff=Marcado
 darkcursebuff=Maldição das trevas
 magicpoisonbuff=Veneno Mágico
@@ -50,8 +50,8 @@ holydamagedealtbuff=Dano Sagrado Causado
 
 
 [buffdesc]
-overlevelclassbuff1=§9Uma de suas classes excede um limite de pontos
-overlevelclassbuff2=§6Você não poderá prosseguir até que seja corrigido
+overlevelbuff1=§9Uma de suas classes ou atributos excede algum limite de pontos
+overlevelbuff2=§6Você não poderá prosseguir até que seja corrigido
 darkcursebuff1=+25% de dano recebido
 darkcursebuff2=Todo o dano também reduz a Vida Máxima
 
@@ -453,11 +453,16 @@ classlevelseparation=- Nível de classe <level> -
 inuse=Em uso
 
 upcomingclass=§6Próxima classe\n§9Esta classe está atualmente em desenvolvimento\ne estará disponível em uma atualização futura
+disabledclass=Esta classe está desativada neste mundo
 
 addcolumn=Adicionar coluna
 removecolumn=Remover coluna
 
 rate=Avalie o MOD de RPG!
+
+seeallclasses=Ver todas as entradas de classe
+
+clicktoopen=[input=mouse1] para abrir
 
 
 [controls]
@@ -468,3 +473,37 @@ activeskillslot3=Slot de habilidade ativa 3
 activeskillslot4=Slot de habilidade ativa 4
 activeskillslot5=Slot de habilidade ativa 5
 activeskillslot6=Slot de habilidade ativa 6
+transformationability1=Habilidade de Transformação 1
+transformationability2=Habilidade de Transformação 2
+
+
+[settingsui]
+// Experience
+experience_section=Experiência
+experience_text=Essas configurações são do servidor, portanto não podem ser modificadas após entrar em um mundo. No caso de multijogador, seus valores serão ignorados e os do servidor/host serão usados.
+
+experienceMod=% Mod de Experiência
+experienceMod_text=Modifica a quantidade de experiência ganha ao derrotar monstros
+
+firstKillBonus=% Bônus de Primeira Morte
+firstKillBonus_text=Um bônus de experiência ao derrotar um monstro pela primeira vez (não adicionado, multiplicado por outros modificadores)
+
+bossKillBonus=% Bônus de Morte de Chefe
+bossKillBonus_text=Um bônus de experiência ao derrotar um chefe (não adicionado, multiplicado por outros modificadores)
+
+startingExperience=Experiência Inicial
+startingExperience_text=A experiência com que os novos jogadores começarão
+
+firstExperienceReq=Req Inicial
+experienceReqInc=Incremento de Req
+squareExperienceReqInc=Incremento Quadrado de Req
+cubeExperienceReqInc=Incremento Cúbico de Req
+experience_calc=O requisito de experiência para atingir o próximo nível é:\n\nReq Inicial + Incremento de Req * nível +\n+ Incremento Quadrado de Req * (nível ^ 2) +\n+ Incremento Cúbico de Req * (nível ^ 3)\n\nOnde 'nível' é o seu nível atual
+
+// Classes
+classes_section=Classes
+
+multiClass=Multi Classe
+multiClass_text=Limite quantas classes diferentes podem ser mantidas ao mesmo tempo. Defina como 0 para nenhum limite
+
+classes_enabled=Você pode desativar as classes que não deseja que estejam disponíveis
