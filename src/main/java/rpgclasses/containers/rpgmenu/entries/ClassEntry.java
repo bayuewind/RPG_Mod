@@ -139,10 +139,10 @@ public class ClassEntry extends MenuEntry {
             SkillComponent passiveSkillComponent = passives.addComponent(new SkillComponent(
                     6 + actualColumn * (SkillComponent.width + 2),
                     yPosition + passiveSeparations * 24,
-                    playerClass.passivesList.get(i),
+                    passive,
                     player,
                     playerClassData,
-                    passiveLevels[i],
+                    passiveLevels[passiveID],
                     mutablePassiveLevels
             ));
             passiveSkillComponent.setOnAdd(
@@ -213,7 +213,14 @@ public class ClassEntry extends MenuEntry {
             }
 
             int activeSkillID = activeSkill.id;
-            SkillComponent activeSkillComponent = activeSkills.addComponent(new SkillComponent(6 + (actualColumn - 1) * (SkillComponent.width + 2), yPosition + activeSeparations * 24, activeSkill, player, playerClassData, activeSkillLevels[i], mutableActiveSkillLevels));
+            SkillComponent activeSkillComponent = activeSkills.addComponent(new SkillComponent(
+                    6 + (actualColumn - 1) * (SkillComponent.width + 2),
+                    yPosition + activeSeparations * 24, activeSkill,
+                    player,
+                    playerClassData,
+                    activeSkillLevels[activeSkillID],
+                    mutableActiveSkillLevels
+            ));
             activeSkillComponent.setOnAdd(
                     c -> {
                         int currentUsedActiveSkills = mutableUsedActiveSkillsPoints.incrementAndGet();

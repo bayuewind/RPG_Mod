@@ -36,13 +36,11 @@ public class DarkMobClassBuff extends MobClassBuff {
         MobData mobData = MobData.getMob(owner);
         if (mobData != null) {
             int range = 100 + mobData.levelScaling() * 4;
-            int duration = 2000 + mobData.levelScaling() * 100;
+            int duration = 4000 + mobData.levelScaling() * 100;
 
             AphAreaList areaList = new AphAreaList(
                     new AphArea(range, new Color(0, 0, 0, 102)).setDebuffArea(duration, RPGBuffs.DARK_CURSE.getStringID())
             ).setOnlyVision(false);
-
-            MagicPoisonBuff.apply(activeBuff.owner, event.target, mobData.level / 5F, 10F);
 
             areaList.execute(owner, activeBuff.owner.isServer());
         }
@@ -53,9 +51,9 @@ public class DarkMobClassBuff extends MobClassBuff {
         Mob owner = activeBuff.owner;
         MobData mobData = MobData.getMob(owner);
         if (mobData != null) {
-            int duration = 9000 + mobData.level * 300;
+            int duration = 8000 + mobData.levelScaling() * 200;
             ActiveBuff ab = new ActiveBuff(RPGBuffs.DARK_CURSE, event.target, duration, null);
-            MagicPoisonBuff.apply(activeBuff.owner, event.target, mobData.level / 5F, 20F);
+            MagicPoisonBuff.apply(activeBuff.owner, event.target, mobData.levelScaling() / 5F, 10F);
             event.target.buffManager.addBuff(ab, activeBuff.owner.isServer());
         }
     }
