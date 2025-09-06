@@ -67,7 +67,7 @@ abstract public class SkillTransformationMountMob extends TransformationMountMob
 
     public int getActualSkillLevel() {
         Mob rider = this.getRider();
-        if (!rider.isPlayer) return 0;
+        if (rider == null || !rider.isPlayer) return 0;
 
         return skill.getLevel((PlayerMob) rider);
     }

@@ -122,7 +122,7 @@ abstract public class ActiveSkill extends Skill {
                 if (equippedActiveSkill.getActiveSkill().isInUseSkill() && !equippedActiveSkill.isInUse()) {
                     equippedActiveSkill.setInUse();
                 } else {
-                    equippedActiveSkill.startCooldown(useTime, addedCooldown);
+                    equippedActiveSkill.startCooldown(useTime, activeSkillLevel, addedCooldown);
                 }
             }
         }
