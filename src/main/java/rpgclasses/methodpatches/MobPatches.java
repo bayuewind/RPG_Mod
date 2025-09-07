@@ -95,7 +95,7 @@ public class MobPatches {
         @Advice.OnMethodEnter
         public static void onExit(@Advice.This Mob This, @Advice.Argument(0) Attacker attacker, @Advice.Argument(1) HashSet<Attacker> attackers) {
             MobData mobData = MobData.getMob(This);
-            if (This.isServer() && mobData != null) {
+            if (This.isServer() && mobData != null && !MobData.bossNoEXPMobs.contains(This.getStringID())) {
 
                 float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGSettings.experienceMod();
                 exp = (float) Math.pow(exp, 1.2F);

@@ -39,6 +39,6 @@ public class SkillsList<T extends Skill> {
     }
 
     public List<T> getDisplayOrderedList() {
-        return list.stream().sorted(Comparator.comparingInt(e -> e.levelMax)).collect(Collectors.toList());
+        return list.stream().sorted(Comparator.comparingInt(e -> e.requiredClassLevel)).collect(Collectors.toList());
     }
 }

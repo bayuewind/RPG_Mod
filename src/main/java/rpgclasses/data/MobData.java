@@ -33,10 +33,27 @@ public class MobData {
     public static String levelDataName = prefixDataName + "level";
     public static String classDataName = prefixDataName + "class";
 
+    public static List<String> bossNoEXPMobs = new ArrayList<>();
+
     public static List<String> undeadMobs = new ArrayList<>();
     public static List<String> demonicMobs = new ArrayList<>();
 
     static {
+        bossNoEXPMobs.addAll(
+                Arrays.stream(new String[]{
+                        // Evil's Protector
+                        "evilsportal",
+
+                        // Reaper
+                        "reaperspiritportal",
+                        "reaperspirit",
+
+                        // Sunlight Champion
+                        "sunlightgauntlet"
+                }).collect(Collectors.toList())
+        );
+
+
         undeadMobs.addAll(
                 Arrays.stream(new String[]{
                         "evilwitch",
@@ -120,6 +137,10 @@ public class MobData {
         return mobsData.getOrDefault(uniqueID, null);
     }
 
+    public static boolean isBossClass(Mob mob) {
+        return mob.isBoss() || bossNoEXPMobs.contains(mob.getStringID());
+    }
+
     public static boolean shouldInitMob(Mob mob) {
         return ((mob.isHostile && !mob.isPlayer) || mob.isBoss()) && mob.getClass() != WormMobBody.class && mob.getClass() != NightSwarmBatMob.class;
     }
@@ -129,9 +150,9 @@ public class MobData {
             MobData mobData = new MobData();
             mobData.mob = mob;
 
-            boolean isBoss = mob.isBoss();
+            boolean isBossClass = isBossClass(mob);
 
-            mobData.level = isBoss ? 5 : GameRandom.globalRandom.getIntBetween(1, 5);
+            mobData.level = isBossClass ? 5 : GameRandom.globalRandom.getIntBetween(1, 5);
 
             Biome biome = mapLevel.biome;
 
@@ -174,7 +195,7 @@ public class MobData {
                 }
             }
 
-            mobData.mobClass = isBoss ? MobClass.bossClass : MobClass.getRandomClass();
+            mobData.mobClass = isBossClass ? MobClass.bossClass : MobClass.getRandomClass();
 
             if ((mapLevel instanceof SnowDeepCaveIncursionLevel || biome instanceof SnowBiome) && mobData.mobClass.is("explosive")) {
                 mobData.mobClass = MobClass.allClasses.get("glacial");
@@ -215,7 +236,7 @@ public class MobData {
             mobData.level = reader.getNextInt();
             int mobClassID = reader.getNextInt();
 
-            if (mobData.level > 0 && (mob.isBoss() == (mobClassID == 0))) {
+            if (mobData.level > 0 && (isBossClass(mob) == (mobClassID == 0))) {
                 mobData.mobClass = MobClass.allClassesList.get(mobClassID);
                 mobData.mob = mob;
                 mobsData.put(mob.getUniqueID(), mobData);

@@ -64,6 +64,11 @@ public class FlamingSteps extends SimpleBuffPassive {
                         sprinting = true;
                         break;
                     }
+                    Mob mount = activeBuff.owner.getMount();
+                    if(mount != null && mount.buffManager.hasBuff(sprintBuffID)) {
+                        sprinting = true;
+                        break;
+                    }
                 }
 
                 if (activeBuff.owner.isServer() && sprinting) {

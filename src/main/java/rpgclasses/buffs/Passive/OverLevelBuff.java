@@ -31,7 +31,7 @@ public class OverLevelBuff extends PassiveBuff {
     @Override
     public ListGameTooltips getTooltip(ActiveBuff ab, GameBlackboard blackboard) {
         ListGameTooltips tooltips = super.getTooltip(ab, blackboard);
-        tooltips.add(Localization.translate("buffdesc", "foverlevelbuff1"));
+        tooltips.add(Localization.translate("buffdesc", "overlevelbuff1"));
         tooltips.add(Localization.translate("buffdesc", "overlevelbuff2"));
         return tooltips;
     }
