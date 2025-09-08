@@ -193,7 +193,21 @@ wolfcompanion=Un compagnon loup attaquera les ennemis marqués en infligeant §i
 
 // Sorcier
 manapower=Chaque niveau fournit:\n\n+1% de Dégâts Magiques pour chaque 10% de Mana non utilisé
-flamingsteps=Lorsque vous courez avec un bijou actif ou une transformation, vous laisserez des flammes sur le sol\nLes flammes enflammeront les ennemis pendant 2 secondes, infligeant §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 par seconde
+flamingsteps=Lorsque vous courez avec un bibelot actif ou une transformation, vous laisserez des flammes sur le sol\nLes flammes enflammeront les ennemis pendant 3 secondes, infligeant §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] dégâts magiques§0 par seconde
+stormbound=Toutes les §a[[11 - 0.5 x <skilllevel>]] secondes§0, un éclair frappe un ennemi aléatoire dans votre champ de vision\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] dégâts magiques§0 et étourdit pendant 1 seconde
+arcaneshield=Un bouclier qui empêche un coup\nLe bouclier se rétablira §a[[20 - <skilllevel>]] secondes§0 après l'avoir utilisé
+fireshield=Un bouclier qui empêche un coup\nLorsque vous l'utilisez, vous libérerez une explosion infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] dégâts magiques§0\net enflammant les monstres, répétant 20% de leurs dégâts originaux par seconde pendant 5 secondes\nLe bouclier se rétablira 26 secondes après l'avoir utilisé
+iceshield=Un bouclier qui empêche un coup\nLorsque vous l'utilisez, vous libérerez une aura de glace infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] dégâts magiques§0\ngelant les monstres pendant 5 secondes, et les gelant totalement pendant 1 seconde\nLe bouclier se rétablira 22 secondes après l'avoir utilisé
+
+// Nécromancien
+necroticpower=Toutes vos attaques magiques empoisonnent pour 5% de leurs dégâts pendant §a[[2 x <skilllevel>]] secondes§0
+darkmagic=Les bonus de dégâts d'invocateur affectent les dégâts magiques de §a[[5 x <skilllevel>]]%
+necroticarmy=Les ennemis hostiles vaincus se transformeront en §bSquelettes§0 avec §a-[[100 - 3 x <skilllevel>]]%§0 de Santé et de Dégâts
+darksummons=Inflige §a+[[8 x <skilllevel>]]%§0 de dégâts d'invocateur aux ennemis empoisonnés
+lifeleech=Récupère §a[[0.05 x <skilllevel>]]%§0 des dégâts d'invocateur infligés en Santé
+necroticremains=Lorsqu'une invocation nécrotique meurt, elle explose, infligeant §i[[0.1 x <intelligence> x <skilllevel>]] dégâts magiques§0 aux ennemis proches, les empoisonnant pour 20% des dégâts par seconde pendant 10 secondes
+endlesslegion=Tous les 4 niveaux de cette compétence, vous gagnez +1 invocation max
+lichborn=Lorsque vous mourez, vous survivez et récupérez §a[[10 x <skilllevel>]]%§0 de Santé si vous n'êtes pas déjà une §bLiche§0\nPendant les §a[[120 - 6 x <skilllevel>]] secondes§0 suivantes, vous devenez une §bLiche§0 (un squelette)\n\n\n§bLiche:§0 Transformation de mort-vivant\n\nNe peut pas utiliser d'objets\n+100% de Dégâts Subis\n\nAppuyez sur [input=transformationability1] pour tirer un os qui inflige §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] dégâts magiques§0
 stormbound=Toutes les §a[[9 - 0.5 x <skilllevel>]] secondes§0, un éclair frappe un ennemi aléatoire dans votre champ de vision\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Dégâts Magiques§0 et étourdit pendant 1 seconde
 arcaneshield=Un bouclier qui empêche un coup\nLe bouclier se rétablira §a[[20 - <skilllevel>]] secondes§0 après son utilisation
 fireshield=Un bouclier qui empêche un coup\nLorsqu'il est utilisé, vous libérerez une explosion infligeant §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Dégâts Magiques§0\net enflammant les monstres, répétant 20% de leurs dégâts d'origine par seconde pendant 5 secondes\nLe bouclier se rétablira 26 secondes après son utilisation
@@ -322,7 +336,7 @@ battlecry=Pendant les 10 prochaines secondes, augmentez vos dégâts et ceux de 
 ironguard=-50% de dégâts entrants pendant §a[[4 x <skilllevel>]] secondes
 intimidation=Pendant les §a[[<skilllevel>]] prochaines secondes§0, faites fuir les ennemis proches
 
-objectthrowing=Étape 1: Saisissez un objet devant vous\nÉtape 2: Lancez-le vers l'avant en infligeant §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de dégâts de mêlée§0\nLes deux étapes consomment toute votre endurance (au moins 100%)
+objectthrowing=Étape 1 : Saisissez un objet devant vous\nÉtape 2 : Lancez-le vers l'avant infligeant §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] dégâts de mêlée§0
 
 // Rôdeur
 shortdash=Effectuez une roulade de 100 de <strength>\nConsomme 15% de l'endurance
@@ -355,7 +369,7 @@ lightning=Lance un éclair qui saute entre les monstres pendant 1 seconde, infli
 
 // Nécromancien
 skeletonhorde=Invoque §a[[1 + <skilllevel>]] §bSquelettes§0
-skeletonwarrior=Invoque un §bGuerrier squelette§0 avec §a+[[20 x <skilllevel>]]%§0 de santé et de dégâts
+skeletonwarrior=Invoque un §bGuerrier squelette§0 avec §a+[[40 x <skilllevel>]]%§0 de santé et de dégâts
 sacrifice=L'invocation nécrotique la plus proche meurt, et vous récupérez alors §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de santé§0 sous forme de guérison magique
 siegecry=Gagnez §a+[[50 x <skilllevel>]]%§0 de vitesse d'invocation pendant 6 secondes
 
@@ -382,11 +396,11 @@ wrathoflight=Invoquez une colonne de lumière sur l'ennemi le plus proche, infli
 
 // Druid
 wolftransformation=Prend 3 secondes pour se transformer en Loup\n\nVitesse de déplacement: 60\n\nAppuyez sur [input=transformationability1] pour Morsure éclair: Sautez en avant et mordez, infligeant §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Dégâts de mêlée§0\n\nAppuyez sur [input=transformationability2] pour Aboyer: Forcez les ennemis proches à vous cibler pendant 2 secondes\n\nMaintenez [input=trinketability] pour Sprinter
-queenbeetransformation=Prend 2 secondes pour se transformer en Reine des Abeilles\n\nVitesse de déplacement: 30\n-50% Détection des ennemis\n§6+1000% Dégâts entrants§0\n\nAppuyez sur [input=transformationability1] pour Tir de miel: Inflige §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Dégâts à distance§0\n\nAppuyez sur [input=transformationability2] pour invoquer une §9Abeille§0 jusqu'à §a[[2 x <skilllevel>]]§0\n\nMaintenez [input=trinketability] pour commander vos Abeilles à attaquer
+queenbeetransformation=Prend 2 secondes pour se transformer en Reine des Abeilles\n\nVitesse de déplacement: 30\n-50% Détection des ennemis\n§6+1000% Dégâts entrants§0\nRecevoir un coup invoque le maximum d'abeilles au lieu de mourir (60s de recharge)\n\nAppuyez sur [input=transformationability1] pour Tir de miel: Inflige §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Dégâts à distance§0\n\nAppuyez sur [input=transformationability2] pour invoquer une §9Abeille§0 jusqu'à §a[[2 x <skilllevel>]]§0\n\nMaintenez [input=trinketability] pour commander vos Abeilles à attaquer
 beartransformation=Prend 4 secondes pour se transformer en Ours\n\nVitesse de déplacement: 20\n-50% Dégâts entrants\n\nAppuyez sur [input=transformationability1] pour Frappe au sol: Attaque de zone qui inflige §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Dégâts de mêlée§0 et §9étourdit§0 pendant §a[[0.5 x <skilllevel>]] secondes§0\n\nAppuyez sur [input=transformationability2] pour Grognement: Faites fuir les ennemis proches pendant 1 seconde\n\nMaintenez [input=trinketability] pour Sprinter
 foxtransformation=Prend 3 secondes pour se transformer en Renard\n\nVitesse de déplacement: 50\n§6+50% Dégâts entrants§0\n\nAppuyez sur [input=transformationability1] pour Tir de boules de feu: Inflige §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Dégâts magiques§0\n\nAppuyez sur [input=transformationability2] pour invoquer une §bFlamme dansante§0 jusqu'à §a[[2 + <skilllevel>]]§0, chacune infligeant les mêmes dégâts qu'une Boule de feu\n\nAppuyez sur [input=trinketability] pour Dash\n§!Vulpes Nova fox!
 rattransformation=Prend 2 secondes pour se transformer en Rat\n\nVitesse de déplacement: 25\n-50% Détection des ennemis\nAccorde une chance d'esquive maximale\n§6+1000% Dégâts entrants§0\n\nAppuyez sur [input=transformationability1] pour Morsure: Inflige §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Dégâts de mêlée§0 et empoisonne la cible pour 100% des dégâts infligés par seconde pendant 10 secondes\n\nMaintenez [input=trinketability] pour Sprinter
-treanttransformation=Prend 4 secondes pour se transformer en Tréant\n\nVitesse de déplacement: 0\n-§a[50 + 5 <skilllevel>]%§0 Dégâts entrants\nLes ennemis vous ignorent si vous êtes caché pendant 3 secondes\n\nAppuyez sur [input=transformationability1] en étant Révélé pour Tirer des graines aléatoires: Inflige §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Dégâts à distance§0 avec des effets aléatoires\n\nAppuyez sur [input=transformationability2] pour invoquer un §9Jeune pousse de Dryade§0\n\nMaintenez [input=trinketability] pour Révéler et Sprinter si vous vous déplacez
+treanttransformation=Prend 4 secondes pour se transformer en Tréant\n\nVitesse de déplacement: 0\n-§a[50 + 5 <skilllevel>]%§0 Dégâts entrants\n+50% Armure\nLes ennemis vous ignorent si vous êtes caché pendant 3 secondes\n\nAppuyez sur [input=transformationability1] en étant Révélé pour Tirer des graines aléatoires: Inflige §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Dégâts à distance§0 avec des effets aléatoires\n\nAppuyez sur [input=transformationability2] pour invoquer un §9Jeune pousse de Dryade§0\n\nMaintenez [input=trinketability] pour Révéler et Sprinter si vous vous déplacez
 
 
 [skillsdesckeys]
@@ -431,8 +445,8 @@ dancingflame=§bFlamme Dansante:§0 Invocation qui agit comme un projectile. Enf
 necromancerskeleton=§bSquelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
 necromancerskeletonwarrior=§bGuerrier squelette:§0 Invocation nécrotique vulnérable\nSanté: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDégâts: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVitesse: 60\nPerd 2% de sa santé totale par seconde
 necromancerboneslinger=§bLanceur d'os:§0 Invocation nécrotique vulnérable\nSanté: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distance 320)\nVitesse: 60\nPerd 2% de sa santé totale par seconde
-bee=§9Abeille:§0 Invocation vulnérable\nSanté: 1\nDégâts: §a[[<playerlevel> + <intelligence>]]§0\nVitesse: 40\n\nMeurt à l'attaque, mais empoisonne la cible pour 20% des dégâts infligés par seconde pendant 10 secondes
-dryadsapling=§9Jeune pousse de Dryade:§0 Invocation vulnérable\nSanté: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDégâts: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nVitesse: 65\nPerd 2% de sa santé totale par seconde
+bee=§9Abeille:§0 Invocation vulnérable\nSanté: 1\nDégâts: §a[[<playerlevel> + <intelligence>]]§0\nVitesse: 100\n\nMeurt à l'attaque, mais empoisonne la cible pour 20% des dégâts infligés par seconde pendant 10 secondes
+dryadsapling=§9Jeune pousse de Dryade:§0 Invocation vulnérable\nSanté: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDégâts: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nVitesse: 65\nPerd 2% de sa santé totale par seconde
 
 [item]
 scrollofoblivion=Parchemin d'oubli
@@ -517,7 +531,7 @@ activeskillpoints=Points de compétence active: <points>
 
 activeskillsuse=Ce mod transforme la roue d'expression (touche T par défaut) en roue de compétences actives
 activeskillsusetip1=Il est recommandé de changer la commande de la roue d'expression en une touche facilement accessible
-activeskillsusetip2=Vous pouvez également attribuer une touche à chaque emplacement de compétence active (idéal pour les compétences à faible temps de recharge)
+activeskillsusetip2=Seules les quatre premières compétences apparaissent dans la Roue des compétences actives. Vous devrez utiliser des touches pour le reste
 activeskillsequipinstructions=Cliquez sur un emplacement pour équiper une compétence active. Vous ne pouvez pas déséquiper une compétence active en recharge
 noactiveskills=Vous n'avez aucune compétence active. Débloquez-les via les classes
 
@@ -555,6 +569,12 @@ activeskillslot3=Emplacement de compétence active 3
 activeskillslot4=Emplacement de compétence active 4
 activeskillslot5=Emplacement de compétence active 5
 activeskillslot6=Emplacement de compétence active 6
+activeskillslot7=Emplacement de compétence active 7
+activeskillslot8=Emplacement de compétence active 8
+activeskillslot9=Emplacement de compétence active 9
+activeskillslot10=Emplacement de compétence active 10
+activeskillslot11=Emplacement de compétence active 11
+activeskillslot12=Emplacement de compétence active 12
 transformationability1=Capacité de transformation 1
 transformationability2=Capacité de transformation 2
 

@@ -90,6 +90,7 @@ public class TreantTransformation extends SimpleTranformationActiveSkill {
             int skillLevel = getActualSkillLevel();
             modifiers.add(new ModifierValue<>(BuffModifiers.INCOMING_DAMAGE_MOD, 0.5F - 0.05F * skillLevel));
             modifiers.add(new ModifierValue<>(BuffModifiers.TARGET_RANGE, -1F));
+            modifiers.add(new ModifierValue<>(BuffModifiers.ARMOR, 0.5F));
             return modifiers;
         }
 
@@ -135,7 +136,7 @@ public class TreantTransformation extends SimpleTranformationActiveSkill {
 
         @Override
         public int secondaryClickCooldown() {
-            return 3000;
+            return 1500;
         }
 
         public void spawnDeathParticles(float knockbackX, float knockbackY) {
@@ -246,7 +247,7 @@ public class TreantTransformation extends SimpleTranformationActiveSkill {
             }
 
             if ((this.moveX != 0.0F || this.moveY != 0.0F) && (this.dx != 0.0F || this.dy != 0.0F)) {
-                long msToDeplete = 6000L;
+                long msToDeplete = 10000L;
                 float usage = 50.0F / (float) msToDeplete;
                 if (!StaminaBuff.useStaminaAndGetValid(player, usage)) {
                     return false;

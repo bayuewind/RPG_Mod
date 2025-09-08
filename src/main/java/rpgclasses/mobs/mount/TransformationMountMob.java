@@ -9,10 +9,7 @@ import necesse.engine.network.PacketWriter;
 import necesse.engine.network.packet.PacketMobMovement;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
-import necesse.entity.mobs.ActiveMountAbility;
-import necesse.entity.mobs.Attacker;
-import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.*;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.SmokePuffParticle;
@@ -287,4 +284,9 @@ public class TransformationMountMob extends Mob implements ActiveMountAbility {
     public boolean staminaBasedMountAbility() {
         return false;
     }
+
+    public void onBeforeHit(PlayerMob player, MobBeforeHitEvent event) {
+    }
+
+
 }

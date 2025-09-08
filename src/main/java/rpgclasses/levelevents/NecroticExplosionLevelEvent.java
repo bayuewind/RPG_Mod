@@ -25,18 +25,18 @@ public class NecroticExplosionLevelEvent extends ExplosionEvent implements Attac
     float poisonDamage;
 
     public NecroticExplosionLevelEvent() {
-        this(0.0F, 0.0F, 50, new GameDamage(0), 0, 0, null, false);
+        this(0.0F, 0.0F, 50, new GameDamage(0), 0, 0, null);
         this.destroysObjects = false;
         this.destroysTiles = false;
     }
 
-    public NecroticExplosionLevelEvent(float x, float y, int range, GameDamage damage, float poisonDamage, int toolTier, Mob owner, boolean hitsOwner) {
+    public NecroticExplosionLevelEvent(float x, float y, int range, GameDamage damage, float poisonDamage, int toolTier, Mob owner) {
         super(x, y, range, damage, false, toolTier, owner);
         this.explosionTypeSwitcher = new ParticleTypeSwitcher(Particle.GType.IMPORTANT_COSMETIC, Particle.GType.COSMETIC, Particle.GType.CRITICAL);
         this.targetRangeMod = 0.0F;
         this.destroysObjects = false;
         this.destroysTiles = false;
-        this.hitsOwner = hitsOwner;
+        this.hitsOwner = false;
 
         this.poisonDamage = poisonDamage;
     }

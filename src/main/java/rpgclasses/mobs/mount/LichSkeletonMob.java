@@ -113,7 +113,7 @@ public class LichSkeletonMob extends TransformationMountMob implements ActiveMou
     public void clickRunServer(Level level, int x, int y, PlayerMob player) {
         super.clickRunServer(level, x, y, player);
         PlayerData playerData = PlayerDataList.getPlayerData(player);
-        Projectile projectile = new AncientBoneProjectile(player.x, player.y, x, y, new GameDamage(DamageTypeRegistry.SUMMON, playerData.getLevel() + playerData.getStrength(player)), player);
+        Projectile projectile = new AncientBoneProjectile(player.x, player.y, x, y, new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() + playerData.getStrength(player) + 0.2F * playerData.getIntelligence(player)), player);
         projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
 
         player.getLevel().entityManager.projectiles.addHidden(projectile);

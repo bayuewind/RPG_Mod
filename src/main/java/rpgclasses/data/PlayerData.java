@@ -29,7 +29,7 @@ import rpgclasses.settings.RPGSettings;
 import java.util.Arrays;
 
 public class PlayerData {
-    public static int EQUIPPED_SKILLS_MAX = 6;
+    public static int EQUIPPED_SKILLS_MAX = 12;
 
     public static String prefixDataName = "rpgmod_";
     public static String expDataName = prefixDataName + "exp";
@@ -346,7 +346,7 @@ public class PlayerData {
         return getLevel();
     }
 
-    public void setupSpawnPacket(PacketWriter writer) {
+    public void setupPacket(PacketWriter writer) {
         writer.putNextString(playerName);
 
         // Exp
@@ -363,16 +363,16 @@ public class PlayerData {
 
         // Classes Data
         for (PlayerClassData classesDatum : classesData) {
-            classesDatum.setupSpawnPacket(writer);
+            classesDatum.setupPacket(writer);
         }
 
         // Equipped Active Skills
         for (EquippedActiveSkill equippedActiveSkill : equippedActiveSkills) {
-            equippedActiveSkill.setupSpawnPacket(writer);
+            equippedActiveSkill.setupPacket(writer);
         }
     }
 
-    public static PlayerData applySpawnPacket(PacketReader reader) {
+    public static PlayerData applyPacket(PacketReader reader) {
         PlayerData playerData = new PlayerData(reader.getNextString());
 
         // Exp
@@ -389,12 +389,12 @@ public class PlayerData {
 
         // Classes Data
         for (int i = 0; i < PlayerClass.classesList.size(); i++) {
-            playerData.classesData[i] = PlayerClassData.applySpawnPacket(reader);
+            playerData.classesData[i] = PlayerClassData.applyPacket(reader);
         }
 
         // Equipped Active Skills
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
-            playerData.equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
+            playerData.equippedActiveSkills[i] = EquippedActiveSkill.applyPacket(reader);
         }
 
         return playerData;

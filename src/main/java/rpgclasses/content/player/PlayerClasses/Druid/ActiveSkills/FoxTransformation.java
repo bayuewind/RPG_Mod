@@ -51,7 +51,7 @@ public class FoxTransformation extends SimpleTranformationActiveSkill {
 
     @Override
     public int getBaseCooldown() {
-        return 10000;
+        return 4000;
     }
 
     @Override

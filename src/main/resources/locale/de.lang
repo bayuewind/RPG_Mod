@@ -193,21 +193,21 @@ wolfcompanion=Ein Wolfsgefährte greift markierte Gegner an und verursacht §i[[
 
 // Zauberer
 manapower=Jede Stufe gewährt:\n\n+1% Magieschaden für jede 10% ungenutztes Mana
-flamingsteps=Wenn du mit einem aktiven Schmuckstück oder einer Transformation rennst, hinterlässt du Flammen auf dem Boden\nDie Flammen entzünden Gegner für 2 Sekunden und verursachen §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 pro Sekunde
-stormbound=Alle §a[[9 - 0.5 x <skilllevel>]] Sekunden§0 schlägt ein Blitz bei einem zufälligen Gegner in deiner Sichtweite ein\nVerursacht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 und betäubt für 1 Sekunde
+flamingsteps=Wenn du mit einem aktiven Schmuckstück oder einer Transformation rennst, hinterlässt du Flammen auf dem Boden\nDie Flammen entzünden Gegner für 3 Sekunden und verursachen §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 pro Sekunde
+stormbound=Alle §a[[11 - 0.5 x <skilllevel>]] Sekunden§0 schlägt ein Blitz bei einem zufälligen Gegner in deiner Sichtweite ein\nVerursacht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0 und betäubt für 1 Sekunde
 arcaneshield=Ein Schild, der einen Treffer verhindert\nDer Schild erholt sich §a[[20 - <skilllevel>]] Sekunden§0 nach der Benutzung
 fireshield=Ein Schild, der einen Treffer verhindert\nBei Benutzung löst du eine Explosion aus, die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht\nund Mobs entzündet, die 5 Sekunden lang 20% ihres ursprünglichen Schadens pro Sekunde wiederholen\nDer Schild erholt sich 26 Sekunden nach der Benutzung
 iceshield=Ein Schild, der einen Treffer verhindert\nBei Benutzung löst du eine Eisaura aus, die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magieschaden§0 verursacht\nund Mobs für 5 Sekunden einfriert und für 1 Sekunde komplett einfriert\nDer Schild erholt sich 22 Sekunden nach der Benutzung
 
 // Nekromant
-necroticpower=Alle deine Magie- und Beschwörungsangriffe vergiften für 5% ihres Schadens für §a[[2 x <skilllevel>]] Sekunden§0, solange sie nicht von einer Beschwörung verursacht werden
+necroticpower=Alle deine Magieangriffe vergiften für 5% ihres Schadens für §a[[2 x <skilllevel>]] Sekunden§0
 darkmagic=Beschwörerschaden-Boni beeinflussen den Magieschaden um §a[[5 x <skilllevel>]]%
 necroticarmy=Besiegte feindliche Gegner verwandeln sich in §bSkelette§0 mit §a-[[100 - 3 x <skilllevel>]]%§0 Gesundheit und Schaden
 darksummons=Verursache §a+[[8 x <skilllevel>]]%§0 Beschwörerschaden bei vergifteten Gegnern
-lifeleech=Stellt §a[[0.1 x <skilllevel>]]%§0 des verursachten Beschwörerschadens als Gesundheit wieder her
+lifeleech=Stellt §a[[0.05 x <skilllevel>]]%§0 des verursachten Beschwörerschadens als Gesundheit wieder her
 necroticremains=Wenn eine nekrotische Beschwörung stirbt, explodiert sie und verursacht bei nahen Gegnern §i[[0.1 x <intelligence> x <skilllevel>]] Magieschaden§0 und vergiftet sie für 10 Sekunden mit 20% des Schadens pro Sekunde
 endlesslegion=Alle 4 Stufen dieser Fähigkeit erhältst du +1 maximale Beschwörung
-lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein §bLich§0 bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein §bLich§0 (ein Skelett)
+lichborn=Wenn du stirbst, überlebst du und stellst §a[[10 x <skilllevel>]]%§0 Gesundheit wieder her, wenn du nicht bereits ein §bLich§0 bist\nFür die nächsten §a[[120 - 6 x <skilllevel>]] Sekunden§0 wirst du ein §bLich§0 (ein Skelett)\n\n\n§bLich:§0 Untote Transformation\n\nKann keine Gegenstände benutzen\n+100% erlittener Schaden\n\nDrücke [input=transformationability1], um einen Knochen zu schießen, der §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Magieschaden§0 verursacht
 
 // Cleric
 vitalaura=Alle §a[[15 - <skilllevel>]] Sekunden§0 setzt du eine magische Heilungsaura um dich herum frei, die §a[[10 + <grace>]] Gesundheit§0 wiederherstellt\nSie heilt dich auch um die Hälfte dieses Betrags
@@ -321,7 +321,9 @@ battlecry=Für die nächsten 10 Sekunden werden dein und der Gesamtschaden und d
 ironguard=-50% eingehender Schaden für §a[[4 x <skilllevel>]] Sekunden
 intimidation=Für die nächsten §a[[<skilllevel>]] Sekunden§0 lässt du nahe Gegner weglaufen
 
-objectthrowing=Schritt 1: Greife ein Objekt vor dir\nSchritt 2: Wirf es nach vorne und verursache §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Nahkampfschaden§0\nBeide Schritte verbrauchen deine gesamte Ausdauer (mindestens 100%)
+objectthrowing=Schritt 1: Greife ein Objekt vor dir\nSchritt 2: Wirf es nach vorne und verursache §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Nahkampfschaden§0
+ironguard=-50% eingehender Schaden für §a[[4 x <skilllevel>]] Sekunden
+intimidation=Für die nächsten §a[[<skilllevel>]] Sekunden§0 lässt du nahe Gegner weglaufen
 
 // Waldläufer
 shortdash=Führe einen 100-<strength> Sprint aus\nVerbraucht 15% Ausdauer
@@ -354,7 +356,7 @@ lightning=Starte einen Blitz, der 1 Sekunde lang zwischen Mobs springt, §i[[4 x
 
 // Nekromant
 skeletonhorde=Beschwört §a[[1 + <skilllevel>]] §bSkelette§0
-skeletonwarrior=Beschwört einen §bSkelettkrieger§0 mit §a+[[20 x <skilllevel>]]%§0 Gesundheit und Schaden
+skeletonwarrior=Beschwört einen §bSkelettkrieger§0 mit §a+[[40 x <skilllevel>]]%§0 Gesundheit und Schaden
 sacrifice=Die nächste nekrotische Beschwörung stirbt, und du stellst dann §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gesundheit§0 als magische Heilung wieder her
 siegecry=Erhalte für 6 Sekunden §a+[[50 x <skilllevel>]]%§0 Beschwörungsgeschwindigkeit
 
@@ -381,11 +383,11 @@ wrathoflight=Beschwöre eine Lichtsäule auf den nächsten Gegner, die 5 Sekunde
 
 // Druid
 wolftransformation=Dauert 3 Sekunden, um sich in einen Wolf zu verwandeln\n\nBewegungsgeschwindigkeit: 60\n\nDrücke [input=transformationability1] für Hechtsprungbiss: Springe nach vorne und beiße, verursacht §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Nahkampfschaden§0\n\nDrücke [input=transformationability2] für Bellen: Zwinge nahe Gegner, dich für 2 Sekunden anzugreifen\n\nHalte [input=trinketability] gedrückt, um zu sprinten
-queenbeetransformation=Dauert 2 Sekunden, um sich in eine Bienenkönigin zu verwandeln\n\nBewegungsgeschwindigkeit: 30\n-50% Gegnererkennung\n§6+1000% eingehender Schaden§0\n\nDrücke [input=transformationability1] für Honigschuss: Verursacht §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Fernkampfschaden§0\n\nDrücke [input=transformationability2], um eine §9Biene§0 bis zu §a[[2 x <skilllevel>]]§0 zu beschwören\n\nHalte [input=trinketability] gedrückt, um deine Bienen zum Angriff zu befehlen
+queenbeetransformation=Dauert 2 Sekunden, um sich in eine Bienenkönigin zu verwandeln\n\nBewegungsgeschwindigkeit: 30\n-50% Gegnererkennung\n§6+1000% eingehender Schaden§0\nEin Treffer beschwört maximale Bienen, anstatt zu sterben (60s Abklingzeit)\n\nDrücke [input=transformationability1] für Honigschuss: Verursacht §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Fernkampfschaden§0\n\nDrücke [input=transformationability2], um eine §9Biene§0 bis zu §a[[2 x <skilllevel>]]§0 zu beschwören\n\nHalte [input=trinketability] gedrückt, um deine Bienen zum Angriff zu befehlen
 beartransformation=Dauert 4 Sekunden, um sich in einen Bären zu verwandeln\n\nBewegungsgeschwindigkeit: 20\n-50% eingehender Schaden\n\nDrücke [input=transformationability1] für Bodenschlag: Flächenangriff, der §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Nahkampfschaden§0 verursacht und für §a[[0.5 x <skilllevel>]] Sekunden§0 §9betäubt§0\n\nDrücke [input=transformationability2] für Knurren: Lasse nahe Gegner für 1 Sekunde weglaufen\n\nHalte [input=trinketability] gedrückt, um zu sprinten
 foxtransformation=Dauert 3 Sekunden, um sich in einen Fuchs zu verwandeln\n\nBewegungsgeschwindigkeit: 50\n§6+50% eingehender Schaden§0\n\nDrücke [input=transformationability1] für Feuerbälle schießen: Verursacht §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magieschaden§0\n\nDrücke [input=transformationability2], um eine §bTanzende Flamme§0 bis zu §a[[2 + <skilllevel>]]§0 zu beschwören, die jeweils den gleichen Schaden wie ein Feuerball verursachen\n\nDrücke [input=trinketability] für Sprint\n§!Vulpes Nova fox!
 rattransformation=Dauert 2 Sekunden, um sich in eine Ratte zu verwandeln\n\nBewegungsgeschwindigkeit: 25\n-50% Gegnererkennung\nGewährt maximale Ausweichchance\n§6+1000% eingehender Schaden§0\n\nDrücke [input=transformationability1] für Biss: Verursacht §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Nahkampfschaden§0 und vergiftet das Ziel für 100% des verursachten Schadens pro Sekunde für 10 Sekunden\n\nHalte [input=trinketability] gedrückt, um zu sprinten
-treanttransformation=Dauert 4 Sekunden, um sich in einen Baumwesen zu verwandeln\n\nBewegungsgeschwindigkeit: 0\n-§a[50 + 5 <skilllevel>]%§0 eingehender Schaden\nGegner ignorieren dich, wenn du 3 Sekunden lang versteckt bist\n\nDrücke [input=transformationability1] im aufgedeckten Zustand, um zufällige Samen zu schießen: Verursacht §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Fernkampfschaden§0 mit zufälligen Effekten\n\nDrücke [input=transformationability2], um einen §9Dryaden-Setzling§0 zu beschwören\n\nHalte [input=trinketability] gedrückt, um aufzudecken und zu sprinten, wenn du dich bewegst
+treanttransformation=Dauert 4 Sekunden, um sich in einen Baumwesen zu verwandeln\n\nBewegungsgeschwindigkeit: 0\n-§a[50 + 5 <skilllevel>]%§0 eingehender Schaden\n+50% Rüstung\nGegner ignorieren dich, wenn du 3 Sekunden lang versteckt bist\n\nDrücke [input=transformationability1] im aufgedeckten Zustand, um zufällige Samen zu schießen: Verursacht §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Fernkampfschaden§0 mit zufälligen Effekten\n\nDrücke [input=transformationability2], um einen §9Dryaden-Setzling§0 zu beschwören\n\nHalte [input=trinketability] gedrückt, um aufzudecken und zu sprinten, wenn du dich bewegst
 
 
 [skillsdesckeys]
@@ -430,8 +432,8 @@ dancingflame=§bTanzende Flamme:§0 Beschwörung, die wie ein Projektil wirkt. E
 necromancerskeleton=§bSkelett:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSchaden: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
 necromancerskeletonwarrior=§bSkelettkrieger:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchaden: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
 necromancerboneslinger=§bKnochenschleuderer:§0 Nekrotische beschädigbare Beschwörung\nGesundheit: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchaden: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 Entfernung)\nGeschwindigkeit: 60\nVerliert 2% der gesamten Gesundheit pro Sekunde
-bee=§9Biene:§0 Beschädigbare Beschwörung\nGesundheit: 1\nSchaden: §a[[<playerlevel> + <intelligence>]]§0\nGeschwindigkeit: 40\n\nStirbt beim Angriff, vergiftet aber das Ziel für 20% des verursachten Schadens pro Sekunde für 10 Sekunden
-dryadsapling=§9Dryaden-Setzling:§0 Beschädigbare Beschwörung\nGesundheit: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchaden: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nGeschwindigkeit: 65\nVerliert 2% der gesamten Gesundheit pro Sekunde
+bee=§9Biene:§0 Beschädigbare Beschwörung\nGesundheit: 1\nSchaden: §a[[<playerlevel> + <intelligence>]]§0\nGeschwindigkeit: 100\n\nStirbt beim Angriff, vergiftet aber das Ziel für 20% des verursachten Schadens pro Sekunde für 10 Sekunden
+dryadsapling=§9Dryaden-Setzling:§0 Beschädigbare Beschwörung\nGesundheit: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchaden: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nGeschwindigkeit: 65\nVerliert 2% der gesamten Gesundheit pro Sekunde
 
 [item]
 scrollofoblivion=Schriftrolle des Vergessens
@@ -516,7 +518,7 @@ activeskillpoints=Aktive Fähigkeitspunkte: <points>
 
 activeskillsuse=Dieser Mod verwandelt das Ausdrucksrad (standardmäßig T-Taste) in das Rad für aktive Fähigkeiten
 activeskillsusetip1=Es wird empfohlen, die Steuerung des Ausdrucksrads auf eine leicht zugängliche Taste zu ändern
-activeskillsusetip2=Du kannst auch jedem Slot für aktive Fähigkeiten eine Taste zuweisen (ideal für Fähigkeiten mit geringer Abklingzeit)
+activeskillsusetip2=Nur die ersten vier Fähigkeiten erscheinen im Rad für aktive Fähigkeiten. Für den Rest musst du Tasten verwenden
 activeskillsequipinstructions=Klicke auf einen Slot, um eine aktive Fähigkeit auszurüsten. Du kannst eine aktive Fähigkeit während der Abklingzeit nicht ablegen
 noactiveskills=Du hast keine aktiven Fähigkeiten. Schalte sie durch die Klassen frei
 
@@ -554,6 +556,12 @@ activeskillslot3=Aktiver Fähigkeitsslot 3
 activeskillslot4=Aktiver Fähigkeitsslot 4
 activeskillslot5=Aktiver Fähigkeitsslot 5
 activeskillslot6=Aktiver Fähigkeitsslot 6
+activeskillslot7=Aktiver Fähigkeitsslot 7
+activeskillslot8=Aktiver Fähigkeitsslot 8
+activeskillslot9=Aktiver Fähigkeitsslot 9
+activeskillslot10=Aktiver Fähigkeitsslot 10
+activeskillslot11=Aktiver Fähigkeitsslot 11
+activeskillslot12=Aktiver Fähigkeitsslot 12
 transformationability1=Transformationsfähigkeit 1
 transformationability2=Transformationsfähigkeit 2
 

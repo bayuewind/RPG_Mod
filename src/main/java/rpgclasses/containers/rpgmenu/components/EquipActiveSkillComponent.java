@@ -13,6 +13,7 @@ import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
+import rpgclasses.containers.rpgmenu.entries.ActiveSkillsEntry;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
@@ -23,13 +24,13 @@ import java.util.function.Consumer;
 
 public class EquipActiveSkillComponent extends FormContentBox {
     public static int height = 54;
-    public static int width = 300;
+    public static int shortWidth = 300;
 
     private final FormContentIconButton[] buttons = new FormContentIconButton[PlayerData.EQUIPPED_SKILLS_MAX];
     public final PlayerClass playerClass;
     public final ActiveSkill activeSkill;
 
-    public EquipActiveSkillComponent(int x, int y, ActiveSkill activeSkill, PlayerClass playerClass, PlayerMob player, int skillLevel, Consumer<EquippedActiveSkill[]> onClick) {
+    public EquipActiveSkillComponent(int x, int y, ActiveSkill activeSkill, PlayerClass playerClass, PlayerMob player, int skillLevel, int showManySlots, int width, Consumer<EquippedActiveSkill[]> onClick) {
         super(x, y, width, height);
 
         PlayerData playerData = PlayerDataList.getPlayerData(player);
@@ -43,7 +44,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
 
         this.addComponent(new FormLocalLabel(getSkillText(activeSkill, skillLevel), new FontOptions(16), -1, 34 + 10, 0));
 
-        for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
+        for (int i = 0; i < showManySlots; i++) {
             int finalI = i;
             buttons[i] = (FormContentIconButton) this.addComponent(new FormContentIconButton(34 + 10 + (32 + 4) * i, 16 + 6, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][i], new StaticMessage("[input=activeskillslot" + (i + 1) + "]"))
                     .onClicked(c -> {
@@ -96,7 +97,7 @@ public class EquipActiveSkillComponent extends FormContentBox {
     }
 
     public void update(EquippedActiveSkill[] newEquippedActiveSkills, PlayerData playerData) {
-        for (int i = 0; i < newEquippedActiveSkills.length; i++) {
+        for (int i = 0; i < ActiveSkillsEntry.showManySlots; i++) {
             boolean sameFamily = false;
             boolean sameSkill = false;
             for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {

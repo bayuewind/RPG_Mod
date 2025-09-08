@@ -150,7 +150,7 @@ public class FlamingSteps extends SimpleBuffPassive {
         public void serverHit(Mob target, boolean clientSubmitted) {
             PlayerMob player = (PlayerMob) owner;
             PlayerData playerData = PlayerDataList.getPlayerData(player);
-            IgnitedBuff.apply(owner, target, 0.5F * playerData.getLevel() + 0.5F * playerData.getIntelligence(player) * skillLevel, 2F, false);
+            IgnitedBuff.apply(owner, target, 0.5F * playerData.getLevel() + 0.5F * playerData.getIntelligence(player) * skillLevel, 3F, false);
         }
 
         @Override

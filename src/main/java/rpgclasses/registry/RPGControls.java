@@ -15,6 +15,21 @@ public class RPGControls {
     public static Control TRANSFORMATION_ABILITY_1;
     public static Control TRANSFORMATION_ABILITY_2;
 
+    public static int[] defaultSlotKeys = new int[] {
+            -97, // 1
+            -96, // 2
+            InputID.KEY_KP_0, // 3
+            InputID.KEY_KP_1, // 4
+            InputID.KEY_KP_2, // 5
+            InputID.KEY_KP_3, // 6
+            InputID.KEY_KP_4, // 7
+            InputID.KEY_KP_5, // 8
+            InputID.KEY_KP_6, // 9
+            InputID.KEY_KP_7, // 10
+            InputID.KEY_KP_8, // 11
+            InputID.KEY_KP_9, // 12
+    };
+
     public static void registerCore() {
 
         Control.addModControl(new Control(InputID.KEY_K, "openrpgmenu") {
@@ -28,72 +43,20 @@ public class RPGControls {
             }
         });
 
-        Control.addModControl(new Control(-1, "activeskillslot1") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[0].tryRun(client.getPlayer(), 0);
+        for (int i = 0; i < 12; i++) {
+            final int slot = i;
+            Control.addModControl(new Control(defaultSlotKeys[i], "activeskillslot" + (slot + 1)) {
+                @Override
+                public void activate(InputEvent event) {
+                    super.activate(event);
+                    if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
+                        Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
+                        PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
+                        playerData.equippedActiveSkills[slot].tryRun(client.getPlayer(), slot);
+                    }
                 }
-            }
-        });
-        Control.addModControl(new Control(-1, "activeskillslot2") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[1].tryRun(client.getPlayer(), 1);
-                }
-            }
-        });
-        Control.addModControl(new Control(-1, "activeskillslot3") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[2].tryRun(client.getPlayer(), 2);
-                }
-            }
-        });
-        Control.addModControl(new Control(-1, "activeskillslot4") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[3].tryRun(client.getPlayer(), 3);
-                }
-            }
-        });
-        Control.addModControl(new Control(-97, "activeskillslot5") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[4].tryRun(client.getPlayer(), 4);
-                }
-            }
-        });
-        Control.addModControl(new Control(-96, "activeskillslot6") {
-            @Override
-            public void activate(InputEvent event) {
-                super.activate(event);
-                if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
-                    Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
-                    PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                    playerData.equippedActiveSkills[5].tryRun(client.getPlayer(), 5);
-                }
-            }
-        });
+            });
+        }
 
         if (Control.EXPRESSION_WHEEL.getKey() == -1) {
             Control.EXPRESSION_WHEEL.changeKey(Control.EXPRESSION_WHEEL.defaultKey);

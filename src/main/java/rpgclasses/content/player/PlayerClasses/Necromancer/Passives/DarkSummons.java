@@ -1,5 +1,8 @@
 package rpgclasses.content.player.PlayerClasses.Necromancer.Passives;
 
+import necesse.engine.registries.DamageTypeRegistry;
+import necesse.entity.mobs.GameDamage;
+import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
@@ -17,7 +20,7 @@ public class DarkSummons extends SimpleBuffPassive {
             @Override
             public void onBeforeAttacked(ActiveBuff activeBuff, MobBeforeHitEvent event) {
                 super.onBeforeAttacked(activeBuff, event);
-                if (event.target.buffManager.hasBuff(RPGBuffs.MAGIC_POISON)) {
+                if (event.damage.type.equals(DamageTypeRegistry.SUMMON) && event.target.buffManager.hasBuff(RPGBuffs.MAGIC_POISON)) {
                     event.damage = event.damage.modDamage(1 + getLevel(activeBuff) * 0.08F);
                 }
             }

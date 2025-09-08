@@ -15,7 +15,7 @@ public abstract class EquippedActiveSkillsCustomAction extends ContainerCustomAc
         Packet content = new Packet();
         PacketWriter writer = new PacketWriter(content);
         for (EquippedActiveSkill equippedActiveSkill : equippedActiveSkills) {
-            equippedActiveSkill.setupSpawnPacket(writer);
+            equippedActiveSkill.setupPacket(writer);
         }
 
         this.runAndSendAction(content);
@@ -24,7 +24,7 @@ public abstract class EquippedActiveSkillsCustomAction extends ContainerCustomAc
     public void executePacket(PacketReader reader) {
         EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
         for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
-            equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
+            equippedActiveSkills[i] = EquippedActiveSkill.applyPacket(reader);
         }
         this.run(equippedActiveSkills);
     }

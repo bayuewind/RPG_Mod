@@ -27,7 +27,7 @@ public class LoadPlayerDataPacket extends Packet {
         name = reader.getNextString();
 
         if (reader.hasNext()) {
-            playerData = PlayerData.applySpawnPacket(reader);
+            playerData = PlayerData.applyPacket(reader);
         } else {
             playerData = null;
         }
@@ -41,7 +41,7 @@ public class LoadPlayerDataPacket extends Packet {
 
         writer.putNextString(name);
         if (playerData != null) {
-            playerData.setupSpawnPacket(writer);
+            playerData.setupPacket(writer);
         }
     }
 

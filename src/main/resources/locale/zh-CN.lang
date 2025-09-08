@@ -193,21 +193,21 @@ wolfcompanion=狼伙伴会攻击被标记的敌人，造成 §i[[<playerlevel> +
 
 // 巫师
 manapower=每级提供：\n\n每 10% 未使用的法力，魔法伤害 +1%
-flamingsteps=当佩戴活动饰品或变身时奔跑，你会在地上留下火焰\n火焰会点燃敌人 2 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0
-stormbound=每 §a[[9 - 0.5 x <skilllevel>]] 秒§0，一道闪电会击中你视野内的一个随机敌人\n造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 1 秒
+flamingsteps=当佩戴活动饰品或变身时奔跑，你会在地上留下火焰\n火焰会点燃敌人 3 秒，每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0
+stormbound=每 §a[[11 - 0.5 x <skilllevel>]] 秒§0，一道闪电会击中你视野内的一个随机敌人\n造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0 并眩晕 1 秒
 arcaneshield=一个可以抵挡一次攻击的护盾\n护盾将在使用后 §a[[20 - <skilllevel>]] 秒§0 后恢复
 fireshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一次爆炸，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n并点燃生物，在 5 秒内每秒重复其原始伤害的 20%\n护盾将在使用后 26 秒后恢复
 iceshield=一个可以抵挡一次攻击的护盾\n使用时，你会释放一道冰霜光环，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法伤害§0\n使生物冰冻 5 秒，并完全冰冻 1 秒\n护盾将在使用后 22 秒后恢复
 
 // 死灵法师
-necroticpower=你的所有魔法和召唤师攻击都会在§a[[2 x <skilllevel>]]秒§0内造成其伤害的5%的毒素伤害，只要它们不是由召唤物造成的
+necroticpower=你的所有魔法攻击都会在§a[[2 x <skilllevel>]]秒§0内造成其伤害的5%的毒素伤害
 darkmagic=召唤师伤害加成会影响魔法伤害§a[[5 x <skilllevel>]]%
 necroticarmy=被击败的敌对敌人将变成§b骷髅§0，其生命值和伤害为§a-[[100 - 3 x <skilllevel>]]%§0
 darksummons=对中毒的敌人造成§a+[[8 x <skilllevel>]]%§0的召唤师伤害
-lifeleech=将造成的召唤师伤害的§a[[0.1 x <skilllevel>]]%§0恢复为生命值
+lifeleech=将造成的召唤师伤害的§a[[0.05 x <skilllevel>]]%§0恢复为生命值
 necroticremains=当一个亡灵召唤物死亡时，它会爆炸，对附近的敌人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法伤害§0，并在10秒内每秒对它们造成20%的伤害
 endlesslegion=此技能每升4级，你将获得+1最大召唤物
-lichborn=当你死亡时，如果你还不是一个§b巫妖§0，你会存活下来并恢复§a[[10 x <skilllevel>]]%§0的生命值\n在接下来的§a[[120 - 6 x <skilllevel>]]秒§0内，你将成为一个§b巫妖§0（一个骷髅）
+lichborn=当你死亡时，如果你还不是一个§b巫妖§0，你会存活下来并恢复§a[[10 x <skilllevel>]]%§0的生命值\n在接下来的§a[[120 - 6 x <skilllevel>]]秒§0内，你将成为一个§b巫妖§0（一个骷髅）\n\n\n§b巫妖:§0 亡灵变身\n\n无法使用物品\n+100% 承受伤害\n\n按 [input=transformationability1] 发射一根骨头，造成 §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] 魔法伤害§0
 
 // Cleric
 vitalaura=每§a[[15 - <skilllevel>]]秒§0，你会在周围释放一个魔法治疗光环，恢复§a[[10 + <grace>]]点生命值§0\n它还会为你恢复该数值的一半
@@ -321,7 +321,7 @@ battlecry=在接下来的 10 秒内，你和附近盟友的所有伤害和移动
 ironguard=在 §a[[4 x <skilllevel>]] 秒内§0，受到伤害 -50%
 intimidation=在接下来的 §a[[<skilllevel>]] 秒内§0，让附近的敌人逃跑
 
-objectthrowing=第 1 步：抓住你面前的一个物体\n第 2 步：向前投掷，造成 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] 近战伤害§0\n两个步骤都会消耗你所有的耐力（至少 100%）
+objectthrowing=第 1 步：抓住你面前的一个物体\n第 2 步：向前投掷，造成 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] 近战伤害§0
 
 // 游侠
 shortdash=进行一次 100-<strength> 的冲刺\n消耗 15% 耐力
@@ -354,7 +354,7 @@ lightning=开始一道闪电，在生物之间跳跃 1 秒，造成 §i[[4 x <pl
 
 // 死灵法师
 skeletonhorde=召唤 §a[[1 + <skilllevel>]] 个 §b骷髅§0
-skeletonwarrior=召唤一个拥有 §a+[[20 x <skilllevel>]]%§0 生命值和伤害的 §b骷髅战士§0
+skeletonwarrior=召唤一个拥有 §a+[[40 x <skilllevel>]]%§0 生命值和伤害的 §b骷髅战士§0
 sacrifice=最近的亡灵召唤物死亡，然后你以魔法治疗的形式恢复§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]生命值§0
 siegecry=在 6 秒内获得 §a+[[50 x <skilllevel>]]%§0 的召唤速度
 
@@ -381,11 +381,11 @@ wrathoflight=在最近的敌人身上召唤一道光柱，在区域内每秒造�
 
 // Druid
 wolftransformation=需要 3 秒才能变身为狼\n\n移动速度：60\n\n按 [input=transformationability1] 进行冲刺撕咬：向前跳跃并撕咬，造成 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] 近战伤害§0\n\n按 [input=transformationability2] 进行吠叫：强制附近的敌人将攻击集中在你身上 2 秒\n\n按住 [input=trinketability] 进行冲刺
-queenbeetransformation=需要 2 秒才能变身为蜂后\n\n移动速度：30\n-50% 敌人侦测\n§6+1000% 受到伤害§0\n\n按 [input=transformationability1] 进行射击蜂蜜：造成 §i[[2 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0\n\n按 [input=transformationability2] 召唤 §9蜜蜂§0，最多 §a[[2 x <skilllevel>]] 只§0\n\n按住 [input=trinketability] 命令你的蜜蜂攻击
+queenbeetransformation=需要 2 秒才能变身为蜂后\n\n移动速度：30\n-50% 敌人侦测\n§6+1000% 受到伤害§0\n受到攻击会召唤最大数量的蜜蜂而不是死亡（冷却时间 60 秒）\n\n按 [input=transformationability1] 进行射击蜂蜜：造成 §i[[2 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0\n\n按 [input=transformationability2] 召唤 §9蜜蜂§0，最多 §a[[2 x <skilllevel>]] 只§0\n\n按住 [input=trinketability] 命令你的蜜蜂攻击
 beartransformation=需要 4 秒才能变身为熊\n\n移动速度：20\n-50% 受到伤害\n\n按 [input=transformationability1] 进行地面猛击：区域攻击，造成 §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] 近战伤害§0 并 §9眩晕§0 §a[[0.5 x <skilllevel>]] 秒§0\n\n按 [input=transformationability2] 进行咆哮：使附近的敌人逃跑 1 秒\n\n按住 [input=trinketability] 进行冲刺
 foxtransformation=需要 3 秒才能变身为狐狸\n\n移动速度：50\n§6+50% 受到伤害§0\n\n按 [input=transformationability1] 进行射击火球：造成 §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法伤害§0\n\n按 [input=transformationability2] 召唤 §b舞动之焰§0，最多 §a[[2 + <skilllevel>]] 个§0，每个造成与火球相同的伤害\n\n按 [input=trinketability] 进行冲刺\n§!Vulpes Nova fox!
 rattransformation=需要 2 秒才能变身为老鼠\n\n移动速度：25\n-50% 敌人侦测\n获得最大闪避几率\n§6+1000% 受到伤害§0\n\n按 [input=transformationability1] 进行撕咬：造成 §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] 近战伤害§0 并使目标中毒，每秒造成 100% 的伤害，持续 10 秒\n\n按住 [input=trinketability] 进行冲刺
-treanttransformation=需要 4 秒才能变身为树人\n\n移动速度：0\n-§a[50 + 5 <skilllevel>]%§0 受到伤害\n如果隐藏 3 秒，敌人会忽略你\n\n按 [input=transformationability1] 在显形时射击随机种子：造成 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0，带有随机效果\n\n按 [input=transformationability2] 召唤 §9德鲁伊树苗§0\n\n按住 [input=trinketability] 显形并在移动时冲刺
+treanttransformation=需要 4 秒才能变身为树人\n\n移动速度：0\n-§a[50 + 5 <skilllevel>]%§0 受到伤害\n+50% 护甲\n如果隐藏 3 秒，敌人会忽略你\n\n按 [input=transformationability1] 在显形时射击随机种子：造成 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] 远程伤害§0，带有随机效果\n\n按 [input=transformationability2] 召唤 §9德鲁伊树苗§0\n\n按住 [input=trinketability] 显形并在移动时冲刺
 
 
 [skillsdesckeys]
@@ -430,7 +430,8 @@ dancingflame=§b舞动之焰：§0 像射弹一样行动的召唤物。击中时
 necromancerskeleton=§b骷髅：§0 可受伤害的亡灵召唤物\n生命值：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n每秒损失总生命值的 2%
 necromancerskeletonwarrior=§b骷髅战士：§0 可受伤害的亡灵召唤物\n生命值：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n伤害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n每秒损失总生命值的 2%
 necromancerboneslinger=§b投骨者：§0 可受伤害的亡灵召唤物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320 距离）\n速度：60\n每秒损失总生命值的 2%
-bee=§9蜜蜂：§0 可受伤害的召唤物\n生命值：1\n伤害：§a[[<playerlevel> + <intelligence>]]§0\n速度：40\n\n攻击时死亡，但在 10 秒内每秒对目标造成 20% 的伤害\n德鲁伊树苗：§0 可受伤害的召唤物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n伤害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n速度：65\n每秒损失总生命值的 2%
+bee=§9蜜蜂：§0 可受伤害的召唤物\n生命值：1\n伤害：§a[[<playerlevel> + <intelligence>]]§0\n速度：100\n\n攻击时死亡，但在 10 秒内每秒对目标造成 20% 的伤害
+dryadsapling=§9德鲁伊树苗：§0 可受伤害的召唤物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n伤害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n速度：65\n每秒损失总生命值的 2%
 
 [item]
 scrollofoblivion=遗忘卷轴
@@ -464,7 +465,7 @@ gracegoldring=优雅金戒指
 
 
 [itemtooltip]
-神圣伤害：<value>
+holydamagetip=神圣伤害：<value>
 scrollofoblivion=授予 2 个重置点
 ringsboxtip=可以存放属性戒指
 
@@ -515,7 +516,7 @@ activeskillpoints=主动技能点：<points>
 
 activeskillsuse=此模组将表情轮盘（默认为 T 键）变成主动技能轮盘
 activeskillsusetip1=建议将表情轮盘的控制更改为一个易于访问的键
-activeskillsusetip2=你也可以为每个主动技能插槽分配一个键（非常适合冷却时间短的技能）
+activeskillsusetip2=主动技能轮盘中只显示前四个技能。其余技能需要使用按键
 activeskillsequipinstructions=点击一个插槽来装备一个主动技能。你不能卸下正在冷却的主动技能
 noactiveskills=你没有主动技能。通过职业解锁它们
 
@@ -553,6 +554,12 @@ activeskillslot3=主动技能槽 3
 activeskillslot4=主动技能槽 4
 activeskillslot5=主动技能槽 5
 activeskillslot6=主动技能槽 6
+activeskillslot7=主动技能槽 7
+activeskillslot8=主动技能槽 8
+activeskillslot9=主动技能槽 9
+activeskillslot10=主动技能槽 10
+activeskillslot11=主动技能槽 11
+activeskillslot12=主动技能槽 12
 transformationability1=变身能力 1
 transformationability2=变身能力 2
 

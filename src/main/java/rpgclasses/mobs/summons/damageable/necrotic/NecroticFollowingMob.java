@@ -26,7 +26,7 @@ abstract public class NecroticFollowingMob extends DamageableFollowingMob {
                     int necroticRemainsLevel = ab.getGndData().getInt("skillLevel");
                     if (necroticRemainsLevel > 0) {
                         PlayerData playerData = PlayerDataList.getPlayerData(player);
-                        getLevel().entityManager.addLevelEvent(new NecroticExplosionLevelEvent(x, y, 150, new GameDamage(0), 0.1F * necroticRemainsLevel * playerData.getIntelligence(player), 0, player, false));
+                        getLevel().entityManager.addLevelEvent(new NecroticExplosionLevelEvent(x, y, 150, new GameDamage(0), 0.1F * necroticRemainsLevel * playerData.getIntelligence(player), 0, player));
                     }
                 }
             }

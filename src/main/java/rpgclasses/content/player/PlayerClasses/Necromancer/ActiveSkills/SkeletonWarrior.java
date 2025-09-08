@@ -25,7 +25,7 @@ public class SkeletonWarrior extends ActiveSkill {
         DamageableFollowingMob mob = (DamageableFollowingMob) MobRegistry.getMob("necromancerskeletonwarrior", player.getLevel());
         player.serverFollowersManager.addFollower(stringID, mob, FollowPosition.WALK_CLOSE, null, 1, Integer.MAX_VALUE, null, true);
 
-        mob.updateStats(player, playerData, 1 + activeSkillLevel * 0.2F);
+        mob.updateStats(player, playerData, 1 + activeSkillLevel * 0.4F);
 
         Point2D.Float target = getRandomClosePlace(player);
         player.getLevel().entityManager.addMob(mob, target.x, target.y);

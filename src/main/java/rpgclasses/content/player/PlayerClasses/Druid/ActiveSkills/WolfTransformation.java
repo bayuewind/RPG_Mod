@@ -50,7 +50,7 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
 
     @Override
     public int getBaseCooldown() {
-        return 10000;
+        return 6000;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
 
         @Override
         public int clickCooldown() {
-            return 2000;
+            return 1000;
         }
 
         @Override
@@ -127,7 +127,7 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
             float dirY = dy / length;
 
             int skillLevel = getActualSkillLevel();
-            LevelEvent event = new WolfChargeLevelEvent(this, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 100, 200, new GameDamage(DamageTypeRegistry.MELEE, 2 * playerData.getLevel() + playerData.getStrength(player) * skillLevel + playerData.getSpeed(player) * skillLevel));
+            LevelEvent event = new WolfChargeLevelEvent(player, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 50, 200, new GameDamage(DamageTypeRegistry.MELEE, 2 * playerData.getLevel() + playerData.getStrength(player) * skillLevel + playerData.getSpeed(player) * skillLevel));
             player.getLevel().entityManager.addLevelEventHidden(event);
             player.getServer().network.sendToClientsWithEntity(new PacketLevelEvent(event), event);
         }

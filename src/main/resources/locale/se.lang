@@ -193,18 +193,21 @@ wolfcompanion=En vargkompanjon kommer att attackera märkta fiender och ge §i[[
 
 // Trollkarl
 manapower=Varje nivå ger:\n\n+1% Magisk Skada för varje 10% oanvänd Mana
-flamingsteps=När du springer med en aktiv prydnadssak eller transformering lämnar du flammor på marken\nFlammorna kommer att antända fiender i 2 sekunder och ge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 per sekund
-stormbound=Var §a[[9 - 0.5 x <skilllevel>]] sekund§0, slår en blixt ner på en slumpmässig fiende i ditt synfält\nGer §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 och bedövar i 1 sekund
+flamingsteps=När du springer med en aktiv prydnadssak eller transformation, kommer du att lämna flammor på marken\nFlammorna kommer att antända fiender i 3 sekunder, och ge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 per sekund
+stormbound=Var §a[[11 - 0.5 x <skilllevel>]] sekund§0, slår en blixt ner på en slumpmässig fiende i ditt synfält\nGer §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skada§0 och bedövar i 1 sekund
 arcaneshield=En sköld som förhindrar en träff\nSkölden återhämtar sig §a[[20 - <skilllevel>]] sekunder§0 efter användning
 fireshield=En sköld som förhindrar en träff\nNär den används, släpper du lös en explosion som ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\noch antänder mobbar, som upprepar 20% av sin ursprungliga skada per sekund i 5 sekunder\nSkölden återhämtar sig 26 sekunder efter användning
 iceshield=En sköld som förhindrar en träff\nNär den används, släpper du lös en is-aura som ger §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skada§0\nfryser mobbar i 5 sekunder och fryser dem helt i 1 sekund\nSkölden återhämtar sig 22 sekunder efter användning
 
 // Nekromantiker
+necroticpower=Alla dina magiska attacker förgiftar för 5% av deras skada i §a[[2 x <skilllevel>]] sekunder§0
+darkmagic=Framkallarskada bonusar påverkar Magisk Skada med §a[[5 x <skilllevel>]]%
+necroticarmy=Besegrade fientliga fiender kommer att förvandlas till §bSkelett§0 med §a-[[100 - 3 x <skilllevel>]]%§0 Hälsa och Skada
 darksummons=Ge §a+[[8 x <skilllevel>]]%§0 Framkallarskada till förgiftade fiender
-lifeleech=Återställer §a[[0.1 x <skilllevel>]]%§0 av den utdelade Framkallarskadan som Hälsa
+lifeleech=Återställer §a[[0.05 x <skilllevel>]]%§0 av den utdelade framkallarskadan som hälsa
 necroticremains=När en nekrotisk framkallning dör, exploderar den och ger §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skada§0 till närliggande fiender, och förgiftar dem med 20% av skadan per sekund i 10 sekunder
 endlesslegion=Var 4:e nivå av denna färdighet, får du +1 max framkallning
-lichborn=När du dör, överlever du och återställer §a[[10 x <skilllevel>]]%§0 Hälsa om du inte redan är en §bLich§0\nUnder de kommande §a[[120 - 6 x <skilllevel>]] sekunderna§0, blir du en §bLich§0 (ett skelett)
+lichborn=När du dör, överlever du och återställer §a[[10 x <skilllevel>]]%§0 Hälsa om du inte redan är en §bLich§0\nUnder de kommande §a[[120 - 6 x <skilllevel>]] sekunderna§0, blir du en §bLich§0 (ett skelett)\n\n\n§bLich:§0 Odöd transformation\n\nKan inte använda föremål\n+100% Inkommande Skada\n\nTryck [input=transformationability1] för att skjuta ett ben som ger §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Magisk Skada§0
 
 // Cleric
 vitalaura=Var §a[[15 - <skilllevel>]] sekund§0, släpper du lös en magisk läkande aura runt dig som återställer §a[[10 + <grace>]] hälsa§0\nDen läker dig också för halva det beloppet
@@ -318,7 +321,7 @@ battlecry=Under de kommande 10 sekunderna, öka din och närliggande allierades 
 ironguard=-50% inkommande skada i §a[[4 x <skilllevel>]] sekunder
 intimidation=Under de kommande §a[[<skilllevel>]] sekunderna§0, få närliggande fiender att fly
 
-objectthrowing=Steg 1: Grip ett föremål framför dig\nSteg 2: Kasta det framåt och ge §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] närstridsskada§0\nBåda stegen förbrukar all din uthållighet (minst 100%)
+objectthrowing=Steg 1: Grip ett föremål framför dig\nSteg 2: Kasta det framåt och ge §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Närstridsskada§0
 
 // Jägare
 shortdash=Utför en 100-<strength> rusning\nFörbrukar 15% uthållighet
@@ -351,7 +354,7 @@ lightning=Starta en blixt som hoppar mellan mobbar i 1 sekund, ger §i[[4 x <pla
 
 // Nekromantiker
 skeletonhorde=Kallar fram §a[[1 + <skilllevel>]] §bSkelett§0
-skeletonwarrior=Kallar fram en §bSkelettkrigare§0 med §a+[[20 x <skilllevel>]]%§0 Hälsa och Skada
+skeletonwarrior=Kallar fram en §bSkelettkrigare§0 med §a+[[40 x <skilllevel>]]%§0 Hälsa och Skada
 sacrifice=Den närmaste nekrotiska framkallningen dör, och du återställer sedan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Hälsa§0 som magisk läkning
 siegecry=Få §a+[[50 x <skilllevel>]]%§0 Framkallningshastighet i 6 sekunder
 
@@ -378,11 +381,11 @@ wrathoflight=Kalla fram en ljuskolonn på närmaste fiende, som ger §i[[4 x <pl
 
 // Druid
 wolftransformation=Tar 3 sekunder att transformera till en Varg\n\nRörelsehastighet: 60\n\nTryck [input=transformationability1] för Dash Bite: Hoppa framåt och bit, vilket ger §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] närstridsskada§0\n\nTryck [input=transformationability2] för Skall: Tvinga närliggande fiender att fokusera sina attacker på dig i 2 sekunder\n\nHåll [input=trinketability] för att sprinta
-queenbeetransformation=Tar 2 sekunder att transformera till en Drottningbi\n\nRörelsehastighet: 30\n-50% Fiendedetektering\n§6+1000% Inkommande Skada§0\n\nTryck [input=transformationability1] för Skjut Honung: Ge §i[[2 x <playerlevel> + <strength> x <skilllevel>]] avståndsskada§0\n\nTryck [input=transformationability2] för att framkalla ett §9Bi§0 upp till §a[[2 x <skilllevel>]]§0\n\nHåll [input=trinketability] för att beordra dina Bin att attackera
+queenbeetransformation=Tar 2 sekunder att transformera till en Drottningbi\n\nRörelsehastighet: 30\n-50% Fiendedetektering\n§6+1000% Inkommande Skada§0\nAtt ta en träff kallar fram maximalt antal bin istället för att dö (60s nedkylning)\n\nTryck [input=transformationability1] för att skjuta honung: Ge §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Avståndsskada§0\n\nTryck [input=transformationability2] för att framkalla ett §9Bi§0 upp till §a[[2 x <skilllevel>]]§0\n\nHåll [input=trinketability] för att beordra dina bin att attackera
 beartransformation=Tar 4 sekunder att transformera till en Björn\n\nRörelsehastighet: 20\n-50% Inkommande Skada\n\nTryck [input=transformationability1] för Markslag: Områdesattack som ger §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] närstridsskada§0 och §9bedövar§0 i §a[[0.5 x <skilllevel>]] sekunder§0\n\nTryck [input=transformationability2] för Morra: Få närliggande fiender att fly i 1 sekund\n\nHåll [input=trinketability] för att sprinta
 foxtransformation=Tar 3 sekunder att transformera till en Räv\n\nRörelsehastighet: 50\n§6+50% Inkommande Skada§0\n\nTryck [input=transformationability1] för Skjut Eldklot: Ge §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magisk skada§0\n\nTryck [input=transformationability2] för att framkalla en §bDansande Låga§0 upp till §a[[2 + <skilllevel>]]§0, var och en ger samma skada som ett Eldklot\n\nTryck [input=trinketability] för att sprinta\n§!Vulpes Nova fox!
 rattransformation=Tar 2 sekunder att transformera till en Råtta\n\nRörelsehastighet: 25\n-50% Fiendedetektering\nGer maximal undvikandeschans\n§6+1000% Inkommande Skada§0\n\nTryck [input=transformationability1] för Bett: Ger §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] närstridsskada§0 och förgiftar målet för 100% av den utdelade skadan per sekund i 10 sekunder\n\nHåll [input=trinketability] för att sprinta
-treanttransformation=Tar 4 sekunder att transformera till en Trädman\n\nRörelsehastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 Inkommande Skada\nFiender ignorerar dig om du är dold i 3 sekunder\n\nTryck [input=transformationability1] när avslöjad för att skjuta slumpmässiga frön: Ge §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] avståndsskada§0 med slumpmässiga effekter\n\nTryck [input=transformationability2] för att framkalla en §9Dryad Sapling§0\n\nHåll [input=trinketability] för att avslöja och sprinta om du rör dig
+treanttransformation=Tar 4 sekunder att transformera till en Trädman\n\nRörelsehastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 Inkommande Skada\n+50% Rustning\nFiender ignorerar dig om du är dold i 3 sekunder\n\nTryck [input=transformationability1] när du är avslöjad för att skjuta slumpmässiga frön: Ge §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Avståndsskada§0 med slumpmässiga effekter\n\nTryck [input=transformationability2] för att framkalla en §9Dryadplantling§0\n\nHåll [input=trinketability] för att avslöja och sprinta om du rör dig
 
 
 [skillsdesckeys]
@@ -427,8 +430,8 @@ dancingflame=§bDansande Låga:§0 Framkallning som fungerar som ett projektil. 
 necromancerskeleton=§bSkelett:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerskeletonwarrior=§bSkelettkrigare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkada: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
 necromancerboneslinger=§bBenkastare:§0 Nekrotisk skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 avstånd)\nHastighet: 60\nFörlorar 2% av Total Hälsa per sekund
-bee=§9Bi:§0 Skadbar framkallning\nHälsa: 1\nSkada: §a[[<playerlevel> + <intelligence>]]§0\nHastighet: 40\n\nDör vid attack, men förgiftar målet för 20% av den utdelade skadan per sekund i 10 sekunder
-dryadsapling=§9Dryad Sapling:§0 Skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nHastighet: 65\nFörlorar 2% av Total Hälsa per sekund
+bee=§9Bi:§0 Skadbar framkallning\nHälsa: 1\nSkada: §a[[<playerlevel> + <intelligence>]]§0\nHastighet: 100\n\nDör vid attack, men förgiftar målet för 20% av den utdelade skadan per sekund i 10 sekunder
+dryadsapling=§9Dryadplantling:§0 Skadbar framkallning\nHälsa: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkada: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nHastighet: 65\nFörlorar 2% av total hälsa per sekund
 
 [item]
 scrollofoblivion=Glömskans rulle
@@ -503,6 +506,7 @@ lvl=Niv <level>
 eachlevel=Varje nivå ger:
 experience=XP: <exp> / <nextexp>
 totalexperience=Total XP: <exp>
+onlytranformed=Endast när transformerad
 
 resetpoints=Återställningspoäng: <points>
 attrpoints=Attributpoäng: <points>
@@ -512,7 +516,7 @@ activeskillpoints=Aktiva färdighetspoäng: <points>
 
 activeskillsuse=Denna mod förvandlar uttryckshjulet (T-tangenten som standard) till hjulet för aktiva färdigheter
 activeskillsusetip1=Det rekommenderas att ändra kontrollen för uttryckshjulet till en lättillgänglig tangent
-activeskillsusetip2=Du kan också tilldela en tangent till varje aktiv färdighetsplats (perfekt för färdigheter med låg nedkylning)
+activeskillsusetip2=Endast de fyra första färdigheterna visas i hjulet för aktiva färdigheter. Du måste använda tangenter för resten
 activeskillsequipinstructions=Klicka på en plats för att utrusta en aktiv färdighet. Du kan inte ta bort en aktiv färdighet på nedkylning
 noactiveskills=Du har inga aktiva färdigheter. Lås upp dem genom klasserna
 
@@ -550,6 +554,12 @@ activeskillslot3=Aktiv färdighetsplats 3
 activeskillslot4=Aktiv färdighetsplats 4
 activeskillslot5=Aktiv färdighetsplats 5
 activeskillslot6=Aktiv färdighetsplats 6
+activeskillslot7=Aktiv färdighetsplats 7
+activeskillslot8=Aktiv färdighetsplats 8
+activeskillslot9=Aktiv färdighetsplats 9
+activeskillslot10=Aktiv färdighetsplats 10
+activeskillslot11=Aktiv färdighetsplats 11
+activeskillslot12=Aktiv färdighetsplats 12
 transformationability1=Transformationsförmåga 1
 transformationability2=Transformationsförmåga 2
 

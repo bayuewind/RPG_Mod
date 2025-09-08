@@ -19,13 +19,13 @@ public class UpdateClientClassDataPacket extends Packet {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        classData = PlayerClassData.applySpawnPacket(reader);
+        classData = PlayerClassData.applyPacket(reader);
     }
 
     public UpdateClientClassDataPacket(PlayerClassData playerClassData) {
         this.classData = playerClassData;
         PacketWriter writer = new PacketWriter(this);
-        playerClassData.setupSpawnPacket(writer);
+        playerClassData.setupPacket(writer);
     }
 
     @Override

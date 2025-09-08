@@ -193,21 +193,21 @@ wolfcompanion=狼の仲間がマークされた敵を攻撃し、§i[[<playerlev
 
 // ウィザード
 manapower=各レベルで提供：\n\n未使用のマナ10%ごとに+1%の魔法ダメージ
-flamingsteps=アクティブな装身具または変身状態で走ると、地面に炎が残ります\n炎は敵を2秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
-stormbound=§a[[9 - 0.5 x <skilllevel>]]秒§0ごとに、視界内のランダムな敵に雷が落ちます\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます
+flamingsteps=アクティブな装身具または変身状態で走ると、地面に炎が残ります\n炎は敵を3秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
+stormbound=§a[[11 - 0.5 x <skilllevel>]]秒§0ごとに、視界内のランダムな敵に雷が落ちます\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます
 arcaneshield=一撃を防ぐシールド\nシールドは使用後§a[[20 - <skilllevel>]]秒§0で回復します
 fireshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える爆発を放ち\nモブを燃やし、5秒間、毎秒元のダメージの20%を繰り返します\nシールドは使用後26秒で回復します
 iceshield=一撃を防ぐシールド\n使用すると、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与える氷のオーラを放ち\nモブを5秒間凍結させ、1秒間完全に凍結させます\nシールドは使用後22秒で回復します
 
 // ネクロマンサー
-necroticpower=あなたのすべての魔法と召喚士の攻撃は、召喚によって引き起こされない限り、§a[[2 x <skilllevel>]]秒間§0、ダメージの5%で毒を与えます
+necroticpower=あなたのすべての魔法攻撃は、§a[[2 x <skilllevel>]]秒間§0、ダメージの5%で毒を与えます
 darkmagic=召喚士ダメージボーナスは、魔法ダメージに§a[[5 x <skilllevel>]]%§0影響します
 nnecroticarmy=倒された敵対的な敵は、§bスケルトン§0に変わり、§a-[[100 - 3 x <skilllevel>]]%§0の体力とダメージを持ちます
 darksummons=毒された敵に§a+[[8 x <skilllevel>]]%§0の召喚士ダメージを与えます
-lifeleech=与えられた召喚ダメージの§a[[0.1 x <skilllevel>]]%§0を体力として回復します
+lifeleech=与えられた召喚ダメージの§a[[0.05 x <skilllevel>]]%§0を体力として回復します
 necroticremains=壊死した召喚が死ぬと爆発し、近くの敵に§i[[0.1 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、10秒間、毎秒ダメージの20%で毒を与えます
 endlesslegion=このスキルの4レベルごとに、最大召喚数が+1されます
-lichborn=死ぬと、まだ§bリッチ§0でない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは§bリッチ§0（スケルトン）になります
+lichborn=死ぬと、まだ§bリッチ§0でない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは§bリッチ§0（スケルトン）になります\n\n\n§bリッチ：§0アンデッド変身\n\nアイテムを使用できません\n+100%の被ダメージ\n\n[input=transformationability1]を押して、§i[[<playerlevel> + <strength> + 0.2 x <intelligence>]]の魔法ダメージ§0を与える骨を撃ちます
 
 // Cleric
 vitalaura=§a[[15 - <skilllevel>]]秒§0ごとに、あなたの周りに魔法の回復オーラを放ち、§a[[10 + <grace>]]の体力§0を回復します\nまた、その半分の量であなたを回復します
@@ -321,7 +321,7 @@ battlecry=次の10秒間、あなたと近くの味方の全ダメージと移�
 ironguard=§a[[4 x <skilllevel>]]秒間§0、被ダメージ-50%
 intimidation=次の§a[[<skilllevel>]]秒間§0、近くの敵を逃げさせます
 
-objectthrowing=ステップ1：目の前のオブジェクトをつかむ\nステップ2：前方に投げて、§i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]の近接ダメージ§0を与える\n両方のステップでスタミナをすべて消費します（少なくとも100%）
+objectthrowing=ステップ1：目の前のオブジェクトをつかむ\nステップ2：前方に投げて、§i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]の近接ダメージ§0を与えます
 
 // レンジャー
 shortdash=100-<strength>のダッシュを実行します\nスタミナを15%消費します
@@ -354,7 +354,7 @@ lightning=1秒間モブ間をジャンプするライトニングを開始し、
 
 // ネクロマンサー
 skeletonhorde=§a[[1 + <skilllevel>]]体の§bスケルトン§0を召喚します
-skeletonwarrior=§a+[[20 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトンウォリアー§0を召喚します
+skeletonwarrior=§a+[[40 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトンウォリアー§0を召喚します
 sacrifice=最も近い壊死性の召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]の体力§0を回復します
 siegecry=6秒間、召喚速度が§a+[[50 x <skilllevel>]]%§0増加します
 
@@ -381,11 +381,11 @@ wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x 
 
 // Druid
 wolftransformation=オオカミに変身するのに3秒かかります\n\n移動速度: 60\n\n[input=transformationability1]を押してダッシュバイト: 前方に跳躍して噛みつき、§i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]の近接ダメージ§0を与えます\n\n[input=transformationability2]を押して吠える: 近くの敵に2秒間攻撃を集中させます\n\n[input=trinketability]を長押ししてスプリント
-queenbeetransformation=女王蜂に変身するのに2秒かかります\n\n移動速度: 30\n-50% 敵検出\n§6+1000% 被ダメージ§0\n\n[input=transformationability1]を押してハニーショット: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0を与えます\n\n[input=transformationability2]を押して§9ハチ§0を最大§a[[2 x <skilllevel>]]体§0召喚します\n\n[input=trinketability]を長押ししてハチに攻撃を命令
+queenbeetransformation=女王蜂に変身するのに2秒かかります\n\n移動速度: 30\n-50% 敵検出\n§6+1000% 被ダメージ§0\nヒットを受けると死ぬ代わりに最大数の蜂を召喚します（60秒のクールダウン）\n\n[input=transformationability1]を押してハニーショット: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0を与えます\n\n[input=transformationability2]を押して§9ハチ§0を最大§a[[2 x <skilllevel>]]体§0召喚します\n\n[input=trinketability]を長押ししてハチに攻撃を命令
 beartransformation=クマに変身するのに4秒かかります\n\n移動速度: 20\n-50% 被ダメージ\n\n[input=transformationability1]を押してグラウンドスラム: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]の近接ダメージ§0を与え、§a[[0.5 x <skilllevel>]]秒間§0§9スタン§0させる範囲攻撃\n\n[input=transformationability2]を押して唸る: 近くの敵を1秒間逃げさせます\n\n[input=trinketability]を長押ししてスプリント
 foxtransformation=キツネに変身するのに3秒かかります\n\n移動速度: 50\n§6+50% 被ダメージ§0\n\n[input=transformationability1]を押してファイアボールを撃つ: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n\n[input=transformationability2]を押して§b踊る炎§0を最大§a[[2 + <skilllevel>]]体§0召喚します。それぞれファイアボールと同じダメージを与えます\n\n[input=trinketability]を押してダッシュ\n§!Vulpes Nova fox!
 rattransformation=ネズミに変身するのに2秒かかります\n\n移動速度: 25\n-50% 敵検出\n最大回避チャンスを付与します\n§6+1000% 被ダメージ§0\n\n[input=transformationability1]を押して噛みつき: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]の近接ダメージ§0を与え、10秒間、毎秒与えたダメージの100%でターゲットを毒します\n\n[input=trinketability]を長押ししてスプリント
-treanttransformation=トレントに変身するのに4秒かかります\n\n移動速度: 0\n-§a[50 + 5 <skilllevel>]%§0 被ダメージ\n3秒間隠れていると敵はあなたを無視します\n\n[input=transformationability1]を押してランダムな種を撃つ: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0をランダムな効果で与えます\n\n[input=transformationability2]を押して§9ドライアドの苗木§0を召喚します\n\n[input=trinketability]を長押しして、移動中に表示してスプリント
+treanttransformation=トレントに変身するのに4秒かかります\n\n移動速度: 0\n-§a[50 + 5 <skilllevel>]%§0 被ダメージ\n+50% アーマー\n3秒間隠れていると敵はあなたを無視します\n\n[input=transformationability1]を押してランダムな種を撃つ: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0をランダムな効果で与えます\n\n[input=transformationability2]を押して§9ドライアドの苗木§0を召喚します\n\n[input=trinketability]を長押しして、移動中に表示してスプリント
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒッ�
 necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
 necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
-bee=§9蜂：§0ダメージ可能な召喚\n体力：1\nダメージ：§a[[<playerlevel> + <intelligence>]]§0\n速度：40\n\n攻撃時に死亡しますが、10秒間、毎秒与えたダメージの20%でターゲットを毒します
-dryadsapling=§9ドライアドの苗木：§0ダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n速度：65\n毎秒総体力の2%を失います
+bee=§9蜂：§0ダメージ可能な召喚\n体力：1\nダメージ：§a[[<playerlevel> + <intelligence>]]§0\n速度：100\n\n攻撃時に死亡しますが、10秒間、毎秒与えたダメージの20%でターゲットを毒します
+dryadsapling=§9ドライアドの苗木：§0ダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n速度：65\n毎秒総体力の2%を失います
 
 [item]
 scrollofoblivion=忘却の巻物
@@ -516,7 +516,7 @@ activeskillpoints=アクティブスキルポイント：<points>
 
 activeskillsuse=このMODは、表現ホイール（デフォルトではTキー）をアクティブスキルホイールに変えます
 activeskillsusetip1=表現ホイールのコントロールを簡単にアクセスできるキーに変更することをお勧めします
-activeskillsusetip2=各アクティブスロットにキーを割り当てることもできます（クールダウンの短いスキルに最適）
+activeskillsusetip2=アクティブスキルホイールには最初の4つのスキルしか表示されません。残りはキーを使用する必要があります
 activeskillsequipinstructions=スロットをクリックしてアクティブスキルを装備します。クールダウン中のアクティブスキルは装備解除できません
 noactiveskills=アクティブスキルがありません。クラスを通じてロックを解除してください
 
@@ -556,6 +556,12 @@ activeskillslot5=アクティブスキルスロット5
 activeskillslot6=アクティブスキルスロット6
 transformationability1=変身能力1
 transformationability2=変身能力2
+activeskillslot7=アクティブスキルスロット7
+activeskillslot8=アクティブスキルスロット8
+activeskillslot9=アクティブスキLSロット9
+activeskillslot10=アクティブスキルスロット10
+activeskillslot11=アクティブスキルスロット11
+activeskillslot12=アクティブスキルスロット12
 
 
 [settingsui]

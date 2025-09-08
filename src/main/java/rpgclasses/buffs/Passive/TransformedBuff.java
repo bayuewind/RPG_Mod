@@ -1,6 +1,6 @@
 package rpgclasses.buffs.Passive;
 
-import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.*;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
@@ -33,6 +33,16 @@ public class TransformedBuff extends PassiveBuff {
                     }
                 }
             }
+        }
+    }
+
+    @Override
+    public void onBeforeHit(ActiveBuff activeBuff, MobBeforeHitEvent event) {
+        super.onBeforeHit(activeBuff, event);
+        if(!activeBuff.owner.isPlayer) return;
+        Mob mount = activeBuff.owner.getMount();
+        if (mount instanceof TransformationMountMob) {
+            ((TransformationMountMob) mount).onBeforeHit((PlayerMob) activeBuff.owner, event);
         }
     }
 

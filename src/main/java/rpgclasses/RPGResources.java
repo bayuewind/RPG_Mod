@@ -9,6 +9,7 @@ import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.SkillsAndAttributes.Attribute;
 import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
+import rpgclasses.data.PlayerData;
 import rpgclasses.mobs.summons.damageable.NecromancerTombMob;
 import rpgclasses.mobs.summons.passive.RangerWolfMob;
 
@@ -51,10 +52,9 @@ public class RPGResources {
         UI_TEXTURES.qr_texture = GameTexture.fromFile("ui/misc/qr");
 
         UI_TEXTURES.star_textures = new GameTexture[4];
-        UI_TEXTURES.star_textures[0] = GameTexture.fromFile("ui/misc/star");
-        UI_TEXTURES.star_textures[1] = GameTexture.fromFile("ui/misc/star2");
-        UI_TEXTURES.star_textures[2] = GameTexture.fromFile("ui/misc/star3");
-        UI_TEXTURES.star_textures[3] = GameTexture.fromFile("ui/misc/star4");
+        for (int i = 0; i < 4; i++) {
+            UI_TEXTURES.star_textures[i] = GameTexture.fromFile("ui/misc/star" + (i + 1));
+        }
 
         int styles = GameInterfaceStyle.styles.size();
 
@@ -92,14 +92,10 @@ public class RPGResources {
             UI_TEXTURES.addSmall_icon[i] = new ButtonIcon(style, "add_small");
             UI_TEXTURES.removeSmall_icon[i] = new ButtonIcon(style, "remove_small");
 
-            UI_TEXTURES.slot_icons[i] = new ButtonIcon[]{
-                    new ButtonIcon(style, "slot1"),
-                    new ButtonIcon(style, "slot2"),
-                    new ButtonIcon(style, "slot3"),
-                    new ButtonIcon(style, "slot4"),
-                    new ButtonIcon(style, "slot5"),
-                    new ButtonIcon(style, "slot6")
-            };
+            UI_TEXTURES.slot_icons[i] = new ButtonIcon[PlayerData.EQUIPPED_SKILLS_MAX];
+            for (int j = 0; j < PlayerData.EQUIPPED_SKILLS_MAX; j++) {
+                UI_TEXTURES.slot_icons[i][j] = new ButtonIcon(style, "slot" + (j + 1));
+            }
         }
 
     }

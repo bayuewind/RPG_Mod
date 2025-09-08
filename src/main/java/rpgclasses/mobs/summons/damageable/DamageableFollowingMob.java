@@ -7,13 +7,13 @@ import necesse.engine.localization.Localization;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
+import necesse.engine.registries.DamageTypeRegistry;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.util.GameMath;
 import necesse.engine.window.GameWindow;
 import necesse.engine.window.WindowManager;
-import necesse.entity.mobs.GameDamage;
-import necesse.entity.mobs.PlayerMob;
+import necesse.entity.mobs.*;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.gfx.GameColor;
@@ -170,7 +170,7 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
         this.setMaxHealth(Math.max(1, health));
         this.setHealthHidden(Math.max(1, health));
         initialMaxHealth = Math.max(1, health);
-        this.updateDamage(new GameDamage(damage));
+        this.updateDamage(new GameDamage(DamageTypeRegistry.SUMMON, damage));
     }
 
     @Override
@@ -227,5 +227,4 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
                 new ModifierValue<>(BuffModifiers.COMBAT_HEALTH_REGEN).max(0F)
         );
     }
-
 }

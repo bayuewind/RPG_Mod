@@ -115,7 +115,7 @@ public class PlayerClassData {
         }
     }
 
-    public static PlayerClassData applySpawnPacket(PacketReader reader) {
+    public static PlayerClassData applyPacket(PacketReader reader) {
         int id = reader.getNextInt();
         String playerName = reader.getNextString();
 
@@ -127,7 +127,7 @@ public class PlayerClassData {
         return classData;
     }
 
-    public void setupSpawnPacket(PacketWriter writer) {
+    public void setupPacket(PacketWriter writer) {
         writer.putNextInt(playerClass.id);
         writer.putNextString(playerName);
 

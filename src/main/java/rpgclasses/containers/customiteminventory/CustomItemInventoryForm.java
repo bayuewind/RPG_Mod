@@ -1,7 +1,9 @@
 package rpgclasses.containers.customiteminventory;
 
 import necesse.engine.Settings;
+import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.input.Control;
+import necesse.engine.input.InputEvent;
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;

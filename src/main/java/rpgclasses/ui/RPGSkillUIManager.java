@@ -4,6 +4,7 @@ import necesse.engine.Settings;
 import necesse.engine.window.GameWindow;
 import necesse.engine.window.WindowManager;
 import necesse.gfx.forms.MainGameFormManager;
+import rpgclasses.containers.rpgmenu.entries.ActiveSkillsEntry;
 import rpgclasses.data.PlayerData;
 
 public class RPGSkillUIManager extends CustomUIManager<RPGSkillUIForm> {
@@ -20,15 +21,20 @@ public class RPGSkillUIManager extends CustomUIManager<RPGSkillUIForm> {
 
     @Override
     public void frameTick(MainGameFormManager mainGameFormManager) {
-        mainForm.setHidden(mainGameFormManager.toolbar.isHidden());
+        mainForm.setHidden(mainGameFormManager.toolbar.isHidden() || skillSlot >= ActiveSkillsEntry.showManySlots);
     }
 
     public void updatePosition(MainGameFormManager mainGameFormManager) {
-        GameWindow window = WindowManager.getWindow();
-        mainForm.setPosition(
-                window.getHudWidth() - mainForm.getWidth() - (Settings.UI.formSpacing + 20),
-                window.getHudHeight() - mainForm.getHeight() - (Settings.UI.formSpacing + 20) - ((PlayerData.EQUIPPED_SKILLS_MAX - 1) - skillSlot) * (48 + 11)
-        );
+        if(skillSlot < ActiveSkillsEntry.showManySlots) {
+            int columns = ActiveSkillsEntry.showManySlots == 6 ? 1 : 2;
+            int row = skillSlot / columns;
+            int column = skillSlot % columns;
+            GameWindow window = WindowManager.getWindow();
+            mainForm.setPosition(
+                    window.getHudWidth() - mainForm.getWidth() - (Settings.UI.formSpacing + 20) - ((columns - 1) - column) * (48 + 11),
+                    window.getHudHeight() - mainForm.getHeight() - (Settings.UI.formSpacing + 20) - (5 - row) * (48 + 11)
+            );
+        }
     }
 
     public static void updateContent(PlayerData playerData) {

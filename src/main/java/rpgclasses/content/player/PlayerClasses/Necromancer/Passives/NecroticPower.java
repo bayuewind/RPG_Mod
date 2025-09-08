@@ -18,7 +18,7 @@ public class NecroticPower extends SimpleBuffPassive {
             @Override
             public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
                 super.onHasAttacked(activeBuff, event);
-                if (event.damage > 0 && !event.wasPrevented && (event.damageType == DamageTypeRegistry.SUMMON || event.damageType == DamageTypeRegistry.MAGIC) && event.attacker.getAttackOwner() == activeBuff.owner) {
+                if (event.damage > 0 && !event.wasPrevented && event.damageType == DamageTypeRegistry.MAGIC) {
                     MagicPoisonBuff.apply(activeBuff.owner, event.target, event.damage * 0.05F, 2F * getLevel(activeBuff));
                 }
             }

@@ -193,21 +193,21 @@ wolfcompanion=Wilczy towarzysz będzie atakował oznaczone cele, zadając §i[[<
 
 // Czarodziej
 manapower=Każdy poziom zapewnia:\n\n+1% obrażeń magicznych za każde 10% niewykorzystanej many
-flamingsteps=Biegnąc z aktywnym talizmanem lub transformacją, zostawisz płomienie na ziemi\nPłomienie podpalą wrogów na 2 sekundy, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 na sekundę
-stormbound=Co §a[[9 - 0.5 x <skilllevel>]] sekund§0, piorun uderza w losowego wroga w twoim polu widzenia\nZadaje §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 i ogłusza na 1 sekundę
+flamingsteps=Podczas biegania z aktywnym talizmanem lub transformacją, będziesz zostawiać za sobą płomienie\nPłomienie podpalą wrogów na 3 sekundy, zadając §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 na sekundę
+stormbound=Co §a[[11 - 0.5 x <skilllevel>]] sekund§0, piorun uderza w losowego wroga w zasięgu wzroku\nZadaje §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Obrażeń Magicznych§0 i ogłusza na 1 sekundę
 arcaneshield=Tarcza, która zapobiega jednemu trafieniu\nTarcza odnowi się po §a[[20 - <skilllevel>]] sekundach§0 od użycia
 fireshield=Tarcza, która zapobiega jednemu trafieniu\nPo użyciu wyzwolisz eksplozję zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] obrażeń magicznych§0\ni podpalisz moby, powtarzając 20% ich pierwotnych obrażeń na sekundę przez 5 sekund\nTarcza odnowi się po 26 sekundach od użycia
 iceshield=Tarcza, która zapobiega jednemu trafieniu\nPo użyciu wyzwolisz aurę lodu zadającą §i[[<playerlevel> + <intelligence> x <skilllevel>]] obrażeń magicznych§0\nzamrażając moby na 5 sekund i całkowicie zamrażając je na 1 sekundę\nTarcza odnowi się po 22 sekundach od użycia
 
 // Nekromanta
-necroticpower=Wszystkie twoje ataki magiczne i przywoływacza zatruwają na 5% ich obrażeń przez §a[[2 x <skilllevel>]] sekund§0, o ile nie są spowodowane przez przywołanie
+necroticpower=Wszystkie twoje ataki magiczne zatruwają na 5% ich obrażeń przez §a[[2 x <skilllevel>]] sekund§0
 darkmagic=Bonusy do obrażeń przywoływacza wpływają na obrażenia magiczne o §a[[5 x <skilllevel>]]%
 necroticarmy=Pokonani wrodzy wrogowie zamienią się w §bSzkielety§0 z §a-[[100 - 3 x <skilllevel>]]%§0 zdrowia i obrażeń
 darksummons=Zadaj §a+[[8 x <skilllevel>]]%§0 obrażeń przywoływacza zatrutym wrogom
-lifeleech=Odzyskuje §a[[0.1 x <skilllevel>]]%§0 zadanych obrażeń przywoływacza jako zdrowie
+lifeleech=Odzyskuje §a[[0.05 x <skilllevel>]]%§0 zadanych obrażeń przywołania jako zdrowie
 necroticremains=Gdy nekrotyczny przywołaniec umiera, eksploduje, zadając §i[[0.1 x <intelligence> x <skilllevel>]] obrażeń magicznych§0 pobliskim wrogom, zatruwając ich na 20% obrażeń na sekundę przez 10 sekund
 endlesslegion=Co 4 poziomy tej umiejętności, zyskujesz +1 maksymalne przywołanie
-lichborn=Gdy umierasz, przeżywasz i odzyskujesz §a[[10 x <skilllevel>]]%§0 zdrowia, jeśli nie jesteś już §bLisztem§0\nPrzez następne §a[[120 - 6 x <skilllevel>]] sekund§0 stajesz się §bLisztem§0 (szkieletem)
+lichborn=Gdy umrzesz, przeżyjesz i odzyskasz §a[[10 x <skilllevel>]]%§0 zdrowia, jeśli nie jesteś już §bLiszem§0\nPrzez następne §a[[120 - 6 x <skilllevel>]] sekund§0 stajesz się §bLiszem§0 (szkieletem)\n\n\n§bLisz:§0 Transformacja w nieumarłego\n\nNie można używać przedmiotów\n+100% otrzymywanych obrażeń\n\nNaciśnij [input=transformationability1], aby wystrzelić kość, która zadaje §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Obrażeń Magicznych§0
 
 // Kleryk
 vitalaura=Co §a[[15 - <skilllevel>]] sekund§0, uwalniasz wokół siebie magiczną aurę leczącą, która przywraca §a[[10 + <grace>]] zdrowia§0\nLeczy cię również o połowę tej wartości
@@ -321,7 +321,7 @@ battlecry=Przez następne 10 sekund zwiększ swoje i pobliskich sojuszników wsz
 ironguard=-50% otrzymywanych obrażeń przez §a[[4 x <skilllevel>]] sekund
 intimidation=Przez następne §a[[<skilllevel>]] sekund§0 spraw, by pobliscy wrogowie uciekli
 
-objectthrowing=Krok 1: Chwyć obiekt przed sobą\nKrok 2: Rzuć go do przodu, zadając §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] obrażeń w zwarciu§0\nOba kroki zużywają całą twoją wytrzymałość (co najmniej 100%)
+objectthrowing=Krok 1: Złap obiekt przed sobą\nKrok 2: Rzuć nim do przodu, zadając §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Obrażeń Wręcz§0
 
 // Tropiciel
 shortdash=Wykonaj doskok o sile 100 <strength>\nZużywa 15% wytrzymałości
@@ -354,7 +354,7 @@ lightning=Rozpocznij piorun, który przeskakuje między mobami przez 1 sekundę,
 
 // Nekromanta
 skeletonhorde=Przywołuje §a[[1 + <skilllevel>]] §bSzkieletów§0
-skeletonwarrior=Przywołuje §bSzkieleta Wojownika§0 z §a+[[20 x <skilllevel>]]%§0 zdrowia i obrażeń
+skeletonwarrior=Przywołuje §bWojownika Szkieletów§0 z §a+[[40 x <skilllevel>]]%§0 zdrowia i obrażeń
 sacrifice=Najbliższy nekrotyczny przywołaniec umiera, a ty odzyskujesz §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] zdrowia§0 jako magiczne leczenie
 siegecry=Zyskaj §a+[[50 x <skilllevel>]]%§0 prędkości przywoływania na 6 sekund
 
@@ -381,11 +381,11 @@ wrathoflight=Przywołaj słup światła na najbliższego wroga, zadając §i[[4 
 
 // Druid
 wolftransformation=Transformacja w wilka zajmuje 3 sekundy\n\nPrędkość ruchu: 60\n\nNaciśnij [input=transformationability1], aby wykonać doskok z ugryzieniem: skocz do przodu i ugryź, zadając §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] obrażeń w zwarciu§0\n\nNaciśnij [input=transformationability2], aby szczekać: zmuś pobliskich wrogów do atakowania cię przez 2 sekundy\n\nPrzytrzymaj [input=trinketability], aby sprintować
-queenbeetransformation=Transformacja w królową pszczół zajmuje 2 sekundy\n\nPrędkość ruchu: 30\n-50% wykrywania wrogów\n§6+1000% otrzymywanych obrażeń§0\n\nNaciśnij [input=transformationability1], aby strzelać miodem: zadaj §i[[2 x <playerlevel> + <strength> x <skilllevel>]] obrażeń dystansowych§0\n\nNaciśnij [input=transformationability2], aby przywołać §9Pszczołę§0 do §a[[2 x <skilllevel>]]§0\n\nPrzytrzymaj [input=trinketability], aby rozkazać swoim pszczołom atakować
+queenbeetransformation=Transformacja w Królową Pszczół trwa 2 sekundy\n\nPrędkość ruchu: 30\n-50% wykrywania wrogów\n§6+1000% otrzymywanych obrażeń§0\nOtrzymanie ciosu przywołuje maksymalną liczbę pszczół zamiast śmierci (60s odnowienia)\n\nNaciśnij [input=transformationability1], aby strzelić miodem: Zadaje §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Obrażeń Dystansowych§0\n\nNaciśnij [input=transformationability2], aby przywołać §9Pszczołę§0 do §a[[2 x <skilllevel>]]§0\n\nPrzytrzymaj [input=trinketability], aby rozkazać pszczołom atakować
 beartransformation=Transformacja w niedźwiedzia zajmuje 4 sekundy\n\nPrędkość ruchu: 20\n-50% otrzymywanych obrażeń\n\nNaciśnij [input=transformationability1], aby uderzyć w ziemię: atak obszarowy, który zadaje §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] obrażeń w zwarciu§0 i §9ogłusza§0 na §a[[0.5 x <skilllevel>]] sekund§0\n\nNaciśnij [input=transformationability2], aby warczeć: spraw, by pobliscy wrogowie uciekli na 1 sekundę\n\nPrzytrzymaj [input=trinketability], aby sprintować
 foxtransformation=Transformacja w lisa zajmuje 3 sekundy\n\nPrędkość ruchu: 50\n§6+50% otrzymywanych obrażeń§0\n\nNaciśnij [input=transformationability1], aby strzelać kulami ognia: zadaj §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] obrażeń magicznych§0\n\nNaciśnij [input=transformationability2], aby przywołać §bTańczący Płomień§0 do §a[[2 + <skilllevel>]]§0, z których każdy zadaje tyle samo obrażeń co kula ognia\n\nNaciśnij [input=trinketability], aby doskoczyć\n§!Vulpes Nova fox!
 rattransformation=Transformacja w szczura zajmuje 2 sekundy\n\nPrędkość ruchu: 25\n-50% wykrywania wrogów\nDaje maksymalną szansę na unik\n§6+1000% otrzymywanych obrażeń§0\n\nNaciśnij [input=transformationability1], aby ugryźć: zadaje §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] obrażeń w zwarciu§0 i zatruwa cel na 100% zadanych obrażeń na sekundę przez 10 sekund\n\nPrzytrzymaj [input=trinketability], aby sprintować
-treanttransformation=Transformacja w treanta zajmuje 4 sekundy\n\nPrędkość ruchu: 0\n-§a[50 + 5 <skilllevel>]%§0 otrzymywanych obrażeń\nWrogowie ignorują cię, jeśli jesteś ukryty przez 3 sekundy\n\nNaciśnij [input=transformationability1] w stanie odkrytym, aby strzelać losowymi nasionami: zadaj §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] obrażeń dystansowych§0 z losowymi efektami\n\nNaciśnij [input=transformationability2], aby przywołać §9Sadzonkę Driady§0\n\nPrzytrzymaj [input=trinketability], aby odkryć się i sprintować, jeśli się poruszasz
+treanttransformation=Transformacja w Drzewca trwa 4 sekundy\n\nPrędkość ruchu: 0\n-§a[50 + 5 <skilllevel>]%§0 otrzymywanych obrażeń\n+50% pancerza\nWrogowie ignorują cię, jeśli jesteś ukryty przez 3 sekundy\n\nNaciśnij [input=transformationability1] będąc ujawnionym, aby strzelać losowymi nasionami: Zadaje §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Obrażeń Dystansowych§0 z losowymi efektami\n\nNaciśnij [input=transformationability2], aby przywołać §9Sadzonkę Drzewa§0\n\nPrzytrzymaj [input=trinketability], aby się ujawnić i sprintować, jeśli się poruszasz
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§bTańczący Płomień:§0 Przywołanie, które działa jak pocisk
 necromancerskeleton=§bSzkielet:§0 Nekrotyczne przywołanie, które można zranić\nZdrowie: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSzybkość: 60\nTraci 2% całkowitego zdrowia na sekundę
 necromancerskeletonwarrior=§bSzkielet Wojownik:§0 Nekrotyczne przywołanie, które można zranić\nZdrowie: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nObrażenia: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSzybkość: 60\nTraci 2% całkowitego zdrowia na sekundę
 necromancerboneslinger=§bKościany Miotacz:§0 Nekrotyczne przywołanie, które można zranić\nZdrowie: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (zasięg 320)\nSzybkość: 60\nTraci 2% całkowitego zdrowia na sekundę
-bee=§9Pszczoła:§0 Przywołanie, które można zranić\nZdrowie: 1\nObrażenia: §a[[<playerlevel> + <intelligence>]]§0\nSzybkość: 40\n\nUmiera po ataku, ale zatruwa cel na 20% zadanych obrażeń na sekundę przez 10 sekund
-dryadsapling=§9Sadzonka Driady:§0 Przywołanie, które można zranić\nZdrowie: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nObrażenia: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nSzybkość: 65\nTraci 2% całkowitego zdrowia na sekundę
+bee=§9Pszczoła:§0 Przywołanie, które można zranić\nZdrowie: 1\nObrażenia: §a[[<playerlevel> + <intelligence>]]§0\nPrędkość: 100\n\nUmiera po ataku, ale zatruwa cel na 20% zadanych obrażeń na sekundę przez 10 sekund
+dryadsapling=§9Sadzonka Drzewa:§0 Przywołanie, które można zranić\nZdrowie: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nObrażenia: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nPrędkość: 65\nTraci 2% całkowitego zdrowia na sekundę
 
 [item]
 scrollofoblivion=Zwój Zapomnienia
@@ -516,7 +516,7 @@ activeskillpoints=Punkty umiejętności aktywnych: <points>
 
 activeskillsuse=Ten mod zamienia koło ekspresji (domyślnie klawisz T) w koło umiejętności aktywnych
 activeskillsusetip1=Zaleca się zmianę sterowania kołem ekspresji na łatwo dostępny klawisz
-activeskillsusetip2=Możesz również przypisać klawisz do każdego slotu umiejętności aktywnej (idealne dla umiejętności o krótkim czasie odnowienia)
+activeskillsusetip2=Tylko pierwsze cztery umiejętności pojawiają się w kole umiejętności aktywnych. Do reszty będziesz musiał używać klawiszy
 activeskillsequipinstructions=Kliknij na slot, aby wyposażyć aktywną umiejętność. Nie możesz zdjąć aktywnej umiejętności w trakcie odnawiania
 noactiveskills=Nie masz żadnych umiejętności aktywnych. Odblokuj je poprzez klasy
 
@@ -554,6 +554,12 @@ activeskillslot3=Slot umiejętności aktywnej 3
 activeskillslot4=Slot umiejętności aktywnej 4
 activeskillslot5=Slot umiejętności aktywnej 5
 activeskillslot6=Slot umiejętności aktywnej 6
+activeskillslot7=Slot umiejętności aktywnej 7
+activeskillslot8=Slot umiejętności aktywnej 8
+activeskillslot9=Slot umiejętności aktywnej 9
+activeskillslot10=Slot umiejętności aktywnej 10
+activeskillslot11=Slot umiejętności aktywnej 11
+activeskillslot12=Slot umiejętności aktywnej 12
 transformationability1=Zdolność transformacji 1
 transformationability2=Zdolność transformacji 2
 

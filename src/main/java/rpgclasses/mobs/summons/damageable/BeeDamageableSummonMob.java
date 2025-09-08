@@ -10,6 +10,8 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobDrawable;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
+import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.BabySkeletonMob;
+import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.ToolItemSummonedMob;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
@@ -29,7 +31,7 @@ import java.util.List;
 public class BeeDamageableSummonMob extends DamageableFollowingMob {
     public BeeDamageableSummonMob() {
         super(1);
-        this.setSpeed(40.0F);
+        this.setSpeed(100.0F);
         this.setFriction(2.0F);
         this.setSwimSpeed(1.0F);
         this.collision = new Rectangle(-7, -5, 14, 10);

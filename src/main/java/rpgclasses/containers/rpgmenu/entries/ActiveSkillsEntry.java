@@ -1,20 +1,32 @@
 package rpgclasses.containers.rpgmenu.entries;
 
+import necesse.engine.Settings;
+import necesse.engine.localization.Localization;
 import necesse.gfx.forms.components.FormContentBox;
+import necesse.gfx.forms.components.FormContentIconButton;
+import necesse.gfx.forms.components.FormInputSize;
+import necesse.gfx.forms.components.FormLabel;
 import necesse.gfx.forms.components.localComponents.FormLocalLabel;
 import necesse.gfx.gameFont.FontOptions;
+import necesse.gfx.ui.ButtonColor;
+import necesse.gfx.ui.GameInterfaceStyle;
+import rpgclasses.RPGResources;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.EquipActiveSkillComponent;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerClassData;
+import rpgclasses.ui.CustomUIManager;
+import rpgclasses.ui.RPGSkillUIManager;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActiveSkillsEntry extends MenuEntry {
+    public static int showManySlots = 6;
+
     public ActiveSkillsEntry() {
         super("activeskills");
     }
@@ -23,21 +35,22 @@ public class ActiveSkillsEntry extends MenuEntry {
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container) {
         super.updateContent(mainForm, entryForm, container);
 
-        entryForm.addComponent(new FormLocalLabel(
-                "ui", "activeskillsuse",
-                new FontOptions(14), -1, 10, 20
-        ));
-        entryForm.addComponent(new FormLocalLabel(
-                "ui", "activeskillsusetip1",
-                new FontOptions(14), -1, 10, 20 + 18
-        ));
-        entryForm.addComponent(new FormLocalLabel(
-                "ui", "activeskillsusetip2",
-                new FontOptions(14), -1, 10, 20 + 18 + 18
-        ));
-        entryForm.addComponent(new FormLocalLabel(
-                "ui", "activeskillsequipinstructions",
-                new FontOptions(14), -1, 10, 20 + 18 + 18 + 18 + 8
+        int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
+        entryForm.addComponent(new FormContentIconButton(entryForm.getWidth() - 32 - 8, 8, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][showManySlots - 1])
+                .onClicked(c -> {
+                    showManySlots = showManySlots == 6 ? 12 : 6;
+                    for (RPGSkillUIManager rpgSkill : CustomUIManager.rpgSkills) {
+                        rpgSkill.updatePosition(RPGSkillUIManager.mainGameFormManager);
+                    }
+                    mainForm.updateContent(container, player);
+                }));
+
+        FormLabel label = entryForm.addComponent(new FormLabel(
+                Localization.translate("ui", "activeskillsuse") + "\n" +
+                        Localization.translate("ui", "activeskillsusetip1") + "\n" +
+                        Localization.translate("ui", "activeskillsusetip2") + "\n" +
+                        Localization.translate("ui", "activeskillsequipinstructions"),
+                new FontOptions(12), -1, 10, 20, entryForm.getWidth() - 20 - 32 - 8
         ));
 
 
@@ -55,7 +68,7 @@ public class ActiveSkillsEntry extends MenuEntry {
             }
         }
 
-        int startY = 20 + 18 + 18 + 18 + 8 + 18 + 16;
+        int startY = Math.max(40, label.getY() + label.getHeight()) + 4;
         if (equipableActiveSkills.isEmpty()) {
             entryForm.addComponent(new FormLocalLabel(
                     "ui", "noactiveskills",
@@ -65,7 +78,7 @@ public class ActiveSkillsEntry extends MenuEntry {
 
             FormContentBox activeSkills = entryForm.addComponent(new FormContentBox(16, startY, entryForm.getWidth() - 32, entryForm.getHeight() - startY - 8));
 
-            int columns = 2;
+            int columns = showManySlots == 6 ? 2 : 1;
             int spacingY = 8;
             int itemHeight = EquipActiveSkillComponent.height;
 
@@ -85,7 +98,7 @@ public class ActiveSkillsEntry extends MenuEntry {
                 int y = spacingY + row * (itemHeight + spacingY);
 
                 equipableActiveSkill.component = activeSkills.addComponent(
-                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, activeSkillLevel, (newEquippedActiveSkills) -> {
+                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, activeSkillLevel, showManySlots, showManySlots == 6 ? EquipActiveSkillComponent.shortWidth : entryForm.getWidth() - 32, (newEquippedActiveSkills) -> {
                             for (EquipableActiveSkill skill : equipableActiveSkills) {
                                 skill.component.update(newEquippedActiveSkills, playerData);
                             }
@@ -94,7 +107,7 @@ public class ActiveSkillsEntry extends MenuEntry {
                 );
             }
 
-            int totalRows = (int) Math.ceil(equipableActiveSkills.size() / 2F);
+            int totalRows = (int) Math.ceil((float) equipableActiveSkills.size() / columns);
             activeSkills.setContentBox(new Rectangle(0, 0, activeSkills.getWidth(), spacingY + totalRows * (itemHeight + spacingY)));
         }
     }

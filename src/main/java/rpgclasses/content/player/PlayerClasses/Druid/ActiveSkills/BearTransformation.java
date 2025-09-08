@@ -46,7 +46,7 @@ public class BearTransformation extends SimpleTranformationActiveSkill {
 
     @Override
     public int getBaseCooldown() {
-        return 10000;
+        return 8000;
     }
 
     @Override

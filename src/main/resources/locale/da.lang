@@ -193,18 +193,21 @@ wolfcompanion=En ulvekammerat vil angribe mærkede fjender og give §i[[<playerl
 
 // Troldmand
 manapower=Hvert niveau giver:\n\n+1% Magisk Skade for hver 10% ubrugt Mana
-flamingsteps=Når du løber med en aktiv pyntegenstand eller transformation, efterlader du flammer på jorden\nFlammerne vil antænde fjender i 2 sekunder og give §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 pr. sekund
-stormbound=Hver §a[[9 - 0.5 x <skilllevel>]] sekunder§0, rammer et lyn en tilfældig fjende i dit synsfelt\nGiver §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund
+flamingsteps=Når du løber med en aktiv pyntegenstand eller transformation, efterlader du flammer på jorden\nFlammerne vil antænde fjender i 3 sekunder og give §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 pr. sekund
+stormbound=Hver §a[[11 - 0.5 x <skilllevel>]] sekunder§0, rammer et lyn en tilfældig fjende i dit synsfelt\nGiver §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0 og lammer i 1 sekund
 arcaneshield=Et skjold, der forhindrer et hit\nSkjoldet vil komme sig §a[[20 - <skilllevel>]] sekunder§0 efter brug
 fireshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en eksplosion, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nog antænder pøbler, der gentager 20% af deres oprindelige skade pr. sekund i 5 sekunder\nSkjoldet vil komme sig 26 sekunder efter brug
 iceshield=Et skjold, der forhindrer et hit\nNår det bruges, vil du udløse en is-aura, der giver §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nfryser pøbler i 5 sekunder og fryser dem helt i 1 sekund\nSkjoldet vil komme sig 22 sekunder efter brug
 
 // Nekromantiker
+necroticpower=Alle dine magiske angreb forgifter for 5% af deres skade i §a[[2 x <skilllevel>]] sekunder§0
+darkmagic=Summoner Damage bonuses affect Magic Damage by §a[[5 x <skilllevel>]]%
+necroticarmy=Defeated hostile enemies will turn into §bSkeletons§0 with §a-[[100 - 3 x <skilllevel>]]%§0 Health and Damage
 darksummons=Giv §a+[[8 x <skilllevel>]]%§0 tilkalderskade til forgiftede fjender
-lifeleech=Gendanner §a[[0.1 x <skilllevel>]]%§0 af den påførte tilkalderskade som helbred
+lifeleech=Gendanner §a[[0.05 x <skilllevel>]]%§0 af den påførte tilkalderskade som helbred
 necroticremains=Når en nekrotisk tilkaldelse dør, eksploderer den og giver §i[[0.1 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fjender og forgifter dem med 20% af skaden pr. sekund i 10 sekunder
 endlesslegion=Hver 4. niveau af denne færdighed får du +1 maks. tilkaldelse
-lichborn=Når du dør, overlever du og gendanner §a[[10 x <skilllevel>]]%§0 helbred, hvis du ikke allerede er en §bLich§0\nI de næste §a[[120 - 6 x <skilllevel>]] sekunder§0 bliver du en §bLich§0 (et skelet)
+lichborn=Når du dør, overlever du og gendanner §a[[10 x <skilllevel>]]%§0 helbred, hvis du ikke allerede er en §bLich§0\nI de næste §a[[120 - 6 x <skilllevel>]] sekunder§0 bliver du en §bLich§0 (et skelet)\n\n\n§bLich:§0 Udød transformation\n\nKan ikke bruge genstande\n+100% Skade Modtaget\n\nTryk på [input=transformationability1] for at skyde et ben, der giver §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Magisk Skade§0
 
 // Cleric
 vitalaura=Hver §a[[15 - <skilllevel>]] sekunder§0 frigiver du en magisk helbredende aura omkring dig, der gendanner §a[[10 + <grace>]] helbred§0\nDen helbreder dig også for halvdelen af det beløb
@@ -318,7 +321,9 @@ battlecry=I de næste 10 sekunder øges din og nærliggende allieredes al skade 
 ironguard=-50% indkommende skade i §a[[4 x <skilllevel>]] sekunder
 intimidation=I de næste §a[[<skilllevel>]] sekunder§0 får du nærliggende fjender til at flygte
 
-objectthrowing=Trin 1: Grib en genstand foran dig\nTrin 2: Kast den fremad og giv §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] nærkampsskade§0\nBegge trin bruger al din udholdenhed (mindst 100%)
+objectthrowing=Trin 1: Grib en genstand foran dig\nTrin 2: Kast den fremad og giv §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Nærkampsskade§0
+ironguard=-50% indkommende skade i §a[[4 x <skilllevel>]] sekunder
+intimidation=I de næste §a[[<skilllevel>]] sekunder§0 får du nærliggende fjender til at flygte
 
 // Ranger
 shortdash=Udfør en 100-<strength> spurt\nForbruger 15% udholdenhed
@@ -351,7 +356,7 @@ lightning=Start et lyn, der hopper mellem pøbler i 1 sekund, giver §i[[4 x <pl
 
 // Nekromantiker
 skeletonhorde=Tilkald §a[[1 + <skilllevel>]] §bSkeletter§0
-skeletonwarrior=Tilkald en §bSkeletkriger§0 med §a+[[20 x <skilllevel>]]%§0 helbred og skade
+skeletonwarrior=Tilkald en §bSkeletkriger§0 med §a+[[40 x <skilllevel>]]%§0 helbred og skade
 sacrifice=Den nærmeste nekrotiske tilkaldelse dør, og du gendanner derefter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] helbred§0 som magisk helbredelse
 siegecry=Få §a+[[50 x <skilllevel>]]%§0 tilkaldelseshastighed i 6 sekunder
 
@@ -378,11 +383,11 @@ wrathoflight=Tilkald en søjle af lys på den nærmeste fjende, der påfører §
 
 // Druid
 wolftransformation=Tager 3 sekunder at transformere til en Ulv\n\nBevægelseshastighed: 60\n\nTryk [input=transformationability1] for Dash Bid: Hop fremad og bid, påfører §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Nærkampsskade§0\n\nTryk [input=transformationability2] for Gø: Tving nærliggende fjender til at fokusere deres angreb på dig i 2 sekunder\n\nHold [input=trinketability] nede for at sprinte
-queenbeetransformation=Tager 2 sekunder at transformere til en Dronningbi\n\nBevægelseshastighed: 30\n-50% Fjendedetektering\n§6+1000% Indkommende Skade§0\n\nTryk [input=transformationability1] for Skyd Honning: Påfør §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Afstandsskade§0\n\nTryk [input=transformationability2] for at tilkalde en §9Bi§0 op til §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] nede for at beordre dine Bier til at angribe
+queenbeetransformation=Tager 2 sekunder at transformere til en Dronningbi\n\nBevægelseshastighed: 30\n-50% Fjendedetektering\n§6+1000% Indkommende Skade§0\nAt blive ramt tilkalder maksimale bier i stedet for at dø (60s nedkøling)\n\nTryk [input=transformationability1] for Skyd Honning: Påfør §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Afstandsskade§0\n\nTryk [input=transformationability2] for at tilkalde en §9Bi§0 op til §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] nede for at beordre dine Bier til at angribe
 beartransformation=Tager 4 sekunder at transformere til en Bjørn\n\nBevægelseshastighed: 20\n-50% Indkommende Skade\n\nTryk [input=transformationability1] for Jordslag: Områdeangreb, der påfører §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Nærkampsskade§0 og §9lammer§0 i §a[[0.5 x <skilllevel>]] sekunder§0\n\nTryk [input=transformationability2] for Knurre: Få nærliggende fjender til at flygte i 1 sekund\n\nHold [input=trinketability] nede for at sprinte
 foxtransformation=Tager 3 sekunder at transformere til en Ræv\n\nBevægelseshastighed: 50\n§6+50% Indkommende Skade§0\n\nTryk [input=transformationability1] for Skyd Ildkugler: Påfør §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magisk Skade§0\n\nTryk [input=transformationability2] for at tilkalde en §bDansende Flamme§0 op til §a[[2 + <skilllevel>]]§0, hver påfører samme skade som en Ildkugle\n\nTryk [input=trinketability] for at sprinte\n§!Vulpes Nova fox!
 rattransformation=Tager 2 sekunder at transformere til en Rotte\n\nBevægelseshastighed: 25\n-50% Fjendedetektering\nGiver maks. Undvigelseschance\n§6+1000% Indkommende Skade§0\n\nTryk [input=transformationability1] for Bid: Påfører §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Nærkampsskade§0 og forgifter målet for 100% af den påførte skade pr. sekund i 10 sekunder\n\nHold [input=trinketability] nede for at sprinte
-treanttransformation=Tager 4 sekunder at transformere til en Træmand\n\nBevægelseshastighed: 0\n-§a[50 + 5 <skilllevel>]%§0 Indkommende Skade\nFjender ignorerer dig, hvis du er skjult i 3 sekunder\n\nTryk [input=transformationability1] mens afsløret for at skyde tilfældige frø: Påfør §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Afstandsskade§0 med tilfældige effekter\n\nTryk [input=transformationability2] for at tilkalde en §9Dryad Sapling§0\n\nHold [input=trinketability] nede for at afsløre og sprinte, hvis du bevæger dig
+treanttransformation=Tager 4 sekunder at transformere til en Træmand\n\nBevægelseshastighed: 0\n-§a[50 + 5 <skilllevel>]%§0 Indkommende Skade\n+50% Panser\nFjender ignorerer dig, hvis du er skjult i 3 sekunder\n\nTryk [input=transformationability1] mens afsløret for at skyde tilfældige frø: Påfør §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Afstandsskade§0 med tilfældige effekter\n\nTryk [input=transformationability2] for at tilkalde en §9Dryad Sapling§0\n\nHold [input=trinketability] nede for at afsløre og sprinte, hvis du bevæger dig
 
 
 [skillsdesckeys]
@@ -427,8 +432,8 @@ dancingflame=§bDansende Flamme:§0 Tilkaldelse, der fungerer som et projektil. 
 necromancerskeleton=§bSkelet:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
 necromancerskeletonwarrior=§bSkeletkriger:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
 necromancerboneslinger=§bKnoglekaster:§0 Nekrotisk skadelig tilkaldelse\nHelbred: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nHastighed: 60\nMister 2% af samlet helbred pr. sekund
-bee=§9Bi:§0 Skadelig tilkaldelse\nHelbred: 1\nSkade: §a[[<playerlevel> + <intelligence>]]§0\nHastighed: 40\n\nDør ved angreb, men forgifter målet for 20% af den påførte skade pr. sekund i 10 sekunder
-dryadsapling=§9Dryad Sapling:§0 Skadelig tilkaldelse\nHelbred: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nHastighed: 65\nMister 2% af samlet helbred pr. sekund
+bee=§9Bi:§0 Skadelig tilkaldelse\nHelbred: 1\nSkade: §a[[<playerlevel> + <intelligence>]]§0\nHastighed: 100\n\nDør ved angreb, men forgifter målet for 20% af den påførte skade pr. sekund i 10 sekunder
+dryadsapling=§9Dryad Sapling:§0 Skadelig tilkaldelse\nHelbred: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nHastighed: 65\nMister 2% af samlet helbred pr. sekund
 
 [item]
 scrollofoblivion=Glemselsrulle
@@ -513,7 +518,7 @@ activeskillpoints=Aktive færdighedspoint: <points>
 
 activeskillsuse=Denne mod forvandler udtrykshjulet (T-tasten som standard) til hjulet med aktive færdigheder
 activeskillsusetip1=Det anbefales at ændre udtrykshjulets kontrol til en let tilgængelig tast
-activeskillsusetip2=Du kan også tildele en tast til hver aktiv færdighedsplads (ideel til færdigheder med lav nedkøling)
+activeskillsusetip2=Kun de første fire færdigheder vises i hjulet med aktive færdigheder. Du skal bruge taster til resten
 activeskillsequipinstructions=Klik på en plads for at udstyre en aktiv færdighed. Du kan ikke fjerne en aktiv færdighed på nedkøling
 noactiveskills=Du har ingen aktive færdigheder. Lås dem op gennem klasserne
 
@@ -551,6 +556,12 @@ activeskillslot3=Aktiv færdighedsplads 3
 activeskillslot4=Aktiv færdighedsplads 4
 activeskillslot5=Aktiv færdighedsplads 5
 activeskillslot6=Aktiv færdighedsplads 6
+activeskillslot7=Aktiv færdighedsplads 7
+activeskillslot8=Aktiv færdighedsplads 8
+activeskillslot9=Aktiv færdighedsplads 9
+activeskillslot10=Aktiv færdighedsplads 10
+activeskillslot11=Aktiv færdighedsplads 11
+activeskillslot12=Aktiv færdighedsplads 12
 transformationability1=Transformationsfærdighed 1
 transformationability2=Transformationsfærdighed 2
 

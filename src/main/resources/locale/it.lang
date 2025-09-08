@@ -193,21 +193,21 @@ wolfcompanion=Un compagno lupo attaccherà i nemici marchiati infliggendo §i[[<
 
 // Mago
 manapower=Ogni livello fornisce:\n\n+1% di Danno Magico per ogni 10% di Mana non utilizzato
-flamingsteps=Correndo con un ninnolo attivo o trasformazione, lascerai fiamme a terra\nLe fiamme daranno fuoco ai nemici per 2 secondi, infliggendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 al secondo
-stormbound=Ogni §a[[9 - 0.5 x <skilllevel>]] secondi§0, un fulmine colpisce un nemico casuale nella tua visuale\nInfligge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 e stordisce per 1 secondo
+flamingsteps=Correndo con un ninnolo attivo o trasformazione, lascerai fiamme a terra\nLe fiamme daranno fuoco ai nemici per 3 secondi, infliggendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 al secondo
+stormbound=Ogni §a[[11 - 0.5 x <skilllevel>]] secondi§0, un fulmine colpisce un nemico casuale nella tua visuale\nInfligge §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0 e stordisce per 1 secondo
 arcaneshield=Uno scudo che previene un colpo\nLo scudo si ripristinerà §a[[20 - <skilllevel>]] secondi§0 dopo l'uso
 fireshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'esplosione che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ne darà fuoco ai mob, ripetendo 20% del loro danno originale al secondo per 5 secondi\nLo scudo si ripristinerà 26 secondi dopo l'uso
 iceshield=Uno scudo che previene un colpo\nQuando usato, rilascerai un'aura di ghiaccio che infligge §i[[<playerlevel> + <intelligence> x <skilllevel>]] Danni Magici§0\ncongelando i mob per 5 secondi, e congelandoli totalmente per 1 secondo\nLo scudo si ripristinerà 22 secondi dopo l'uso
 
 // Negromante
-necroticpower=Tutti i tuoi attacchi Magici e da Evocatore avvelenano per il 5% del loro Danno per §a[[2 x <skilllevel>]] secondi§0, a condizione che non siano causati da un'evocazione
+necroticpower=Tutti i tuoi attacchi Magici avvelenano per il 5% del loro Danno per §a[[2 x <skilllevel>]] secondi§0
 darkmagic=I bonus ai Danni da Evocatore influenzano i Danni Magici del §a[[5 x <skilllevel>]]%
 necroticarmy=I nemici ostili sconfitti si trasformeranno in §bScheletri§0 con il §a-[[100 - 3 x <skilllevel>]]%§0 di Salute e Danni
 darksummons=Infliggi il §a+[[8 x <skilllevel>]]%§0 di Danni da Evocatore ai nemici avvelenati
-lifeleech=Recupera il §a[[0.1 x <skilllevel>]]%§0 dei Danni da Evocatore inflitti come Salute
+lifeleech=Recupera lo §a[[0.05 x <skilllevel>]]%§0 del Danno da Evocatore inflitto come Salute
 necroticremains=Quando un'evocazione necrotica muore, esplode, infliggendo §i[[0.1 x <intelligence> x <skilllevel>]] Danni Magici§0 ai nemici vicini, avvelenandoli per 20% dei danni al secondo per 10 secondi
 endlesslegion=Ogni 4 livelli di questa abilità, ottieni +1 evocazione massima
-lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un §bLich§0\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un §bLich§0 (uno scheletro)
+lichborn=Quando muori, sopravvivi e recuperi il §a[[10 x <skilllevel>]]%§0 di Salute se non sei già un §bLich§0\nPer i prossimi §a[[120 - 6 x <skilllevel>]] secondi§0, diventi un §bLich§0 (uno scheletro)\n\n\n§bLich:§0 Trasformazione non morta\n\nNon può usare oggetti\n+100% Danni Subiti\n\nPremi [input=transformationability1] per sparare un osso che infligge §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Danni Magici§0
 
 // Cleric
 vitalaura=Ogni §a[[15 - <skilllevel>]] secondi§0, rilasci un'aura di guarigione magica intorno a te che ripristina §a[[10 + <grace>]] salute§0\nTi guarisce anche per la metà di tale importo
@@ -321,7 +321,7 @@ battlecry=Per i prossimi 10 secondi, aumenta i tuoi danni e quelli degli alleati
 ironguard=-50% di danni in arrivo per §a[[4 x <skilllevel>]] secondi
 intimidation=Per i prossimi §a[[<skilllevel>]] secondi§0, fai fuggire i nemici vicini
 
-objectthrowing=Passaggio 1: afferra un oggetto di fronte a te\nPassaggio 2: lancialo in avanti infliggendo §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] danni in mischia§0\nEntrambi i passaggi consumano tutta la tua resistenza (almeno il 100%)
+objectthrowing=Passaggio 1: afferra un oggetto di fronte a te\nPassaggio 2: lancialo in avanti infliggendo §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] danni in mischia§0
 
 // Ranger
 shortdash=Esegui uno scatto da 100 di <strength>\nConsuma il 15% della resistenza
@@ -354,7 +354,7 @@ lightning=Inizia un fulmine che salta tra i mob per 1 secondo, infliggendo §i[[
 
 // Negromante
 skeletonhorde=Evoca §a[[1 + <skilllevel>]] §bScheletri§0
-skeletonwarrior=Evoca un §bGuerriero Scheletro§0 con il §a+[[20 x <skilllevel>]]%§0 di Salute e Danni
+skeletonwarrior=Evoca un §bGuerriero Scheletro§0 con il §a+[[40 x <skilllevel>]]%§0 di Salute e Danni
 sacrifice=L'evocazione necrotica più vicina muore, e tu recuperi §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Salute§0 come guarigione magica
 siegecry=Ottieni il §a+[[50 x <skilllevel>]]%§0 di Velocità di Evocazione per 6 secondi
 
@@ -381,11 +381,11 @@ wrathoflight=Evoca una colonna di luce sul nemico più vicino, infliggendo §i[[
 
 // Druid
 wolftransformation=Richiede 3 secondi per trasformarsi in un Lupo\n\nVelocità di Movimento: 60\n\nPremi [input=transformationability1] per Morso Scattante: Salta in avanti e mordi, infliggendo §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Danni da Mischia§0\n\nPremi [input=transformationability2] per Abbaiare: Costringi i nemici vicini a concentrare i loro attacchi su di te per 2 secondi\n\nTieni premuto [input=trinketability] per Scattare
-queenbeetransformation=Richiede 2 secondi per trasformarsi in un'Ape Regina\n\nVelocità di Movimento: 30\n-50% Rilevamento Nemici\n§6+1000% Danni Subiti§0\n\nPremi [input=transformationability1] per Sparare Miele: Infliggi §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0\n\nPremi [input=transformationability2] per evocare un'§9Ape§0 fino a §a[[2 x <skilllevel>]]§0\n\nTieni premuto [input=trinketability] per comandare le tue Api ad attaccare
+queenbeetransformation=Richiede 2 secondi per trasformarsi in un'Ape Regina\n\nVelocità di Movimento: 30\n-50% Rilevamento Nemici\n§6+1000% Danni Subiti§0\nSubire un colpo evoca il numero massimo di api invece di morire (60s di cooldown)\n\nPremi [input=transformationability1] per Sparare Miele: Infliggi §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0\n\nPremi [input=transformationability2] per evocare un'§9Ape§0 fino a §a[[2 x <skilllevel>]]§0\n\nTieni premuto [input=trinketability] per comandare le tue Api ad attaccare
 beartransformation=Richiede 4 secondi per trasformarsi in un Orso\n\nVelocità di Movimento: 20\n-50% Danni Subiti\n\nPremi [input=transformationability1] per Schianto a Terra: Attacco ad area che infligge §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Danni da Mischia§0 e §9stordisce§0 per §a[[0.5 x <skilllevel>]] secondi§0\n\nPremi [input=transformationability2] per Ringhiare: Fai fuggire i nemici vicini per 1 secondo\n\nTieni premuto [input=trinketability] per Scattare
 foxtransformation=Richiede 3 secondi per trasformarsi in una Volpe\n\nVelocità di Movimento: 50\n§6+50% Danni Subiti§0\n\nPremi [input=transformationability1] per Sparare Palle di Fuoco: Infliggi §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Danni Magici§0\n\nPremi [input=transformationability2] per evocare una §bFiamma Danzante§0 fino a §a[[2 + <skilllevel>]]§0, ognuna infligge lo stesso danno di una Palla di Fuoco\n\nPremi [input=trinketability] per Scattare\n§!Vulpes Nova fox!
 rattransformation=Richiede 2 secondi per trasformarsi in un Ratto\n\nVelocità di Movimento: 25\n-50% Rilevamento Nemici\nConferisce massima Probabilità di Schivata\n§6+1000% Danni Subiti§0\n\nPremi [input=transformationability1] per Morso: Infligge §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Danni da Mischia§0 e avvelena il bersaglio per il 100% dei danni inflitti al secondo per 10 secondi\n\nTieni premuto [input=trinketability] per Scattare
-treanttransformation=Richiede 4 secondi per trasformarsi in un Treant\n\nVelocità di Movimento: 0\n-§a[50 + 5 <skilllevel>]%§0 Danni Subiti\nI nemici ti ignorano se sei nascosto per 3 secondi\n\nPremi [input=transformationability1] mentre Rivelato per Sparare Semi casuali: Infliggi §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0 con effetti casuali\n\nPremi [input=transformationability2] per evocare un §9Brote di Driade§0\n\nTieni premuto [input=trinketability] per Rivelare e Scattare se ti muovi
+treanttransformation=Richiede 4 secondi per trasformarsi in un Treant\n\nVelocità di Movimento: 0\n-§a[50 + 5 <skilllevel>]%§0 Danni Subiti\n+50% Armatura\nI nemici ti ignorano se sei nascosto per 3 secondi\n\nPremi [input=transformationability1] mentre Rivelato per Sparare Semi casuali: Infliggi §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Danni a Distanza§0 con effetti casuali\n\nPremi [input=transformationability2] per evocare un §9Brote di Driade§0\n\nTieni premuto [input=trinketability] per Rivelare e Scattare se ti muovi
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§bFiamma Danzante:§0 Evocazione che agisce come un proiettile. In
 necromancerskeleton=§bScheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerskeletonwarrior=§bGuerriero Scheletro:§0 Evocazione necrotica danneggiabile\nSalute: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDanno: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
 necromancerboneslinger=§bLanciaossa:§0 Evocazione necrotica danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distanza 320)\nVelocità: 60\nPerde il 2% della Salute Totale al secondo
-bee=§9Ape:§0 Evocazione danneggiabile\nSalute: 1\nDanno: §a[[<playerlevel> + <intelligence>]]§0\nVelocità: 40\n\nMuore all'attacco, ma avvelena il bersaglio per il 20% dei danni inflitti al secondo per 10 secondi
-dryadsapling=§9Brote di Driade:§0 Evocazione danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nVelocità: 65\nPerde il 2% della Salute Totale al secondo
+bee=§9Ape:§0 Evocazione danneggiabile\nSalute: 1\nDanno: §a[[<playerlevel> + <intelligence>]]§0\nVelocità: 100\n\nMuore all'attacco, ma avvelena il bersaglio per il 20% dei danni inflitti al secondo per 10 secondi
+dryadsapling=§9Brote di Driade:§0 Evocazione danneggiabile\nSalute: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDanno: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nVelocità: 65\nPerde il 2% della Salute Totale al secondo
 
 [item]
 scrollofoblivion=Pergamena dell'oblio
@@ -516,7 +516,7 @@ activeskillpoints=Punti abilità attiva: <points>
 
 activeskillsuse=Questa mod trasforma la ruota delle espressioni (tasto T per impostazione predefinita) nella ruota delle abilità attive
 activeskillsusetip1=Si consiglia di cambiare il controllo della ruota delle espressioni con un tasto facilmente accessibile
-activeskillsusetip2=Puoi anche assegnare un tasto a ogni slot di abilità attiva (ideale per abilità a bassa ricarica)
+activeskillsusetip2=Solo le prime quattro abilità compaiono nella Ruota delle Abilità Attive. Dovrai usare i tasti per le altre
 activeskillsequipinstructions=Fai clic su uno slot per equipaggiare un'abilità attiva. Non puoi disequipaggiare un'abilità attiva in ricarica
 noactiveskills=Non hai abilità attive. Sbloccale attraverso le classi
 
@@ -556,6 +556,12 @@ activeskillslot5=Slot abilità attiva 5
 activeskillslot6=Slot abilità attiva 6
 transformationability1=Abilità di Trasformazione 1
 transformationability2=Abilità di Trasformazione 2
+activeskillslot7=Slot abilità attiva 7
+activeskillslot8=Slot abilità attiva 8
+activeskillslot9=Slot abilità attiva 9
+activeskillslot10=Slot abilità attiva 10
+activeskillslot11=Slot abilità attiva 11
+activeskillslot12=Slot abilità attiva 12
 
 
 [settingsui]

@@ -193,21 +193,21 @@ wolfcompanion=Un lobo compañero atacará a los enemigos marcados infligiendo §
 
 // Wizard
 manapower=Cada nivel proporciona:\n\n+1% de Daño Mágico por cada 10% de Maná no utilizado
-flamingsteps=Al correr con un abalorio activo o transformación, dejarás llamas en el suelo\nLas llamas quemarán a los enemigos durante 2 segundos, infligiendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 por segundo
-stormbound=Cada §a[[9 - 0.5 x <skilllevel>]] segundos§0, un rayo cae sobre un enemigo aleatorio en tu visión\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturde durante 1 segundo
+flamingsteps=Al correr con un abalorio activo o transformación, dejarás llamas en el suelo\nLas llamas quemarán a los enemigos durante 3 segundos, infligiendo §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 por segundo
+stormbound=Cada §a[[11 - 0.5 x <skilllevel>]] segundos§0, un rayo cae sobre un enemigo aleatorio en tu visión\nInflige §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0 y aturde durante 1 segundo
 arcaneshield=Un escudo que previene un golpe\nEl escudo se recuperará §a[[20 - <skilllevel>]] segundos§0 después de usarlo
 fireshield=Un escudo que previene un golpe\nAl usarlo, liberarás una explosión que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ny quemarás a los monstruos, repitiendo el 20% de su daño original por segundo durante 5 segundos\nEl escudo se recuperará 26 segundos después de usarlo
 iceshield=Un escudo que previene un golpe\nAl usarlo, liberarás un aura de hielo que inflige §i[[<playerlevel> + <intelligence> x <skilllevel>]] de Daño Mágico§0\ncongelando a los monstruos durante 5 segundos, y congelándolos totalmente durante 1 segundo\nEl escudo se recuperará 22 segundos después de usarlo
 
 // Nigromante
-necroticpower=Todos tus ataques Mágicos y de Invocador envenenan un 5% de su Daño durante §a[[2 x <skilllevel>]] segundos§0, siempre que no sean causados por una invocación
+necroticpower=Todos tus ataques Mágicos envenenan un 5% de su Daño durante §a[[2 x <skilllevel>]] segundos§0
 darkmagic=Las bonificaciones de Daño de Invocador afectan al Daño Mágico en un §a[[5 x <skilllevel>]]%
 necroticarmy=Los enemigos hostiles derrotados se convertirán en §bEsqueletos§0 con un §a-[[100 - 3 x <skilllevel>]]%§0 de Salud y Daño
 darksummons=Inflige un §a+[[8 x <skilllevel>]]%§0 de Daño de Invocador a los enemigos envenenados
-lifeleech=Recupera un §a[[0.1 x <skilllevel>]]%§0 del Daño de Invocador infligido como Salud
+lifeleech=Recupera un §a[[0.05 x <skilllevel>]]%§0 del Daño de Invocador infligido como Salud
 necroticremains=Cuando una invocación necrótica muere, explota, infligiendo §i[[0.1 x <intelligence> x <skilllevel>]] de Daño Mágico§0 a los enemigos cercanos, envenenándolos con un 20% del daño por segundo durante 10 segundos
 endlesslegion=Cada 4 niveles de esta habilidad, ganas +1 invocación máxima
-lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un §bLich§0\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un §bLich§0 (un esqueleto)
+lichborn=Cuando mueres, sobrevives y recuperas un §a[[10 x <skilllevel>]]%§0 de Salud si no eres ya un §bLich§0\nDurante los próximos §a[[120 - 6 x <skilllevel>]] segundos§0, te conviertes en un §bLich§0 (un esqueleto)\n\n\n§bLich:§0 Transformación de no-muerto\n\nNo puedes usar objetos\n+100% de Daño Recibido\n\nPresiona [input=transformationability1] para disparar un hueso que inflige §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] de Daño Mágico§0
 
 // Cleric
 vitalaura=Cada §a[[15 - <skilllevel>]] segundos§0, liberas un aura de curación mágica a tu alrededor que restaura §a[[10 + <grace>]] de salud§0\nTambién te cura la mitad de esa cantidad
@@ -321,7 +321,7 @@ battlecry=Durante los próximos 10 segundos, aumenta tu Daño Total y el de los 
 ironguard=-50% de Daño Recibido durante §a[[4 x <skilllevel>]] segundos
 intimidation=Durante los próximos §a[[<skilllevel>]] segundos§0, haz que los enemigos cercanos huyan
 
-objectthrowing=Paso 1: Agarra un objeto frente a ti\nPaso 2: Lánzalo hacia adelante infligiendo §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0\nAmbos pasos consumen toda tu Resistencia (al menos el 100%)
+objectthrowing=Paso 1: Agarra un objeto frente a ti\nPaso 2: Lánzalo hacia adelante infligiendo §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0
 
 // Ranger
 shortdash=Realiza una carrera de 100 de <strength>\nConsume el 15% de la Resistencia
@@ -354,7 +354,7 @@ lightning=Inicia un rayo que salta entre los monstruos durante 1 segundo, inflig
 
 // Nigromante
 skeletonhorde=Invoca §a[[1 + <skilllevel>]] §bEsqueletos§0
-skeletonwarrior=Invoca un §bGuerrero Esqueleto§0 con un §a+[[20 x <skilllevel>]]%§0 de Salud y Daño
+skeletonwarrior=Invoca un §bGuerrero Esqueleto§0 con un §a+[[40 x <skilllevel>]]%§0 de Salud y Daño
 sacrifice=La invocación necrótica más cercana muere, y luego recuperas §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] de Salud§0 como curación mágica
 siegecry=Gana un §a+[[50 x <skilllevel>]]%§0 de Velocidad de Invocación durante 6 segundos
 
@@ -381,11 +381,11 @@ wrathoflight=Invoca una columna de luz sobre el enemigo más cercano, que inflig
 
 // Druid
 wolftransformation=Tarda 3 segundos en transformarse en un Lobo\n\nVelocidad de Movimiento: 60\n\nPresiona [input=transformationability1] para Mordisco de Embestida: Salta hacia adelante y muerde, infligiendo §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0\n\nPresiona [input=transformationability2] para Ladrar: Obliga a los enemigos cercanos a atacarte durante 2 segundos\n\nMantén presionado [input=trinketability] para Correr
-queenbeetransformation=Tarda 2 segundos en transformarse en una Abeja Reina\n\nVelocidad de Movimiento: 30\n-50% Detección de Enemigos\n§6+1000% Daño Recibido§0\n\nPresiona [input=transformationability1] para Disparar Miel: Inflige §i[[2 x <playerlevel> + <strength> x <skilllevel>]] de Daño a Distancia§0\n\nPresiona [input=transformationability2] para invocar una §9Abeja§0 hasta §a[[2 x <skilllevel>]]§0\n\nMantén presionado [input=trinketability] para ordenar a tus Abejas que ataquen
+queenbeetransformation=Tarda 2 segundos en transformarse en una Abeja Reina\n\nVelocidad de Movimiento: 30\n-50% Detección de Enemigos\n§6+1000% Daño Recibido§0\nRecibir un golpe invoca el máximo de abejas en lugar de morir (60s de enfriamiento)\n\nPresiona [input=transformationability1] para Disparar Miel: Inflige §i[[2 x <playerlevel> + <strength> x <skilllevel>]] de Daño a Distancia§0\n\nPresiona [input=transformationability2] para invocar una §9Abeja§0 hasta §a[[2 x <skilllevel>]]§0\n\nMantén presionado [input=trinketability] para ordenar a tus Abejas que ataquen
 beartransformation=Tarda 4 segundos en transformarse en un Oso\n\nVelocidad de Movimiento: 20\n-50% Daño Recibido\n\nPresiona [input=transformationability1] para Golpe Terrestre: Ataque de área que inflige §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0 y §9Aturde§0 durante §a[[0.5 x <skilllevel>]] segundos§0\n\nPresiona [input=transformationability2] para Gruñir: Haz que los enemigos cercanos huyan durante 1 segundo\n\nMantén presionado [input=trinketability] para Correr
 foxtransformation=Tarda 3 segundos en transformarse en un Zorro\n\nVelocidad de Movimiento: 50\n§6+50% Daño Recibido§0\n\nPresiona [input=transformationability1] para Disparar Bolas de Fuego: Inflige §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Mágico§0\n\nPresiona [input=transformationability2] para invocar una §bLlama Danzante§0 hasta §a[[2 + <skilllevel>]]§0, cada una infligiendo el mismo daño que una Bola de Fuego\n\nPresiona [input=trinketability] para Correr\n§!Vulpes Nova fox!
 rattransformation=Tarda 2 segundos en transformarse en una Rata\n\nVelocidad de Movimiento: 25\n-50% Detección de Enemigos\nOtorga máxima Probabilidad de Esquivar\n§6+1000% Daño Recibido§0\n\nPresiona [input=transformationability1] para Morder: Inflige §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] de Daño Cuerpo a Cuerpo§0 y envenena al objetivo por el 100% del daño infligido por segundo durante 10 segundos\n\nMantén presionado [input=trinketability] para Correr
-treanttransformation=Tarda 4 segundos en transformarse en un Treant\n\nVelocidad de Movimiento: 0\n-§a[50 + 5 <skilllevel>]%§0 Daño Recibido\nLos enemigos te ignoran si estás oculto durante 3 segundos\n\nPresiona [input=transformationability1] mientras Estás Revelado para Disparar Semillas aleatorias: Inflige §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] de Daño a Distancia§0 con efectos aleatorios\n\nPresiona [input=transformationability2] para invocar un §9Brote de Dríada§0\n\nMantén presionado [input=trinketability] para Revelar y Correr si te mueves
+treanttransformation=Tarda 4 segundos en transformarse en un Treant\n\nVelocidad de Movimiento: 0\n-§a[50 + 5 <skilllevel>]%§0 Daño Recibido\n+50% Armadura\nLos enemigos te ignoran si estás oculto durante 3 segundos\n\nPresiona [input=transformationability1] mientras Estás Revelado para Disparar Semillas aleatorias: Inflige §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] de Daño a Distancia§0 con efectos aleatorios\n\nPresiona [input=transformationability2] para invocar un §9Brote de Dríada§0\n\nMantén presionado [input=trinketability] para Revelar y Correr si te mueves
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§bLlama Danzante:§0 Invocación que actúa como un proyectil. Que
 necromancerskeleton=§bEsqueleto:§0 Invocación necrótica dañable\nSalud: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
 necromancerskeletonwarrior=§bGuerrero Esqueleto:§0 Invocación necrótica dañable\nSalud: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDaño: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
 necromancerboneslinger=§bLanzahuesos:§0 Invocación necrótica dañable\nSalud: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (distancia 320)\nVelocidad: 60\nPierde un 2% de la Salud Total por segundo
-bee=§9Abeja:§0 Invocación dañable\nSalud: 1\nDaño: §a[[<playerlevel> + <intelligence>]]§0\nVelocidad: 40\n\nMuere al atacar, pero envenena al objetivo por el 20% del daño infligido por segundo durante 10 segundos
-dryadsapling=§9Brote de Dríada:§0 Invocación dañable\nSalud: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDaño: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nVelocidad: 65\nPierde un 2% de la Salud Total por segundo
+bee=§9Abeja:§0 Invocación dañable\nSalud: 1\nDaño: §a[[<playerlevel> + <intelligence>]]§0\nVelocidad: 100\n\nMuere al atacar, pero envenena al objetivo por el 20% del daño infligido por segundo durante 10 segundos
+dryadsapling=§9Brote de Dríada:§0 Invocación dañable\nSalud: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDaño: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nVelocidad: 65\nPierde un 2% de la Salud Total por segundo
 
 [item]
 scrollofoblivion=Pergamino del Olvido
@@ -516,7 +516,7 @@ activeskillpoints=Puntos de Habilidad Activa: <points>
 
 activeskillsuse=Este mod convierte la Rueda de Expresiones (tecla T por defecto) en la Rueda de Habilidades Activas
 activeskillsusetip1=Se recomienda cambiar el control de la Rueda de Expresiones a una tecla de fácil acceso
-activeskillsusetip2=También puedes asignar una tecla a cada ranura de Habilidad Activa (ideal para habilidades de bajo enfriamiento)
+activeskillsusetip2=Solo las primeras cuatro habilidades aparecen en la Rueda de Habilidades Activas. Necesitarás usar teclas para el resto
 activeskillsequipinstructions=Haz clic en una ranura para equipar una Habilidad Activa. No puedes desequipar una Habilidad Activa en enfriamiento
 noactiveskills=No tienes Habilidades Activas. Desbloquéalas a través de las clases
 
@@ -554,6 +554,12 @@ activeskillslot3=Ranura de Habilidad Activa 3
 activeskillslot4=Ranura de Habilidad Activa 4
 activeskillslot5=Ranura de Habilidad Activa 5
 activeskillslot6=Ranura de Habilidad Activa 6
+activeskillslot7=Ranura de Habilidad Activa 7
+activeskillslot8=Ranura de Habilidad Activa 8
+activeskillslot9=Ranura de Habilidad Activa 9
+activeskillslot10=Ranura de Habilidad Activa 10
+activeskillslot11=Ranura de Habilidad Activa 11
+activeskillslot12=Ranura de Habilidad Activa 12
 transformationability1=Habilidad de Transformación 1
 transformationability2=Habilidad de Transformación 2
 

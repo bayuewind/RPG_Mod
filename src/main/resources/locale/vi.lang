@@ -193,21 +193,21 @@ wolfcompanion=Một bạn đồng hành sói sẽ tấn công những kẻ thù 
 
 // Pháp sư
 manapower=Mỗi cấp độ cung cấp:\n\n+1% Sát thương phép cho mỗi 10% Mana không sử dụng
-flamingsteps=Khi chạy với một món đồ trang sức đang hoạt động hoặc biến hình, bạn sẽ để lại ngọn lửa trên mặt đất\nNgọn lửa sẽ đốt cháy kẻ thù trong 2 giây, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 mỗi giây
-stormbound=Cứ sau §a[[9 - 0.5 x <skilllevel>]] giây§0, một tia sét đánh vào một kẻ thù ngẫu nhiên trong tầm nhìn của bạn\nGây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây
+flamingsteps=Khi chạy với một món đồ trang sức đang hoạt động hoặc biến hình, bạn sẽ để lại ngọn lửa trên mặt đất\nNgọn lửa sẽ đốt cháy kẻ thù trong 3 giây, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 mỗi giây
+stormbound=Cứ sau §a[[11 - 0.5 x <skilllevel>]] giây§0, một tia sét đánh vào một kẻ thù ngẫu nhiên trong tầm nhìn của bạn\nGây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây
 arcaneshield=Một chiếc khiên ngăn chặn một đòn đánh\nChiếc khiên sẽ phục hồi sau §a[[20 - <skilllevel>]] giây§0 sau khi sử dụng
 fireshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một vụ nổ gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nvà đốt cháy mob, lặp lại 20% sát thương ban đầu của chúng mỗi giây trong 5 giây\nChiếc khiên sẽ phục hồi sau 26 giây sau khi sử dụng
 iceshield=Một chiếc khiên ngăn chặn một đòn đánh\nKhi sử dụng, bạn sẽ giải phóng một luồng khí băng gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương Phép§0\nlàm đóng băng mob trong 5 giây và đóng băng hoàn toàn chúng trong 1 giây\nChiếc khiên sẽ phục hồi sau 22 giây sau khi sử dụng
 
 // Thầy chiêu hồn
-necroticpower=Tất cả các đòn tấn công Phép và Triệu hồi của bạn đều gây độc bằng 5% Sát thương của chúng trong §a[[2 x <skilllevel>]] giây§0, miễn là chúng không phải do triệu hồi gây ra
+necroticpower=Tất cả các đòn tấn công Phép của bạn đều gây độc bằng 5% Sát thương của chúng trong §a[[2 x <skilllevel>]] giây§0
 darkmagic=Tiền thưởng Sát thương của Người triệu hồi ảnh hưởng đến Sát thương Phép bằng §a[[5 x <skilllevel>]]%
 necroticarmy=Kẻ thù bị đánh bại sẽ biến thành §bBộ xương§0 với §a-[[100 - 3 x <skilllevel>]]%§0 Máu và Sát thương
-darksummons=Gây thêm §a+[[10 x <skilllevel>]]%§0 Sát thương của Người triệu hồi cho kẻ thù bị nhiễm độc
-lifeleech=Hồi phục §a[[<skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
+darksummons=Gây thêm §a+[[8 x <skilllevel>]]%§0 Sát thương của Người triệu hồi cho kẻ thù bị nhiễm độc
+lifeleech=Hồi phục §a[[0.05 x <skilllevel>]]%§0 Sát thương của Người triệu hồi đã gây ra thành Máu
 necroticremains=Khi một triệu hồi hoại tử chết, nó sẽ phát nổ, gây §i[[0.1 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó, đầu độc chúng bằng 20% sát thương mỗi giây trong 10 giây
 endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận được +1 triệu hồi tối đa
-lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một §bLich§0\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một §bLich§0 (một bộ xương)
+lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một §bLich§0\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một §bLich§0 (một bộ xương)\n\n\n§bLich:§0 Biến hình bất tử\n\nKhông thể sử dụng vật phẩm\n+100% Sát thương nhận vào\n\nNhấn [input=transformationability1] để bắn một khúc xương gây §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Sát thương phép§0
 
 // Cleric
 vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace>]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
@@ -308,7 +308,7 @@ battlecry=Trong 10 giây tiếp theo, tăng tất cả sát thương và tốc �
 ironguard=-50% sát thương nhận vào trong §a[[4 x <skilllevel>]] giây
 intimidation=Trong §a[[<skilllevel>]] giây§0 tiếp theo, khiến kẻ thù gần đó bỏ chạy
 
-objectthrowing=Bước 1: Nắm lấy một vật thể trước mặt bạn\nBước 2: Ném nó về phía trước gây §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] sát thương cận chiến§0\nCả hai bước đều tiêu tốn toàn bộ thể lực của bạn (ít nhất 100%)
+objectthrowing=Bước 1: Nắm lấy một vật thể trước mặt bạn\nBước 2: Ném nó về phía trước gây §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] sát thương cận chiến§0
 
 // Kiểm lâm
 shortdash=Thực hiện một cú lướt 100-<strength>\nTiêu tốn 15% thể lực
@@ -341,7 +341,7 @@ lightning=Bắt đầu một tia sét nhảy giữa các mob trong 1 giây, gây
 
 // Thầy chiêu hồn
 skeletonhorde=Triệu hồi §a[[1 + <skilllevel>]] §bBộ xương§0
-skeletonwarrior=Triệu hồi một §bChiến binh xương§0 với §a+[[20 x <skilllevel>]]%§0 Máu và Sát thương
+skeletonwarrior=Triệu hồi một §bChiến binh xương§0 với §a+[[40 x <skilllevel>]]%§0 Máu và Sát thương
 sacrifice=Triệu hồi hoại tử gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
 siegecry=Nhận §a+[[50 x <skilllevel>]]%§0 Tốc độ Triệu hồi trong 6 giây
 
@@ -365,6 +365,49 @@ divineintervention=Sự can thiệp của thần thánh
 resurrection=Sự hồi sinh
 wrathoflight=Cơn thịnh nộ của ánh sáng
 
+// Druid
+wolftransformation=Mất 3 giây để biến thành Sói\n\nTốc độ di chuyển: 60\n\nNhấn [input=transformationability1] để Lướt cắn: Nhảy về phía trước và cắn, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] sát thương cận chiến§0\n\nNhấn [input=transformationability2] để Sủa: Buộc kẻ thù gần đó nhắm vào bạn trong 2 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+queenbeetransformation=Mất 2 giây để biến thành Ong chúa\n\nTốc độ di chuyển: 30\n-50% Phát hiện kẻ thù\n§6+1000% Sát thương nhận vào§0\nNhận một đòn đánh sẽ triệu hồi ong tối đa thay vì chết (hồi chiêu 60 giây)\n\nNhấn [input=transformationability1] để Bắn Mật ong: Gây §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0\n\nNhấn [input=transformationability2] để triệu hồi một §9Con ong§0 lên đến §a[[2 x <skilllevel>]]§0\n\nGiữ [input=trinketability] để ra lệnh cho Ong của bạn tấn công
+beartransformation=Mất 4 giây để biến thành Gấu\n\nTốc độ di chuyển: 20\n-50% Sát thương nhận vào\n\nNhấn [input=transformationability1] để Đập đất: Đòn tấn công khu vực gây §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] sát thương cận chiến§0 và §9làm choáng§0 trong §a[[0.5 x <skilllevel>]] giây§0\n\nNhấn [input=transformationability2] để Gầm: Khiến kẻ thù gần đó bỏ chạy trong 1 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+foxtransformation=Mất 3 giây để biến thành Cáo\n\nTốc độ di chuyển: 50\n§6+50% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Bắn cầu lửa: Gây §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] sát thương phép§0\n\nNhấn [input=transformationability2] để triệu hồi một §bNgọn lửa nhảy múa§0 lên đến §a[[2 + <skilllevel>]]§0, mỗi ngọn lửa gây sát thương tương tự như một Quả cầu lửa\n\nNhấn [input=trinketability] để Lướt\n§!Cáo Vulpes Nova!
+rattransformation=Mất 2 giây để biến thành Chuột\n\nTốc độ di chuyển: 25\n-50% Phát hiện kẻ thù\nCấp cơ hội né tránh tối đa\n§6+1000% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Cắn: Gây §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] sát thương cận chiến§0 và đầu độc mục tiêu bằng 100% sát thương gây ra mỗi giây trong 10 giây\n\nGiữ [input=trinketability] để Chạy nước rút
+treanttransformation=Mất 4 giây để biến thành Treant\n\nTốc độ di chuyển: 0\n-§a[50 + 5 <skilllevel>]%§0 Sát thương nhận vào\n+50% Giáp\nKẻ thù sẽ bỏ qua bạn nếu ẩn nấp trong 3 giây\n\nNhấn [input=transformationability1] khi bị lộ để Bắn hạt ngẫu nhiên: Gây §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0 với các hiệu ứng ngẫu nhiên\n\nNhấn [input=transformationability2] để triệu hồi một §9Cây non Dryad§0\n\nGiữ [input=trinketability] để lộ diện và chạy nước rút nếu di chuyển
+
+
+[extraskilldesc]
+// Basic Mechanics
+manausage=Nếu bạn không có đủ mana, thời gian hồi chiêu của nó sẽ tăng gấp đôi
+setmax=Các hiệu ứng tiêu cực được đặt ở mức tối đa và không thể bị loại bỏ bởi các phép bổ trợ khác
+holydamage=25% sát thương thần thánh gây ra sẽ được chuyển thành hồi máu cho mob bạn chữa bệnh bằng phép thuật\nCũng đốt cháy mob bất tử và ma quỷ trong 10 giây
+
+// Buffs
+marked=§hĐược đánh dấu:§0 Gây thêm +20% Sát thương (+ §hSát thương tập trung§0) và +10% Cơ hội chí mạng cho mob bạn đánh dấu\n"Kẻ thù gần nhất" ưu tiên những kẻ thù được đánh dấu
+constrained=§7Bị hạn chế:§0 -50% Tốc độ di chuyển
+
+// Chance Modifiers
+dodgechance=§7Cơ hội né tránh:§0 Cơ hội né tránh các đòn tấn công sắp tới. Không thể vượt quá 80%
+focuschance=§hCơ hội tập trung:§0 Cơ hội §hđánh dấu§0 một mob trong 5 giây khi bị bạn tấn công trực tiếp
+
+// Flat Modifiers
+mobdetection=§9Phát hiện mob:§0 Hiển thị các mob gần đó trên bản đồ. Phạm vi phát hiện cao hơn sẽ tiết lộ các mob ở xa hơn
+ignitedamage=§iSát thương đốt cháy:§0 Tăng sát thương đốt cháy theo thời gian, nhưng không ảnh hưởng đến sát thương đánh trực tiếp
+
+// Projectiles
+lethalarrow=§hMũi tên chí mạng:§0 Mũi tên có điều khiển đảm bảo một đòn chí mạng
+venomarrow=§bMũi tên độc:§0 Mũi tên có điều khiển gây độc cho kẻ thù. Lặp lại 10% sát thương ban đầu mỗi giây trong 30 giây
+explosivearrow=§iMũi tên nổ:§0 Mũi tên có điều khiển gây ra một vụ nổ ma thuật với sát thương tương đương
+iceball=§aQuả cầu băng:§0 Đạn ma thuật phát nổ và đóng băng mob trong 5 giây, cũng đóng băng hoàn toàn trong 1 giây
+fireball=§iQuả cầu lửa:§0 Đạn ma thuật phát nổ và đốt cháy mob lặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
+
+// Summons
+dancingflame=§bNgọn lửa nhảy múa:§0 Triệu hồi hoạt động giống như một viên đạn. Đốt cháy kẻ thù khi trúng đích. Lặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
+
+// Damageable Summons
+necromancerskeleton=§bBộ xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerskeletonwarrior=§bChiến binh xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerboneslinger=§bKẻ ném xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (khoảng cách 320)\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+bee=§9Con ong:§0 Triệu hồi có thể bị sát thương\nMáu: 1\nSát thương: §a[[<playerlevel> + <intelligence>]]§0\nTốc độ: 100\n\nChết khi tấn công, nhưng đầu độc mục tiêu bằng 20% sát thương gây ra mỗi giây trong 10 giây
+dryadsapling=§9Cây non Dryad:§0 Triệu hồi có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nTốc độ: 65\nMất 2% Tổng Máu mỗi giây
 
 [item]
 scrollofoblivion=Cuộn giấy lãng quên
@@ -446,7 +489,7 @@ activeskillpoints=Điểm kỹ năng chủ động: <points>
 
 activeskillsuse=Bản mod này biến Bánh xe biểu cảm (phím T theo mặc định) thành Bánh xe kỹ năng chủ động
 activeskillsusetip1=Bạn nên thay đổi điều khiển Bánh xe biểu cảm thành một phím dễ truy cập
-activeskillsusetip2=Bạn cũng có thể gán một phím cho mỗi ô Kỹ năng chủ động (lý tưởng cho các kỹ năng có thời gian hồi chiêu thấp)
+activeskillsusetip2=Chỉ có bốn kỹ năng đầu tiên xuất hiện trong Bánh xe kỹ năng chủ động. Bạn sẽ cần sử dụng các phím cho phần còn lại
 activeskillsequipinstructions=Nhấp vào một ô để trang bị một Kỹ năng chủ động. Bạn không thể tháo trang bị một Kỹ năng chủ động đang trong thời gian hồi chiêu
 noactiveskills=Bạn không có Kỹ năng chủ động. Mở khóa chúng thông qua các lớp
 
@@ -484,6 +527,12 @@ activeskillslot3=Ô kỹ năng chủ động 3
 activeskillslot4=Ô kỹ năng chủ động 4
 activeskillslot5=Ô kỹ năng chủ động 5
 activeskillslot6=Ô kỹ năng chủ động 6
+activeskillslot7=Ô kỹ năng chủ động 7
+activeskillslot8=Ô kỹ năng chủ động 8
+activeskillslot9=Ô kỹ năng chủ động 9
+activeskillslot10=Ô kỹ năng chủ động 10
+activeskillslot11=Ô kỹ năng chủ động 11
+activeskillslot12=Ô kỹ năng chủ động 12
 transformationability1=Khả năng biến hình 1
 transformationability2=Khả năng biến hình 2
 

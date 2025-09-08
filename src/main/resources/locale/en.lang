@@ -48,6 +48,7 @@ darkcursebuff=Dark Curse
 magicpoisonbuff=Magic Poison
 ignitedbuff=Ignited
 holydamagedealtbuff=Holy Damage Dealt
+queenbeewashit=Queen Bee was hit
 
 
 [buffdesc]
@@ -194,21 +195,21 @@ wolfcompanion=A wolf companion will attack marked enemies dealing §i[[<playerle
 
 // Wizard
 manapower=Each level provides:\n\n+1% Magic Damage for every 10% non used Mana
-flamingsteps=When running with an active trinket or transformation, you will leave flames on the ground\nThe flames will ignite enemies for 2 seconds, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 per second
-stormbound=Every §a[[9 - 0.5 x <skilllevel>]] seconds§0, a bolt of lightning strikes a random enemy in your vision\nDeal §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 and stun 1 second
+flamingsteps=When running with an active trinket or transformation, you will leave flames on the ground\nThe flames will ignite enemies for 3 seconds, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 per second
+stormbound=Every §a[[11 - 0.5 x <skilllevel>]] seconds§0, a bolt of lightning strikes a random enemy in your vision\nDeal §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0 and stun 1 second
 arcaneshield=A shield that prevents one hit\nThe shield will recover §a[[20 - <skilllevel>]] seconds§0 after using it
 fireshield=A shield that prevents one hit\nWhen used, you will release an explosion dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nand igniting mobs, repeating 20% of their original damage per second for 5 seconds\nThe shield will recover 26 seconds after using it
 iceshield=A shield that prevents one hit\nWhen used, you will release an ice aura dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nfreezing mobs for 5 seconds, and totally freezing them for 1 second\nThe shield will recover 22 seconds after using it
 
 // Necromancer
-necroticpower=All your Magic and Summoner attacks poison for 5% of their Damage for §a[[2 x <skilllevel>]] seconds§0, as long as they are not caused by a summon
+necroticpower=All your Magic attacks poison for 5% of their Damage for §a[[2 x <skilllevel>]] seconds§0
 darkmagic=Summoner Damage bonuses affect Magic Damage by §a[[5 x <skilllevel>]]%
 necroticarmy=Defeated hostile enemies will turn into §bSkeletons§0 with §a-[[100 - 3 x <skilllevel>]]%§0 Health and Damage
 darksummons=Deal §a+[[8 x <skilllevel>]]%§0 Summoner Damage to poisoned enemies
-lifeleech=Recovers §a[[0.1 x <skilllevel>]]%§0 of the Summon Damage dealt as Health
+lifeleech=Recovers §a[[0.05 x <skilllevel>]]%§0 of the Summon Damage dealt as Health
 necroticremains=When a necrotic summon dies, it explodes, dealing §i[[0.1 x <intelligence> x <skilllevel>]] Magic Damage§0 to nearby enemies, poisoning them for 20% of the damage per second for 10 seconds
 endlesslegion=Every 4 levels of this skill, you gain +1 max summon
-lichborn=When you die, you survive and recover §a[[10 x <skilllevel>]]%§0 Health if you are not already a §bLich§0\nFor the next §a[[120 - 6 x <skilllevel>]] seconds§0, you become a §bLich§0 (a skeleton)\n\n\n§bLich:§0 Undead transformation\n\nCannot use items\n+100% Damage Taken\n\nPress [input=transformationability1] to shoot a bone that deals §i[[<playerlevel> + <strength>]] Summoner Damage§0
+lichborn=When you die, you survive and recover §a[[10 x <skilllevel>]]%§0 Health if you are not already a §bLich§0\nFor the next §a[[120 - 6 x <skilllevel>]] seconds§0, you become a §bLich§0 (a skeleton)\n\n\n§bLich:§0 Undead transformation\n\nCannot use items\n+100% Damage Taken\n\nPress [input=transformationability1] to shoot a bone that deals §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Magic Damage§0
 
 // Cleric
 vitalaura=Every §a[[15 - <skilllevel>]] seconds§0, you release a magic healing aura around you that restores §a[[10 + <grace>]] health§0\nIt also heals you for half that amount
@@ -326,7 +327,7 @@ battlecry=For the next 10 seconds, increase your and nearby allies' All Damage a
 ironguard=-50% Incoming Damage for §a[[4 x <skilllevel>]] seconds
 intimidation=For the next §a[[<skilllevel>]] seconds§0, make nearby enemies run away
 
-objectthrowing=Step 1: Grab an object in front of you\nStep 2: Throw it forwards dealing §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Melee Damage§0\nBoth steps consume all your Stamina (at least 100%)
+objectthrowing=Step 1: Grab an object in front of you\nStep 2: Throw it forwards dealing §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Melee Damage§0
 
 // Ranger
 shortdash=Perfom a 100-<strength> dash\nConsumes 15% Stamina
@@ -359,7 +360,7 @@ lightning=Start a lightning that jumps between mobs for 1 second, dealing §i[[4
 
 // Necromancer
 skeletonhorde=Summons §a[[1 + <skilllevel>]] §bSkeletons§0
-skeletonwarrior=Summons a §bSkeleton Warrior§0 with §a+[[20 x <skilllevel>]]%§0 Health and Damage
+skeletonwarrior=Summons a §bSkeleton Warrior§0 with §a+[[40 x <skilllevel>]]%§0 Health and Damage
 sacrifice=The nearest necrotic summon dies, and you then recover §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Health§0 as magical healing
 siegecry=Gain §a+[[50 x <skilllevel>]]%§0 Summon Speed for 6 seconds
 
@@ -387,13 +388,13 @@ wrathoflight=Summon a column of light on the closest enemy, dealing §i[[4 x <pl
 
 // Druid
 wolftransformation=Takes 3 seconds to transform into a Wolf\n\nMovement Speed: 60\n\nPress [input=transformationability1] to Dash Bite: Leap forward and bite, dealing §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Melee Damage§0\n\nPress [input=transformationability2] to Bark: Force nearby enemies to target you for 2 seconds\n\nHold [input=trinketability] to Sprint
-queenbeetransformation=Takes 2 seconds to transform into a Queen Bee\n\nMovement Speed: 30\n-50% Enemy Detection\n§6+1000% Incoming Damage§0\n\nPress [input=transformationability1] to Shoot Honey: Deal §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Ranged Damage§0\n\nPress [input=transformationability2] to summon a §9Bee§0 up to §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] to command your Bees to attack
+queenbeetransformation=Takes 2 seconds to transform into a Queen Bee\n\nMovement Speed: 30\n-50% Enemy Detection\n§6+1000% Incoming Damage§0\nTaking a hit summons maximum bees instead of dying (60s cooldown)\n\nPress [input=transformationability1] to Shoot Honey: Deal §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Ranged Damage§0\n\nPress [input=transformationability2] to summon a §9Bee§0 up to §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] to command your Bees to attack
 
 beartransformation=Takes 4 seconds to transform into a Bear\n\nMovement Speed: 20\n-50% Incoming Damage\n\nPress [input=transformationability1] to Ground Slam: Area attack that deals §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Melee Damage§0 and §9Stuns§0 for §a[[0.5 x <skilllevel>]] seconds§0\n\nPress [input=transformationability2] to Growl: Make nearby enemies run away for 1 second\n\nHold [input=trinketability] to Sprint
 foxtransformation=Takes 3 seconds to transform into a Fox\n\nMovement Speed: 50\n§6+50% Incoming Damage§0\n\nPress [input=transformationability1] to Shoot Fireballs: Deal §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magic Damage§0\n\nPress [input=transformationability2] to summon a §bDancing Flames§0 up to §a[[2 + <skilllevel>]]§0, each dealing the same damage as a Fireball\n\nPress [input=trinketability] to Dash\n§!Vulpes Nova fox!
 rattransformation=Takes 2 seconds to transform into a Rat\n\nMovement Speed: 25\n-50% Enemy Detection\nGrants max Dodge Chance\n§6+1000% Incoming Damage§0\n\nPress [input=transformationability1] to Bite: Deals §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Melee Damage§0 and poisons the target for 100% of the damage dealt per second for 10 seconds\n\nHold [input=trinketability] to Sprint
 
-treanttransformation=Takes 4 seconds to transform into a Treant\n\nMovement Speed: 0\n-§a[50 + 5 <skilllevel>]%§0 Incoming Damage\nEnemies ignore you if hidden for 3 seconds\n\nPress [input=transformationability1] while Revealed to Shoot random Seeds: Deal §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Ranged Damage§0 with random effects\n\nPress [input=transformationability2] to summon a §9Dryad Sapling§0\n\nHold [input=trinketability] to Reveal and Sprint if moving
+treanttransformation=Takes 4 seconds to transform into a Treant\n\nMovement Speed: 0\n-§a[50 + 5 <skilllevel>]%§0 Incoming Damage\n+50% Armor\nEnemies ignore you if hidden for 3 seconds\n\nPress [input=transformationability1] while Revealed to Shoot random Seeds: Deal §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Ranged Damage§0 with random effects\n\nPress [input=transformationability2] to summon a §9Dryad Sapling§0\n\nHold [input=trinketability] to Reveal and Sprint if moving
 
 
 [skillsdesckeys]
@@ -439,8 +440,8 @@ necromancerskeleton=§bSkeleton:§0 Necrotic damageable summon\nHealth: §a[[5 x
 necromancerskeletonwarrior=§bSkeleton Warrior:§0 Necrotic damageable summon\nHealth: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nDamage: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSpeed: 60\nLoses 2% of Total Health per second
 necromancerboneslinger=§bBoneslinger:§0 Necrotic damageable summon\nHealth: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDamage: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 distance)\nSpeed: 60\nLoses 2% of Total Health per second
 
-bee=§9Bee:§0 Damageable summon\nHealth: 1\nDamage: §a[[<playerlevel> + <intelligence>]]§0\nSpeed: 40\n\nDies on attack, but poisons the target for 20% of the damage dealt per second for 10 seconds
-dryadsapling=§9Dryad Sapling:§0 Damageable summon\nHealth: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDamage: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nSpeed: 65\nLoses 2% of Total Health per second
+bee=§9Bee:§0 Damageable summon\nHealth: 1\nDamage: §a[[<playerlevel> + <intelligence>]]§0\nSpeed: 100\n\nDies on attack, but poisons the target for 20% of the damage dealt per second for 10 seconds
+dryadsapling=§9Dryad Sapling:§0 Damageable summon\nHealth: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nDamage: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nSpeed: 65\nLoses 2% of Total Health per second
 
 [item]
 scrollofoblivion=Scroll of Oblivion
@@ -526,7 +527,7 @@ activeskillpoints=Active Skill Points: <points>
 
 activeskillsuse=This mod turns the Expression Wheel (T key by default) into the Active Skills Wheel
 activeskillsusetip1=It is recommended to change the Expression Wheel control to an easily accessible key
-activeskillsusetip2=You can also assign a key to each Active Skill slot (ideal for low-cooldown skills)
+activeskillsusetip2=Only the first four skills appear in the Active Skills Wheel. You'll need to use keys for the rest
 activeskillsequipinstructions=Click on a slot to equip an Active Skill. You cannot unequip an Active Skill on cooldown
 noactiveskills=You have no Active Skills. Unlock them through the classes
 
@@ -564,6 +565,12 @@ activeskillslot3=Active Skill Slot 3
 activeskillslot4=Active Skill Slot 4
 activeskillslot5=Active Skill Slot 5
 activeskillslot6=Active Skill Slot 6
+activeskillslot7=Active Skill Slot 7
+activeskillslot8=Active Skill Slot 8
+activeskillslot9=Active Skill Slot 9
+activeskillslot10=Active Skill Slot 10
+activeskillslot11=Active Skill Slot 11
+activeskillslot12=Active Skill Slot 12
 transformationability1=Transformation Ability 1
 transformationability2=Transformation Ability 2
 

@@ -168,7 +168,7 @@ sanctifiedmind=Geheiligde geest
 sanctifiedarmor=Geheiligde harnas
 radiantexpansion=Stralende uitbreiding
 
-// Druid
+// Druïde
 quickshift=Snelle verschuiving
 feralinstinct=Wild instinct
 ironfur=IJzeren vacht
@@ -192,21 +192,21 @@ wolfcompanion=Een wolf metgezel zal gemarkeerde vijanden aanvallen en §i[[<play
 
 // Tovenaar
 manapower=Elk niveau biedt:\n\n+1% Magische schade voor elke 10% ongebruikte mana
-flamingsteps=Wanneer je rent met een actief snuisterij of transformatie, laat je vlammen achter op de grond\nDe vlammen zullen vijanden 2 seconden in brand steken, en §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische schade§0 per seconde aanrichten
-stormbound=Elke §a[[9 - 0.5 x <skilllevel>]] seconden§0, slaat een bliksemflits een willekeurige vijand in je zicht\nRicht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische schade§0 aan en verdooft 1 seconde
+flamingsteps=Wanneer je rent met een actief snuisterij of transformatie, laat je vlammen achter op de grond\nDe vlammen zullen vijanden 3 seconden in brand steken, en §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische schade§0 per seconde aanrichten
+stormbound=Elke §a[[11 - 0.5 x <skilllevel>]] seconden§0, slaat een bliksemflits een willekeurige vijand in je zicht\nRicht §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische schade§0 aan en verdooft 1 seconde
 arcaneshield=Een schild dat één treffer voorkomt\nHet schild zal herstellen §a[[20 - <skilllevel>]] seconden§0 na gebruik
 fireshield=Een schild dat één treffer voorkomt\nBij gebruik, laat je een explosie los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische schade§0 aanricht\nen mobs in brand steekt, waarbij 20% van hun oorspronkelijke schade per seconde gedurende 5 seconden wordt herhaald\nHet schild zal 26 seconden na gebruik herstellen
 iceshield=Een schild dat één treffer voorkomt\nBij gebruik, laat je een ijsaura los die §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magische schade§0 aanricht\nmobs 5 seconden bevriest, en ze 1 seconde volledig bevriest\nHet schild zal 22 seconden na gebruik herstellen
 
 // Necromancer
-necroticpower=Al je Magische en Oproepersaanvallen vergiftigen voor 5% van hun schade gedurende §a[[2 x <skilllevel>]] seconden§0, zolang ze niet worden veroorzaakt door een oproep
-darkmagic=Oproepersschade bonussen beïnvloeden Magische schade met §a[[5 x <skilllevel>]]%
+necroticpower=Al je Magische aanvallen vergiftigen voor 5% van hun schade gedurende §a[[2 x <skilllevel>]] seconden§0
+darkmagic=Oproepersschade bonussen beïnvloeden Magische schade met §a[[5 x <skilllevel>]]%§0
 necroticarmy=Verslagen vijandige vijanden zullen veranderen in §bSkeletten§0 met §a-[[100 - 3 x <skilllevel>]]%§0 Gezondheid en schade
 darksummons=Richt §a+[[8 x <skilllevel>]]%§0 Oproepersschade aan vergiftigde vijanden
-lifeleech=Herstelt §a[[0.1 x <skilllevel>]]%§0 van de aangerichte oproepersschade als gezondheid
+lifeleech=Herstelt §a[[0.05 x <skilllevel>]]%§0 van de aangerichte oproepersschade als gezondheid
 necroticremains=Wanneer een necrotische oproep sterft, explodeert deze, en richt §i[[0.1 x <intelligence> x <skilllevel>]] Magische schade§0 aan nabije vijanden, en vergiftigt ze voor 20% van de schade per seconde gedurende 10 seconden
 endlesslegion=Elke 4 niveaus van deze vaardigheid, krijg je +1 maximale oproep
-lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen §bLich§0 bent\nVoor de volgende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een §bLich§0 (een skelet)\n\n\n§bLich:§0 Ondode transformatie\n\nKan geen items gebruiken\n+100% Schade ontvangen\n\nDruk op [input=transformationability1] om een bot te schieten dat §i[[<playerlevel> + <strength>]] oproepersschade§0 aanricht
+lichborn=Wanneer je sterft, overleef je en herstel je §a[[10 x <skilllevel>]]%§0 Gezondheid als je nog geen §bLich§0 bent\nVoor de volgende §a[[120 - 6 x <skilllevel>]] seconden§0, word je een §bLich§0 (een skelet)\n\n\n§bLich:§0 Ondode transformatie\n\nKan geen items gebruiken\n+100% Schade ontvangen\n\nDruk op [input=transformationability1] om een bot te schieten dat §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Magische schade§0 aanricht
 
 // Geestelijke
 vitalaura=Elke §a[[15 - <skilllevel>]] seconden§0, laat je een magische genezende aura om je heen los die §a[[10 + <grace>]] gezondheid§0 herstelt\nHet geneest je ook voor de helft van dat bedrag
@@ -324,7 +324,7 @@ battlecry=Verhoog de komende 10 seconden de alle schade en bewegingssnelheid van
 ironguard=-50% inkomende schade gedurende §a[[4 x <skilllevel>]] seconden
 intimidation=Laat de komende §a[[<skilllevel>]] seconden§0 nabije vijanden wegrennen
 
-objectthrowing=Stap 1: Grijp een object voor je\nStap 2: Gooi het naar voren en richt §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] contactschade§0 aan\nBeide stappen verbruiken al je uithoudingsvermogen (minstens 100%)
+objectthrowing=Stap 1: Grijp een object voor je\nStap 2: Gooi het naar voren en richt §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] contactschade§0 aan
 
 // Verkenner
 shortdash=Voer een 100-<strength> sprint uit\nVerbruikt 15% uithoudingsvermogen
@@ -357,7 +357,7 @@ lightning=Start een bliksem die 1 seconde tussen mobs springt, die §i[[4 x <pla
 
 // Necromancer
 skeletonhorde=Roept §a[[1 + <skilllevel>]] §bSkeletten§0 op
-skeletonwarrior=Roept een §bSkeletkrijger§0 op met §a+[[20 x <skilllevel>]]%§0 Gezondheid en Schade
+skeletonwarrior=Roept een §bSkeletkrijger§0 op met §a+[[40 x <skilllevel>]]%§0 Gezondheid en Schade
 sacrifice=De dichtstbijzijnde necrotische oproep sterft, en je herstelt dan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Gezondheid§0 als magische genezing
 siegecry=Krijg §a+[[50 x <skilllevel>]]%§0 Oproepsnelheid gedurende 6 seconden
 
@@ -385,13 +385,13 @@ wrathoflight=Roep een lichtkolom op de dichtstbijzijnde vijand op, die gedurende
 
 // Druïde
 wolftransformation=Duurt 3 seconden om te transformeren in een Wolf\n\nBewegingssnelheid: 60\n\nDruk op [input=transformationability1] voor Dash Bite: Spring naar voren en bijt, en richt §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] contactschade§0 aan\n\nDruk op [input=transformationability2] voor Bark: Dwing nabije vijanden om je 2 seconden te targeten\n\nHoud [input=trinketability] ingedrukt om te sprinten
-queenbeetransformation=Duurt 2 seconden om te transformeren in een Koninginnebij\n\nBewegingssnelheid: 30\n-50% Vijandelijke detectie\n§6+1000% Inkomende schade§0\n\nDruk op [input=transformationability1] om Honing te schieten: Richt §i[[2 x <playerlevel> + <strength> x <skilllevel>]] afstandsschade§0 aan\n\nDruk op [input=transformationability2] om een §9Bij§0 op te roepen tot §a[[2 x <skilllevel>]]§0\n\nHoud [input=trinketability] ingedrukt om je Bijen te commanderen aan te vallen
+queenbeetransformation=Duurt 2 seconden om te transformeren in een Koninginnebij\n\nBewegingssnelheid: 30\n-50% Vijandelijke detectie\n§6+1000% Inkomende schade§0\nEen klap krijgen roept maximale bijen op in plaats van te sterven (60s afkoeltijd)\n\nDruk op [input=transformationability1] om Honing te schieten: Richt §i[[2 x <playerlevel> + <strength> x <skilllevel>]] afstandsschade§0 aan\n\nDruk op [input=transformationability2] om een §9Bij§0 op te roepen tot §a[[2 x <skilllevel>]]§0\n\nHoud [input=trinketability] ingedrukt om je Bijen te commanderen aan te vallen
 
 beartransformation=Duurt 4 seconden om te transformeren in een Beer\n\nBewegingssnelheid: 20\n-50% Inkomende schade\n\nDruk op [input=transformationability1] voor Ground Slam: Gebiedsaanval die §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] contactschade§0 aanricht en §9verdooft§0 voor §a[[0.5 x <skilllevel>]] seconden§0\n\nDruk op [input=transformationability2] voor Growl: Laat nabije vijanden 1 seconde wegrennen\n\nHoud [input=trinketability] ingedrukt om te sprinten
 foxtransformation=Duurt 3 seconden om te transformeren in een Vos\n\nBewegingssnelheid: 50\n§6+50% Inkomende schade§0\n\nDruk op [input=transformationability1] om Vuurballen te schieten: Richt §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Magische schade§0 aan\n\nDruk op [input=transformationability2] om een §bDansende Vlammen§0 op te roepen tot §a[[2 + <skilllevel>]]§0, die elk dezelfde schade aanrichten als een Vuurbal\n\nDruk op [input=trinketability] om te sprinten\n§!Vulpes Nova fox!
 rattransformation=Duurt 2 seconden om te transformeren in een Rat\n\nBewegingssnelheid: 25\n-50% Vijandelijke detectie\nGeeft maximale ontwijkkans\n§6+1000% Inkomende schade§0\n\nDruk op [input=transformationability1] om te bijten: Richt §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] contactschade§0 aan en vergiftigt het doelwit voor 100% van de aangerichte schade per seconde gedurende 10 seconden\n\nHoud [input=trinketability] ingedrukt om te sprinten
 
-treanttransformation=Duurt 4 seconden om te transformeren in een Boomwezen\n\nBewegingssnelheid: 0\n-§a[50 + 5 <skilllevel>]%§0 Inkomende schade\nVijanden negeren je als je 3 seconden verborgen bent\n\nDruk op [input=transformationability1] terwijl onthuld om willekeurige zaden te schieten: Richt §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] afstandsschade§0 aan met willekeurige effecten\n\nDruk op [input=transformationability2] om een §9Dryad Sapling§0 op te roepen\n\nHoud [input=trinketability] ingedrukt om te onthullen en te sprinten als je beweegt
+treanttransformation=Duurt 4 seconden om te transformeren in een Boomwezen\n\nBewegingssnelheid: 0\n-§a[50 + 5 <skilllevel>]%§0 Inkomende schade\n+50% Pantser\nVijanden negeren je als je 3 seconden verborgen bent\n\nDruk op [input=transformationability1] terwijl onthuld om willekeurige zaden te schieten: Richt §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] afstandsschade§0 aan met willekeurige effecten\n\nDruk op [input=transformationability2] om een §9Dryad Sapling§0 op te roepen\n\nHoud [input=trinketability] ingedrukt om te onthullen en te sprinten als je beweegt
 
 
 [skillsdesckeys]
@@ -436,8 +436,8 @@ dancingflame=§bDansende Vlam:§0 Oproep die fungeert als een projectiel. Steekt
 necromancerskeleton=§bSkelet:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
 necromancerskeletonwarrior=§bSkeletkrijger:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSchade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
 necromancerboneslinger=§bBottenwerper:§0 Necrotische beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 afstand)\nSnelheid: 60\nVerliest 2% van de Totale Gezondheid per seconde
-bee=§9Bij:§0 Beschadigbare oproep\nGezondheid: 1\nSchade: §a[[<playerlevel> + <intelligence>]]§0\nSnelheid: 40\n\nSterft bij aanval, maar vergiftigt het doelwit voor 20% van de aangerichte schade per seconde gedurende 10 seconden
-dryadsapling=§9Dryad Sapling:§0 Beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nSnelheid: 65\nVerliest 2% van de Totale Gezondheid per seconde
+bee=§9Bij:§0 Beschadigbare oproep\nGezondheid: 1\nSchade: §a[[<playerlevel> + <intelligence>]]§0\nSnelheid: 100\n\nSterft bij aanval, maar vergiftigt het doelwit voor 20% van de aangerichte schade per seconde gedurende 10 seconden
+dryadsapling=§9Dryad Sapling:§0 Beschadigbare oproep\nGezondheid: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSchade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nSnelheid: 65\nVerliest 2% van de Totale Gezondheid per seconde
 
 [item]
 scrollofoblivion=Rol van vergetelheid
@@ -471,7 +471,7 @@ gracegoldring=Gouden ring van gratie
 
 
 [itemtooltip]
-Heilige schade: <value>
+holydamagetip=Heilige schade: <value>
 scrollofoblivion=Geeft 2 resetpunten
 ringsboxtip=Kan attribuutringen opslaan
 
@@ -522,7 +522,7 @@ activeskillpoints=Actieve vaardigheidspunten: <points>
 
 activeskillsuse=Deze mod verandert het expressiewiel (standaard T-toets) in het actieve vaardighedenwiel
 activeskillsusetip1=Het wordt aanbevolen om de bediening van het expressiewiel te wijzigen in een gemakkelijk toegankelijke toets
-activeskillsusetip2=Je kunt ook een toets toewijzen aan elk actief vaardigheidsslot (ideaal voor vaardigheden met een lage afkoeltijd)
+activeskillsusetip2=Alleen de eerste vier vaardigheden verschijnen in het Actieve Vaardighedenwiel. Voor de rest moet je toetsen gebruiken
 activeskillsequipinstructions=Klik op een slot om een actieve vaardigheid uit te rusten. Je kunt een actieve vaardigheid niet uitrusten tijdens het afkoelen
 noactiveskills=Je hebt geen actieve vaardigheden. Ontgrendel ze via de klassen
 
@@ -560,6 +560,12 @@ activeskillslot3=Actief vaardigheidsslot 3
 activeskillslot4=Actief vaardigheidsslot 4
 activeskillslot5=Actief vaardigheidsslot 5
 activeskillslot6=Actief vaardigheidsslot 6
+activeskillslot7=Actief vaardigheidsslot 7
+activeskillslot8=Actief vaardigheidsslot 8
+activeskillslot9=Actief vaardigheidsslot 9
+activeskillslot10=Actief vaardigheidsslot 10
+activeskillslot11=Actief vaardigheidsslot 11
+activeskillslot12=Actief vaardigheidsslot 12
 transformationability1=Transformatie Vaardigheid 1
 transformationability2=Transformatie Vaardigheid 2
 

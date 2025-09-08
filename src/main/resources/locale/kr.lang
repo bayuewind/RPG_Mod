@@ -193,21 +193,21 @@ wolfcompanion=늑대 동료가 표식이 있는 적을 공격하여 §i[[<player
 
 // 마법사
 manapower=각 레벨마다 제공:\n\n사용하지 않은 마나 10%당 마법 피해 +1%
-flamingsteps=활성화된 장신구나 변신 상태로 달릴 때地面に炎を残します\n炎は敵を2秒間燃やし、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます
-stormbound=§a[[9 - 0.5 x <skilllevel>]]초§0마다 시야 내의 무작위 적에게 번개가 내리칩니다\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 1초 동안 기절시킵니다
+flamingsteps=활성화된 장신구나 변신 상태로 달릴 때, 땅에 불길을 남깁니다\n불길은 적을 3초 동안 불태워 초당 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 줍니다
+stormbound=§a[[11 - 0.5 x <skilllevel>]]초§0마다, 시야 내의 무작위 적에게 번개가 내리칩니다\n§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 주고 1초 동안 기절시킵니다
 arcaneshield=한 번의 공격을 막는 보호막\n보호막은 사용 후 §a[[20 - <skilllevel>]]초§0 후에 회복됩니다
 fireshield=한 번의 공격을 막는 보호막\n사용 시 §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 폭발을 일으킵니다\n그리고 몹을 불태워 5초 동안 초당 원래 피해의 20%를 반복합니다\n보호막은 사용 후 26초 후에 회복됩니다
 iceshield=한 번의 공격을 막는 보호막\n사용 시 §i[[<playerlevel> + <intelligence> x <skilllevel>]]의 마법 피해§0를 입히는 얼음 오라를 방출합니다\n몹을 5초 동안 얼리고 1초 동안 완전히 얼립니다\n보호막은 사용 후 22초 후에 회복됩니다
 
 // 강령술사
-necroticpower=모든 마법 및 소환사 공격은 소환으로 인한 것이 아닌 한 §a[[2 x <skilllevel>]]초§0 동안 피해의 5%만큼 독을 부여합니다
+necroticpower=모든 마법 공격이 §a[[2 x <skilllevel>]]초§0 동안 피해량의 5%만큼 중독시킵니다
 darkmagic=소환사 피해 보너스는 마법 피해에 §a[[5 x <skilllevel>]]%§0만큼 영향을 미칩니다
 nnecroticarmy=처치된 적대적인 적은 §a-[[100 - 3 x <skilllevel>]]%§0의 체력과 피해를 가진 §b해골§0로 변합니다
 darksummons=독에 걸린 적에게 §a+[[8 x <skilllevel>]]%§0의 소환사 피해를 입힙니다
-lifeleech=가한 소환사 피해의 §a[[0.1 x <skilllevel>]]%§0를 체력으로 회복합니다
+lifeleech=소환수 피해량의 §a[[0.05 x <skilllevel>]]%§0를 체력으로 회복합니다
 necroticremains=괴저 소환수가 죽으면 폭발하여 근처의 적에게 §i[[0.1 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입히고 10초 동안 초당 피해의 20%만큼 독을 부여합니다
 endlesslegion=이 스킬의 4레벨마다 최대 소환수가 +1됩니다
-lichborn=죽으면 아직 §b리치§0가 아닌 경우 살아남아 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안 당신은 §b리치§0(해골)가 됩니다
+lichborn=사망 시, 이미 §b리치§0가 아니라면 생존하고 체력의 §a[[10 x <skilllevel>]]%§0를 회복합니다\n다음 §a[[120 - 6 x <skilllevel>]]초§0 동안, 당신은 §b리치§0(해골)가 됩니다\n\n\n§b리치:§0 언데드 변신\n\n아이템을 사용할 수 없음\n받는 피해 +100%\n\n[input=transformationability1]을 눌러 §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]]의 마법 피해§0를 주는 뼈를 발사합니다
 
 // 성직자
 vitalaura=§a[[15 - <skilllevel>]]초§0마다 주변에 §a[[10 + <grace>]]의 체력§0을 회복시키는 마법 치유 오라를 방출합니다\n또한 그 양의 절반만큼 당신을 치유합니다
@@ -321,7 +321,7 @@ battlecry=다음 10초 동안 당신과 근처 아군의 모든 피해와 이동
 ironguard=§a[[4 x <skilllevel>]]초§0 동안 받는 피해 -50%
 intimidation=다음 §a[[<skilllevel>]]초§0 동안 근처의 적들을 도망치게 만듭니다
 
-objectthrowing=1단계: 앞에 있는 물건을 잡습니다\n2단계: 앞으로 던져 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]의 근접 피해§0를 입힙니다\n두 단계 모두 모든 스태미나를 소모합니다(최소 100%)
+objectthrowing=1단계: 앞에 있는 물체를 잡습니다\n2단계: 앞으로 던져 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]의 근접 피해§0를 줍니다
 
 // 레인저
 shortdash=100-<strength> 돌진을 수행합니다\n스태미나를 15% 소모합니다
@@ -354,7 +354,7 @@ lightning=1초 동안 몹 사이를 점프하는 번개를 시작하여 §i[[4 x
 
 // 강령술사
 skeletonhorde=§a[[1 + <skilllevel>]]마리의 §b해골§0을 소환합니다
-skeletonwarrior=§a+[[20 x <skilllevel>]]%§0의 체력과 피해를 가진 §b해골 전사§0를 소환합니다
+skeletonwarrior=§a+[[40 x <skilllevel>]]%§0의 체력과 피해량을 가진 §b해골 전사§0를 소환합니다
 sacrifice=가장 가까운 괴저 소환수가 죽고 §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]의 체력§0을 마법 치유로 회복합니다
 siegecry=6초 동안 소환 속도가 §a+[[50 x <skilllevel>]]%§0 증가합니다
 
@@ -381,11 +381,11 @@ wrathoflight=가장 가까운 적에게 빛의 기둥을 소환하여 5초 동�
 
 // 드루이드
 wolftransformation=늑대로 변신하는 데 3초가 걸립니다\n\n이동 속도: 60\n\n[input=transformationability1]을 눌러 돌진 물기: 앞으로 도약하여 물어뜯어 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]의 근접 피해§0를 입힙니다\n\n[input=transformationability2]를 눌러 짖기: 근처의 적들이 2초 동안 당신을 목표로 삼도록 강요합니다\n\n[input=trinketability]를 길게 눌러 질주
-queenbeetransformation=여왕벌로 변신하는 데 2초가 걸립니다\n\n이동 속도: 30\n-50% 적 감지\n§6+1000% 받는 피해§0\n\n[input=transformationability1]을 눌러 꿀 쏘기: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 입힙니다\n\n[input=transformationability2]를 눌러 §9벌§0을 최대 §a[[2 x <skilllevel>]]마리§0까지 소환합니다\n\n[input=trinketability]를 길게 눌러 벌에게 공격을 명령
+queenbeetransformation=여왕벌로 변신하는 데 2초가 걸립니다\n\n이동 속도: 30\n-50% 적 감지\n§6+1000% 받는 피해§0\n피격 시 사망하는 대신 최대 수의 벌을 소환합니다 (재사용 대기시간 60초)\n\n[input=transformationability1]을 눌러 꿀을 발사: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 줍니다\n\n[input=transformationability2]를 눌러 최대 §a[[2 x <skilllevel>]]마리§0의 §9벌§0을 소환합니다\n\n[input=trinketability]를 길게 눌러 벌에게 공격을 명령합니다
 beartransformation=곰으로 변신하는 데 4초가 걸립니다\n\n이동 속도: 20\n-50% 받는 피해\n\n[input=transformationability1]을 눌러 지면 강타: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]의 근접 피해§0를 입히고 §a[[0.5 x <skilllevel>]]초§0 동안 §9기절§0시키는 지역 공격\n\n[input=transformationability2]를 눌러 으르렁거리기: 근처의 적들을 1초 동안 도망치게 만듭니다\n\n[input=trinketability]를 길게 눌러 질주
 foxtransformation=여우로 변신하는 데 3초가 걸립니다\n\n이동 속도: 50\n§6+50% 받는 피해§0\n\n[input=transformationability1]을 눌러 화염구 쏘기: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]의 마법 피해§0를 입힙니다\n\n[input=transformationability2]를 눌러 §b춤추는 불꽃§0을 최대 §a[[2 + <skilllevel>]]마리§0까지 소환합니다. 각각 화염구와 동일한 피해를 입힙니다\n\n[input=trinketability]를 눌러 돌진\n§!Vulpes Nova fox!
 rattransformation=쥐로 변신하는 데 2초가 걸립니다\n\n이동 속도: 25\n-50% 적 감지\n최대 회피 확률을 부여합니다\n§6+1000% 받는 피해§0\n\n[input=transformationability1]을 눌러 물기: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]의 근접 피해§0를 입히고 10초 동안 초당 가한 피해의 100%만큼 대상을 독에 빠뜨립니다\n\n[input=trinketability]를 길게 눌러 질주
-treanttransformation=나무 정령으로 변신하는 데 4초가 걸립니다\n\n이동 속도: 0\n-§a[50 + 5 <skilllevel>]%§0 받는 피해\n3초 동안 숨어 있으면 적들이 당신을 무시합니다\n\n[input=transformationability1]을 눌러 드러난 상태에서 무작위 씨앗 쏘기: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 무작위 효과로 입힙니다\n\n[input=transformationability2]를 눌러 §9드라이어드 묘목§0을 소환합니다\n\n[input=trinketability]를 길게 눌러 드러내고 이동 중이면 질주
+treanttransformation=트렌트로 변신하는 데 4초가 걸립니다\n\n이동 속도: 0\n-§a[50 + 5 <skilllevel>]%§0 받는 피해\n+50% 방어력\n3초 동안 숨어 있으면 적들이 당신을 무시합니다\n\n드러난 상태에서 [input=transformationability1]을 눌러 무작위 씨앗 발사: 무작위 효과와 함께 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]의 원거리 피해§0를 줍니다\n\n[input=transformationability2]를 눌러 §9드라이어드 묘목§0을 소환합니다\n\n이동 중일 때 [input=trinketability]를 길게 눌러 드러내고 질주합니다
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§b춤추는 불꽃:§0 발사체처럼 행동하는 소환수. 맞
 necromancerskeleton=§b해골:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다
 necromancerskeletonwarrior=§b해골 전사:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\n피해: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n속도: 60\n초당 총 체력의 2%를 잃습니다
 necromancerboneslinger=§b뼈 투척병:§0 괴저 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 거리)\n속도: 60\n초당 총 체력의 2%를 잃습니다
-bee=§9벌:§0 피해를 입힐 수 있는 소환수\n체력: 1\n피해: §a[[<playerlevel> + <intelligence>]]§0\n속도: 40\n\n공격 시 죽지만 10초 동안 초당 가한 피해의 20%만큼 대상을 독에 빠뜨립니다
-dryadsapling=§9드라이어드 묘목:§0 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\n속도: 65\n초당 총 체력의 2%를 잃습니다
+bee=§9벌:§0 피해를 입힐 수 있는 소환수\n체력: 1\n피해량: §a[[<playerlevel> + <intelligence>]]§0\n속도: 100\n\n공격 시 사망하지만, 10초 동안 초당 입힌 피해의 20%로 대상을 중독시킵니다
+dryadsapling=§9드라이어드 묘목:§0 피해를 입힐 수 있는 소환수\n체력: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n피해량: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n속도: 65\n초당 총 체력의 2%를 잃습니다
 
 [item]
 scrollofoblivion=망각의 두루마리
@@ -516,7 +516,7 @@ activeskillpoints=활성 스킬 포인트: <points>
 
 activeskillsuse=이 모드는 표현 휠(기본값 T 키)을 활성 스킬 휠로 바꿉니다
 activeskillsusetip1=표현 휠 컨트롤을 쉽게 접근할 수 있는 키로 변경하는 것이 좋습니다
-activeskillsusetip2=각 활성 스킬 슬롯에 키를 할당할 수도 있습니다(재사용 대기시간이 짧은 스킬에 이상적)
+activeskillsusetip2=활성 스킬 휠에는 처음 네 개의 스킬만 나타납니다. 나머지는 키를 사용해야 합니다
 activeskillsequipinstructions=슬롯을 클릭하여 활성 스킬을 장착합니다. 재사용 대기시간 중인 활성 스킬은 장착 해제할 수 없습니다
 noactiveskills=활성 스킬이 없습니다. 클래스를 통해 잠금 해제하십시오
 
@@ -551,3 +551,9 @@ activeskillslot5=활성 스킬 슬롯 5
 activeskillslot6=활성 스킬 슬롯 6
 transformationability1=변신 능력 1
 transformationability2=변신 능력 2
+activeskillslot7=활성 스킬 슬롯 7
+activeskillslot8=활성 스킬 슬롯 8
+activeskillslot9=활성 스킬 슬롯 9
+activeskillslot10=활성 스킬 슬롯 10
+activeskillslot11=활성 스킬 슬롯 11
+activeskillslot12=활성 스킬 슬롯 12

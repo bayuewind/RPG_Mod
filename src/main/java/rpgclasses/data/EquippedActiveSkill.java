@@ -89,14 +89,14 @@ public class EquippedActiveSkill {
         return equippedActiveSkill;
     }
 
-    public void setupSpawnPacket(PacketWriter writer) {
+    public void setupPacket(PacketWriter writer) {
         writer.putNextInt(playerClass == null ? -1 : playerClass.id);
         writer.putNextInt(activeSkill == null ? -1 : activeSkill.id);
         writer.putNextLong(lastUse);
         writer.putNextInt(cooldown);
     }
 
-    public static EquippedActiveSkill applySpawnPacket(PacketReader reader) {
+    public static EquippedActiveSkill applyPacket(PacketReader reader) {
         int classID = reader.getNextInt();
         int activeSkillID = reader.getNextInt();
         long lastUse = reader.getNextLong();

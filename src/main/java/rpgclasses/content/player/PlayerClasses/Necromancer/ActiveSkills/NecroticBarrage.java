@@ -29,7 +29,7 @@ public class NecroticBarrage extends ActiveSkill {
                         mob -> {
                             if (mob.isServer()) {
                                 mob.remove(0, 0, null, true);
-                                mob.getLevel().entityManager.addLevelEvent(new NecroticExplosionLevelEvent(mob.x, mob.y, 250, new GameDamage(DamageTypeRegistry.MAGIC, damage), poisonDamage, 0, player, false));
+                                mob.getLevel().entityManager.addLevelEvent(new NecroticExplosionLevelEvent(mob.x, mob.y, 250, new GameDamage(DamageTypeRegistry.MAGIC, damage), poisonDamage, 0, player));
                             }
                         }
                 );

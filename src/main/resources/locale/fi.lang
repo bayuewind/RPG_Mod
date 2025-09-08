@@ -193,21 +193,21 @@ wolfcompanion=Susi-kumppani hyökkää merkittyjen vihollisten kimppuun tehden �
 
 // Velho
 manapower=Jokainen taso antaa:\n\n+1% taikavahinkoa jokaista 10% käyttämätöntä manaa kohden
-flamingsteps=Kun juokset aktiivisen helyen tai muodonmuutoksen kanssa, jätät maahan liekkejä\nLiekit sytyttävät viholliset tuleen 2 sekunniksi, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 sekunnissa
-stormbound=Joka §a[[9 - 0.5 x <skilllevel>]] sekunti§0, salama iskee satunnaiseen viholliseen näkökentässäsi\nTekee §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaa 1 sekunniksi
+flamingsteps=Kun juokset aktiivisen helyen tai muodonmuutoksen kanssa, jätät maahan liekkejä\nLiekit sytyttävät viholliset tuleen 3 sekunniksi, tehden §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 sekunnissa
+stormbound=Joka §a[[11 - 0.5 x <skilllevel>]] sekunti§0, salama iskee satunnaiseen viholliseen näkökentässäsi\nTekee §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0 ja tainnuttaa 1 sekunniksi
 arcaneshield=Kilpi, joka estää yhden osuman\nKilpi palautuu §a[[20 - <skilllevel>]] sekunnin§0 kuluttua käytöstä
 fireshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat räjähdyksen, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\nja sytyttää mobit tuleen, toistaen 20% niiden alkuperäisestä vahingosta sekunnissa 5 sekunnin ajan\nKilpi palautuu 26 sekunnin kuluttua käytöstä
 iceshield=Kilpi, joka estää yhden osuman\nKäytettäessä vapautat jää-auran, joka tekee §i[[<playerlevel> + <intelligence> x <skilllevel>]] taikavahinkoa§0\njäädyttäen mobit 5 sekunniksi ja jäädyttäen ne kokonaan 1 sekunniksi\nKilpi palautuu 22 sekunnin kuluttua käytöstä
 
 // Nekromantikko
-necroticpower=Kaikki taika- ja kutsujahyökkäyksesi myrkyttävät 5% niiden vahingosta §a[[2 x <skilllevel>]] sekunnin§0 ajan, kunhan ne eivät ole kutsun aiheuttamia
+necroticpower=Kaikki taikahyökkäyksesi myrkyttävät 5% niiden vahingosta §a[[2 x <skilllevel>]] sekunnin§0 ajan
 darkmagic=Kutsujan vahinkobonukset vaikuttavat taikavahinkoon §a[[5 x <skilllevel>]]%
 necroticarmy=Voitetut vihamieliset viholliset muuttuvat §bLuurangoiksi§0, joilla on §a-[[100 - 3 x <skilllevel>]]%§0 terveyttä ja vahinkoa
 darksummons=Tee §a+[[8 x <skilllevel>]]%§0 kutsujan vahinkoa myrkytetyille vihollisille
-lifeleech=Palauttaa §a[[0.1 x <skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
+lifeleech=Palauttaa §a[[0.05 x <skilllevel>]]%§0 tehdystä kutsujan vahingosta terveytenä
 necroticremains=Kun nekroottinen kutsu kuolee, se räjähtää ja tekee §i[[0.1 x <intelligence> x <skilllevel>]] taikavahinkoa§0 lähellä oleville vihollisille ja myrkyttää heidät 20% vahingosta sekunnissa 10 sekunnin ajan
 endlesslegion=Joka 4. tämän taidon taso saat +1 maksimikutsua
-lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo §bLich§0\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee §bLich§0 (luuranko)
+lichborn=Kun kuolet, selviydyt ja palautat §a[[10 x <skilllevel>]]%§0 terveyttä, jos et ole jo §bLich§0\nSeuraavien §a[[120 - 6 x <skilllevel>]] sekunnin§0 ajan sinusta tulee §bLich§0 (luuranko)\n\n\n§bLich:§0 Epäkuollut muodonmuutos\n\nEi voi käyttää esineitä\n+100% Vahingonotto\n\nPaina [input=transformationability1] ampuaksesi luun, joka tekee §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] taikavahinkoa§0
 
 // Cleric
 vitalaura=Joka §a[[15 - <skilllevel>]] sekunti§0 vapautat ympärillesi maagisen parantavan auran, joka palauttaa §a[[10 + <grace>]] terveyttä§0\nSe parantaa myös sinut puolella siitä määrästä
@@ -321,7 +321,7 @@ battlecry=Seuraavien 10 sekunnin ajan lisää sinun ja lähellä olevien liittol
 ironguard=-50% saapuvaa vahinkoa §a[[4 x <skilllevel>]] sekunnin ajan
 intimidation=Seuraavien §a[[<skilllevel>]] sekunnin§0 ajan saa lähellä olevat viholliset pakenemaan
 
-objectthrowing=Vaihe 1: Tartu edessäsi olevaan esineeseen\nVaihe 2: Heitä se eteenpäin tehden §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0\nMolemmat vaiheet kuluttavat kaiken kestävyytesi (vähintään 100%)
+objectthrowing=Vaihe 1: Tartu edessäsi olevaan esineeseen\nVaihe 2: Heitä se eteenpäin tehden §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0
 
 // Metsänvartija
 shortdash=Suorita 100-<strength> syöksy\nKuluttaa 15% kestävyydestä
@@ -354,7 +354,7 @@ lightning=Aloita salama, joka hyppii mobien välillä 1 sekunnin ajan, tehden §
 
 // Nekromantikko
 skeletonhorde=Kutsuu §a[[1 + <skilllevel>]] §bLuurankoa§0
-skeletonwarrior=Kutsuu §bLuurankosoturin§0, jolla on §a+[[20 x <skilllevel>]]%§0 terveyttä ja vahinkoa
+skeletonwarrior=Kutsuu §bLuurankosoturin§0, jolla on §a+[[40 x <skilllevel>]]%§0 terveyttä ja vahinkoa
 sacrifice=Lähin nekroottinen kutsu kuolee, ja palautat sitten §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] terveyttä§0 maagisena parannuksena
 siegecry=Saa §a+[[50 x <skilllevel>]]%§0 kutsunopeutta 6 sekunniksi
 
@@ -381,11 +381,11 @@ wrathoflight=Kutsu valopylväs lähimpään viholliseen, tehden §i[[4 x <player
 
 // Druid
 wolftransformation=Kestää 3 sekuntia muuttua Sudeksi\n\nLiikkumisnopeus: 60\n\nPaina [input=transformationability1] syöksyä ja purra: Hyppää eteenpäin ja pure, tehden §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] lähitaisteluvahinkoa§0\n\nPaina [input=transformationability2] haukkua: Pakota lähellä olevat viholliset kohdistamaan hyökkäyksensä sinuun 2 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
-queenbeetransformation=Kestää 2 sekuntia muuttua Kuningatarmehiläiseksi\n\nLiikkumisnopeus: 30\n-50% Vihollisen havaitseminen\n§6+1000% Saapuva vahinko§0\n\nPaina [input=transformationability1] ampua hunajaa: Tee §i[[2 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0\n\nPaina [input=transformationability2] kutsua §9Mehiläinen§0 jopa §a[[2 x <skilllevel>]]§0\n\nPidä [input=trinketability] painettuna komentaaksesi mehiläisiäsi hyökkäämään
+queenbeetransformation=Kestää 2 sekuntia muuttua Kuningatarmehiläiseksi\n\nLiikkumisnopeus: 30\n-50% Vihollisen havaitseminen\n§6+1000% Saapuva vahinko§0\nOsuman saaminen kutsuu maksimimäärän mehiläisiä kuoleman sijaan (60s jäähy)\n\nPaina [input=transformationability1] ampua hunajaa: Tee §i[[2 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0\n\nPaina [input=transformationability2] kutsua §9Mehiläinen§0 jopa §a[[2 x <skilllevel>]]§0\n\nPidä [input=trinketability] painettuna komentaaksesi mehiläisiäsi hyökkäämään
 beartransformation=Kestää 4 sekuntia muuttua Karhuksi\n\nLiikkumisnopeus: 20\n-50% Saapuva vahinko\n\nPaina [input=transformationability1] maaiskuun: Aluehyökkäys, joka tekee §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] lähitaisteluvahinkoa§0 ja §9tainnuttaa§0 §a[[0.5 x <skilllevel>]] sekunniksi§0\n\nPaina [input=transformationability2] murista: Saa lähellä olevat viholliset pakenemaan 1 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
 foxtransformation=Kestää 3 sekuntia muuttua Ketuksi\n\nLiikkumisnopeus: 50\n§6+50% Saapuva vahinko§0\n\nPaina [input=transformationability1] ampua tulipalloja: Tee §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] taikavahinkoa§0\n\nPaina [input=transformationability2] kutsua §bTanssiva liekki§0 jopa §a[[2 + <skilllevel>]]§0, jokainen tekee saman vahingon kuin tulipallo\n\nPaina [input=trinketability] syöksyä\n§!Vulpes Nova fox!
 rattransformation=Kestää 2 sekuntia muuttua Rotaksi\n\nLiikkumisnopeus: 25\n-50% Vihollisen havaitseminen\nAntaa maksimaalisen väistömahdollisuuden\n§6+1000% Saapuva vahinko§0\n\nPaina [input=transformationability1] purra: Tekee §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] lähitaisteluvahinkoa§0 ja myrkyttää kohteen 100% tehdystä vahingosta sekunnissa 10 sekunnin ajan\n\nPidä [input=trinketability] painettuna sprintataksesi
-treanttransformation=Kestää 4 sekuntia muuttua Puuksi\n\nLiikkumisnopeus: 0\n-§a[50 + 5 <skilllevel>]%§0 Saapuva vahinko\nViholliset jättävät sinut huomiotta, jos olet piilossa 3 sekunnin ajan\n\nPaina [input=transformationability1] paljastettuna ampuaksesi satunnaisia siemeniä: Tee §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0 satunnaisilla vaikutuksilla\n\nPaina [input=transformationability2] kutsua §9Dryad Sapling§0\n\nPidä [input=trinketability] painettuna paljastaaksesi ja sprintataksesi, jos liikut
+treanttransformation=Kestää 4 sekuntia muuttua Puuksi\n\nLiikkumisnopeus: 0\n-§a[50 + 5 <skilllevel>]%§0 Saapuva vahinko\n+50% Panssari\nViholliset jättävät sinut huomiotta, jos olet piilossa 3 sekunnin ajan\n\nPaina [input=transformationability1] paljastettuna ampuaksesi satunnaisia siemeniä: Tee §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] etäisyysvahinkoa§0 satunnaisilla vaikutuksilla\n\nPaina [input=transformationability2] kutsua §9Dryad Sapling§0\n\nPidä [input=trinketability] painettuna paljastaaksesi ja sprintataksesi, jos liikut
 
 
 [skillsdesckeys]
@@ -430,8 +430,8 @@ dancingflame=§bTanssiva liekki:§0 Kutsu, joka toimii kuin ammus. Sytyttää vi
 necromancerskeleton=§bLuuranko:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
 necromancerskeletonwarrior=§bLuurankosoturi:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nVahinko: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
 necromancerboneslinger=§bLuunheittäjä:§0 Nekroottinen vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (320 etäisyys)\nNopeus: 60\nMenettää 2% kokonaisterveydestään sekunnissa
-bee=§9Mehiläinen:§0 Vahingoitettavissa oleva kutsu\nTerveys: 1\nVahinko: §a[[<playerlevel> + <intelligence>]]§0\nNopeus: 40\n\nKuolee hyökätessään, mutta myrkyttää kohteen 20% tehdystä vahingosta sekunnissa 10 sekunnin ajan
-dryadsapling=§9Dryad Sapling:§0 Vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n\nNopeus: 65\nMenettää 2% kokonaisterveydestään sekunnissa
+bee=§9Mehiläinen:§0 Vahingoitettavissa oleva kutsu\nTerveys: 1\nVahinko: §a[[<playerlevel> + <intelligence>]]§0\nNopeus: 100\n\nKuolee hyökätessään, mutta myrkyttää kohteen 20% tehdystä vahingosta sekunnissa 10 sekunnin ajan
+dryadsapling=§9Dryad Sapling:§0 Vahingoitettavissa oleva kutsu\nTerveys: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nVahinko: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nNopeus: 65\nMenettää 2% kokonaisterveydestään sekunnissa
 
 [item]
 scrollofoblivion=Unohduksen käärö
@@ -516,7 +516,7 @@ activeskillpoints=Aktiiviset taitopisteet: <points>
 
 activeskillsuse=Tämä modi muuttaa ilmaisupyörän (oletuksena T-näppäin) aktiivisten taitojen pyöräksi
 activeskillsusetip1=On suositeltavaa vaihtaa ilmaisupyörän ohjaus helposti saavutettavaan näppäimeen
-activeskillsusetip2=Voit myös määrittää näppäimen jokaiselle aktiivisen taidon paikalle (ihanteellinen matalan jäähtymisajan taidoille)
+activeskillsusetip2=Vain neljä ensimmäistä taitoa näkyvät Aktiivisten taitojen pyörässä. Sinun on käytettävä näppäimiä lopuille
 activeskillsequipinstructions=Napsauta paikkaa varustaaksesi aktiivisen taidon. Et voi poistaa aktiivista taitoa, joka on jäähtymässä
 noactiveskills=Sinulla ei ole aktiivisia taitoja. Avaa ne luokkien kautta
 
@@ -554,6 +554,12 @@ activeskillslot3=Aktiivisen taidon paikka 3
 activeskillslot4=Aktiivisen taidon paikka 4
 activeskillslot5=Aktiivisen taidon paikka 5
 activeskillslot6=Aktiivisen taidon paikka 6
+activeskillslot7=Aktiivisen taidon paikka 7
+activeskillslot8=Aktiivisen taidon paikka 8
+activeskillslot9=Aktiivisen taidon paikka 9
+activeskillslot10=Aktiivisen taidon paikka 10
+activeskillslot11=Aktiivisen taidon paikka 11
+activeskillslot12=Aktiivisen taidon paikka 12
 transformationability1=Muodonmuutostaito 1
 transformationability2=Muodonmuutostaito 2
 

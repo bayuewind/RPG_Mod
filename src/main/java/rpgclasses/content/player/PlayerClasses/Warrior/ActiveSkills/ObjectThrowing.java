@@ -6,8 +6,6 @@ import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
-import necesse.entity.mobs.buffs.BuffModifiers;
-import necesse.entity.mobs.buffs.staticBuffs.StaminaBuff;
 import necesse.entity.projectile.Projectile;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.Level;
@@ -31,7 +29,6 @@ public class ObjectThrowing extends ActiveSkill {
     @Override
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         super.run(player, playerData, activeSkillLevel, seed, isInUSe);
-        StaminaBuff.useStaminaAndGetValid(player, player.buffManager.getModifier(BuffModifiers.STAMINA_CAPACITY));
         if (isInUSe) {
             if (playerData.grabbedObject != null) {
                 if (player.isServer()) {
@@ -110,11 +107,6 @@ public class ObjectThrowing extends ActiveSkill {
     @Override
     public int getBaseCooldown() {
         return 10000;
-    }
-
-    @Override
-    public float consumedStaminaBase() {
-        return 1F;
     }
 
     @Override

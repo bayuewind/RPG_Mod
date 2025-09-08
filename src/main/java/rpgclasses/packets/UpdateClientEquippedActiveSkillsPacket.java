@@ -25,7 +25,7 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
         equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
 
         for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
-            equippedActiveSkills[i] = EquippedActiveSkill.applySpawnPacket(reader);
+            equippedActiveSkills[i] = EquippedActiveSkill.applyPacket(reader);
         }
     }
 
@@ -36,7 +36,7 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
         PacketWriter writer = new PacketWriter(this);
         writer.putNextString(name);
         for (EquippedActiveSkill activeSkill : equippedActiveSkills) {
-            activeSkill.setupSpawnPacket(writer);
+            activeSkill.setupPacket(writer);
         }
     }
 
