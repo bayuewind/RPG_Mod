@@ -148,7 +148,7 @@ public class RatTransformation extends SimpleTranformationActiveSkill {
             float dirY = dy / length;
 
             int skillLevel = getActualSkillLevel();
-            LevelEvent event = new RatChargeLevelEvent(player, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 20, 100, new GameDamage(DamageTypeRegistry.MELEE, playerData.getLevel() + 0.5F * playerData.getStrength(player) * skillLevel + 0.5F * playerData.getIntelligence(player) * skillLevel));
+            LevelEvent event = new RatChargeLevelEvent(this, Item.getRandomAttackSeed(GameRandom.globalRandom), dirX, dirY, 20, 100, new GameDamage(DamageTypeRegistry.MELEE, playerData.getLevel() + 0.5F * playerData.getStrength(player) * skillLevel + 0.5F * playerData.getIntelligence(player) * skillLevel));
             player.getLevel().entityManager.addLevelEventHidden(event);
             player.getServer().network.sendToClientsWithEntity(new PacketLevelEvent(event), event);
         }
@@ -219,6 +219,11 @@ public class RatTransformation extends SimpleTranformationActiveSkill {
             super(owner, seed, dirX, dirY, distance, animTime, damage);
         }
 
+        public PlayerMob getPlayer() {
+            Mob rider = owner.getRider();
+            return rider instanceof PlayerMob ? (PlayerMob) rider : null;
+        }
+
         @Override
         public void init() {
             super.init();
@@ -245,13 +250,19 @@ public class RatTransformation extends SimpleTranformationActiveSkill {
         }
 
         @Override
+        public boolean canHit(Mob mob) {
+            PlayerMob player = getPlayer();
+            return player != null && mob.canBeTargeted(player, player.getNetworkClient()) && this.hitCooldowns.canHit(mob);
+        }
+
+        @Override
         public void serverHit(Mob target, Packet content, boolean clientSubmitted) {
             if (clientSubmitted || this.hitCooldowns.canHit(target)) {
                 if (this.damage != null) {
-                    Mob rider = getRider();
-                    if (rider != null) {
-                        target.isServerHit(this.damage, this.dirX, this.dirY, 10.0F, rider);
-                        MagicPoisonBuff.apply(rider, target, this.damage.damage, 10F);
+                    PlayerMob player = getPlayer();
+                    if (player != null) {
+                        target.isServerHit(this.damage, this.dirX, this.dirY, 10.0F, player);
+                        MagicPoisonBuff.apply(player, target, this.damage.damage, 10F);
                     }
                 }
 

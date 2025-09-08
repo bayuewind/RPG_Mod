@@ -219,6 +219,11 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
             super(owner, seed, dirX, dirY, distance, animTime, damage);
         }
 
+        public PlayerMob getPlayer() {
+            Mob rider = owner.getRider();
+            return rider instanceof PlayerMob ? (PlayerMob) rider : null;
+        }
+
         @Override
         public void init() {
             super.init();
@@ -245,12 +250,18 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
         }
 
         @Override
+        public boolean canHit(Mob mob) {
+            PlayerMob player = getPlayer();
+            return player != null && mob.canBeTargeted(player, player.getNetworkClient()) && this.hitCooldowns.canHit(mob);
+        }
+
+        @Override
         public void serverHit(Mob target, Packet content, boolean clientSubmitted) {
             if (clientSubmitted || this.hitCooldowns.canHit(target)) {
                 if (this.damage != null) {
-                    Mob rider = getRider();
-                    if (rider != null) {
-                        target.isServerHit(this.damage, this.dirX, this.dirY, 75.0F, rider);
+                    PlayerMob player = getPlayer();
+                    if (player != null) {
+                        target.isServerHit(this.damage, this.dirX, this.dirY, 75.0F, player);
                     }
                 }
 
