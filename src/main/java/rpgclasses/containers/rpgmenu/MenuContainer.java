@@ -9,27 +9,23 @@ import rpgclasses.containers.rpgmenu.customactions.ClassUpdateCustomAction;
 import rpgclasses.containers.rpgmenu.customactions.EquippedActiveSkillsCustomAction;
 import rpgclasses.containers.rpgmenu.customactions.IntArrayCustomAction;
 import rpgclasses.containers.rpgmenu.entries.ClassEntry;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Logic.Passives.Passive;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.packets.UpdateClientAttributesPacket;
-import rpgclasses.packets.UpdateClientClassDataPacket;
-import rpgclasses.packets.UpdateClientClassesPacket;
-import rpgclasses.packets.UpdateClientEquippedActiveSkillsPacket;
+import rpgclasses.packets.*;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.settings.RPGSettings;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class MenuContainer extends Container {
     public final IntArrayCustomAction updateAttributes;
+    public final IntArrayCustomAction updateMasterySkills;
     public final IntArrayCustomAction updateClasses;
     public final ClassUpdateCustomAction updateClass;
     public final EquippedActiveSkillsCustomAction updateEquippedActiveSkills;
@@ -40,7 +36,7 @@ public class MenuContainer extends Container {
         this.updateAttributes = this.registerAction(
                 new IntArrayCustomAction() {
                     @Override
-                    protected void run(int[] attributeLevels) {
+                    protected void run(int[] attributePoints) {
                         if (client.isServer()) {
                             if (client.playerMob.isInCombat()) {
                                 client.getServerClient().sendChatMessage(new LocalMessage("message", "noupdatesincombat"));
@@ -49,13 +45,13 @@ public class MenuContainer extends Container {
 
                             ServerClient serverClient = client.getServerClient();
 
-                            if (Arrays.stream(attributeLevels).allMatch(attr -> attr < 1000 && attr >= 0)) {
-                                int total = Arrays.stream(attributeLevels).sum();
+                            if (Arrays.stream(attributePoints).allMatch(attr -> attr < 1000 && attr >= 0)) {
+                                int total = Arrays.stream(attributePoints).sum();
                                 PlayerData playerData = PlayerDataList.getPlayerData(serverClient.playerMob);
                                 if (total <= playerData.totalAttributePoints()) {
                                     int reduced = 0;
-                                    for (int i = 0; i < attributeLevels.length; i++) {
-                                        int difference = playerData.getAttributeLevel(i) - attributeLevels[i];
+                                    for (int i = 0; i < attributePoints.length; i++) {
+                                        int difference = playerData.getAttributePoints(i) - attributePoints[i];
                                         if (difference > 0) reduced += difference;
                                     }
                                     if (reduced > 0) {
@@ -66,8 +62,8 @@ public class MenuContainer extends Container {
                                             return;
                                         }
                                     }
-                                    playerData.setAttributeLevels(attributeLevels);
-                                    serverClient.getServer().network.sendToAllClients(new UpdateClientAttributesPacket(PlayerDataList.getPlayerData(serverClient.playerMob)));
+                                    playerData.setAttributePointsUsed(attributePoints);
+                                    serverClient.getServer().network.sendToAllClients(new UpdateClientAttributesPacket(playerData));
                                     playerData.updateModifiersBuff(serverClient.playerMob);
                                 } else {
                                     System.out.println("updateAttributes: Not enough Attribute Points");
@@ -81,6 +77,51 @@ public class MenuContainer extends Container {
                     @Override
                     public int arrayLength() {
                         return Attribute.attributesList.size();
+                    }
+                }
+        );
+
+        this.updateMasterySkills = this.registerAction(
+                new IntArrayCustomAction() {
+                    @Override
+                    protected void run(int[] enabledMasterySkills) {
+                        if (client.isServer()) {
+                            if (client.playerMob.isInCombat()) {
+                                client.getServerClient().sendChatMessage(new LocalMessage("message", "noupdatesincombat"));
+                                return;
+                            }
+
+                            ServerClient serverClient = client.getServerClient();
+
+                            int total = enabledMasterySkills.length;
+                            PlayerData playerData = PlayerDataList.getPlayerData(serverClient.playerMob);
+                            if (total > playerData.totalMasteryPoints()) {
+                                System.out.println("updateMasterySkills: Not enough Mastery Points");
+                                return;
+                            }
+                            List<Integer> newMasterySkills = new ArrayList<>(enabledMasterySkills.length);
+                            for (int skill : enabledMasterySkills) {
+                                newMasterySkills.add(skill);
+                            }
+
+                            int reduced = 0;
+                            for (Integer masterySkill : playerData.masterySkills) {
+                                if (!newMasterySkills.contains(masterySkill)) reduced += 5;
+                            }
+
+                            if (reduced > 0) {
+                                if (playerData.getResets() >= reduced) {
+                                    playerData.modResetsSendPacket(serverClient, -reduced);
+                                } else {
+                                    System.out.println("updateMasterySkills: Not enough Reset Points");
+                                    return;
+                                }
+                            }
+                            playerData.setMasterySkills(newMasterySkills);
+                            serverClient.getServer().network.sendToAllClients(new UpdateClientMasteryPacket(playerData));
+                            playerData.updateAllBuffs(serverClient.playerMob);
+
+                        }
                     }
                 }
         );
@@ -164,7 +205,7 @@ public class MenuContainer extends Container {
                                 if (someChange)
                                     serverClient.getServer().network.sendToAllClients(new UpdateClientClassDataPacket(classData));
                             }
-                            serverClient.getServer().network.sendToAllClients(new UpdateClientClassesPacket(PlayerDataList.getPlayerData(serverClient.playerMob)));
+                            serverClient.getServer().network.sendToAllClients(new UpdateClientClassesPacket(playerData));
 
                             playerData.updateAllBuffs(serverClient.playerMob);
 

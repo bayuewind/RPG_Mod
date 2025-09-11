@@ -8,7 +8,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import rpgclasses.buffs.Interfaces.TransformationClassBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.buffs.Skill.SecondaryPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.TransformationMountMob;
 

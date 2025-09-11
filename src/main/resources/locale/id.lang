@@ -210,7 +210,7 @@ endlesslegion=Setiap 4 level keterampilan ini, Anda mendapatkan +1 panggilan mak
 lichborn=Ketika Anda mati, Anda bertahan hidup dan memulihkan §a[[10 x <skilllevel>]]%§0 Kesehatan jika Anda belum menjadi §bLich§0\nSelama §a[[120 - 6 x <skilllevel>]] detik§0 berikutnya, Anda menjadi §bLich§0 (tengkorak)\n\n\n§bLich:§0 Transformasi mayat hidup\n\nTidak dapat menggunakan item\n+100% Kerusakan yang Diterima\n\nTekan [input=transformationability1] untuk menembakkan tulang yang menghasilkan §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Kerusakan Sihir§0
 
 // Cleric
-vitalaura=Setiap §a[[15 - <skilllevel>]] detik§0, Anda melepaskan aura penyembuhan ajaib di sekitar Anda yang memulihkan §a[[10 + <grace>]] kesehatan§0\nItu juga menyembuhkan Anda setengah dari jumlah itu
+vitalaura=Setiap §a[[15 - <skilllevel>]] detik§0, Anda melepaskan aura penyembuhan ajaib di sekitar Anda yang memulihkan §a[[10 + <grace> ↓]] kesehatan§0\nItu juga menyembuhkan Anda setengah dari jumlah itu
 divinejudge=Bonus Kerusakan Sihir mempengaruhi Kerusakan Suci sebesar §a[[5 x <skilllevel>]]%§0
 empoweredhealing=Saat Anda secara ajaib menyembuhkan diri sendiri atau sekutu, tingkatkan kerusakan mereka sebesar §a[[5 x <skilllevel>]]%§0 selama 3 detik
 sanctifiedmind=Penyembuhan ajaib juga memulihkan mana yang setara dengan §a[[5 x <skilllevel>]]%§0 dari penyembuhan yang dilakukan
@@ -218,7 +218,7 @@ sanctifiedarmor=Penyembuhan ajaib juga memulihkan ketahanan yang setara dengan �
 radiantexpansion=Saat Anda secara ajaib menyembuhkan diri sendiri atau sekutu, berikan §a[[5 x <skilllevel>]]%§0 dari penyembuhan sebagai Kerusakan Suci ke musuh terdekat dari target yang disembuhkan
 
 // Druid
-naturesfavor=Dapatkan +[[<skilllevel>]] Regenerasi Kesehatan per detik saat berdiri di rumput
+naturesfavor=Dapatkan +§a[[2 x <skilllevel>]] Regenerasi Kesehatan§0 per detik saat berdiri di rumput
 primalburst=Meningkatkan Kerusakan dan Kecepatan sebesar [[6 x <skillevel>]]% selama 5 detik pertama setelah bertransformasi
 phoenixspirit=Membutuhkan setidaknya 4 poin untuk berfungsi:\n\nJika Anda akan mati saat bertransformasi dengan keterampilan aktif, Anda malah bertahan hidup dengan §a[4 + 8 x <skilllevel>]]%§0 kesehatan, dan keterampilan itu ditempatkan pada cooldown 1 jam\n\nTidak terpicu jika Anda sudah memiliki setidaknya §a[[0.25 x <skilllevel> ↓]] keterampilan transformasi§0 pada cooldown lebih dari 1 menit
 
@@ -243,8 +243,8 @@ intimidation=Intimidasi
 objectthrowing=Melempar Benda
 
 // Penjaga
-shortdash=Lari Cepat
-longdash=Lari Jauh
+shortdash=Lakukan lari cepat\nMengkonsumsi 15% Stamina
+longdash=Lakukan lari jauh\nMengkonsumsi 25% Stamina
 lethalshot=Tembakan Mematikan
 venomshot=Tembakan Racun
 explosiveshot=Tembakan Peledak
@@ -253,7 +253,7 @@ shotsrampage=Amukan Tembakan
 huntersmark=Tanda Pemburu
 beartrap=Perangkap Beruang
 
-huntersinstinct=Naluri Pemburu
+huntersinstinct=Selama 12 detik berikutnya, tingkatkan §7Peluang Menghindar§0 Anda sebesar §a[[5 x <skilllevel>]]%\n§hTandai§0 selama 5 detik musuh yang Anda hindari
 arrowstorm=Badai Panah
 
 // Penyihir
@@ -274,7 +274,7 @@ lightning=Petir
 // Ahli Nujum
 skeletonhorde=Gerombolan Tengkorak
 skeletonwarrior=Prajurit Tengkorak
-sacrifice=Pengorbanan
+sacrifice=Panggilan nekrotik terdekat mati, dan Anda kemudian memulihkan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]] Kesehatan§0 sebagai penyembuhan sihir
 siegecry=Teriakan Pengepungan
 
 boneslingerhorde=Gerombolan Pelempar Tulang
@@ -287,7 +287,7 @@ necroticbarrage=Rentetan Nekrotik
 
 // Cleric
 smite=Hantam
-divineblessing=Berkah Ilahi
+divineblessing=Aura penyembuhan ajaib yang memulihkan §a[[20 + 3 x <grace> x <skilllevel> ↓]] kesehatan§0 untuk Anda dan sekutu Anda\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
 purify=Memurnikan
 lightinfusion=Infus Cahaya
 holyguard=Penjaga Suci
@@ -303,89 +303,49 @@ queenbeetransformation=Transformasi Ratu Lebah
 beartransformation=Transformasi Beruang
 foxtransformation=Transformasi Rubah
 rattransformation=Transformasi Tikus
-treanttransformation=Transformasi Treant
+treanttransformation=Membutuhkan 4 detik untuk berubah menjadi Treant\n\nKecepatan Gerakan: 0\n-§a[50 + 5 <skilllevel>]%§0 Kerusakan Masuk\n+50% Baju Besi\nMusuh mengabaikan Anda jika tersembunyi selama 3 detik\n\nTekan [input=transformationability1] untuk Menembak Benih acak: Menghasilkan §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Kerusakan Jarak Jauh§0 dengan efek acak (1 perolehan ketahanan)\n\nTekan [input=transformationability2] untuk memanggil §9Dryad Sapling§0\n\nTahan [input=trinketability] untuk Mengungkap dan Berlari jika bergerak
 
 
-[activeskillsdesc]
-
-// Prajurit
-fury=Selama 6 detik berikutnya, tingkatkan Kerusakan Jarak Dekat dan Kecepatan Serangan Anda sebesar §a[[20 x <skilllevel>]]%
-recovery=Selama 10 detik berikutnya, sangat meningkatkan Regenerasi Kesehatan Tempur, memulihkan §a[[20 + <endurance> x <skilllevel>]] kesehatan§0 selama durasi
-provocation=Selama §a[[2 x <skilllevel>]] detik§0 berikutnya, paksa musuh terdekat untuk memfokuskan serangan mereka pada Anda
-berserkercharge=Melesat ke depan jarak pendek, menghasilkan §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Kerusakan§0 ke semua musuh yang dilewati\nMengkonsumsi 50% Stamina
-groundslam=Serangan area yang menghasilkan §i[[5 x <strength>]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama §a[[1 x <skilllevel>]] detik§0
-grounddestruction=Serangan area yang menghasilkan §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama 2 detik
-parry=Menjadi kebal selama 0,5 detik dan mengembalikan 500% dari Kerusakan asli yang diterima\nMengkonsumsi 100% Stamina
-battlecry=Selama 10 detik berikutnya, tingkatkan Semua Kerusakan dan Kecepatan Gerakan Anda dan sekutu terdekat sebesar §a[[10 x <skilllevel>]]%
-
-ironguard=-50% Kerusakan Masuk selama §a[[4 x <skilllevel>]] detik
-intimidation=Selama §a[[<skilllevel>]] detik§0 berikutnya, buat musuh terdekat lari
-
-objectthrowing=Langkah 1: Ambil objek di depan Anda\nLangkah 2: Lemparkan ke depan menghasilkan §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Kerusakan Jarak Dekat§0
-
-// Penjaga
-shortdash=Lakukan lari cepat 100-<strength>\nMengkonsumsi 15% Stamina
-longdash=Lakukan lari cepat 150-<strength>\nMengkonsumsi 25% Stamina
-lethalshot=Tembak §hPanah Mematikan§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Kerusakan Penjaga§0
-venomshot=Tembak §bPanah Racun§0 ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Kerusakan Penjaga§0
-explosiveshot=Tembak §iPanah Peledak§0 ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Kerusakan Penjaga§0
-
-shotsrampage=Saat Anda memiliki setidaknya 1 tumpukan Amukan Tembakan, mengenai musuh dengan serangan jarak jauh memberikan 1 tumpukan tambahan selama 5 detik\nSetiap tumpukan Amukan Tembakan meningkatkan Kecepatan Serangan sebesar 5%, hingga maksimum 30 tumpukan
-huntersmark=§hTandai§0 musuh terdekat dengan kesehatan tertinggi selama 10 detik\nJika Anda membunuh target yang ditandai, dapatkan §a+[[20 x <skilllevel>]]%§0 Kecepatan Serangan Jarak Jauh dan Kecepatan Gerakan selama 5 detik
-beartrap=Tempatkan perangkap beruang di tanah yang akan hilang jika dipicu atau setelah 20 detik\nJika musuh memicunya, mereka akan menerima §i[[10 x <playerlevel>]] Kerusakan§0 dan terperangkap selama 5 detik
-
-huntersinstinct=Selama 12 detik berikutnya, tingkatkan §7Peluang Menghindar§0 Anda sebesar §a[[10 x <skilllevel>]]%\n§hTandai§0 selama 5 detik musuh yang Anda hindari
-arrowstorm=Tembak panah dasar ke setiap musuh terdekat, menghasilkan §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Kerusakan Penjaga§0 setiap panah
-
-// Penyihir
-arcaneoverload=Saat aktif, tingkatkan Kecepatan Serangan Sihir Anda sebesar §a[[30 x <skilllevel>]]%§0, tetapi Anda tidak akan bisa bergerak\nBerakhir saat Anda kehabisan mana, atau jika digunakan lagi\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana per detik
-manarecharge=Saat aktif, tingkatkan Regenerasi Mana Anda sebesar +1.4 dan sebesar §a[[50 x <skilllevel>]]%§0, tetapi Anda akan lumpuh dan menerima kerusakan ganda\nBerakhir saat digunakan lagi
-firedance=Memanggil 4 §bApi Menari§0, masing-masing menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMemanggil satu lagi setiap 5 detik\nSemua panggilan menghilang 20 detik setelah kemampuan diaktifkan\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
-iceball=Lemparkan §aBola Es§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[50 + 10 x <skilllevel>]] Mana
-zap=Mulai sengatan yang melompat di antara monster selama 2 detik, menghasilkan §i[[<playerlevel> + <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 1 detik\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana
-
-teleport=Teleportasi di depan Anda\nMengkonsumsi 10 Mana
-inferno=Bakar semua musuh terdekat, menghasilkan §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Api§0 per detik selama 10 detik\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana
-fireenchantment=Selama 10 detik berikutnya, serangan dari Anda dan sekutu terdekat membakar musuh, menghasilkan §a[[5 x <skilllevel>]]%§0 dari kerusakan per detik selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana
-iceenchantment=Selama 10 detik berikutnya, serangan dari Anda dan sekutu terdekat membekukan musuh selama §a[[2 x <skilllevel>]] detik§0\nMengkonsumsi 20 Mana
-
-fireball=Lemparkan §iBola Api§0 ke musuh terdekat, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\nMengkonsumsi §a[[80 + 16 x <skilllevel>]] Mana
-lightning=Mulai petir yang melompat di antara monster selama 1 detik, menghasilkan §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 dan memingsankan selama 2 detik\nTidak dapat mengenai target yang sama beberapa kali\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana
-
-// Ahli Nujum
-skeletonhorde=Memanggil §a[[1 + <skilllevel>]] §bTengkorak§0
-skeletonwarrior=Memanggil §bPrajurit Tengkorak§0 dengan §a+[[40 x <skilllevel>]]%§0 Kesehatan dan Kerusakan
-sacrifice=Panggilan nekrotik terdekat mati, dan Anda kemudian memulihkan §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Kesehatan§0 sebagai penyembuhan sihir
-siegecry=Dapatkan §a+[[50 x <skilllevel>]]%§0 Kecepatan Panggilan selama 6 detik
-
-boneslingerhorde=Memanggil §a[[1 + <skilllevel>]]§0 §bPelempar Tulang§0
-tomb=Menghasilkan struktur yang memanggil §bTengkorak§0 setiap §a[[10 - <skilllevel>]] detik§0\nMakam memiliki Kesehatan sama dengan §a[[5 x <playerlevel> x <skilllevel>]]§0\nMakam kehilangan 2% dari Total Kesehatannya per detik
-necroticbloom=Mempercepat efek racun pada semua musuh terdekat dengan mengurangi durasinya menjadi 10%, tetapi meningkatkan kerusakannya per detik untuk mempertahankan kerusakan total
-wardingtaunt=Panggilan nekrotik terdekat memaksa musuh terdekat dalam radius §a[[50 x <skilllevel>]]§0 untuk menargetkannya
-
-unholyground=Memperluas aura korupsi di sekitar Anda selama 10 detik\nMusuh di dalam area ini menerima §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Kerusakan Racun§0 per detik dan §7Dibatasi
-necroticbarrage=Semua panggilan nekrotik meledak saat mati, menghasilkan §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0 ke musuh terdekat\ndan meracuni mereka selama 10 detik dengan 20% dari kerusakan asli per detik
-
-// Cleric
-smite=Panggil seberkas cahaya suci ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0\nMenghasilkan kerusakan ganda pada monster Mayat Hidup dan Dahsyat\nMengkonsumsi §a[[10 + 2 x <skilllevel>]] Mana§0
-divineblessing=Aura penyembuhan ajaib yang memulihkan §a[[20 + 3 x <grace> x <skilllevel>]] kesehatan§0 untuk Anda dan sekutu Anda\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
-purify=Bersihkan diri Anda dan sekutu terdekat dari semua efek negatif\nMengkonsumsi 10 Mana
-lightinfusion=Selama 8 detik berikutnya, Anda mendapatkan §a+[[20 x <skilllevel>]]%§0 Penyembuhan Ajaib dan Kerusakan Suci
-holyguard=Terapkan Perisai Suci pada Anda dan semua sekutu terdekat hingga 30 detik\nMereka mendapatkan §a+[[10 x <skilllevel>]]%§0 Penyembuhan Ajaib yang Diterima dan perisai memblokir satu serangan sebelum pecah\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Lepaskan gelombang energi pancaran, menghasilkan §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Kerusakan Suci§0 ke semua musuh terdekat\nMonster Mayat Hidup dan Dahsyat §7Dibatasi§0 selama 5 detik\nMengkonsumsi §a[[20 + 4 x <skilllevel>]] Mana§0
-sanctuary=Buat zona suci selama 8 detik\nAnda dan sekutu di dalamnya kebal terhadap efek negatif dan mendapatkan regenerasi kesehatan §a[[0.2 x <grace> x <skilllevel>]]§0 per detik\nMonster Mayat Hidup dan Dahsyat di dalamnya §7Dibatasi§0\nMengkonsumsi §a[[30 + 6 x <skilllevel>]] Mana§0
-divineintervention=Sembuhkan seketika sekutu dekat yang paling rusak ke kesehatan maksimum mereka dan berikan kekebalan terhadap semua kerusakan selama §a[[<skilllevel>]]§0 detik\nMengkonsumsi §a[[60 + 12 x <skilllevel>]] Mana§0
-resurrection=Hidupkan kembali sekutu pemain mati terakhir di pulau yang sama dengan §a[[10 x <skilllevel>]]%§0 dari kesehatan maksimum mereka di posisi Anda\nAnda tidak dapat menghidupkan kembali pemain yang bisa respawn lebih dari 10 detik yang lalu\nMengkonsumsi §a[[100 - 10 x <skilllevel>]]%§0 dari Mana Anda (setidaknya §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Panggil pilar cahaya ke musuh terdekat, menghasilkan §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kerusakan Suci§0 per detik selama 5 detik di area tersebut\nMonster Mayat Hidup dan Dahsyat di dalamnya §7Dibatasi§0\nMengkonsumsi §a[[40 + 8 x <skilllevel>]] Mana§0
+[mastery]
+bastion=Benteng
+bloodborn=Kelahiran Darah
+chronomancer=Ahli Waktu
+barbarian=Barbar
+berserker=Pengamuk
+sniper=Penembak Jitu
+marksman=Penembak
+hunter=Pemburu
+trapper=Penjerat
+pyromancer=Ahli Api
+frostweaver=Penenun Es
+stormcaller=Pemanggil Badai
+ironinvoker=Pemanggil Besi
+plaguebearer=Pembawa Wabah
+darkeminence=Keunggulan Gelap
+inquisitor=Inkuisitor
+timekeeper=Penjaga Waktu
+shapeshifter=Pengubah Bentuk
 
 
-// Druid
-wolftransformation=Membutuhkan 3 detik untuk berubah menjadi Serigala\n\nKecepatan Gerakan: 60\n\nTekan [input=transformationability1] untuk Gigitan Dash: Melompat ke depan dan menggigit, menghasilkan §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Kerusakan Jarak Dekat§0\n\nTekan [input=transformationability2] untuk Menggonggong: Memaksa musuh terdekat untuk memfokuskan serangan mereka pada Anda selama 2 detik\n\nTahan [input=trinketability] untuk Berlari
-queenbeetransformation=Membutuhkan 2 detik untuk berubah menjadi Ratu Lebah\n\nKecepatan Gerakan: 30\n-50% Deteksi Musuh\n§6+1000% Kerusakan Masuk§0\nTerkena serangan akan memanggil lebah maksimum alih-alih mati (cooldown 60 detik)\n\nTekan [input=transformationability1] untuk Menembak Madu: Menghasilkan §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Kerusakan Jarak Jauh§0\n\nTekan [input=transformationability2] untuk memanggil §9Lebah§0 hingga §a[[2 x <skilllevel>]]§0\n\nTahan [input=trinketability] untuk memerintahkan Lebah Anda menyerang
-beartransformation=Membutuhkan 4 detik untuk berubah menjadi Beruang\n\nKecepatan Gerakan: 20\n-50% Kerusakan Masuk\n\nTekan [input=transformationability1] untuk Hantaman Tanah: Serangan area yang menghasilkan §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Kerusakan Jarak Dekat§0 dan §9Membuat Pingsan§0 selama §a[[0.5 x <skilllevel>]] detik§0\n\nTekan [input=transformationability2] untuk Menggeram: Membuat musuh terdekat lari selama 1 detik\n\nTahan [input=trinketability] untuk Berlari
-foxtransformation=Membutuhkan 3 detik untuk berubah menjadi Rubah\n\nKecepatan Gerakan: 50\n§6+50% Kerusakan Masuk§0\n\nTekan [input=transformationability1] untuk Menembak Bola Api: Menghasilkan §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Sihir§0\n\nTekan [input=transformationability2] untuk memanggil §bApi Menari§0 hingga §a[[2 + <skilllevel>]]§0, masing-masing menghasilkan kerusakan yang sama dengan Bola Api\n\nTekan [input=trinketability] untuk Dash\n§!Vulpes Nova fox!
-rattransformation=Membutuhkan 2 detik untuk berubah menjadi Tikus\n\nKecepatan Gerakan: 25\n-50% Deteksi Musuh\nMemberikan Peluang Menghindar maksimal\n§6+1000% Kerusakan Masuk§0\n\nTekan [input=transformationability1] untuk Menggigit: Menghasilkan §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Kerusakan Jarak Dekat§0 dan meracuni target sebesar 100% dari kerusakan yang diberikan per detik selama 10 detik\n\nTahan [input=trinketability] untuk Berlari
-treanttransformation=Membutuhkan 4 detik untuk berubah menjadi Treant\n\nKecepatan Gerakan: 0\n-§a[50 + 5 <skilllevel>]%§0 Kerusakan Masuk\n+50% Baju Besi\nMusuh mengabaikan Anda jika tersembunyi selama 3 detik\n\nTekan [input=transformationability1] saat Terungkap untuk Menembak Benih acak: Menghasilkan §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Kerusakan Jarak Jauh§0 dengan efek acak\n\nTekan [input=transformationability2] untuk memanggil §9Dryad Sapling§0\n\nTahan [input=trinketability] untuk Mengungkap dan Berlari jika bergerak
+[masterydesc]
+bastion=Dapatkan Ketahanan per detik setara dengan 25% dari Regenerasi Kesehatan Anda
+bloodborn=Sembuhkan 5% dari kerusakan yang Anda berikan kepada musuh\nSelalu kehilangan 5% dari Kesehatan Maksimum Anda per detik, tetapi tidak dapat mati dari efek ini\nRegenerasi Kesehatan selalu 0
+chronomancer=Mengurangi waktu cooldown semua skill aktif sebesar 20%
+barbarian=+100% Kesehatan Maksimum dan +200% Regenerasi Kesehatan, tetapi armor Anda akan selalu 0
+berserker=Ketika kesehatan di bawah 50%, dapatkan +25% Peluang Kritis Jarak Dekat\nSerangan kritis jarak dekat meningkatkan Kecepatan Serangan dan Kecepatan Gerakan Anda sebesar 25% selama 2 detik
+sniper=Serangan jarak jauh memiliki hingga +100% kerusakan berdasarkan jarak ke target
+marksman=Musuh yang Anda tandai ditandai untuk semua pemain
+hunter=Ketika Anda menandai musuh, itu §7Dibatasi§0 selama 5 detik
+trapper=+50% kerusakan pada musuh yang terperangkap atau dibatasi
+pyromancer=Pembakaran Anda dapat menumpuk pada musuh yang sama
+frostweaver=+50% kerusakan pada musuh dengan Frostslow, Freezing, atau Frostburn
+stormcaller=Setiap 20 detik, semua musuh yang terlihat terkena sambaran petir\nMenghasilkan §i[[<playerlevel> + <intelligence>]] Kerusakan Sihir§0 dan memingsankan mereka semua selama 1 detik
+ironinvoker=Panggilan yang dapat dirusak Anda mendapatkan perisai yang memblokir satu serangan dan diisi ulang setelah 10 detik
+plaguebearer=Racun Anda bertahan dua kali lebih lama pada musuh
+darkeminence=Setiap kali Anda kehilangan lebih dari 15% dari kesehatan maksimum Anda dari satu serangan,\nAnda memanggil §bPrajurit Tengkorak§0 yang menerima kerusakan melebihi 15% itu
+inquisitor=Serangan dan efek Anda menilai semua musuh Anda sebagai Iblis
+timekeeper=Penyembuhan ajaib, baik pada diri sendiri maupun sekutu, mengurangi cooldown skill aktif target sebesar 0,02 detik per poin yang disembuhkan
+shapeshifter=Setelah bertransformasi, Anda menjadi kebal selama 3 detik (cooldown 5 detik)
 
 
 [skillsdesckeys]
@@ -424,14 +384,14 @@ iceball=§aBola Es:§0 Proyektil sihir yang meledak dan membekukan monster selam
 fireball=§iBola Api:§0 Proyektil sihir yang meledak dan membakar monster mengulangi 20% dari kerusakan aslinya per detik selama 5 detik
 
 // Panggilan
-dancingflame=§bApi Menari:§0 Panggilan yang bertindak seperti proyektil. Membakar musuh saat terkena. Mengulangi 20% dari kerusakan aslinya per detik selama 5 detik
+dancingflame=§bApi Menari:§0 Panggilan yang bertindak seperti proyektil. Membakar musuh saat terkena.\nMengulangi 20% dari kerusakan aslinya per detik selama 5 detik
 
 // Panggilan yang Dapat Dirusak
-necromancerskeleton=§bTengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
-necromancerskeletonwarrior=§bPrajurit Tengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nKerusakan: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
-necromancerboneslinger=§bPelempar Tulang:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (jarak 320)\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
-bee=§9Lebah:§0 Panggilan yang dapat dirusak\nKesehatan: 1\nKerusakan: §a[[<playerlevel> + <intelligence>]]§0\nKecepatan: 100\n\nMati saat menyerang, tetapi meracuni target sebesar 20% dari kerusakan yang diberikan per detik selama 10 detik
-dryadsapling=§9Dryad Sapling:§0 Panggilan yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKerusakan: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nKecepatan: 65\nKehilangan 2% dari Total Kesehatan per detik
+necromancerskeleton=§bTengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\nKerusakan: §a[[<playerlevel> + <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+necromancerskeletonwarrior=§bPrajurit Tengkorak:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\nKerusakan: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+necromancerboneslinger=§bPelempar Tulang:§0 Panggilan nekrotik yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nKerusakan: §a[[<playerlevel> + <intelligence>]]§0 (jarak 320)\nKecepatan: 60\nKehilangan 2% dari Total Kesehatan per detik
+bee=§9Lebah:§0 Panggilan yang dapat dirusak\nKesehatan: 1\nKerusakan: §a[[<playerlevel> + <intelligence> ↓]]§0\nKecepatan: 100\n\nMati saat menyerang, tetapi meracuni target sebesar 20% dari kerusakan yang diberikan per detik selama 10 detik
+dryadsapling=§9Dryad Sapling:§0 Panggilan yang dapat dirusak\nKesehatan: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nKerusakan: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nKecepatan: 65\nKehilangan 2% dari Total Kesehatan per detik
 
 [item]
 scrollofoblivion=Gulungan Pelupaan
@@ -458,7 +418,7 @@ intelligencecopperring=Cincin Tembaga Kecerdasan
 intelligencegoldring=Cincin Emas Kecerdasan
 intelligenceironring=Cincin Besi Kecerdasan
 
-gracetwoodring=Cincin Kayu Keanggunan
+gracewoodring=Cincin Kayu Keanggunan
 gracecopperring=Cincin Tembaga Keanggunan
 graceironring=Cincin Besi Keanggunan
 gracegoldring=Cincin Emas Keanggunan
@@ -497,6 +457,7 @@ nodeathplayers=Tidak ada pemain mati yang dapat dibangkitkan di level ini
 [ui]
 menutitle=MOD RPG oleh Save
 attributes=Atribut
+mastery=Penguasaan
 activeskills=Keterampilan Aktif
 classes=Kelas
 
@@ -508,8 +469,10 @@ experience=XP: <exp> / <nextexp>
 totalexperience=Total XP: <exp>
 onlytranformed=Hanya saat bertransformasi
 
+points=Poin: <points>
 resetpoints=Poin Reset: <points>
 attrpoints=Poin Atribut: <points>
+masterypoints=Poin Penguasaan: <points>
 classpoints=Poin Kelas: <points>
 passivepoints=Poin Pasif: <points>
 activeskillpoints=Poin Keterampilan Aktif: <points>
@@ -541,8 +504,6 @@ removecolumn=Hapus kolom
 
 rate=Beri nilai MOD RPG!
 
-seeallclasses=Lihat semua entri kelas
-
 clicktoopen=[input=mouse1] untuk membuka
 
 
@@ -565,9 +526,17 @@ activeskillslot12=Slot Keterampilan Aktif 12
 
 
 [settingsui]
+client_text="Pengaturan Klien" murni visual dan dapat disesuaikan secara bebas.
+server_text="Pengaturan Server" secara langsung memengaruhi gameplay. Pengaturan tersebut tidak dapat diubah di dalam game, dan jika Anda bergabung dengan teman atau server, pengaturan mereka akan berlaku sebagai gantinya.
+
+// Default
+default_section=Nilai Default (Klien)
+default_text=Pengaturan ini dapat disesuaikan di menu lain, tetapi akan selalu kembali ke nilai-nilai ini saat Anda memulai permainan
+showClassIcons=Tampilkan ikon kelas
+twelveSkillSlots=12 slot keterampilan
+
 // Experience
-experience_section=Pengalaman
-experience_text=Pengaturan tersebut adalah pengaturan server sehingga tidak dapat diubah setelah bergabung dengan dunia. Dalam kasus multipemain, nilai Anda akan diabaikan dan nilai server/host yang akan diambil.
+experience_section=Pengalaman (Server)
 
 experienceMod=% Mod Pengalaman
 experienceMod_text=Mengubah jumlah pengalaman yang diperoleh dari mengalahkan monster
@@ -588,7 +557,7 @@ cubeExperienceReqInc=Peningkatan Persyaratan Kubik
 experience_calc=Persyaratan pengalaman untuk mencapai level berikutnya adalah:\n\nPersyaratan Awal + Peningkatan Persyaratan * level +\n+ Peningkatan Persyaratan Kuadrat * (level ^ 2) +\n+ Peningkatan Persyaratan Kubik * (level ^ 3)\n\nDi mana 'level' adalah level Anda saat ini
 
 // Classes
-classes_section=Kelas
+classes_section=Kelas (Server)
 
 multiClass=Multi Kelas
 multiClass_text=Batasi berapa banyak kelas berbeda yang dapat dipegang pada saat yang sama. Atur ke 0 untuk tanpa batas

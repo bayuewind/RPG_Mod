@@ -4,7 +4,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.registry.RPGModifiers;
 
 public class DivineJudge extends SimpleBuffPassive {

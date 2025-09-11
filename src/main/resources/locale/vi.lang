@@ -210,12 +210,17 @@ endlesslegion=Cứ sau 4 cấp độ của kỹ năng này, bạn nhận đượ
 lichborn=Khi bạn chết, bạn sống sót và hồi phục §a[[10 x <skilllevel>]]%§0 Máu nếu bạn chưa phải là một §bLich§0\nTrong §a[[120 - 6 x <skilllevel>]] giây§0 tiếp theo, bạn trở thành một §bLich§0 (một bộ xương)\n\n\n§bLich:§0 Biến hình bất tử\n\nKhông thể sử dụng vật phẩm\n+100% Sát thương nhận vào\n\nNhấn [input=transformationability1] để bắn một khúc xương gây §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Sát thương phép§0
 
 // Cleric
-vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace>]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
+vitalaura=Cứ sau §a[[15 - <skilllevel>]] giây§0, bạn giải phóng một luồng khí chữa bệnh ma thuật xung quanh mình để phục hồi §a[[10 + <grace> ↓]] máu§0\nNó cũng chữa cho bạn một nửa số tiền đó
 divinejudge=Tiền thưởng Sát thương phép ảnh hưởng đến Sát thương thần thánh bằng §a[[5 x <skilllevel>]]%§0
 empoweredhealing=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, hãy tăng sát thương của họ lên §a[[5 x <skilllevel>]]%§0 trong 3 giây
 sanctifiedmind=Hồi máu bằng phép thuật cũng phục hồi năng lượng bằng §a[[5 x <skilllevel>]]%§0 lượng máu đã hồi
 sanctifiedarmor=Hồi máu bằng phép thuật cũng phục hồi khả năng phục hồi bằng §a[[2 x <skilllevel>]]%§0 lượng máu đã hồi
 radiantexpansion=Khi bạn chữa bệnh bằng phép thuật cho bản thân hoặc đồng minh, hãy gây §a[[5 x <skilllevel>]]%§0 lượng máu hồi phục thành Sát thương thần thánh cho những kẻ thù gần đó của mục tiêu được chữa lành
+
+// Druid
+naturesfavor=Nhận +§a[[2 x <skilllevel>]] Hồi máu§0 mỗi giây khi đứng trên cỏ
+primalburst=Tăng Sát thương và Tốc độ lên [[6 x <skillevel>]]% trong 5 giây đầu tiên sau khi biến hình
+phoenixspirit=Yêu cầu ít nhất 4 điểm để hoạt động:\n\nNếu bạn chết khi đang biến hình với một kỹ năng đang hoạt động, bạn sẽ sống sót với §a[4 + 8 x <skilllevel>]]%§0 máu, và kỹ năng đó sẽ được đặt vào thời gian hồi chiêu 1 giờ\n\nKhông kích hoạt nếu bạn đã có ít nhất §a[[0.25 x <skilllevel> ↓]] kỹ năng biến hình§0 đang trong thời gian hồi chiêu dài hơn 1 phút
 
 
 [activeskills]
@@ -238,8 +243,8 @@ intimidation=Dọa nạt
 objectthrowing=Ném đồ vật
 
 // Kiểm lâm
-shortdash=Lướt ngắn
-longdash=Lướt dài
+shortdash=Thực hiện một cú lướt ngắn\nTiêu tốn 15% thể lực
+longdash=Thực hiện một cú lướt dài\nTiêu tốn 25% thể lực
 lethalshot=Phát bắn chí mạng
 venomshot=Phát bắn độc
 explosiveshot=Phát bắn nổ
@@ -248,7 +253,7 @@ shotsrampage=Cơn thịnh nộ của những phát bắn
 huntersmark=Dấu ấn của thợ săn
 beartrap=Bẫy gấu
 
-huntersinstinct=Bản năng của thợ săn
+huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[5 x <skilllevel>]]%\n§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
 arrowstorm=Bão tên
 
 // Pháp sư
@@ -269,7 +274,7 @@ lightning=Sét
 // Thầy chiêu hồn
 skeletonhorde=Đám đông bộ xương
 skeletonwarrior=Chiến binh xương
-sacrifice=Sự hy sinh
+sacrifice=Triệu hồi hoại tử gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]] Máu§0 dưới dạng hồi máu phép
 siegecry=Tiếng hét bao vây
 
 boneslingerhorde=Đám đông kẻ ném xương
@@ -282,80 +287,7 @@ necroticbarrage=Cơn mưa hoại tử
 
 // Cleric
 smite=Trừng phạt
-divineblessing=Phước lành thiêng liêng
-purify=Thanh tẩy
-lightinfusion=Truyền ánh sáng
-holyguard=Vệ binh thần thánh
-judgment=Phán quyết
-sanctuary=Thánh địa
-divineintervention=Sự can thiệp của thần thánh
-resurrection=Sự hồi sinh
-wrathoflight=Cơn thịnh nộ của ánh sáng
-
-
-[activeskillsdesc]
-
-// Chiến binh
-fury=Trong 6 giây tiếp theo, tăng sát thương cận chiến và tốc độ tấn công của bạn lên §a[[20 x <skilllevel>]]%
-recovery=Trong 10 giây tiếp theo, tăng cường đáng kể khả năng hồi máu khi chiến đấu, phục hồi §a[[20 + <endurance> x <skilllevel>]] máu§0 trong suốt thời gian
-provocation=Trong §a[[2 x <skilllevel>]] giây§0 tiếp theo, buộc kẻ thù gần đó tập trung các đòn tấn công của chúng vào bạn
-berserkercharge=Lao về phía trước một khoảng cách ngắn, gây §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] sát thương§0 cho tất cả kẻ thù đi qua\nTiêu tốn 50% thể lực
-groundslam=Đòn tấn công khu vực gây §i[[5 x <strength>]] sát thương cận chiến§0 và §9làm choáng§0 trong §a[[1 x <skilllevel>]] giây§0
-grounddestruction=Đòn tấn công khu vực gây §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] sát thương cận chiến§0 và §9làm choáng§0 trong 2 giây
-parry=Trở nên bất khả xâm phạm trong 0,5 giây và trả lại 500% sát thương ban đầu nhận được\nTiêu tốn 100% thể lực
-battlecry=Trong 10 giây tiếp theo, tăng tất cả sát thương và tốc độ di chuyển của bạn và các đồng minh gần đó lên §a[[10 x <skilllevel>]]%
-
-ironguard=-50% sát thương nhận vào trong §a[[4 x <skilllevel>]] giây
-intimidation=Trong §a[[<skilllevel>]] giây§0 tiếp theo, khiến kẻ thù gần đó bỏ chạy
-
-objectthrowing=Bước 1: Nắm lấy một vật thể trước mặt bạn\nBước 2: Ném nó về phía trước gây §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] sát thương cận chiến§0
-
-// Kiểm lâm
-shortdash=Thực hiện một cú lướt 100-<strength>\nTiêu tốn 15% thể lực
-longdash=Thực hiện một cú lướt 150-<strength>\nTiêu tốn 25% thể lực
-lethalshot=Bắn một §hmũi tên chí mạng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] sát thương của kiểm lâm§0
-venomshot=Bắn một §bmũi tên độc§0 vào kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] sát thương của kiểm lâm§0
-explosiveshot=Bắn một §imũi tên nổ§0 vào kẻ thù gần nhất, gây §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] sát thương của kiểm lâm§0
-
-shotsrampage=Khi bạn có ít nhất 1 điểm cộng dồn của Cơn thịnh nộ của những phát bắn, đánh trúng kẻ thù bằng đòn tấn công tầm xa sẽ cấp thêm 1 điểm cộng dồn trong 5 giây\nMỗi điểm cộng dồn của Cơn thịnh nộ của những phát bắn sẽ tăng tốc độ tấn công thêm 5%, tối đa 30 điểm cộng dồn
-huntersmark=§hĐánh dấu§0 kẻ thù gần đó có lượng máu cao nhất trong 10 giây\nNếu bạn giết một mục tiêu được đánh dấu, nhận §a+[[20 x <skilllevel>]]%§0 tốc độ tấn công tầm xa và tốc độ di chuyển trong 5 giây
-beartrap=Đặt một cái bẫy gấu trên mặt đất sẽ biến mất nếu được kích hoạt hoặc sau 20 giây\nNếu kẻ thù kích hoạt nó, chúng sẽ nhận §i[[10 x <playerlevel>]] sát thương§0 và bị mắc kẹt trong 5 giây
-
-huntersinstinct=Trong 12 giây tiếp theo, tăng §7cơ hội né tránh§0 của bạn lên §a[[10 x <skilllevel>]]%\n§hĐánh dấu§0 trong 5 giây những kẻ thù bạn né tránh
-arrowstorm=Bắn một mũi tên cơ bản vào mỗi kẻ thù ở gần, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] sát thương của kiểm lâm§0 cho mỗi mũi tên
-
-// Pháp sư
-arcaneoverload=Khi đang hoạt động, tăng Tốc độ Tấn công Phép của bạn lên §a[[30 x <skilllevel>]]%§0, nhưng bạn sẽ không thể di chuyển\nKết thúc khi bạn hết mana, hoặc nếu được sử dụng lại\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana mỗi giây
-manarecharge=Khi đang hoạt động, tăng Hồi Mana của bạn thêm +1.4 và §a[[50 x <skilllevel>]]%§0, nhưng bạn sẽ bị tê liệt và nhận sát thương gấp đôi\nKết thúc khi sử dụng lại
-firedance=Triệu hồi 4 §bNgọn lửa nhảy múa§0, mỗi ngọn lửa gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0\nTriệu hồi một ngọn lửa khác sau mỗi 5 giây\nTất cả các triệu hồi sẽ biến mất sau 20 giây sau khi kích hoạt kỹ năng\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
-iceball=Ném một §aQuả cầu băng§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[50 + 10 x <skilllevel>]] Mana
-zap=Bắt đầu một cú giật nhảy giữa các mob trong 2 giây, gây §i[[<playerlevel> + <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 1 giây\nTiêu tốn §a[[10 + 2 x <skilllevel>]] Mana
-
-teleport=Dịch chuyển bạn ra phía trước\nTiêu tốn 10 Mana
-inferno=Đốt cháy tất cả kẻ thù gần đó, gây §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Sát thương lửa§0 mỗi giây trong 10 giây\nTiêu tốn §a[[40 + 8 x <skilllevel>]] Mana
-fireenchantment=Trong 10 giây tiếp theo, các đòn tấn công từ bạn và các đồng minh gần đó sẽ đốt cháy kẻ thù, gây §a[[5 x <skilllevel>]]%§0 sát thương mỗi giây trong 5 giây\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana
-iceenchantment=Trong 10 giây tiếp theo, các đòn tấn công từ bạn và các đồng minh gần đó sẽ đóng băng kẻ thù trong §a[[2 x <skilllevel>]] giây§0\nTiêu tốn 20 Mana
-
-fireball=Ném một §iQuả cầu lửa§0 vào kẻ thù gần nhất, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương phép§0\nTiêu tốn §a[[80 + 16 x <skilllevel>]] Mana
-lightning=Bắt đầu một tia sét nhảy giữa các mob trong 1 giây, gây §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Sát thương phép§0 và làm choáng trong 2 giây\nKhông thể đánh trúng cùng một mục tiêu nhiều lần\nTiêu tốn §a[[30 + 6 x <skilllevel>]] Mana
-
-// Thầy chiêu hồn
-skeletonhorde=Triệu hồi §a[[1 + <skilllevel>]] §bBộ xương§0
-skeletonwarrior=Triệu hồi một §bChiến binh xương§0 với §a+[[40 x <skilllevel>]]%§0 Máu và Sát thương
-sacrifice=Triệu hồi hoại tử gần nhất chết, và sau đó bạn hồi phục §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]] Máu§0 dưới dạng hồi máu phép
-siegecry=Nhận §a+[[50 x <skilllevel>]]%§0 Tốc độ Triệu hồi trong 6 giây
-
-boneslingerhorde=Triệu hồi §a[[1 + <skilllevel>]]§0 §bKẻ ném xương§0
-tomb=Tạo ra một cấu trúc triệu hồi một §bBộ xương§0 mỗi §a[[10 - <skilllevel>]] giây§0\nMộ có Máu bằng §a[[5 x <playerlevel> x <skilllevel>]]§0\nMộ mất 2% Tổng Máu mỗi giây
-necroticbloom=Tăng tốc hiệu ứng của độc trên tất cả kẻ thù gần đó bằng cách giảm thời gian của nó xuống 10%, nhưng tăng sát thương mỗi giây để duy trì tổng sát thương
-wardingtaunt=Triệu hồi hoại tử gần nhất buộc kẻ thù gần đó trong bán kính §a[[50 x <skilllevel>]]§0 phải nhắm vào nó
-
-unholyground=Mở rộng một luồng khí ô uế xung quanh bạn trong 10 giây\nKẻ thù trong khu vực này nhận §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Sát thương độc§0 mỗi giây và bị §7Hạn chế
-necroticbarrage=Tất cả các triệu hồi hoại tử sẽ phát nổ khi chết, gây §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Sát thương Phép§0 cho kẻ thù gần đó\nvà đầu độc chúng trong 10 giây với 20% sát thương ban đầu mỗi giây
-
-// Cleric
-smite=Trừng phạt
-divineblessing=Phước lành thiêng liêng
+divineblessing=Aura chữa bệnh ma thuật phục hồi §a[[20 + 3 x <grace> x <skilllevel> ↓]] máu§0 cho bạn và đồng minh của bạn\nTiêu tốn §a[[20 + 4 x <skilllevel>]] Mana§0
 purify=Thanh tẩy
 lightinfusion=Truyền ánh sáng
 holyguard=Vệ binh thần thánh
@@ -366,12 +298,64 @@ resurrection=Sự hồi sinh
 wrathoflight=Cơn thịnh nộ của ánh sáng
 
 // Druid
-wolftransformation=Mất 3 giây để biến thành Sói\n\nTốc độ di chuyển: 60\n\nNhấn [input=transformationability1] để Lướt cắn: Nhảy về phía trước và cắn, gây §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] sát thương cận chiến§0\n\nNhấn [input=transformationability2] để Sủa: Buộc kẻ thù gần đó nhắm vào bạn trong 2 giây\n\nGiữ [input=trinketability] để Chạy nước rút
-queenbeetransformation=Mất 2 giây để biến thành Ong chúa\n\nTốc độ di chuyển: 30\n-50% Phát hiện kẻ thù\n§6+1000% Sát thương nhận vào§0\nNhận một đòn đánh sẽ triệu hồi ong tối đa thay vì chết (hồi chiêu 60 giây)\n\nNhấn [input=transformationability1] để Bắn Mật ong: Gây §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0\n\nNhấn [input=transformationability2] để triệu hồi một §9Con ong§0 lên đến §a[[2 x <skilllevel>]]§0\n\nGiữ [input=trinketability] để ra lệnh cho Ong của bạn tấn công
-beartransformation=Mất 4 giây để biến thành Gấu\n\nTốc độ di chuyển: 20\n-50% Sát thương nhận vào\n\nNhấn [input=transformationability1] để Đập đất: Đòn tấn công khu vực gây §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] sát thương cận chiến§0 và §9làm choáng§0 trong §a[[0.5 x <skilllevel>]] giây§0\n\nNhấn [input=transformationability2] để Gầm: Khiến kẻ thù gần đó bỏ chạy trong 1 giây\n\nGiữ [input=trinketability] để Chạy nước rút
-foxtransformation=Mất 3 giây để biến thành Cáo\n\nTốc độ di chuyển: 50\n§6+50% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Bắn cầu lửa: Gây §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] sát thương phép§0\n\nNhấn [input=transformationability2] để triệu hồi một §bNgọn lửa nhảy múa§0 lên đến §a[[2 + <skilllevel>]]§0, mỗi ngọn lửa gây sát thương tương tự như một Quả cầu lửa\n\nNhấn [input=trinketability] để Lướt\n§!Cáo Vulpes Nova!
-rattransformation=Mất 2 giây để biến thành Chuột\n\nTốc độ di chuyển: 25\n-50% Phát hiện kẻ thù\nCấp cơ hội né tránh tối đa\n§6+1000% Sát thương nhận vào§0\n\nNhấn [input=transformationability1] để Cắn: Gây §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] sát thương cận chiến§0 và đầu độc mục tiêu bằng 100% sát thương gây ra mỗi giây trong 10 giây\n\nGiữ [input=trinketability] để Chạy nước rút
-treanttransformation=Mất 4 giây để biến thành Treant\n\nTốc độ di chuyển: 0\n-§a[50 + 5 <skilllevel>]%§0 Sát thương nhận vào\n+50% Giáp\nKẻ thù sẽ bỏ qua bạn nếu ẩn nấp trong 3 giây\n\nNhấn [input=transformationability1] khi bị lộ để Bắn hạt ngẫu nhiên: Gây §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0 với các hiệu ứng ngẫu nhiên\n\nNhấn [input=transformationability2] để triệu hồi một §9Cây non Dryad§0\n\nGiữ [input=trinketability] để lộ diện và chạy nước rút nếu di chuyển
+wolftransformation=Biến hình Sói
+queenbeetransformation=Biến hình Ong chúa
+beartransformation=Biến hình Gấu
+foxtransformation=Biến hình Cáo
+rattransformation=Biến hình Chuột
+treanttransformation=Mất 4 giây để biến thành Treant\n\nTốc độ di chuyển: 0\n-§a[50 + 5 <skilllevel>]%§0 Sát thương nhận vào\n+50% Giáp\nKẻ thù sẽ bỏ qua bạn nếu ẩn nấp trong 3 giây\n\nNhấn [input=transformationability1] khi bị lộ để Bắn hạt ngẫu nhiên: Gây §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Sát thương tầm xa§0 với các hiệu ứng ngẫu nhiên (1 tăng khả năng phục hồi)\n\nNhấn [input=transformationability2] để triệu hồi một §9Cây non Dryad§0\n\nGiữ [input=trinketability] để lộ diện và chạy nước rút nếu di chuyển
+
+
+[mastery]
+bastion=Pháo đài
+bloodborn=Sinh ra từ máu
+chronomancer=Pháp sư thời gian
+barbarian=Kẻ man rợ
+berserker=Chiến binh điên cuồng
+sniper=Lính bắn tỉa
+marksman=Xạ thủ
+hunter=Thợ săn
+trapper=Người đặt bẫy
+pyromancer=Pháp sư lửa
+frostweaver=Thợ dệt băng
+stormcaller=Người gọi bão
+ironinvoker=Người triệu hồi sắt
+plaguebearer=Người mang bệnh dịch
+darkeminence=Thế lực bóng tối
+inquisitor=Điều tra viên
+timekeeper=Người giữ thời gian
+shapeshifter=Người biến hình
+
+
+[masterydesc]
+bastion=Nhận khả năng phục hồi mỗi giây bằng 25% khả năng tái tạo máu của bạn
+bloodborn=Hồi máu bằng 5% sát thương bạn gây ra cho kẻ thù\nLuôn mất 5% Máu tối đa mỗi giây, nhưng không thể chết vì hiệu ứng này\nHồi máu luôn bằng 0
+chronomancer=Giảm 20% thời gian hồi chiêu của tất cả các kỹ năng đang hoạt động
+barbarian=+100% Máu tối đa và +200% Hồi máu, nhưng giáp của bạn sẽ luôn bằng 0
+berserker=Khi máu dưới 50%, nhận +25% Cơ hội chí mạng cận chiến\nCác đòn chí mạng cận chiến tăng Tốc độ tấn công và Tốc độ di chuyển của bạn lên 25% trong 2 giây
+sniper=Các đòn tấn công tầm xa có thể gây thêm tới +100% sát thương dựa trên khoảng cách đến mục tiêu
+marksman=Kẻ thù bạn đánh dấu sẽ được đánh dấu cho tất cả người chơi
+hunter=Khi bạn đánh dấu một kẻ thù, nó sẽ bị §7Hạn chế§0 trong 5 giây
+trapper=+50% sát thương lên kẻ thù bị mắc kẹt hoặc bị hạn chế
+pyromancer=Các vụ cháy của bạn có thể cộng dồn trên cùng một kẻ thù
+frostweaver=+50% sát thương lên kẻ thù bị dính Frostslow, Freezing hoặc Frostburn
+stormcaller=Cứ sau 20 giây, tất cả kẻ thù trong tầm nhìn sẽ bị sét đánh\nGây §i[[<playerlevel> + <intelligence>]] Sát thương phép§0 và làm choáng tất cả chúng trong 1 giây
+ironinvoker=Các triệu hồi có thể bị sát thương của bạn nhận được một chiếc khiên chặn một đòn tấn công và sạc lại sau 10 giây
+plaguebearer=Chất độc của bạn tồn tại trên kẻ thù lâu gấp đôi
+darkeminence=Bất cứ khi nào bạn mất hơn 15% máu tối đa từ một đòn tấn công duy nhất,\nbạn triệu hồi một §bChiến binh xương§0 nhận sát thương vượt quá 15% đó
+inquisitor=Các đòn tấn công và hiệu ứng của bạn đánh giá tất cả kẻ thù của bạn là Ác quỷ
+timekeeper=Hồi máu bằng phép thuật, dù là cho chính bạn hay đồng minh, sẽ giảm thời gian hồi chiêu của các kỹ năng đang hoạt động của mục tiêu đi 0,02 giây cho mỗi điểm được chữa lành
+shapeshifter=Sau khi biến hình, bạn trở nên bất khả xâm phạm trong 3 giây (hồi chiêu 5 giây)
+
+
+[skillsdesckeys]
+skilllevel=Cấp độ kỹ năng
+playerlevel=Cấp độ người chơi
+endurance=Sức bền
+speed=Tốc độ
+strength=Sức mạnh
+intelligence=Trí tuệ
+grace=Duyên dáng
 
 
 [extraskilldesc]
@@ -400,14 +384,14 @@ iceball=§aQuả cầu băng:§0 Đạn ma thuật phát nổ và đóng băng m
 fireball=§iQuả cầu lửa:§0 Đạn ma thuật phát nổ và đốt cháy mob lặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
 
 // Summons
-dancingflame=§bNgọn lửa nhảy múa:§0 Triệu hồi hoạt động giống như một viên đạn. Đốt cháy kẻ thù khi trúng đích. Lặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
+dancingflame=§bNgọn lửa nhảy múa:§0 Triệu hồi hoạt động giống như một viên đạn. Đốt cháy kẻ thù khi trúng đích.\nLặp lại 20% sát thương ban đầu mỗi giây trong 5 giây
 
 // Damageable Summons
-necromancerskeleton=§bBộ xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
-necromancerskeletonwarrior=§bChiến binh xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
-necromancerboneslinger=§bKẻ ném xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0 (khoảng cách 320)\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
-bee=§9Con ong:§0 Triệu hồi có thể bị sát thương\nMáu: 1\nSát thương: §a[[<playerlevel> + <intelligence>]]§0\nTốc độ: 100\n\nChết khi tấn công, nhưng đầu độc mục tiêu bằng 20% sát thương gây ra mỗi giây trong 10 giây
-dryadsapling=§9Cây non Dryad:§0 Triệu hồi có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nTốc độ: 65\nMất 2% Tổng Máu mỗi giây
+necromancerskeleton=§bBộ xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\nSát thương: §a[[<playerlevel> + <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerskeletonwarrior=§bChiến binh xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\nSát thương: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+necromancerboneslinger=§bKẻ ném xương:§0 Triệu hồi hoại tử có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nSát thương: §a[[<playerlevel> + <intelligence>]]§0 (khoảng cách 320)\nTốc độ: 60\nMất 2% Tổng Máu mỗi giây
+bee=§9Con ong:§0 Triệu hồi có thể bị sát thương\nMáu: 1\nSát thương: §a[[<playerlevel> + <intelligence> ↓]]§0\nTốc độ: 100\n\nChết khi tấn công, nhưng đầu độc mục tiêu bằng 20% sát thương gây ra mỗi giây trong 10 giây
+dryadsapling=§9Cây non Dryad:§0 Triệu hồi có thể bị sát thương\nMáu: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nSát thương: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nTốc độ: 65\nMất 2% Tổng Máu mỗi giây
 
 [item]
 scrollofoblivion=Cuộn giấy lãng quên
@@ -471,6 +455,7 @@ nodeathplayers=Không có người chơi nào đã chết có thể được h�
 [ui]
 menutitle=MOD RPG của Save
 attributes=Thuộc tính
+mastery=Làm chủ
 activeskills=Kỹ năng chủ động
 classes=Lớp
 
@@ -481,8 +466,10 @@ eachlevel=Mỗi cấp độ cung cấp:
 experience=KN: <exp> / <nextexp>
 totalexperience=Tổng KN: <exp>
 
+points=Điểm: <points>
 resetpoints=Điểm đặt lại: <points>
 attrpoints=Điểm thuộc tính: <points>
+masterypoints=Điểm làm chủ: <points>
 classpoints=Điểm lớp: <points>
 passivepoints=Điểm bị động: <points>
 activeskillpoints=Điểm kỹ năng chủ động: <points>
@@ -514,8 +501,6 @@ removecolumn=Xóa cột
 
 rate=Đánh giá MOD RPG!
 
-seeallclasses=Xem tất cả các mục lớp
-
 clicktoopen=[input=mouse1] để mở
 
 
@@ -538,9 +523,17 @@ transformationability2=Khả năng biến hình 2
 
 
 [settingsui]
+client_text="Cài đặt máy khách" hoàn toàn là hình ảnh và có thể được điều chỉnh tự do.
+server_text="Cài đặt máy chủ" ảnh hưởng trực tiếp đến lối chơi. Chúng không thể thay đổi trong trò chơi và nếu bạn tham gia cùng bạn bè hoặc máy chủ, cài đặt của họ sẽ được áp dụng thay vì của bạn.
+
+// Default
+default_section=Giá trị mặc định (Máy khách)
+default_text=Các cài đặt này có thể được điều chỉnh trong các menu khác, nhưng chúng sẽ luôn quay trở lại các giá trị này khi bạn bắt đầu trò chơi
+showClassIcons=Hiển thị biểu tượng lớp
+twelveSkillSlots=12 ô kỹ năng
+
 // Experience
-experience_section=Kinh nghiệm
-experience_text=Các cài đặt đó là cài đặt máy chủ nên không thể sửa đổi sau khi tham gia thế giới. Trong trường hợp nhiều người chơi, các giá trị của bạn sẽ bị bỏ qua và các giá trị của máy chủ/chủ nhà sẽ được sử dụng.
+experience_section=Kinh nghiệm (Máy chủ)
 
 experienceMod=% Mod kinh nghiệm
 experienceMod_text=Sửa đổi lượng kinh nghiệm nhận được khi đánh bại mob
@@ -561,7 +554,7 @@ cubeExperienceReqInc=Yêu cầu tăng dần theo lập phương
 experience_calc=Yêu cầu kinh nghiệm để đạt cấp độ tiếp theo là:\n\nYêu cầu ban đầu + Yêu cầu tăng dần * cấp độ +\n+ Yêu cầu tăng dần theo bình phương * (cấp độ ^ 2) +\n+ Yêu cầu tăng dần theo lập phương * (cấp độ ^ 3)\n\nTrong đó 'cấp độ' là cấp độ hiện tại của bạn
 
 // Classes
-classes_section=Lớp
+classes_section=Lớp (Máy chủ)
 
 multiClass=Đa lớp
 multiClass_text=Giới hạn số lượng lớp khác nhau có thể được giữ cùng một lúc. Đặt thành 0 để không có giới hạn

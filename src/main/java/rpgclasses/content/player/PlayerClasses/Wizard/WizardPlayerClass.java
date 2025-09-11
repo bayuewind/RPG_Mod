@@ -1,6 +1,12 @@
 package rpgclasses.content.player.PlayerClasses.Wizard;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatModifierBuff;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatPercentModifierBuff;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Wizard.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.FlamingSteps;
@@ -9,12 +15,6 @@ import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.ArcaneShie
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.FireShield;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.IceShield;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Stormbound;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.registry.RPGModifiers;
 
 public class WizardPlayerClass extends PlayerClass {
@@ -75,7 +75,7 @@ public class WizardPlayerClass extends PlayerClass {
         skillsList.addSkill(new BasicPassive(
                 "manaproficiency", "#33ccff", 10, 1,
                 new FloatPercentModifierBuff(BuffModifiers.MAX_MANA, 0.05F),
-                new FloatModifierBuff(BuffModifiers.COMBAT_MANA_REGEN_FLAT, 0.2F)
+                new FloatModifierBuff(BuffModifiers.COMBAT_MANA_REGEN_FLAT, 0.3F)
         ));
         skillsList.addSkill(new BasicPassive(
                 "firepower", "#ff3300", 10, 1,

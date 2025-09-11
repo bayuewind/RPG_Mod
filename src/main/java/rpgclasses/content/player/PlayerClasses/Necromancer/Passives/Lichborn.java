@@ -14,7 +14,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.level.maps.Level;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.buffs.Skill.SecondaryPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.mobs.mount.LichSkeletonMob;
 
 public class Lichborn extends SimpleBuffPassive {

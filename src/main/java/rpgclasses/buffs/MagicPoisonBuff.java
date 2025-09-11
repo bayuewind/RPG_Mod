@@ -2,11 +2,15 @@ package rpgclasses.buffs;
 
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
+import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 import rpgclasses.registry.RPGBuffs;
 
 import java.awt.*;
@@ -39,6 +43,13 @@ public class MagicPoisonBuff extends Buff {
     public static void apply(Mob attacker, Mob target, float damage, int duration) {
         ActiveBuff ab = new ActiveBuff(RPGBuffs.MAGIC_POISON, target, duration, attacker);
         setPoisonDamage(ab, damage);
+
+        if (attacker.isPlayer) {
+            PlayerData playerData = PlayerDataList.getPlayerData((PlayerMob) attacker);
+            if (playerData.hasMasterySkill(Mastery.PYROMANCER)) {
+                duration *= 2;
+            }
+        }
 
         if (shouldApply(target, damage, duration)) {
             target.buffManager.addBuff(ab, attacker.isServer());

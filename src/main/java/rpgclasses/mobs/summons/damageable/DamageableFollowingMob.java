@@ -13,7 +13,9 @@ import necesse.engine.save.SaveData;
 import necesse.engine.util.GameMath;
 import necesse.engine.window.GameWindow;
 import necesse.engine.window.WindowManager;
-import necesse.entity.mobs.*;
+import necesse.entity.mobs.GameDamage;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.summon.summonFollowingMob.attackingFollowingMob.AttackingFollowingMob;
 import necesse.gfx.GameColor;
@@ -27,7 +29,9 @@ import necesse.gfx.ui.GameInterfaceStyle;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import rpgclasses.RPGResources;
+import rpgclasses.content.player.MasterySkills.Mastery;
 import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
 import java.util.List;
@@ -226,5 +230,17 @@ abstract public class DamageableFollowingMob extends AttackingFollowingMob {
                 new ModifierValue<>(BuffModifiers.HEALTH_REGEN).max(0F),
                 new ModifierValue<>(BuffModifiers.COMBAT_HEALTH_REGEN).max(0F)
         );
+    }
+
+    @Override
+    public void init() {
+        super.init();
+        Mob followingMob = getFollowingMob();
+        if (followingMob instanceof PlayerMob) {
+            PlayerData playerData = PlayerDataList.getPlayerData((PlayerMob) followingMob);
+            if (playerData.hasMasterySkill(Mastery.IRON_INVOKER)) {
+                Mastery.IRON_INVOKER.giveDatalessSecondaryPassiveBuff(this, 3600_000);
+            }
+        }
     }
 }

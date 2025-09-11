@@ -8,8 +8,8 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import rpgclasses.buffs.Skill.PassiveActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimplePassiveBuffActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimplePassiveBuffActiveSkill;
 
 import java.awt.*;
 

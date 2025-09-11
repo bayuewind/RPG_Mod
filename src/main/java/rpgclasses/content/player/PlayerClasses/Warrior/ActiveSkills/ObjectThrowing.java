@@ -10,7 +10,7 @@ import necesse.entity.projectile.Projectile;
 import necesse.level.gameObject.GameObject;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.ObjectProjectile;
@@ -106,7 +106,7 @@ public class ObjectThrowing extends ActiveSkill {
 
     @Override
     public int getBaseCooldown() {
-        return 10000;
+        return 16000;
     }
 
     @Override

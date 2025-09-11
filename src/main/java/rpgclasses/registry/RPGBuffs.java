@@ -119,7 +119,7 @@ public class RPGBuffs {
 
     public static void applyStop(Mob target, int duration) {
         ActiveBuff ab = new ActiveBuff(AphBuffs.STOP, target, duration, null);
-        target.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, target.isServer());
     }
 
     public static void applyStun(Mob target, float duration) {
@@ -128,7 +128,7 @@ public class RPGBuffs {
 
     public static void applyStun(Mob target, int duration) {
         ActiveBuff ab = new ActiveBuff(AphBuffs.STUN, target, duration, null);
-        target.buffManager.addBuff(ab, true);
+        target.buffManager.addBuff(ab, target.isServer());
     }
 
     public static void purify(Mob target, boolean updatePacket) {

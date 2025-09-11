@@ -2,6 +2,7 @@ package rpgclasses.containers.rpgmenu.entries;
 
 import necesse.engine.Settings;
 import necesse.engine.localization.Localization;
+import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.components.FormButton;
 import necesse.gfx.forms.components.FormContentBox;
 import necesse.gfx.forms.components.FormInputSize;
@@ -9,11 +10,13 @@ import necesse.gfx.forms.components.FormLabel;
 import necesse.gfx.forms.components.localComponents.FormLocalTextButton;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
+import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.AttributeComponent;
 import rpgclasses.containers.rpgmenu.components.ClassComponent;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
@@ -27,9 +30,25 @@ public class AttributesEntry extends MenuEntry {
     }
 
     @Override
+    public Color getTextColor(PlayerMob player) {
+        playerData = PlayerDataList.getPlayerData(player);
+
+        if (playerData.totalAttributePoints() < Arrays.stream(playerData.getAttributePointsUsed()).sum()) {
+            int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
+            if (style == 1) {
+                return new Color(255, 0, 0);
+            } else {
+                return new Color(102, 0, 0);
+            }
+        }
+
+        return null;
+    }
+
+    @Override
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container) {
         playerData = PlayerDataList.getPlayerData(player);
-        updateContent(mainForm, entryForm, container, playerData.getResets(), playerData.getAttributeLevels(), playerData.getAttributeLevels().clone());
+        updateContent(mainForm, entryForm, container, playerData.getResets(), playerData.getAttributePointsUsed(), playerData.getAttributePointsUsed().clone());
     }
 
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container, final int resetPoints, final int[] attributes, int[] mutableAttributes) {
@@ -102,7 +121,7 @@ public class AttributesEntry extends MenuEntry {
             int finalI = i;
             AttributeComponent attributeComponent = attributesForm.addComponent(new AttributeComponent(client, x, y, Attribute.attributesList.get(i), attributes[i]));
             attributeComponent.addOnMod(c -> {
-                int newLevel = attributeComponent.attributeLevel.get();
+                int newLevel = attributeComponent.attributePoints.get();
                 int oldLevel = mutableAttributes[finalI];
                 int mod = newLevel - oldLevel;
 

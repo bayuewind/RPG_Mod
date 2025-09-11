@@ -5,10 +5,11 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.ui.ButtonIcon;
 import necesse.gfx.ui.GameInterfaceStyle;
 import necesse.gfx.ui.HoverStateTextures;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.MasterySkills.Mastery;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.data.PlayerData;
 import rpgclasses.mobs.summons.damageable.NecromancerTombMob;
 import rpgclasses.mobs.summons.passive.RangerWolfMob;
@@ -29,6 +30,14 @@ public class RPGResources {
         initParticleResources();
         initMobResources();
         SOUNDS.initSoundResources();
+
+        Mastery.masterySkillsList.forEach(Mastery::initResources);
+        Attribute.attributesList.forEach(Attribute::initResources);
+        PlayerClass.classesList.forEach(playerClass -> {
+            playerClass.initResources();
+            playerClass.passivesList.each(Passive::initResources);
+            playerClass.activeSkillsList.each(ActiveSkill::initResources);
+        });
     }
 
     public static class UI_TEXTURES {
@@ -57,13 +66,6 @@ public class RPGResources {
         }
 
         int styles = GameInterfaceStyle.styles.size();
-
-        Attribute.attributesList.forEach(Attribute::initResources);
-        PlayerClass.classesList.forEach(playerClass -> {
-            playerClass.initResources();
-            playerClass.passivesList.each(Passive::initResources);
-            playerClass.activeSkillsList.each(ActiveSkill::initResources);
-        });
 
         UI_TEXTURES.timebar_texture = new GameTexture[styles];
 

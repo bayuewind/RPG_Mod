@@ -19,10 +19,10 @@ import necesse.gfx.gameTooltips.TooltipLocation;
 import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.Skill;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.data.PlayerClassData;
 
 import java.awt.*;

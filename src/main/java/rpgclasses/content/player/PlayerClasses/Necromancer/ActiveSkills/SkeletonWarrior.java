@@ -6,7 +6,7 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
 

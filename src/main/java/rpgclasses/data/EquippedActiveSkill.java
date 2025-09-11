@@ -17,10 +17,11 @@ import necesse.level.maps.hudManager.floatText.FloatTextFade;
 import necesse.level.maps.hudManager.floatText.UniqueFloatText;
 import org.jetbrains.annotations.NotNull;
 import rpgclasses.RPGResources;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimplePassiveBuffActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.MasterySkills.Mastery;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimplePassiveBuffActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.packets.ActiveAbilityRunPacket;
 import rpgclasses.registry.RPGModifiers;
 
@@ -100,11 +101,11 @@ public class EquippedActiveSkill {
         int classID = reader.getNextInt();
         int activeSkillID = reader.getNextInt();
         long lastUse = reader.getNextLong();
-        int addedCooldown = reader.getNextInt();
+        int cooldown = reader.getNextInt();
 
         EquippedActiveSkill equippedActiveSkill = new EquippedActiveSkill(classID, activeSkillID);
         equippedActiveSkill.lastUse = lastUse;
-        equippedActiveSkill.cooldown = addedCooldown;
+        equippedActiveSkill.cooldown = cooldown;
 
         return equippedActiveSkill;
     }
@@ -174,7 +175,7 @@ public class EquippedActiveSkill {
         int cooldown = getCooldown();
 
         if (isInUse()) {
-            return 1;
+            return 0;
         }
 
         long cooldownLeftLong = (lastUse == 0 || currentTime == 0) ? 0 : (cooldown - (currentTime - lastUse));
@@ -250,18 +251,25 @@ public class EquippedActiveSkill {
         this.activeSkill = activeSkill;
     }
 
-    public void startCooldown(long currentTime, int skillLevel) {
-        this.startCooldown(currentTime, skillLevel, 0);
+    public void startCooldown(PlayerData playerData, long currentTime, int skillLevel) {
+        this.startCooldown(playerData, currentTime, skillLevel, 0);
     }
 
-    public void startCooldown(long currentTime, int skillLevel, int addedCooldown) {
-        this.lastUse = currentTime;
-        this.cooldown = activeSkill.getCooldown(skillLevel) + addedCooldown;
+    public void startCooldown(PlayerData playerData, long currentTime, int skillLevel, int addedCooldown) {
+        this.startCustomCooldown(playerData, currentTime, activeSkill.getCooldown(skillLevel) + addedCooldown);
     }
 
-    public void startCustomCooldown(long currentTime, int cooldown) {
+    public void startCustomCooldown(PlayerData playerData, long currentTime, int cooldown) {
         this.lastUse = currentTime;
-        this.cooldown = cooldown;
+        float mod = 1;
+        if (playerData != null) {
+            if (playerData.hasMasterySkill(Mastery.CHRONOMANCER)) mod -= 0.2F;
+        }
+        this.cooldown = (int) (cooldown * mod);
+    }
+
+    public void modCooldown(int mod) {
+        this.cooldown = Math.max(0, cooldown + mod);
     }
 
     public void restartCooldown() {
@@ -275,7 +283,7 @@ public class EquippedActiveSkill {
     }
 
     public void setCooldown(EquippedActiveSkill equippedActiveSkill) {
-        startCustomCooldown(equippedActiveSkill.lastUse, equippedActiveSkill.cooldown);
+        startCustomCooldown(null, equippedActiveSkill.lastUse, equippedActiveSkill.cooldown);
     }
 
     public boolean canChange(long currentTime) {

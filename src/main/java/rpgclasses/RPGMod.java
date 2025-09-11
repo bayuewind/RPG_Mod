@@ -5,17 +5,19 @@ import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.TileRegistry;
 import necesse.level.gameTile.GameTile;
 import rpgclasses.content.MobClass;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Skill;
+import rpgclasses.content.player.MasterySkills.Mastery;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
 import rpgclasses.registry.*;
 import rpgclasses.settings.RPGSettings;
 
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.5.8";
+    public static String currentVersion = "v0.6.1";
 
     static {
         new RPGModifiers();
@@ -27,6 +29,10 @@ public class RPGMod {
         MobClass.registerCore();
 
         Attribute.registerCore();
+
+        Mastery.registerCore();
+
+        Mastery.masterySkillsList.forEach(SimpleBuffPassive::registry);
 
         PlayerClass.registerCore();
 

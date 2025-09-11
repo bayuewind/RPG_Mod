@@ -12,7 +12,6 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.buffs.IgnitedBuff;
 
 import java.awt.*;
 
@@ -71,12 +70,12 @@ public class IceExplosionLevelEvent extends ExplosionEvent implements Attacker {
     @Override
     protected void onMobWasHit(Mob mob, float distance) {
         boolean isOwner = mob == ownerMob;
-        if(!isOwner || distance < (range / 2F)) {
+        if (!isOwner || distance < (range / 2F)) {
             float mod = this.getDistanceMod(distance);
             GameDamage damage = this.getTotalMobDamage(mod);
-            if(isOwner) damage = damage.modDamage(0.25F);
-            float knockback = (float)this.knockback * mod;
-            mob.isServerHit(damage, (float)mob.getX() - this.x, (float)mob.getY() - this.y, knockback, this);
+            if (isOwner) damage = damage.modDamage(0.25F);
+            float knockback = (float) this.knockback * mod;
+            mob.isServerHit(damage, (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
             mob.buffManager.addBuff(new ActiveBuff(BuffRegistry.Debuffs.FREEZING, mob, 5F, null), true);
             if (!mob.isBoss()) mob.buffManager.addBuff(new ActiveBuff(BuffRegistry.FROZEN_ENEMY, mob, 1F, null), true);
         }

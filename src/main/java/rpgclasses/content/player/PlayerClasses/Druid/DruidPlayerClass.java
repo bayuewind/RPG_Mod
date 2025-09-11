@@ -1,16 +1,16 @@
 package rpgclasses.content.player.PlayerClasses.Druid;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatPercentModifierBuff;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Druid.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Druid.Passives.NaturesFavor;
 import rpgclasses.content.player.PlayerClasses.Druid.Passives.PhoenixSpirit;
 import rpgclasses.content.player.PlayerClasses.Druid.Passives.PrimalBurst;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.registry.RPGModifiers;
 
 public class DruidPlayerClass extends PlayerClass {

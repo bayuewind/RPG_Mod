@@ -30,13 +30,15 @@ import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.toolItem.swordToolItem.SwordToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
+import rpgclasses.mobs.mount.TransformationMountMob;
 import rpgclasses.mobs.summons.passive.RangerWolfMob;
 
 import java.awt.*;
@@ -264,6 +266,8 @@ public class WolfTransformation extends SimpleTranformationActiveSkill {
                         target.isServerHit(this.damage, this.dirX, this.dirY, 75.0F, player);
                     }
                 }
+
+                TransformationMountMob.doResilienceGain(getRider(), target, 3);
 
                 this.hitCooldowns.startCooldown(target);
             }

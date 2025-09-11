@@ -12,11 +12,11 @@ import necesse.gfx.drawOptions.human.HumanDrawOptions;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameTexture.GameTexture;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.registry.RPGPackets;
+import rpgclasses.packets.PacketMobResetBuffTime;
 import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
@@ -103,7 +103,7 @@ public class ArcaneShield extends SimpleBuffPassive {
 
                 activeBuff.getGndData().setBoolean("ready", false);
                 activeBuff.getGndData().setInt("time", 0);
-                player.getServer().network.sendToClientsAtEntireLevel(new RPGPackets.ResetSkillTime(player.getPlayerSlot(), activeBuff.buff.getStringID()), player.getLevel());
+                player.getServer().network.sendToClientsAtEntireLevel(new PacketMobResetBuffTime(player.getUniqueID(), activeBuff.buff.getStringID()), player.getLevel());
 
                 if (onPrevent != null)
                     onPrevent.run(activeBuff, getLevel(activeBuff), PlayerDataList.getPlayerData(player));

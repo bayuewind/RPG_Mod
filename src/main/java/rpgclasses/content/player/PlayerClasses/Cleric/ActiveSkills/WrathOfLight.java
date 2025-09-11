@@ -26,7 +26,7 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -56,8 +56,8 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
         Mob target = RPGUtils.findBestTarget(player, 500);
 
         if (target != null) {
-            int damage = 5 * playerData.getLevel() + 3 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player));
-            if (MobData.isWeakToHoly(target)) damage *= 2;
+            float damage = 5 * playerData.getLevel() + 3 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player));
+            if (MobData.isWeakToHoly(target, player)) damage *= 2;
             target.isServerHit(new GameDamage(RPGDamageType.HOLY, damage), player.x, player.y, 0, player);
             RPGBuffs.applyStun(target, 500);
             return new WrathOfLightLevelEvent(player, target.getX(), target.getY(), (4 * playerData.getLevel() + 2 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player))) / 2);
@@ -91,13 +91,13 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
 
         public int targetX;
         public int targetY;
-        public int damage;
+        public float damage;
         public int hits;
 
         public WrathOfLightLevelEvent() {
         }
 
-        public WrathOfLightLevelEvent(Mob owner, int targetX, int targetY, int damage) {
+        public WrathOfLightLevelEvent(Mob owner, int targetX, int targetY, float damage) {
             super(owner, new GameRandom());
             this.targetX = targetX;
             this.targetY = targetY;
@@ -122,7 +122,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
 
             writer.putNextInt(this.targetX);
             writer.putNextInt(this.targetY);
-            writer.putNextInt(this.damage);
+            writer.putNextFloat(this.damage);
             writer.putNextInt(this.hits);
         }
 
@@ -134,7 +134,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
 
             this.targetX = reader.getNextInt();
             this.targetY = reader.getNextInt();
-            this.damage = reader.getNextInt();
+            this.damage = reader.getNextFloat();
             this.hits = reader.getNextInt();
         }
 
@@ -171,7 +171,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
                     .forEach(
                             mob -> {
                                 mob.isServerHit(new GameDamage(RPGDamageType.HOLY, damage), targetX, targetY, -20, owner);
-                                if (MobData.isWeakToHoly(mob)) {
+                                if (MobData.isWeakToHoly(mob, owner)) {
                                     mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 1100, null), true);
                                 }
                             }

@@ -4,15 +4,15 @@ import necesse.engine.localization.Localization;
 import necesse.engine.modLoader.LoadedMod;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.gfx.gameTooltips.ListGameTooltips;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClasses.Cleric.ClericPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Druid.DruidPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Necromancer.NecromancerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Ranger.RangerPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.WarriorPlayerClass;
 import rpgclasses.content.player.PlayerClasses.Wizard.WizardPlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.data.PlayerData;
 import rpgclasses.settings.RPGSettings;
 

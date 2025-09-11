@@ -14,19 +14,23 @@ import necesse.inventory.item.toolItem.ToolType;
 import necesse.level.gameObject.*;
 import necesse.level.gameObject.furniture.RoomFurniture;
 import necesse.level.maps.Level;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.MasterySkills.Mastery;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.packets.ShowModExpPacket;
 import rpgclasses.packets.UpdateClientExpPacket;
 import rpgclasses.packets.UpdateClientResetsPacket;
 import rpgclasses.registry.RPGBuffs;
-import rpgclasses.registry.RPGModifiers;
 import rpgclasses.settings.RPGSettings;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class PlayerData {
     public static int EQUIPPED_SKILLS_MAX = 12;
@@ -35,6 +39,7 @@ public class PlayerData {
     public static String expDataName = prefixDataName + "exp";
     public static String resetsDataName = prefixDataName + "resets";
     public static String attributesDataName = prefixDataName + "attributes";
+    public static String masteryDataName = prefixDataName + "mastery";
     public static String classesDataName = prefixDataName + "classes";
     public static String equippedActiveSkillsDataName = prefixDataName + "equippedactives";
 
@@ -43,7 +48,8 @@ public class PlayerData {
     public final String playerName;
     private int exp = 0;
     private int resets = 0;
-    private int[] attributeLevels = new int[Attribute.attributesList.size()];
+    private int[] attributePointsUsed = new int[Attribute.attributesList.size()];
+    public List<Integer> masterySkills = new ArrayList<>();
     private int[] classLevels = new int[PlayerClass.classesList.size()];
     private PlayerClassData[] classesData = new PlayerClassData[PlayerClass.classesList.size()];
     public EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[EQUIPPED_SKILLS_MAX];
@@ -60,12 +66,13 @@ public class PlayerData {
         }
     }
 
-    public void loadData(PlayerMob player, LoadData loadData) {
+    public void loadData(PlayerMob player, @NotNull LoadData loadData) {
         loadData(
                 loadData.getInt(expDataName, 0),
                 loadData.getInt(resetsDataName, 0)
         );
         loadDataAttributes(loadData);
+        loadDataMastery(loadData);
         loadDataClasses(loadData);
         loadDataClassesData(classLevels, loadData);
         loadDataEquippedActiveSkills(player, loadData);
@@ -87,7 +94,18 @@ public class PlayerData {
 
     public void loadDataAttributes(LoadData loadData) {
         for (Attribute attribute : Attribute.attributesList) {
-            this.attributeLevels[attribute.id] = loadData.getInt(attributesDataName + "_" + attribute.stringID, 0);
+            this.attributePointsUsed[attribute.id] = loadData.getInt(attributesDataName + "_" + attribute.stringID, 0);
+        }
+    }
+
+    public void loadDataMastery(LoadData loadData) {
+        masterySkills.clear();
+        String[] strings = loadData.getStringArray(masteryDataName);
+        for (String string : strings) {
+            Mastery mastery = Mastery.masterySkills.get(string);
+            if (mastery != null) {
+                masterySkills.add(mastery.id);
+            }
         }
     }
 
@@ -97,15 +115,7 @@ public class PlayerData {
         }
     }
 
-    public void loadDataAttributes(int[] attributeLevels) {
-        this.attributeLevels = attributeLevels.length != Attribute.attributesList.size() ? new int[Attribute.attributesList.size()] : attributeLevels;
-    }
-
-    public void loadDataClasses(int[] classLevels) {
-        this.classLevels = classLevels.length != PlayerClass.classesList.size() ? new int[PlayerClass.classesList.size()] : classLevels;
-    }
-
-    public void loadDataClassesData(int[] classLevels, LoadData loadData) {
+    public void loadDataClassesData(@NotNull int[] classLevels, LoadData loadData) {
         boolean update = classLevels.length == PlayerClass.classesList.size();
         this.classesData = new PlayerClassData[classLevels.length];
         for (int i = 0; i < this.classesData.length; i++) {
@@ -135,13 +145,17 @@ public class PlayerData {
         }
     }
 
-    public void saveData(SaveData saveData) {
+    public void saveData(@NotNull SaveData saveData) {
         saveData.addInt(expDataName, exp);
         saveData.addInt(resetsDataName, resets);
 
         for (Attribute attribute : Attribute.attributesList) {
-            saveData.addInt(attributesDataName + "_" + attribute.stringID, attributeLevels[attribute.id]);
+            saveData.addInt(attributesDataName + "_" + attribute.stringID, attributePointsUsed[attribute.id]);
         }
+
+        saveData.addStringArray(masteryDataName, masterySkills.stream()
+                .map(index -> Mastery.masterySkillsList.get(index).stringID)
+                .toArray(String[]::new));
 
         for (PlayerClass playerClass : PlayerClass.classesList) {
             saveData.addInt(classesDataName + "_" + playerClass.stringID, classLevels[playerClass.id]);
@@ -158,6 +172,19 @@ public class PlayerData {
         saveData.addInt(grabbedObjectDataName, grabbedObject == null ? -1 : grabbedObject.getID());
     }
 
+    public void setAttributes(@NotNull int[] attributePoints) {
+        this.attributePointsUsed = attributePoints;
+    }
+
+    public void setClassLevels(@NotNull int[] classLevels) {
+        this.classLevels = classLevels.length != PlayerClass.classesList.size() ? new int[PlayerClass.classesList.size()] : classLevels;
+    }
+
+    public void setMasterySkills(List<Integer> masterySkills) {
+        this.masterySkills.clear();
+        this.masterySkills.addAll(masterySkills);
+    }
+
     public int getBaseExp() {
         return this.exp;
     }
@@ -166,36 +193,69 @@ public class PlayerData {
         return this.exp + RPGSettings.startingExperience();
     }
 
-    public int[] getAttributeLevels() {
-        return attributeLevels;
+    public int[] getAttributePointsUsed() {
+        return attributePointsUsed;
     }
 
-    public int getEndurance(PlayerMob player) {
-        return getAttributeLevel(0) + player.buffManager.getModifier(RPGModifiers.ENDURANCE_ATTR_FLAT);
+    public float getAttribute(int id, @NotNull PlayerMob player) {
+        return getAttribute(Attribute.attributesList.get(id), player);
     }
 
-    public int getSpeed(PlayerMob player) {
-        return getAttributeLevel(1) + player.buffManager.getModifier(RPGModifiers.SPEED_ATTR_FLAT);
+    public float getAttribute(Attribute attribute, @NotNull PlayerMob player) {
+        return pointsConversion(getAttributePoints(attribute.id)) + player.buffManager.getModifier(attribute.ownModifier);
     }
 
-    public int getStrength(PlayerMob player) {
-        return getAttributeLevel(2) + player.buffManager.getModifier(RPGModifiers.STRENGTH_ATTR_FLAT);
+    public float getEndurance(@NotNull PlayerMob player) {
+        return getAttribute(0, player);
     }
 
-    public int getIntelligence(PlayerMob player) {
-        return getAttributeLevel(3) + player.buffManager.getModifier(RPGModifiers.INTELLIGENCE_ATTR_FLAT);
+    public float getSpeed(@NotNull PlayerMob player) {
+        return getAttribute(1, player);
     }
 
-    public int getGrace(PlayerMob player) {
-        return getAttributeLevel(4) + player.buffManager.getModifier(RPGModifiers.GRACE_ATTR_FLAT);
+    public float getStrength(@NotNull PlayerMob player) {
+        return getAttribute(2, player);
     }
 
-    public void setAttributeLevels(int[] attributeLevels) {
-        this.attributeLevels = attributeLevels;
+    public float getIntelligence(@NotNull PlayerMob player) {
+        return getAttribute(3, player);
     }
 
-    public int getAttributeLevel(int id) {
-        return (id < 0 || id >= attributeLevels.length) ? 0 : attributeLevels[id];
+    public float getGrace(@NotNull PlayerMob player) {
+        return getAttribute(4, player);
+    }
+
+    public static float pointsConversion(int amount) {
+        if (amount <= 10) return amount;
+
+        float total = 0;
+        float valor = 1;
+
+        for (int i = 1; i <= amount; i++) {
+            if (i > 10) {
+                valor *= 0.99f;
+            }
+            total += valor;
+        }
+
+        return total;
+    }
+
+
+    public void setAttributePointsUsed(int[] attributePointsUsed) {
+        this.attributePointsUsed = attributePointsUsed;
+    }
+
+    public int getAttributePoints(int id) {
+        return (id < 0 || id >= attributePointsUsed.length) ? 0 : attributePointsUsed[id];
+    }
+
+    public boolean hasMasterySkill(Mastery mastery) {
+        return masterySkills.contains(mastery.id);
+    }
+
+    public boolean hasMasterySkill(int id) {
+        return masterySkills.contains(id);
     }
 
     public int[] getClassLevels() {
@@ -204,10 +264,6 @@ public class PlayerData {
             trueClassLevels[i] = getClassLevel(i);
         }
         return trueClassLevels;
-    }
-
-    public void setClassLevels(int[] classLevels) {
-        this.classLevels = classLevels;
     }
 
     public int getClassLevel(int id) {
@@ -222,7 +278,7 @@ public class PlayerData {
         return resets;
     }
 
-    public void modResetsSendPacket(ServerClient serverClient, int resets) {
+    public void modResetsSendPacket(@NotNull ServerClient serverClient, int resets) {
         this.resets += resets;
         serverClient.getServer().network.sendToAllClients(new UpdateClientResetsPacket(PlayerDataList.getPlayerData(serverClient.playerMob)));
     }
@@ -248,20 +304,30 @@ public class PlayerData {
     }
 
     public void updateAllBuffs(PlayerMob player) {
-        updateModifiersBuff(player);
+        if(player.isServer()) {
+            updateModifiersBuff(player);
 
-        if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE))
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE, player, 1000, null), true);
+            if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE))
+                player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE, player, 1000, null), true);
 
-        boolean someOverlevel = Arrays.stream(getClassLevels()).sum() > totalClassPoints() || Arrays.stream(getAttributeLevels()).sum() > totalAttributePoints();
+            for (int i = 0; i < Mastery.masterySkillsList.size(); i++) {
+                Mastery mastery = Mastery.masterySkillsList.get(i);
+                if (hasMasterySkill(i)) {
+                    mastery.giveMasteryBuff(player);
+                } else {
+                    mastery.removePassiveBuffs(player);
+                }
+            }
 
-        if (!someOverlevel)
+            boolean someOverlevel = Arrays.stream(getClassLevels()).sum() > totalClassPoints() ||
+                    Arrays.stream(getAttributePointsUsed()).sum() > totalAttributePoints() ||
+                    masterySkills.size() > totalMasteryPoints();
+
             for (PlayerClassData classesDatum : classesData) {
-                boolean isServer = player.isServer();
-                boolean validClass = classesDatum.getLevel(isServer) > 0;
+                boolean validClass = classesDatum.getLevel(true) > 0;
                 if (validClass) {
                     if (!someOverlevel) {
-                        if (classesDatum.usedPassivePoints() > classesDatum.totalPassivePoints(isServer) || classesDatum.usedActiveSkillPoints() > classesDatum.totalActiveSkillPoints(isServer)) {
+                        if (classesDatum.usedPassivePoints() > classesDatum.totalPassivePoints(true) || classesDatum.usedActiveSkillPoints() > classesDatum.totalActiveSkillPoints(true)) {
                             someOverlevel = true;
                         }
                     }
@@ -284,16 +350,20 @@ public class PlayerData {
                 }
             }
 
-        boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OVER_LEVEL);
-        if (someOverlevel && !hasOverlevelBuff) {
-            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OVER_LEVEL, player, 1000, null), true);
-        } else if (!someOverlevel && hasOverlevelBuff) {
-            player.buffManager.removeBuff(RPGBuffs.PASSIVES.OVER_LEVEL, true);
+            boolean hasOverlevelBuff = player.buffManager.hasBuff(RPGBuffs.PASSIVES.OVER_LEVEL);
+            if (someOverlevel && !hasOverlevelBuff) {
+                player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.OVER_LEVEL, player, 1000, null), true);
+            } else if (!someOverlevel && hasOverlevelBuff) {
+                player.buffManager.removeBuff(RPGBuffs.PASSIVES.OVER_LEVEL, true);
+            }
+
         }
     }
 
-    public void updateModifiersBuff(PlayerMob player) {
-        player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.MODIFIERS, player, 1000, null), true, true);
+    public void updateModifiersBuff(@NotNull PlayerMob player) {
+        if(player.isServer()) {
+            player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.MODIFIERS, player, 1000, null), true, true);
+        }
     }
 
     public static int MAX_EXP = 2000000000;
@@ -342,11 +412,15 @@ public class PlayerData {
         return getLevel() * 2;
     }
 
+    public int totalMasteryPoints() {
+        return getLevel() / 20;
+    }
+
     public int totalClassPoints() {
         return getLevel();
     }
 
-    public void setupPacket(PacketWriter writer) {
+    public void setupPacket(@NotNull PacketWriter writer) {
         writer.putNextString(playerName);
 
         // Exp
@@ -356,7 +430,11 @@ public class PlayerData {
         writer.putNextInt(resets);
 
         // Attribute Levels
-        writer.putNextInts(attributeLevels);
+        writer.putNextInts(attributePointsUsed);
+
+        // Mastery
+        writer.putNextInt(masterySkills.size());
+        writer.putNextInts(masterySkills.stream().mapToInt(Integer::intValue).toArray());
 
         // Class Levels
         writer.putNextInts(classLevels);
@@ -372,7 +450,8 @@ public class PlayerData {
         }
     }
 
-    public static PlayerData applyPacket(PacketReader reader) {
+    @NotNull
+    public static PlayerData applyPacket(@NotNull PacketReader reader) {
         PlayerData playerData = new PlayerData(reader.getNextString());
 
         // Exp
@@ -382,7 +461,14 @@ public class PlayerData {
         playerData.resets = reader.getNextInt();
 
         // Attribute Levels
-        playerData.attributeLevels = reader.getNextInts(Attribute.attributes.size());
+        playerData.attributePointsUsed = reader.getNextInts(Attribute.attributes.size());
+
+        // Mastery
+        int masterySize = reader.getNextInt();
+        int[] masteryArray = reader.getNextInts(masterySize);
+        for (int i : masteryArray) {
+            playerData.masterySkills.add(i);
+        }
 
         // Class Levels
         playerData.classLevels = reader.getNextInts(PlayerClass.classesList.size());
@@ -400,6 +486,7 @@ public class PlayerData {
         return playerData;
     }
 
+    @Nullable
     public static GameObject isGrabbableObject(Level level, int tileX, int tileY) {
         GameObject object = level.getObject(tileX, tileY);
 
@@ -436,6 +523,4 @@ public class PlayerData {
             equippedActiveSkill.restartCooldown();
         }
     }
-
-
 }

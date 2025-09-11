@@ -18,6 +18,7 @@ import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
 import necesse.entity.projectile.Projectile;
+import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
@@ -26,8 +27,8 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.Item;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.Skill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
@@ -167,6 +168,7 @@ public class FoxTransformation extends SimpleTranformationActiveSkill {
             super.clickRunServer(level, x, y, player);
 
             Projectile projectile = new MiniFireballProjectile(level, player, player.x, player.y, x, y, 200, 600, getDamage(player), 20);
+            projectile.setModifier(new ResilienceOnHitProjectileModifier(2));
             projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
 
             this.getLevel().entityManager.projectiles.addHidden(projectile);

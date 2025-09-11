@@ -13,7 +13,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -110,7 +110,7 @@ public class Judgment extends SimpleLevelEventActiveSkill {
             float knockback = (float) this.knockback * mod;
             mob.isServerHit(this.getTotalMobDamage(mod), (float) mob.getX() - this.x, (float) mob.getY() - this.y, knockback, this);
 
-            if (MobData.isWeakToHoly(mob)) {
+            if (MobData.isWeakToHoly(mob, ownerMob)) {
                 mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 5000, null), mob.isServer());
             }
         }

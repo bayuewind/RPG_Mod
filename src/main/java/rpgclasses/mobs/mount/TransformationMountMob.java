@@ -42,11 +42,6 @@ public class TransformationMountMob extends Mob implements ActiveMountAbility {
     }
 
     @Override
-    public void onSpawned(int posX, int posY) {
-        super.onSpawned(posX, posY);
-    }
-
-    @Override
     protected void doMountedLogic() {
         super.doMountedLogic();
         TransformationClassBuff.apply(this);
@@ -217,8 +212,9 @@ public class TransformationMountMob extends Mob implements ActiveMountAbility {
 
     @Override
     public boolean onMouseHover(GameCamera camera, PlayerMob perspective, boolean debug) {
-        if (isMounted()) {
-            return getRider().onMouseHover(camera, perspective, debug);
+        Mob rider = getRider();
+        if (rider != null) {
+            return rider.onMouseHover(camera, perspective, debug);
         } else {
             return false;
         }
@@ -288,5 +284,15 @@ public class TransformationMountMob extends Mob implements ActiveMountAbility {
     public void onBeforeHit(PlayerMob player, MobBeforeHitEvent event) {
     }
 
+    public void doResilienceGain(Mob attackedMob, float resilienceGain) {
+        doResilienceGain(this.getRider(), attackedMob, resilienceGain);
+    }
 
+    public static void doResilienceGain(Mob attacker, Mob attackedMob, float resilienceGain) {
+        if (attacker != null) {
+            if (attackedMob.canGiveResilience(attacker)) {
+                attacker.addResilience(resilienceGain);
+            }
+        }
+    }
 }

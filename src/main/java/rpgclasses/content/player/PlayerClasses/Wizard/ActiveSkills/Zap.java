@@ -17,7 +17,7 @@ import necesse.entity.trails.LightningTrail;
 import necesse.entity.trails.TrailVector;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.utils.RPGColors;

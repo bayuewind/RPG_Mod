@@ -21,7 +21,7 @@ import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
 import net.bytebuddy.asm.Advice;
 import rpgclasses.buffs.Interfaces.TransformationClassBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
@@ -141,7 +141,7 @@ public class MobPatches {
                 EquippedActiveSkill equippedActiveSkill = playerData.getInUseActiveSkillSlot();
 
                 if (equippedActiveSkill != null && equippedActiveSkill.getActiveSkill() instanceof SimpleTranformationActiveSkill && (!(mount instanceof SkillTransformationMountMob) || !((SimpleTranformationActiveSkill) equippedActiveSkill.getActiveSkill()).getMobStringID().equals(mount.getStringID()))) {
-                    equippedActiveSkill.startCooldown(player.getTime(), equippedActiveSkill.getActiveSkill().getLevel(playerData));
+                    equippedActiveSkill.startCooldown(playerData, player.getTime(), equippedActiveSkill.getActiveSkill().getLevel(playerData));
                     This.getServer().network.sendToAllClients(new UpdateClientEquippedActiveSkillsPacket(playerData));
                 }
 

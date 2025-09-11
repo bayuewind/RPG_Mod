@@ -5,11 +5,11 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.gfx.gameFont.FontManager;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.registry.RPGPackets;
+import rpgclasses.packets.PacketMobResetBuffTime;
 import rpgclasses.utils.RPGArea;
 import rpgclasses.utils.RPGColors;
 
@@ -36,11 +36,11 @@ public class VitalAura extends SimpleBuffPassive {
                     AphAreaList areaList = new AphAreaList(
                             new RPGArea(150, RPGColors.green)
                                     .setAttackerHealthMod(0.5F)
-                                    .setHealingArea(10 + playerData.getGrace(player))
+                                    .setHealingArea((int) (10 + playerData.getGrace(player)))
                     ).setOnlyVision(false);
                     areaList.execute(player, true);
 
-                    player.getServer().network.sendToClientsAtEntireLevel(new RPGPackets.ResetSkillTime(player.getPlayerSlot(), getBuffStringID()), player.getLevel());
+                    player.getServer().network.sendToClientsAtEntireLevel(new PacketMobResetBuffTime(player.getUniqueID(), getBuffStringID()), player.getLevel());
                 }
 
                 activeBuff.getGndData().setInt("time", time);

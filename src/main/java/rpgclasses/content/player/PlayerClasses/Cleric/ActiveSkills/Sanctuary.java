@@ -16,7 +16,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -138,7 +138,7 @@ public class Sanctuary extends SimpleLevelEventActiveSkill {
                                             ActiveBuff ab = new ActiveBuff(buffStringID, mob, 100, null);
                                             ab.getGndData().setFloat("healthRegen", healthRegen);
                                             mob.buffManager.addBuff(ab, true);
-                                        } else if (MobData.isWeakToHoly(mob)) {
+                                        } else if (MobData.isWeakToHoly(mob, owner)) {
                                             mob.buffManager.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, mob, 100, null), true);
                                         }
                                     }

@@ -10,7 +10,7 @@ import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.IceBallProjectile;
 import rpgclasses.utils.RPGUtils;

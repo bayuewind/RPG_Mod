@@ -5,7 +5,7 @@ import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.ItemRegistry;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
 import necesse.inventory.item.Item;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.content.player.Logic.Attribute;
 import rpgclasses.items.AttributeRing;
 import rpgclasses.items.RingsBox;
 import rpgclasses.items.ScrollOfOblivion;

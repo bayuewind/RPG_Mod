@@ -14,6 +14,7 @@ import necesse.entity.mobs.*;
 import necesse.entity.mobs.ai.behaviourTree.event.AIEvent;
 import necesse.entity.projectile.AncientBoneProjectile;
 import necesse.entity.projectile.Projectile;
+import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
@@ -114,6 +115,7 @@ public class LichSkeletonMob extends TransformationMountMob implements ActiveMou
         super.clickRunServer(level, x, y, player);
         PlayerData playerData = PlayerDataList.getPlayerData(player);
         Projectile projectile = new AncientBoneProjectile(player.x, player.y, x, y, new GameDamage(DamageTypeRegistry.MAGIC, playerData.getLevel() + playerData.getStrength(player) + 0.2F * playerData.getIntelligence(player)), player);
+        projectile.setModifier(new ResilienceOnHitProjectileModifier(2));
         projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
 
         player.getLevel().entityManager.projectiles.addHidden(projectile);

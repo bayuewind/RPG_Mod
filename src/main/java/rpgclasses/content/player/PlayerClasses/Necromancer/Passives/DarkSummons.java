@@ -1,12 +1,10 @@
 package rpgclasses.content.player.PlayerClasses.Necromancer.Passives;
 
 import necesse.engine.registries.DamageTypeRegistry;
-import necesse.entity.mobs.GameDamage;
-import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.registry.RPGBuffs;
 
 public class DarkSummons extends SimpleBuffPassive {

@@ -16,7 +16,6 @@ import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.UpcomingPlayerClass;
-import rpgclasses.settings.RPGSettings;
 
 import java.awt.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -66,7 +65,7 @@ public class ClassComponent extends FormContentBox {
         int center = width / 2;
         FormContentIconButton buttonAdd = (FormContentIconButton) this.addComponent(new FormContentIconButton(center + 4, 68 + 4, FormInputSize.SIZE_24, ButtonColor.BASE, RPGResources.UI_TEXTURES.add_icon[style])
                 .onClicked(c -> {
-                    if(onMod.test(classLevel.get() + 1)) {
+                    if (onMod.test(classLevel.get() + 1)) {
                         int newLevel = classLevel.incrementAndGet();
                         levelText.setLocalization(getLevelText(newLevel));
                         levelText.setColor(newLevel == currentClassLevel ? sameLevel : differentLevel);

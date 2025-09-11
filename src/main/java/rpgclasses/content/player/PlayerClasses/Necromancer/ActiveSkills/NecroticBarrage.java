@@ -3,7 +3,7 @@ package rpgclasses.content.player.PlayerClasses.Necromancer.ActiveSkills;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.levelevents.NecroticExplosionLevelEvent;
 import rpgclasses.utils.RPGUtils;
@@ -22,7 +22,7 @@ public class NecroticBarrage extends ActiveSkill {
     @Override
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
         super.run(player, playerData, activeSkillLevel, seed, isInUSe);
-        int damage = 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel;
+        float damage = 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel;
         float poisonDamage = damage * 0.2F;
         RPGUtils.getAllDamageableFollowers(player, 2048, RPGUtils.isNecroticFollowerFilter(player))
                 .forEach(

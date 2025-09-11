@@ -8,6 +8,7 @@ import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.WormMobBody;
 import necesse.entity.mobs.WormMobHead;
 import necesse.entity.mobs.hostile.bosses.NightSwarmBatMob;
@@ -23,7 +24,9 @@ import necesse.level.maps.biomes.swamp.SwampBiome;
 import necesse.level.maps.biomes.temple.TempleLevel;
 import necesse.level.maps.incursion.DesertDeepCaveIncursionLevel;
 import necesse.level.maps.incursion.SnowDeepCaveIncursionLevel;
+import org.jetbrains.annotations.Nullable;
 import rpgclasses.content.MobClass;
+import rpgclasses.content.player.MasterySkills.Mastery;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -274,16 +277,24 @@ public class MobData {
     }
 
     public static boolean isDemonic(Mob mob) {
+        return isDemonic(mob, null);
+    }
+
+    public static boolean isDemonic(Mob mob, @Nullable Mob attacker) {
+        if (attacker instanceof PlayerMob) {
+            PlayerData playerData = PlayerDataList.getPlayerData((PlayerMob) attacker);
+            if (playerData.hasMasterySkill(Mastery.INQUISITOR)) return true;
+        }
         return MobData.demonicMobs.contains(mob.getStringID());
     }
 
-    public boolean isWeakToHoly() {
-        return isWeakToHoly(mob);
+    public boolean isWeakToHoly(@Nullable Mob attacker) {
+        return isWeakToHoly(mob, attacker);
     }
 
-    public static boolean isWeakToHoly(Mob mob) {
-        if (MobData.isUndead(mob) || MobData.isDemonic(mob)) return true;
+    public static boolean isWeakToHoly(Mob mob, @Nullable Mob attacker) {
+        if (MobData.isUndead(mob) || MobData.isDemonic(mob, attacker)) return true;
         Mob mount = mob.getMount();
-        return mount != null && isWeakToHoly(mount);
+        return mount != null && isWeakToHoly(mount, attacker);
     }
 }

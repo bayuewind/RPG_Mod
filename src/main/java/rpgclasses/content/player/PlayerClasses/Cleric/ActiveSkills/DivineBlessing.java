@@ -5,7 +5,7 @@ import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGArea;
 
@@ -21,7 +21,7 @@ public class DivineBlessing extends ActiveSkill {
 
         AphAreaList areaList = new AphAreaList(
                 new RPGArea(300, getColor())
-                        .setHealingArea(20 + 3 * playerData.getGrace(player) * activeSkillLevel)
+                        .setHealingArea((int) (20 + 3 * playerData.getGrace(player) * activeSkillLevel))
         ).setOnlyVision(false);
         areaList.execute(player, false);
     }

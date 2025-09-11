@@ -107,7 +107,7 @@ public class NecromancerSkeletonWarriorMob extends NecroticFollowingMob {
 
     @Override
     public int getHealthStat(PlayerMob player, PlayerData playerData) {
-        return 8 * (playerData.getLevel() + playerData.getIntelligence(player));
+        return (int) (8 * (playerData.getLevel() + playerData.getIntelligence(player)));
     }
 
     @Override

@@ -17,9 +17,9 @@ import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.SkillComponent;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.Passives.Passive;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
 import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerDataList;
 

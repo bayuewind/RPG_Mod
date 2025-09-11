@@ -15,7 +15,7 @@ import necesse.inventory.item.Item;
 import necesse.level.maps.LevelObjectHit;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 
@@ -65,7 +65,7 @@ public class FlamingSteps extends SimpleBuffPassive {
                         break;
                     }
                     Mob mount = activeBuff.owner.getMount();
-                    if(mount != null && mount.buffManager.hasBuff(sprintBuffID)) {
+                    if (mount != null && mount.buffManager.hasBuff(sprintBuffID)) {
                         sprinting = true;
                         break;
                     }

@@ -7,7 +7,7 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 
 public class SanctifiedArmor extends SimpleBuffPassive {
     public SanctifiedArmor(int levelMax, int requiredClassLevel) {

@@ -25,7 +25,7 @@ public class RPGSkillUIManager extends CustomUIManager<RPGSkillUIForm> {
     }
 
     public void updatePosition(MainGameFormManager mainGameFormManager) {
-        if(skillSlot < ActiveSkillsEntry.showManySlots) {
+        if (skillSlot < ActiveSkillsEntry.showManySlots) {
             int columns = ActiveSkillsEntry.showManySlots == 6 ? 1 : 2;
             int row = skillSlot / columns;
             int column = skillSlot % columns;

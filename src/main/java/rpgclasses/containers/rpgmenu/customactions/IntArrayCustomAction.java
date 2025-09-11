@@ -12,6 +12,7 @@ public abstract class IntArrayCustomAction extends ContainerCustomAction {
     public void runAndSend(int[] values) {
         Packet content = new Packet();
         PacketWriter writer = new PacketWriter(content);
+        if (arrayLength() == -1) writer.putNextInt(values.length);
         for (int value : values) {
             writer.putNextInt(value);
         }
@@ -19,8 +20,9 @@ public abstract class IntArrayCustomAction extends ContainerCustomAction {
     }
 
     public void executePacket(PacketReader reader) {
-        int[] values = new int[arrayLength()];
-        for (int i = 0; i < arrayLength(); i++) {
+        int size = arrayLength() == -1 ? reader.getNextInt() : arrayLength();
+        int[] values = new int[size];
+        for (int i = 0; i < size; i++) {
             values[i] = reader.getNextInt();
         }
         this.run(values);
@@ -28,5 +30,7 @@ public abstract class IntArrayCustomAction extends ContainerCustomAction {
 
     protected abstract void run(int[] var1);
 
-    public abstract int arrayLength();
+    public int arrayLength() {
+        return -1;
+    }
 }

@@ -8,9 +8,9 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.particle.Particle;
 import rpgclasses.buffs.Interfaces.DodgeClassBuff;
+import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
-import rpgclasses.registry.RPGBuffs;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.registry.RPGModifiers;
 import rpgclasses.utils.RPGColors;
 
@@ -32,7 +32,7 @@ public class HuntersInstinct extends SimpleBuffActiveSkill {
 
     @Override
     public int getBaseCooldown() {
-        return 30000;
+        return 26000;
     }
 
     @Override
@@ -58,11 +58,9 @@ public class HuntersInstinct extends SimpleBuffActiveSkill {
 
         @Override
         public void onDodge(ActiveBuff activeBuff, MobBeforeHitEvent event) {
-            Mob mob = event.attacker.getFirstAttackOwner();
-            if (mob != null) {
-                ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, mob, 5000, null);
-                ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
-                mob.addBuff(ab, activeBuff.owner.isServer());
+            Mob attacker = event.attacker.getFirstAttackOwner();
+            if (attacker != null) {
+                MarkedBuff.markMob(((PlayerMob) activeBuff.owner), attacker, 5000);
             }
         }
     }

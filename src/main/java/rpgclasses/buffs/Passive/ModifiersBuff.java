@@ -8,14 +8,14 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import rpgclasses.buffs.Interfaces.DodgeClassBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
+import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
 import rpgclasses.data.PlayerClassData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.packets.ShowDodgePacket;
-import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
 
 import java.util.List;
@@ -30,7 +30,7 @@ public class ModifiersBuff extends PassiveBuff {
             PlayerMob player = (PlayerMob) activeBuff.owner;
             PlayerData playerData = PlayerDataList.getPlayerData(player);
             for (Attribute attribute : Attribute.attributesList) {
-                int attributeLevel = attribute.getLevel(playerData, player);
+                float attributeLevel = attribute.getLevel(playerData, player);
                 if (attributeLevel > 0) {
                     attribute.applyBuff(activeBuff, attributeLevel);
                 }
@@ -58,9 +58,8 @@ public class ModifiersBuff extends PassiveBuff {
             if (event.attacker.getAttackOwner() == activeBuff.owner) {
                 float focusChance = activeBuff.owner.buffManager.getModifier(RPGModifiers.FOCUS_CHANCE);
                 if (focusChance >= 1F || (focusChance > 0 && GameRandom.globalRandom.getChance(focusChance))) {
-                    ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, event.target, 5000, null);
-                    ab.getGndData().setString("playerAttacker", ((PlayerMob) activeBuff.owner).playerName);
-                    event.target.addBuff(ab, activeBuff.owner.isServer());
+                    MarkedBuff.markMob(((PlayerMob) activeBuff.owner), event.target, 5000);
+
                 }
             }
         }

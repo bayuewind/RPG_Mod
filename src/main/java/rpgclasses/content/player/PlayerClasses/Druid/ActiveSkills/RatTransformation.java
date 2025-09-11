@@ -33,7 +33,7 @@ import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import rpgclasses.RPGResources;
 import rpgclasses.buffs.MagicPoisonBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;

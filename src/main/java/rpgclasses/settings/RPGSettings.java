@@ -13,6 +13,22 @@ public class RPGSettings {
     public static ModSettings init() {
         try {
             modSettings = new CustomModSettings()
+                    .addParagraph("client_text")
+                    .addParagraph("server_text")
+
+                    //////////////////////////////////////////////////////////////////////////
+                    .addSpace(12) ////////////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////
+
+                    .addTextSeparator("default_section")
+                    .addParagraph("default_text")
+                    .addBooleanSetting("showClassIcons", true)
+                    .addBooleanSetting("twelveSkillSlots", false)
+
+                    //////////////////////////////////////////////////////////////////////////
+                    .addSpace(12) ////////////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////
+
                     .addTextSeparator("experience_section")
                     .addParagraph("experience_text")
 
@@ -80,30 +96,37 @@ public class RPGSettings {
     }
 
     public static int startingExperience() {
-        return settingsGetter.getInt("startingExperience");
-    }
-
-    public static int experienceReqInc() {
-        return settingsGetter.getInt("experienceReqInc");
+        Object value = settingsGetter.get("startingExperience");
+        return value == null ? 0 : (int) value;
     }
 
     public static int firstExperienceReq() {
-        return settingsGetter.getInt("firstExperienceReq");
+        Object value = settingsGetter.get("firstExperienceReq");
+        return value == null ? 10000 : (int) value;
+    }
+
+    public static int experienceReqInc() {
+        Object value = settingsGetter.get("experienceReqInc");
+        return value == null ? 10000 : (int) value;
     }
 
     public static int squareExperienceReqInc() {
-        return settingsGetter.getInt("squareExperienceReqInc");
+        Object value = settingsGetter.get("squareExperienceReqInc");
+        return value == null ? 10000 : (int) value;
     }
 
     public static int cubeExperienceReqInc() {
-        return settingsGetter.getInt("cubeExperienceReqInc");
+        Object value = settingsGetter.get("cubeExperienceReqInc");
+        return value == null ? 10000 : (int) value;
     }
 
     public static int multiClass() {
-        return settingsGetter.getInt("multiClass");
+        Object value = settingsGetter.get("multiClass");
+        return value == null ? 0 : (int) value;
     }
 
     public static boolean classEnabled(PlayerClass playerClass) {
-        return settingsGetter.getBoolean(playerClass.stringID + "_class");
+        Object value = settingsGetter.get(playerClass.stringID + "_class");
+        return value == null || (boolean) value;
     }
 }

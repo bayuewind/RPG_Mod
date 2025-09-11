@@ -16,7 +16,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -42,8 +42,8 @@ public class Smite extends ActiveSkill {
         Mob target = RPGUtils.findBestTarget(player, 300);
 
         if (target != null) {
-            int damage = 4 * playerData.getLevel() + 2 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player));
-            if (MobData.isWeakToHoly(target)) damage *= 2;
+            float damage = 4 * playerData.getLevel() + 2 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player));
+            if (MobData.isWeakToHoly(target, player)) damage *= 2;
             target.isServerHit(new GameDamage(RPGDamageType.HOLY, damage), player.x, player.y, 0, player);
             RPGBuffs.applyStun(target, 300);
         }

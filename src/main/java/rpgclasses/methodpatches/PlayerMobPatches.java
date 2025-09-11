@@ -36,7 +36,6 @@ public class PlayerMobPatches {
         static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) LoadData loadData) {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
             playerData.loadData(This, loadData);
-            playerData.updateAllBuffs(This);
         }
 
     }

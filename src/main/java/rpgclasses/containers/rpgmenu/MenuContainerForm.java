@@ -30,10 +30,12 @@ import rpgclasses.containers.rpgmenu.entries.*;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
+import rpgclasses.settings.RPGSettings;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -44,13 +46,15 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
 
     private final Form principalForm;
 
-    public static boolean showAllClassesEntries = false;
+    public static boolean showClassIcons = RPGSettings.settingsGetter.getBoolean("showClassIcons");
 
     public static final MenuEntry[] menuEntries = new MenuEntry[]{
             new AttributesEntry(),
             new ActiveSkillsEntry(),
             new ClassesEntry()
     };
+
+    public static final MenuEntry masteryEntry = new MasteryEntry();
 
     public static MenuEntry actualEntry = menuEntries[0];
     public FormContentBox entries;
@@ -107,21 +111,28 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
         entries.clearComponents();
         PlayerData playerData = PlayerDataList.getPlayerData(player);
 
-        ArrayList<MenuEntry> showEntries = Arrays.stream(menuEntries).collect(Collectors.toCollection(ArrayList::new));
+        List<MenuEntry> showEntries = Arrays.stream(menuEntries).collect(Collectors.toCollection(ArrayList::new));
+
+        if (playerData.totalMasteryPoints() > 0) {
+            showEntries.add(1, masteryEntry);
+        }
+
         for (int i = 0; i < playerData.getClassLevels().length; i++) {
             PlayerClass playerClass = PlayerClass.classesList.get(i);
-            if (playerClass.isEnabled() && (showAllClassesEntries || (classLevels == null ? playerData.getClassLevel(i) : classLevels[i]) > 0)) {
+            if (playerClass.isEnabled() && (classLevels == null ? playerData.getClassLevel(i) : classLevels[i]) > 0) {
                 showEntries.add(new ClassEntry("classes." + playerClass.stringID, playerClass));
             }
         }
 
-        if(showEntries.stream().noneMatch(entry -> Objects.equals(entry.name, actualEntry.name))) showEntries.add(actualEntry);
+        if (showEntries.stream().noneMatch(entry -> Objects.equals(entry.name, actualEntry.name)))
+            showEntries.add(actualEntry);
 
+        int width = 190 - 12;
+        int height = showClassIcons ? 34 : 28;
+        int space = 4;
         for (int i = 0; i < showEntries.size(); i++) {
             MenuEntry menuEntry = showEntries.get(i);
-            int width = 190 - 12;
-            int height = 34;
-            entries.addComponent((new FormCustomButton(6, 6 + i * (height + 6), width, height) {
+            entries.addComponent((new FormCustomButton(6, space + i * (height + space), width, height) {
 
                 @Override
                 public void draw(Color color, int i, int i1, PlayerMob playerMob) {
@@ -143,7 +154,7 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
                     FontManager.bit.drawString(drawX, getY() + (height - 16) / 2F, drawText, fontOptions);
 
                     GameTexture gameTexture = menuEntry.getTexture();
-                    if (gameTexture != null) {
+                    if (gameTexture != null && (!menuEntry.name.startsWith("classes.") || showClassIcons)) {
                         gameTexture.initDraw().size(height).draw(6, getY());
                     }
                 }
@@ -157,17 +168,17 @@ public class MenuContainerForm extends ContainerFormSwitcher<MenuContainer> {
     }
 
     public void changeEntry(String entryName, PlayerMob player) {
-        if(entryName.startsWith("classes.")) {
+        if (entryName.startsWith("classes.")) {
             String playerClassStringID = entryName.replace("classes.", "");
             PlayerClass playerClass = PlayerClass.classesList.stream().filter(pClass -> Objects.equals(pClass.stringID, playerClassStringID)).findFirst().orElse(null);
-            if(playerClass != null) changeEntry(new ClassEntry(entryName, playerClass), player);
+            if (playerClass != null) changeEntry(new ClassEntry(entryName, playerClass), player);
         } else {
             changeEntry(Arrays.stream(menuEntries).filter(entry -> Objects.equals(entry.name, entryName)).findAny().orElse(null), player);
         }
     }
 
     public void changeEntry(MenuEntry entry, PlayerMob player) {
-        if(entry != null) actualEntry = entry;
+        if (entry != null) actualEntry = entry;
         updateContent(container, player);
         updateEntries(container, player, null);
     }

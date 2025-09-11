@@ -12,6 +12,9 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.gameFont.FontManager;
+import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;
 
@@ -58,6 +61,18 @@ public class MarkedBuff extends Buff {
         }
     }
 
+    public static void markMob(PlayerMob attacker, Mob target, int duration) {
+        if (attacker.isServer()) {
+            ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, target, duration, attacker);
+            ab.getGndData().setString("playerAttacker", attacker.playerName);
+            PlayerData playerData = PlayerDataList.getPlayerData(attacker);
+            if (playerData.hasMasterySkill(Mastery.MARKSMAN)) ab.getGndData().setBoolean("markedToAll", true);
+            if (playerData.hasMasterySkill(Mastery.HUNTER))
+                target.addBuff(new ActiveBuff(RPGBuffs.CONSTRAINED, target, 5F, null), true);
+            target.addBuff(ab, true);
+        }
+    }
+
     public static boolean isMarked(PlayerMob attacker, Mob target) {
         if (attacker == null || target == null) {
             return false;
@@ -66,7 +81,7 @@ public class MarkedBuff extends Buff {
             return false;
         }
         ActiveBuff activeBuff = target.buffManager.getBuff(RPGBuffs.MARKED);
-        return Objects.equals(attacker.playerName, activeBuff.getGndData().getString("playerAttacker"));
+        return activeBuff.getGndData().getBoolean("markedToAll") || Objects.equals(attacker.playerName, activeBuff.getGndData().getString("playerAttacker"));
     }
 
     @Override

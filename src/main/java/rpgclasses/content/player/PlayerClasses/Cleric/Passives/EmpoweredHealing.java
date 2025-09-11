@@ -11,7 +11,7 @@ import necesse.inventory.item.toolItem.ToolItem;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.buffs.Skill.SecondaryPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.PlayerDataList;
 
 public class EmpoweredHealing extends SimpleBuffPassive {

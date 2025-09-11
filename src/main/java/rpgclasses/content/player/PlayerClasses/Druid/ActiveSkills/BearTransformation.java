@@ -30,10 +30,11 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
+import rpgclasses.utils.RPGArea;
 import rpgclasses.utils.RPGColors;
 
 import java.awt.*;
@@ -148,7 +149,10 @@ public class BearTransformation extends SimpleTranformationActiveSkill {
             int skillLevel = getActualSkillLevel();
 
             AphAreaList areaList = new AphAreaList(
-                    new AphArea(120, colorArea)
+                    new RPGArea(120, colorArea)
+                            .addOnTargetDamaged(
+                                    target -> doResilienceGain(target, 4)
+                            )
                             .setDebuffArea(500 * skillLevel, AphBuffs.STUN.getStringID())
                             .setDamageArea(new GameDamage(DamageTypeRegistry.MELEE, 4 * playerData.getLevel() + 4 * playerData.getStrength(player) * skillLevel))
             );

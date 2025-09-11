@@ -12,10 +12,9 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
-import rpgclasses.registry.RPGBuffs;
 import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
@@ -41,9 +40,7 @@ public class HuntersMark extends SimpleBuffActiveSkill {
             validMobs.sort(Comparator.comparingInt(Mob::getMaxHealth).reversed());
 
             Mob target = validMobs.get(0);
-            ActiveBuff ab = new ActiveBuff(RPGBuffs.MARKED, target, getDuration(activeSkillLevel), null);
-            ab.getGndData().setString("playerAttacker", player.playerName);
-            target.addBuff(ab, true);
+            MarkedBuff.markMob(player, target, getDuration(activeSkillLevel));
         }
     }
 

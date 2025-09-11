@@ -33,23 +33,23 @@ public class PrincipalPassiveBuff extends PassiveSkillBuff {
         return PlayerDataList.getPlayerData(player).getLevel();
     }
 
-    public int getEndurance(PlayerMob player) {
+    public float getEndurance(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getEndurance(player);
     }
 
-    public int getSpeed(PlayerMob player) {
+    public float getSpeed(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getSpeed(player);
     }
 
-    public int getStrength(PlayerMob player) {
+    public float getStrength(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getStrength(player);
     }
 
-    public int getIntelligence(PlayerMob player) {
+    public float getIntelligence(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getIntelligence(player);
     }
 
-    public int getGrace(PlayerMob player) {
+    public float getGrace(PlayerMob player) {
         return PlayerDataList.getPlayerData(player).getGrace(player);
     }
 

@@ -8,8 +8,8 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import rpgclasses.buffs.Skill.PassiveActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimplePassiveBuffActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimplePassiveBuffActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
@@ -73,7 +73,7 @@ public class ArcaneOverload extends SimplePassiveBuffActiveSkill {
                 PlayerData playerData = PlayerDataList.getPlayerData(player);
                 for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
                     if (equippedActiveSkill.isSameSkill(skill)) {
-                        equippedActiveSkill.startCooldown(player.getTime(), level);
+                        equippedActiveSkill.startCooldown(playerData, player.getTime(), level);
                     }
                 }
             }

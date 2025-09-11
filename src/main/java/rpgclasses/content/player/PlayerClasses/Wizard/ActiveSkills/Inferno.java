@@ -7,7 +7,7 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.IgnitedBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 

@@ -20,10 +20,10 @@ import necesse.gfx.GameResources;
 import necesse.gfx.gameFont.FontManager;
 import necesse.level.maps.Level;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
+import rpgclasses.packets.PacketMobResetBuffTime;
 import rpgclasses.registry.RPGBuffs;
-import rpgclasses.registry.RPGPackets;
 import rpgclasses.utils.RPGColors;
 import rpgclasses.utils.RPGUtils;
 
@@ -56,7 +56,7 @@ public class Stormbound extends SimpleBuffPassive {
                         player.getServer().network.sendToClientsAtEntireLevel(new LightningPacket(target.getX(), target.getY()), player.getLevel());
                     }
 
-                    player.getServer().network.sendToClientsAtEntireLevel(new RPGPackets.ResetSkillTime(player.getPlayerSlot(), getBuffStringID()), player.getLevel());
+                    player.getServer().network.sendToClientsAtEntireLevel(new PacketMobResetBuffTime(player.getUniqueID(), getBuffStringID()), player.getLevel());
                 }
 
                 activeBuff.getGndData().setInt("time", time);

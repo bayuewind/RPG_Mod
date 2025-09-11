@@ -36,7 +36,7 @@ public class UpdateClientExpPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        if(client.getPlayer() != null) {
+        if (client.getPlayer() != null) {
             PlayerData playerData = PlayerDataList.getPlayerData(name, false);
             playerData.loadDataExp(exp);
             if (Objects.equals(client.getPlayer().playerName, name)) {

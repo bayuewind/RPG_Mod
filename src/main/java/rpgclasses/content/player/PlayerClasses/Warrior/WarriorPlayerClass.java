@@ -1,6 +1,12 @@
 package rpgclasses.content.player.PlayerClasses.Warrior;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatModifierBuff;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatPercentModifierBuff;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Warrior.ActiveSkills.Ground.GroundDestruction;
@@ -9,12 +15,6 @@ import rpgclasses.content.player.PlayerClasses.Warrior.Passives.LastBreath;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.UnleashingHaste;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.UnleashingRage;
 import rpgclasses.content.player.PlayerClasses.Warrior.Passives.Unyielding;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.utils.RPGColors;
 
 public class WarriorPlayerClass extends PlayerClass {
@@ -69,7 +69,7 @@ public class WarriorPlayerClass extends PlayerClass {
 
         skillsList.addSkill(new BasicPassive(
                 "regeneration", "#00ff00", 10, 1,
-                new FloatModifierBuff(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.2F)
+                new FloatModifierBuff(BuffModifiers.COMBAT_HEALTH_REGEN_FLAT, 0.4F)
         ));
         skillsList.addSkill(new BasicPassive(
                 "muscles", "#ff6600", 10, 1,

@@ -185,7 +185,7 @@ phoenixspirit=フェニックススピリット
 unleashingrage=各レベルで提供：\n\n失われた体力10%ごとに+1%の全ダメージ
 unleashinghaste=各レベルで提供：\n\n失われた体力10%ごとに+1%の移動速度
 unyielding=各レベルで提供：\n\n体力が20%未満の場合、攻撃速度+5%、被ダメージ-5%
-lastbreath=死ぬ代わりに、§a[[3 x <skilllevel>]]秒間§0無敵になります\n時間が経過すると死にます
+lastbreath=死亡時、あなたは§a[[3 x <skilllevel>]]秒§0の無敵時間を得ます\n時間終了後、あなたは死亡します
 
 // レンジャー
 plasmagrenade=8回の遠距離攻撃ごとに、武器のダメージの§i[[30 x <skilllevel>]]%§0を与える誘導爆発物を発射します
@@ -210,7 +210,7 @@ endlesslegion=このスキルの4レベルごとに、最大召喚数が+1され
 lichborn=死ぬと、まだ§bリッチ§0でない場合は生き残り、体力の§a[[10 x <skilllevel>]]%§0を回復します\n次の§a[[120 - 6 x <skilllevel>]]秒間§0、あなたは§bリッチ§0（スケルトン）になります\n\n\n§bリッチ：§0アンデッド変身\n\nアイテムを使用できません\n+100%の被ダメージ\n\n[input=transformationability1]を押して、§i[[<playerlevel> + <strength> + 0.2 x <intelligence>]]の魔法ダメージ§0を与える骨を撃ちます
 
 // Cleric
-vitalaura=§a[[15 - <skilllevel>]]秒§0ごとに、あなたの周りに魔法の回復オーラを放ち、§a[[10 + <grace>]]の体力§0を回復します\nまた、その半分の量であなたを回復します
+vitalaura=§a[[15 - <skilllevel>]]秒§0ごとに、あなたの周りに魔法の回復オーラを放ち、§a[[10 + <grace> ↓]]の体力§0を回復します\nまた、その半分の量であなたを回復します
 divinejudge=魔法ダメージボーナスは聖なるダメージに§a[[5 x <skilllevel>]]%§0影響します
 empoweredhealing=あなた自身または味方を魔法で回復すると、3秒間、彼らのダメージが§a[[5 x <skilllevel>]]%§0増加します
 sanctifiedmind=魔法の回復は、行われた回復の§a[[5 x <skilllevel>]]%§0に等しいマナも回復します
@@ -218,7 +218,7 @@ sanctifiedarmor=魔法の回復は、行われた回復の§a[[2 x <skilllevel>]
 radiantexpansion=あなた自身または味方を魔法で回復すると、回復したターゲットの近くの敵に、回復の§a[[5 x <skilllevel>]]%§0を聖なるダメージとして与えます
 
 // Druid
-naturesfavor=草の上に立っている間、毎秒+[[<skilllevel>]]の体力再生を得る
+naturesfavor=草の上に立っている間、毎秒+§a[[2 x <skilllevel>]]の体力再生§0を得る
 primalburst=変身後最初の5秒間、ダメージと速度が[[6 x <skillevel>]]%増加する
 phoenixspirit=機能するには少なくとも4ポイント必要です:\n\nアクティブスキルで変身中に死亡した場合、代わりに§a[4 + 8 x <skilllevel>]]%§0の体力で生き残り、そのスキルは1時間のクールダウンに入ります\n\nすでに1分以上のクールダウン中の§a[[0.25 x <skilllevel> ↓]]変身スキル§0がある場合は発動しません
 
@@ -243,8 +243,8 @@ intimidation=威嚇
 objectthrowing=オブジェクト投げ
 
 // レンジャー
-shortdash=ショートダッシュ
-longdash=ロングダッシュ
+shortdash=ショートダッシュを実行します\nスタミナを15%消費します
+longdash=ロングダッシュを実行します\nスタミナを25%消費します
 lethalshot=リーサルショット
 venomshot=ベノムショット
 explosiveshot=爆発ショット
@@ -253,7 +253,7 @@ shotsrampage=ショットランページ
 huntersmark=ハンターズマーク
 beartrap=ベアトラップ
 
-huntersinstinct=ハンターズインスティンクト
+huntersinstinct=次の12秒間、§7回避チャンス§0が§a[[5 x <skilllevel>]]%§0増加します\n回避した敵を5秒間§hマーク§0します
 arrowstorm=アローストーム
 
 // ウィザード
@@ -274,7 +274,7 @@ lightning=ライトニング
 // ネクロマンサー
 skeletonhorde=スケルトンホード
 skeletonwarrior=スケルトンウォリアー
-sacrifice=犠牲
+sacrifice=最も近い壊死性の召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]]の体力§0を回復します
 siegecry=シージクライ
 
 boneslingerhorde=ボーンスリンガーホード
@@ -287,7 +287,7 @@ necroticbarrage=ネクロティックバラージ
 
 // Cleric
 smite=スマイト
-divineblessing=神の祝福
+divineblessing=あなたとあなたの味方に§a[[20 + 3 x <grace> x <skilllevel> ↓]]の体力§0を回復させる魔法の回復オーラ\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
 purify=浄化
 lightinfusion=光の注入
 holyguard=聖なる守護者
@@ -303,89 +303,49 @@ queenbeetransformation=女王蜂変身
 beartransformation=クマ変身
 foxtransformation=キツネ変身
 rattransformation=ネズミ変身
-treanttransformation=トレント変身
+treanttransformation=トレントに変身するのに4秒かかります\n\n移動速度: 0\n-§a[50 + 5 <skilllevel>]%§0 被ダメージ\n+50% アーマー\n3秒間隠れていると敵はあなたを無視します\n\n[input=transformationability1]を押してランダムな種を撃つ: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0をランダムな効果で与えます (1 レジリエンス獲得)\n\n[input=transformationability2]を押して§9ドライアドの苗木§0を召喚します\n\n[input=trinketability]を長押しして、移動中に表示してスプリント
 
 
-[activeskillsdesc]
-
-// 戦士
-fury=次の6秒間、近接ダメージと攻撃速度が§a[[20 x <skilllevel>]]%§0増加します
-recovery=次の10秒間、戦闘中の体力再生を大幅に向上させ、持続時間中に§a[[20 + <endurance> x <skilllevel>]]の体力§0を回復します
-provocation=次の§a[[2 x <skilllevel>]]秒間§0、近くの敵に攻撃を集中させます
-berserkercharge=短距離を突進し、通り過ぎたすべての敵に§i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]]のダメージ§0を与えます\nスタミナを50%消費します
-groundslam=§i[[5 x <strength>]]の近接ダメージ§0を与え、§a[[1 x <skilllevel>]]秒間§0§9スタン§0させる範囲攻撃
-grounddestruction=§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]]の近接ダメージ§0を与え、2秒間§9スタン§0させる範囲攻撃
-parry=0.5秒間無敵になり、受けた元のダメージの500%を返します\nスタミナを100%消費します
-battlecry=次の10秒間、あなたと近くの味方の全ダメージと移動速度が§a[[10 x <skilllevel>]]%§0増加します
-
-ironguard=§a[[4 x <skilllevel>]]秒間§0、被ダメージ-50%
-intimidation=次の§a[[<skilllevel>]]秒間§0、近くの敵を逃げさせます
-
-objectthrowing=ステップ1：目の前のオブジェクトをつかむ\nステップ2：前方に投げて、§i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]]の近接ダメージ§0を与えます
-
-// レンジャー
-shortdash=100-<strength>のダッシュを実行します\nスタミナを15%消費します
-longdash=150-<strength>のダッシュを実行します\nスタミナを25%消費します
-lethalshot=最も近い敵に§hリーサルアロー§0を撃ち、§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]]のレンジャーダメージ§0を与えます
-venomshot=最も近い敵に§bベノムアロー§0を撃ち、§i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]]のレンジャーダメージ§0を与えます
-explosiveshot=最も近い敵に§i爆発矢§0を撃ち、§i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]]のレンジャーダメージ§0を与えます
-
-shotsrampage=ショットランページのスタックが少なくとも1つある場合、遠距離攻撃で敵に命中すると、5秒間追加のスタックが1つ付与されます\nショットランページの各スタックは攻撃速度を5%増加させ、最大30スタックまで
-huntersmark=最も体力の高い近くの敵を10秒間§hマーク§0します\nマークされたターゲットを倒すと、5秒間、遠距離攻撃速度と移動速度が§a+[[20 x <skilllevel>]]%§0増加します
-beartrap=地面にベアトラップを設置します。トリガーされるか20秒後に消えます\n敵がトリガーすると、§i[[10 x <playerlevel>]]のダメージ§0を受け、5秒間閉じ込められます
-
-huntersinstinct=次の12秒間、§7回避チャンス§0が§a[[10 x <skilllevel>]]%§0増加します\n回避した敵を5秒間§hマーク§0します
-arrowstorm=近くの各敵に基本的な矢を撃ち、各矢で§i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]のレンジャーダメージ§0を与えます
-
-// ウィザード
-arcaneoverload=アクティブな間、魔法攻撃速度が§a[[30 x <skilllevel>]]%§0増加しますが、移動できなくなります\nマナがなくなると終了するか、再度使用すると終了します\n毎秒§a[[10 + 2 x <skilllevel>]]のマナを消費します
-manarecharge=アクティブな間、マナ再生が+1.4および§a[[50 x <skilllevel>]]%§0増加しますが、麻痺して2倍のダメージを受けます\n再度使用すると終了します
-firedance=4つの§b踊る炎§0を召喚し、それぞれが§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n5秒ごとに1つ追加で召喚します\nすべての召喚は、スキルがアクティブになってから20秒後に消えます\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
-iceball=最も近い敵に§aアイスボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[50 + 10 x <skilllevel>]]のマナを消費します
-zap=2秒間モブ間をジャンプするザップを開始し、§i[[<playerlevel> + <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、1秒間スタンさせます\n§a[[10 + 2 x <skilllevel>]]のマナを消費します
-
-teleport=目の前にテレポートします\nマナを10消費します
-inferno=近くのすべての敵を燃やし、10秒間、毎秒§i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の火炎ダメージ§0を与えます\n§a[[40 + 8 x <skilllevel>]]のマナを消費します
-fireenchantment=次の10秒間、あなたと近くの味方からの攻撃が敵を燃やし、5秒間、毎秒ダメージの§a[[5 x <skilllevel>]]%§0を与えます\n§a[[20 + 4 x <skilllevel>]]のマナを消費します
-iceenchantment=次の10秒間、あなたと近くの味方からの攻撃が敵を§a[[2 x <skilllevel>]]秒間§0凍結させます\nマナを20消費します
-
-fireball=最も近い敵に§iファイアボール§0を投げ、§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n§a[[80 + 16 x <skilllevel>]]のマナを消費します
-lightning=1秒間モブ間をジャンプするライトニングを開始し、§i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与え、2秒間スタンさせます\n同じターゲットに複数回ヒットすることはできません\n§a[[30 + 6 x <skilllevel>]]のマナを消費します
-
-// ネクロマンサー
-skeletonhorde=§a[[1 + <skilllevel>]]体の§bスケルトン§0を召喚します
-skeletonwarrior=§a+[[40 x <skilllevel>]]%§0の体力とダメージを持つ§bスケルトンウォリアー§0を召喚します
-sacrifice=最も近い壊死性の召喚が死に、その後、魔法の回復として§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace>]]の体力§0を回復します
-siegecry=6秒間、召喚速度が§a+[[50 x <skilllevel>]]%§0増加します
-
-boneslingerhorde=§a[[1 + <skilllevel>]]§0体の§bボーンスリンガー§0を召喚します
-tomb=§a[[10 - <skilllevel>]]秒§0ごとに§bスケルトン§0を召喚する構造物を生成します\n墓の体力は§a[[5 x <playerlevel> x <skilllevel>]]§0です\n墓は毎秒総体力の2%を失います
-necroticbloom=近くのすべての敵の毒の効果を加速させ、持続時間を10%に短縮しますが、総ダメージを維持するために毎秒のダメージを増加させます
-wardingtaunt=最も近い壊死性の召喚は、§a[[50 x <skilllevel>]]の半径§0内の近くの敵にそれをターゲットさせます
-
-unholyground=10秒間、あなたの周りに腐敗のオーラを広げます\nこのエリア内の敵は、毎秒§i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]]の毒ダメージ§0を受け、§7拘束§0されます
-necroticbarrage=すべての壊死性の召喚は死ぬと爆発し、近くの敵に§i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\nそして、10秒間、毎秒元のダメージの20%で毒を与えます
-
-// Cleric
-smite=最も近い敵に聖なる光のビームを呼び寄せ、§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブに2倍のダメージを与えます\n§a[[10 + 2 x <skilllevel>]]のマナ§0を消費します
-divineblessing=あなたとあなたの味方に§a[[20 + 3 x <grace> x <skilllevel>]]の体力§0を回復させる魔法の回復オーラ\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
-purify=あなた自身と近くの味方をすべての負の効果から浄化します\nマナを10消費します
-lightinfusion=次の8秒間、§a+[[20 x <skilllevel>]]%§0の魔法回復と聖なるダメージを得ます
-holyguard=あなたと近くのすべての味方に最大30秒間、聖なる盾を適用します\n彼らは§a+[[10 x <skilllevel>]]%§0の魔法回復を受け、盾は壊れる前に一撃をブロックします\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
-judgment=輝くエネルギーの波を解き放ち、近くのすべての敵に§i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]]の聖なるダメージ§0を与えます\nアンデッドと悪魔のモブは5秒間§7拘束§0されます\n§a[[20 + 4 x <skilllevel>]]のマナ§0を消費します
-sanctuary=8秒間、聖なるゾーンを作成します\nあなたと中の味方は負の効果に免疫があり、毎秒§a[[0.2 x <grace> x <skilllevel>]]§0の体力再生を得ます\n中のアンデッドと悪魔のモブは§7拘束§0されます\n§a[[30 + 6 x <skilllevel>]]のマナ§0を消費します
-divineintervention=最もダメージを受けた近くの味方を即座に最大体力まで回復させ、§a[[<skilllevel>]]§0秒間、すべてのダメージに対する免疫を与えます\n§a[[60 + 12 x <skilllevel>]]のマナ§0を消費します
-resurrection=あなたの同じ島で最後に死んだプレイヤーの味方を、あなたの位置で最大体力の§a[[10 x <skilllevel>]]%§0で復活させます\n10秒以上前にリスポーンできたプレイヤーを復活させることはできません\nあなたのマナの§a[[100 - 10 x <skilllevel>]]%§0を消費します（少なくとも§a[[60 + 12 x <skilllevel>]]§0）
-wrathoflight=最も近い敵に光の柱を召喚し、5秒間、毎秒§i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]]の聖なるダメージ§0をエリアに与えます\n中のアンデッドと悪魔のモブは§7拘束§0されます\n§a[[40 + 8 x <skilllevel>]]のマナ§0を消費します
+[mastery]
+bastion=バスティオン
+bloodborn=ブラッドボーン
+chronomancer=クロノマンサー
+barbarian=バーバリアン
+berserker=バーサーカー
+sniper=スナイパー
+marksman=マークスマン
+hunter=ハンター
+trapper=トラッパー
+pyromancer=パイロマンサー
+frostweaver=フロストウィーバー
+stormcaller=ストームコーラー
+ironinvoker=アイアンインヴォーカー
+plaguebearer=プレイグベアラー
+darkeminence=ダークエミネンス
+inquisitor=インクイジター
+timekeeper=タイムキーパー
+shapeshifter=シェイプシフター
 
 
-// Druid
-wolftransformation=オオカミに変身するのに3秒かかります\n\n移動速度: 60\n\n[input=transformationability1]を押してダッシュバイト: 前方に跳躍して噛みつき、§i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]]の近接ダメージ§0を与えます\n\n[input=transformationability2]を押して吠える: 近くの敵に2秒間攻撃を集中させます\n\n[input=trinketability]を長押ししてスプリント
-queenbeetransformation=女王蜂に変身するのに2秒かかります\n\n移動速度: 30\n-50% 敵検出\n§6+1000% 被ダメージ§0\nヒットを受けると死ぬ代わりに最大数の蜂を召喚します（60秒のクールダウン）\n\n[input=transformationability1]を押してハニーショット: §i[[2 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0を与えます\n\n[input=transformationability2]を押して§9ハチ§0を最大§a[[2 x <skilllevel>]]体§0召喚します\n\n[input=trinketability]を長押ししてハチに攻撃を命令
-beartransformation=クマに変身するのに4秒かかります\n\n移動速度: 20\n-50% 被ダメージ\n\n[input=transformationability1]を押してグラウンドスラム: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]]の近接ダメージ§0を与え、§a[[0.5 x <skilllevel>]]秒間§0§9スタン§0させる範囲攻撃\n\n[input=transformationability2]を押して唸る: 近くの敵を1秒間逃げさせます\n\n[input=trinketability]を長押ししてスプリント
-foxtransformation=キツネに変身するのに3秒かかります\n\n移動速度: 50\n§6+50% 被ダメージ§0\n\n[input=transformationability1]を押してファイアボールを撃つ: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]]の魔法ダメージ§0を与えます\n\n[input=transformationability2]を押して§b踊る炎§0を最大§a[[2 + <skilllevel>]]体§0召喚します。それぞれファイアボールと同じダメージを与えます\n\n[input=trinketability]を押してダッシュ\n§!Vulpes Nova fox!
-rattransformation=ネズミに変身するのに2秒かかります\n\n移動速度: 25\n-50% 敵検出\n最大回避チャンスを付与します\n§6+1000% 被ダメージ§0\n\n[input=transformationability1]を押して噛みつき: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]]の近接ダメージ§0を与え、10秒間、毎秒与えたダメージの100%でターゲットを毒します\n\n[input=trinketability]を長押ししてスプリント
-treanttransformation=トレントに変身するのに4秒かかります\n\n移動速度: 0\n-§a[50 + 5 <skilllevel>]%§0 被ダメージ\n+50% アーマー\n3秒間隠れていると敵はあなたを無視します\n\n[input=transformationability1]を押してランダムな種を撃つ: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]]の遠距離ダメージ§0をランダムな効果で与えます\n\n[input=transformationability2]を押して§9ドライアドの苗木§0を召喚します\n\n[input=trinketability]を長押しして、移動中に表示してスプリント
+[masterydesc]
+bastion=毎秒、体力再生の25%に等しいレジリエンスを獲得
+bloodborn=敵に与えたダメージの5%を回復する\n毎秒最大体力の5%を常に失うが、この効果で死ぬことはない\n体力再生は常に0
+chronomancer=すべてのアクティブスキルのクールダウンを20%短縮
+barbarian=+100%の最大体力と+200%の体力再生、ただしアーマーは常に0
+berserker=体力が50%未満の場合、近接クリティカルチャンス+25%\n近接クリティカルヒットは、攻撃速度と移動速度を2秒間25%増加させる
+sniper=遠距離攻撃は、ターゲットまでの距離に基づいて最大+100%のダメージを与える
+marksman=あなたがマークした敵は、すべてのプレイヤーにマークされる
+hunter=敵をマークすると、5秒間§7拘束§0される
+trapper=罠にかかった、または拘束された敵に+50%のダメージ
+pyromancer=あなたの点火は同じ敵にスタックできる
+frostweaver=フロストスロウ、フリーズ、またはフロストバーンの敵に+50%のダメージ
+stormcaller=20秒ごとに、視界内のすべての敵が雷に打たれる\n§i[[<playerlevel> + <intelligence>]]の魔法ダメージ§0を与え、1秒間スタンさせる
+ironinvoker=あなたのダメージ可能な召喚は、1回の攻撃をブロックし、10秒後に再充電するシールドを得る
+plaguebearer=あなたの毒は敵に2倍長く持続する
+darkeminence=単一の攻撃で最大体力の15%以上を失うたびに、\nその15%を超えるダメージを受ける§bスケルトンウォリアー§0を召喚する
+inquisitor=あなたの攻撃と効果は、すべての敵を悪魔的と判断する
+timekeeper=魔法の回復は、自分自身または味方に対して、回復したポイントごとにターゲットのアクティブスキルのクールダウンを0.02秒短縮する
+shapeshifter=変身後、3秒間無敵になる（5秒のクールダウン）
 
 
 [skillsdesckeys]
@@ -424,14 +384,14 @@ iceball=§aアイスボール：§0爆発してモブを5秒間凍結させ、1�
 fireball=§iファイアボール：§0爆発してモbを燃やし、5秒間、毎秒元のダメージの20%を繰り返す魔法の発射物
 
 // 召喚
-dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒット時に敵を燃やします。5秒間、毎秒元のダメージの20%を繰り返します
+dancingflame=§b踊る炎：§0発射物のように機能する召喚。ヒット時に敵を燃やします。\n5秒間、毎秒元のダメージの20%を繰り返します
 
 // ダメージ可能な召喚
-necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
-necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
-necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
-bee=§9蜂：§0ダメージ可能な召喚\n体力：1\nダメージ：§a[[<playerlevel> + <intelligence>]]§0\n速度：100\n\n攻撃時に死亡しますが、10秒間、毎秒与えたダメージの20%でターゲットを毒します
-dryadsapling=§9ドライアドの苗木：§0ダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n速度：65\n毎秒総体力の2%を失います
+necromancerskeleton=§bスケルトン：§0壊死性のダメージ可能な召喚\n体力：§a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\nダメージ：§a[[<playerlevel> + <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
+necromancerskeletonwarrior=§bスケルトンウォリアー：§0壊死性のダメージ可能な召喚\n体力：§a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\nダメージ：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n毎秒総体力の2%を失います
+necromancerboneslinger=§bボーンスリンガー：§0壊死性のダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nダメージ：§a[[<playerlevel> + <intelligence>]]§0（320距離）\n速度：60\n毎秒総体力の2%を失います
+bee=§9蜂：§0ダメージ可能な召喚\n体力：1\nダメージ：§a[[<playerlevel> + <intelligence> ↓]]§0\n速度：100\n\n攻撃時に死亡しますが、10秒間、毎秒与えたダメージの20%でターゲットを毒します
+dryadsapling=§9ドライアドの苗木：§0ダメージ可能な召喚\n体力：§a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nダメージ：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n速度：65\n毎秒総体力の2%を失います
 
 [item]
 scrollofoblivion=忘却の巻物
@@ -497,6 +457,7 @@ nodeathplayers=このレベルでは死んだプレイヤーを復活させる�
 [ui]
 menutitle=SaveによるRPG MOD
 attributes=属性
+mastery=マスタリー
 activeskills=アクティブスキル
 classes=クラス
 
@@ -508,8 +469,10 @@ experience=経験値：<exp> / <nextexp>
 totalexperience=合計経験値：<exp>
 onlytranformed=変身中のみ
 
+points=ポイント: <points>
 resetpoints=リセットポイント：<points>
 attrpoints=属性ポイント：<points>
+masterypoints=マスタリーポイント: <points>
 classpoints=クラスポイント：<points>
 passivepoints=パッシブポイント：<points>
 activeskillpoints=アクティブスキルポイント：<points>
@@ -541,8 +504,6 @@ removecolumn=列を削除
 
 rate=RPG Modを評価してください！
 
-seeallclasses=すべてのクラスエントリを表示
-
 clicktoopen=[input=mouse1]で開く
 
 
@@ -565,9 +526,17 @@ activeskillslot12=アクティブスキルスロット12
 
 
 [settingsui]
+client_text="クライアント設定"は純粋に視覚的なものであり、自由に調整できます。
+server_text="サーバー設定"はゲームプレイに直接影響します。ゲーム内で変更することはできず、友人やサーバーに参加すると、あなたの設定の代わりに彼らの設定が適用されます。
+
+// Default
+default_section=デフォルト値（クライアント）
+default_text=これらの設定は他のメニューで調整できますが、ゲームを開始すると常にこれらの値に戻ります
+showClassIcons=クラスアイコンを表示
+twelveSkillSlots=12個のスキル スロット
+
 // Experience
-experience_section=経験値
-experience_text=これらの設定はサーバー設定であるため、ワールドに参加した後は変更できません。マルチプレイヤーの場合、あなたの値は無視され、サーバー/ホストの値が使用されます。
+experience_section=経験値（サーバー）
 
 experienceMod=% 経験値MOD
 experienceMod_text=モブを倒して得られる経験値の量を変更します
@@ -588,7 +557,7 @@ cubeExperienceReqInc=要件の3乗増分
 experience_calc=次のレベルに到達するための経験値要件は次のとおりです。\n\n初期要件 + 要件増分 * レベル +\n+ 要件の2乗増分 * (レベル ^ 2) +\n+ 要件の3乗増分 * (レベル ^ 3)\n\nここで、「レベル」は現在のレベルです
 
 // Classes
-classes_section=クラス
+classes_section=クラス（サーバー）
 
 multiClass=マルチクラス
 multiClass_text=同時に保持できる異なるクラスの数を制限します。制限なしの場合は0に設定します

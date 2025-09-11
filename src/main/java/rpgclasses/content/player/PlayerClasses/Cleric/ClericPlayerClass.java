@@ -2,14 +2,14 @@ package rpgclasses.content.player.PlayerClasses.Cleric;
 
 import aphorea.registry.AphModifiers;
 import necesse.entity.mobs.buffs.BuffModifiers;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatModifierBuff;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Cleric.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Cleric.Passives.*;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 
 public class ClericPlayerClass extends PlayerClass {
     public ClericPlayerClass() {

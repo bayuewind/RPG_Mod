@@ -15,7 +15,7 @@ public class RPGControls {
     public static Control TRANSFORMATION_ABILITY_1;
     public static Control TRANSFORMATION_ABILITY_2;
 
-    public static int[] defaultSlotKeys = new int[] {
+    public static int[] defaultSlotKeys = new int[]{
             -97, // 1
             -96, // 2
             InputID.KEY_KP_0, // 3

@@ -14,9 +14,10 @@ import rpgclasses.RPGResources;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.EquipActiveSkillComponent;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerClassData;
+import rpgclasses.settings.RPGSettings;
 import rpgclasses.ui.CustomUIManager;
 import rpgclasses.ui.RPGSkillUIManager;
 
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActiveSkillsEntry extends MenuEntry {
-    public static int showManySlots = 6;
+    public static int showManySlots = RPGSettings.settingsGetter.getBoolean("twelveSkillSlots") ? 12 : 6;
 
     public ActiveSkillsEntry() {
         super("activeskills");
@@ -38,7 +39,7 @@ public class ActiveSkillsEntry extends MenuEntry {
         int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
         entryForm.addComponent(new FormContentIconButton(entryForm.getWidth() - 32 - 8, 8, FormInputSize.SIZE_32, ButtonColor.BASE, RPGResources.UI_TEXTURES.slot_icons[style][showManySlots - 1])
                 .onClicked(c -> {
-                    showManySlots = showManySlots == 6 ? 12 : 6;
+                    showManySlots = showManySlots > 6 ? 6 : 12;
                     for (RPGSkillUIManager rpgSkill : CustomUIManager.rpgSkills) {
                         rpgSkill.updatePosition(RPGSkillUIManager.mainGameFormManager);
                     }
@@ -72,13 +73,13 @@ public class ActiveSkillsEntry extends MenuEntry {
         if (equipableActiveSkills.isEmpty()) {
             entryForm.addComponent(new FormLocalLabel(
                     "ui", "noactiveskills",
-                    new FontOptions(14), -1, 10, startY
+                    new FontOptions(16), -1, 10, startY
             ));
         } else {
 
             FormContentBox activeSkills = entryForm.addComponent(new FormContentBox(16, startY, entryForm.getWidth() - 32, entryForm.getHeight() - startY - 8));
 
-            int columns = showManySlots == 6 ? 2 : 1;
+            int columns = showManySlots > 6 ? 1 : 2;
             int spacingY = 8;
             int itemHeight = EquipActiveSkillComponent.height;
 
@@ -98,7 +99,7 @@ public class ActiveSkillsEntry extends MenuEntry {
                 int y = spacingY + row * (itemHeight + spacingY);
 
                 equipableActiveSkill.component = activeSkills.addComponent(
-                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, activeSkillLevel, showManySlots, showManySlots == 6 ? EquipActiveSkillComponent.shortWidth : entryForm.getWidth() - 32, (newEquippedActiveSkills) -> {
+                        new EquipActiveSkillComponent(x, y, activeSkill, playerClass, player, activeSkillLevel, showManySlots, showManySlots > 6 ? entryForm.getWidth() - 32 : EquipActiveSkillComponent.shortWidth, (newEquippedActiveSkills) -> {
                             for (EquipableActiveSkill skill : equipableActiveSkills) {
                                 skill.component.update(newEquippedActiveSkills, playerData);
                             }

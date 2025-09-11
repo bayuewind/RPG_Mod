@@ -132,7 +132,7 @@ public class NecromancerBoneslingerMob extends NecroticFollowingMob {
 
     @Override
     public int getHealthStat(PlayerMob player, PlayerData playerData) {
-        return 2 * (playerData.getLevel() + playerData.getIntelligence(player));
+        return (int) (2 * (playerData.getLevel() + playerData.getIntelligence(player)));
     }
 
     @Override

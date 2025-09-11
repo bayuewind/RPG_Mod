@@ -4,10 +4,10 @@ import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.Skill;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 
 import java.util.Arrays;
 

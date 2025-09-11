@@ -1,18 +1,18 @@
 package rpgclasses.content.player.PlayerClasses.Ranger;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatModifierBuff;
+import rpgclasses.content.player.Logic.ModifierBuffs.FloatPercentModifierBuff;
+import rpgclasses.content.player.Logic.Passives.BasicPassive;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Ranger.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Ranger.ActiveSkills.Dash.LongDash;
 import rpgclasses.content.player.PlayerClasses.Ranger.ActiveSkills.Dash.ShortDash;
 import rpgclasses.content.player.PlayerClasses.Ranger.Passives.PlasmaGrenade;
 import rpgclasses.content.player.PlayerClasses.Ranger.Passives.WolfCompanion;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ModifierBuffs.FloatPercentModifierBuff;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.BasicPassive;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.SkillsList;
 import rpgclasses.registry.RPGModifiers;
 
 public class RangerPlayerClass extends PlayerClass {

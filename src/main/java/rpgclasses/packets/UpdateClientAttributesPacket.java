@@ -5,7 +5,7 @@ import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.content.player.Logic.Attribute;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 
@@ -27,18 +27,18 @@ public class UpdateClientAttributesPacket extends Packet {
 
     public UpdateClientAttributesPacket(PlayerData playerData) {
         this.name = playerData.playerName;
-        this.attributes = playerData.getAttributeLevels();
+        this.attributes = playerData.getAttributePointsUsed();
 
         PacketWriter writer = new PacketWriter(this);
         writer.putNextString(name);
         for (int i = 0; i < Attribute.attributes.size(); i++) {
-            writer.putNextInt(playerData.getAttributeLevel(i));
+            writer.putNextInt(playerData.getAttributePoints(i));
         }
     }
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
         PlayerData playerData = PlayerDataList.getPlayerData(name, false);
-        playerData.loadDataAttributes(attributes);
+        playerData.setAttributes(attributes);
     }
 }

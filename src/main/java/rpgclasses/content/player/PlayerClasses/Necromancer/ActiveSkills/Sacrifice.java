@@ -6,7 +6,7 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
@@ -23,7 +23,7 @@ public class Sacrifice extends ActiveSkill {
         Mob sacrifice = RPGUtils.findClosestDamageableFollower(player, 1024, RPGUtils.isNecroticFollowerFilter(player));
         if (sacrifice != null) {
             sacrifice.remove(0, 0, null, true);
-            AphMagicHealing.healMob(player, player, 10 + activeSkillLevel * (playerData.getEndurance(player) + playerData.getIntelligence(player)) - playerData.getGrace(player));
+            AphMagicHealing.healMob(player, player, (int) (10 + activeSkillLevel * (playerData.getEndurance(player) + playerData.getIntelligence(player)) - playerData.getGrace(player)));
         }
     }
 

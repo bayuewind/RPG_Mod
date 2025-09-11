@@ -5,7 +5,7 @@ import necesse.engine.network.packet.PacketPlayerRespawn;
 import necesse.engine.network.server.ServerClient;
 import necesse.entity.mobs.PlayerMob;
 import necesse.level.maps.Level;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 

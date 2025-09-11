@@ -15,7 +15,7 @@ import necesse.gfx.GameResources;
 import necesse.gfx.drawOptions.human.HumanDrawOptions;
 import necesse.gfx.gameTexture.GameTexture;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 

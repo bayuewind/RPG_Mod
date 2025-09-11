@@ -22,15 +22,17 @@ import necesse.entity.mobs.buffs.staticBuffs.ShownCooldownBuff;
 import necesse.entity.mobs.buffs.staticBuffs.StaminaBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.entity.projectile.Projectile;
+import necesse.entity.projectile.modifiers.ResilienceOnHitProjectileModifier;
 import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.MachineGunProjectileToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;
@@ -152,6 +154,7 @@ public class QueenBeeTransformation extends SimpleTranformationActiveSkill {
             PlayerData playerData = PlayerDataList.getPlayerData(player);
             int skillLevel = getActualSkillLevel();
             Projectile projectile = new HoneyProjectile(level, player, player.x, player.y, x, y, 100, 200, new GameDamage(DamageTypeRegistry.RANGED, 2 * playerData.getLevel() + playerData.getStrength(player) * skillLevel), 20);
+            projectile.setModifier(new ResilienceOnHitProjectileModifier(2));
             projectile.resetUniqueID(new GameRandom(Item.getRandomAttackSeed(GameRandom.globalRandom)));
 
             this.getLevel().entityManager.projectiles.addHidden(projectile);
@@ -222,12 +225,12 @@ public class QueenBeeTransformation extends SimpleTranformationActiveSkill {
         @Override
         public void onBeforeHit(PlayerMob player, MobBeforeHitEvent event) {
             super.onBeforeHit(player, event);
-            if(!player.buffManager.hasBuff(queenBeeWasHitBuff)) {
+            if (!player.buffManager.hasBuff(queenBeeWasHitBuff)) {
                 event.prevent();
                 event.showDamageTip = false;
                 event.playHitSound = false;
 
-                if(player.isServer()) {
+                if (player.isServer()) {
                     player.buffManager.addBuff(new ActiveBuff(queenBeeWasHitBuff, player, 60F, null), true);
                     int skillLevel = getActualSkillLevel();
                     int amount = (int) (2 * skillLevel - player.serverFollowersManager.getFollowerCount(getStringID() + "follower"));

@@ -7,8 +7,8 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.level.maps.Level;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.SkillsAndAttributes.ActiveSkills.SimpleTranformationActiveSkill;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
@@ -63,7 +63,7 @@ public class PhoenixSpirit extends SimpleBuffPassive {
                         if (inCooldownNumber < maxNumber) {
                             player.dismount();
                             player.setHealth((int) (player.getMaxHealth() * (0.04F + 0.08F * skillLevel)));
-                            playerData.getInUseActiveSkillSlot().startCustomCooldown(player.getTime(), 3600_000);
+                            playerData.getInUseActiveSkillSlot().startCustomCooldown(playerData, player.getTime(), 3600_000);
                             player.getServer().network.sendToAllClients(new UpdateClientEquippedActiveSkillsPacket(playerData));
                             return true;
                         }

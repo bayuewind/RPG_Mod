@@ -12,45 +12,52 @@ import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.SkillsAndAttributes.Attribute;
+import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.data.PlayerData;
 
 import java.awt.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AttributeComponent extends FormContentBox {
     public static int width = 104;
-    public static int height = 124;
+    public static int height = 144;
 
-    public final AtomicInteger attributeLevel;
-    public final Color sameLevel;
-    public final Color differentLevel;
+    public final AtomicInteger attributePoints;
+    public final Color samePoints;
+    public final Color differentPoints;
 
     public final FormLocalLabel levelText;
+    public final FormLocalLabel pointsText;
 
-    public final int currentAttributeLevel;
+    public final int currentAttributePoints;
 
-    public AttributeComponent(Client client, int x, int y, Attribute attribute, int currentAttributeLevel) {
+    public AttributeComponent(Client client, int x, int y, Attribute attribute, int currentAttributePoints) {
         super(x - width / 2, y - height / 2, width, height);
 
-        this.currentAttributeLevel = currentAttributeLevel;
+        this.currentAttributePoints = currentAttributePoints;
 
-        sameLevel = Settings.UI.activeTextColor;
+        samePoints = Settings.UI.activeTextColor;
 
         int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
         if (style == 1) {
-            differentLevel = new Color(255, 255, 0);
+            differentPoints = new Color(255, 255, 0);
         } else {
-            differentLevel = new Color(102, 102, 0);
+            differentPoints = new Color(102, 102, 0);
         }
 
-        attributeLevel = new AtomicInteger();
-        attributeLevel.set(currentAttributeLevel);
-        levelText = this.addComponent(new FormLocalLabel(getLevelText(attributeLevel.get()), new FontOptions(16), 0, width / 2, 88 + 4));
-        levelText.setColor(sameLevel);
+        attributePoints = new AtomicInteger();
+        attributePoints.set(currentAttributePoints);
+
+        pointsText = this.addComponent(new FormLocalLabel(getPointsText(attributePoints.get()), new FontOptions(12), 0, width / 2, 88 + 4));
+        pointsText.setColor(samePoints);
+
+        levelText = this.addComponent(new FormLocalLabel(getLevelText(attributePoints.get()), new FontOptions(16), 0, width / 2, 88 + 4 + 16 + 4));
 
         int extraPoints = client.getPlayer().buffManager.getModifier(attribute.ownModifier);
         if (extraPoints > 0) {
-            this.addComponent(new FormLabel("(+" + extraPoints + ")", new FontOptions(12), 0, width / 2, 88 + 4 + 16 + 4));
+            this.addComponent(new FormLabel("(+" + extraPoints + ")", new FontOptions(12), 0, width / 2, 88 + 4 + 16 + 4 + 16 + 4));
         }
 
         this.addComponent(new AttributeIconComponent(attribute, 0, 0, width, 60));
@@ -62,48 +69,57 @@ public class AttributeComponent extends FormContentBox {
         int center = width / 2;
         this.addComponent(new FormContentIconButton(center + 4, 60 + 4, FormInputSize.SIZE_24, ButtonColor.BASE, RPGResources.UI_TEXTURES.add_icon[style])
                 .onClicked(c -> {
-                    if (attributeLevel.get() < 999) {
-                        int newLevel = attributeLevel.incrementAndGet();
-                        levelText.setLocalization(getLevelText(newLevel));
-                        levelText.setColor(newLevel == currentAttributeLevel ? sameLevel : differentLevel);
+                    if (attributePoints.get() < 999) {
+                        updateTexts(attributePoints.incrementAndGet());
                         onMod.onEvent(c);
                     }
                 }));
 
         this.addComponent(new FormContentIconButton(center - 4 - 24, 60 + 4, FormInputSize.SIZE_24, ButtonColor.BASE, RPGResources.UI_TEXTURES.remove_icon[style])
                 .onClicked(c -> {
-                    if (attributeLevel.get() > 0) {
-                        int newLevel = attributeLevel.decrementAndGet();
-                        levelText.setLocalization(getLevelText(newLevel));
-                        levelText.setColor(newLevel == currentAttributeLevel ? sameLevel : differentLevel);
+                    if (attributePoints.get() > 0) {
+                        updateTexts(attributePoints.decrementAndGet());
                         onMod.onEvent(c);
                     }
                 }));
 
         this.addComponent(new FormContentIconButton(center + 4 + 24 + 2, 60 + 4 + 4, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.add10_icon[style])
                 .onClicked(c -> {
-                    if (attributeLevel.get() < 999) {
-                        int mod = Math.min(10, 999 - attributeLevel.get());
-                        int newLevel = attributeLevel.addAndGet(mod);
-                        levelText.setLocalization(getLevelText(newLevel));
-                        levelText.setColor(newLevel == currentAttributeLevel ? sameLevel : differentLevel);
+                    if (attributePoints.get() < 999) {
+                        int mod = Math.min(10, 999 - attributePoints.get());
+                        updateTexts(attributePoints.addAndGet(mod));
                         onMod.onEvent(c);
                     }
                 }));
 
         this.addComponent(new FormContentIconButton(center - 4 - 24 - 2 - 16, 60 + 4 + 4, FormInputSize.SIZE_16, ButtonColor.BASE, RPGResources.UI_TEXTURES.remove10_icon[style])
                 .onClicked(c -> {
-                    if (attributeLevel.get() > 0) {
-                        int mod = -Math.min(10, attributeLevel.get());
-                        int newLevel = attributeLevel.addAndGet(mod);
-                        levelText.setLocalization(getLevelText(newLevel));
-                        levelText.setColor(newLevel == currentAttributeLevel ? sameLevel : differentLevel);
+                    if (attributePoints.get() > 0) {
+                        int mod = -Math.min(10, attributePoints.get());
+                        updateTexts(attributePoints.addAndGet(mod));
                         onMod.onEvent(c);
                     }
                 }));
     }
 
-    public GameMessage getLevelText(int attributeLevel) {
-        return new LocalMessage("ui", "level", "level", attributeLevel);
+    public void updateTexts(int usedPoints) {
+        levelText.setLocalization(getLevelText(usedPoints));
+        pointsText.setLocalization(getPointsText(usedPoints));
+        pointsText.setColor(usedPoints == currentAttributePoints ? samePoints : differentPoints);
+    }
+
+    public GameMessage getLevelText(int usedPoints) {
+        float level = PlayerData.pointsConversion(usedPoints);
+        if (level == (int) level) {
+            return new LocalMessage("ui", "level", "level", (int) level);
+        } else {
+            BigDecimal levelBD = new BigDecimal(Float.toString(level));
+            levelBD = levelBD.setScale(2, RoundingMode.DOWN);
+            return new LocalMessage("ui", "level", "level", levelBD.toString());
+        }
+    }
+
+    public GameMessage getPointsText(int usedPoints) {
+        return new LocalMessage("ui", "points", "points", usedPoints);
     }
 }

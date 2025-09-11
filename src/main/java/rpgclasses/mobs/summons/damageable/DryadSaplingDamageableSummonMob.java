@@ -84,7 +84,7 @@ public class DryadSaplingDamageableSummonMob extends DamageableFollowingMob {
 
     @Override
     public int getHealthStat(PlayerMob player, PlayerData playerData) {
-        return 2 * playerData.getLevel() + 2 * playerData.getIntelligence(player);
+        return (int) (2 * playerData.getLevel() + 2 * playerData.getIntelligence(player));
     }
 
     @Override

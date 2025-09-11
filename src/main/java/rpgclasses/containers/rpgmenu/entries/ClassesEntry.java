@@ -3,10 +3,12 @@ package rpgclasses.containers.rpgmenu.entries;
 import necesse.engine.Settings;
 import necesse.engine.localization.Localization;
 import necesse.engine.localization.message.LocalMessage;
+import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.components.*;
 import necesse.gfx.forms.components.localComponents.FormLocalTextButton;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
+import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.ClassComponent;
@@ -25,6 +27,22 @@ public class ClassesEntry extends MenuEntry {
     }
 
     @Override
+    public Color getTextColor(PlayerMob player) {
+        playerData = PlayerDataList.getPlayerData(player);
+
+        if (playerData.totalClassPoints() < Arrays.stream(playerData.getClassLevels()).sum()) {
+            int style = GameInterfaceStyle.styles.indexOf(Settings.UI);
+            if (style == 1) {
+                return new Color(255, 0, 0);
+            } else {
+                return new Color(102, 0, 0);
+            }
+        }
+
+        return null;
+    }
+
+    @Override
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container) {
         playerData = PlayerDataList.getPlayerData(player);
         updateContent(mainForm, entryForm, container, playerData.getResets(), playerData.getClassLevels(), playerData.getClassLevels().clone());
@@ -33,11 +51,11 @@ public class ClassesEntry extends MenuEntry {
     public void updateContent(MenuContainerForm mainForm, FormContentBox entryForm, final MenuContainer container, final int resetPoints, final int[] classes, int[] mutableClasses) {
         super.updateContent(mainForm, entryForm, container);
 
-        entryForm.addComponent(new FormContentIconButton(entryForm.getWidth() - 32 - 8, 8, FormInputSize.SIZE_32, ButtonColor.BASE, Settings.UI.button_hidden_big, new LocalMessage("ui", "seeallclasses"))
+        entryForm.addComponent(new FormContentIconButton(entryForm.getWidth() - 32 - 8, 8, FormInputSize.SIZE_32, ButtonColor.BASE, MenuContainerForm.showClassIcons ? Settings.UI.button_shown_big : Settings.UI.button_hidden_big, new LocalMessage("settingsui", "showClassIcons"))
                 .onClicked(c -> {
-                    MenuContainerForm.showAllClassesEntries = !MenuContainerForm.showAllClassesEntries;
+                    MenuContainerForm.showClassIcons = !MenuContainerForm.showClassIcons;
                     mainForm.updateEntries(container, player, null);
-                    ((FormContentIconButton) c.from).setIcon(MenuContainerForm.showAllClassesEntries ? Settings.UI.button_shown_big : Settings.UI.button_hidden_big);
+                    ((FormContentIconButton) c.from).setIcon(MenuContainerForm.showClassIcons ? Settings.UI.button_shown_big : Settings.UI.button_hidden_big);
                 }));
 
 
@@ -131,7 +149,8 @@ public class ClassesEntry extends MenuEntry {
                 }
                 return false;
             });
-            if(playerClass.isEnabled()) classComponent.onClick(c -> mainForm.changeEntry("classes." + playerClass.stringID, player));
+            if (playerClass.isEnabled())
+                classComponent.onClick(c -> mainForm.changeEntry("classes." + playerClass.stringID, player));
         }
         if (hasScrollbar) {
             classesForm.setContentBox(new Rectangle(0, 0, classesForm.getWidth(), Math.round(verticalSpacing * numRows)));

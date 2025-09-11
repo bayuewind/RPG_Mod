@@ -6,9 +6,9 @@ import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
+import rpgclasses.content.player.Logic.Passives.Passive;
+import rpgclasses.content.player.Logic.Skill;
 import rpgclasses.content.player.PlayerClass;
-import rpgclasses.content.player.SkillsAndAttributes.Passives.Passive;
-import rpgclasses.content.player.SkillsAndAttributes.Skill;
 
 abstract public class SkillTransformationMountMob extends TransformationMountMob {
     public PlayerClass playerClass;
@@ -23,7 +23,7 @@ abstract public class SkillTransformationMountMob extends TransformationMountMob
         super.addSaveData(save);
         save.addInt("classID", this.playerClass.id);
         save.addBoolean("isPassive", skill instanceof Passive);
-        save.addInt("skillID", this.skill.id);
+        save.addInt("masteryID", this.skill.id);
     }
 
     public void applyData(PlayerClass playerClass, Skill skill) {
@@ -35,7 +35,7 @@ abstract public class SkillTransformationMountMob extends TransformationMountMob
     public void applyLoadData(LoadData save) {
         super.applyLoadData(save);
         this.playerClass = PlayerClass.classesList.get(save.getInt("classID"));
-        this.skill = (save.getBoolean("isPassive") ? playerClass.passivesList : playerClass.activeSkillsList).get(save.getInt("skillID"));
+        this.skill = (save.getBoolean("isPassive") ? playerClass.passivesList : playerClass.activeSkillsList).get(save.getInt("masteryID"));
     }
 
     @Override
