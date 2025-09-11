@@ -10,7 +10,7 @@ import necesse.entity.particle.Particle;
 import necesse.level.maps.Level;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
 import rpgclasses.buffs.Skill.SecondaryPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.utils.RPGColors;
 
 public class LastBreath extends SimpleBuffPassive {

@@ -26,7 +26,7 @@ import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;

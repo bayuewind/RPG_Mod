@@ -29,7 +29,7 @@ import necesse.gfx.ui.GameInterfaceStyle;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 

@@ -12,7 +12,7 @@ import necesse.gfx.gameFont.FontOptions;
 import necesse.gfx.ui.ButtonColor;
 import necesse.gfx.ui.GameInterfaceStyle;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Attribute;
 import rpgclasses.data.PlayerData;
 
 import java.awt.*;

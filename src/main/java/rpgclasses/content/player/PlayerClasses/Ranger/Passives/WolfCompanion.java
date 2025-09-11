@@ -5,8 +5,8 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.Passive;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.Passive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.mobs.summons.passive.PassiveFollowingMob;
 
 public class WolfCompanion extends SimpleBuffPassive {

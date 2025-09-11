@@ -8,7 +8,7 @@ import necesse.gfx.gameTooltips.GameTooltipManager;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.TooltipLocation;
 import rpgclasses.containers.rpgmenu.BorderFormGameBackground;
-import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Attribute;
 
 import java.awt.*;
 import java.util.ArrayList;

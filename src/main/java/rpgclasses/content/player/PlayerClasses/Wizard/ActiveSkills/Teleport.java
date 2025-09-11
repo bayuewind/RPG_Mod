@@ -7,7 +7,7 @@ import necesse.engine.util.MovedRectangle;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 
 import java.awt.geom.Point2D;

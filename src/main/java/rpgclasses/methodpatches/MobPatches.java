@@ -21,7 +21,7 @@ import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
 import net.bytebuddy.asm.Advice;
 import rpgclasses.buffs.Interfaces.TransformationClassBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;

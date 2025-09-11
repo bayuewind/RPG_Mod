@@ -11,7 +11,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import org.jetbrains.annotations.NotNull;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.VenomArrowProjectile;
 import rpgclasses.utils.RPGUtils;

@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class RPGArea extends AphArea {
     public float attackerHealthMod = 1F;

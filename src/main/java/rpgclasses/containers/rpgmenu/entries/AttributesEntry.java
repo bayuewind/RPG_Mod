@@ -15,8 +15,7 @@ import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.AttributeComponent;
 import rpgclasses.containers.rpgmenu.components.ClassComponent;
-import rpgclasses.content.player.Logic.Attribute;
-import rpgclasses.data.PlayerClassData;
+import rpgclasses.content.player.Attribute;
 import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;

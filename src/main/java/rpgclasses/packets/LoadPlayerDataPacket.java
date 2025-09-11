@@ -58,6 +58,8 @@ public class LoadPlayerDataPacket extends Packet {
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
         PlayerData playerData = PlayerDataList.getPlayerData(name, true);
         GameUtils.streamServerClients(server, client.getLevel()).forEach(c -> c.sendPacket(new LoadPlayerDataPacket(name, playerData)));
-        playerData.updateAllBuffs(client.playerMob);
+        if (Objects.equals(client.playerMob.playerName, name)) {
+            playerData.updateAllBuffs(client.playerMob);
+        }
     }
 }

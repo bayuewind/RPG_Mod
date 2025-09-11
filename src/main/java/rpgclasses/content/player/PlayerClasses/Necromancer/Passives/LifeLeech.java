@@ -5,7 +5,7 @@ import necesse.entity.levelEvent.mobAbilityLevelEvent.MobHealthChangeEvent;
 import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 
 public class LifeLeech extends SimpleBuffPassive {
     public LifeLeech(int levelMax, int requiredClassLevel) {

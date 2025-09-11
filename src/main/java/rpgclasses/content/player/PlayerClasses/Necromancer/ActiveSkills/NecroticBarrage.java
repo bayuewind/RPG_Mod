@@ -3,7 +3,7 @@ package rpgclasses.content.player.PlayerClasses.Necromancer.ActiveSkills;
 import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.levelevents.NecroticExplosionLevelEvent;
 import rpgclasses.utils.RPGUtils;

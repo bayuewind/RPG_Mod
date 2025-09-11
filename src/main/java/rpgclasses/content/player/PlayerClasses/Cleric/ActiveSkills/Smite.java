@@ -16,7 +16,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;

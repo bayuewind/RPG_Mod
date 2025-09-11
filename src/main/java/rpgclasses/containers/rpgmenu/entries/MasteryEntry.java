@@ -16,12 +16,11 @@ import rpgclasses.containers.rpgmenu.MenuContainer;
 import rpgclasses.containers.rpgmenu.MenuContainerForm;
 import rpgclasses.containers.rpgmenu.components.ClassComponent;
 import rpgclasses.containers.rpgmenu.components.MasteryComponent;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 import rpgclasses.data.PlayerDataList;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MasteryEntry extends MenuEntry {

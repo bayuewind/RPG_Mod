@@ -16,12 +16,12 @@ import necesse.level.gameObject.furniture.RoomFurniture;
 import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.Logic.Attribute;
-import rpgclasses.content.player.Logic.Passives.BasicPassive;
-import rpgclasses.content.player.Logic.Passives.Passive;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Attribute;
+import rpgclasses.content.player.Mastery.Mastery;
 import rpgclasses.content.player.PlayerClass;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.Passives.BasicPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.Passive;
 import rpgclasses.packets.ShowModExpPacket;
 import rpgclasses.packets.UpdateClientExpPacket;
 import rpgclasses.packets.UpdateClientResetsPacket;
@@ -304,7 +304,7 @@ public class PlayerData {
     }
 
     public void updateAllBuffs(PlayerMob player) {
-        if(player.isServer()) {
+        if (player.isServer()) {
             updateModifiersBuff(player);
 
             if (!player.buffManager.hasBuff(RPGBuffs.PASSIVES.HOLY_DAMAGE))
@@ -361,7 +361,7 @@ public class PlayerData {
     }
 
     public void updateModifiersBuff(@NotNull PlayerMob player) {
-        if(player.isServer()) {
+        if (player.isServer()) {
             player.buffManager.addBuff(new ActiveBuff(RPGBuffs.PASSIVES.MODIFIERS, player, 1000, null), true, true);
         }
     }

@@ -16,7 +16,7 @@ import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.buffs.MagicPoisonBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.utils.RPGUtils;

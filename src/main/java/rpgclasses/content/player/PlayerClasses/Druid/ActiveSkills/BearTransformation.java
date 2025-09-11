@@ -30,7 +30,7 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;

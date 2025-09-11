@@ -3,7 +3,7 @@ package rpgclasses.content.player.PlayerClasses.Necromancer.Passives;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 
 public class NecroticRemains extends SimpleBuffPassive {
     public NecroticRemains(int levelMax, int requiredClassLevel) {

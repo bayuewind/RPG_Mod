@@ -16,7 +16,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.particle.Particle;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.MobData;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;

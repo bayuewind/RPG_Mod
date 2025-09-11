@@ -14,7 +14,7 @@ import necesse.gfx.gameTooltips.SpriteTooltip;
 import necesse.gfx.gameTooltips.TooltipLocation;
 import rpgclasses.RPGResources;
 import rpgclasses.containers.rpgmenu.BorderFormGameBackground;
-import rpgclasses.content.player.Logic.Skill;
+import rpgclasses.content.player.SkillsLogic.Skill;
 
 import java.awt.*;
 import java.util.List;

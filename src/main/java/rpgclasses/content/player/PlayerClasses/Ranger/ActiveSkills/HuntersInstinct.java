@@ -10,7 +10,7 @@ import necesse.entity.particle.Particle;
 import rpgclasses.buffs.Interfaces.DodgeClassBuff;
 import rpgclasses.buffs.MarkedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.registry.RPGModifiers;
 import rpgclasses.utils.RPGColors;
 

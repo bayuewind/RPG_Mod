@@ -10,7 +10,7 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.registry.RPGDamageType;
 
 public class RadiantExpansion extends SimpleBuffPassive {

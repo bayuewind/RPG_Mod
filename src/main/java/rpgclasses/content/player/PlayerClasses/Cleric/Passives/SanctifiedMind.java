@@ -8,7 +8,7 @@ import necesse.inventory.InventoryItem;
 import necesse.inventory.item.toolItem.ToolItem;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 
 public class SanctifiedMind extends SimpleBuffPassive {
     public SanctifiedMind(int levelMax, int requiredClassLevel) {

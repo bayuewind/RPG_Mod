@@ -20,7 +20,7 @@ import necesse.gfx.GameResources;
 import necesse.gfx.gameFont.FontManager;
 import necesse.level.maps.Level;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.packets.PacketMobResetBuffTime;
 import rpgclasses.registry.RPGBuffs;

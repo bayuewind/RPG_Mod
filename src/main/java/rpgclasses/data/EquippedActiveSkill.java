@@ -17,11 +17,11 @@ import necesse.level.maps.hudManager.floatText.FloatTextFade;
 import necesse.level.maps.hudManager.floatText.UniqueFloatText;
 import org.jetbrains.annotations.NotNull;
 import rpgclasses.RPGResources;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.Logic.ActiveSkills.SimplePassiveBuffActiveSkill;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 import rpgclasses.content.player.PlayerClass;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimplePassiveBuffActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.packets.ActiveAbilityRunPacket;
 import rpgclasses.registry.RPGModifiers;
 

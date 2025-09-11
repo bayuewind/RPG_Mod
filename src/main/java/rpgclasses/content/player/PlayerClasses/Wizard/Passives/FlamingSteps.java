@@ -15,7 +15,7 @@ import necesse.inventory.item.Item;
 import necesse.level.maps.LevelObjectHit;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 

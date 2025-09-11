@@ -8,7 +8,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 
 public class SiegeCry extends SimpleBuffActiveSkill {

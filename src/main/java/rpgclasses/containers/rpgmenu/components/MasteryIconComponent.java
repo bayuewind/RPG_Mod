@@ -9,7 +9,7 @@ import necesse.gfx.gameTooltips.GameTooltipManager;
 import necesse.gfx.gameTooltips.ListGameTooltips;
 import necesse.gfx.gameTooltips.TooltipLocation;
 import rpgclasses.containers.rpgmenu.BorderFormGameBackground;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 
 import java.awt.*;
 import java.util.ArrayList;

@@ -26,7 +26,7 @@ import necesse.level.maps.incursion.DesertDeepCaveIncursionLevel;
 import necesse.level.maps.incursion.SnowDeepCaveIncursionLevel;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.content.MobClass;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 
 import java.util.*;
 import java.util.stream.Collectors;

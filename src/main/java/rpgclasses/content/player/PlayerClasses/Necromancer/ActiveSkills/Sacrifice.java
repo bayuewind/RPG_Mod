@@ -6,7 +6,7 @@ import necesse.engine.sound.SoundManager;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 

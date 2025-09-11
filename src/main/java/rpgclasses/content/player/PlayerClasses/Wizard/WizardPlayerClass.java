@@ -1,12 +1,6 @@
 package rpgclasses.content.player.PlayerClasses.Wizard;
 
 import necesse.entity.mobs.buffs.BuffModifiers;
-import rpgclasses.content.player.Logic.ActiveSkills.ActiveSkill;
-import rpgclasses.content.player.Logic.ModifierBuffs.FloatModifierBuff;
-import rpgclasses.content.player.Logic.ModifierBuffs.FloatPercentModifierBuff;
-import rpgclasses.content.player.Logic.Passives.BasicPassive;
-import rpgclasses.content.player.Logic.Passives.Passive;
-import rpgclasses.content.player.Logic.SkillsList;
 import rpgclasses.content.player.PlayerClass;
 import rpgclasses.content.player.PlayerClasses.Wizard.ActiveSkills.*;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.FlamingSteps;
@@ -15,6 +9,12 @@ import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.ArcaneShie
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.FireShield;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Shield.IceShield;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Stormbound;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ModifierBuffs.FloatModifierBuff;
+import rpgclasses.content.player.SkillsLogic.ModifierBuffs.FloatPercentModifierBuff;
+import rpgclasses.content.player.SkillsLogic.Passives.BasicPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.Passive;
+import rpgclasses.content.player.SkillsLogic.SkillsList;
 import rpgclasses.registry.RPGModifiers;
 
 public class WizardPlayerClass extends PlayerClass {

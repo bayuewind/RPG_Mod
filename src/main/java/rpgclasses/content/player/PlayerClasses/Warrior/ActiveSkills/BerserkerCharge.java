@@ -16,7 +16,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleLevelEventActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 
 import java.awt.*;

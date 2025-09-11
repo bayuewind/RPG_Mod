@@ -9,7 +9,7 @@ import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.particle.Particle;
 import necesse.entity.particle.ParticleOption;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.packets.PacketMobUpdateIgniteBuff;

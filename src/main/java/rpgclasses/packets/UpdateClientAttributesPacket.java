@@ -5,7 +5,7 @@ import necesse.engine.network.Packet;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
-import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Attribute;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 

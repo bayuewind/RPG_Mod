@@ -6,9 +6,9 @@ import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.PlayerMob;
-import rpgclasses.content.player.Logic.Passives.Passive;
-import rpgclasses.content.player.Logic.Skill;
 import rpgclasses.content.player.PlayerClass;
+import rpgclasses.content.player.SkillsLogic.Passives.Passive;
+import rpgclasses.content.player.SkillsLogic.Skill;
 
 abstract public class SkillTransformationMountMob extends TransformationMountMob {
     public PlayerClass playerClass;

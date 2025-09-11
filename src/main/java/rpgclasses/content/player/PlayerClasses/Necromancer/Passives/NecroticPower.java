@@ -5,7 +5,7 @@ import necesse.entity.mobs.MobWasHitEvent;
 import necesse.entity.mobs.buffs.ActiveBuff;
 import rpgclasses.buffs.MagicPoisonBuff;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 
 public class NecroticPower extends SimpleBuffPassive {
     public NecroticPower(int levelMax, int requiredClassLevel) {

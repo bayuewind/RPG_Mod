@@ -12,7 +12,7 @@ import necesse.gfx.drawOptions.human.HumanDrawOptions;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameTexture.GameTexture;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;

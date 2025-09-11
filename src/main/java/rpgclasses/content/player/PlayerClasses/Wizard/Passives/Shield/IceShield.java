@@ -4,7 +4,7 @@ import necesse.engine.registries.DamageTypeRegistry;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.PlayerMob;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.levelevents.IceExplosionLevelEvent;
 
 public class IceShield extends SimpleBuffPassive {

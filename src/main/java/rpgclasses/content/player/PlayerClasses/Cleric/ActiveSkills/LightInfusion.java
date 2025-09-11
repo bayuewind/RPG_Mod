@@ -11,7 +11,7 @@ import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGModifiers;

@@ -6,7 +6,7 @@ import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.ChanceLootItem;
 import necesse.level.maps.Level;
 import net.bytebuddy.asm.Advice;
-import rpgclasses.content.player.Logic.Attribute;
+import rpgclasses.content.player.Attribute;
 import rpgclasses.data.MobData;
 import rpgclasses.registry.RPGItems;
 

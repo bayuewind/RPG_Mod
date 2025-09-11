@@ -32,7 +32,7 @@ import necesse.inventory.item.placeableItem.objectItem.SeedObjectItem;
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.SeedGunProjectileToolItem;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
-import rpgclasses.content.player.Logic.ActiveSkills.SimpleTranformationActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleTranformationActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.SkillTransformationMountMob;

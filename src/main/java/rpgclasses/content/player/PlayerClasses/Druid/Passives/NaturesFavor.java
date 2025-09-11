@@ -4,7 +4,7 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.mobs.buffs.BuffEventSubscriber;
 import necesse.entity.mobs.buffs.BuffModifiers;
 import rpgclasses.buffs.Skill.PrincipalPassiveBuff;
-import rpgclasses.content.player.Logic.Passives.SimpleBuffPassive;
+import rpgclasses.content.player.SkillsLogic.Passives.SimpleBuffPassive;
 import rpgclasses.registry.RPGTiles;
 
 public class NaturesFavor extends SimpleBuffPassive {

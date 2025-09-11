@@ -3,7 +3,7 @@ package rpgclasses.containers.rpgmenu.components;
 import necesse.engine.Settings;
 import necesse.gfx.forms.components.FormContentBox;
 import necesse.gfx.ui.GameInterfaceStyle;
-import rpgclasses.content.player.MasterySkills.Mastery;
+import rpgclasses.content.player.Mastery.Mastery;
 
 import java.awt.*;
 
