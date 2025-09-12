@@ -50,32 +50,34 @@ public class IgnitedBuff extends Buff {
     }
 
     public static void apply(Mob attacker, Mob target, float damage, int duration, boolean isPurple) {
-        ActiveBuff ab = new ActiveBuff(RPGBuffs.IGNITED, target, duration, attacker);
-        if (isPurple) ab.getGndData().setBoolean("isPurple", true);
-        boolean canApply = true;
-        if (attacker.isPlayer) {
-            ActiveBuff oldAB = target.buffManager.getBuff(RPGBuffs.IGNITED);
-            if (oldAB != null) {
-                PlayerData playerData = PlayerDataList.getPlayerData((PlayerMob) attacker);
-                if (playerData.hasMasterySkill(Mastery.PYROMANCER)) {
-                    int durationLeft = oldAB.getDurationLeft();
-                    damage = oldAB.getGndData().getFloat("igniteDamage") * durationLeft + damage * duration;
-                    duration = durationLeft < duration ? (durationLeft + duration) / 2 : durationLeft;
-                    damage /= duration;
-                    oldAB.getGndData().setFloat("igniteDamage", damage);
-                    oldAB.setModifier(BuffModifiers.FIRE_DAMAGE_FLAT, damage);
+        if(attacker.isServer()) {
+            ActiveBuff ab = new ActiveBuff(RPGBuffs.IGNITED, target, duration, attacker);
+            if (isPurple) ab.getGndData().setBoolean("isPurple", true);
+            boolean canApply = true;
+            if (attacker.isPlayer) {
+                ActiveBuff oldAB = target.buffManager.getBuff(RPGBuffs.IGNITED);
+                if (oldAB != null) {
+                    PlayerData playerData = PlayerDataList.getPlayerData((PlayerMob) attacker);
+                    if (playerData.hasMasterySkill(Mastery.PYROMANCER)) {
+                        int durationLeft = oldAB.getDurationLeft();
+                        damage = oldAB.getGndData().getFloat("igniteDamage") * durationLeft + damage * duration;
+                        duration = durationLeft < duration ? (durationLeft + duration) / 2 : durationLeft;
+                        damage /= duration;
+                        oldAB.getGndData().setFloat("igniteDamage", damage);
+                        oldAB.setModifier(BuffModifiers.FIRE_DAMAGE_FLAT, damage);
 
-                    oldAB.setDurationLeft(duration);
-                    target.getServer().network.sendToClientsAtEntireLevel(new PacketMobUpdateIgniteBuff(target.getUniqueID(), oldAB), target.getLevel());
+                        oldAB.setDurationLeft(duration);
+                        target.getServer().network.sendToClientsAtEntireLevel(new PacketMobUpdateIgniteBuff(target.getUniqueID(), oldAB), target.getLevel());
 
-                    canApply = false;
+                        canApply = false;
+                    }
                 }
             }
-        }
 
-        IgnitedBuff.setIgniteDamage(ab, damage);
-        if (canApply && shouldApply(target, damage, duration))
-            target.buffManager.addBuff(ab, attacker.isServer(), true);
+            IgnitedBuff.setIgniteDamage(ab, damage);
+            if (canApply && shouldApply(target, damage, duration))
+                target.buffManager.addBuff(ab, attacker.isServer(), true);
+        }
     }
 
     public static boolean shouldApply(Mob target, float damage, int duration) {

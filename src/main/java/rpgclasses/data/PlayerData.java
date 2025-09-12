@@ -100,7 +100,7 @@ public class PlayerData {
 
     public void loadDataMastery(LoadData loadData) {
         masterySkills.clear();
-        String[] strings = loadData.getStringArray(masteryDataName);
+        String[] strings = loadData.getStringArray(masteryDataName, new String[0]);
         for (String string : strings) {
             Mastery mastery = Mastery.masterySkills.get(string);
             if (mastery != null) {
