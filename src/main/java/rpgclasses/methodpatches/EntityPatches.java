@@ -26,7 +26,7 @@ public class EntityPatches {
         static void onExit(@Advice.This Entity This) {
             if (This instanceof HostileMob) {
                 HostileMob mob = (HostileMob) This;
-                MobData.initMob(mob, mob.getLevel());
+                MobData.initMob(mob);
             }
         }
     }

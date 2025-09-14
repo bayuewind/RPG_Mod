@@ -39,7 +39,7 @@ public class MobPatches {
     public static class init {
         @Advice.OnMethodExit
         static void onExit(@Advice.This Mob This) {
-            MobData.initMob(This, This.getLevel());
+            MobData.initMob(This);
         }
     }
 

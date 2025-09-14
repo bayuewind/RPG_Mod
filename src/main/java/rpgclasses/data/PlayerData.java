@@ -34,6 +34,7 @@ import java.util.List;
 
 public class PlayerData {
     public static int EQUIPPED_SKILLS_MAX = 12;
+    public static int MAX_EXP = 2000000000;
 
     public static String prefixDataName = "rpgmod_";
     public static String expDataName = prefixDataName + "exp";
@@ -45,7 +46,9 @@ public class PlayerData {
 
     public static String grabbedObjectDataName = prefixDataName + "grabbedobject";
 
+    public final int playerUniqueID;
     public final String playerName;
+    public final long worldUniqueID;
     private int exp = 0;
     private int resets = 0;
     private int[] attributePointsUsed = new int[Attribute.attributesList.size()];
@@ -56,10 +59,13 @@ public class PlayerData {
 
     public GameObject grabbedObject;
 
-    public PlayerData(String playerName) {
+    public PlayerData(int playerUniqueID, String playerName, long worldUniqueID) {
+        this.playerUniqueID = playerUniqueID;
         this.playerName = playerName;
+        this.worldUniqueID = worldUniqueID;
+
         for (int i = 0; i < classesData.length; i++) {
-            classesData[i] = new PlayerClassData(i, playerName);
+            classesData[i] = new PlayerClassData(i, playerUniqueID);
         }
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = new EquippedActiveSkill();
@@ -119,7 +125,7 @@ public class PlayerData {
         boolean update = classLevels.length == PlayerClass.classesList.size();
         this.classesData = new PlayerClassData[classLevels.length];
         for (int i = 0; i < this.classesData.length; i++) {
-            PlayerClassData classData = new PlayerClassData(i, playerName);
+            PlayerClassData classData = new PlayerClassData(i, playerUniqueID);
             if (update) classData.loadData(loadData);
             classesData[i] = classData;
         }
@@ -190,7 +196,12 @@ public class PlayerData {
     }
 
     public int getExp() {
-        return this.exp + RPGSettings.startingExperience();
+        int maxExp = MAX_EXP - RPGSettings.startingExperience();
+        if (this.exp > maxExp) {
+            return MAX_EXP;
+        } else {
+            return this.exp + RPGSettings.startingExperience();
+        }
     }
 
     public int[] getAttributePointsUsed() {
@@ -366,19 +377,16 @@ public class PlayerData {
         }
     }
 
-    public static int MAX_EXP = 2000000000;
-
     public void modExpSendPacket(ServerClient serverClient, int amount) {
         if (amount == 0) return;
 
         int oldLevel = this.getLevel();
 
-        int maxExp = MAX_EXP - RPGSettings.startingExperience();
         if (amount > 0) {
-            if (this.exp > maxExp - amount) {
-                amount = maxExp - this.exp;
+            if (this.exp > MAX_EXP - amount) {
+                amount = MAX_EXP - this.exp;
                 if (amount <= 0) return;
-                this.exp = maxExp;
+                this.exp = MAX_EXP;
             } else {
                 this.exp += amount;
             }
@@ -421,7 +429,9 @@ public class PlayerData {
     }
 
     public void setupPacket(@NotNull PacketWriter writer) {
+        writer.putNextInt(playerUniqueID);
         writer.putNextString(playerName);
+        writer.putNextLong(worldUniqueID);
 
         // Exp
         writer.putNextInt(exp);
@@ -452,7 +462,7 @@ public class PlayerData {
 
     @NotNull
     public static PlayerData applyPacket(@NotNull PacketReader reader) {
-        PlayerData playerData = new PlayerData(reader.getNextString());
+        PlayerData playerData = new PlayerData(reader.getNextInt(), reader.getNextString(), reader.getNextLong());
 
         // Exp
         playerData.exp = reader.getNextInt();

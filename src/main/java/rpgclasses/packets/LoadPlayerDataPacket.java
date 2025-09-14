@@ -17,14 +17,16 @@ import java.util.Objects;
 
 public class LoadPlayerDataPacket extends Packet {
 
-    public final String name;
+    public final int uniqueID;
+    public final String playerName;
     public final PlayerData playerData;
 
     public LoadPlayerDataPacket(byte[] data) {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        name = reader.getNextString();
+        uniqueID = reader.getNextInt();
+        playerName = reader.getNextString();
 
         if (reader.hasNext()) {
             playerData = PlayerData.applyPacket(reader);
@@ -33,13 +35,16 @@ public class LoadPlayerDataPacket extends Packet {
         }
     }
 
-    public LoadPlayerDataPacket(String name, PlayerData playerData) {
-        this.name = name;
+    public LoadPlayerDataPacket(int uniqueID, String playerName, PlayerData playerData) {
+        this.uniqueID = uniqueID;
+        this.playerName = playerName;
         this.playerData = playerData;
+
 
         PacketWriter writer = new PacketWriter(this);
 
-        writer.putNextString(name);
+        writer.putNextInt(uniqueID);
+        writer.putNextString(playerName);
         if (playerData != null) {
             playerData.setupPacket(writer);
         }
@@ -47,8 +52,8 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerDataList.setPlayerData(name, playerData, false);
-        if (Objects.equals(client.getPlayer().playerName, name)) {
+        PlayerDataList.setPlayerData(uniqueID, playerData, false);
+        if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
             CustomUIManager.expBar.updateExpBar(playerData);
             RPGSkillUIManager.updateContent(playerData);
         }
@@ -56,10 +61,18 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(name, true);
-        GameUtils.streamServerClients(server, client.getLevel()).forEach(c -> c.sendPacket(new LoadPlayerDataPacket(name, playerData)));
-        if (Objects.equals(client.playerMob.playerName, name)) {
-            playerData.updateAllBuffs(client.playerMob);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, true);
+
+        long worldUniqueID = server.world.getUniqueID();
+
+        if (playerData == null || playerData.worldUniqueID != worldUniqueID) {
+            playerData = PlayerDataList.initPlayerData(uniqueID, playerName, worldUniqueID, true);
+        }
+
+        final PlayerData finalPlayerData = playerData;
+        GameUtils.streamServerClients(server, client.getLevel()).forEach(c -> c.sendPacket(new LoadPlayerDataPacket(uniqueID, playerName, finalPlayerData)));
+        if (Objects.equals(client.playerMob.getUniqueID(), uniqueID)) {
+            finalPlayerData.updateAllBuffs(client.playerMob);
         }
     }
 }

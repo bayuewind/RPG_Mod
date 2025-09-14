@@ -14,32 +14,32 @@ import java.util.Objects;
 
 public class UpdateClientObjectGrabbedPacket extends Packet {
 
-    public final String name;
+    public final int uniqueID;
     public final int grabbedObjectID;
 
     public UpdateClientObjectGrabbedPacket(byte[] data) {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        name = reader.getNextString();
+        uniqueID = reader.getNextInt();
         grabbedObjectID = reader.getNextInt();
     }
 
     public UpdateClientObjectGrabbedPacket(PlayerData playerData) {
-        this.name = playerData.playerName;
+        this.uniqueID = playerData.playerUniqueID;
         this.grabbedObjectID = playerData.grabbedObject == null ? -1 : playerData.grabbedObject.getID();
 
         PacketWriter writer = new PacketWriter(this);
 
-        writer.putNextString(name);
+        writer.putNextInt(uniqueID);
         writer.putNextInt(grabbedObjectID);
     }
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(name, false);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, false);
         playerData.grabbedObject = grabbedObjectID == -1 ? null : ObjectRegistry.getObject(grabbedObjectID);
-        if (Objects.equals(client.getPlayer().playerName, name)) {
+        if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
             CustomUIManager.expBar.updateExpBar(playerData);
         }
     }

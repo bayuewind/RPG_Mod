@@ -13,33 +13,33 @@ import java.util.Objects;
 
 public class UpdateClientExpPacket extends Packet {
 
-    public final String name;
+    public final int uniqueID;
     public final int exp;
 
     public UpdateClientExpPacket(byte[] data) {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        name = reader.getNextString();
+        uniqueID = reader.getNextInt();
         exp = reader.getNextInt();
     }
 
     public UpdateClientExpPacket(PlayerData playerData) {
-        this.name = playerData.playerName;
+        this.uniqueID = playerData.playerUniqueID;
         this.exp = playerData.getBaseExp();
 
         PacketWriter writer = new PacketWriter(this);
 
-        writer.putNextString(name);
+        writer.putNextInt(uniqueID);
         writer.putNextInt(exp);
     }
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
         if (client.getPlayer() != null) {
-            PlayerData playerData = PlayerDataList.getPlayerData(name, false);
+            PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, false);
             playerData.loadDataExp(exp);
-            if (Objects.equals(client.getPlayer().playerName, name)) {
+            if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
                 CustomUIManager.expBar.updateExpBar(playerData);
             }
         }

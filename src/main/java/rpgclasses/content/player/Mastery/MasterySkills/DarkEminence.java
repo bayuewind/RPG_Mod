@@ -23,15 +23,24 @@ public class DarkEminence extends Mastery {
     public MasteryBuff masteryBuff() {
         return new MasteryBuff() {
             @Override
-            public void onBeforeHitCalculated(ActiveBuff buff, MobBeforeHitCalculatedEvent event) {
-                super.onBeforeHitCalculated(buff, event);
-                if (buff.owner.isServer() && buff.owner.isPlayer) {
+            public void onBeforeHitCalculated(ActiveBuff activeBuff, MobBeforeHitCalculatedEvent event) {
+                super.onBeforeHitCalculated(activeBuff, event);
+                if (activeBuff.owner.isServer() && activeBuff.owner.isPlayer) {
                     Mob attacker = event.attacker.getAttackOwner();
                     if (attacker != null) {
-                        PlayerMob player = (PlayerMob) buff.owner;
-                        int maxDamage = (int) (player.getMaxHealth() * 0.15F);
+                        PlayerMob player = (PlayerMob) activeBuff.owner;
+                        int maxDamage = Math.max(1, (int) (player.getMaxHealth() * 0.15F));
                         int excess = event.damage - maxDamage;
                         if (excess > 0) {
+
+                            long lastUse = activeBuff.getGndData().getLong("lastUse");
+                            long now = player.getTime();
+
+                            if (lastUse + 3000 > now) return;
+
+                            activeBuff.getGndData().setLong("lastUse", now);
+
+
                             event.prevent();
                             event.showDamageTip = false;
                             event.playHitSound = false;

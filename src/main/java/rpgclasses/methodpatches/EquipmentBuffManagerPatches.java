@@ -23,7 +23,7 @@ public class EquipmentBuffManagerPatches {
                 if (owner.isPlayer) {
                     PlayerMob player = (PlayerMob) owner;
                     PlayerData playerData = PlayerDataList.getPlayerData(player);
-                    playerData.updateModifiersBuff(player);
+                    if(playerData != null) playerData.updateModifiersBuff(player);
                 }
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 throw new RuntimeException(e);

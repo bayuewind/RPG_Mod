@@ -32,7 +32,7 @@ public class UpdateClientClassDataPacket extends Packet {
     public void processClient(NetworkPacket packet, Client client) {
         PlayerData playerData = classData.getPlayerData(false);
         playerData.getClassesData()[classData.playerClass.id] = classData;
-        if (Objects.equals(client.getPlayer().playerName, classData.playerName)) {
+        if (Objects.equals(client.getPlayer().getUniqueID(), classData.playerUniqueID)) {
             RPGSkillUIManager.updateLevels(playerData);
         }
     }

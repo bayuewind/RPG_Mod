@@ -17,7 +17,7 @@ public class ClientClientPatches {
                 PlayerMob player = client.getPlayer();
 
                 if (player != null) {
-                    client.network.sendPacket(new LoadPlayerDataPacket(player.playerName, null));
+                    client.network.sendPacket(new LoadPlayerDataPacket(player.getUniqueID(), player.playerName, null));
                 }
             }
         }

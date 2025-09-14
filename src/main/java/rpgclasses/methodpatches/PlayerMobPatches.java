@@ -34,7 +34,7 @@ public class PlayerMobPatches {
 
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) LoadData loadData) {
-            PlayerData playerData = PlayerDataList.getPlayerData(This);
+            PlayerData playerData = PlayerDataList.initPlayerData(This);
             playerData.loadData(This, loadData);
         }
 
@@ -46,7 +46,7 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) SaveData saveData) {
             PlayerData player = PlayerDataList.getPlayerData(This);
-            player.saveData(saveData);
+            if(player != null) player.saveData(saveData);
         }
 
     }
@@ -57,9 +57,11 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This) {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
-            playerData.updateAllBuffs(This);
-            for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
-                equippedActiveSkill.restartCooldown();
+            if(playerData != null) {
+                playerData.updateAllBuffs(This);
+                for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
+                    equippedActiveSkill.restartCooldown();
+                }
             }
         }
 

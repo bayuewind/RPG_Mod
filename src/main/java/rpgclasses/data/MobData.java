@@ -148,8 +148,9 @@ public class MobData {
         return ((mob.isHostile && !mob.isPlayer) || mob.isBoss()) && mob.getClass() != WormMobBody.class && mob.getClass() != NightSwarmBatMob.class;
     }
 
-    public static void initMob(Mob mob, Level mapLevel) {
-        if (mapLevel != null && shouldInitMob(mob) && getMob(mob) == null) {
+    public static void initMob(Mob mob) {
+        if (mob.isServer() && shouldInitMob(mob) && getMob(mob) == null) {
+            Level mapLevel = mob.getLevel();
             MobData mobData = new MobData();
             mobData.mob = mob;
 

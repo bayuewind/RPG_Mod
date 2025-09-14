@@ -17,14 +17,14 @@ public class PlayerClassData {
     public final String activeSkillsDataName;
 
     public final PlayerClass playerClass;
-    public final String playerName;
+    public final int playerUniqueID;
 
     private int[] passiveLevels;
     private int[] activeSkillLevels;
 
-    public PlayerClassData(int classID, String playerName) {
+    public PlayerClassData(int classID, int playerUniqueID) {
         this.playerClass = PlayerClass.classesList.get(classID);
-        this.playerName = playerName;
+        this.playerUniqueID = playerUniqueID;
 
         this.passiveLevels = new int[playerClass.passivesList.size()];
         this.activeSkillLevels = new int[playerClass.activeSkillsList.size()];
@@ -35,7 +35,7 @@ public class PlayerClassData {
     }
 
     public PlayerData getPlayerData(boolean isServer) {
-        return PlayerDataList.getPlayerData(playerName, isServer);
+        return PlayerDataList.getPlayerData(playerUniqueID, isServer);
     }
 
     public int getLevel(boolean isServer) {
@@ -117,9 +117,9 @@ public class PlayerClassData {
 
     public static PlayerClassData applyPacket(PacketReader reader) {
         int id = reader.getNextInt();
-        String playerName = reader.getNextString();
+        int playerUniqueID = reader.getNextInt();
 
-        PlayerClassData classData = new PlayerClassData(id, playerName);
+        PlayerClassData classData = new PlayerClassData(id, playerUniqueID);
 
         classData.passiveLevels = reader.getNextInts(classData.playerClass.passivesList.size());
         classData.activeSkillLevels = reader.getNextInts(classData.playerClass.activeSkillsList.size());
@@ -129,7 +129,7 @@ public class PlayerClassData {
 
     public void setupPacket(PacketWriter writer) {
         writer.putNextInt(playerClass.id);
-        writer.putNextString(playerName);
+        writer.putNextInt(playerUniqueID);
 
         writer.putNextInts(passiveLevels);
         writer.putNextInts(activeSkillLevels);
