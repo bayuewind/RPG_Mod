@@ -14,6 +14,7 @@ import java.util.List;
 public class UpdateClientMasteryPacket extends Packet {
 
     public final int uniqueID;
+    public final String playerName;
     public final List<Integer> masterySkills;
 
     public UpdateClientMasteryPacket(byte[] data) {
@@ -21,6 +22,7 @@ public class UpdateClientMasteryPacket extends Packet {
         PacketReader reader = new PacketReader(this);
 
         uniqueID = reader.getNextInt();
+        playerName = reader.getNextString();
         masterySkills = new ArrayList<>();
         int masterySize = reader.getNextInt();
         int[] masteryArray = reader.getNextInts(masterySize);
@@ -32,10 +34,12 @@ public class UpdateClientMasteryPacket extends Packet {
 
     public UpdateClientMasteryPacket(PlayerData playerData) {
         this.uniqueID = playerData.playerUniqueID;
+        this.playerName = playerData.playerName;
         this.masterySkills = playerData.masterySkills;
 
         PacketWriter writer = new PacketWriter(this);
         writer.putNextInt(uniqueID);
+        writer.putNextString(playerName);
 
         int[] masteryArray = masterySkills.stream().mapToInt(Integer::intValue).toArray();
         writer.putNextInt(masteryArray.length);
@@ -44,7 +48,7 @@ public class UpdateClientMasteryPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, false);
-        playerData.setMasterySkills(masterySkills);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, false);
+        if (playerData != null) playerData.setMasterySkills(masterySkills);
     }
 }

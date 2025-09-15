@@ -17,7 +17,7 @@ import rpgclasses.settings.RPGSettings;
 @ModEntry
 public class RPGMod {
 
-    public static String currentVersion = "v0.6.5";
+    public static String currentVersion = "v0.6.6";
 
     static {
         new RPGModifiers();

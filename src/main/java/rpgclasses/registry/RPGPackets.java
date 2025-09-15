@@ -26,8 +26,6 @@ public class RPGPackets {
         PacketRegistry.registerPacket(UpdateClientClassesPacket.class);
         PacketRegistry.registerPacket(UpdateClientEquippedActiveSkillsPacket.class);
 
-        PacketRegistry.registerPacket(UpdateClientObjectGrabbedPacket.class);
-
         PacketRegistry.registerPacket(UpdateClientClassDataPacket.class);
 
         PacketRegistry.registerPacket(HolyDamageDealtBuff.ModClientHolyDamageDealtPacket.class);

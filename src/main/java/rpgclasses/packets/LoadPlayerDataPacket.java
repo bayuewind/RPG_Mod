@@ -52,7 +52,7 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerDataList.setPlayerData(uniqueID, playerData, false);
+        PlayerDataList.setPlayerData(uniqueID, playerName, playerData, false);
         if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
             CustomUIManager.expBar.updateExpBar(playerData);
             RPGSkillUIManager.updateContent(playerData);
@@ -61,7 +61,7 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, true);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, true);
 
         long worldUniqueID = server.world.getUniqueID();
 

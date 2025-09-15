@@ -15,6 +15,7 @@ import java.util.Objects;
 public class UpdateClientEquippedActiveSkillsPacket extends Packet {
 
     public final int uniqueID;
+    public final String playerName;
     public final EquippedActiveSkill[] equippedActiveSkills;
 
     public UpdateClientEquippedActiveSkillsPacket(byte[] data) {
@@ -22,6 +23,7 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
         PacketReader reader = new PacketReader(this);
 
         uniqueID = reader.getNextInt();
+        playerName = reader.getNextString();
         equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
 
         for (int i = 0; i < PlayerData.EQUIPPED_SKILLS_MAX; i++) {
@@ -32,9 +34,11 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
     public UpdateClientEquippedActiveSkillsPacket(PlayerData playerData) {
         this.uniqueID = playerData.playerUniqueID;
         this.equippedActiveSkills = playerData.equippedActiveSkills;
+        this.playerName = playerData.playerName;
 
         PacketWriter writer = new PacketWriter(this);
         writer.putNextInt(uniqueID);
+        writer.putNextString(playerName);
         for (EquippedActiveSkill activeSkill : equippedActiveSkills) {
             activeSkill.setupPacket(writer);
         }
@@ -42,10 +46,12 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, false);
-        playerData.equippedActiveSkills = equippedActiveSkills;
-        if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
-            RPGSkillUIManager.updateContent(playerData);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, false);
+        if(playerData != null) {
+            playerData.equippedActiveSkills = equippedActiveSkills;
+            if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
+                RPGSkillUIManager.updateContent(playerData);
+            }
         }
     }
 }

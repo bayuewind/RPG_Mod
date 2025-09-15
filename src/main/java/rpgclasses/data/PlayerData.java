@@ -65,7 +65,7 @@ public class PlayerData {
         this.worldUniqueID = worldUniqueID;
 
         for (int i = 0; i < classesData.length; i++) {
-            classesData[i] = new PlayerClassData(i, playerUniqueID);
+            classesData[i] = new PlayerClassData(i, playerUniqueID, playerName);
         }
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = new EquippedActiveSkill();
@@ -125,7 +125,7 @@ public class PlayerData {
         boolean update = classLevels.length == PlayerClass.classesList.size();
         this.classesData = new PlayerClassData[classLevels.length];
         for (int i = 0; i < this.classesData.length; i++) {
-            PlayerClassData classData = new PlayerClassData(i, playerUniqueID);
+            PlayerClassData classData = new PlayerClassData(i, playerUniqueID, playerName);
             if (update) classData.loadData(loadData);
             classesData[i] = classData;
         }

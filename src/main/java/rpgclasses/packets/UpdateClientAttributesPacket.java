@@ -12,6 +12,7 @@ import rpgclasses.data.PlayerDataList;
 public class UpdateClientAttributesPacket extends Packet {
 
     public final int uniqueID;
+    public final String playerName;
     public final int[] attributes;
 
     public UpdateClientAttributesPacket(byte[] data) {
@@ -19,6 +20,7 @@ public class UpdateClientAttributesPacket extends Packet {
         PacketReader reader = new PacketReader(this);
 
         uniqueID = reader.getNextInt();
+        playerName = reader.getNextString();
         attributes = new int[Attribute.attributes.size()];
         for (int i = 0; i < Attribute.attributes.size(); i++) {
             attributes[i] = reader.getNextInt();
@@ -28,9 +30,11 @@ public class UpdateClientAttributesPacket extends Packet {
     public UpdateClientAttributesPacket(PlayerData playerData) {
         this.uniqueID = playerData.playerUniqueID;
         this.attributes = playerData.getAttributePointsUsed();
+        this.playerName = playerData.playerName;
 
         PacketWriter writer = new PacketWriter(this);
         writer.putNextInt(uniqueID);
+        writer.putNextString(playerName);
         for (int i = 0; i < Attribute.attributes.size(); i++) {
             writer.putNextInt(playerData.getAttributePoints(i));
         }
@@ -38,7 +42,7 @@ public class UpdateClientAttributesPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, false);
-        playerData.setAttributes(attributes);
+        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, false);
+        if(playerData != null) playerData.setAttributes(attributes);
     }
 }
