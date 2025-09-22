@@ -39,7 +39,6 @@ public class RPGSettings {
                     //////////////////////////////////////////////////////////////////////////
 
                     .addTextSeparator("experience_section")
-                    .addParagraph("experience_text")
 
                     .addIntSetting("experienceMod", 100, 0, 10000, IntSetting.DisplayMode.INPUT)
                     .addParagraph("experienceMod_text", 0, 8)

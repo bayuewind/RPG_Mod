@@ -10,12 +10,12 @@ import necesse.inventory.item.DoubleItemStatTip;
 import necesse.inventory.item.LocalMessageDoubleItemStatTip;
 
 public class RPGDamageType {
-    public static DamageType HOLY;
-    public static DamageType THROWING;
+    public static DamageType HOLY = new HolyDamageType();
+    public static DamageType THROWING = new ThrowingDamageType();
 
     public static void registerCore() {
-        DamageTypeRegistry.registerDamageType("holy", HOLY = new HolyDamageType());
-        DamageTypeRegistry.registerDamageType("throwing", THROWING = new ThrowingDamageType());
+        DamageTypeRegistry.registerDamageType("holy", HOLY);
+        DamageTypeRegistry.registerDamageType("throwing", THROWING);
     }
 
     private static class HolyDamageType extends DamageType {
