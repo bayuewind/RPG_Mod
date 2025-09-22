@@ -1,4 +1,4 @@
-package rpgclasses.methodpatches;
+package rpgclasses.patches;
 
 import necesse.engine.GlobalData;
 import necesse.engine.gameLoop.tickManager.TickManager;

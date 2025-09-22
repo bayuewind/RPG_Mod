@@ -1,5 +1,6 @@
 package rpgclasses.buffs.Passive;
 
+import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.MobBeforeHitEvent;
 import necesse.entity.mobs.MobWasHitEvent;
@@ -28,22 +29,30 @@ public class ModifiersBuff extends PassiveBuff {
     public void init(ActiveBuff activeBuff, BuffEventSubscriber eventSubscriber) {
         if (activeBuff.owner.isPlayer) {
             PlayerMob player = (PlayerMob) activeBuff.owner;
-            PlayerData playerData = PlayerDataList.getPlayerData(player);
-            for (Attribute attribute : Attribute.attributesList) {
-                float attributeLevel = attribute.getLevel(playerData, player);
-                if (attributeLevel > 0) {
-                    attribute.applyBuff(activeBuff, attributeLevel);
-                }
-            }
 
-            for (PlayerClassData classesDatum : playerData.getClassesData()) {
-                for (int i = 0; i < classesDatum.getPassiveLevels().length; i++) {
-                    int passiveLevel = classesDatum.getPassiveLevels()[i];
-                    if (passiveLevel > 0) {
-                        Passive passive = classesDatum.playerClass.passivesList.get(i);
-                        if (passive instanceof BasicPassive) {
-                            BasicPassive basicPassive = (BasicPassive) passive;
-                            if (!basicPassive.onlyTransformed) basicPassive.applyBuff(activeBuff, passiveLevel);
+            new ModifierValue<>(RPGModifiers.THROWING_DAMAGE, (player.buffManager.getModifier(BuffModifiers.MELEE_DAMAGE) + player.buffManager.getModifier(BuffModifiers.RANGED_DAMAGE)) * 0.5F).apply(activeBuff);
+            new ModifierValue<>(RPGModifiers.THROWING_ATTACK_SPEED, (player.buffManager.getModifier(BuffModifiers.MELEE_ATTACK_SPEED) + player.buffManager.getModifier(BuffModifiers.RANGED_ATTACK_SPEED)) * 0.5F).apply(activeBuff);
+            new ModifierValue<>(RPGModifiers.THROWING_CRIT_CHANCE, (player.buffManager.getModifier(BuffModifiers.MELEE_CRIT_CHANCE) + player.buffManager.getModifier(BuffModifiers.RANGED_CRIT_CHANCE)) * 0.5F).apply(activeBuff);
+            new ModifierValue<>(RPGModifiers.THROWING_CRIT_DAMAGE, (player.buffManager.getModifier(BuffModifiers.MELEE_CRIT_CHANCE) + player.buffManager.getModifier(BuffModifiers.RANGED_CRIT_CHANCE)) * 0.5F).apply(activeBuff);
+
+            PlayerData playerData = PlayerDataList.getPlayerData(player);
+            if(playerData != null) {
+                for (Attribute attribute : Attribute.attributesList) {
+                    float attributeLevel = attribute.getLevel(playerData, player);
+                    if (attributeLevel > 0) {
+                        attribute.applyBuff(activeBuff, attributeLevel);
+                    }
+                }
+
+                for (PlayerClassData classesDatum : playerData.getClassesData()) {
+                    for (int i = 0; i < classesDatum.getPassiveLevels().length; i++) {
+                        int passiveLevel = classesDatum.getPassiveLevels()[i];
+                        if (passiveLevel > 0) {
+                            Passive passive = classesDatum.playerClass.passivesList.get(i);
+                            if (passive instanceof BasicPassive) {
+                                BasicPassive basicPassive = (BasicPassive) passive;
+                                if (!basicPassive.onlyTransformed) basicPassive.applyBuff(activeBuff, passiveLevel);
+                            }
                         }
                     }
                 }

@@ -10,7 +10,6 @@ import rpgclasses.data.PlayerDataList;
 
 public class UpdateClientResetsPacket extends Packet {
 
-    public final int uniqueID;
     public final String playerName;
     public final int resets;
 
@@ -18,26 +17,23 @@ public class UpdateClientResetsPacket extends Packet {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        uniqueID = reader.getNextInt();
         playerName = reader.getNextString();
         resets = reader.getNextInt();
     }
 
     public UpdateClientResetsPacket(PlayerData playerData) {
-        this.uniqueID = playerData.playerUniqueID;
         this.playerName = playerData.playerName;
         this.resets = playerData.getResets();
 
         PacketWriter writer = new PacketWriter(this);
 
-        writer.putNextInt(uniqueID);
         writer.putNextString(playerName);
         writer.putNextInt(resets);
     }
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID,playerName, false);
+        PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
         if(playerData != null) playerData.loadDataResets(resets);
     }
 }

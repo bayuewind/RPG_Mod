@@ -1,13 +1,20 @@
 package rpgclasses.registry;
 
 import aphorea.registry.AphBuffs;
+import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.BuffRegistry;
+import necesse.engine.registries.GameRegistry;
+import necesse.engine.registries.IDDataContainer;
 import necesse.entity.mobs.Mob;
 import necesse.entity.mobs.buffs.ActiveBuff;
+import necesse.entity.mobs.buffs.BuffModifiers;
 import necesse.entity.mobs.buffs.staticBuffs.Buff;
+import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
 import rpgclasses.buffs.*;
 import rpgclasses.buffs.Passive.*;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -111,6 +118,32 @@ public class RPGBuffs {
         BuffRegistry.registerBuff("grabbedobjectbuff", PASSIVES.GRABBED_OBJECT = new GrabbedObjectBuff());
         BuffRegistry.registerBuff("transformedbuff", PASSIVES.TRANSFORMED = new TransformedBuff());
 
+
+        buffReworks();
+    }
+
+    public static void buffReworks() {
+
+        replaceBuff("vampiresgifttrinket", new SimpleTrinketBuff("vampiresgift", new ModifierValue<>(BuffModifiers.SPEED, 0.15F), new ModifierValue<>(RPGModifiers.DODGE_CHANCE, 0.03F)));
+
+        replaceBuff("trackerboottrinket", new SimpleTrinketBuff("trackerboottip", new ModifierValue<>(BuffModifiers.SPEED, 0.1F), new ModifierValue<>(RPGModifiers.DODGE_CHANCE, 0.02F)));
+
+    }
+
+    public static void replaceBuff(String stringID, Buff buff) {
+        try {
+            Class<?> buffRegistryElementClass = Class.forName("necesse.engine.registries.BuffRegistry$BuffRegistryElement");
+
+            Constructor<?> constructor = buffRegistryElementClass.getDeclaredConstructor(Buff.class);
+            constructor.setAccessible(true);
+            Object buffRegistryElement = constructor.newInstance(buff);
+
+            Method replaceMethod = GameRegistry.class.getDeclaredMethod("replaceObj", String.class, IDDataContainer.class);
+            replaceMethod.setAccessible(true);
+            replaceMethod.invoke(BuffRegistry.instance, stringID, buffRegistryElement);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void applyStop(Mob target, float duration) {

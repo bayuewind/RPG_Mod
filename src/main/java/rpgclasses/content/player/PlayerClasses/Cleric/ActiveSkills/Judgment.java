@@ -34,7 +34,7 @@ public class Judgment extends SimpleLevelEventActiveSkill {
 
     @Override
     public LevelEvent getLevelEvent(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        return new JudgmentLevelEvent(player.x, player.y, 300, new GameDamage(RPGDamageType.HOLY, 5 * playerData.getLevel() + 3 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player))), 0, player);
+        return new JudgmentLevelEvent(player.x, player.y, 200, new GameDamage(RPGDamageType.HOLY, 4 * playerData.getLevel() + 2 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player))), 0, player);
     }
 
     @Override

@@ -13,6 +13,7 @@ public class RPGSettings {
     public static ModSettings init() {
         try {
             modSettings = new CustomModSettings()
+                    .addParagraph("restart_text")
                     .addParagraph("client_text")
                     .addParagraph("server_text")
 
@@ -24,6 +25,14 @@ public class RPGSettings {
                     .addParagraph("default_text")
                     .addBooleanSetting("showClassIcons", true)
                     .addBooleanSetting("twelveSkillSlots", false)
+
+                    //////////////////////////////////////////////////////////////////////////
+                    .addSpace(12) ////////////////////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////
+
+                    .addTextSeparator("mechanics_section")
+
+                    .addBooleanSetting("boomerangsDealThrowingDamage", true)
 
                     //////////////////////////////////////////////////////////////////////////
                     .addSpace(12) ////////////////////////////////////////////////////////////
@@ -62,6 +71,8 @@ public class RPGSettings {
             ;
 
             modSettings.addServerSettings(
+                    "boomerangsDealThrowingDamage",
+
                     "experienceMod", "firstKillBonus", "bossKillBonus", "startingExperience",
                     "firstExperienceReq", "experienceReqInc", "squareExperienceReqInc", "cubeExperienceReqInc",
                     "multiClass"

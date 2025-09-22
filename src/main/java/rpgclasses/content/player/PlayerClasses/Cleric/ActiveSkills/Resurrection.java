@@ -21,7 +21,7 @@ public class Resurrection extends ActiveSkill {
     @Override
     public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
         super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
-        ServerClient lastDeath = RPGUtils.lastDeathPlayer(player.getLevel(), serverClient -> serverClient.isSameTeam(player.getTeam()) && player.getTime() - serverClient.respawnTime > 10000);
+        ServerClient lastDeath = (ServerClient) RPGUtils.lastDeathPlayer(player.getLevel(), 10000, c -> c.isSameTeam(player.getTeam()));
 
         if (lastDeath != null) {
             Point spawnPos = new Point();
@@ -55,7 +55,7 @@ public class Resurrection extends ActiveSkill {
 
     @Override
     public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.streamDeathPlayers(player.getLevel(), serverClient -> serverClient.isSameTeam(player.getTeam()) && player.getTime() - serverClient.respawnTime > 10000).findAny().isPresent() ? null : "nodeathplayers";
+        return RPGUtils.streamDeathPlayers(player.getLevel(), 10000, serverClient -> serverClient.isSameTeam(player.getTeam())).findAny().isPresent() ? null : "nodeathplayers";
     }
 
     @Override

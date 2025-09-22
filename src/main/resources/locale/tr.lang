@@ -25,11 +25,17 @@ holycritdamage=<mod>% kutsal kritik hasarı
 holyeffect=<mod>% kutsal etki
 holyabilityspeed=<mod>% kutsal yetenek hızı
 
+throwingdamage=<mod>% fırlatma hasarı
+throwingattackspeed=<mod>% fırlatma saldırı hızı
+throwingcritchance=<mod>% fırlatma kritik şansı
+throwingcritdamage=<mod>% fırlatma kritik hasarı
+
 transformationdelay=<mod>% dönüşüm gecikmesi
 noskills=Yetenek kullanamaz
 
 [stats]
 holy_damage=Kutsal hasar
+throwing_damage=Fırlatma hasarı
 
 
 [enchantment]
@@ -47,6 +53,7 @@ darkcursebuff=Karanlık Lanet
 magicpoisonbuff=Sihirli Zehir
 ignitedbuff=Yanıyor
 holydamagedealtbuff=Verilen Kutsal Hasar
+queenbeewashit=Kraliçe Arı vuruldu
 
 
 [buffdesc]
@@ -62,6 +69,7 @@ rpgmobnamecolor=§<renk>[<sınıf>]§0 <isim> §9svy <seviye>§0
 
 rangerwolf=Menzilli Kurt
 dancingflame=Dans Eden Alev
+
 necromancerskeleton=İskelet
 necromancerskeletonwarrior=İskelet Savaşçı
 necromancerboneslinger=Kemik Atıcı
@@ -180,7 +188,6 @@ phoenixspirit=Anka Ruhu
 
 
 [passivesdesc]
-
 // Savaşçı
 unleashingrage=Her seviye şunları sağlar:\n\n+1% Tüm Hasar için eksik Canın her %10'u
 unleashinghaste=Her seviye şunları sağlar:\n\nEksik Canın her %10'u için +%1 Hareket Hızı
@@ -207,7 +214,7 @@ darksummons=Zehirli düşmanlara §a+[[8 x <skilllevel>]]%§0 Çağırıcı Hasa
 lifeleech=Verilen Çağırıcı Hasarının §a[[0.05 x <skilllevel>]]%§0 kadarını Can olarak yeniler
 necroticremains=Bir nekrotik çağrı öldüğünde, patlar ve yakındaki düşmanlara §i[[0.1 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir, onları 10 saniye boyunca saniyede hasarın %20'si kadar zehirler
 endlesslegion=Bu yeteneğin her 4 seviyesinde, +1 maksimum çağrı kazanırsınız
-lichborn=Öldüğünüzde, zaten bir §bLich§0 değilseniz hayatta kalırsınız ve §a[[10 x <skilllevel>]]%§0 Can kazanırsınız\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca bir §bLich§0 (iskelet) olursunuz\n\n\n§bLich:§0 Ölümsüz dönüşüm\n\nEşya kullanamaz\n+100% Hasar Alımı\n\n[input=transformationability1] tuşuna basarak §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Büyü Hasarı§0 veren bir kemik atın
+lichborn=Öldüğünüzde, zaten bir §bLich§0 değilseniz hayatta kalırsınız ve §a[[10 x <skilllevel>]]%§0 Can kazanırsınız\nSonraki §a[[120 - 6 x <skilllevel>]] saniye§0 boyunca bir §bLich§0 (iskelet) olursunuz\n\n\n§bLich:§0 Ölümsüz dönüşüm\n\nEşya kullanamaz\n+100% Hasar Alımı\n\n[input=transformationability1] tuşuna basarak §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] Büyü Hasarı§0 veren bir kemik atın (2 dayanıklılık kazancı)
 
 // Cleric
 vitalaura=Her §a[[15 - <skilllevel>]] saniyede§0, etrafınıza §a[[10 + <grace> ↓]] can§0 yenileyen sihirli bir iyileştirme aurası salarsınız\nAyrıca sizi bu miktarın yarısı kadar iyileştirir
@@ -220,7 +227,7 @@ radiantexpansion=Kendinizi veya bir müttefiki sihirli bir şekilde iyileştirdi
 // Druid
 naturesfavor=Çim üzerinde dururken saniyede +§a[[2 x <skilllevel>]] Can Yenilenmesi§0 kazanın
 primalburst=Dönüştükten sonraki ilk 5 saniye boyunca Hasarı ve Hızı [[6 x <skillevel>]]% artırır
-phoenixspirit=Çalışması için en az 4 puan gereklidir:\n\nAktif bir yetenekle dönüşmüşken ölecek olsaydınız, bunun yerine §a[4 + 8 x <skilllevel>]]%§0 canla hayatta kalırsınız ve bu yetenek 1 saatlik bekleme süresine girer\n\nZaten 1 dakikadan uzun bekleme süresine sahip en az §a[[0.25 x <skilllevel> ↓]] dönüşüm yeteneği(leri)§0 varsa tetiklenmez
+phoenixspirit=Çalışması için en az 4 puan gereklidir:\n\nAktif bir yetenekle dönüşmüşken ölecek olsaydınız, bunun yerine §a[4 + 8 x <skilllevel>]%§0 canla hayatta kalırsınız ve bu yetenek 1 saatlik bekleme süresine girer\n\nZaten 1 dakikadan uzun bekleme süresine sahip en az §a[[0.25 x <skilllevel> ↓]] dönüşüm yeteneği(leri)§0 varsa tetiklenmez
 
 
 [activeskills]
@@ -285,14 +292,16 @@ wardingtaunt=Koruyucu Alay
 unholyground=Kutsal Olmayan Zemin
 necroticbarrage=Nekrotik Yaylım Ateşi
 
-// Cleric
+// Rahip
 smite=Çarpma
 divineblessing=Sihirli iyileştirme aurası, size ve müttefiklerinize §a[[20 + 3 x <grace> x <skilllevel> ↓]] can§0 yeniler\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
 purify=Arındırma
 lightinfusion=Işık İnfüzyonu
+
 holyguard=Kutsal Muhafız
 judgment=Yargı
 sanctuary=Sığınak
+
 divineintervention=İlahi Müdahale
 resurrection=Diriliş
 wrathoflight=Işığın Gazabı
@@ -300,9 +309,96 @@ wrathoflight=Işığın Gazabı
 // Druid
 wolftransformation=Kurt Dönüşümü
 queenbeetransformation=Kraliçe Arı Dönüşümü
+
 beartransformation=Ayı Dönüşümü
 foxtransformation=Tilki Dönüşümü
 rattransformation=Sıçan Dönüşümü
+
+treanttransformation=Treant'a dönüşmek 4 saniye sürer\n\nHareket Hızı: 0\n-§a[50 + 5 <skilllevel>]%§0 Gelen Hasar\n+50% Zırh\n3 saniye boyunca gizlenirseniz düşmanlar sizi görmezden gelir\n\nRastgele Tohumlar Atışı için [input=transformationability1] tuşuna basın: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Menzilli Hasar§0 verir, rastgele etkilerle (1 dayanıklılık kazancı)\n\n[input=transformationability2] tuşuna basarak §9Dryad Fidanı§0 çağırın\n\nHareket ederken Ortaya Çıkmak ve Koşmak için [input=trinketability] tuşunu basılı tutun
+
+
+[activeskillsdesc]
+// Savaşçı
+fury=Sonraki 6 saniye boyunca, Yakın Dövüş Hasarınızı ve Saldırı Hızınızı §a[[20 x <skilllevel>]]%§0 artırın
+recovery=Sonraki 10 saniye boyunca, Savaş Can Yenilenmesini büyük ölçüde artırır ve süre boyunca §a[[20 + <endurance> x <skilllevel>]] can§0 yeniler
+provocation=Sonraki §a[[2 x <skilllevel>]] saniye§0 boyunca, yakındaki düşmanları saldırılarını size odaklamaya zorlayın
+berserkercharge=Kısa bir mesafe ileri atılarak, geçtiğiniz tüm düşmanlara §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] Hasar§0 verin\n%50 Dayanıklılık tüketir
+
+groundslam=§i[[5 x <strength>]] Yakın Dövüş Hasarı§0 veren ve §a[[1 x <skilllevel>]] saniye§0 boyunca §9Sersemleten§0 alan saldırısı
+grounddestruction=§i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 veren ve 2 saniye boyunca §9Sersemleten§0 alan saldırısı
+parry=0,5 saniye boyunca yenilmez olun ve alınan orijinal Hasarın %500'ünü iade edin\n%100 Dayanıklılık tüketir
+battlecry=Sonraki 10 saniye boyunca, sizin ve yakındaki müttefiklerin Tüm Hasarını ve Hareket Hızını §a[[10 x <skilllevel>]]%§0 artırın
+
+ironguard=§a[[4 x <skilllevel>]] saniye§0 boyunca -%50 Gelen Hasar
+intimidation=Sonraki §a[[<skilllevel>]] saniye§0 boyunca, yakındaki düşmanları kaçırın
+
+objectthrowing=Adım 1: Önünüzdeki bir nesneyi kapın\nAdım 2: İleriye fırlatarak §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 verin
+
+// Menzilli
+shortdash=Kısa bir koşu yapın\n%15 Dayanıklılık tüketir
+longdash=Uzun bir koşu yapın\n%25 Dayanıklılık tüketir
+lethalshot=En yakın düşmana §hÖldürücü Ok§0 atarak §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Menzilli Hasarı§0 verin
+venomshot=En yakın düşmana §bZehirli Ok§0 atarak §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Menzilli Hasarı§0 verin
+explosiveshot=En yakın düşmana §iPatlayıcı Ok§0 atarak §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Menzilli Hasarı§0 verin
+
+shotsrampage=En az 1 Vuruş Çılgınlığı yığınına sahipken, bir düşmana menzilli bir saldırıyla vurmak 5 saniyeliğine 1 ek yığın kazandırır\nHer Vuruş Çılgınlığı yığını, Saldırı Hızını %5 artırır, maksimum 30 yığına kadar
+huntersmark=En yüksek cana sahip yakındaki düşmanı 10 saniyeliğine §hişaretleyin§0\nİşaretli bir hedefi öldürürseniz, 5 saniyeliğine §a+[[20 x <skilllevel>]]%§0 Menzilli Saldırı Hızı ve Hareket Hızı kazanırsınız
+beartrap=Yere bir ayı tuzağı yerleştirin, tetiklenirse veya 20 saniye sonra kaybolur\nBir düşman onu tetiklerse, §i[[10 x <playerlevel>]] Hasar§0 alır ve 5 saniye boyunca tuzağa düşer
+
+huntersinstinct=Sonraki 12 saniye boyunca, §7Savunma Şansınızı§0 §a[[5 x <skilllevel>]]%§0 artırın\nSavunduğunuz düşmanları 5 saniye boyunca §hişaretleyin§0
+arrowstorm=Her yakın düşmana temel bir ok atarak, her okla §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Menzilli Hasarı§0 verin
+
+// Büyücü
+arcaneoverload=Aktifken, Büyü Saldırı Hızınızı §a[[30 x <skilllevel>]]%§0 artırır, ancak hareket edemezsiniz\nMananız bittiğinde veya tekrar kullanıldığında sona erer\nSaniyede §a[[10 + 2 x <skilllevel>]] Mana tüketir
+manarecharge=Aktifken, Mana Yenilenmenizi +1.4 ve §a[[50 x <skilllevel>]]%§0 artırır, ancak felç olursunuz ve iki kat hasar alırsınız\nTekrar kullanıldığında sona erer
+firedance=Her biri §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 veren 4 §bDans Eden Alev§0 çağırır\nHer 5 saniyede bir tane daha çağırır\nTüm çağrılar, yetenek etkinleştirildikten 20 saniye sonra kaybolur\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
+iceball=En yakın düşmana bir §aBuz Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verin\n§a[[50 + 10 x <skilllevel>]] Mana tüketir
+zap=2 saniye boyunca moblar arasında zıplayan bir çarpma başlatın, §i[[<playerlevel> + <intelligence> x <skilllevel>]] Büyü Hasarı§0 verin ve 1 saniye sersemletin\n§a[[10 + 2 x <skilllevel>]] Mana tüketir
+
+teleport=Önünüze ışınlanırsınız\n10 Mana tüketir
+inferno=Yakındaki tüm düşmanları ateşe vererek, 10 saniye boyunca saniyede §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Ateş Hasarı§0 verin\n§a[[40 + 8 x <skilllevel>]] Mana tüketir
+fireenchantment=Sonraki 10 saniye boyunca, sizden ve yakındaki müttefiklerden gelen saldırılar düşmanları ateşe verir ve 5 saniye boyunca saniyede hasarın §a[[5 x <skilllevel>]]%§0 kadarını verir\n§a[[20 + 4 x <skilllevel>]] Mana tüketir
+iceenchantment=Sonraki 10 saniye boyunca, sizden ve yakındaki müttefiklerden gelen saldırılar düşmanları §a[[2 x <skilllevel>]] saniye§0 boyunca dondurur\n20 Mana tüketir
+
+fireball=En yakın düşmana bir §iAteş Topu§0 atarak §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verin\n§a[[80 + 16 x <skilllevel>]] Mana tüketir
+lightning=1 saniye boyunca moblar arasında zıplayan bir şimşek başlatın, §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verin ve 2 saniye sersemletin\nAynı hedefi birden çok kez vuramaz\n§a[[30 + 6 x <skilllevel>]] Mana tüketir
+
+// Nekromanser
+skeletonhorde=§a[[1 + <skilllevel>]] §bİskelet§0 çağırır
+skeletonwarrior=§a+[[40 x <skilllevel>]]%§0 Can ve Hasara sahip bir §bİskelet Savaşçısı§0 çağırır
+sacrifice=En yakın nekrotik çağrı ölür ve ardından sihirli iyileştirme olarak §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]] Can§0 yenilersiniz
+siegecry=6 saniyeliğine §a+[[50 x <skilllevel>]]%§0 Çağırma Hızı kazanın
+
+boneslingerhorde=§a[[1 + <skilllevel>]]§0 §bKemik Atıcı§0 çağırır
+tomb=Her §a[[10 - <skilllevel>]] saniyede§0 bir §bİskelet§0 çağıran bir yapı oluşturur\nMezarın Canı §a[[5 x <playerlevel> x <skilllevel>]]§0 kadardır\nMezar saniyede Toplam Canının %2'sini kaybeder
+necroticbloom=Yakındaki tüm düşmanlardaki zehir etkisini hızlandırarak süresini %10'a düşürür, ancak toplam hasarı korumak için saniyedeki hasarını artırır
+wardingtaunt=En yakın nekrotik çağrı, §a[[50 x <skilllevel>]] yarıçapındaki§0 yakındaki düşmanları kendisine hedef almaya zorlar
+
+unholyground=10 saniye boyunca etrafınıza bir bozulma aurası yayar\nBu alandaki düşmanlar saniyede §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] Zehir Hasarı§0 alır ve §7Kısıtlanır
+necroticbarrage=Tüm nekrotik çağrılar öldüklerinde patlar ve yakındaki düşmanlara §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verir\nve onları 10 saniye boyunca orijinal hasarın %20'si kadar zehirler
+
+// Rahip
+smite=En yakın düşmana kutsal bir ışık hüzmesi indirerek §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verin\nÖlümsüz ve Şeytani moblara iki kat hasar verir\n§a[[10 + 2 x <skilllevel>]] Mana§0 tüketir
+divineblessing=Sihirli iyileştirme aurası, size ve müttefiklerinize §a[[20 + 3 x <grace> x <skilllevel> ↓]] can§0 yeniler\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
+purify=Kendinizi ve yakındaki müttefikleri tüm olumsuz etkilerden arındırın\n10 Mana tüketir
+lightinfusion=Sonraki 8 saniye boyunca, §a+[[20 x <skilllevel>]]%§0 Büyülü İyileştirme ve Kutsal Hasar kazanırsınız
+
+holyguard=Size ve yakındaki tüm müttefiklere 30 saniyeye kadar bir Kutsal Kalkan uygulayın\n§a+[[10 x <skilllevel>]]%§0 Alınan Büyülü İyileştirme kazanırlar ve kalkan kırılmadan önce bir darbeyi engeller\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
+judgment=Parlak bir enerji dalgası salarak, yakındaki tüm düşmanlara §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Kutsal Hasar§0 verin\nÖlümsüz ve Şeytani moblar 5 saniye boyunca §7Kısıtlanır§0\n§a[[20 + 4 x <skilllevel>]] Mana§0 tüketir
+sanctuary=8 saniyeliğine kutsal bir bölge oluşturun\nSiz ve içindeki müttefikler olumsuz etkilere karşı bağışıksınız ve saniyede §a[[0.2 x <grace> x <skilllevel>]]§0 can yenilenmesi kazanırsınız\nİçindeki Ölümsüz ve Şeytani moblar §7Kısıtlanır§0\n§a[[30 + 6 x <skilllevel>]] Mana§0 tüketir
+
+divineintervention=En çok hasar görmüş yakın müttefiki anında maksimum canına kadar iyileştirin ve §a[[<skilllevel>]]§0 saniye boyunca tüm hasarlara karşı bağışıklık kazanın\n§a[[60 + 12 x <skilllevel>]] Mana§0 tüketir
+resurrection=Aynı adadaki son ölen oyuncu müttefikinizi, konumunuzda maksimum canlarının §a[[10 x <skilllevel>]]%§0 kadarıyla diriltin\n10 saniyeden daha uzun süre önce ölen oyuncuları diriltemezsiniz\nMananızın §a[[100 - 10 x <skilllevel>]]%§0 kadarını tüketir (en az §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=En yakın düşmana bir ışık sütunu çağırarak, 5 saniye boyunca alanda saniyede §i[[2 x <playerlevel> + <intelligence> x <skilllevel> + <grace> x <skilllevel>]] Kutsal Hasar§0 verin\nİçindeki Ölümsüz ve Şeytani moblar §7Kısıtlanır§0\n§a[[40 + 8 x <skilllevel>]] Mana§0 tüketir
+
+// Druid
+wolftransformation=Kurt'a dönüşmek 3 saniye sürer\n\nHareket Hızı: 60\n\nHızlı Isırık için [input=transformationability1] tuşuna basın: İleri atlayın ve ısırın, §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Yakın Dövüş Hasarı§0 verin (3 dayanıklılık kazancı)\n\nHavlama için [input=transformationability2] tuşuna basın: Yakındaki düşmanları 2 saniye boyunca size hedef almaya zorlayın\n\nKoşmak için [input=trinketability] tuşunu basılı tutun
+queenbeetransformation=Kraliçe Arı'ya dönüşmek 2 saniye sürer\n\nHareket Hızı: 30\n-%50 Düşman Tespiti\n§6+%1000 Gelen Hasar§0\nBir darbe almak, ölmek yerine maksimum arı çağırır (60s bekleme süresi)\n\nBal Atışı için [input=transformationability1] tuşuna basın: §i[[2 x <playerlevel> + <strength> x <skilllevel>]] Menzilli Hasar§0 verin (2 dayanıklılık kazancı)\n\n[input=transformationability2] tuşuna basarak §a[[2 x <skilllevel>]]§0 kadar §9Arı§0 çağırın\n\nArılarınıza saldırmalarını emretmek için [input=trinketability] tuşunu basılı tutun
+
+beartransformation=Ayı'ya dönüşmek 4 saniye sürer\n\nHareket Hızı: 20\n-%50 Gelen Hasar\n\nYere Serme için [input=transformationability1] tuşuna basın: §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] Yakın Dövüş Hasarı§0 veren alan saldırısı\nve §a[[0.5 x <skilllevel>]] saniye§0 boyunca §9Sersemletir§0 (4 dayanıklılık kazancı)\n\nKükreme için [input=transformationability2] tuşuna basın: Yakındaki düşmanları 1 saniye boyunca kaçırın\n\nKoşmak için [input=trinketability] tuşunu basılı tutun
+foxtransformation=Tilki'ye dönüşmek 3 saniye sürer\n\nHareket Hızı: 50\n§6+%50 Gelen Hasar§0\n\nAteş Topları Atışı için [input=transformationability1] tuşuna basın: §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Büyü Hasarı§0 verin (2 dayanıklılık kazancı)\n\n[input=transformationability2] tuşuna basarak §a[[2 + <skilllevel>]]§0 kadar §bDans Eden Alev§0 çağırın, her biri bir Ateş Topu ile aynı hasarı verir\n\nKoşmak için [input=trinketability] tuşuna basın\n§!Vulpes Nova tilkisi!
+rattransformation=Sıçan'a dönüşmek 2 saniye sürer\n\nHareket Hızı: 25\n-%50 Düşman Tespiti\nMaksimum Savunma Şansı verir\n§6+%1000 Gelen Hasar§0\n\nIsırık için [input=transformationability1] tuşuna basın: §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] Yakın Dövüş Hasarı§0 verir ve hedefi zehirler\n10 saniye boyunca saniyede verilen hasarın %100'ü kadar\n\nKoşmak için [input=trinketability] tuşunu basılı tutun
+
 treanttransformation=Treant'a dönüşmek 4 saniye sürer\n\nHareket Hızı: 0\n-§a[50 + 5 <skilllevel>]%§0 Gelen Hasar\n+50% Zırh\n3 saniye boyunca gizlenirseniz düşmanlar sizi görmezden gelir\n\nRastgele Tohumlar Atışı için [input=transformationability1] tuşuna basın: §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] Menzilli Hasar§0 verir, rastgele etkilerle (1 dayanıklılık kazancı)\n\n[input=transformationability2] tuşuna basarak §9Dryad Fidanı§0 çağırın\n\nHareket ederken Ortaya Çıkmak ve Koşmak için [input=trinketability] tuşunu basılı tutun
 
 
@@ -362,7 +458,10 @@ grace=Nezaket
 // Temel Mekanik
 manausage=Yeterli mananız yoksa, bekleme süresi iki katına çıkar
 setmax=Olumsuz etkiler maksimum olarak ayarlanır ve diğer güçlendirmelerle kaldırılamaz
-holydamage=Verilen Kutsal hasarın %25'i, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir\nAyrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir
+
+// Hasarlar
+holydamage=§9Kutsal hasar:§0 Verilen Kutsal hasarın %25'i, sihirli iyileştirme yaptığınız moblar için iyileştirmeye dönüştürülecektir\nAyrıca Ölümsüz ve Şeytani mobları 10 saniyeliğine ateşe verir, hasar 100 veya daha fazlaysa 5 saniyeliğine alevlendirir
+throwingdamage=§7Fırlatma Hasarı:§0 Yakın Dövüş ve Menzilli Hasar bonusları, Fırlatma Hasarını her biri %50 oranında etkiler
 
 // Güçlendirmeler
 marked=§hİşaretli:§0 İşaretlediğiniz moblara +%20 Hasar (+ §hodaklanma hasarı§0) ve +%10 Kritik Şans verin\n"En yakın düşman" işaretli düşmanlara öncelik verir
@@ -390,6 +489,7 @@ dancingflame=§bDans Eden Alev:§0 Mermi gibi davranan bir çağrı. Vurulduğun
 necromancerskeleton=§bİskelet:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\nHasar: §a[[<playerlevel> + <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
 necromancerskeletonwarrior=§bİskelet Savaşçı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\nHasar: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
 necromancerboneslinger=§bKemik Atıcı:§0 Hasar verilebilir nekrotik çağrı\nCan: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nHasar: §a[[<playerlevel> + <intelligence>]]§0 (320 menzil)\nHız: 60\nSaniyede Toplam Canının %2'sini kaybeder
+
 bee=§9Arı:§0 Hasar alabilen çağrı\nCan: 1\nHasar: §a[[<playerlevel> + <intelligence> ↓]]§0\nHız: 100\n\nSaldırıda ölür, ancak hedefi 10 saniye boyunca saniyede verilen hasarın %20'si kadar zehirler
 dryadsapling=§9Dryad Fidanı:§0 Hasar alabilen çağrı\nCan: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nHasar: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nHız: 65\nSaniyede Toplam Canının %2'sini kaybeder
 
@@ -426,6 +526,8 @@ gracegoldring=Nezaket Altın Yüzük
 
 [itemtooltip]
 holydamagetip=Kutsal hasar: <value>
+throwingdamagetip=Fırlatma hasarı: <value>
+
 scrollofoblivion=2 Sıfırlama Puanı verir
 ringsboxtip=Nitelik Yüzüklerini saklayabilir
 
@@ -526,6 +628,7 @@ transformationability2=Dönüşüm Yeteneği 2
 
 
 [settingsui]
+restart_text=(*) ile işaretlenmiş ayarların etkili olması için oyunun yeniden başlatılması gerekir
 client_text="İstemci Ayarları" tamamen görseldir ve serbestçe ayarlanabilir.
 server_text="Sunucu Ayarları" doğrudan oynanışı etkiler. Oyun içinde değiştirilemezler ve bir arkadaşınıza veya sunucuya katılırsanız, onların ayarları sizinkinin yerine geçer.
 
@@ -534,6 +637,11 @@ default_section=Varsayılan Değerler (İstemci)
 default_text=Bu ayarlar diğer menülerde ayarlanabilir, ancak oyuna başladığınızda her zaman bu değerlere dönerler
 showClassIcons=Sınıf simgelerini göster
 twelveSkillSlots=12 beceri yuvası
+
+// Mechanics
+mechanics_section=Mekanik (Sunucu)
+
+boomerangsDealThrowingDamage=Bumeranglar Fırlatma Hasarı verir (*)
 
 // Experience
 experience_section=Deneyim (Sunucu)

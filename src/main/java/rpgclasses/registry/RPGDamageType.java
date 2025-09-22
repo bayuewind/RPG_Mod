@@ -11,9 +11,11 @@ import necesse.inventory.item.LocalMessageDoubleItemStatTip;
 
 public class RPGDamageType {
     public static DamageType HOLY;
+    public static DamageType THROWING;
 
     public static void registerCore() {
         DamageTypeRegistry.registerDamageType("holy", HOLY = new HolyDamageType());
+        DamageTypeRegistry.registerDamageType("throwing", THROWING = new ThrowingDamageType());
     }
 
     private static class HolyDamageType extends DamageType {
@@ -49,5 +51,40 @@ public class RPGDamageType {
             return "holy_damage_dealt";
         }
     }
+
+    private static class ThrowingDamageType extends DamageType {
+
+        public ThrowingDamageType() {
+        }
+
+        public Modifier<Float> getBuffDamageModifier() {
+            return RPGModifiers.THROWING_DAMAGE;
+        }
+
+        public Modifier<Float> getBuffAttackSpeedModifier(Attacker attacker) {
+            return RPGModifiers.THROWING_ATTACK_SPEED;
+        }
+
+        public Modifier<Float> getBuffCritChanceModifier() {
+            return RPGModifiers.THROWING_CRIT_CHANCE;
+        }
+
+        public Modifier<Float> getBuffCritDamageModifier() {
+            return RPGModifiers.THROWING_CRIT_DAMAGE;
+        }
+
+        public GameMessage getStatsText() {
+            return new LocalMessage("stats", "throwing_damage");
+        }
+
+        public DoubleItemStatTip getDamageTip(int damage) {
+            return new LocalMessageDoubleItemStatTip("itemtooltip", "throwingdamagetip", "value", damage, 0);
+        }
+
+        public String getSteamStatKey() {
+            return "throwing_damage_dealt";
+        }
+    }
+
 
 }

@@ -25,11 +25,17 @@ holycritdamage=<mod>%神聖爆擊傷害
 holyeffect=<mod>%神聖效果
 holyabilityspeed=<mod>%神聖技能速度
 
+throwingdamage=<mod>% 投擲傷害
+throwingattackspeed=<mod>% 投擲攻擊速度
+throwingcritchance=<mod>% 投擲爆擊率
+throwingcritdamage=<mod>% 投擲爆擊傷害
+
 transformationdelay=<mod>% 變身延遲
 noskills=無法使用技能
 
 [stats]
 holy_damage=神聖傷害
+throwing_damage=投擲傷害
 
 
 [enchantment]
@@ -47,6 +53,7 @@ darkcursebuff=黑暗詛咒
 magicpoisonbuff=魔法毒藥
 ignitedbuff=已點燃
 holydamagedealtbuff=造成神聖傷害
+queenbeewashit=女王蜂被擊中
 
 
 [buffdesc]
@@ -62,6 +69,7 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9等級 <level>§0
 
 rangerwolf=遊俠狼
 dancingflame=舞動之焰
+
 necromancerskeleton=骷髏
 necromancerskeletonwarrior=骷髏戰士
 necromancerboneslinger=投骨者
@@ -180,7 +188,6 @@ phoenixspirit=鳳凰之魂
 
 
 [passivesdesc]
-
 // 戰士
 unleashingrage=每級提供：\n\n每損失 10% 生命值，所有傷害 +1%
 unleashinghaste=每級提供：\n\n每損失 10% 生命值，移動速度 +1%
@@ -207,7 +214,7 @@ darksummons=對中毒的敵人造成§a+[[8 x <skilllevel>]]%§0的召喚師傷�
 lifeleech=將造成的召喚師傷害的§a[[0.05 x <skilllevel>]]%§0恢復為生命值
 necroticremains=當一個亡靈召喚物死亡時，它會爆炸，對附近的敵人造成§i[[0.1 x <intelligence> x <skilllevel>]]的魔法傷害§0，並在10秒內每秒對它們造成20%的傷害
 endlesslegion=此技能每升4級，你將獲得+1最大召喚物
-lichborn=當你死亡時，如果你還不是一個§b巫妖§0，你會存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個§b巫妖§0（一個骷髏）\n\n\n§b巫妖:§0 亡靈變身\n\n無法使用物品\n+100% 承受傷害\n\n按 [input=transformationability1] 射出一根骨頭，造成 §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] 魔法傷害§0
+lichborn=當你死亡時，如果你還不是一個§b巫妖§0，你會存活下來並恢復§a[[10 x <skilllevel>]]%§0的生命值\n在接下來的§a[[120 - 6 x <skilllevel>]]秒§0內，你將成為一個§b巫妖§0（一個骷髏）\n\n\n§b巫妖:§0 亡靈變身\n\n無法使用物品\n+100% 承受傷害\n\n按 [input=transformationability1] 射出一根骨頭，造成 §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] 魔法傷害§0 (2 韌性增益)
 
 // Cleric
 vitalaura=每§a[[15 - <skilllevel>]]秒§0，你會在周圍釋放一個魔法治療光環，恢復§a[[10 + <grace> ↓]]點生命值§0\n它還會為你恢復該數值的一半
@@ -220,7 +227,7 @@ radiantexpansion=当你魔法治疗自己或盟友时，对被治疗目标附近
 // Druid
 naturesfavor=站在草地上時，每秒獲得 +§a[[2 x <skilllevel>]] 生命恢復§0
 primalburst=變身後的前 5 秒內，傷害和速度提高 [[6 x <skillevel>]]%
-phoenixspirit=至少需要 4 點才能生效：\n\n如果你在變身狀態下使用主動技能死亡，你將以 §a[4 + 8 x <skilllevel>]]%§0 的生命值存活，並且該技能將進入 1 小時冷卻\n\n如果你已經有至少 §a[[0.25 x <skilllevel> ↓]] 個變身技能§0 冷卻時間超過 1 分鐘，則不會觸發
+phoenixspirit=至少需要 4 點才能生效：\n\n如果你在變身狀態下使用主動技能死亡，你將以 §a[4 + 8 x <skilllevel>]%§0 的生命值存活，並且該技能將進入 1 小時冷卻\n\n如果你已經有至少 §a[[0.25 x <skilllevel> ↓]] 個變身技能§0 冷卻時間超過 1 分鐘，則不會觸發
 
 
 [activeskills]
@@ -290,9 +297,11 @@ smite=懲擊
 divineblessing=魔法治療光環，為你和你的盟友恢復§a[[20 + 3 x <grace> x <skilllevel> ↓]]點生命值§0\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
 purify=淨化
 lightinfusion=光之注入
+
 holyguard=神聖守衛
 judgment=審判
 sanctuary=聖所
+
 divineintervention=神聖干預
 resurrection=復活
 wrathoflight=光之怒
@@ -300,9 +309,96 @@ wrathoflight=光之怒
 // Druid
 wolftransformation=狼人變身
 queenbeetransformation=蜂后變身
+
 beartransformation=熊人變身
 foxtransformation=狐狸變身
 rattransformation=老鼠變身
+
+treanttransformation=需要 4 秒才能變身為樹人\n\n移動速度：0\n-§a[50 + 5 <skilllevel>]%§0 受到傷害\n+50% 護甲\n如果隱藏 3 秒，敵人會忽略你\n\n按 [input=transformationability1] 在顯形時射擊隨機種子：造成 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] 遠程傷害§0，帶有隨機效果 (1 韌性增益)\n\n按 [input=transformationability2] 召喚 §9德魯伊樹苗§0\n\n按住 [input=trinketability] 顯形並在移動時衝刺
+
+
+[activeskillsdesc]
+// 戰士
+fury=在接下來的 6 秒內，你的近戰傷害和攻擊速度提高 §a[[20 x <skilllevel>]]%
+recovery=在接下來的 10 秒內，大幅提升戰鬥生命恢復，恢復 §a[[20 + <endurance> x <skilllevel>]] 生命值§0
+provocation=在接下來的 §a[[2 x <skilllevel>]] 秒§0 內，強迫附近的敵人將攻擊集中在你身上
+berserkercharge=向前衝刺一小段距離，對所有經過的敵人造成 §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] 傷害§0\n消耗 50% 耐力
+
+groundslam=區域攻擊，造成 §i[[5 x <strength>]] 近戰傷害§0 並 §9眩暈§0 §a[[1 x <skilllevel>]] 秒§0
+grounddestruction=區域攻擊，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 近戰傷害§0 並 §9眩暈§0 2 秒
+parry=在 0.5 秒內無敵，並返還 500% 的原始傷害\n消耗 100% 耐力
+battlecry=在接下來的 10 秒內，你和附近盟友的所有傷害和移動速度提高 §a[[10 x <skilllevel>]]%
+
+ironguard=在 §a[[4 x <skilllevel>]] 秒內 -50% 受到傷害
+intimidation=在接下來的 §a[[<skilllevel>]] 秒§0 內，讓附近的敵人逃跑
+
+objectthrowing=步驟 1：抓住你面前的一個物體\n步驟 2：向前投擲，造成 §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] 近戰傷害§0
+
+// 遊俠
+shortdash=進行一次短衝刺\n消耗 15% 耐力
+longdash=進行一次長衝刺\n消耗 25% 耐力
+lethalshot=向最近的敵人射出一支§h致命箭§0，造成 §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] 遊俠傷害§0
+venomshot=向最近的敵人射出一支§b劇毒箭§0，造成 §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] 遊俠傷害§0
+explosiveshot=向最近的敵人射出一支§i爆炸箭§0，造成 §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] 遊俠傷害§0
+
+shotsrampage=當你至少有 1 層射擊狂暴時，用遠程攻擊擊中敵人會獲得 1 層額外的射擊狂暴，持續 5 秒\n每層射擊狂暴會使攻擊速度提高 5%，最多 30 層
+huntersmark=§h標記§0 附近生命值最高的敵人 10 秒\n如果你殺死一個被標記的目標，你將在 5 秒內獲得 §a+[[20 x <skilllevel>]]%§0 的遠程攻擊速度和移動速度
+beartrap=在地上放置一個捕熊夾，如果被觸發或 20 秒後會消失\n如果敵人觸發它，他們將受到 §i[[10 x <playerlevel>]] 傷害§0 並被困住 5 秒
+
+huntersinstinct=在接下來的 12 秒內，你的 §7閃避機率§0 提高 §a[[5 x <skilllevel>]]%\n§h標記§0 你閃避的敵人 5 秒
+arrowstorm=向每個附近的敵人射出一支基本箭，每支箭造成 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] 遊俠傷害§0
+
+// 巫師
+arcaneoverload=啟用時，你的魔法攻擊速度提高 §a[[30 x <skilllevel>]]%§0，但你將無法移動\n當你法力耗盡或再次使用時結束\n每秒消耗 §a[[10 + 2 x <skilllevel>]] 法力
+manarecharge=啟用時，你的法力恢復提高 +1.4 和 §a[[50 x <skilllevel>]]%§0，但你將被麻痺並受到雙倍傷害\n再次使用時結束
+firedance=召喚 4 個§b舞動之焰§0，每個造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0\n每 5 秒召喚一個\n所有召喚物在技能啟動後 20 秒消失\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
+iceball=向最近的敵人投擲一個§a冰球§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n消耗 §a[[50 + 10 x <skilllevel>]] 法力
+zap=開始一次電擊，在生物之間跳躍 2 秒，造成 §i[[<playerlevel> + <intelligence> x <skilllevel>]] 魔法傷害§0 並眩暈 1 秒\n消耗 §a[[10 + 2 x <skilllevel>]] 法力
+
+teleport=傳送到你面前\n消耗 10 法力
+inferno=點燃所有附近的敵人，在 10 秒內每秒造成 §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 火焰傷害§0\n消耗 §a[[40 + 8 x <skilllevel>]] 法力
+fireenchantment=在接下來的 10 秒內，你和附近盟友的攻擊會點燃敵人，在 5 秒內每秒造成 §a[[5 x <skilllevel>]]%§0 的傷害\n消耗 §a[[20 + 4 x <skilllevel>]] 法力
+iceenchantment=在接下來的 10 秒內，你和附近盟友的攻擊會使敵人冰凍 §a[[2 x <skilllevel>]] 秒§0\n消耗 20 法力
+
+fireball=向最近的敵人投擲一個§i火球術§0，造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n消耗 §a[[80 + 16 x <skilllevel>]] 法力
+lightning=開始一次閃電，在生物之間跳躍 1 秒，造成 §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] 魔法傷害§0 並眩暈 2 秒\n不能多次擊中同一個目標\n消耗 §a[[30 + 6 x <skilllevel>]] 法力
+
+// 死靈法師
+skeletonhorde=召喚 §a[[1 + <skilllevel>]] 個§b骷髏§0
+skeletonwarrior=召喚一個§b骷髏戰士§0，其生命值和傷害為 §a+[[40 x <skilllevel>]]%§0
+sacrifice=最近的亡靈召喚物死亡，然後你以魔法治療的形式恢復§a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]]生命值§0
+siegecry=在 6 秒內獲得 §a+[[50 x <skilllevel>]]%§0 的召喚速度
+
+boneslingerhorde=召喚 §a[[1 + <skilllevel>]]§0 個§b投骨者§0
+tomb=生成一個每 §a[[10 - <skilllevel>]] 秒§0 召喚一個§b骷髏§0 的建築\n墳墓的生命值等於 §a[[5 x <playerlevel> x <skilllevel>]]§0\n墳墓每秒損失其總生命值的 2%
+necroticbloom=加速所有附近敵人身上的毒藥效果，將其持續時間縮短至 10%，但提高其每秒傷害以維持總傷害
+wardingtaunt=最近的亡靈召喚物強迫 §a[[50 x <skilllevel>]] 半徑§0 內的附近敵人以其為目標
+
+unholyground=在你周圍擴展一個腐化光環，持續 10 秒\n此區域內的敵人每秒受到 §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] 毒藥傷害§0 並被§7束縛
+necroticbarrage=所有亡靈召喚物在死亡時爆炸，對附近的敵人造成 §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] 魔法傷害§0\n並在 10 秒內每秒對它們造成 20% 的原始傷害
+
+// Cleric
+smite=在最近的敵人身上召喚一道聖光，造成 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] 神聖傷害§0\n對亡靈和惡魔生物造成雙倍傷害\n消耗 §a[[10 + 2 x <skilllevel>]] 法力§0
+divineblessing=魔法治療光環，為你和你的盟友恢復§a[[20 + 3 x <grace> x <skilllevel> ↓]]點生命值§0\n消耗§a[[20 + 4 x <skilllevel>]]點法力§0
+purify=淨化你自己和附近盟友的所有負面效果\n消耗 10 法力
+lightinfusion=在接下來的 8 秒內，你獲得 §a+[[20 x <skilllevel>]]%§0 的魔法治療和神聖傷害
+
+holyguard=為你和所有附近的盟友施加一個持續長達 30 秒的神聖護盾\n他們獲得 §a+[[10 x <skilllevel>]]%§0 的魔法治療接收，護盾在破裂前格擋一次攻擊\n消耗 §a[[40 + 8 x <skilllevel>]] 法力§0
+judgment=釋放一道光輝能量波，對所有附近的敵人造成 §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] 神聖傷害§0\n亡靈和惡魔生物被§7束縛§0 5 秒\n消耗 §a[[20 + 4 x <skilllevel>]] 法力§0
+sanctuary=創建一個持續 8 秒的神聖區域\n你和裡面的盟友對負面效果免疫，並每秒獲得 §a[[0.2 x <grace> x <skilllevel>]]§0 的生命恢復\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗 §a[[30 + 6 x <skilllevel>]] 法力§0
+
+divineintervention=立即將受傷最重的附近盟友治療至其最大生命值，並在 §a[[<skilllevel>]]§0 秒內免疫所有傷害\n消耗 §a[[60 + 12 x <skilllevel>]] 法力§0
+resurrection=在你所在的位置復活在你同一個島上死亡時間不超過 10 秒的最後一個死亡玩家盟友，其生命值為其最大生命值的 §a[[10 x <skilllevel>]]%§0\n你不能復活死亡時間超過 10 秒的玩家\n消耗你法力的 §a[[100 - 10 x <skilllevel>]]%§0（至少 §a[[60 + 12 x <skilllevel>]]§0）
+wrathoflight=在最近的敵人身上召喚一道光柱，在 5 秒內每秒在區域內造成 §i[[2 x <playerlevel> + <intelligence> x <skilllevel> + <grace> x <skilllevel>]] 神聖傷害§0\n裡面的亡靈和惡魔生物被§7束縛§0\n消耗 §a[[40 + 8 x <skilllevel>]] 法力§0
+
+// Druid
+wolftransformation=需要 3 秒才能變身為狼\n\n移動速度：60\n\n按 [input=transformationability1] 進行衝刺撕咬：向前跳躍並撕咬，造成 §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] 近戰傷害§0 (3 韌性增益)\n\n按 [input=transformationability2] 進行咆哮：強迫附近的敵人以你為目標，持續 2 秒\n\n按住 [input=trinketability] 進行衝刺
+queenbeetransformation=需要 2 秒才能變身為蜂后\n\n移動速度：30\n-50% 敵人偵測\n§6+1000% 受到傷害§0\n受到攻擊會召喚最大數量的蜜蜂而不是死亡（冷卻時間 60 秒）\n\n按 [input=transformationability1] 射擊蜂蜜：造成 §i[[2 x <playerlevel> + <strength> x <skilllevel>]] 遠程傷害§0 (2 韌性增益)\n\n按 [input=transformationability2] 召喚一隻§9蜜蜂§0，最多 §a[[2 x <skilllevel>]]§0\n\n按住 [input=trinketability] 指揮你的蜜蜂攻擊
+
+beartransformation=需要 4 秒才能變身為熊\n\n移動速度：20\n-50% 受到傷害\n\n按 [input=transformationability1] 進行地面猛擊：區域攻擊，造成 §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] 近戰傷害§0\n並 §9眩暈§0 §a[[0.5 x <skilllevel>]] 秒§0 (4 韌性增益)\n\n按 [input=transformationability2] 進行咆哮：讓附近的敵人逃跑 1 秒\n\n按住 [input=trinketability] 進行衝刺
+foxtransformation=需要 3 秒才能變身為狐狸\n\n移動速度：50\n§6+50% 受到傷害§0\n\n按 [input=transformationability1] 射擊火球：造成 §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] 魔法傷害§0 (2 韌性增益)\n\n按 [input=transformationability2] 召喚一個§b舞動之焰§0，最多 §a[[2 + <skilllevel>]]§0，每個造成的傷害與火球相同\n\n按 [input=trinketability] 進行衝刺\n§!Vulpes Nova fox!
+rattransformation=需要 2 秒才能變身為老鼠\n\n移動速度：25\n-50% 敵人偵測\n授予最大閃避機率\n§6+1000% 受到傷害§0\n\n按 [input=transformationability1] 進行撕咬：造成 §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] 近戰傷害§0 並使目標中毒\n在 10 秒內每秒造成 100% 的傷害\n\n按住 [input=trinketability] 進行衝刺
+
 treanttransformation=需要 4 秒才能變身為樹人\n\n移動速度：0\n-§a[50 + 5 <skilllevel>]%§0 受到傷害\n+50% 護甲\n如果隱藏 3 秒，敵人會忽略你\n\n按 [input=transformationability1] 在顯形時射擊隨機種子：造成 §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] 遠程傷害§0，帶有隨機效果 (1 韌性增益)\n\n按 [input=transformationability2] 召喚 §9德魯伊樹苗§0\n\n按住 [input=trinketability] 顯形並在移動時衝刺
 
 
@@ -359,37 +455,41 @@ grace=優雅
 
 
 [extraskilldesc]
-// 基本機制
+// Basic Mechanics
 manausage=如果你的法力不足，其冷卻時間將加倍
 setmax=負面效果被設置為最大值，不能被其他增益移除
-holydamage=造成的神聖傷害的25%將轉化為對你魔法治療的生物的治療\n還會讓亡靈和惡魔生物著火10秒
 
-// 增益
+// Damages
+holydamage=§9神聖傷害：§0 造成的神聖傷害的25%將轉化為對你魔法治療的生物的治療\n還會讓亡靈和惡魔生物著火10秒，如果傷害大於等於100，則會燃燒5秒
+throwingdamage=§7投擲傷害：§0 近戰和遠程傷害加成各影響投擲傷害50%
+
+// Buffs
 marked=§h已標記：§0 對你標記的生物造成 +20% 傷害（+ §h專注傷害§0）和 +10% 暴擊機率\n“最近的敵人”優先攻擊被標記的敵人
 constrained=§7束縛：§0 -50% 移動速度
 
-// 機率修正
+// Chance Modifiers
 dodgechance=§7閃避機率：§0 閃避來襲攻擊的機率。不能超過 80%
 focuschance=§h專注機率：§0直接攻擊時有機率§h標記§0一個生物5秒
 
-// 固定修正
+// Flat Modifiers
 mobdetection=§9生物偵測：§0 在地圖上顯示附近的生物。更高的偵測範圍會顯示更遠的生物
 ignitedamage=§i點燃傷害：§0 隨時間增加點燃傷害，但不影響直接命中傷害
 
-// 射彈
+// Projectiles
 lethalarrow=§h致命箭：§0 保證暴擊的制導箭
 venomarrow=§b劇毒箭：§0 使敵人中毒的制導箭。在 30 秒內每秒重複其原始傷害的 10%
 explosivearrow=§i爆炸箭：§0 造成同等傷害的魔法爆炸的制導箭
 iceball=§a冰球：§0 爆炸並使生物冰凍 5 秒，並完全冰凍 1 秒的魔法射彈
 fireball=§i火球術：§0 爆炸並點燃生物，在 5 秒內每秒重複其原始傷害的 20% 的魔法射彈
 
-// 召喚物
+// Summons
 dancingflame=§b舞動之焰：§0 像射彈一樣行動的召喚物。擊中時點燃敵人。\n在 5 秒內每秒重複其原始傷害的 20%
 
-// 可受傷害的召喚物
+// Damageable Summons
 necromancerskeleton=§b骷髏：§0 可受傷害的亡靈召喚物\n生命值：§a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\n傷害：§a[[<playerlevel> + <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
 necromancerskeletonwarrior=§b骷髏戰士：§0 可受傷害的亡靈召喚物\n生命值：§a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\n傷害：§a[[2 x <playerlevel> + 2 x <intelligence>]]§0\n速度：60\n每秒損失總生命值的 2%
 necromancerboneslinger=§b投骨者：§0 可受傷害的亡靈召喚物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\n傷害：§a[[<playerlevel> + <intelligence>]]§0（320 距離）\n速度：60\n每秒損失總生命值的 2%
+
 bee=§9蜜蜂：§0 可受傷害的召喚物\n生命值：1\n傷害：§a[[<playerlevel> + <intelligence> ↓]]§0\n速度：100\n\n攻擊時死亡，但在 10 秒內每秒對目標造成 20% 的傷害
 dryadsapling=§9德魯伊樹苗：§0 可受傷害的召喚物\n生命值：§a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\n傷害：§a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\n速度：65\n每秒損失總生命值的 2%
 
@@ -397,7 +497,7 @@ dryadsapling=§9德魯伊樹苗：§0 可受傷害的召喚物\n生命值：§a[
 scrollofoblivion=遺忘卷軸
 ringsbox=戒指盒
 
-// 屬性戒指
+// Attribute Rings
 endurancewoodring=耐力木戒指
 endurancecopperring=耐力銅戒指
 enduranceironring=耐力鐵戒指
@@ -426,6 +526,8 @@ gracegoldring=優雅金戒指
 
 [itemtooltip]
 holydamagetip=神聖傷害：<value>
+throwingdamagetip=投擲傷害：<value>
+
 scrollofoblivion=授予 2 個重置點
 ringsboxtip=可以存放屬性戒指
 
@@ -526,6 +628,7 @@ transformationability2=變身能力 2
 
 
 [settingsui]
+restart_text=標有 (*) 的設定需要重新啟動遊戲才能生效
 client_text="客戶端設定"純屬視覺效果，可隨意調整。
 server_text="伺服器設定"直接影響遊戲玩法。它們不能在遊戲中更改，如果您加入朋友或伺服器，將應用他們的設定而不是您的設定。
 
@@ -534,6 +637,11 @@ default_section=預設值 (客戶端)
 default_text=這些設定可以在其他選單中調整，但開始遊戲時它們將始終返回這些值
 showClassIcons=顯示職業圖示
 twelveSkillSlots=12個技能槽
+
+// Mechanics
+mechanics_section=機制 (伺服器)
+
+boomerangsDealThrowingDamage=迴旋鏢造成投擲傷害 (*)
 
 // Experience
 experience_section=經驗 (伺服器)

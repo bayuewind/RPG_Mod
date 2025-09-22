@@ -1,9 +1,11 @@
-package rpgclasses.methodpatches;
+package rpgclasses.patches;
 
 import necesse.engine.GlobalData;
 import necesse.engine.input.Input;
 import necesse.engine.input.InputPosition;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
+import necesse.engine.network.PacketReader;
+import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
@@ -46,10 +48,39 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) SaveData saveData) {
             PlayerData player = PlayerDataList.getPlayerData(This);
-            if(player != null) player.saveData(saveData);
+            if (player != null) player.saveData(saveData);
         }
 
     }
+
+    @ModMethodPatch(target = PlayerMob.class, name = "setupSpawnPacket", arguments = {PacketWriter.class})
+    public static class setupSpawnPacket {
+
+        @Advice.OnMethodExit
+        static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) PacketWriter writer) {
+            PlayerData playerData = PlayerDataList.getPlayerData(This.playerName, This.isServer());
+            if (playerData != null) {
+                playerData.setupPacket(writer);
+            }
+        }
+
+    }
+
+    @ModMethodPatch(target = PlayerMob.class, name = "applySpawnPacket", arguments = {PacketReader.class})
+    public static class applySpawnPacket {
+
+        @Advice.OnMethodExit
+        static void onExit(@Advice.This PlayerMob This, @Advice.Argument(0) PacketReader reader) {
+            if (reader.hasNext()) {
+                PlayerData playerData = PlayerData.applyPacket(reader);
+                PlayerDataList.setPlayerData(This.playerName, playerData, This.isServer());
+                playerData.updateAllBuffs(This);
+
+            }
+        }
+
+    }
+
 
     @ModMethodPatch(target = PlayerMob.class, name = "restore", arguments = {})
     public static class restore {
@@ -57,7 +88,7 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This) {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
-            if(playerData != null) {
+            if (playerData != null) {
                 playerData.updateAllBuffs(This);
                 for (EquippedActiveSkill equippedActiveSkill : playerData.equippedActiveSkills) {
                     equippedActiveSkill.restartCooldown();
@@ -73,16 +104,19 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This) {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
-            if (playerData.grabbedObject != null) {
-                Level level = This.getLevel();
-                if (!level.isProtected && playerData.grabbedObject.canPlace(level, This.getTileX(), This.getTileY(), 2, true) == null) {
-                    playerData.grabbedObject.placeObject(level, This.getTileX(), This.getTileY(), 2, true);
-                } else {
-                    ObjectItem objectItem = playerData.grabbedObject.getObjectItem();
-                    if (objectItem != null) {
-                        level.entityManager.pickups.add(
-                                new ItemPickupEntity(level, new InventoryItem(objectItem), This.x, This.y, 0, 0)
-                        );
+            if(playerData != null) {
+                playerData.lastDeath = This.getTime();
+                if (playerData.grabbedObject != null) {
+                    Level level = This.getLevel();
+                    if (!level.isProtected && playerData.grabbedObject.canPlace(level, This.getTileX(), This.getTileY(), 2, true) == null) {
+                        playerData.grabbedObject.placeObject(level, This.getTileX(), This.getTileY(), 2, true);
+                    } else {
+                        ObjectItem objectItem = playerData.grabbedObject.getObjectItem();
+                        if (objectItem != null) {
+                            level.entityManager.pickups.add(
+                                    new ItemPickupEntity(level, new InventoryItem(objectItem), This.x, This.y, 0, 0)
+                            );
+                        }
                     }
                 }
             }

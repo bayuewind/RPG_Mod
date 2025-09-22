@@ -1,4 +1,4 @@
-package rpgclasses.methodpatches;
+package rpgclasses.patches;
 
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.gameNetworkData.GNDItemMap;

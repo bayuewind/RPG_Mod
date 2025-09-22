@@ -14,7 +14,6 @@ import java.util.Objects;
 
 public class UpdateClientEquippedActiveSkillsPacket extends Packet {
 
-    public final int uniqueID;
     public final String playerName;
     public final EquippedActiveSkill[] equippedActiveSkills;
 
@@ -22,7 +21,6 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        uniqueID = reader.getNextInt();
         playerName = reader.getNextString();
         equippedActiveSkills = new EquippedActiveSkill[PlayerData.EQUIPPED_SKILLS_MAX];
 
@@ -32,12 +30,10 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
     }
 
     public UpdateClientEquippedActiveSkillsPacket(PlayerData playerData) {
-        this.uniqueID = playerData.playerUniqueID;
         this.equippedActiveSkills = playerData.equippedActiveSkills;
         this.playerName = playerData.playerName;
 
         PacketWriter writer = new PacketWriter(this);
-        writer.putNextInt(uniqueID);
         writer.putNextString(playerName);
         for (EquippedActiveSkill activeSkill : equippedActiveSkills) {
             activeSkill.setupPacket(writer);
@@ -46,10 +42,10 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, false);
+        PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
         if(playerData != null) {
             playerData.equippedActiveSkills = equippedActiveSkills;
-            if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
+            if (Objects.equals(client.getPlayer().playerName, playerName)) {
                 RPGSkillUIManager.updateContent(playerData);
             }
         }

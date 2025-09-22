@@ -26,11 +26,17 @@ holycritdamage=<mod>% holy crit damage
 holyeffect=<mod>% holy effect
 holyabilityspeed=<mod>% holy ability speed
 
+throwingdamage=<mod>% throwing damage
+throwingattackspeed=<mod>% throwing attack speed
+throwingcritchance=<mod>% throwing crit chance
+throwingcritdamage=<mod>% throwing crit damage
+
 transformationdelay=<mod>% transformation delay
 noskills=Cannot use skills
 
 [stats]
 holy_damage=Holy damage
+throwing_damage=Throwing damage
 
 
 [enchantment]
@@ -379,12 +385,12 @@ purify=Cleanse yourself and nearby allies of all negative effects\nConsumes 10 M
 lightinfusion=For the next 8 seconds, you gain §a+[[20 x <skilllevel>]]%§0 Magic Healing and Holy Damage
 
 holyguard=Apply to you and all nearby allies a Holy Shield for up to 30 seconds\nThey gain §a+[[10 x <skilllevel>]]%§0 Magic Healing Received and the shield blocks one hit before breaking\nConsumes §a[[40 + 8 x <skilllevel>]] Mana§0
-judgment=Unleash a wave of radiant energy, dealing §i[[5 x <playerlevel> + 3 x <intelligence> x <skilllevel> + 3 x <grace> x <skilllevel>]] Holy Damage§0 to all nearby enemies\nUndead and Demonic mobs are §7Constrained§0 for 5 seconds\nConsumes §a[[20 + 4 x <skilllevel>]] Mana§0
+judgment=Unleash a wave of radiant energy, dealing §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0 to all nearby enemies\nUndead and Demonic mobs are §7Constrained§0 for 5 seconds\nConsumes §a[[20 + 4 x <skilllevel>]] Mana§0
 sanctuary=Create a holy zone for 8 seconds\nYou and allies inside are immune to negative effects and gain §a[[0.2 x <grace> x <skilllevel>]]§0 health regen per second\nUndead and Demonic mobs inside are §7Constrained§0\nConsumes §a[[30 + 6 x <skilllevel>]] Mana§0
 
 divineintervention=Instantly heal the most damaged close ally to their maximum health and grant immunity to all damage for §a[[<skilllevel>]]§0 seconds\nConsumes §a[[60 + 12 x <skilllevel>]] Mana§0
-resurrection=Revive the lasted dead player ally in your same island with §a[[10 x <skilllevel>]]%§0 of their maximum health in your position\nYou cannot revive players who could have respawned more than 10 seconds ago\nConsumes §a[[100 - 10 x <skilllevel>]]%§0 of your Mana (at least §a[[60 + 12 x <skilllevel>]]§0)
-wrathoflight=Summon a column of light on the closest enemy, dealing §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] Holy Damage§0 per second for 5 seconds in area\nUndead and Demonic mobs inside are §7Constrained§0\nConsumes §a[[40 + 8 x <skilllevel>]] Mana§0
+resurrection=Revive the lasted dead player ally in your same island with §a[[10 x <skilllevel>]]%§0 of their maximum health in your position\nYou cannot revive players who died more than 10 seconds ago\nConsumes §a[[100 - 10 x <skilllevel>]]%§0 of your Mana (at least §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Summon a column of light on the closest enemy, dealing §i[[2 x <playerlevel> + <intelligence> x <skilllevel> + <grace> x <skilllevel>]] Holy Damage§0 per second for 5 seconds in area\nUndead and Demonic mobs inside are §7Constrained§0\nConsumes §a[[40 + 8 x <skilllevel>]] Mana§0
 
 // Druid
 wolftransformation=Takes 3 seconds to transform into a Wolf\n\nMovement Speed: 60\n\nPress [input=transformationability1] to Dash Bite: Leap forward and bite, dealing §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Melee Damage§0 (3 resilience gain)\n\nPress [input=transformationability2] to Bark: Force nearby enemies to target you for 2 seconds\n\nHold [input=trinketability] to Sprint
@@ -453,7 +459,10 @@ grace=Grace
 // Basic Mechanics
 manausage=If you don't have enough mana, its cooldown is doubled
 setmax=Negative effects are set as max and can't be removed by other buffs
-holydamage=25% of the Holy damage dealt will be converted into healing for mobs you magic heal\nAlso sets Undead and Demonic mobs on fire for 10 seconds
+
+// Damages
+holydamage=§9Holy damage:§0 25% of the Holy damage dealt will be converted into healing for mobs you magic heal\nAlso sets Undead and Demonic mobs on fire for 10 seconds, or ablaze for 5 seconds if the damage is 100 or more
+throwingdamage=§7Throwing Damage:§0 Melee and Ranged Damage bonuses affect Throwing Damage by 50% each one
 
 // Buffs
 marked=§hMarked:§0 Deal +20% Damage (+ §hFocus Damage§0) and +10% Crit Chance to mobs you mark\n"Closest enemy" prioritize marked enemies
@@ -518,6 +527,7 @@ gracegoldring=Grace Gold Ring
 
 [itemtooltip]
 holydamagetip=Holy damage: <value>
+throwingdamagetip=Throwing damage: <value>
 
 scrollofoblivion=Grants 2 Reset Points
 ringsboxtip=Can store Attribute Rings
@@ -619,6 +629,7 @@ transformationability2=Transformation Ability 2
 
 
 [settingsui]
+restart_text=Settings marked with (*) require restarting the game to take effect
 client_text="Client Settings" are purely visual and can be freely adjusted.
 server_text="Server Settings" directly affect gameplay. They cannot be changed in-game, and if you join a friend or server, their settings will apply instead of yours.
 
@@ -627,6 +638,11 @@ default_section=Default Values (Client)
 default_text=These settings can be adjusted in other menus, but they will always return to these values when you start the game
 showClassIcons=Show class icons
 twelveSkillSlots=12 skill slots
+
+// Mechanics
+mechanics_section=Mechanics (Server)
+
+boomerangsDealThrowingDamage=Boomerangs deal Throwing Damage (*)
 
 // Experience
 experience_section=Experience (Server)

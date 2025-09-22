@@ -1,6 +1,8 @@
 package rpgclasses.utils;
 
 import necesse.engine.network.NetworkClient;
+import necesse.engine.network.client.Client;
+import necesse.engine.network.client.ClientClient;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
 import necesse.engine.util.GameRandom;
@@ -14,6 +16,8 @@ import necesse.level.maps.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rpgclasses.buffs.MarkedBuff;
+import rpgclasses.data.PlayerData;
+import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
 import rpgclasses.mobs.summons.damageable.necrotic.NecroticFollowingMob;
 
@@ -60,43 +64,50 @@ public class RPGUtils {
     }
 
     // STREAM DEATH PLAYERS
-    public static Stream<ServerClient> streamDeathPlayers(Server server, LevelIdentifier levelIdentifier, Predicate<ServerClient> filter) {
+    public static Stream<ClientClient> streamDeathPlayers(Client client, int maxTime, LevelIdentifier levelIdentifier, Predicate<NetworkClient> filter) {
+        return client == null ? Stream.empty() : client.streamClients().filter(
+                (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
+        )
+                .filter(c -> {
+                    PlayerData playerData = PlayerDataList.getPlayerData(c.playerMob);
+                    return playerData != null && c.playerMob.getTime() - playerData.lastDeath <= maxTime;
+                })
+                .filter(filter);
+    }
+
+    public static Stream<ServerClient> streamDeathPlayers(Server server, int maxTime, LevelIdentifier levelIdentifier, Predicate<NetworkClient> filter) {
         return server == null ? Stream.empty() : server.streamClients().filter(
-                (c) -> c.playerMob != null && c.hasSpawned() && c.isDead() && c.isSamePlace(levelIdentifier)
-        ).filter(filter);
+                (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
+        )
+                .filter(c -> {
+                    PlayerData playerData = PlayerDataList.getPlayerData(c.playerMob);
+                    return playerData != null && c.playerMob.getTime() - playerData.lastDeath <= maxTime;
+                })
+                .filter(filter);
     }
 
-    public static Stream<ServerClient> streamDeathPlayers(Server server, Level level, Predicate<ServerClient> filter) {
-        return streamDeathPlayers(server, level.getIdentifier(), filter);
-    }
-
-    public static Stream<ServerClient> streamDeathPlayers(Level level, Predicate<ServerClient> filter) {
-        return streamDeathPlayers(level.getServer(), level, filter);
+    public static Stream<? extends NetworkClient> streamDeathPlayers(Level level, int maxTime, Predicate<NetworkClient> filter) {
+        if(level.isClient()) {
+            return streamDeathPlayers(level.getClient(), maxTime, level.getIdentifier(), filter);
+        } else {
+            return streamDeathPlayers(level.getServer(), maxTime, level.getIdentifier(), filter);
+        }
     }
 
     // GET LAST DEATH PLAYER
-    public static ServerClient lastDeathPlayer(Server server, LevelIdentifier levelIdentifier, Predicate<ServerClient> filter) {
-        if (server == null) return null;
-
-        ServerClient[] bestHolder = new ServerClient[1];
-        float[] bestTime = {0};
-        streamDeathPlayers(server, levelIdentifier, filter)
-                .forEach(serverClient -> {
-                    if (serverClient.respawnTime > bestTime[0]) {
-                        bestTime[0] = serverClient.respawnTime;
-                        bestHolder[0] = serverClient;
+    public static NetworkClient lastDeathPlayer(Level level, int maxTime, Predicate<NetworkClient> filter) {
+        NetworkClient[] bestHolder = new NetworkClient[1];
+        long[] bestTime = {0};
+        streamDeathPlayers(level, maxTime, filter)
+                .forEach(client -> {
+                    PlayerData playerData = PlayerDataList.getPlayerData(client.playerMob);
+                    if(playerData != null && playerData.lastDeath > bestTime[0]) {
+                        bestTime[0] = playerData.lastDeath;
+                        bestHolder[0] = client;
                     }
                 });
 
         return bestHolder[0];
-    }
-
-    public static ServerClient lastDeathPlayer(Server server, Level level, Predicate<ServerClient> filter) {
-        return lastDeathPlayer(server, level.getIdentifier(), filter);
-    }
-
-    public static ServerClient lastDeathPlayer(Level level, Predicate<ServerClient> filter) {
-        return lastDeathPlayer(level.getServer(), level, filter);
     }
 
     // STREAM MOBS AND PLAYERS

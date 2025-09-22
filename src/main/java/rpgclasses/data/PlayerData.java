@@ -44,9 +44,9 @@ public class PlayerData {
     public static String classesDataName = prefixDataName + "classes";
     public static String equippedActiveSkillsDataName = prefixDataName + "equippedactives";
 
+    public static String lastDeathDataName = prefixDataName + "lastdeath";
     public static String grabbedObjectDataName = prefixDataName + "grabbedobject";
 
-    public final int playerUniqueID;
     public final String playerName;
     public final long worldUniqueID;
     private int exp = 0;
@@ -57,15 +57,15 @@ public class PlayerData {
     private PlayerClassData[] classesData = new PlayerClassData[PlayerClass.classesList.size()];
     public EquippedActiveSkill[] equippedActiveSkills = new EquippedActiveSkill[EQUIPPED_SKILLS_MAX];
 
+    public long lastDeath;
     public GameObject grabbedObject;
 
-    public PlayerData(int playerUniqueID, String playerName, long worldUniqueID) {
-        this.playerUniqueID = playerUniqueID;
+    public PlayerData(String playerName, long worldUniqueID) {
         this.playerName = playerName;
         this.worldUniqueID = worldUniqueID;
 
         for (int i = 0; i < classesData.length; i++) {
-            classesData[i] = new PlayerClassData(i, playerUniqueID, playerName);
+            classesData[i] = new PlayerClassData(i, playerName);
         }
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i] = new EquippedActiveSkill();
@@ -125,7 +125,7 @@ public class PlayerData {
         boolean update = classLevels.length == PlayerClass.classesList.size();
         this.classesData = new PlayerClassData[classLevels.length];
         for (int i = 0; i < this.classesData.length; i++) {
-            PlayerClassData classData = new PlayerClassData(i, playerUniqueID, playerName);
+            PlayerClassData classData = new PlayerClassData(i, playerName);
             if (update) classData.loadData(loadData);
             classesData[i] = classData;
         }
@@ -139,15 +139,13 @@ public class PlayerData {
     }
 
     public void loadDataMisc(LoadData loadData) {
-        try {
-            int grabbedObjectID = loadData.getInt(grabbedObjectDataName, -1);
-            if (grabbedObjectID == -1) {
-                grabbedObject = null;
-            } else {
-                grabbedObject = ObjectRegistry.getObject(grabbedObjectID);
-            }
-        } catch (NullPointerException ignored) {
+        lastDeath = loadData.getLong(lastDeathDataName, 0);
+
+        int grabbedObjectID = loadData.getInt(grabbedObjectDataName, -1);
+        if (grabbedObjectID == -1) {
             grabbedObject = null;
+        } else {
+            grabbedObject = ObjectRegistry.getObject(grabbedObjectID);
         }
     }
 
@@ -174,6 +172,8 @@ public class PlayerData {
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             equippedActiveSkills[i].saveData(saveData, i);
         }
+
+        saveData.addLong(lastDeathDataName, lastDeath);
 
         saveData.addInt(grabbedObjectDataName, grabbedObject == null ? -1 : grabbedObject.getID());
     }
@@ -429,7 +429,6 @@ public class PlayerData {
     }
 
     public void setupPacket(@NotNull PacketWriter writer) {
-        writer.putNextInt(playerUniqueID);
         writer.putNextString(playerName);
         writer.putNextLong(worldUniqueID);
 
@@ -458,11 +457,15 @@ public class PlayerData {
         for (EquippedActiveSkill equippedActiveSkill : equippedActiveSkills) {
             equippedActiveSkill.setupPacket(writer);
         }
+
+        writer.putNextLong(lastDeath);
+
+        writer.putNextInt(grabbedObject == null ? -1 : grabbedObject.getID());
     }
 
     @NotNull
     public static PlayerData applyPacket(@NotNull PacketReader reader) {
-        PlayerData playerData = new PlayerData(reader.getNextInt(), reader.getNextString(), reader.getNextLong());
+        PlayerData playerData = new PlayerData(reader.getNextString(), reader.getNextLong());
 
         // Exp
         playerData.exp = reader.getNextInt();
@@ -492,6 +495,11 @@ public class PlayerData {
         for (int i = 0; i < EQUIPPED_SKILLS_MAX; i++) {
             playerData.equippedActiveSkills[i] = EquippedActiveSkill.applyPacket(reader);
         }
+
+        playerData.lastDeath = reader.getNextLong();
+
+        int grabbedObjectID = reader.getNextInt();
+        playerData.grabbedObject = grabbedObjectID == -1 ? null : ObjectRegistry.getObject(grabbedObjectID);
 
         return playerData;
     }

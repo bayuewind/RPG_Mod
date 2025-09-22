@@ -1,4 +1,4 @@
-# Translation made by AI
+# Translation corrected by Gemini
 
 [global]
 rpgmod=§!RPG Mod
@@ -25,11 +25,17 @@ holycritdamage=<mod>% hellig kritisk skade
 holyeffect=<mod>% hellig effekt
 holyabilityspeed=<mod>% hellig evnehastighet
 
+throwingdamage=<mod>% kaste skade
+throwingattackspeed=<mod>% kasteangrepshastighet
+throwingcritchance=<mod>% kaste kritisk sjanse
+throwingcritdamage=<mod>% kaste kritisk skade
+
 transformationdelay=<mod>% transformasjonsforsinkelse
 noskills=Kan ikke bruke ferdigheter
 
 [stats]
 holy_damage=Hellig skade
+throwing_damage=Kaste skade
 
 
 [enchantment]
@@ -47,6 +53,7 @@ darkcursebuff=Mørk forbannelse
 magicpoisonbuff=Magisk Gift
 ignitedbuff=Antent
 holydamagedealtbuff=Hellig skade påført
+queenbeewashit=Dronningbien ble truffet
 
 
 [buffdesc]
@@ -62,6 +69,7 @@ rpgmobnamecolor=§<color>[<class>]§0 <name> §9nivå <level>§0
 
 rangerwolf=Ranger-ulv
 dancingflame=Dansende Flamme
+
 necromancerskeleton=Skjelett
 necromancerskeletonwarrior=Skjelettkriger
 necromancerboneslinger=Beinkaster
@@ -110,7 +118,7 @@ druid=Druide
 [passives]
 passives=Passive
 
-// Kriger
+// Warrior
 regeneration=Regenerering
 muscles=Muskler
 legs=Bein
@@ -136,7 +144,7 @@ predatorsense=Rovdyrsans
 plasmagrenade=Plasmagranat
 wolfcompanion=Ulvefølgesvenn
 
-// Trollmann
+// Wizard
 arcanepower=Arkankraft
 manapower=Manakraft
 manaproficiency=Manakompetanse
@@ -147,12 +155,12 @@ iceshield=Isskjold
 flamingsteps=Flammende Skritt
 stormbound=Stormbundet
 
-// Nekromantiker
+// Necromancer
 darkpower=Mørk Kraft
 necroticpower=Nekrotisk Kraft
-darkmagic=Mörk Magi
+darkmagic=Mørk Magi
 necroticarmy=Nekrotisk Hær
-darksummons=Mörka Tilkallinger
+darksummons=Mørke Tilkallinger
 lifeleech=Livstyveri
 necroticremains=Nekrotiske Rester
 endlesslegion=Endeløs Legion
@@ -180,8 +188,7 @@ phoenixspirit=Føniksånd
 
 
 [passivesdesc]
-
-// Kriger
+// Warrior
 unleashingrage=Hvert nivå gir:\n\n+1% all skade for hver 10% manglende helse
 unleashinghaste=Hvert nivå gir:\n\n+1% bevegelseshastighet for hver 10% manglende helse
 unyielding=Hvert nivå gir:\n\n+5% angrepshastighet og -5% innkommende skade under 20% helse
@@ -189,9 +196,9 @@ lastbreath=I stedet for å dø, bli usårbar i §a[[3 x <skilllevel>]] sekunder�
 
 // Ranger
 plasmagrenade=Hver 8. avstandsangrep, avfyr et styrt eksplosivt prosjektil som gir §i[[30 x <skilllevel>]]%§0 av våpenets skade
-wolfcompanion=En ulvefølgesvenn vil angripe merkede fiender og gi §i[[<playerlevel> + <intelligence> x <skilllevel>]] tilkallerskade§0
+wolfcompanion=En ulvefølgesvenn vil angripe merkede fiender og gi §i[[<playerlevel> + <intelligence> x <skilllevel>]] tilkallerskade
 
-// Trollmann
+// Wizard
 manapower=Hvert nivå gir:\n\n+1% Magisk Skade for hver 10% ubrukt Mana
 flamingsteps=Når du løper med en aktiv pyntegjenstand eller transformasjon, vil du etterlate flammer på bakken\nFlammene vil antenne fiender i 3 sekunder, og gi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magisk skade§0 per sekund
 stormbound=Hvert §a[[11 - 0.5 x <skilllevel>]] sekund§0, slår et lyn ned på en tilfeldig fiende i synsfeltet ditt\nGir §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magisk skade§0 og bedøver i 1 sekund
@@ -199,19 +206,19 @@ arcaneshield=Et skjold som forhindrer ett treff\nSkjoldet vil komme seg §a[[20 
 fireshield=Et skjold som forhindrer ett treff\nNår det brukes, vil du slippe løs en eksplosjon som gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nog antenner mobs, og gjentar 20% av deres opprinnelige skade per sekund i 5 sekunder\nSkjoldet vil komme seg 26 sekunder etter bruk
 iceshield=Et skjold som forhindrer ett treff\nNår det brukes, vil du slippe løs en is-aura som gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magisk Skade§0\nfryser mobs i 5 sekunder, og fryser dem helt i 1 sekund\nSkjoldet vil komme seg 22 sekunder etter bruk
 
-// Nekromantiker
+// Necromancer
 necroticpower=Alle dine magiske angrep forgifter for 5% av skaden deres i §a[[2 x <skilllevel>]] sekunder§0
-darkmagic=Tilkallerskadebonuser påvirker magisk skade med §a[[5 x <skilllevel>]]%§0
+darkmagic=Tilkallerskadebonuser påvirker magisk skade med §a[[5 x <skilllevel>]]%
 necroticarmy=Beseirede fiendtlige fiender vil bli til §bSkjeletter§0 med §a-[[100 - 3 x <skilllevel>]]%§0 Helse og Skade
 darksummons=Gi §a+[[8 x <skilllevel>]]%§0 Tilkallerskade til forgiftede fiender
 lifeleech=Gjenoppretter §a[[0.05 x <skilllevel>]]%§0 av tilkallingsskaden som er påført som helse
 necroticremains=Når en nekrotisk tilkalling dør, eksploderer den og gir §i[[0.1 x <intelligence> x <skilllevel>]] Magisk Skade§0 til nærliggende fiender, og forgifter dem med 20% av skaden per sekund i 10 sekunder
 endlesslegion=Hver 4. nivå av denne ferdigheten, får du +1 maks tilkalling
-lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§0 helse hvis du ikke allerede er en §bLich§0\nI de neste §a[[120 - 6 x <skilllevel>]] sekundene§0, blir du en §bLich§0 (et skjelett)\n\n\n§bLich:§0 Udødelig transformasjon\n\nKan ikke bruke gjenstander\n+100% skade mottatt\n\nTrykk [input=transformationability1] for å skyte et bein som gir §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] magisk skade§0
+lichborn=Når du dør, overlever du og gjenoppretter §a[[10 x <skilllevel>]]%§0 helse hvis du ikke allerede er en §bLich§0\nI de neste §a[[120 - 6 x <skilllevel>]] sekundene§0, blir du en §bLich§0 (et skjelett)\n\n\n§bLich:§0 Udødelig transformasjon\n\nKan ikke bruke gjenstander\n+100% skade mottatt\n\nTrykk [input=transformationability1] for å skyte et bein som gir §i[[<playerlevel> + <strength> + 0.2 x <intelligence>]] magisk skade§0 (2 motstandsdyktighetsgevinst)
 
 // Cleric
 vitalaura=Hver §a[[15 - <skilllevel>]] sekund§0 frigjør du en magisk helbredende aura rundt deg som gjenoppretter §a[[10 + <grace> ↓]] helse§0\nDen helbreder deg også for halvparten av det beløpet
-divinejudge=Magisk skadebonus påvirker hellig skade med §a[[5 x <skilllevel>]]%§0
+divinejudge=Magisk skadebonus påvirker hellig skade med §a[[5 x <skilllevel>]]%
 empoweredhealing=Når du magisk helbreder deg selv eller en alliert, øker du deres skade med §a[[5 x <skilllevel>]]%§0 i 3 sekunder
 sanctifiedmind=Magisk helbredelse gjenoppretter også mana lik §a[[5 x <skilllevel>]]%§0 av den utførte helbredelsen
 sanctifiedarmor=Magisk helbredelse gjenoppretter også motstandskraft lik §a[[2 x <skilllevel>]]%§0 av den utførte helbredelsen
@@ -220,20 +227,20 @@ radiantexpansion=Når du magisk helbreder deg selv eller en alliert, gir du §a[
 // Druid
 naturesfavor=Få +§a[[2 x <skilllevel>]] Helse Regenerering§0 per sekund mens du står på gress
 primalburst=Øker Skade og Hastighet med [[6 x <skillevel>]]% de første 5 sekundene etter transformasjon
-phoenixspirit=Krever minst 4 poeng for å fungere:\n\nHvis du skulle dø mens du er transformert med en aktiv ferdighet, overlever du i stedet med §a[4 + 8 x <skilllevel>]]%§0 helse, og den ferdigheten settes på en 1-times nedkjøling\n\nUtløses ikke hvis du allerede har minst §a[[0.25 x <skilllevel> ↓]] transformasjonsferdighet(er)§0 på en nedkjøling lengre enn 1 minutt
+phoenixspirit=Krever minst 4 poeng for å fungere:\n\nHvis du skulle dø mens du er transformert med en aktiv ferdighet, overlever du i stedet med §a[4 + 8 x <skilllevel>]%§0 helse, og den ferdigheten settes på en 1-times nedkjøling\n\nUtløses ikke hvis du allerede har minst §a[[0.25 x <skilllevel> ↓]] transformasjonsferdighet(er)§0 på en nedkjøling lengre enn 1 minutt
 
 
 [activeskills]
 empty=Tom
 
-// Kriger
+// Warrior
 fury=Raseri
 recovery=Gjenoppretting
 provocation=Provokasjon
 berserkercharge=Berserkeranfall
 
 groundslam=Markslag
-grounddestruction=Markförstörelse
+grounddestruction=Markødeleggelse
 parry=Parering
 battlecry=Stridsrop
 
@@ -243,8 +250,8 @@ intimidation=Skremming
 objectthrowing=Objektkasting
 
 // Ranger
-shortdash=Utfør en kort spurt\nForbruker 15% utholdenhet
-longdash=Utfør en lang spurt\nForbruker 25% utholdenhet
+shortdash=Kort spurt
+longdash=Lang spurt
 lethalshot=Dødelig skudd
 venomshot=Giftskudd
 explosiveshot=Eksplosivt skudd
@@ -253,10 +260,10 @@ shotsrampage=Skuddraseri
 huntersmark=Jegermerke
 beartrap=Bjørnefelle
 
-huntersinstinct=I de neste 12 sekundene, øk §7unnvikelsessjansen§0 din med §a[[5 x <skilllevel>]]%\n§hMerk§0 i 5 sekunder fiendene du unnviker
+huntersinstinct=Jegerinstinkt
 arrowstorm=Pilregn
 
-// Trollmann
+// Wizard
 arcaneoverload=Arkane Overbelastning
 firedance=Ilddans
 iceball=Iskule
@@ -271,10 +278,10 @@ iceenchantment=Isfortryllelse
 fireball=Ildkule
 lightning=Lyn
 
-// Nekromantiker
+// Necromancer
 skeletonhorde=Skjeletthorde
 skeletonwarrior=Skjelettkriger
-sacrifice=Den nærmeste nekrotiske tilkallingen dør, og du gjenoppretter deretter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]] Helse§0 som magisk helbredelse
+sacrifice=Offer
 siegecry=Beleiringsrop
 
 boneslingerhorde=Beinkasterhorde
@@ -287,12 +294,14 @@ necroticbarrage=Nekrotisk Sperreild
 
 // Cleric
 smite=Smite
-divineblessing=Magisk helbredende aura som gjenoppretter §a[[20 + 3 x <grace> x <skilllevel> ↓]] helse§0 til deg og dine allierte\nForbruker §a[[20 + 4 x <skilllevel>]] Mana§0
+divineblessing=Guddommelig velsignelse
 purify=Rens
 lightinfusion=Lysinfusjon
+
 holyguard=Hellig vakt
 judgment=Dom
 sanctuary=Helligdom
+
 divineintervention=Guddommelig inngripen
 resurrection=Gjenoppstandelse
 wrathoflight=Lysets vrede
@@ -300,10 +309,97 @@ wrathoflight=Lysets vrede
 // Druid
 wolftransformation=Ulvetransformasjon
 queenbeetransformation=Dronningbietransformasjon
+
 beartransformation=Bjørnetransformasjon
 foxtransformation=Revetransformasjon
 rattransformation=Rottetransformasjon
-treanttransformation=Tar 4 sekunder å forvandle seg til en Treant\n\nBevegelseshastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 innkommende skade\n+50% rustning\nFiender ignorerer deg hvis du er skjult i 3 sekunder\n\nTrykk [input=transformationability1] mens du er avslørt for å skyte tilfeldige frø: Gir §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] avstandsskade§0 med tilfeldige effekter (1 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å tilkalle en §9Dryade-kimplante§0\n\nHold [input=trinketability] for å avsløre og sprinte hvis du beveger deg
+
+treanttransformation=Treant-transformasjon
+
+
+[activeskillsdesc]
+// Warrior
+fury=I de neste 6 sekundene, øk din nærkampsskade og angrepshastighet med §a[[20 x <skilllevel>]]%
+recovery=I de neste 10 sekundene øker du kamphelsegjenopprettingen kraftig, og gjenoppretter §a[[20 + <endurance> x <skilllevel>]] helse§0 i løpet av varigheten
+provocation=I de neste §a[[2 x <skilllevel>]] sekundene§0, tving nærliggende fiender til å fokusere angrepene sine på deg
+berserkercharge=Storm fremover en kort avstand, og gi §i[[10 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <speed> x <skilllevel>]] skade§0 til alle fiender du passerer\nForbruker 50% utholdenhet
+
+groundslam=Områdeangrep som gir §i[[5 x <strength>]] nærkampsskade§0 og §9bedøver§0 i §a[[1 x <skilllevel>]] sekunder§0
+grounddestruction=Områdeangrep som gir §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] nærkampsskade§0 og §9bedøver§0 i 2 sekunder
+parry=Bli usårbar i 0,5 sekunder og returner 500% av den opprinnelige skaden som ble mottatt\nForbruker 100% utholdenhet
+battlecry=I de neste 10 sekundene, øk din og nærliggende alliertes all skade og bevegelseshastighet med §a[[10 x <skilllevel>]]%
+
+ironguard=-50% innkommende skade i §a[[4 x <skilllevel>]] sekunder
+intimidation=I de neste §a[[<skilllevel>]] sekundene§0, få nærliggende fiender til å løpe bort
+
+objectthrowing=Trinn 1: Grip en gjenstand foran deg\nTrinn 2: Kast den fremover og gi §i[[20 x <playerlevel> + 10 x <strength> x <skilllevel>]] nærkampsskade§0
+
+// Ranger
+shortdash=Utfør en kort spurt\nForbruker 15% utholdenhet
+longdash=Utfør en lang spurt\nForbruker 25% utholdenhet
+lethalshot=Skyt en §hDødelig pil§0 mot nærmeste fiende, og gi §i[[5 x <playerlevel> + 5 x <strength> x <skilllevel>]] Ranger-skade§0
+venomshot=Skyt en §bGiftpil§0 mot nærmeste fiende, og gi §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger-skade§0
+explosiveshot=Skyt en §iEksplosiv pil§0 mot nærmeste fiende, og gi §i[[4 x <playerlevel> + 2 x <strength> x <skilllevel> + 2 x <intelligence> x <skilllevel>]] Ranger-skade§0
+
+shotsrampage=Mens du har minst 1 stabel med Skuddraseri, gir det å treffe en fiende med et avstandsangrep 1 ekstra stabel i 5 sekunder\nHver stabel med Skuddraseri øker angrepshastigheten med 5%, opptil maksimalt 30 stabler
+huntersmark=§hMerk§0 den nærmeste fienden med høyest helse i 10 sekunder\nHvis du dreper et merket mål, får du §a+[[20 x <skilllevel>]]%§0 avstandsangrepshastighet og bevegelseshastighet i 5 sekunder
+beartrap=Plasser en bjørnefelle på bakken som forsvinner hvis den utløses eller etter 20 sekunder\nHvis en fiende utløser den, vil de ta §i[[10 x <playerlevel>]] skade§0 og bli fanget i 5 sekunder
+
+huntersinstinct=I de neste 12 sekundene, øk §7unnvikelsessjansen§0 din med §a[[5 x <skilllevel>]]%\n§hMerk§0 i 5 sekunder fiendene du unnviker
+arrowstorm=Skyt en grunnleggende pil mot hver nære fiende, og gi §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] Ranger-skade§0 hver pil
+
+// Wizard
+arcaneoverload=Mens den er aktiv, øker den magiske angrepshastigheten din med §a[[30 x <skilllevel>]]%§0, men du vil ikke kunne bevege deg\nSlutter når du går tom for mana, eller hvis den brukes igjen\nForbruker §a[[10 + 2 x <skilllevel>]] mana per sekund
+manarecharge=Mens den er aktiv, øker mana-regenereringen din med +1,4 og med §a[[50 x <skilllevel>]]%§0, men du vil bli lammet og ta dobbel skade\nSlutter når den brukes igjen
+firedance=Tilkaller 4 §bDansende flammer§0, som hver gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] magisk skade§0\nTilkaller en til hvert 5. sekund\nAlle tilkallinger forsvinner 20 sekunder etter at ferdigheten er aktivert\nForbruker §a[[30 + 6 x <skilllevel>]] mana
+iceball=Kast en §aIskule§0 mot nærmeste fiende, og gi §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magisk skade§0\nForbruker §a[[50 + 10 x <skilllevel>]] mana
+zap=Start en zap som hopper mellom mobs i 2 sekunder, og gir §i[[<playerlevel> + <intelligence> x <skilllevel>]] magisk skade§0 og bedøver i 1 sekund\nForbruker §a[[10 + 2 x <skilllevel>]] mana
+
+teleport=Teleporterer foran deg\nForbruker 10 mana
+inferno=Antenn alle nærliggende fiender, og gi §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] ildskade§0 per sekund i 10 sekunder\nForbruker §a[[40 + 8 x <skilllevel>]] mana
+fireenchantment=I de neste 10 sekundene antenner angrep fra deg og nærliggende allierte fiender, og gir §a[[5 x <skilllevel>]]%§0 av skaden per sekund i 5 sekunder\nForbruker §a[[20 + 4 x <skilllevel>]] mana
+iceenchantment=I de neste 10 sekundene fryser angrep fra deg og nærliggende allierte fiender i §a[[2 x <skilllevel>]] sekunder§0\nForbruker 20 mana
+
+fireball=Kast en §iIldkule§0 mot nærmeste fiende, og gi §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magisk skade§0\nForbruker §a[[80 + 16 x <skilllevel>]] mana
+lightning=Start et lyn som hopper mellom mobs i 1 sekund, og gir §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] magisk skade§0 og bedøver i 2 sekunder\nKan ikke treffe samme mål flere ganger\nForbruker §a[[30 + 6 x <skilllevel>]] mana
+
+// Necromancer
+skeletonhorde=Tilkaller §a[[1 + <skilllevel>]] §bSkjeletter§0
+skeletonwarrior=Tilkaller en §bSkjelettkriger§0 med §a+[[40 x <skilllevel>]]%§0 helse og skade
+sacrifice=Den nærmeste nekrotiske tilkallingen dør, og du gjenoppretter deretter §a[[10 + <endurance> x <skilllevel> + <intelligence> + <skilllevel> - <grace> ↓]] helse§0 som magisk helbredelse
+siegecry=Få §a+[[50 x <skilllevel>]]%§0 tilkallingshastighet i 6 sekunder
+
+boneslingerhorde=Tilkaller §a[[1 + <skilllevel>]]§0 §bBeinkastere§0
+tomb=Genererer en struktur som tilkaller et §bSkjelett§0 hvert §a[[10 - <skilllevel>]] sekund§0\nGraven har helse lik §a[[5 x <playerlevel> x <skilllevel>]]§0\nGraven mister 2% av sin totale helse per sekund
+necroticbloom=Akselererer effekten av gift på alle nærliggende fiender ved å redusere varigheten til 10%, men øke skaden per sekund for å opprettholde total skade
+wardingtaunt=Den nærmeste nekrotiske tilkallingen tvinger nærliggende fiender innenfor en §a[[50 x <skilllevel>]] radius§0 til å angripe den
+
+unholyground=Utvider en aura av korrupsjon rundt deg i 10 sekunder\nFiender innenfor dette området tar §i[[<playerlevel> + <intelligence> x <skilllevel> - <grace>]] giftskade§0 per sekund og er §7begrenset
+necroticbarrage=Alle nekrotiske tilkallinger eksploderer når de dør, og gir §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] magisk skade§0 til nærliggende fiender\nog forgifter dem i 10 sekunder med 20% av den opprinnelige skaden per sekund
+
+// Cleric
+smite=Kall ned en stråle av hellig lys på nærmeste fiende, og gi §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0\nGir dobbel skade på udøde og demoniske mobs\nForbruker §a[[10 + 2 x <skilllevel>]] mana§0
+divineblessing=Magisk helbredende aura som gjenoppretter §a[[20 + 3 x <grace> x <skilllevel> ↓]] helse§0 til deg og dine allierte\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
+purify=Rens deg selv og nærliggende allierte for alle negative effekter\nForbruker 10 mana
+lightinfusion=I de neste 8 sekundene får du §a+[[20 x <skilllevel>]]%§0 magisk helbredelse og hellig skade
+
+holyguard=Påfør deg selv og alle nærliggende allierte et hellig skjold i opptil 30 sekunder\nDe får §a+[[10 x <skilllevel>]]%§0 magisk helbredelse mottatt, og skjoldet blokkerer ett treff før det brytes\nForbruker §a[[40 + 8 x <skilllevel>]] mana§0
+judgment=Slipp løs en bølge av strålende energi, og gi §i[[4 x <playerlevel> + 2 x <intelligence> x <skilllevel> + 2 x <grace> x <skilllevel>]] hellig skade§0 til alle nærliggende fiender\nUdøde og demoniske mobs er §7begrenset§0 i 5 sekunder\nForbruker §a[[20 + 4 x <skilllevel>]] mana§0
+sanctuary=Opprett en hellig sone i 8 sekunder\nDu og allierte inne er immune mot negative effekter og får §a[[0.2 x <grace> x <skilllevel>]]§0 helsegjenoppretting per sekund\nUdøde og demoniske mobs inne er §7begrenset§0\nForbruker §a[[30 + 6 x <skilllevel>]] mana§0
+
+divineintervention=Helbred øyeblikkelig den mest skadede nære allierte til deres maksimale helse og gi immunitet mot all skade i §a[[<skilllevel>]]§0 sekunder\nForbruker §a[[60 + 12 x <skilllevel>]] mana§0
+resurrection=Gjenoppliv den sist døde spillerallierte på samme øy med §a[[10 x <skilllevel>]]%§0 av deres maksimale helse i din posisjon\nDu kan ikke gjenopplive spillere som døde for mer enn 10 sekunder siden\nForbruker §a[[100 - 10 x <skilllevel>]]%§0 av din mana (minst §a[[60 + 12 x <skilllevel>]]§0)
+wrathoflight=Tilkall en søyle av lys på nærmeste fiende, og gi §i[[2 x <playerlevel> + <intelligence> x <skilllevel> + <grace> x <skilllevel>]] hellig skade§0 per sekund i 5 sekunder i området\nUdøde og demoniske mobs inne er §7begrenset§0\nForbruker §a[[40 + 8 x <skilllevel>]] mana§0
+
+// Druid
+wolftransformation=Tar 3 sekunder å forvandle seg til en ulv\n\nBevegelseshastighet: 60\n\nTrykk [input=transformationability1] for å utføre et byks med bitt: Hopp fremover og bit, og gi §i[[2 x <playerlevel> + <strength> x <skilllevel> + <speed> x <skilllevel>]] nærkampsskade§0 (3 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å bjeffe: Tving nærliggende fiender til å angripe deg i 2 sekunder\n\nHold [input=trinketability] for å sprinte
+queenbeetransformation=Tar 2 sekunder å forvandle seg til en dronningbie\n\nBevegelseshastighet: 30\n-50% fiendedeteksjon\n§6+1000% innkommende skade§0\nÅ bli truffet tilkaller maksimale bier i stedet for å dø (60s nedkjøling)\n\nTrykk [input=transformationability1] for å skyte honning: Gir §i[[2 x <playerlevel> + <strength> x <skilllevel>]] avstandsskade§0 (2 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å tilkalle en §9Bie§0 opptil §a[[2 x <skilllevel>]]§0\n\nHold [input=trinketability] for å kommandere biene dine til å angripe
+
+beartransformation=Tar 4 sekunder å forvandle seg til en bjørn\n\nBevegelseshastighet: 20\n-50% innkommende skade\n\nTrykk [input=transformationability1] for å utføre et markslag: Områdeangrep som gir §i[[4 x <playerlevel> + 4 x <strength> x <skilllevel>]] nærkampsskade§0\nog §9bedøver§0 i §a[[0.5 x <skilllevel>]] sekunder§0 (4 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å brøle: Få nærliggende fiender til å løpe bort i 1 sekund\n\nHold [input=trinketability] for å sprinte
+foxtransformation=Tar 3 sekunder å forvandle seg til en rev\n\nBevegelseshastighet: 50\n§6+50% innkommende skade§0\n\nTrykk [input=transformationability1] for å skyte ildkuler: Gir §i[[<playerlevel> + 0.5 x <intelligence> x <skilllevel>]] magisk skade§0 (2 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å tilkalle en §bDansende flamme§0 opptil §a[[2 + <skilllevel>]]§0, som hver gir samme skade som en ildkule\n\nTrykk [input=trinketability] for å utføre et byks\n§!Vulpes Nova-rev!
+rattransformation=Tar 2 sekunder å forvandle seg til en rotte\n\nBevegelseshastighet: 25\n-50% fiendedeteksjon\nGir maksimal unnvikelsessjanse\n§6+1000% innkommende skade§0\n\nTrykk [input=transformationability1] for å bite: Gir §i[[0.5 x <playerlevel> + 0.5 x <strength> x <skilllevel> + 0.5 x <intelligence> x <skilllevel>]] nærkampsskade§0 og forgifter målet\nfor 100% av den påførte skaden per sekund i 10 sekunder\n\nHold [input=trinketability] for å sprinte
+
+treanttransformation=Tar 4 sekunder å forvandle seg til en Treant\n\nBevegelseshastighet: 0\n-§a[50 + 5 <skilllevel>]%§0 innkommende skade\n+50% rustning\nFiender ignorerer deg hvis du er skjult i 3 sekunder\n\nTrykk [input=transformationability1] for å skyte tilfeldige frø: Gir §i[[0.5 x <playerlevel> + <strength> x <skilllevel>]] avstandsskade§0 med tilfeldige effekter (1 motstandsdyktighetsgevinst)\n\nTrykk [input=transformationability2] for å tilkalle en §9Dryade-kimplante§0\n\nHold [input=trinketability] for å avsløre og sprinte hvis du beveger deg
 
 
 [mastery]
@@ -359,37 +455,41 @@ grace=Nåde
 
 
 [extraskilldesc]
-// Grunnleggende mekanikk
+// Basic Mechanics
 manausage=Hvis du ikke har nok mana, dobles nedkjølingen
 setmax=Negative effekter settes som maks og kan ikke fjernes av andre buffs
-holydamage=25% av den påførte hellige skaden vil bli omgjort til helbredelse for mobs du magisk helbreder\nSetter også udøde og demoniske mobs i brann i 10 sekunder
+
+// Damages
+holydamage=§9Hellig skade:§0 25% av den påførte hellige skaden vil bli omgjort til helbredelse for mobs du magisk helbreder\nSetter også udøde og demoniske mobs i brann i 10 sekunder, eller i flammer i 5 sekunder hvis skaden er 100 eller mer
+throwingdamage=§7Kaste skade:§0 Nærkamps- og avstandsskadebonuser påvirker kaste skade med 50% hver
 
 // Buffs
 marked=§hMerket:§0 Gi +20% Skade (+ §hFokusskade§0) og +10% Kritisk Sjanse til mobs du merker\n"Nærmeste fiende" prioriterer merkede fiender
 constrained=§7Begrenset:§0 -50% bevegelseshastighet
 
-// Sjansemodifikatorer
+// Chance Modifiers
 dodgechance=§7Unnvikelsessjanse:§0 Sjanse til å unnvike innkommende angrep. Kan ikke overstige 80%
 focuschance=§hFokussjanse:§0 Sjanse til å §hmerke§0 en mob i 5 sekunder når du angriper den direkte
 
-// Flate modifikatorer
+// Flat Modifiers
 mobdetection=§9Mob-deteksjon:§0 Viser nærliggende mobs på kartet. En høyere deteksjonsrekkevidde avslører mobs fra lengre unna
 ignitedamage=§iBrannskade:§0 Øker brannskade over tid, men påvirker ikke direkte treffskade
 
-// Prosjektiler
+// Projectiles
 lethalarrow=§hDødelig pil:§0 Styrt pil som gir et kritisk treff
 venomarrow=§bGiftpil:§0 Styrt pil som forgifter fiender. Gjenntar 10% av sin opprinnelige skade per sekund i 30 sekunder
 explosivearrow=§iEksplosiv pil:§0 Styrt pil som forårsaker en magisk eksplosjon med lik skade
 iceball=§aIskule:§0 Magisk prosjektil som eksploderer og fryser mobs i 5 sekunder, og fryser dem også helt i 1 sekund
 fireball=§iIldkule:§0 Magisk prosjektil som eksploderer og antenner mobs som gjentar 20% av sin opprinnelige skade per sekund i 5 sekunder
 
-// Tilkallinger
+// Summons
 dancingflame=§bDansende Flamme:§0 Tilkalling som fungerer som et prosjektil. Antenner fiender ved treff.\nGjenntar 20% av sin opprinnelige skade per sekund i 5 sekunder
 
-// Skadbare tilkallinger
+// Damageable Summons
 necromancerskeleton=§bSkjelett:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[5 x <playerlevel> + 5 x <intelligence> ↓]]§0\nSkade: §a[[<playerlevel> + <intelligence>]]§0\nHastighet: 60\nMister 2% av total helse per sekund
 necromancerskeletonwarrior=§bSkjelettkriger:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[8 x <playerlevel> + 8 x <intelligence> ↓]]§0\nSkade: §a[[2 x <playerlevel> + 2 x <intelligence>]]§0\nHastighet: 60\nMister 2% av total helse per sekund
 necromancerboneslinger=§bBeinkaster:§0 Nekrotisk skadbar tilkalling\nHelse: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nSkade: §a[[<playerlevel> + <intelligence>]]§0 (320 avstand)\nHastighet: 60\nMister 2% av total helse per sekund
+
 bee=§9Bie:§0 Skadelig tilkalling\nHelse: 1\nSkade: §a[[<playerlevel> + <intelligence> ↓]]§0\nHastighet: 100\n\nDør ved angrep, men forgifter målet for 20% av skaden som er påført per sekund i 10 sekunder
 dryadsapling=§9Dryade-kimplante:§0 Skadelig tilkalling\nHelse: §a[[2 x <playerlevel> + 2 x <intelligence> ↓]]§0\nSkade: §a[[3 x <playerlevel> + 3 x <intelligence>]]§0\n\nHastighet: 65\nMister 2% av total helse per sekund
 
@@ -397,7 +497,7 @@ dryadsapling=§9Dryade-kimplante:§0 Skadelig tilkalling\nHelse: §a[[2 x <playe
 scrollofoblivion=Glemselsrull
 ringsbox=Ringboks
 
-// Attributtringer
+// Attribute Rings
 endurancewoodring=Utholdenhetstrering
 endurancecopperring=Utholdenhetskobberring
 enduranceironring=Utholdenhetsjernring
@@ -426,6 +526,8 @@ gracegoldring=Nådegullring
 
 [itemtooltip]
 holydamagetip=Hellig skade: <value>
+throwingdamagetip=Kaste skade: <value>
+
 scrollofoblivion=Gir 2 tilbakestillingspoeng
 ringsboxtip=Kan lagre attributtringer
 
@@ -526,6 +628,7 @@ transformationability2=Transformasjonsferdighet 2
 
 
 [settingsui]
+restart_text=Innstillinger merket med (*) krever omstart av spillet for å tre i kraft
 client_text="Klientinnstillinger" er rent visuelle og kan justeres fritt.
 server_text="Serverinnstillinger" påvirker spillingen direkte. De kan ikke endres i spillet, og hvis du blir med en venn eller server, vil deres innstillinger gjelde i stedet for dine.
 
@@ -534,6 +637,11 @@ default_section=Standardverdier (Klient)
 default_text=Disse innstillingene kan justeres i andre menyer, men de vil alltid gå tilbake til disse verdiene når du starter spillet
 showClassIcons=Vis klasseikoner
 twelveSkillSlots=12 ferdighetsplasser
+
+// Mechanics
+mechanics_section=Mekanikk (server)
+
+boomerangsDealThrowingDamage=Bumeranger gir kaste skade (*)
 
 // Experience
 experience_section=Erfaring (Server)

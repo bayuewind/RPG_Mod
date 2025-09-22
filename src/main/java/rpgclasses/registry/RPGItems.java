@@ -3,8 +3,16 @@ package rpgclasses.registry;
 import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.ItemRegistry;
+import necesse.entity.mobs.Mob;
+import necesse.entity.mobs.buffs.BuffModifiers;
+import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
+import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;
+import necesse.inventory.item.armorItem.ArmorModifiers;
+import necesse.inventory.item.armorItem.ninja.NinjaHoodArmorItem;
+import necesse.inventory.item.armorItem.ninja.NinjaRobeArmorItem;
+import necesse.inventory.item.armorItem.ninja.NinjaShoesArmorItem;
 import rpgclasses.content.player.Attribute;
 import rpgclasses.items.AttributeRing;
 import rpgclasses.items.RingsBox;
@@ -61,6 +69,41 @@ public class RPGItems {
                 prev.add(itemID);
             }
         }
+
+        itemReworks();
+    }
+
+    public static void itemReworks() {
+
+        // Ninja Armor
+
+        ItemRegistry.replaceItem("ninjahood", new NinjaHoodArmorItem() {
+            @Override
+            public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
+                ArmorModifiers modifiers = super.getArmorModifiers(item, mob);
+                modifiers.addModifier(RPGModifiers.THROWING_CRIT_DAMAGE, 0.25F);
+                return modifiers;
+            }
+        }, 120.0F, true);
+
+        ItemRegistry.replaceItem("ninjarobe", new NinjaRobeArmorItem() {
+            @Override
+            public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
+                ArmorModifiers modifiers = super.getArmorModifiers(item, mob);
+                modifiers.addModifier(RPGModifiers.THROWING_CRIT_CHANCE, 0.1F);
+                return modifiers;
+            }
+        }, 200.0F, true);
+
+        ItemRegistry.replaceItem("ninjashoes", new NinjaShoesArmorItem() {
+            @Override
+            public ArmorModifiers getArmorModifiers(InventoryItem item, Mob mob) {
+                ArmorModifiers modifiers = super.getArmorModifiers(item, mob);
+                modifiers.addModifier(RPGModifiers.DODGE_CHANCE, 0.05F);
+                return modifiers;
+            }
+        }, 80.0F, true);
+
     }
 
     public static class RingQuality {

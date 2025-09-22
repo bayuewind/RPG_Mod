@@ -24,6 +24,11 @@ public class RPGModifiers {
     public static final Modifier<Float> HOLY_CRIT_CHANCE;
     public static final Modifier<Float> HOLY_CRIT_DAMAGE;
 
+    public static final Modifier<Float> THROWING_DAMAGE;
+    public static final Modifier<Float> THROWING_ATTACK_SPEED;
+    public static final Modifier<Float> THROWING_CRIT_CHANCE;
+    public static final Modifier<Float> THROWING_CRIT_DAMAGE;
+
     public static final Modifier<Boolean> NO_SKILLS;
 
     static {
@@ -45,6 +50,11 @@ public class RPGModifiers {
         HOLY_DAMAGE = new Modifier<>(BuffModifiers.LIST, "holydamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holydamage"), ModifierLimiter.NORMAL_PERC_LIMITER("holydamage"));
         HOLY_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "holycritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holycritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("holycritchance"));
         HOLY_CRIT_DAMAGE = new Modifier<>(BuffModifiers.LIST, "holycritdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holycritdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("holycritdamage"));
+
+        THROWING_DAMAGE = new Modifier<>(BuffModifiers.LIST, "throwingdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("throwingdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("throwingdamage"));
+        THROWING_ATTACK_SPEED = new Modifier<>(BuffModifiers.LIST, "throwingattackspeed", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("throwingattackspeed"), ModifierLimiter.NORMAL_PERC_LIMITER("throwingdamage"));
+        THROWING_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "throwingcritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("throwingcritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("throwingcritchance"));
+        THROWING_CRIT_DAMAGE = new Modifier<>(BuffModifiers.LIST, "throwingcritdamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("throwingcritdamage"), ModifierLimiter.NORMAL_PERC_LIMITER("throwingcritdamage"));
 
         NO_SKILLS = new Modifier<>(BuffModifiers.LIST, "noskills", false, false, Modifier.OR_APPEND, Modifier.INVERSE_BOOL_PARSER("noskills"), null);
     }

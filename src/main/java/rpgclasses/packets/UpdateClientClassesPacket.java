@@ -11,7 +11,6 @@ import rpgclasses.data.PlayerDataList;
 
 public class UpdateClientClassesPacket extends Packet {
 
-    public final int uniqueID;
     public final String playerName;
     public final int[] classes;
 
@@ -19,7 +18,6 @@ public class UpdateClientClassesPacket extends Packet {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        uniqueID = reader.getNextInt();
         playerName = reader.getNextString();
         classes = new int[PlayerClass.classes.size()];
         for (int i = 0; i < PlayerClass.classes.size(); i++) {
@@ -28,12 +26,10 @@ public class UpdateClientClassesPacket extends Packet {
     }
 
     public UpdateClientClassesPacket(PlayerData playerData) {
-        this.uniqueID = playerData.playerUniqueID;
         this.classes = playerData.getClassLevels();
         this.playerName = playerData.playerName;
 
         PacketWriter writer = new PacketWriter(this);
-        writer.putNextInt(uniqueID);
         writer.putNextString(playerName);
         for (int i = 0; i < PlayerClass.classes.size(); i++) {
             writer.putNextInt(playerData.getClassLevel(i));
@@ -42,7 +38,7 @@ public class UpdateClientClassesPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, false);
+        PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
         if(playerData != null) playerData.setClassLevels(classes);
     }
 }

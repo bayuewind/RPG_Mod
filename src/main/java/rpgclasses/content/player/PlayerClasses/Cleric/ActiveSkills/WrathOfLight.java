@@ -60,7 +60,7 @@ public class WrathOfLight extends SimpleLevelEventActiveSkill {
             if (MobData.isWeakToHoly(target, player)) damage *= 2;
             target.isServerHit(new GameDamage(RPGDamageType.HOLY, damage), player.x, player.y, 0, player);
             RPGBuffs.applyStun(target, 500);
-            return new WrathOfLightLevelEvent(player, target.getX(), target.getY(), (4 * playerData.getLevel() + 2 * activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player))) / 2);
+            return new WrathOfLightLevelEvent(player, target.getX(), target.getY(), (2 * playerData.getLevel() + activeSkillLevel * (playerData.getIntelligence(player) + playerData.getGrace(player))) / 2);
         }
         return null;
     }

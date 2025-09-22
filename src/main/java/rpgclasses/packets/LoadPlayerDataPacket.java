@@ -7,7 +7,6 @@ import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
 import necesse.engine.network.server.Server;
 import necesse.engine.network.server.ServerClient;
-import necesse.engine.util.GameUtils;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 import rpgclasses.ui.CustomUIManager;
@@ -17,7 +16,7 @@ import java.util.Objects;
 
 public class LoadPlayerDataPacket extends Packet {
 
-    public final int uniqueID;
+    public final int slot;
     public final String playerName;
     public final PlayerData playerData;
 
@@ -25,7 +24,7 @@ public class LoadPlayerDataPacket extends Packet {
         super(data);
         PacketReader reader = new PacketReader(this);
 
-        uniqueID = reader.getNextInt();
+        slot = reader.getNextInt();
         playerName = reader.getNextString();
 
         if (reader.hasNext()) {
@@ -35,15 +34,15 @@ public class LoadPlayerDataPacket extends Packet {
         }
     }
 
-    public LoadPlayerDataPacket(int uniqueID, String playerName, PlayerData playerData) {
-        this.uniqueID = uniqueID;
+    public LoadPlayerDataPacket(int slot, String playerName, PlayerData playerData) {
+        this.slot = slot;
         this.playerName = playerName;
         this.playerData = playerData;
 
 
         PacketWriter writer = new PacketWriter(this);
 
-        writer.putNextInt(uniqueID);
+        writer.putNextInt(slot);
         writer.putNextString(playerName);
         if (playerData != null) {
             playerData.setupPacket(writer);
@@ -52,8 +51,8 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processClient(NetworkPacket packet, Client client) {
-        PlayerDataList.setPlayerData(uniqueID, playerName, playerData, false);
-        if (Objects.equals(client.getPlayer().getUniqueID(), uniqueID)) {
+        PlayerDataList.setPlayerData(playerName, playerData, false);
+        if (Objects.equals(client.getPlayer().playerName, playerName) && CustomUIManager.expBar != null) {
             CustomUIManager.expBar.updateExpBar(playerData);
             RPGSkillUIManager.updateContent(playerData);
         }
@@ -61,18 +60,18 @@ public class LoadPlayerDataPacket extends Packet {
 
     @Override
     public void processServer(NetworkPacket packet, Server server, ServerClient client) {
-        PlayerData playerData = PlayerDataList.getPlayerData(uniqueID, playerName, true);
+        PlayerData playerData = PlayerDataList.getPlayerData(playerName, true);
 
         long worldUniqueID = server.world.getUniqueID();
 
         if (playerData == null || playerData.worldUniqueID != worldUniqueID) {
-            playerData = PlayerDataList.initPlayerData(uniqueID, playerName, worldUniqueID, true);
+            playerData = PlayerDataList.initPlayerData(playerName, worldUniqueID, true);
         }
 
         final PlayerData finalPlayerData = playerData;
-        GameUtils.streamServerClients(server, client.getLevel()).forEach(c -> c.sendPacket(new LoadPlayerDataPacket(uniqueID, playerName, finalPlayerData)));
-        if (Objects.equals(client.playerMob.getUniqueID(), uniqueID)) {
-            finalPlayerData.updateAllBuffs(client.playerMob);
-        }
+        server.network.sendToAllClients(new LoadPlayerDataPacket(slot, playerName, finalPlayerData));
+
+        ServerClient clientTarget = server.getClient(slot);
+        finalPlayerData.updateAllBuffs(clientTarget.playerMob);
     }
 }

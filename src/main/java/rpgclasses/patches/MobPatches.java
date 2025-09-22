@@ -1,4 +1,4 @@
-package rpgclasses.methodpatches;
+package rpgclasses.patches;
 
 
 import necesse.engine.localization.Localization;
@@ -66,7 +66,7 @@ public class MobPatches {
 
     }
 
-    @ModMethodPatch(target = Mob.class, name = "setupPacket", arguments = {PacketWriter.class})
+    @ModMethodPatch(target = Mob.class, name = "setupSpawnPacket", arguments = {PacketWriter.class})
     public static class setupSpawnPacket {
 
         @Advice.OnMethodExit
@@ -79,7 +79,7 @@ public class MobPatches {
 
     }
 
-    @ModMethodPatch(target = Mob.class, name = "applyPacket", arguments = {PacketReader.class})
+    @ModMethodPatch(target = Mob.class, name = "applySpawnPacket", arguments = {PacketReader.class})
     public static class applySpawnPacket {
 
         @Advice.OnMethodExit

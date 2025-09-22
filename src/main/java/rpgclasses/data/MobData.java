@@ -215,7 +215,7 @@ public class MobData {
     }
 
     public static void loadData(LoadData loadData, Mob mob) {
-        if (shouldInitMob(mob)) {
+        if (shouldInitMob(mob) && getMob(mob) == null) {
             MobData mobData = new MobData();
             mobData.mob = mob;
 
@@ -235,7 +235,7 @@ public class MobData {
     }
 
     public static void applySpawnPacket(PacketReader reader, Mob mob) {
-        if (shouldInitMob(mob)) {
+        if (shouldInitMob(mob) && getMob(mob) == null) {
             MobData mobData = new MobData();
             mobData.level = reader.getNextInt();
             int mobClassID = reader.getNextInt();
