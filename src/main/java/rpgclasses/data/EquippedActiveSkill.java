@@ -125,7 +125,7 @@ public class EquippedActiveSkill {
 
             if (playerClass != null && activeSkill != null) {
                 int cooldownLeft = getCooldownLeft(player.getTime());
-                if (cooldownLeft > 0) {
+                if (cooldownLeft > 0 || isInUse()) {
                     String cooldownLeftString = getCooldownLeftString(cooldownLeft);
 
                     FontOptions options = new FontOptions(Item.tipFontOptions);
@@ -292,7 +292,7 @@ public class EquippedActiveSkill {
         return !isInCooldown(currentTime);
     }
 
-    public void tryRun(PlayerMob player, int skillSlot) {
+    public void tryClientRun(PlayerMob player, int skillSlot) {
         if (player.isClient()) {
             String canActiveError = this.canActive(player);
 
@@ -320,6 +320,16 @@ public class EquippedActiveSkill {
             activeSkill.runClient(player, playerData, activeSkillLevel, seed, isInUse());
             player.getClient().network.sendPacket(new ActiveAbilityRunPacket(player.getClient().getSlot(), skillSlot));
         }
+    }
+
+    public void run(PlayerMob player) {
+        int seed = Item.getRandomAttackSeed(GameRandom.globalRandom);
+
+        PlayerData playerData = PlayerDataList.getPlayerData(player);
+        int activeSkillLevel = activeSkill.getLevel(playerData);
+
+        if (player.isClient()) activeSkill.runClient(player, playerData, activeSkillLevel, seed, isInUse());
+        if (player.isServer()) activeSkill.runServer(player, playerData, activeSkillLevel, seed, isInUse());
     }
 
     public String canActive(PlayerMob player) {

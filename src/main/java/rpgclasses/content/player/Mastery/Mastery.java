@@ -34,7 +34,7 @@ abstract public class Mastery extends SimpleBuffPassive {
     public static void registerCore() {
         registerMastery(new Bastion("bastion", "#cccc66"));
         registerMastery(new BloodBorn("bloodborn", "#990000"));
-        CHRONOMANCER = registerMastery(new FlatMastery("chronomancer", "#00ffff"));
+        CHRONOMANCER = registerMastery(new Chronomancer("chronomancer", "#00ffff"));
         registerMastery(new Barbarian("barbarian", "#ff6600"));
         registerMastery(new Berserker("berserker", "#ff0000"));
         registerMastery(new Sniper("sniper", "#ff0000"));

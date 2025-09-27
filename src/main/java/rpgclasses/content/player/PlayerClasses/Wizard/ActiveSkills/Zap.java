@@ -17,6 +17,7 @@ import necesse.entity.trails.LightningTrail;
 import necesse.entity.trails.TrailVector;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.RPGResources;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastLevelEventActiveSkill;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -26,9 +27,14 @@ import rpgclasses.utils.RPGUtils;
 import java.util.Collections;
 import java.util.Set;
 
-public class Zap extends SimpleLevelEventActiveSkill {
+public class Zap extends CastLevelEventActiveSkill {
     public Zap(int levelMax, int requiredClassLevel) {
         super("zap", RPGColors.HEX.lighting, levelMax, requiredClassLevel);
+    }
+
+    @Override
+    public int castingTime() {
+        return 1000;
     }
 
     @Override
@@ -55,11 +61,6 @@ public class Zap extends SimpleLevelEventActiveSkill {
     @Override
     public String[] getExtraTooltips() {
         return new String[]{"manausage"};
-    }
-
-    @Override
-    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyTarget(player, 500) ? null : "notarget";
     }
 
     public static class ZapLevelEvent extends MobAbilityLevelEvent implements Attacker {

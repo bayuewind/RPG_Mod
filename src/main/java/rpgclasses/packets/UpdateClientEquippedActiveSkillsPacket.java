@@ -43,7 +43,7 @@ public class UpdateClientEquippedActiveSkillsPacket extends Packet {
     @Override
     public void processClient(NetworkPacket packet, Client client) {
         PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
-        if(playerData != null) {
+        if (playerData != null) {
             playerData.equippedActiveSkills = equippedActiveSkills;
             if (Objects.equals(client.getPlayer().playerName, playerName)) {
                 RPGSkillUIManager.updateContent(playerData);

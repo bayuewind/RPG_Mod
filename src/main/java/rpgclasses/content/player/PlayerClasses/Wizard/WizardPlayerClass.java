@@ -66,10 +66,8 @@ public class WizardPlayerClass extends PlayerClass {
         skillsList.addSkill(new BasicPassive(
                 "arcanepower", "#6633ff", 10, 1,
                 new String[]{"setmax"},
-                new FloatPercentModifierBuff(BuffModifiers.MAGIC_DAMAGE, 0.3F),
-                new FloatPercentModifierBuff(BuffModifiers.SPEED, -0.02F).doSetMax(1F),
-                new FloatPercentModifierBuff(BuffModifiers.MAX_HEALTH, -0.05F).doSetMax(1F),
-                new FloatPercentModifierBuff(BuffModifiers.ARMOR, -0.05F).doSetMax(1F)
+                new FloatPercentModifierBuff(BuffModifiers.MAGIC_DAMAGE, 0.15F),
+                new FloatPercentModifierBuff(BuffModifiers.SPEED, -0.02F).doSetMax(1F)
         ));
         skillsList.addSkill(new ManaPower(10, 1));
         skillsList.addSkill(new BasicPassive(
@@ -83,6 +81,10 @@ public class WizardPlayerClass extends PlayerClass {
                 new FloatPercentModifierBuff(RPGModifiers.IGNITE_DAMAGE, 0.2F)
         ));
 
+        skillsList.addSkill(new BasicPassive(
+                "quickmagic", "#3366ff", 10, 5,
+                new FloatPercentModifierBuff(RPGModifiers.CASTING_TIME, -0.08F)
+        ));
         skillsList.addSkill(new FlamingSteps(10, 5));
         skillsList.addSkill(new Stormbound(10, 5));
 

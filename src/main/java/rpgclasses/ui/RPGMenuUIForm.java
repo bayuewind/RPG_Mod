@@ -7,7 +7,7 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.forms.Form;
 import necesse.gfx.forms.components.FormCustomButton;
 import rpgclasses.RPGResources;
-import rpgclasses.containers.rpgmenu.RPGMenuPacket;
+import rpgclasses.forms.rpgmenu.RPGMenuPacket;
 
 import java.awt.*;
 

@@ -15,9 +15,10 @@ import rpgclasses.registry.RPGBuffs;
 import java.awt.*;
 
 public class DarkMobClassBuff extends MobClassBuff {
+
     @Override
-    public void initModifiers(ActiveBuff activeBuff, int level) {
-        activeBuff.setModifier(BuffModifiers.ALL_DAMAGE, MobData.levelScaling(level) * 0.05F);
+    public float damageBoost() {
+        return 0.3F;
     }
 
     @Override
@@ -25,8 +26,8 @@ public class DarkMobClassBuff extends MobClassBuff {
         super.clientTick(activeBuff);
         Mob owner = activeBuff.owner;
         MobData mobData = MobData.getMob(owner);
-        if (mobData != null) {
-            owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 0, 0)).givesLight().height(16.0F);
+        if (mobData != null && owner.isVisible()) {
+            owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 0, 0)).height(16.0F);
         }
     }
 
@@ -35,8 +36,8 @@ public class DarkMobClassBuff extends MobClassBuff {
         Mob owner = activeBuff.owner;
         MobData mobData = MobData.getMob(owner);
         if (mobData != null) {
-            int range = 100 + mobData.levelScaling() * 4;
-            int duration = 4000 + mobData.levelScaling() * 100;
+            int range = 200;
+            int duration = 3000;
 
             AphAreaList areaList = new AphAreaList(
                     new AphArea(range, new Color(0, 0, 0, 102)).setDebuffArea(duration, RPGBuffs.DARK_CURSE.getStringID())
@@ -51,7 +52,7 @@ public class DarkMobClassBuff extends MobClassBuff {
         Mob owner = activeBuff.owner;
         MobData mobData = MobData.getMob(owner);
         if (mobData != null) {
-            int duration = 8000 + mobData.levelScaling() * 200;
+            int duration = 10000;
             ActiveBuff ab = new ActiveBuff(RPGBuffs.DARK_CURSE, event.target, duration, null);
             MagicPoisonBuff.apply(activeBuff.owner, event.target, mobData.levelScaling() / 5F, 10F);
             event.target.buffManager.addBuff(ab, activeBuff.owner.isServer());

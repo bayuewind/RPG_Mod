@@ -14,20 +14,24 @@ import necesse.entity.mobs.buffs.ActiveBuff;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastBuffActiveSkill;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-public class IceEnchantment extends SimpleBuffActiveSkill {
+public class IceEnchantment extends CastBuffActiveSkill {
 
     public IceEnchantment(int levelMax, int requiredClassLevel) {
         super("iceenchantment", "#00ffff", levelMax, requiredClassLevel);
     }
 
     @Override
-    public void giveBuffOnRun(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        super.giveBuff(player, player, playerData, activeSkillLevel);
+    public int castingTime() {
+        return 1000;
+    }
 
+    @Override
+    public void castedRunServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
         GameUtils.streamServerClients(player.getLevel()).forEach(targetPlayer -> {
             if (targetPlayer.isSameTeam(player.getTeam()))
                 super.giveBuff(player, targetPlayer.playerMob, playerData, activeSkillLevel);
@@ -41,14 +45,16 @@ public class IceEnchantment extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunClient(player, playerData, activeSkillLevel, seed);
+
         SoundManager.playSound(GameResources.iceHit, SoundEffect.effect(player.x, player.y).volume(2F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(200, getColor())
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
     }
+
 
     @Override
     public ActiveSkillBuff getBuff() {

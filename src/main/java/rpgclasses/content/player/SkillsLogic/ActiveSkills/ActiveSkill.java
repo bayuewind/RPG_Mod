@@ -53,6 +53,9 @@ abstract public class ActiveSkill extends Skill {
         tooltips.add("§" + color + Localization.translate("activeskills", stringID));
         tooltips.add(" ");
         tooltips.add(Localization.translate("activeskillsdesc", stringID));
+
+        addInfoTooltips(tooltips);
+
         tooltips.add(" ");
         float rawCooldown = getBaseCooldown();
         float seconds = rawCooldown / 1000f;
@@ -92,8 +95,10 @@ abstract public class ActiveSkill extends Skill {
         tooltips.add(" ");
         tooltips.add(Localization.translate("ui", "maxlevel", "level", levelMax));
 
-
         return tooltips;
+    }
+
+    public void addInfoTooltips(List<String> tooltips) {
     }
 
     @Override
@@ -102,16 +107,19 @@ abstract public class ActiveSkill extends Skill {
     }
 
     public void run(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUSe) {
-        float consumedStamina = consumedStamina(player);
-        if (consumedStamina > 0) {
-            StaminaBuff.useStaminaAndGetValid(player, consumedStamina);
-        }
-
-        float manaUsage = manaUsage(player, activeSkillLevel);
         boolean enoughMana = true;
-        if (manaUsage > 0) {
-            if (manaUsage > player.getMana()) enoughMana = false;
-            player.useMana(manaUsage, player.isServer() ? player.getServerClient() : null);
+
+        if(!isInUSe) {
+            float consumedStamina = consumedStamina(player);
+            if (consumedStamina > 0) {
+                StaminaBuff.useStaminaAndGetValid(player, consumedStamina);
+            }
+
+            float manaUsage = manaUsage(player, activeSkillLevel);
+            if (manaUsage > 0) {
+                if (manaUsage > player.getMana()) enoughMana = false;
+                player.useMana(manaUsage, player.isServer() ? player.getServerClient() : null);
+            }
         }
 
         int addedCooldown = enoughMana ? 0 : getCooldown(activeSkillLevel);
@@ -138,9 +146,11 @@ abstract public class ActiveSkill extends Skill {
 
 
     public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        float consumedStamina = consumedStamina(player);
-        if (consumedStamina > 0 && (getStamina(player) < consumedStamina)) {
-            return "notenoughstamina";
+        if(!isInUSe) {
+            float consumedStamina = consumedStamina(player);
+            if (consumedStamina > 0 && (getStamina(player) < consumedStamina)) {
+                return "notenoughstamina";
+            }
         }
         return null;
     }

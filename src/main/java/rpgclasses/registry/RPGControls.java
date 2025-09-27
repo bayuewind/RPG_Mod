@@ -6,7 +6,7 @@ import necesse.engine.input.InputEvent;
 import necesse.engine.input.InputID;
 import necesse.engine.network.client.Client;
 import necesse.engine.state.MainGame;
-import rpgclasses.containers.rpgmenu.RPGMenuPacket;
+import rpgclasses.forms.rpgmenu.RPGMenuPacket;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
 
@@ -52,7 +52,7 @@ public class RPGControls {
                     if (isPressed() && GlobalData.getCurrentState() instanceof MainGame) {
                         Client client = ((MainGame) GlobalData.getCurrentState()).getClient();
                         PlayerData playerData = PlayerDataList.getPlayerData(client.getPlayer());
-                        playerData.equippedActiveSkills[slot].tryRun(client.getPlayer(), slot);
+                        playerData.equippedActiveSkills[slot].tryClientRun(client.getPlayer(), slot);
                     }
                 }
             });

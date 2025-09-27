@@ -50,7 +50,7 @@ public class IgnitedBuff extends Buff {
     }
 
     public static void apply(Mob attacker, Mob target, float damage, int duration, boolean isPurple) {
-        if(attacker.isServer()) {
+        if (attacker.isServer()) {
             ActiveBuff ab = new ActiveBuff(RPGBuffs.IGNITED, target, duration, attacker);
             if (isPurple) ab.getGndData().setBoolean("isPurple", true);
             boolean canApply = true;

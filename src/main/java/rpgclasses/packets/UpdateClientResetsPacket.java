@@ -34,6 +34,6 @@ public class UpdateClientResetsPacket extends Packet {
     @Override
     public void processClient(NetworkPacket packet, Client client) {
         PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
-        if(playerData != null) playerData.loadDataResets(resets);
+        if (playerData != null) playerData.loadDataResets(resets);
     }
 }

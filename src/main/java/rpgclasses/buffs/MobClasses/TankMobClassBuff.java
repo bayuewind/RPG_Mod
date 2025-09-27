@@ -1,9 +1,13 @@
 package rpgclasses.buffs.MobClasses;
 
-import necesse.entity.mobs.buffs.ActiveBuff;
-
 public class TankMobClassBuff extends MobClassBuff {
     @Override
-    public void initModifiers(ActiveBuff activeBuff, int level) {
+    public float healthBoost() {
+        return 0.3F;
+    }
+
+    @Override
+    public float healthRegenBoost() {
+        return 0.05F;
     }
 }

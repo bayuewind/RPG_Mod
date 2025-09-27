@@ -39,6 +39,6 @@ public class UpdateClientClassesPacket extends Packet {
     @Override
     public void processClient(NetworkPacket packet, Client client) {
         PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
-        if(playerData != null) playerData.setClassLevels(classes);
+        if (playerData != null) playerData.setClassLevels(classes);
     }
 }

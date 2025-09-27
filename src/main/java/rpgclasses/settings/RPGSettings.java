@@ -4,6 +4,8 @@ import customsettingslib.components.settings.IntSetting;
 import customsettingslib.settings.CustomModSettings;
 import customsettingslib.settings.CustomModSettingsGetter;
 import necesse.engine.modLoader.ModSettings;
+import necesse.level.gameObject.GameObject;
+import necesse.level.gameObject.WallArrowTrapObject;
 import rpgclasses.content.player.PlayerClass;
 
 public class RPGSettings {

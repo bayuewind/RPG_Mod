@@ -12,6 +12,7 @@ import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastBuffActiveSkill;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.data.PlayerDataList;
@@ -19,15 +20,20 @@ import rpgclasses.mobs.summons.DancingFlameMob;
 
 import java.util.ArrayList;
 
-public class FireDance extends SimpleBuffActiveSkill {
+public class FireDance extends CastBuffActiveSkill {
 
     public FireDance(int levelMax, int requiredClassLevel) {
         super("firedance", "#6633cc", levelMax, requiredClassLevel);
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
+    public int castingTime() {
+        return 2000;
+    }
+
+    @Override
+    public void castedRunServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunServer(player, playerData, activeSkillLevel, seed);
 
         for (int i = 0; i < 4; i++) {
             summonDancingFlame(player, playerData, activeSkillLevel, stringID);
@@ -35,8 +41,8 @@ public class FireDance extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunClient(player, playerData, activeSkillLevel, seed);
         SoundManager.playSound(GameResources.jingle, SoundEffect.effect(player.x, player.y));
         SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y));
     }

@@ -36,7 +36,7 @@ public class ModifiersBuff extends PassiveBuff {
             new ModifierValue<>(RPGModifiers.THROWING_CRIT_DAMAGE, (player.buffManager.getModifier(BuffModifiers.MELEE_CRIT_CHANCE) + player.buffManager.getModifier(BuffModifiers.RANGED_CRIT_CHANCE)) * 0.5F).apply(activeBuff);
 
             PlayerData playerData = PlayerDataList.getPlayerData(player);
-            if(playerData != null) {
+            if (playerData != null) {
                 for (Attribute attribute : Attribute.attributesList) {
                     float attributeLevel = attribute.getLevel(playerData, player);
                     if (attributeLevel > 0) {

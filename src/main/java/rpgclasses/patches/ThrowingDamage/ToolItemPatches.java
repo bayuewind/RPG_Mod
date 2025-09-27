@@ -15,7 +15,6 @@ import net.bytebuddy.asm.Advice;
 import rpgclasses.registry.RPGDamageType;
 import rpgclasses.settings.RPGSettings;
 
-import java.awt.*;
 import java.lang.reflect.Field;
 
 public class ToolItemPatches {

@@ -11,7 +11,6 @@ import necesse.entity.mobs.itemAttacker.ItemAttackSlot;
 import necesse.entity.mobs.itemAttacker.ItemAttackerMob;
 import necesse.gfx.gameFont.FontManager;
 import necesse.inventory.InventoryItem;
-import necesse.inventory.item.Item;
 import necesse.inventory.item.toolItem.ToolItem;
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.DeathRipperProjectileToolItem;
 import necesse.inventory.item.toolItem.projectileToolItem.gunProjectileToolItem.ShardCannonProjectileToolItem;
@@ -38,7 +37,7 @@ public class PlasmaGrenade extends SimpleBuffPassive {
 
             @Override
             public void onItemAttacked(ActiveBuff activeBuff, int targetX, int targetY, ItemAttackerMob attackerMob, int attackHeight, InventoryItem item, ItemAttackSlot slot, int animAttack) {
-                if (item.item.type == Item.Type.TOOL) {
+                if (item != null && item.item instanceof ToolItem) {
                     ToolItem toolItem = (ToolItem) item.item;
                     if (toolItem.getDamageType(item) == DamageTypeRegistry.RANGED && !isSpecialWeapon(toolItem)) {
                         doLogic(activeBuff, attackerMob, toolItem, item, targetX, targetY);
@@ -50,7 +49,7 @@ public class PlasmaGrenade extends SimpleBuffPassive {
             public void onHasAttacked(ActiveBuff activeBuff, MobWasHitEvent event) {
                 PlayerMob player = (PlayerMob) activeBuff.owner;
                 InventoryItem item = player.getSelectedItemSlot().getItem(player.getInv());
-                if (item.item.type == Item.Type.TOOL) {
+                if (item != null && item.item instanceof ToolItem) {
                     ToolItem toolItem = (ToolItem) item.item;
                     if (toolItem.getDamageType(item) == DamageTypeRegistry.RANGED && isSpecialWeapon(toolItem)) {
                         doLogic(activeBuff, player, toolItem, item, event.target.getX(), event.target.getY());

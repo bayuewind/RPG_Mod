@@ -2,7 +2,7 @@ package rpgclasses.registry;
 
 import necesse.engine.registries.PacketRegistry;
 import rpgclasses.buffs.Passive.HolyDamageDealtBuff;
-import rpgclasses.containers.rpgmenu.RPGMenuPacket;
+import rpgclasses.forms.rpgmenu.RPGMenuPacket;
 import rpgclasses.content.player.PlayerClasses.Wizard.Passives.Stormbound;
 import rpgclasses.packets.*;
 

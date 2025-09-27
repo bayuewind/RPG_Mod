@@ -8,15 +8,21 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
 import java.awt.*;
 
-public class Inferno extends ActiveSkill {
+public class Inferno extends CastActiveSkill {
 
     public Inferno(int levelMax, int requiredClassLevel) {
         super("inferno", "#990000", levelMax, requiredClassLevel);
+    }
+
+    @Override
+    public int castingTime() {
+        return 2000;
     }
 
     @Override
@@ -37,7 +43,7 @@ public class Inferno extends ActiveSkill {
 
     @Override
     public float manaUsage(PlayerMob player, int activeSkillLevel) {
-        return 40 + activeSkillLevel * 8;
+        return 30 + activeSkillLevel * 6;
     }
 
     @Override
@@ -54,11 +60,6 @@ public class Inferno extends ActiveSkill {
                 )
         ).setOnlyVision(false);
         areaList.executeClient(player.getLevel(), player.x, player.y);
-    }
-
-    @Override
-    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyTarget(player, 300) ? null : "notarget";
     }
 
     @Override

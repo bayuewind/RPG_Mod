@@ -34,7 +34,7 @@ abstract public class SimpleTranformationActiveSkill extends ActiveSkill {
                 ab.getGndData().setInt("transformationType", 0);
                 ab.getGndData().setString("transformation", stringID);
                 ab.getGndData().setInt("particlesColor", getColorInt());
-                player.buffManager.addBuff(ab, player.isServer());
+                player.buffManager.addBuff(ab, true);
             } else {
                 transform(player);
             }

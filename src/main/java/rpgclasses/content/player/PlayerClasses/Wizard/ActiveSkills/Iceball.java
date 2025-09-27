@@ -11,14 +11,22 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.IceBallProjectile;
 import rpgclasses.utils.RPGUtils;
 
-public class Iceball extends ActiveSkill {
+import java.awt.geom.Point2D;
+
+public class Iceball extends CastActiveSkill {
 
     public Iceball(int levelMax, int requiredClassLevel) {
         super("iceball", "#00ccff", levelMax, requiredClassLevel);
+    }
+
+    @Override
+    public int castingTime() {
+        return 2000;
     }
 
     @Override
@@ -41,19 +49,27 @@ public class Iceball extends ActiveSkill {
     private static Projectile getProjectile(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
         Mob target = RPGUtils.findBestTarget(player, 600);
 
-        if (target == null) return null;
+        float targetX;
+        float targetY;
+        int distance;
 
-        return new IceBallProjectile(player.getLevel(), player, player.x, player.y, target.x, target.y, 100, (int) player.getDistance(target), new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
-    }
+        if (target == null) {
+            Point2D.Float dir = getDir(player);
+            targetX = dir.x * 100 + player.x;
+            targetY = dir.y * 100 + player.y;
+            distance = 600;
+        } else {
+            targetX = target.x;
+            targetY = target.y;
+            distance = (int) player.getDistance(target);
+        }
 
-    @Override
-    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyTarget(player, 600) ? null : "notarget";
+        return new IceBallProjectile(player.getLevel(), player, player.x, player.y, targetX, targetY, 100, distance, new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
     }
 
     @Override
     public float manaUsage(PlayerMob player, int activeSkillLevel) {
-        return 50 + activeSkillLevel * 10;
+        return 40 + activeSkillLevel * 8;
     }
 
     @Override

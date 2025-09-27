@@ -4,6 +4,7 @@ import necesse.engine.GlobalData;
 import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.client.Client;
+import necesse.engine.network.packet.PacketSpawnMob;
 import necesse.engine.state.MainGame;
 import necesse.engine.util.GameRandom;
 import necesse.entity.Entity;
@@ -25,8 +26,7 @@ public class EntityPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This Entity This) {
             if (This instanceof HostileMob) {
-                HostileMob mob = (HostileMob) This;
-                MobData.initMob(mob);
+                MobData.initMob((HostileMob) This);
             }
         }
     }

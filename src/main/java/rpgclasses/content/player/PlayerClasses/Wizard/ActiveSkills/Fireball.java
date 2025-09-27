@@ -11,51 +11,61 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.projectile.Projectile;
 import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.projectiles.FireballProjectile;
 import rpgclasses.utils.RPGUtils;
 
-public class Fireball extends ActiveSkill {
+import java.awt.geom.Point2D;
+
+public class Fireball extends CastActiveSkill {
 
     public Fireball(int levelMax, int requiredClassLevel) {
         super("fireball", "#ff3300", levelMax, requiredClassLevel);
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunServer(player, playerData, activeSkillLevel, seed);
 
         Projectile projectile = getProjectile(player, playerData, activeSkillLevel);
-        if (projectile != null) {
-            projectile.resetUniqueID(new GameRandom(seed));
+        projectile.resetUniqueID(new GameRandom(seed));
 
-            player.getLevel().entityManager.projectiles.addHidden(projectile);
-            player.getServer().network.sendToClientsWithEntity(new PacketSpawnProjectile(projectile), projectile);
-        }
+        player.getLevel().entityManager.projectiles.addHidden(projectile);
+        player.getServer().network.sendToClientsWithEntity(new PacketSpawnProjectile(projectile), projectile);
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunClient(player, playerData, activeSkillLevel, seed);
+
         SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player));
     }
 
     private static Projectile getProjectile(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
         Mob target = RPGUtils.findBestTarget(player, 600);
 
-        if (target == null) return null;
+        float targetX;
+        float targetY;
+        int distance;
 
-        return new FireballProjectile(player.getLevel(), player, player.x, player.y, target.x, target.y, 100, (int) player.getDistance(target), new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
-    }
+        if (target == null) {
+            Point2D.Float dir = getDir(player);
+            targetX = dir.x * 100 + player.x;
+            targetY = dir.y * 100 + player.y;
+            distance = 600;
+        } else {
+            targetX = target.x;
+            targetY = target.y;
+            distance = (int) player.getDistance(target);
+        }
 
-    @Override
-    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyTarget(player, 600) ? null : "notarget";
+        return new FireballProjectile(player.getLevel(), player, player.x, player.y, targetX, targetY, 100, distance, new GameDamage(DamageTypeRegistry.MAGIC, 5 * playerData.getLevel() + 5 * playerData.getIntelligence(player) * activeSkillLevel), 100);
     }
 
     @Override
     public float manaUsage(PlayerMob player, int activeSkillLevel) {
-        return 80 + activeSkillLevel * 16;
+        return 60 + activeSkillLevel * 12;
     }
 
     @Override

@@ -4,8 +4,6 @@ import necesse.engine.modifiers.ModifierValue;
 import necesse.engine.registries.BuffRegistry;
 import necesse.engine.registries.ItemRegistry;
 import necesse.entity.mobs.Mob;
-import necesse.entity.mobs.buffs.BuffModifiers;
-import necesse.entity.mobs.buffs.staticBuffs.Buff;
 import necesse.entity.mobs.buffs.staticBuffs.armorBuffs.trinketBuffs.SimpleTrinketBuff;
 import necesse.inventory.InventoryItem;
 import necesse.inventory.item.Item;

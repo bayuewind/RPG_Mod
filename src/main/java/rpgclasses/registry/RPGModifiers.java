@@ -19,6 +19,7 @@ public class RPGModifiers {
     public static final Modifier<Float> FOCUS_CHANCE;
     public static final Modifier<Float> IGNITE_DAMAGE;
     public static final Modifier<Float> TRANSFORMATION_DELAY;
+    public static final Modifier<Float> CASTING_TIME;
 
     public static final Modifier<Float> HOLY_DAMAGE;
     public static final Modifier<Float> HOLY_CRIT_CHANCE;
@@ -46,6 +47,7 @@ public class RPGModifiers {
         FOCUS_CHANCE = new Modifier<>(BuffModifiers.LIST, "focuschance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("focuschance"), ModifierLimiter.NORMAL_PERC_LIMITER("focuschance"));
         IGNITE_DAMAGE = new Modifier<>(BuffModifiers.LIST, "ignitedamage", 0.2F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.NORMAL_PERC_PARSER("ignitedamage"), ModifierLimiter.NORMAL_PERC_LIMITER("ignitedamage"));
         TRANSFORMATION_DELAY = new Modifier<>(BuffModifiers.LIST, "transformationdelay", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.INVERSE_PERC_PARSER("transformationdelay"), ModifierLimiter.INVERSE_PERC_LIMITER("transformationdelay"));
+        CASTING_TIME = new Modifier<>(BuffModifiers.LIST, "castingtime", 1.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> Math.max(0.0F, v), Modifier.INVERSE_PERC_PARSER("castingtime"), ModifierLimiter.INVERSE_PERC_LIMITER("castingtime"));
 
         HOLY_DAMAGE = new Modifier<>(BuffModifiers.LIST, "holydamage", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holydamage"), ModifierLimiter.NORMAL_PERC_LIMITER("holydamage"));
         HOLY_CRIT_CHANCE = new Modifier<>(BuffModifiers.LIST, "holycritchance", 0.0F, 0.0F, Modifier.FLOAT_ADD_APPEND, (v) -> v, Modifier.NORMAL_PERC_PARSER("holycritchance"), ModifierLimiter.NORMAL_PERC_LIMITER("holycritchance"));

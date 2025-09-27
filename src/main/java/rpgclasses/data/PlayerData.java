@@ -237,12 +237,13 @@ public class PlayerData {
     }
 
     public static float pointsConversion(int amount) {
-        if (amount <= 10) return amount;
+        int level = amount + 5;
+        if (level <= 10) return level;
 
         float total = 0;
         float valor = 1;
 
-        for (int i = 1; i <= amount; i++) {
+        for (int i = 1; i <= level; i++) {
             if (i > 10) {
                 valor *= 0.99f;
             }

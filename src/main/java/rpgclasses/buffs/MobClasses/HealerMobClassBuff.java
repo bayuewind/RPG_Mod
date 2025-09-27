@@ -13,23 +13,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HealerMobClassBuff extends MobClassBuff {
-    public Map<Mob, Long> cooldowns = new HashMap<>();
+    @Override
+    public float healthBoost() {
+        return 0.2F;
+    }
 
     @Override
-    public void initModifiers(ActiveBuff activeBuff, int level) {
+    public float healthRegenBoost() {
+        return 0.02F;
     }
+
+    public Map<Mob, Long> cooldowns = new HashMap<>();
 
     @Override
     public void clientTick(ActiveBuff activeBuff) {
         super.clientTick(activeBuff);
         Mob owner = activeBuff.owner;
         MobData mobData = MobData.getMob(owner);
-        if (mobData != null) {
+        if (mobData != null && owner.isVisible()) {
             long lastArea = cooldowns.getOrDefault(owner, 0L);
             long now = owner.getTime();
-            float cooldown = getCooldown(mobData.levelScaling());
-            if (owner.isVisible() && GameRandom.globalRandom.getChance(Math.min(cooldown, (now - lastArea) / cooldown))) {
-                owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 255, 0)).givesLight(120F, 1F).height(16.0F);
+            float cooldown = getCooldown();
+            if (GameRandom.globalRandom.getChance(Math.min(cooldown, (now - lastArea) / cooldown))) {
+                owner.getLevel().entityManager.addParticle(owner.x + (float) (GameRandom.globalRandom.nextGaussian() * 6.0), owner.y + (float) (GameRandom.globalRandom.nextGaussian() * 8.0), Particle.GType.IMPORTANT_COSMETIC).movesConstant(owner.dx / 10.0F, owner.dy / 10.0F).color(new Color(0, 255, 0)).height(16.0F);
             }
         }
     }
@@ -41,9 +47,9 @@ public class HealerMobClassBuff extends MobClassBuff {
         if (mobData != null) {
             long lastArea = cooldowns.getOrDefault(owner, 0L);
             long now = owner.getTime();
-            long cooldown = getCooldown(mobData.levelScaling());
+            long cooldown = getCooldown();
             if ((now - lastArea) > cooldown) {
-                int range = 200 + mobData.levelScaling() * 8;
+                int range = 300;
                 int heal = mobData.levelScaling() * 5;
 
                 AphAreaList areaList = new AphAreaList(
@@ -56,8 +62,8 @@ public class HealerMobClassBuff extends MobClassBuff {
         }
     }
 
-    public long getCooldown(int level) {
-        return Math.max(10000 - level * 200, 2000);
+    public long getCooldown() {
+        return 6000;
     }
 
 }

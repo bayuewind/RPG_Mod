@@ -89,6 +89,7 @@ public class RPGBuffs {
     public static Buff IGNITED;
     public static Buff CONSTRAINED;
     public static Buff TRANSFORMING;
+    public static Buff CASTING;
     public static Buff AGGRESSIVE_BEES;
     public static Buff TARGET_RANGE_TO_100;
 
@@ -108,6 +109,7 @@ public class RPGBuffs {
         BuffRegistry.registerBuff("ignitedbuff", IGNITED = new IgnitedBuff());
         BuffRegistry.registerBuff("constrainedbuff", CONSTRAINED = new ConstrainedBuff());
         BuffRegistry.registerBuff("transformingbuff", TRANSFORMING = new TransformingBuff());
+        BuffRegistry.registerBuff("castingbuff", CASTING = new CastingBuff());
         BuffRegistry.registerBuff("aggresivebeesbuff", AGGRESSIVE_BEES = new SimpleBuff());
         BuffRegistry.registerBuff("targetrangeto100", TARGET_RANGE_TO_100 = new TargetRangeTo100Buff());
 

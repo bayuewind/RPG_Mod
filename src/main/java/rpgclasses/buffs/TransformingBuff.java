@@ -2,6 +2,7 @@ package rpgclasses.buffs;
 
 import necesse.engine.sound.SoundEffect;
 import necesse.engine.sound.SoundManager;
+import necesse.engine.util.GameMath;
 import necesse.engine.util.GameRandom;
 import necesse.entity.ParticleTypeSwitcher;
 import necesse.entity.mobs.MobWasHitEvent;
@@ -75,24 +76,25 @@ public class TransformingBuff extends Buff {
 
     @Override
     public void clientTick(ActiveBuff activeBuff) {
-        Color color = new Color(activeBuff.getGndData().getInt("particlesColor"));
-        int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
-        float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-        float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
-        activeBuff.owner.getLevel().entityManager.addParticle(activeBuff.owner.x - dx + activeBuff.owner.dx, activeBuff.owner.y - dy + activeBuff.owner.dy, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(GameRandom.globalRandom.getOneOf(
-                new Color(
-                        (int) (color.getRed() * (0.5f + GameRandom.globalRandom.nextFloat() * 0.5f)),
-                        (int) (color.getGreen() * (0.5f + GameRandom.globalRandom.nextFloat() * 0.5f)),
-                        (int) (color.getBlue() * (0.5f + GameRandom.globalRandom.nextFloat() * 0.5f)),
-                        color.getAlpha()
-                ),
-                color,
-                new Color(
-                        Math.min(255, (int) (color.getRed() * (1.0f + GameRandom.globalRandom.nextFloat() * 0.5f))),
-                        Math.min(255, (int) (color.getGreen() * (1.0f + GameRandom.globalRandom.nextFloat() * 0.5f))),
-                        Math.min(255, (int) (color.getBlue() * (1.0f + GameRandom.globalRandom.nextFloat() * 0.5f))),
-                        color.getAlpha()
-                )
-        )).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
+        float chance = 2 - ((float) activeBuff.getDurationLeft() / activeBuff.getDuration()) * 2;
+        int guaranteed = (int) chance;
+        int times = guaranteed + (GameRandom.globalRandom.getChance(chance - guaranteed) ? 1 : 0);
+
+        for (int i = 0; i < times; i++) {
+            Color color = new Color(activeBuff.getGndData().getInt("particlesColor"));
+            int angle = (int) (360.0F + GameRandom.globalRandom.nextFloat() * 360.0F);
+            float dx = (float) Math.sin(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
+            float dy = (float) Math.cos(Math.toRadians(angle)) * (float) GameRandom.globalRandom.getIntBetween(30, 50);
+
+            float variation = GameRandom.globalRandom.getFloatOffset(1, 0.2F);
+            activeBuff.owner.getLevel().entityManager.addParticle(activeBuff.owner.x - dx + activeBuff.owner.dx, activeBuff.owner.y - dy + activeBuff.owner.dy, particleTypeSwitcher.next()).movesFriction(dx, dy, 0.8F).color(
+                    new Color(
+                            GameMath.limit((int) (color.getRed() * variation), 0, 255),
+                            GameMath.limit((int) (color.getGreen() * variation), 0, 255),
+                            GameMath.limit((int) (color.getBlue() * variation), 0, 255),
+                            color.getAlpha()
+                    )
+            ).heightMoves(10.0F, 20.0F, 5F, 0F, 10F, 0F).lifeTime(250);
+        }
     }
 }

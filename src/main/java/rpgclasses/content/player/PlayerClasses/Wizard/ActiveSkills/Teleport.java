@@ -8,13 +8,19 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastActiveSkill;
 import rpgclasses.data.PlayerData;
 
 import java.awt.geom.Point2D;
 
-public class Teleport extends ActiveSkill {
+public class Teleport extends CastActiveSkill {
     public Teleport(int levelMax, int requiredClassLevel) {
         super("teleport", "#6633cc", levelMax, requiredClassLevel);
+    }
+
+    @Override
+    public int castingTime() {
+        return 500;
     }
 
     @Override
@@ -78,7 +84,7 @@ public class Teleport extends ActiveSkill {
 
     @Override
     public float manaUsage(PlayerMob player, int activeSkillLevel) {
-        return 10;
+        return 8;
     }
 
     @Override

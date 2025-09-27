@@ -66,8 +66,8 @@ public class RPGUtils {
     // STREAM DEATH PLAYERS
     public static Stream<ClientClient> streamDeathPlayers(Client client, int maxTime, LevelIdentifier levelIdentifier, Predicate<NetworkClient> filter) {
         return client == null ? Stream.empty() : client.streamClients().filter(
-                (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
-        )
+                        (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
+                )
                 .filter(c -> {
                     PlayerData playerData = PlayerDataList.getPlayerData(c.playerMob);
                     return playerData != null && c.playerMob.getTime() - playerData.lastDeath <= maxTime;
@@ -77,8 +77,8 @@ public class RPGUtils {
 
     public static Stream<ServerClient> streamDeathPlayers(Server server, int maxTime, LevelIdentifier levelIdentifier, Predicate<NetworkClient> filter) {
         return server == null ? Stream.empty() : server.streamClients().filter(
-                (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
-        )
+                        (c) -> c.playerMob != null && c.isDead() && c.isSamePlace(levelIdentifier)
+                )
                 .filter(c -> {
                     PlayerData playerData = PlayerDataList.getPlayerData(c.playerMob);
                     return playerData != null && c.playerMob.getTime() - playerData.lastDeath <= maxTime;
@@ -87,7 +87,7 @@ public class RPGUtils {
     }
 
     public static Stream<? extends NetworkClient> streamDeathPlayers(Level level, int maxTime, Predicate<NetworkClient> filter) {
-        if(level.isClient()) {
+        if (level.isClient()) {
             return streamDeathPlayers(level.getClient(), maxTime, level.getIdentifier(), filter);
         } else {
             return streamDeathPlayers(level.getServer(), maxTime, level.getIdentifier(), filter);
@@ -101,7 +101,7 @@ public class RPGUtils {
         streamDeathPlayers(level, maxTime, filter)
                 .forEach(client -> {
                     PlayerData playerData = PlayerDataList.getPlayerData(client.playerMob);
-                    if(playerData != null && playerData.lastDeath > bestTime[0]) {
+                    if (playerData != null && playerData.lastDeath > bestTime[0]) {
                         bestTime[0] = playerData.lastDeath;
                         bestHolder[0] = client;
                     }

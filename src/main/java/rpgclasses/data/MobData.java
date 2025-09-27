@@ -149,57 +149,20 @@ public class MobData {
     }
 
     public static void initMob(Mob mob) {
-        if (mob.isServer() && shouldInitMob(mob) && getMob(mob) == null) {
+        if (shouldInitMob(mob) && getMob(mob) == null) {
+            GameRandom random = new GameRandom(mob.getUniqueID());
+
             Level mapLevel = mob.getLevel();
             MobData mobData = new MobData();
             mobData.mob = mob;
 
             boolean isBossClass = isBossClass(mob);
 
-            mobData.level = isBossClass ? 5 : GameRandom.globalRandom.getIntBetween(1, 5);
-
             Biome biome = mapLevel.biome;
 
-            if (mapLevel.isIncursionLevel) {
-                IncursionLevel incursionLevel = (IncursionLevel) mapLevel;
-                mobData.level += 22 + 4 * incursionLevel.incursionData.getTabletTier();
-            } else {
-                int dimension = mapLevel.getIslandDimension();
+            mobData.level = getMobLevel(mapLevel, biome) + (isBossClass ? 5 : random.getIntBetween(1, 5));
 
-                if (mapLevel instanceof DungeonLevel) {
-                    mobData.level += 5;
-                } else if (mapLevel instanceof TempleLevel) {
-                    mobData.level += 24;
-                } else if (dimension != -2) {
-                    if (biome instanceof SnowBiome) {
-                        mobData.level += 3;
-                    } else if (biome instanceof PlainsBiome) {
-                        mobData.level += 8;
-                    } else if (biome instanceof SwampBiome) {
-                        mobData.level += 10;
-                    } else if (biome instanceof DesertBiome) {
-                        mobData.level += 12;
-                    } else if (biome instanceof PirateVillageBiome && dimension == 0) {
-                        mobData.level += 12;
-                    } else if (biome instanceof InfectedFieldsBiome) {
-                        mobData.level += 16;
-                    }
-                } else {
-                    if (biome instanceof PlainsBiome) {
-                        mobData.level += 16;
-                    } else if (biome instanceof SnowBiome) {
-                        mobData.level += 18;
-                    } else if (biome instanceof SwampBiome) {
-                        mobData.level += 20;
-                    } else if (biome instanceof DesertBiome) {
-                        mobData.level += 22;
-                    } else {
-                        mobData.level += 14;
-                    }
-                }
-            }
-
-            mobData.mobClass = isBossClass ? MobClass.bossClass : MobClass.getRandomClass();
+            mobData.mobClass = isBossClass ? MobClass.bossClass : MobClass.getRandomClass(random);
 
             if ((mapLevel instanceof SnowDeepCaveIncursionLevel || biome instanceof SnowBiome) && mobData.mobClass.is("explosive")) {
                 mobData.mobClass = MobClass.allClasses.get("glacial");
@@ -209,9 +172,50 @@ public class MobData {
 
             mobsData.put(mob.getUniqueID(), mobData);
 
-            mobData.mobClass.giveBuff(mob, mobData.level);
-            mobData.mobClass.setMaxHealth(mob, mobData.level);
+            mobData.mobClass.initBuffs(mob, mobData.level);
         }
+    }
+
+    private static int getMobLevel(Level mapLevel, Biome biome) {
+        if (mapLevel.isIncursionLevel) {
+            IncursionLevel incursionLevel = (IncursionLevel) mapLevel;
+            return 22 + 4 * incursionLevel.incursionData.getTabletTier();
+        } else {
+            int dimension = mapLevel.getIslandDimension();
+
+            if (mapLevel instanceof DungeonLevel) {
+                return 5;
+            } else if (mapLevel instanceof TempleLevel) {
+                return 24;
+            } else if (dimension != -2) {
+                if (biome instanceof SnowBiome) {
+                    return 3;
+                } else if (biome instanceof PlainsBiome) {
+                    return 8;
+                } else if (biome instanceof SwampBiome) {
+                    return 10;
+                } else if (biome instanceof DesertBiome) {
+                    return 12;
+                } else if (biome instanceof PirateVillageBiome && dimension == 0) {
+                    return 12;
+                } else if (biome instanceof InfectedFieldsBiome) {
+                    return 16;
+                }
+            } else {
+                if (biome instanceof PlainsBiome) {
+                    return 16;
+                } else if (biome instanceof SnowBiome) {
+                    return 18;
+                } else if (biome instanceof SwampBiome) {
+                    return 20;
+                } else if (biome instanceof DesertBiome) {
+                    return 22;
+                } else {
+                    return 14;
+                }
+            }
+        }
+        return 0;
     }
 
     public static void loadData(LoadData loadData, Mob mob) {
@@ -235,15 +239,20 @@ public class MobData {
     }
 
     public static void applySpawnPacket(PacketReader reader, Mob mob) {
-        if (shouldInitMob(mob) && getMob(mob) == null) {
-            MobData mobData = new MobData();
-            mobData.level = reader.getNextInt();
+        if (shouldInitMob(mob)) {
+
+            int level = reader.getNextInt();
             int mobClassID = reader.getNextInt();
 
-            if (mobData.level > 0 && (isBossClass(mob) == (mobClassID == 0))) {
-                mobData.mobClass = MobClass.allClassesList.get(mobClassID);
-                mobData.mob = mob;
-                mobsData.put(mob.getUniqueID(), mobData);
+            if (getMob(mob) == null) {
+                MobData mobData = new MobData();
+                mobData.level = level;
+
+                if (mobData.level > 0 && (isBossClass(mob) == (mobClassID == 0))) {
+                    mobData.mobClass = MobClass.allClassesList.get(mobClassID);
+                    mobData.mob = mob;
+                    mobsData.put(mob.getUniqueID(), mobData);
+                }
             }
         }
     }
@@ -262,7 +271,7 @@ public class MobData {
     }
 
     public static int levelScaling(int level) {
-        return 4 + level;
+        return 10 + level;
     }
 
     public boolean isUndead() {

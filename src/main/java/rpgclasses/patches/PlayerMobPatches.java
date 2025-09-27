@@ -7,6 +7,8 @@ import necesse.engine.modLoader.annotations.ModMethodPatch;
 import necesse.engine.network.PacketReader;
 import necesse.engine.network.PacketWriter;
 import necesse.engine.network.client.Client;
+import necesse.engine.network.packet.PacketPlayerBuffs;
+import necesse.engine.network.packet.PacketRequestPlayerData;
 import necesse.engine.save.LoadData;
 import necesse.engine.save.SaveData;
 import necesse.engine.state.MainGame;
@@ -26,6 +28,7 @@ import rpgclasses.data.PlayerDataList;
 import rpgclasses.mobs.mount.TransformationMountMob;
 import rpgclasses.packets.TransformationAbility1Packet;
 import rpgclasses.packets.TransformationAbility2Packet;
+import rpgclasses.registry.RPGBuffs;
 import rpgclasses.registry.RPGControls;
 
 import java.util.HashSet;
@@ -104,7 +107,7 @@ public class PlayerMobPatches {
         @Advice.OnMethodExit
         static void onExit(@Advice.This PlayerMob This) {
             PlayerData playerData = PlayerDataList.getPlayerData(This);
-            if(playerData != null) {
+            if (playerData != null) {
                 playerData.lastDeath = This.getTime();
                 if (playerData.grabbedObject != null) {
                     Level level = This.getLevel();
@@ -146,13 +149,26 @@ public class PlayerMobPatches {
 
                     PlayerData playerData = PlayerDataList.getPlayerData(This);
                     EquippedActiveSkill equippedActiveSkill = playerData.equippedActiveSkills[skillSlot];
-                    equippedActiveSkill.tryRun(This, skillSlot);
+                    equippedActiveSkill.tryClientRun(This, skillSlot);
                 }
             }
 
             return true;
         }
     }
+
+    @ModMethodPatch(target = PlayerMob.class, name = "clientTick", arguments = {})
+    public static class clientTick {
+
+        @Advice.OnMethodExit
+        static void onExit(@Advice.This PlayerMob player) {
+            if (player.isClientClient() && !player.getClientClient().isDead() && player.getClientClient().hasSpawned() && !player.buffManager.hasBuff(RPGBuffs.PASSIVES.MODIFIERS)) {
+                player.getClient().network.sendPacket(new PacketRequestPlayerData(player.getClient().getSlot()));
+            }
+        }
+
+    }
+
 
     @ModMethodPatch(target = PlayerMob.class, name = "tickControls", arguments = {MainGame.class, boolean.class, GameCamera.class})
     public static class tickControls {

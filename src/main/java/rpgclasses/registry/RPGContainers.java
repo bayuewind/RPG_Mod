@@ -2,9 +2,9 @@ package rpgclasses.registry;
 
 import necesse.engine.registries.ContainerRegistry;
 import necesse.inventory.container.item.ItemInventoryContainer;
-import rpgclasses.containers.customiteminventory.CustomItemInventoryForm;
-import rpgclasses.containers.rpgmenu.MenuContainer;
-import rpgclasses.containers.rpgmenu.MenuContainerForm;
+import rpgclasses.forms.customiteminventory.CustomItemInventoryForm;
+import rpgclasses.forms.rpgmenu.MenuContainer;
+import rpgclasses.forms.rpgmenu.MenuContainerForm;
 
 public class RPGContainers {
     public static int MENU_CONTAINER;

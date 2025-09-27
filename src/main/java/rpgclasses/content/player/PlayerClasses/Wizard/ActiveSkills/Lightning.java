@@ -18,6 +18,7 @@ import necesse.entity.trails.TrailVector;
 import necesse.gfx.GameResources;
 import necesse.level.maps.regionSystem.RegionPosition;
 import rpgclasses.RPGResources;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastLevelEventActiveSkill;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleLevelEventActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.registry.RPGBuffs;
@@ -28,9 +29,14 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Lightning extends SimpleLevelEventActiveSkill {
+public class Lightning extends CastLevelEventActiveSkill {
     public Lightning(int levelMax, int requiredClassLevel) {
         super("lightning", RPGColors.HEX.lighting, levelMax, requiredClassLevel);
+    }
+
+    @Override
+    public int castingTime() {
+        return 4000;
     }
 
     @Override
@@ -56,11 +62,6 @@ public class Lightning extends SimpleLevelEventActiveSkill {
     @Override
     public String[] getExtraTooltips() {
         return new String[]{"manausage"};
-    }
-
-    @Override
-    public String canActive(PlayerMob player, PlayerData playerData, boolean isInUSe) {
-        return RPGUtils.anyTarget(player, 500) ? null : "notarget";
     }
 
     public static class LightningLevelEvent extends MobAbilityLevelEvent implements Attacker {

@@ -7,20 +7,21 @@ import necesse.entity.mobs.PlayerMob;
 import necesse.entity.mobs.itemAttacker.FollowPosition;
 import necesse.gfx.GameResources;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.ActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.mobs.summons.damageable.DamageableFollowingMob;
 
 import java.awt.geom.Point2D;
 
-public class SkeletonWarrior extends ActiveSkill {
+public class SkeletonWarrior extends CastActiveSkill {
 
     public SkeletonWarrior(int levelMax, int requiredClassLevel) {
         super("skeletonwarrior", "#6633ff", levelMax, requiredClassLevel);
     }
 
     @Override
-    public void runServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runServer(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunServer(player, playerData, activeSkillLevel, seed);
 
         DamageableFollowingMob mob = (DamageableFollowingMob) MobRegistry.getMob("necromancerskeletonwarrior", player.getLevel());
         player.serverFollowersManager.addFollower(stringID, mob, FollowPosition.WALK_CLOSE, null, 1, Integer.MAX_VALUE, null, true);
@@ -32,8 +33,8 @@ public class SkeletonWarrior extends ActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunClient(player, playerData, activeSkillLevel, seed);
         SoundManager.playSound(GameResources.crack, SoundEffect.effect(player.x, player.y).volume(1F).pitch(0.5F));
     }
 

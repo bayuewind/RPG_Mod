@@ -7,7 +7,7 @@ import necesse.gfx.forms.Form;
 import necesse.gfx.gameFont.FontManager;
 import necesse.gfx.gameFont.FontOptions;
 import necesse.inventory.item.Item;
-import rpgclasses.containers.rpgmenu.components.SkillIconComponent;
+import rpgclasses.forms.rpgmenu.components.SkillIconComponent;
 import rpgclasses.data.EquippedActiveSkill;
 import rpgclasses.data.PlayerData;
 
@@ -35,7 +35,7 @@ public class RPGSkillUIForm extends Form {
 
         if (!this.equippedActiveSkill.isEmpty()) {
             int cooldownLeft = this.equippedActiveSkill.getCooldownLeft(perspective.getTime());
-            if (cooldownLeft > 0) {
+            if (cooldownLeft > 0 || this.equippedActiveSkill.isInUse()) {
                 String cooldownLeftString = equippedActiveSkill.getCooldownLeftString(cooldownLeft);
 
                 FontOptions options = new FontOptions(Item.tipFontOptions);

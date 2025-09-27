@@ -4,7 +4,7 @@ import necesse.engine.Settings;
 import necesse.engine.window.GameWindow;
 import necesse.engine.window.WindowManager;
 import necesse.gfx.forms.MainGameFormManager;
-import rpgclasses.containers.rpgmenu.entries.ActiveSkillsEntry;
+import rpgclasses.forms.rpgmenu.entries.ActiveSkillsEntry;
 import rpgclasses.data.PlayerData;
 
 public class RPGSkillUIManager extends CustomUIManager<RPGSkillUIForm> {

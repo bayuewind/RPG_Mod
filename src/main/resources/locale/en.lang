@@ -31,6 +31,7 @@ throwingattackspeed=<mod>% throwing attack speed
 throwingcritchance=<mod>% throwing crit chance
 throwingcritdamage=<mod>% throwing crit damage
 
+casttime=<mod>% cast time
 transformationdelay=<mod>% transformation delay
 noskills=Cannot use skills
 
@@ -55,6 +56,8 @@ magicpoisonbuff=Magic Poison
 ignitedbuff=Ignited
 holydamagedealtbuff=Holy Damage Dealt
 queenbeewashit=Queen Bee was hit
+transformingbuff=Transforming
+castingbuff=Casting
 
 
 [buffdesc]
@@ -150,11 +153,12 @@ arcanepower=Arcane Power
 manapower=Mana Power
 manaproficiency=Mana Proficiency
 firepower=Fire Power
+quickmagic=Quick Magic
+flamingsteps=Flaming Steps
+stormbound=Stormbound
 arcaneshield=Arcane Shield
 fireshield=Fire Shield
 iceshield=Ice Shield
-flamingsteps=Flaming Steps
-stormbound=Stormbound
 
 // Necromancer
 darkpower=Dark Power
@@ -353,15 +357,15 @@ arrowstorm=Shoot a basic arrow to each close enemy, dealing §i[[2 x <playerleve
 arcaneoverload=While active, increases your Magic Attack Speed by §a[[30 x <skilllevel>]]%§0, but you won't be able to move\nEnds when you run out of mana, or if used again\nConsumes §a[[10 + 2 x <skilllevel>]] Mana per second
 manarecharge=While active, increases your Mana Regen in +1.4 and by §a[[50 x <skilllevel>]]%§0, but you will be paralyzed and take double damage\nEnds when used again
 firedance=Summons 4 §bDancing Flames§0, each dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0\nSummon another one every 5 seconds\nAll summons disappear 20 seconds after the skill is activated\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
-iceball=Throw an §aIce Ball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[50 + 10 x <skilllevel>]] Mana
+iceball=Throw an §aIce Ball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[40 + 8 x <skilllevel>]] Mana
 zap=Start a zap that jumps between mobs for 2 seconds, dealing §i[[<playerlevel> + <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 1 second\nConsumes §a[[10 + 2 x <skilllevel>]] Mana
 
-teleport=Teleports in front of you\nConsumes 10 Mana
-inferno=Ignite all nearby enemies, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Fire Damage§0 per second for 10 seconds\nConsumes §a[[40 + 8 x <skilllevel>]] Mana
+teleport=Teleports in front of you\nConsumes 8 Mana
+inferno=Ignite all nearby enemies, dealing §i[[0.5 x <playerlevel> + 0.5 x <intelligence> x <skilllevel>]] Fire Damage§0 per second for 10 seconds\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
 fireenchantment=For the next 10 seconds, attacks from you and nearby allies ignite enemies, dealing §a[[5 x <skilllevel>]]%§0 of the damage per second for 5 seconds\nConsumes §a[[20 + 4 x <skilllevel>]] Mana
 iceenchantment=For the next 10 seconds, attacks from you and nearby allies freeze enemies for §a[[2 x <skilllevel>]] seconds§0\nConsumes 20 Mana
 
-fireball=Throw a §iFireball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[80 + 16 x <skilllevel>]] Mana
+fireball=Throw a §iFireball§0 to the closest enemy, dealing §i[[5 x <playerlevel> + 5 x <intelligence> x <skilllevel>]] Magic Damage§0\nConsumes §a[[60 + 12 x <skilllevel>]] Mana
 lightning=Start a lightning that jumps between mobs for 1 second, dealing §i[[4 x <playerlevel> + 4 x <intelligence> x <skilllevel>]] Magic Damage§0 and stunning 2 second\nCannot hit multiple times the same target\nConsumes §a[[30 + 6 x <skilllevel>]] Mana
 
 // Necromancer
@@ -427,7 +431,7 @@ shapeshifter=Shapeshifter
 [masterydesc]
 bastion=Gain Resilience per second equal to 25% of your Health Regen
 bloodborn=Heal for 5% of the damage you deal to enemies\nAlways lose 5% of your Max Health per second, but cannot die from this effect\nHealth Regen is always 0
-chronomancer=Reduces the cooldown of all active skills by 20%
+chronomancer=Reduces the cooldown and cast time of all active skills by 20%
 barbarian=+100% Max Health and +200% Health Regen, but your armor will be always 0
 berserker=When below 50% health, gain +25% Melee Crit Chance\nMelee Crit hits increase your Attack Speed and Movement Speed by 25% for 2 second
 sniper=Ranged attacks have up to +100% damage based on distance to target
@@ -585,6 +589,8 @@ activeskillsusetip1=It is recommended to change the Expression Wheel control to 
 activeskillsusetip2=Only the first four skills appear in the Active Skills Wheel. You'll need to use keys for the rest
 activeskillsequipinstructions=Click on a slot to equip an Active Skill. You cannot unequip an Active Skill on cooldown
 noactiveskills=You have no Active Skills. Unlock them through the classes
+
+activeskillcast=§9Cast time: <seconds>s
 
 activeskillcooldown=§9Cooldown: <seconds>s
 activeskillcooldownmod=§9Cooldown: [[<seconds> <sign> <mod> x <skilllevel>]]s

@@ -19,6 +19,7 @@ import necesse.entity.mobs.hostile.SandwormBody;
 import necesse.entity.mobs.hostile.SlimeWormBody;
 import necesse.entity.mobs.hostile.bosses.PestWardenBody;
 import necesse.entity.mobs.hostile.bosses.SwampGuardianBody;
+import necesse.level.maps.Level;
 import net.bytebuddy.asm.Advice;
 import rpgclasses.buffs.Interfaces.TransformationClassBuff;
 import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleTranformationActiveSkill;
@@ -37,6 +38,14 @@ public class MobPatches {
 
     @ModMethodPatch(target = Mob.class, name = "init", arguments = {})
     public static class init {
+        @Advice.OnMethodExit
+        static void onExit(@Advice.This Mob This) {
+            MobData.initMob(This);
+        }
+    }
+
+    @ModMethodPatch(target = Mob.class, name = "setLevel", arguments = {Level.class})
+    public static class setLevel {
         @Advice.OnMethodExit
         static void onExit(@Advice.This Mob This) {
             MobData.initMob(This);
@@ -97,8 +106,8 @@ public class MobPatches {
             MobData mobData = MobData.getMob(This);
             if (This.isServer() && mobData != null && !MobData.bossNoEXPMobs.contains(This.getStringID())) {
 
-                float exp = mobData.level * 2 * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGSettings.experienceMod();
-                exp = (float) Math.pow(exp, 1.2F);
+                float exp = mobData.levelScaling() * mobData.mobClass.expMod * GameRandom.globalRandom.getFloatBetween(0.9F, 1.1F) * RPGSettings.experienceMod();
+                exp = (float) Math.pow(exp, 1.5F);
 
                 HashSet<PlayerMob> processedPlayers = new HashSet<>();
                 for (Attacker attackerMob : attackers) {

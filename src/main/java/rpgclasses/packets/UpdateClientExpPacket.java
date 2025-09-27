@@ -38,7 +38,7 @@ public class UpdateClientExpPacket extends Packet {
     public void processClient(NetworkPacket packet, Client client) {
         if (client.getPlayer() != null) {
             PlayerData playerData = PlayerDataList.getPlayerData(playerName, false);
-            if(playerData != null) {
+            if (playerData != null) {
                 playerData.loadDataExp(exp);
                 if (Objects.equals(client.getPlayer().playerName, playerName)) {
                     CustomUIManager.expBar.updateExpBar(playerData);

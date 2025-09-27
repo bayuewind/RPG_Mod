@@ -25,14 +25,14 @@ public class MobClass {
     public static void registerCore() {
         registerBossClass(new MobClass("boss", "0", 0.04F, RPGSettings.bossKillBonus(), BossMobClassBuff.class));
         registerMobClass(basicClasses, new MobClass("warrior", "#993333", 0.02F, WarriorMobClassBuff.class));
-        registerMobClass(basicClasses, new MobClass("tank", "#666666", 0.05F, TankMobClassBuff.class));
-        registerMobClass(basicClasses, new MobClass("runner", "#339966", 0.01F, RunnerMobClassBuff.class));
-        registerMobClass(uncommonClasses, new MobClass("healer", "#00ff00", 0.04F, 1.2F, HealerMobClassBuff.class));
-        registerMobClass(uncommonClasses, new MobClass("explosive", "#ff0000", 0.03F, 1.2F, ExplosiveMobClassBuff.class));
-        registerMobClass(uncommonClasses, new MobClass("glacial", "#00ffff", 0.03F, 1.2F, GlacialMobClassBuff.class));
-        registerMobClass(rareClasses, new MobClass("flash", "#ffff00", 0.01F, 2F, FlashMobClassBuff.class));
-        registerMobClass(rareClasses, new MobClass("dark", "#000000", 0.05F, 2F, DarkMobClassBuff.class));
-        registerMobClass(mythicClasses, new MobClass("legend", "#ff6600", 0.25F, 5F, LegendMobClassBuff.class));
+        registerMobClass(basicClasses, new MobClass("tank", "#666666", 0.02F, TankMobClassBuff.class));
+        registerMobClass(basicClasses, new MobClass("runner", "#339966", 0.02F, RunnerMobClassBuff.class));
+        registerMobClass(uncommonClasses, new MobClass("healer", "#00ff00", 0.02F, 1.2F, HealerMobClassBuff.class));
+        registerMobClass(uncommonClasses, new MobClass("explosive", "#ff0000", 0.02F, 1.2F, ExplosiveMobClassBuff.class));
+        registerMobClass(uncommonClasses, new MobClass("glacial", "#00ffff", 0.02F, 1.2F, GlacialMobClassBuff.class));
+        registerMobClass(rareClasses, new MobClass("flash", "#ffff00", 0.02F, 2F, FlashMobClassBuff.class));
+        registerMobClass(rareClasses, new MobClass("dark", "#000000", 0.02F, 2F, DarkMobClassBuff.class));
+        registerMobClass(mythicClasses, new MobClass("legend", "#ff6600", 0.02F, 5F, LegendMobClassBuff.class));
     }
 
     public static void registerBossClass(MobClass mobClass) {
@@ -49,32 +49,32 @@ public class MobClass {
         allClasses.put(mobClass.stringID, mobClass);
         allClassesList.add(mobClass);
         try {
-            BuffRegistry.registerBuff(mobClass.buffStringID(), mobClass.classBuff.newInstance());
+            mobClass.buff = BuffRegistry.registerBuff(mobClass.buffStringID(), mobClass.classBuff.newInstance());
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }
 
 
-    public static MobClass getRandomClass() {
+    public static MobClass getRandomClass(GameRandom random) {
         List<MobClass> list;
 
-        int random = GameRandom.globalRandom.getIntBetween(0, 999);
-        if (random < 5) {
+        int randomN = random.getIntBetween(0, 999);
+        if (randomN < 5) {
             list = mythicClasses;
-        } else if (random < 55) {
+        } else if (randomN < 55) {
             list = rareClasses;
-        } else if (random < 205) {
+        } else if (randomN < 205) {
             list = uncommonClasses;
         } else {
             list = basicClasses;
         }
 
-        return getRandomClass(list);
+        return getRandomClass(random, list);
     }
 
-    public static MobClass getRandomClass(List<MobClass> list) {
-        return list.get(GameRandom.globalRandom.getIntBetween(0, list.size() - 1));
+    public static MobClass getRandomClass(GameRandom random, List<MobClass> list) {
+        return list.get(random.getIntBetween(0, list.size() - 1));
     }
 
     public final int id;
@@ -83,6 +83,7 @@ public class MobClass {
     public final float healthModPerLevel;
     public final float expMod;
     public final Class<? extends MobClassBuff> classBuff;
+    public MobClassBuff buff;
 
     public MobClass(String stringID, String color, float healthModPerLevel, float expMod, Class<? extends MobClassBuff> classBuff) {
         this.id = allClasses.size();
@@ -101,17 +102,14 @@ public class MobClass {
         return Localization.translate("mobclass", stringID);
     }
 
-    public void giveBuff(Mob mob, int classLevel) {
-        ActiveBuff ab = new ActiveBuff(buffStringID(), mob, 3600F, null);
-        MobClassBuff.setMobLevel(ab, classLevel);
-        mob.buffManager.addBuff(ab, mob.isServer());
-    }
+    public void initBuffs(Mob mob, int classLevel) {
+        int maxHealth = (int) (mob.getMaxHealth() * (1F + healthModPerLevel * MobData.levelScaling(classLevel)) * (1 + buff.healthBoost()));
+        mob.setMaxHealth(maxHealth);
+        mob.setHealthHidden(maxHealth);
 
-    public void setMaxHealth(Mob mob, int classLevel) {
-        if (healthModPerLevel > 0) {
-            mob.setMaxHealth((int) (mob.getMaxHealth() * (1F + healthModPerLevel * MobData.levelScaling(classLevel))));
-            mob.setHealthHidden(mob.getMaxHealth());
-        }
+        ActiveBuff ab = new ActiveBuff(buff, mob, 3600F, null);
+        MobClassBuff.setMobLevel(ab, classLevel);
+        mob.buffManager.addBuff(ab, false);
     }
 
     public String buffStringID() {

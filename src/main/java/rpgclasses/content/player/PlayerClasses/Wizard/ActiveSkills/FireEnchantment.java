@@ -14,20 +14,23 @@ import necesse.entity.particle.Particle;
 import necesse.gfx.GameResources;
 import rpgclasses.buffs.IgnitedBuff;
 import rpgclasses.buffs.Skill.ActiveSkillBuff;
-import rpgclasses.content.player.SkillsLogic.ActiveSkills.SimpleBuffActiveSkill;
+import rpgclasses.content.player.SkillsLogic.ActiveSkills.CastBuffActiveSkill;
 import rpgclasses.data.PlayerData;
 import rpgclasses.utils.RPGUtils;
 
-public class FireEnchantment extends SimpleBuffActiveSkill {
+public class FireEnchantment extends CastBuffActiveSkill {
 
     public FireEnchantment(int levelMax, int requiredClassLevel) {
         super("fireenchantment", "#ff3300", levelMax, requiredClassLevel);
     }
 
     @Override
-    public void giveBuffOnRun(PlayerMob player, PlayerData playerData, int activeSkillLevel) {
-        super.giveBuff(player, player, playerData, activeSkillLevel);
+    public int castingTime() {
+        return 1000;
+    }
 
+    @Override
+    public void castedRunServer(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
         GameUtils.streamServerClients(player.getLevel()).forEach(targetPlayer -> {
             if (targetPlayer.isSameTeam(player.getTeam()))
                 super.giveBuff(player, targetPlayer.playerMob, playerData, activeSkillLevel);
@@ -41,8 +44,9 @@ public class FireEnchantment extends SimpleBuffActiveSkill {
     }
 
     @Override
-    public void runClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed, boolean isInUse) {
-        super.runClient(player, playerData, activeSkillLevel, seed, isInUse);
+    public void castedRunClient(PlayerMob player, PlayerData playerData, int activeSkillLevel, int seed) {
+        super.castedRunClient(player, playerData, activeSkillLevel, seed);
+
         SoundManager.playSound(GameResources.firespell1, SoundEffect.effect(player.x, player.y).volume(2F).pitch(1F));
         AphAreaList areaList = new AphAreaList(
                 new AphArea(200, getColor())
