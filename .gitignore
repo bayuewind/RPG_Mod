@@ -1,0 +1,29 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs and editors
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Java/Gradle
+.gradle/
+build/
+out/
+bin/
+target/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Compiled classes
+*.class
+
+# JVM crash logs
+hs_err_pid*
